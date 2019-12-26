@@ -1,0 +1,26 @@
+@import '../ow-academy/ow-academy.component.scss';
+
+.hero-bg{
+    transform: rotateY(180deg);
+}
+
+.hero-section{
+    .heading {
+        h1{
+            text-align: right;
+        }
+        p{
+            float: right;
+            text-align: right;
+        }
+    }
+}
+
+.owx-hero-img{
+    transform: rotateY(180deg);
+    width: 85%;
+}
+
+.feature-middle{
+   transform: translateY(-50%);
+}

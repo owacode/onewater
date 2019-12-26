@@ -41,6 +41,10 @@ const routes: Routes = [
       {
         path: 'learningacademy',
         loadChildren: './landing-components/ow-academy/ow-academy.module#OwAcademyModule'
+      },
+      {
+        path: 'owx',
+        loadChildren: './landing-components/owx/owx.module#OwxModule'
       }
     ]
   },

@@ -9,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginSignupComponent implements OnInit {
 
-      showregform(){
-      document.querySelector(".vldauth")['style'].display = "none";
-      document.querySelector(".vldreg")['style'].display = "flex";
-      }
+      // showregform(){
+      // document.querySelector(".vldauth")['style'].display = "none";
+      // document.querySelector(".vldreg")['style'].display = "flex";
+      // }
 
       //  showauthform(){
       // document.querySelector(".vldauth")['style'].display = "flex";
@@ -20,10 +20,10 @@ export class LoginSignupComponent implements OnInit {
       // document.querySelector(".vldrecpass")['style'].display = "none";
       // }
 
-       showrecoveryform(){
-      document.querySelector(".vldauth")['style'].display = "none";
-      document.querySelector(".vldrecpass")['style'].display = "flex";
-      }
+      //  showrecoveryform(){
+      // document.querySelector(".vldauth")['style'].display = "none";
+      // document.querySelector(".vldrecpass")['style'].display = "flex";
+      // }
 
   constructor(public http:HttpClient) { }
   user;
