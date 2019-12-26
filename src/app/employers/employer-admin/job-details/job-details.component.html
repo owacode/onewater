@@ -1,0 +1,77 @@
+<div class="dash-tab">
+    <div class="job-listing-details">
+        <div class="job-title-and-info">
+          <div class="title">
+            <div class="thumb">
+              <img src="assets/img/jobs/job/company-logo-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="title-body">
+              <h4>{{job?.title}}</h4>
+              <div class="info">
+                <span class="company"><a href="#"><i data-feather="briefcase"></i>{{job?.title}}</a></span>
+                <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{job?.location}}</a></span>
+                <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>{{job?.job_type}}</a></span>
+              </div>
+            </div>
+
+          </div>
+          <div class="buttons">
+              <a class="button" routerLink="/employer/job-list"><i data-feather="arrow-left"></i>Back</a>
+            </div>
+        </div>
+        <div class="details-information section-padding-60">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8">
+              <div class="description details-section">
+                <h4><i data-feather="align-left"></i>Job Description</h4>
+                <p>{{job?.profile_description}}</p>
+                <!-- <p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable </p> -->
+              </div>
+              <div class="responsibilities details-section">
+                <h4><i data-feather="zap"></i>Responsibilities</h4>
+                <ul>
+                    <p>{{job?.responsiblity}}</p>
+                </ul>
+              </div>
+              <div class="edication-and-experience details-section">
+                <h4><i data-feather="book"></i>Education + Experience</h4>
+                <ul>
+                  <h6>
+                    Experience
+                  </h6>
+                  <p>
+                      {{job?.experience}}
+
+                  </p>
+                  <h6>
+                    Education
+                  </h6>
+                  <p>
+                      {{job?.education}}
+
+                  </p>
+                </ul>
+              </div>
+
+            </div>
+            <div class="col-xl-4 offset-xl-1 col-lg-4">
+              <div class="information-and-share">
+                <div class="job-summary">
+                  <h4>Job Summary</h4>
+                  <ul>
+                    <li><span>Published on:</span> {{job?.date_added | date:'MMM d, y'}}</li>
+                    <li><span>Employment Status:</span> {{job?.job_type}}</li>
+                    <li><span>Experience:</span>{{job?.experience}}(s)</li>
+                    <li><span>Job Location:</span> {{job?.location}}</li>
+                    <li><span>Salary:</span> {{job?.salary}}</li>
+                    <li><span>Gender:</span> {{job?.gender}}</li>
+                    <li><span>Application Deadline:</span> {{job?.deadline | date:'MMM d, y'}}</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

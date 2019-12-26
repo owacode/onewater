@@ -1,0 +1,260 @@
+<div class="cover-photo">
+    <div class="wave"></div>
+</div>
+
+<!-- Candidates Details -->
+<div class=" padding-top-60 section-padding-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="job-listing-details">
+          <div class="job-title-and-info">
+            <div class="title">
+              <div class="thumb">
+                <img src="assets/img/jobs/job/company-logo-1.png" class="img-fluid" alt="">
+              </div>
+              <div class="title-body">
+                <h4>{{job?.title}}</h4>
+                <div class="info">
+                    <span class="job-type full-time"><a href="#"><i data-feather="briefcase"></i>{{job?.title}}</a></span>
+
+                  <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{job?.location}}</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <a class="apply" href="#">Apply Online</a>
+            </div>
+          </div>
+          <div class="details-information section-padding-60">
+            <div class="row">
+              <div class="col-xl-7 col-lg-8">
+                <div class="description details-section">
+                  <h4><i data-feather="align-left"></i>Job Description</h4>
+                  <p>{{job?.profile_description}}</p>
+                </div>
+                <div class="responsibilities details-section">
+                  <h4><i data-feather="zap"></i>Responsibilities</h4>
+                  <ul>
+                      <p>{{job?.responsiblity}}</p>
+                    <!-- <li>The applicants should have experience in the following areas</li>
+                    <li>Skills on M.S Word, Excel, and Integrated Accounting package i.e. Software</li>
+                    <li>Have sound knowledge of commercial activities.</li>
+                    <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
+                    <li>Good verbal and written communication skills.</li>
+                    <li>Leadership, analytical, and problem-solving abilities.</li> -->
+                  </ul>
+                </div>
+                <div class="edication-and-experience details-section">
+                  <h4><i data-feather="book"></i>Education + Experience</h4>
+                  <ul>
+                    <h6>
+                      Experience
+                    </h6>
+                    <p>
+                        {{job?.experience}}
+
+                    </p>
+                    <h6>
+                      Education
+                    </h6>
+                    <p>
+                        {{job?.education}}
+
+                    </p>
+                  </ul>
+                </div>
+                <div class="job-apply-buttons">
+                  <a href="#" class="apply">Apply Online</a>
+                </div>
+              </div>
+              <div class="col-xl-4 offset-xl-1 col-lg-4">
+                <div class="information-and-share">
+                  <div class="job-summary">
+                    <h4>Job Summary</h4>
+                    <ul>
+                      <li><span>Published on:</span> {{job?.date_added | date:'MMM d, y'}}</li>
+                      <li><span>Employment Status:</span> {{job?.job_type}}</li>
+                      <li><span>Experience:</span>{{job?.experience}}(s)</li>
+                      <li><span>Job Location:</span> {{job?.location}}</li>
+                      <li><span>Salary:</span> {{job?.salary}}</li>
+                      <li><span>Gender:</span> {{job?.gender}}</li>
+                      <li><span>Application Deadline:</span> {{job?.deadline | date:'MMM d, y'}}</li>
+                    </ul>
+                  </div>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Candidates Details End -->
+
+<!-- Jobs -->
+<div class="section-padding alice-bg section-padding-top">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="section-header section-header-2 section-header-with-right-content">
+          <h2>Similar Jobs</h2>
+          <a [routerLink]="['/onewaterjobs/joblist']" class="header-right">+ Browse All Jobs</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="job-list">
+          <div class="thumb">
+
+              <img src="assets/img/jobs/job/company-logo-1.png" class="img-fluid" alt="">
+
+          </div>
+          <div class="body">
+            <div class="content">
+              <h4>  <a [routerLink]="['/onewaterjobs/jobdesc']">Designer Required</a></h4>
+              <div class="info">
+                <span class="company"><a href="#"><i data-feather="briefcase"></i>Theoreo</a></span>
+                <span class="office-location"><a href="#"><i data-feather="map-pin"></i>New York City</a></span>
+                <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>Full Time</a></span>
+              </div>
+            </div>
+            <div class="more">
+              <div class="buttons">
+                <a [routerLink]="['/onewaterjobs/jobdesc']" class="button">Apply Now</a>
+                <a href="#" class="favourite"><i data-feather="heart"></i></a>
+              </div>
+              <p class="deadline">Deadline: Oct 31, 2018</p>
+            </div>
+          </div>
+        </div>
+        <div class="job-list">
+          <div class="thumb">
+
+              <img src="assets/img/jobs/job/company-logo-2.png" class="img-fluid" alt="">
+
+          </div>
+          <div class="body">
+            <div class="content">
+              <h4>  <a [routerLink]="['/onewaterjobs/jobdesc']">Project Manager</a></h4>
+              <div class="info">
+                <span class="company"><a href="#"><i data-feather="briefcase"></i>Degoin</a></span>
+                <span class="office-location"><a href="#"><i data-feather="map-pin"></i>San Francisco</a></span>
+                <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>Part Time</a></span>
+              </div>
+            </div>
+            <div class="more">
+              <div class="buttons">
+                <a [routerLink]="['/onewaterjobs/jobdesc']" class="button">Apply Now</a>
+                <a href="#" class="favourite"><i data-feather="heart"></i></a>
+              </div>
+              <p class="deadline">Deadline: Oct 31, 2018</p>
+            </div>
+          </div>
+        </div>
+        <div class="job-list">
+          <div class="thumb">
+
+              <img src="assets/img/jobs/job/company-logo-8.png" class="img-fluid" alt="">
+
+          </div>
+          <div class="body">
+            <div class="content">
+              <h4>  <a [routerLink]="['/onewaterjobs/jobdesc']">Restaurant Team Member - Crew </a></h4>
+              <div class="info">
+                <span class="company"><a href="#"><i data-feather="briefcase"></i>Geologitic</a></span>
+                <span class="office-location"><a href="#"><i data-feather="map-pin"></i>New Orleans</a></span>
+                <span class="job-type temporary"><a href="#"><i data-feather="clock"></i>Temporary</a></span>
+              </div>
+            </div>
+            <div class="more">
+              <div class="buttons">
+                <a [routerLink]="['/onewaterjobs/jobdesc']" class="button">Apply Now</a>
+                <a href="#" class="favourite"><i data-feather="heart"></i></a>
+              </div>
+              <p class="deadline">Deadline: Oct 31, 2018</p>
+            </div>
+          </div>
+        </div>
+        <div class="job-list">
+          <div class="thumb">
+
+              <img src="assets/img/jobs/job/company-logo-9.png" class="img-fluid" alt="">
+
+          </div>
+          <div class="body">
+            <div class="content">
+              <h4>  <a [routerLink]="['/onewaterjobs/jobdesc']">Nutrition Advisor</a></h4>
+              <div class="info">
+                <span class="company"><a href="#"><i data-feather="briefcase"></i>Theoreo</a></span>
+                <span class="office-location"><a href="#"><i data-feather="map-pin"></i>New York City</a></span>
+                <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>Full Time</a></span>
+              </div>
+            </div>
+            <div class="more">
+              <div class="buttons">
+                <a [routerLink]="['/onewaterjobs/jobdesc']" class="button">Apply Now</a>
+                <a href="#" class="favourite"><i data-feather="heart"></i></a>
+              </div>
+              <p class="deadline">Deadline: Oct 31, 2018</p>
+            </div>
+          </div>
+        </div>
+        <div class="job-list">
+          <div class="thumb">
+
+              <img src="assets/img/jobs/job/company-logo-10.png" class="img-fluid" alt="">
+
+          </div>
+          <div class="body">
+            <div class="content">
+              <h4>  <a [routerLink]="['/onewaterjobs/jobdesc']">UI Designer</a></h4>
+              <div class="info">
+                <span class="company"><a href="#"><i data-feather="briefcase"></i>Degoin</a></span>
+                <span class="office-location"><a href="#"><i data-feather="map-pin"></i>San Francisco</a></span>
+                <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>Part Time</a></span>
+              </div>
+            </div>
+            <div class="more">
+              <div class="buttons">
+                <a [routerLink]="['/onewaterjobs/jobdesc']" class="button">Apply Now</a>
+                <a href="#" class="favourite"><i data-feather="heart"></i></a>
+              </div>
+              <p class="deadline">Deadline: Oct 31, 2018</p>
+            </div>
+          </div>
+        </div>
+        <div class="job-list">
+          <div class="thumb">
+
+              <img src="assets/img/jobs/job/company-logo-3.png" class="img-fluid" alt="">
+
+          </div>
+          <div class="body">
+            <div class="content">
+              <h4>  <a [routerLink]="['/onewaterjobs/jobdesc']">Land Development Marketer</a></h4>
+              <div class="info">
+                <span class="company"><a href="#"><i data-feather="briefcase"></i>Realouse</a></span>
+                <span class="office-location"><a href="#"><i data-feather="map-pin"></i>Washington, D.C.</a></span>
+                <span class="job-type freelance"><a href="#"><i data-feather="clock"></i>Freelance</a></span>
+              </div>
+            </div>
+            <div class="more">
+              <div class="buttons">
+                <a [routerLink]="['/onewaterjobs/jobdesc']" class="button">Apply Now</a>
+                <a href="#" class="favourite"><i data-feather="heart"></i></a>
+              </div>
+              <p class="deadline">Deadline: Oct 31, 2018</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Jobs End -->

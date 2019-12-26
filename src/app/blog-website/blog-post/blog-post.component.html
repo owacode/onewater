@@ -1,0 +1,195 @@
+<!-- BEGIN Blog Post -->
+
+<!-- <progress value="0"></progress> -->
+<div class="cover-photo" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}">
+  <div class="gradient-image"></div>
+  <div class="wave"></div>
+</div>
+<div class="container blog-post-wrapper">
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="container">
+        <div class=" post-top">
+          <h1>{{ blog?.title }}</h1>
+          <div class="article-meta">
+            <img src="{{ author?.image }}" alt="Author" />
+            <div class="meta-data">
+              <span class="meta-author"
+                >By
+                <a
+                  [routerLink]="['/onewaterblog/authorprofile/', author?._id]"
+                  >{{ author?.name | titlecase}}</a
+                ></span
+              ><br />
+              <span class="meta-date">{{ author?.about_author | slice: 0:70  }}....</span>
+            </div>
+          </div>
+          <!-- <div class="share-button">
+      <input class="toggle-input" id="toggle-input" type="checkbox" />
+      <label for="toggle-input" class="toggle"></label>
+      <ul class="network-list">
+        <li class="twitter">
+            <tweet url={{url}} text={{url}}></tweet>
+        </li>
+        <li class="facebook">
+          
+        </li>
+        <li class="googleplus">
+         
+        </li>
+      </ul>
+    </div> -->
+
+          <p class="teaser top-teaser">
+            <strong>Category</strong> : <span>{{blog?.category | titlecase}} </span> <span>{{blog?.sub_category | titlecase}}</span>
+          </p>
+          <div class="di" [innerHtml]="blog?.desc"></div>
+          <div class="blog-options">
+            <div class="like-btn">
+              <h6>Like :</h6>
+              <a>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </a>
+              <span>liked!</span>
+            </div>
+            <div class="share-btn">
+              <h6>Share on :</h6>
+              <button><fb-like url="{{ url }}"></fb-like></button>
+              <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
+              <button><linkedin-share url="{{ url }}"></linkedin-share></button>
+            </div>
+          </div>
+
+          <div class="meta-bio author-box">
+            <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
+              <img src="{{ author?.image }}" alt="" />
+            </a>
+            <div class="bio-text">
+              <p class="bio-shl">Author</p>
+              <p class="bio-hl">
+                <a
+                  [routerLink]="['/onewaterblog/authorprofile/', author._id]"
+                  >{{ author?.name | titlecase}}</a
+                >
+              </p>
+              <p>{{ author?.about_author | slice: 0:80 }}...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="related-blogs">
+          <h2>More From Author</h2>
+          <owl-carousel
+            [items]="authorblogs"
+            [options]="carouselOptions"
+            [carouselClasses]="['owl-theme', 'row', 'sliding']"
+          >
+            <div class="item" *ngFor="let blog of authorblogs">
+              <div class="outer-card">
+                <div class="outer-overlay"></div>
+                <div class="two-card">
+                  <img src="{{ blog?.image }}" alt="" />
+                  <div class="blog-caption">
+                    <a [routerLink]="['/onewaterblog/blogpost', blog?._id]">
+                      <h5>{{ blog.title | slice:0:30}}..</h5>
+                    </a>
+                    <div class="blog-meta-data">
+                      <div class="author">By {{ author?.name | titlecase}}</div>
+                      <div class="likes">
+                        <i class="fa fa-heart"></i>79 likes
+                      </div>
+                      <div class="read">
+                        7 mins read
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </owl-carousel>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="side-card ">
+        <h2>
+          Popular Blogs
+        </h2>
+        <div class="row">
+          <div class="col-lg-12 col-md-6 col-sm-12">
+            <div class="blog-card card-shadow">
+              <a [routerLink]="['/onewaterblog/blogpost']">
+                Leak of Microsoft Salaries Shows Fight for Higher
+                Compensation</a
+              >
+              <p>
+                7 mins read
+              </p>
+              <p><i class="fa fa-heart"></i>21 likes</p>
+            </div>
+          </div>
+
+          <div class="col-lg-12 col-md-6 col-sm-12">
+            <div class="blog-card card-shadow">
+              <a [routerLink]="['/onewaterblog/blogpost']">
+                10 Interesting Facts About Caffeine.</a
+              >
+              <p>
+                7 mins read
+              </p>
+              <p><i class="fa fa-heart"></i>21 likes</p>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-6 col-sm-12">
+            <div class="blog-card card-shadow">
+              <a [routerLink]="['/onewaterblog/blogpost']">
+                Key Benefits Of Family Photography.</a
+              >
+              <p>
+                7 mins read
+              </p>
+              <p><i class="fa fa-heart"></i>21 likes</p>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-6 col-sm-12">
+            <div class="blog-card card-shadow">
+              <a href="#"> Throwback To The Good Old Days.</a>
+              <p>
+                7 mins read
+              </p>
+              <p><i class="fa fa-heart"></i>21 likes</p>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-6 col-sm-12">
+            <div class="blog-card card-shadow">
+              <a [routerLink]="['/onewaterblog/blogpost']">
+                Healthy Mediterranean Salad Recipes</a
+              >
+              <p>
+                7 mins read
+              </p>
+              <p><i class="fa fa-heart"></i>21 likes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-card categories">
+        <!-- <div class="overlay-3"></div> -->
+        <h2>
+          Popular Tags
+        </h2>
+        <div class="cat">Music</div>
+        <div class="cat">Training</div>
+        <div class="cat">Travel</div>
+        <div class="cat">Tech</div>
+        <div class="cat">Science</div>
+        <div class="cat">Entertainment</div>
+        <div class="cat">Sports</div>
+        <div class="cat">Fashion</div>
+        <div class="cat">Movies</div>
+        <div class="cat">TV Shows</div>
+      </div>
+    </div>
+  </div>
+</div>

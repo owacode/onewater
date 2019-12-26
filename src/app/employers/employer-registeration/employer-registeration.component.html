@@ -1,0 +1,183 @@
+<section class="emp-registration">
+  <div class="container">
+    <h1>
+      Hey username, welcome to <span> OneWater Jobs.</span> <br>
+      Enter your company's details here and get started!
+    </h1>
+    <div class="dashboard-content-wrapper dash-tab">
+      <form class="dashboard-form" [formGroup]="form" (submit)="submit()">
+        <div class="dashboard-section basic-info-input">
+          <h4><i data-feather="user-check"></i>Basic Info</h4>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Company Name</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Company Name"
+                formControlName="company_name"
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Company Website Link</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Website Link"
+                  formControlName="company_website"
+                />
+              </div>
+            </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Year Establish</label>
+            <div class="col-sm-9">
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Year of Establishment"
+                formControlName="date_establish"
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Phone</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="+55 123 4563 4643"
+                formControlName="mobile"
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Address</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Washington D.C"
+                formControlName="company_address"
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Category</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="UI & UX Designer"
+                formControlName="category"
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">About Company</label>
+            <div class="col-sm-9">
+              <textarea formControlName="company_description" class="form-control" placeholder=""></textarea>
+            </div>
+          </div>
+
+          <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Working Area</label>
+              <div class="col-sm-9">
+                <textarea formControlName="working_area" class="form-control" placeholder=""></textarea>
+              </div>
+            </div>
+        </div>
+        <div class="dashboard-section media-inputs">
+          <h4><i data-feather="image"></i>Profile Photo</h4>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Upload photo</label>
+            <div class="col-sm-9">
+              <div class="input-group image-upload-input">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                      <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
+                    <button type="button" (click)="file.click()">Select Image</button>
+                  </div>
+                </div>
+                <div class="active">
+                  <div class="upload-images">
+                    <div class="pic" *ngIf="imagePreview!='' && imagePreview">
+
+                        <img style="width: 120px;" [src]="imagePreview">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-section social-inputs">
+          <h4><i data-feather="cast"></i>Social Networks</h4>
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-linkedin"></i>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Linkedin profile url"
+                  formControlName="linkedin"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Social Links</label>
+            <div class="col-sm-9">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-facebook-f"></i>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Facebook profile url"
+                  formControlName="facebook"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-twitter"></i>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Twitter profile url"
+                  formControlName="twitter"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="dashboard-section basic-info-input">
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+              <button class="button" type="submit">Save Change</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

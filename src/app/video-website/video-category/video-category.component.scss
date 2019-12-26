@@ -1,0 +1,66 @@
+@import '../home/home.component.scss';
+@import '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
+
+.category-wrap{
+    padding-top: 15vh;
+    background: #fff;
+  }
+  
+  .category-head h1{
+    margin: 0.5rem auto;
+    @include ms-respond(font-size,8);
+    font-weight: bold;
+    letter-spacing: -0.15rem;
+    border-bottom: 1px #ccc solid;
+  
+    h2{
+      color: #777;
+      font-weight: 600;
+      letter-spacing: -0.06rem;
+      @include ms-respond(font-size,3);
+    }
+  }
+  
+.all-videos{
+    padding: 50px 0 !important;
+
+    h2{
+        margin-bottom: 50px;
+    }
+
+    .thumbnail-card{
+        margin-bottom: 28px;
+    }
+
+    .thumb-img{
+        height: 200px;
+    }
+}
+.top-videos{
+    border-bottom: 1px #ccc solid;
+    padding-bottom: 0 !important;
+}
+
+.thumb-caption-big{
+    margin: 35px 0;
+ 
+    .views, .date{
+        color: #666;
+        font-weight: 600;
+        letter-spacing: -0.035rem;
+    }
+    h3{
+        margin-bottom: 2rem;
+    }
+   
+}
+
+.hover-black:hover{
+    color: black !important;
+}
+
+@media all and (max-width:768px){
+    .category-head h1{
+        text-align: center;
+      }
+}

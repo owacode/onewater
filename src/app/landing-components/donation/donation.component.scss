@@ -1,0 +1,207 @@
+.cover-photo{
+    height: 110vh;
+    background-attachment: fixed;
+    background: linear-gradient(180deg, rgba(0, 30, 199, 0.82) 20%, rgba(13, 0, 212, 0.57) 100%), url(/assets/img/landing/donate-bg1.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.section-intro{
+    margin-top: -85vh;
+    h1{
+        color: #fff;
+        font-size: 3.8rem;
+        font-weight: 600;
+    }
+    h2{
+        margin-top:35px;
+        color: #fff;
+    }
+}
+.section-1{
+    margin-top: 40vh;
+    h2{
+        margin-bottom: 35px;
+    }
+}
+
+.donate-img{
+    margin-top: -10vh;
+}
+.mybtn{
+      margin: 4rem 0 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      position: relative;
+      letter-spacing: -1.5px;
+      z-index: 10;
+  a{
+    background: transparent;
+    padding: 16px 32px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    border: 1.5px solid #fff;
+    color:#fff ;
+  }
+  a:hover{
+    background: #fff;
+    color:#000c61;
+  }
+  }
+  .section-1 .mybtn{
+      text-align: center;
+      a{
+          color: #000;
+          border-color:#000;
+      }
+  }
+.donate-section{
+    margin:90px 0 0;
+    padding: 25px 0;
+}
+.form-img{
+    width: 75%;
+    margin:2rem auto;
+}
+  /*donation form styles*/
+  .vldform {
+    box-sizing: border-box;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    animation: a .5s;
+    animation-fill-mode: forwards;
+    border: #ebebeb 1px solid;
+    border-radius: 20px;
+    /* border-radius: 10px; */
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 43%, 0.2);
+    background-color: #fff;
+}
+
+.vldform a {
+    text-decoration: none;
+    cursor: pointer;
+}
+ .social-btn{
+   margin:1rem auto 0;
+   display: inline-block;
+
+   img {margin:0.8rem 1.2rem;
+  width: 25px;
+transition: 0.2s ease-in-out all;}
+
+ }
+
+.vldform__textbox {
+  outline: none;
+  font-size: 1rem;
+      margin-top: 1.5rem;
+      padding-bottom: 8px;
+      width: 100%;
+      background: #061fad14;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border:none;
+}
+
+.vldform__textbox[type="password"]::after {
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: rebeccapurple;
+}
+.vldform__recoverypassword{
+    align-self: flex-end;
+    margin: 10px 0px;
+    font-size: 16px;
+    color: #2E67A9;
+}
+
+.vldform__button {
+    margin-top: 2rem;
+    height: 50px;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+     border-radius: 10px;
+    background:#071FAD;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@keyframes a {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(5px)
+    }
+}
+@media (max-width: 768px) {
+
+    .vldform {
+        width: 550px;
+        margin: auto;
+    }
+    .login-img{
+      display:
+      none;
+
+    }
+  
+    h2{
+      text-align: center;
+    }
+    .left-content{
+      text-align: center;
+    }
+}
+@media (max-width: 520px) {
+
+    .vldform {
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    h1{
+      font-size: 2.5rem;
+      letter-spacing: -2px;
+    }
+    h2{
+      text-align: center;
+      font-size: 1.6rem;
+      letter-spacing: -1px;
+      margin-bottom: 2rem;
+      strong{
+        font-size: 2.2rem;
+        letter-spacing: -1.2px;
+      }
+    }
+
+}
+
+@media (max-width: 360px) {
+
+    .vldform {
+        width: 100%;
+        padding: 20px 35px;
+    }
+
+    .vldform__signup {
+        text-align: center;
+    }
+
+    .vldform__signup a {
+        margin-left: 14px;
+    }
+}
+
+  

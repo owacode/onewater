@@ -1,0 +1,103 @@
+
+ul{
+  margin: 0;
+}
+a{
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.one-water-logo{
+  width: 160px;
+  filter: brightness(0) invert(1);
+  margin: auto;
+}
+.footer-text{
+  text-align: center;
+  p{
+    width: 80%;
+    margin:auto;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+}
+.footer{
+  padding:2rem;
+  padding-top: 300px;
+  background-image: url(/assets/img/footer-wave.webp);
+  background-size: cover;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+}
+.social-links{
+  padding: 1rem;
+}
+a{
+  margin: 0.5rem;
+  i
+  {
+    font-size: 1.4rem;
+    color: rgb(143, 172, 253);
+transition: color 0.3s ease-in-out;
+
+  }
+  i:hover {
+    color:#fff;
+  }
+
+}
+.site-links a{
+  text-transform: capitalize;
+}
+  ul{
+    list-style: none;
+    padding: 1rem;
+    li{
+      margin-bottom: 0.5rem;
+      a{
+        color: rgb(143, 172, 253);
+transition: color 0.3s ease-in-out;
+      }
+      a:hover{
+        color:#fff;
+
+        font-weight: 500;
+      }
+    }
+  }
+  .contact{
+    li
+    {
+      margin-bottom: 2rem;
+    }
+    h6{
+font-size: 1rem;
+margin: 0.2rem;
+color: white;
+font-weight: 500;
+    }
+    i{
+      margin-right: 1rem;
+      font-size: 1.2rem;
+    }font-size: 0.95rem;
+    a{
+
+    }
+  }
+  @media screen and (max-width:768px){
+    .footer{
+      text-align: center;
+      padding-top: 250px;
+    }
+  }
+  @media screen and (max-width:520px){
+    .footer{
+      padding-top: 150px;
+    }
+  }

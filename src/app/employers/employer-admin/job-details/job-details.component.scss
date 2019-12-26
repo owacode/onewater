@@ -1,0 +1,14 @@
+@import '../../../job-portal/job-desc/job-desc.component.scss';
+
+.job-listing-details{
+    background: transparent;
+    padding: 50px ;
+    margin-top: 0px; 
+}
+
+.job-title-and-info .buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}

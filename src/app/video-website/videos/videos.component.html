@@ -1,0 +1,53 @@
+<!-- <div class="cover-photo">
+  <div class="wave"></div>
+</div> -->
+
+<div class="video-header">
+  <div class="fullscreen-video" id="bgVideo">
+  <video autoplay muted loop id="videobg">
+    <source src="assets/img/video-background.mp4" type="video/mp4">
+  </video>
+  </div>
+  <div class="img1"></div>
+  <div class="img2"></div>
+  <div class="v-overlay"></div>
+    <h2>O-Wow</h2>
+
+  </div>
+
+<div class="container">
+<div class="videos">
+  <h2 class="text-center">
+    All Videos
+  </h2>
+  <ngx-masonry [useImagesLoaded]="true"  [options]="{ transitionDuration: 0 }">
+ <div ngxMasonryItem class="masonry-item" *ngFor="let video of videos; let i = index">
+   <a [routerLink]="['/o-wow/singlevideo/',video._id]">
+   <div class="thumbnail-card">
+     <div class="overlay-2"></div>
+   <div class="thumb-img">
+     <img [src]="video?.image" alt="">
+     <div class="hover-play">
+       <i class="fa fa-play-circle" aria-hidden="true"></i>
+     </div>
+   </div>
+   <div class="thumb-caption">
+     <div class="video-name">
+       <h5>{{video?.title}}</h5>
+     </div>
+     <!-- <div class="channel">
+       {{video.channel}}
+     </div> -->
+     <div class="video-metadata">
+       <div class="row">
+         <div class="col-6"><div class="views">{{video.views}} views</div></div>
+       <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d,M'}}</div></div>
+       </div>
+     </div>
+   </div>
+ </div>
+ </a>
+</div>
+</ngx-masonry>
+</div>
+</div>

@@ -1,0 +1,156 @@
+.cover-photo{
+img{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  bottom: -75px;
+  padding: 0.2rem;
+  border: 2px #777 solid;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+img:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+}
+
+.outer-card{
+  padding: 0.3rem;
+  margin:1rem auto;
+}
+
+.author-stats{
+  margin: 2rem auto;
+}
+
+.author-detail{
+  box-shadow: 0 2px 6px 0 rgba(110, 110, 110, 0.2);
+  padding: 2rem 4rem;
+  margin-top:100px;
+  border-radius: 20px;
+
+h2{
+  text-align: left;
+  margin: 0 0;
+  padding-left: 0;
+}
+  .author-name{
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px #ccc solid;
+  }
+
+  .author-stats{
+    p{
+      font-size: 1rem;
+      letter-spacing: -0.5px;
+      font-weight: 600;
+      margin: auto;
+      color: #666;
+      text-align: center;
+      strong{
+        font-weight: 700;
+        color: #000;
+      }
+    }
+
+img{
+  width:100%;
+  max-width: 50px;
+  margin: 0.5rem 1rem;
+}
+    .col-md-4{
+      text-align: center;
+    }
+
+  }
+.about-author{
+  margin-top: 2rem;
+}
+  .author-contact{
+    .social-media{
+      margin: 2rem 0;
+
+      i{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+        font-weight: 400;
+        height: 50px;
+        width: 50px;
+        margin-right:2rem;
+        border-radius: 50%;
+        border:2px solid #000;
+        color: #000;
+        transition: all 0.3s ease-in-out;
+      }
+      i:hover{
+        border-color: #0e77e1;
+        color: #0e77e1;
+      }
+    }
+  }
+
+}
+.side-block{
+  margin-top: 100px;
+h3{
+  text-align: center;
+  text-transform: capitalize;
+  margin: 2rem 0;
+}
+}
+  @media screen and (max-width:768px){
+    .side-block h3{
+      font-size: 2rem;
+    }
+  }
+  @media screen and (max-width:520px){
+    .cover-photo{
+    height: 30vh;
+  }
+  .side-block h3{
+    font-size: 1.5rem;
+  }
+  .author-detail
+  {
+    h2{
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    p{
+      text-align: justify;
+    }
+    padding: 2rem 1.5rem;
+    .author-name {
+    font-size: 2.6rem;
+    margin: 0.5rem;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+.author-stats{
+  font-size: 1.2rem;
+  font-weight: 700;
+  button{
+    font-size: 1.2rem;
+  }
+}
+
+.author-contact
+{
+  .social-media
+  {text-align: center;
+
+    i {
+    margin: 0.8rem;
+  }
+}
+}
+}
+  }

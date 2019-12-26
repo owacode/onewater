@@ -1,0 +1,46 @@
+@import '../../../job-portal/job-portal.component.scss';
+
+@import '../../../dashboard-style.scss';
+
+.status-btn{
+    padding: 4px 8px;
+    margin-top: 4px;
+    border-radius: 2px;
+}
+
+.dashboard-recent-activity .activity-list {
+    padding: 8px;
+    margin: 1rem 0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 12px 2px #00000012;
+    background: #fff;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    .content{
+        padding: 8px;
+    }
+
+    h5{
+        margin-top: 8px;
+    }
+    img{
+        border-radius: 8px;
+    }
+    .close-activity{
+        margin: 8px auto;
+    }
+    i{
+        font-size: 15px;
+    color: red;
+    margin-right: 1px;
+    }
+}
+
+.flex-btn{
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}

@@ -1,0 +1,308 @@
+@import '../../../dashboard-style.scss';
+
+@import '../../../job-portal/job-portal.component.scss';
+
+h4 {
+    margin-bottom: 2rem !important;
+    font-size: 1.8rem !important;
+    letter-spacing: -0.8px !important;
+    border-bottom: 2px solid #ccc !important;
+    padding-bottom: 1rem !important;
+    text-transform: capitalize !important;
+    font-weight: 600 !important;
+
+    svg {
+      margin-right: 8px !important;
+      font-size: 2rem !important;
+      color: #000 !important;
+      margin-top: -6px;
+    }
+  }
+  .modal-body{
+    text-align: center;
+    button{
+      font-weight: 600;
+      width: 100px;
+      margin: 1rem auto !important;
+      text-align: center;
+    }
+  }
+/*---------------------------------------------
+	Job Post
+---------------------------------------------*/
+
+
+.post-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.03);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.post-container .post-content-wrapper {
+  width: 75%;
+}
+
+.post-container .post-sidebar {
+  width: 25%;
+}
+
+.post-content-wrapper {
+  padding: 20px;
+  background: #ffffff;
+}
+
+
+
+.job-post-form .form-group {
+  margin-bottom: 30px;
+}
+
+.job-post-form .form-group label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.job-post-form .form-group .form-control {
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  outline: none;
+  font-size: 1rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.job-post-form .form-group .form-control:focus {
+  border-bottom-color: #246df8;
+}
+
+.job-post-form .form-group textarea.form-control {
+  height: 100px;
+}
+
+.job-post-form .button {
+  padding: 12px 30px;
+  background: #246df8;
+  color: #ffffff;
+}
+
+.job-post-form .col-form-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.job-post-form .form-group.terms {
+  margin-top: 30px;
+}
+
+.job-post-form .basic-info-input .form-group {
+  position: relative;
+}
+
+.job-post-form .basic-info-input .form-group select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  padding-left: 0.5em;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+@-moz-document url-prefix() {
+  .job-post-form .basic-info-input .form-group select {
+    width: 110%;
+  }
+}
+
+.job-post-form .basic-info-input .form-group select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 black;
+}
+
+.job-post-form .basic-info-input .form-group select::-ms-expand {
+  display: none;
+}
+
+.job-post-form .basic-info-input .form-group i {
+  position: absolute;
+  right: 0;
+  top: 13px;
+  z-index: 5;
+  color: #aaa;
+}
+
+.set-location {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-image: -webkit-gradient(linear, right top, left top, from(#ffffff), to(#f7f9fc));
+  background-image: -webkit-linear-gradient(right, #ffffff, #f7f9fc);
+  background-image: -o-linear-gradient(right, #ffffff, #f7f9fc);
+  background-image: linear-gradient(to left, #ffffff, #f7f9fc);
+  padding: 20px;
+  border-radius: 3px;
+}
+
+.set-location h5 {
+  font-size: 1.4rem;
+
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.set-location .cp-map {
+  height: 180px;
+}
+
+.job-post-form .basic-info-input .mce-tinymce {
+  margin-bottom: 30px;
+}
+
+.package-select {
+  padding-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.package-select .package-select-inputs {
+  width: 210px;
+}
+
+.package-select .payment-method a {
+  padding: 8px 10px;
+  background: #f7f9fc;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-right: 15px;
+  box-shadow: 2px 2px 8px 2px #afc1e25c;
+}
+.payment-method{
+    margin: 2rem 0 1rem;
+}
+.package-select .payment-method a i {
+  margin-right: 7px;
+}
+
+.package-select .payment-method .active {
+    padding: 8px 10px;
+    color: #777;
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 100%;
+    cursor: pointer;
+  background: #246df8;
+  color: #ffffff;
+}
+
+.package-select .form-group {
+  margin-bottom: 15px;
+}
+
+.package-select .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.custom-radio {
+  display: none;
+}
+
+.custom-radio + label {
+  font-weight: normal;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.custom-radio + label .dot {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.custom-radio + label .dot::before {
+  content: "";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  width: 9px;
+  height: 9px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #246df8;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.custom-radio:checked + label .dot::before {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+.custom-radio + label .package-type {
+  display: inline-block;
+  width: 100px;
+}
+
+.job-post-form .form-group.terms {
+  margin-top: 30px;
+}
+
+.job-post-form .form-group.terms label {
+
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.job-post-form .form-group.terms label a {
+  color: #246df8;
+  text-decoration: underline;
+}
+
+.job-post-form textarea{
+    border: none;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.job-post-form textarea:focus{
+    outline: none;
+}

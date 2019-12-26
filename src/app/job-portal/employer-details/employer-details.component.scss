@@ -1,0 +1,241 @@
+@import '../job-portal.component.scss';
+
+/*---------------------------------------------
+	Employer Details
+---------------------------------------------*/
+.company-details {
+  background: #ffffff;
+      padding: 30px;
+      box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.03);
+      border-radius: 15px;
+  }
+
+.company-details .title-and-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.company-details .title-and-info .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.company-details .title-and-info .title .thumb {
+  width: 100px;
+  height: 100px;
+  background: #f9f9f9;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.company-details .title-and-info .title .thumb img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.company-details .title-and-info .title .thumb + .title-body {
+  padding-left: 20px;
+}
+
+.company-details .title-and-info .title .title-body h4 {
+  padding-bottom: 15px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: -2px;
+}
+
+.company-details .title-and-info .title .title-body .info span {
+  font-size: 1.1rem;
+      font-weight: 500;
+      margin-right: 15px;
+      color: #777;
+}
+
+.company-details .title-and-info .title .title-body .info span svg {
+  height: 15px;
+  margin-right: 5px;
+  color: #aaa;
+}
+
+.company-details .title-and-info .download-resume a {
+  text-align: center;
+    border-radius: 3px;
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-right: 1rem;
+    background: #246df8;
+    border-radius: 5px;
+    box-shadow: 5px 5px 14px -1px #eaeaea;
+}
+
+.company-details .title-and-info .download-resume a svg {
+  height: 18px;
+  margin-left: 10px;
+}
+
+.company-details .title-and-info .download-resume a:hover {
+  color: #ffffff;
+  background: #246df8;
+}
+
+.company-details .title-and-info .download-resume .save-btn {
+  text-align: center;
+  text-align: center;
+    border-radius: 3px;
+    color: #6f7484;
+    padding: 8px 16px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-right: 1rem;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 5px 5px 14px -1px #eaeaea;
+}
+
+.company-details .title-and-info .download-resume .save-btn svg {
+  margin-left: 0;
+  margin-right: 7px;
+}
+
+.company-details .title-and-info .download-resume .save-btn:hover {
+  background: transparent;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(247, 249, 252, 0)), to(#f7f9fc));
+  background-image: -webkit-linear-gradient(right, rgba(247, 249, 252, 0), #f7f9fc);
+  background-image: -o-linear-gradient(right, rgba(247, 249, 252, 0), #f7f9fc);
+  background-image: linear-gradient(to left, rgba(247, 249, 252, 0), #f7f9fc);
+  border-color: #ff8fa6;
+  color: #ff8fa6;
+}
+
+.open-job .job-list {
+  padding:20px;
+}
+.open-job .job-list{
+    margin: 1.5rem 0;
+  }
+
+.open-job .job-list .body {
+  padding-left: 0;
+  width: 100%;
+}
+
+.open-job .job-list .body .content h4 {
+  margin-bottom: 0;
+}
+
+.company-details .details-information {
+  border-bottom: 0;
+}
+
+.information-and-contact .information ul li a {
+  color: #246df8;
+}
+
+.company-details .job-location {
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 3px;
+      margin-top: 50px;
+      padding: 30px;
+}
+
+.company-details .job-location h4 {
+  padding-bottom: 20px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.company-details .job-location .cp-map {
+  height: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.job-list .body .more .buttons .button{
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+@media all and (max-width: 991px) {
+  .company-details .title-and-info {
+    display: block;
+  }
+  .company-details .title-and-info .download-resume {
+    margin-top: 40px;
+    text-align: right;
+  }
+  .company-details .title-and-info .download-resume a {
+    margin-bottom: 10px;
+  }
+  .details-information{
+    padding: 10px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .employer .body {
+    display: block;
+  }
+  .employer .body .button-area {
+    margin-top: 20px;
+  }
+  .company-details {
+    padding: 20px;
+  }
+}
+
+@media all and (max-width: 439px) {
+  .employer {
+    display: block;
+  }
+  .employer .thumb + .body {
+    padding-left: 0;
+    margin-top: 15px;
+  }
+  .employer .body {
+    width: 100%;
+  }
+  .company-details .title-and-info .title {
+    display: block;
+  }
+  .company-details .title-and-info .title .thumb + .title-body {
+    padding-left: 0;
+  }
+  .information {
+    padding: 20px;
+  }
+  .information h4 {
+    margin-bottom: 20px;
+  }
+  .container{
+    padding: 0;
+  }
+  .company-details .title-and-info .title .title-body .info span {
+    font-size: 0.9rem;
+  }
+  .company-details .title-and-info .title .title-body h4 {
+    font-size: 2rem;
+  }
+}

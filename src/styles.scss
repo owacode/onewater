@@ -1,0 +1,249 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*-------------------------------------------
+--------------     GLOBAL STYLES-------------
+---------------------------------------------*/
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import './commonstyles/blog-global-styles.scss';
+@import './commonstyles/landing-section-styles.scss';
+@import './commonstyles/quill-editor-styless.scss';
+@import '../node_modules/modularscale-sass/stylesheets/modularscale';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+$modularscale: (
+  380px: (
+    base: 12px,
+    ratio: 1.22,
+  ),
+  480px: (
+    base: 13px,
+    ratio: 1.22,
+  ),
+  768px: (
+    base: 15.4px,
+    ratio: 1.21,
+  ),
+  991px:(
+    base: 16px,
+    ratio: 1.21,
+    ),
+  1200px: (
+    base: 16px,
+    ratio: 1.21,
+  ),
+);
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+/*headings styles*/
+h1{
+  @include ms-respond(font-size,6);
+  font-weight: 700;
+  letter-spacing: -0.1rem;
+}
+h2{
+  @include ms-respond(font-size,4);
+  font-weight: 700;
+  letter-spacing: -0.09rem;
+}
+h3{
+  @include ms-respond(font-size,3);
+  letter-spacing: -0.07rem;
+}
+h4{
+  @include ms-respond(font-size,2);
+  letter-spacing: -0.05rem;
+}
+h5{
+  @include ms-respond(font-size,1);
+  letter-spacing: -0.03rem;
+}
+h6{
+  @include ms-respond(font-size,0);
+  letter-spacing: -0.01rem;
+}
+
+p {
+  @include ms-respond(font-size,0);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  transition: all ease-in-out 0.65s;
+  line-height: 1.75;
+}
+
+section{
+  position: relative;
+  padding:60px 0;
+}
+a {
+  color: #222;
+  text-decoration: none;
+  outline: none !important;
+}
+a:hover {
+  color: #0C7BE2;
+  //color: #000c62;
+  text-decoration: none !important;
+}
+
+ul {
+  padding: 0;
+}
+
+a:visited,
+a:focus {
+  outline: none;
+}
+
+
+
+img {
+  width: 100%;
+}
+
+
+.my-container{
+  padding: 0 4vw;
+}
+
+button {
+  margin: auto;
+  border: 0;
+   border-radius: 10px;
+   font-family: "Montserrat", sans-serif;
+   padding: 10px 15px;
+   color: #777;
+   font-weight: 600;
+   font-size: 0.9rem;
+   width: auto;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px 2px #afc1e25c;
+  background: #fff;
+  transition: all 0.5s ease-in;
+  outline: 0 !important;
+}
+button:hover {
+  color: dodgerblue;
+  box-shadow: 2px 2px 8px 2px #8991a05c;
+}
+.card-shadow{
+  box-shadow: 0 2px 6px 0 rgba(110, 110, 110, 0.2);
+}
+
+.hr{
+background: #ccc;
+margin: 1rem;}
+
+
+.section-head {
+  position: relative;
+  margin-bottom: 4rem;
+  z-index: 10;
+}
+
+.section-head h1 {
+  font-size: 3.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.section-head h1 span {
+  color: #275c84;
+}
+
+.content p {
+  position: relative;
+  color: #101010;
+  font-weight: 600;
+  line-height: 2rem;
+  font-size: 1rem;
+  z-index: 2;
+}
+
+.logout-button{
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  z-index: 1000;
+  background: #ff6060;
+  color: #fff ;
+  transition: all 0.3s ease-in-out;
+}
+.logout-button:hover{
+  color: #ff6060 ;
+  background: #fff ;
+}
+.button {
+  border: 1px solid transparent;
+  outline: none;
+  margin-top: 0;
+
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .section-head {
+    margin: 1.5rem auto 3rem;
+    text-align: center;
+  }
+  section{
+    padding: 45px 0;
+  }
+  .content p {
+    width: 90%;
+    margin: auto;
+    line-height: 1.7rem;
+    text-align: justify;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  section{
+    padding: 20px 0;
+  }
+  button::after {
+    display: none;
+  }
+
+  .section-head {
+    margin-bottom: 3rem 0;
+  }
+
+  .section-head h1 {
+    font-size: 2.4rem;
+  }
+  .scroll-to-btn {
+    display: none;
+  }
+}
+
+@media all and (max-width:360px){
+  p,h6{
+    font-size: 1.05rem;
+  }
+
+}
+

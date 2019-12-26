@@ -1,0 +1,133 @@
+<section id="login">
+  <!-- <div class="wave-bg"></div> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 left-content">
+          <h2>OneWater
+              <strong>Blog</strong>
+          </h2>
+          <p>
+           Be an author on OneWater Blog and share your knowledge and thoughts with the world.
+          </p>
+          <img src="assets/img/author-login.png" alt="" class="login-img">
+        </div>
+        <div class="col-lg-6">
+          <div class="form-box">
+             <form class="vldform vldauth" (submit)="login()" [formGroup]="loginuser" >
+               <h1>author Login</h1>
+
+               <input formControlName="email" class="vldform__textbox" type="text" name="email" placeholder="Email" required>
+               <p style="color: red" *ngIf="loginsubmitted && loginuser.get('email').invalid">Please Enter a Valid Email </p>
+
+               <input formControlName="password" class="vldform__textbox" type="password" name="pass"  placeholder="Password" required>
+               <p style="color: red" *ngIf="loginsubmitted && loginuser.get('password').invalid">Please Enter Password </p>
+
+               <a class="vldform__recoverypassword" (click)="showrecoveryform()">Forgot password?</a>
+               <a href=""></a>
+
+               <input class="vldform__button" type="submit" value="Login">
+               <!-- <button type="submit" class="vldform__button" >Login</button> -->
+               <!-- <div class="social-btn"> <span>or login using </span> <br>
+                 <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
+                 <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
+                 </div> -->
+
+
+             </form>
+             <p class="vldform__signup" id="login-text">New here?
+              <a class="vldform__signuplink" (click)="showregform()">Sign up</a>
+            </p>
+
+             <form class="vldform vldreg" (submit)="register()" [formGroup]="user">
+                 <h1>author registration</h1>
+                 <input formControlName="author_name" class="vldform__textbox" type="text" name="name" placeholder="Author Name" required>
+                 <p style="color: red" *ngIf="registersubmitted && user.get('author_name').invalid">Please Enter a Name </p>
+
+                 <input formControlName="author_email" class="vldform__textbox" type="email" name="email"  placeholder="Author Email" required>
+                 <p style="color: red" *ngIf="registersubmitted && user.get('author_email').invalid">Please Enter a Valid Email </p>
+
+                 <div class="row"><div class="col-md-6"> <input formControlName="password" class="vldform__textbox halfwidth" type="password" name="pass"  placeholder="Password" required>
+                  <p style="color: red" *ngIf="registersubmitted && user.get('password').invalid">Enter Password of Length Minlength Six </p>
+                </div>
+                 <div class="col-md-6"><input formControlName="cpassword" class="vldform__textbox halfwidth" type="password" name="pass2"  placeholder="Confirm Password" required>
+                  <p style="color: red" *ngIf="registersubmitted && user.get('cpassword').invalid">Please Enter Confirm Password </p>
+                </div>
+               </div>
+
+               <input class="vldform__button" type="submit" value="Sign up">
+               <!-- <div class="social-btn"> <span>or signup using </span> <br>
+                   <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
+                   <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
+                   </div> -->
+
+             </form>
+             <p class="vldform__signup" id="signup-text">Already a member ?
+              <a (click)="showauthform()" >Log in</a>
+            </p>
+
+             <form class="vldform vldrecpass">
+               <h1>Password Recovery</h1>
+               <input class="vldform__textbox" type="email" name="email"  placeholder="Email" required>
+               <input class="vldform__button" type="submit" value="Recovery">
+               <br><br>
+               <a (click)="showauthform()">Back to login</a>
+             </form>
+
+</div>
+        </div>
+
+      </div>
+
+    </div>
+</section>
+
+<!-- First Signup Modal -->
+<div class="modal fade" id="myModal" role="dialog" #thismodal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+    <div class="modal-head">
+        <button type="button" class="close" data-dismiss="modal" (click)="closeModal(thismodal)">&times;</button>
+    </div>
+      <div class="modal-body">
+       <img src="assets/img/mail.png
+       " alt="">
+       <h2>Please verify the email by clicking the link you will receive in your inbox.</h2>
+      </div>
+        <button type="button" class="btn btn-default" data-dismiss="modal"  (click)="closeModal(thismodal)">OK</button>
+    </div>
+  </div>
+</div>
+
+<!-- Login before email verification Modal -->
+<div class="modal fade" id="loginModal" role="dialog"  #thismodall>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+      <div class="modal-head">
+          <button type="button" class="close" data-dismiss="modal"  (click)="closeModal(thismodall)">&times;</button>
+      </div>
+        <div class="modal-body">
+         <img src="assets/img/modals/verify-mail.jpg
+         " alt="">
+         <h2>Please verify your Email to login.</h2>
+        </div>
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeModal(thismodall)">OK</button>
+      </div>
+    </div>
+  </div>
+
+
+<div class="modal fade" id="signupModal" role="dialog" #thismodalll>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+      <div class="modal-head">
+          <button type="button" class="close" data-dismiss="modal" (click)="closeModal(thismodalll)">&times;</button>
+      </div>
+        <div class="modal-body">
+         <img src="assets/img/modals/mail-sent.jpg
+         " alt="">
+         <h2>This Email ID is already in use on our platform. Please check your inbox if you have not verified your Email ID</h2>
+        </div>
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeModal(thismodalll)">OK</button>
+      </div>
+    </div>
+  </div>

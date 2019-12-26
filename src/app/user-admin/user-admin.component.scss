@@ -1,0 +1,17 @@
+@import '../dashboard-style.scss';
+@import '../job-portal/job-portal.component.scss';
+
+
+ .option-title{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4d4d4d;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin : 12px 0 6px;
+  padding: 12px 0 ;
+
+  i{
+    margin-right: 8px;
+  }
+ }

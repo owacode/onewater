@@ -1,0 +1,118 @@
+   /*-------------------------------------
+      -------------LANDING  SECTION-----------
+      ----------------------------------------*/
+
+      .landing-section {
+        position: relative;
+        margin-top: -80vh;
+        margin-bottom: 50px;
+        padding: 0 !important;
+        box-sizing: border-box;
+        overflow: hidden;
+        .banner {
+          text-align: left;
+          padding: 2rem;
+          box-sizing: border-box;
+        }
+
+        .landing-text {
+          margin-top: 20%;
+          z-index: 1;
+        }
+         .platform-heading {
+          font-size:4rem;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 400;
+          margin: 1rem;
+          color: #fff;
+          text-align: left;
+          letter-spacing: -0.25rem;
+          border: none;
+          strong{
+            font-weight: 600;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
+        .landing-section {
+          .banner {
+            margin-top: 10vh;
+            text-align: center;
+          }
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        
+
+        .landing-section {
+          .landing-text {
+            margin-top: 10%;
+          }
+
+          .platform-heading {
+            font-size:3.5rem;
+            text-align: center;
+        }
+
+
+        }
+        .cover-photo{
+              height: 25vh;
+        }
+      }
+      @media screen and (max-height: 420px) {
+        .landing-section {
+          .landing-text {
+            margin-top: 10%;
+            text-align: center;
+            h2 {
+              font-size: 2.1rem;
+              strong {
+                font-size: 2.2rem;
+              }
+            }
+          }
+        }
+
+      }
+      @media screen and (max-width: 520px) {
+          
+        .landing-section {
+          min-height: 100vh;
+
+          .landing-blogs {
+            .carousel-inner {
+              margin-top: 5vh;
+            }
+          }
+          .banner {
+            padding: 1rem;
+            width: 100%;
+
+            img {
+              margin: 2rem auto 0;
+            }
+          }
+
+          .landing-text {
+            margin: auto;
+            margin-top: 5vh;
+            transform: translateY(0);
+            padding: 1rem 2rem;
+          }
+
+          .landing-text h2 {
+            font-size: 2.2rem;
+            margin: auto;
+          }
+          .landing-text h2 strong {
+            font-size: 3.7rem;
+          }
+        }
+
+        h2 {
+          text-align: center;
+        }
+      }

@@ -1,0 +1,77 @@
+
+  <div class="container">
+<form  class="dashboard-form" [formGroup]="form" (submit)="submit()">
+
+  <div class="dashboard-section basic-info-input">
+    <h2 class="heading"><i data-feather="plus"></i>Post new blog</h2>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label"> Title</label>
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Title"
+          formControlName="title"
+        />
+      </div>
+    </div>
+
+    <div class="dashboard-section media-inputs">
+   
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Blog Thumbnail</label>
+        <div class="col-sm-9">
+          <div class="input-group image-upload-input">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                  <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
+                <button type="button" (click)="file.click()">Select Image</button>
+              </div>
+            </div>
+            <div class="active">
+              <div class="upload-images">
+                <div class="pic" *ngIf="imagePreview!='' && imagePreview">
+
+                    <img style="width: 120px;" [src]="imagePreview">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+    <div  class="form-group row">
+    <quill-editor [modules]="config" formControlName="data"></quill-editor>
+    </div>
+  </div>
+  <div class="dashboard-section basic-info-input">
+    <div class="form-group row">
+        <button class="button" type="submit" data-toggle="modal" data-target="#blogModal">Save Changes</button>
+    </div>
+  </div>
+</form>
+<!-- <button data-toggle="modal" data-target="#blogModal"> open modal</button> -->
+<h2 class="text-center my-3">Blog Preview</h2>
+<div class="row" style="margin: 50px;">
+  <!-- <h1>How To Become Ridiculously Self-Aware In 20 Minutes</h1><p><img class="" src="http://res.cloudinary.com/paperlouge/image/upload/v1571892472/hhtvqr3e59ozmixbqvlh.jpg"></p><p>Four years ago my sister got me something that would dramatically alter the direction of my life.</p><p><br></p><p>In fact, it was probably the most influential gift I’ve ever received.</p><p><br></p><p>It would help me find my true calling,&nbsp;<a href="https://medium.com/@tomkuegler/how-writing-took-me-from-waiting-tables-to-contributing-at-the-huffington-post-b0402fea2145" rel="noopener noreferrer" target="_blank" style="color: inherit;">become a writer at the Huffington Post</a>, and go on a 5-month road trip across America by myself.</p><p><br></p><p>You know what it was?</p><p><br></p><p>One of these…</p><p><br></p><p><img class="" src="http://res.cloudinary.com/paperlouge/image/upload/v1571892728/gk1fmt0odxin5pijoikg.jpg"></p><p><br></p><p>A journal.</p><p><br></p><p>A freaking journal.</p><p><br></p><p>																														. . .</p><h1>Here’s 4 Life-Changing Benefits Of Daily Journaling</h1><p><span style="color: rgba(0, 0, 0, 0.84);">You’d think that sitting down and putting pen to paper wouldn’t be that life-changing of a practice.</span></p><p><br></p><p>But trust me, without it you wouldn’t be reading this.&nbsp;<a href="https://medium.com/@tomkuegler/what-ive-learned-from-writing-over-500-blog-posts-3258b7cf7068" rel="noopener noreferrer" target="_blank" style="color: inherit;">I wouldn’t have 21,000 followers&nbsp;</a>— heck, I wouldn’t even be on Medium.</p><p><br></p><p>So if journaling helped me build a big audience online, what can it help you do?</p><p><br></p><p>In this article you’ll learn four things..</p><ol><li>Why journaling’s the secret to&nbsp;<strong>not getting angry/upset much</strong>&nbsp;anymore.</li><li>How it can show you&nbsp;<em>why certain strategies work and don’t work</em>.</li><li>How writing&nbsp;<strong>can teach you to be more “present”</strong>&nbsp;in your everyday life.</li><li>How journaling will help you become&nbsp;<em>incredibly self-aware</em>&nbsp;(the MOST IMPORTANT benefit by a long-shot).</li></ol><p><br></p><h1>You’ll Stop Getting Angry And Upset</h1><blockquote><em style="color: rgba(0, 0, 0, 0.84);">I won’t lie, my first month of journaling was basically just me screaming headfirst into a blank book (with my pen).</em></blockquote><p>I was furious at the world.</p><p>Turns out I had a lot of anger/frustration to get out, and it showed.</p><p>Then I started to notice something..<span class="ql-font-serif"><span class="ql-cursor">﻿</span></span></p><p>I didn’t get angry much anymore. I stopped having big showdowns with my friends and actually maintained a mellow sort of mood all the time.</p><p><br></p><p><span style="color: rgba(0, 0, 0, 0.54); background-color: rgb(187, 187, 187);" class="ql-size-huge ql-font-monospace">A few weeks later I realized that journaling was actually helping me get my frustration out before I could direct it at anybody else.</span></p> -->
+  <div [innerHTML]="htmlStr"></div>
+</div>
+</div>
+
+<div class="modal fade" id="blogModal" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+      <div class="modal-head">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        <div class="modal-body">
+         <img src="assets/img/modals/success.svg
+         " alt="" style="width: 35%;">
+         <h2>Blog posted succesfully.</h2>
+        </div>
+          <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+</div>

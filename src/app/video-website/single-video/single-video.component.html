@@ -1,0 +1,82 @@
+ <div class="cover-photo">
+  <div class="wave"></div>
+</div>
+<div class="container">
+  <div class="video-container">
+    <div class="iframe-container ">
+    <iframe width="560" height="315" [src]="safeSrc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-details">
+      <div class="video-name">
+        <h3>
+          {{video?.title}}
+        </h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+           <div class="views">
+            <p>
+              {{video?.views}} views
+            </p>
+          </div></div>
+          <div class="col-md-6">
+            <div class="sharing-options">
+              <span>
+                Share  <i class="fa fa-share" aria-hidden="true"></i>
+              </span>
+             
+              
+               <button><fb-like url="{{ url }}"></fb-like></button>
+              <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
+              <button><linkedin-share url="{{ url }}"></linkedin-share></button>
+              
+            
+            </div>
+          </div>
+      </div>
+
+<div class="v-desc">
+  <h6>
+    About Video:
+  </h6>
+  <p>
+    {{video?.desc}}
+  </p>
+</div>
+
+    </div>
+  </div>
+
+  <div class="related-videos">
+    <h2>
+      You may also like
+    </h2>
+    <owl-carousel [items]="likesvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+      <div class="item" *ngFor="let videoo of likesvideos">
+        <a [routerLink]="['/o-wow/singlevideo/', videoo._id]" title="{{videoo?.title}}">
+        <div class="thumbnail-card card-shadow" >
+        <div class="thumb-img">
+          <img [src]="videoo?.image" alt="">
+          <div class="hover-play">
+            <i class="fa fa-play-circle" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="thumb-caption">
+          <div class="video-name">
+          <a [routerLink]="['/o-wow/singlevideo/', videoo._id]"><h5>{{videoo?.title | slice:0:50}}..</h5></a>
+          </div>
+          
+          <div class="video-metadata">
+            <div class="row">
+              <div class="col-6"><div class="views">{{videoo?.views}} views</div></div>
+            <div class="col-6"><div class="date">{{videoo?.date_added | date:'MMMM d,M'}}</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+        </div>
+        </owl-carousel>
+  </div>
+
+</div>

@@ -1,0 +1,94 @@
+<div
+class="dashboard-content-wrapper dash-tab"
+>
+<div class="row">
+  <div class="col-md-8">
+      <h4 class="title">Job List</h4>
+
+  </div>
+  <div class="col-md-4">
+          <div class="breadcrumb-form">
+          
+              <input type="text" placeholder="Search Jobs" [(ngModel)]="search" (keyup)="onKey($event)">
+              <button><i data-feather="search"></i></button>
+           
+        </div>
+  </div>
+</div>
+
+<div class="manage-job-container dash-tab">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Job Title</th>
+        <th>Applications</th>
+        <th>Deadline</th>
+        <th>Status</th>
+        <th class="action">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="job-items" *ngFor="let job of jobs">
+        <td class="title">
+          <h5>
+            <a [routerLink]="['/employer/job-details', job._id]">{{
+              job.title
+            }}</a>
+          </h5>
+          <div class="info">
+            <span class="office-location"
+              ><a href="#"
+                ><i data-feather="map-pin"></i>{{ job.location }}</a
+              ></span
+            >
+            <span class="job-type full-time"
+              ><a href="#"
+                ><i data-feather="clock"></i>{{ job.job_type }}</a
+              ></span
+            >
+          </div>
+        </td>
+        <td class="application">
+          <a [routerLink]="['/employer/candidate-list']"
+            >{{ job.applicants.length }} Application(s)</a
+          >
+        </td>
+        <td class="deadline">{{ job.deadline | date: "MMMM d, y" }}</td>
+        <td *ngIf="job.status == 'active'" class="status active">Active</td>
+        <td *ngIf="job.status == 'closed'" class="status expired">Expired</td>
+        <td class="action">
+          <a
+            [routerLink]="['/employer/job-details', job._id]"
+            class="preview"
+            title="Preview"
+            ><i class="fa fa-eye"></i>View</a
+          >
+          <a
+            [routerLink]="['/employer/edit-job/',job._id]"
+            class="edit"
+            title="Edit"
+            ><i class="fa fa-pencil"></i>Edit</a
+          >
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination-list text-center">
+    <nav class="navigation pagination">
+      <div class="nav-links">
+        <a class="prev page-numbers" href="#"
+          ><i class="fa fa-angle-left"></i
+        ></a>
+        <a class="page-numbers" href="#">1</a>
+        <span aria-current="page" class="page-numbers current">2</span>
+        <a class="page-numbers" href="#">3</a>
+        <a class="page-numbers" href="#">4</a>
+        <a class="next page-numbers" href="#"
+          ><i class="fa fa-angle-right"></i
+        ></a>
+      </div>
+    </nav>
+  </div>
+</div>
+</div>

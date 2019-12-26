@@ -1,0 +1,88 @@
+
+<div class="cover-photo">
+    <div class="wave"></div>
+</div>
+<div class="profile-container">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="profile-pic">
+        <img src="assets/img/authors/author1.jpg" alt="">
+        <br>
+      <button type="button" name="button" class="tablinks">
+        Change Photo
+      </button>
+      </div>
+      <div class="profile-options">
+        <ul>
+          <li [ngClass]="{'activetab': tab == 'viewprofile'}" (click)="tab = 'viewprofile'">View Profile
+          </li>
+          <li [ngClass]="{'activetab': tab == 'editprofile'}" (click)="tab = 'editprofile'">Edit Profile
+          </li>
+          <li [ngClass]="{'activetab': tab == 'changepassword'}" (click)="tab = 'changepassword'">Change Password
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="profile-box">
+        <div class="container" [ngSwitch]="tab">
+          <div class="view-profile tabcontent" *ngSwitchCase="'viewprofile'">
+            <h1 class="username">Hello User</h1>
+            <div class="about-user">
+              <h2>
+                About
+              </h2>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+            </div>
+          <div class="user-info">
+            <h6>Lives in : <strong>Indore</strong></h6>
+            <h6>Profession : <strong>Student</strong></h6>
+            <h6>Interests : <strong>Art, Tech, Music</strong></h6>
+          </div>
+          </div>
+          <div class="edit-profile tabcontent" *ngSwitchCase="'editprofile'">
+            <h1>Edit Profile</h1>
+            <div class="form-box">
+              <form class="" action="index.html" method="post">
+                <div class="row">
+                  <div class="col-lg-6"><input type="text" placeholder="Username" /></div>
+                  <div class="col-lg-6"> <input type="text" placeholder="Email Address" /></div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-lg-6"><input type="text" placeholder="First Name" /></div>
+                  <div class="col-lg-6"> <input type="text" placeholder="Last Name" /></div>
+                </div>
+                 <textarea placeholder="Bio" ></textarea>
+                 <select>
+                   <option value="">Male</option>
+                   <option value="">Female</option>
+                 </select>
+                 <input type="text" placeholder="Facebook Profile URL" />
+                 <input type="text" placeholder="Twitter Profile URL" />
+                 <input type="text" placeholder="Google+ Profile URL" />
+                 <input type="text" placeholder="LinkedIn Profile URL" />
+                 <button type="Submit" name="button">Save</button>
+              </form>
+            </div>
+          </div>
+          <div class="change-password tabcontent" *ngSwitchCase="'changepassword'">
+            <h1>Change Password</h1>
+            <form class="" action="index.html" method="post">
+              <input type="password" placeholder="Old Password" />
+                <input type="password" placeholder="New Password" />
+                  <input type="password" placeholder="Confirm New Password" />
+              <button type="submit" name="button">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

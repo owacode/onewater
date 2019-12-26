@@ -1,0 +1,112 @@
+<div class="cover-photo">
+    <div class="wave"></div>
+</div>
+
+
+<!-- Company Details -->
+<div class="padding-top-60 section-padding-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="company-details">
+          <div class="title-and-info">
+            <div class="title">
+              <div class="thumb">
+                <img src={{company?.company_logo}} class="img-fluid" alt="">
+              </div>
+              <div class="title-body">
+                <h4>{{company?.company_name}}</h4>
+                <div class="info">
+                  <span class="company-type"><i data-feather="briefcase"></i>{{company?.working_area}}</span>
+                  <span class="office-location"><i data-feather="map-pin"></i>{{company?.company_address}}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="details-information padding-top-60">
+            <div class="row">
+              <div class="col-xl-7 col-lg-8">
+                <div class="about-details details-section">
+                  <h4><i data-feather="align-left"></i>About Us</h4>
+                  <p>{{company?.company_description}}</p>
+                </div>
+                  <div class="open-job details-section" id="openjobs">
+                    <h4><i data-feather="check-circle"></i>Open Job</h4>
+                    <div class="job-list" *ngFor="let job of companyjobs">
+                      <div class="body">
+                        <div class="content">
+                          <h4><a [routerLink]="['/onewaterjobs/jobdesc/' ,job._id]" >{{job?.title}} </a></h4>
+                          <div class="info">
+                            <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{job?.location}}</a></span>
+                            <span class="job-type temporary"><a href="#"><i data-feather="clock"></i>{{job?.job_type}}</a></span>
+                          </div>
+                        </div>
+                        <div class="more">
+                          <div class="buttons">
+                            <a [routerLink]="['/onewaterjobs/jobdesc/' ,job._id]"  class="button">Apply Now</a>
+                          </div>
+                          <p class="deadline">{{job?.deadline | date:'MMM d, y'}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 offset-xl-1 col-lg-4">
+                  <div class="information-and-contact">
+                    <div class="information">
+                      <h4>Information</h4>
+                      <ul>
+                        <li><span>Category:</span>Digital Solutions</li>
+                        <li><span>Location:</span> {{company?.company_address}}</li>
+                        <li><span>Hotline:</span> {{company?.mobile_no}}</li>
+                        <li><span>Email:</span> {{company?.email}}</li>
+
+                        <li><span>Website:</span> <a href="#">{{company?.company_website}}</a></li>
+                      </ul>
+                    </div>
+                    <div class="buttons">
+                      <a href="#" class="button contact-button" data-toggle="modal" data-target="#exampleModal">Contact Us</a>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade contact-form-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <h4><i data-feather="edit"></i>Contact Us</h4>
+                            <form action="#">
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                              </div>
+                              <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                              </div>
+                              <div class="form-group">
+                                <textarea class="form-control" placeholder="Your Message"></textarea>
+                              </div>
+                              <button class="button">Submit</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="share-job-post">
+                    <span class="share">Social Profile:</span>
+                    <a href={{company.facebook}}><i class="fa fa-facebook"></i></a>
+                    <a href={{company.twitter}}><i class="fa fa-twitter"></i></a>
+                    <a href={{company.linkedIn}}><i class="fa fa-linkedin"></i></a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Company Details End -->

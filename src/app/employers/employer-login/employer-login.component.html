@@ -1,0 +1,88 @@
+<section id="login">
+  <!-- <div class="wave-bg"></div> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 left-content">
+          <h2>OneWater
+              <strong>Jobs</strong>
+          </h2>
+          <p>
+            Be an employer on OneWater Jobs and hire the most capable candidate through single click.
+          </p>
+          <img src="assets/img/jobs/login-img.png" alt="" class="login-img">
+        </div>
+        <div class="col-lg-6">
+          <div class="form-box">
+             <form class="vldform vldauth" (submit)="login()" [formGroup]="loginuser">
+               <h1>employer Login</h1>
+               <input formControlName="email" class="vldform__textbox" type="text" name="email" placeholder="Email" required>
+               <input formControlName="password" class="vldform__textbox" type="password" name="pass"  placeholder="Password" required>
+               <a class="vldform__recoverypassword" (click)="showrecoveryform()">Forgot password?</a>
+               <!-- <a href=""></a> -->
+               <button type="submit" class="vldform__button" >Login</button>
+               <!-- <div class="social-btn"> <span>or login using </span> <br>
+                 <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
+                 <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
+                 </div> -->
+
+
+             </form>
+             <p class="vldform__signup" id="login-text">New here?
+              <a class="vldform__signuplink" (click)="showregform()">Sign up</a>
+            </p>
+
+             <form class="vldform vldreg" (submit)="register()" [formGroup]="user">
+                 <h1>employer registration</h1>
+                 <input formControlName="company_name" class="vldform__textbox" type="text" name="name" placeholder="Company Name" required>
+                 <input formControlName="company_email" class="vldform__textbox" type="email" name="email"  placeholder="Company Email" required>
+                 <div class="row"><div class="col-md-6"> <input formControlName="password" class="vldform__textbox halfwidth" type="password" name="pass"  placeholder="Password" required></div>
+                 <div class="col-md-6"><input formControlName="cpassword" class="vldform__textbox halfwidth" type="password" name="pass2"  placeholder="Confirm Password" required></div>
+               </div>
+
+               <input class="vldform__button" data-toggle="modal" data-target="#myModal" type="submit" value="Sign up">
+                 <!-- <div class="social-btn"> <span>or signup using </span> <br>
+                   <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
+                   <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
+                   </div> -->
+
+             </form>
+             <p class="vldform__signup" id="signup-text">Already a member ?
+              <a (click)="showauthform()" >Log in</a>
+            </p>
+
+             <form class="vldform vldrecpass">
+               <h1>Password Recovery</h1>
+               <input class="vldform__textbox" type="email" name="email"  placeholder="Email" required>
+               <input class="vldform__button" type="submit" value="Recovery">
+               <br><br>
+               <a (click)="showauthform()">Back to login</a>
+             </form>
+
+</div>
+        </div>
+
+      </div>
+
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+    <div class="modal-head">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+      <div class="modal-body">
+
+
+       <img src="assets/img/mail.png
+       " alt="">
+       <h2>Please verify the email by clicking the link you will receive in your inbox.</h2>
+      </div>
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+
+    </div>
+  </div>
+</div>

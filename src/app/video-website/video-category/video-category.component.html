@@ -1,0 +1,109 @@
+<div class="category-wrap">
+    <div class="container">
+    <div class="category-head">
+      <h1> {{category}}
+      </h1>
+    </div>
+    <section class="top-videos">
+        <div class="">
+            <div class="row">
+                <div class="col-lg-8 ">
+                    <div class="vod">
+                    <a [routerLink]="['/o-wow/singlevideo/',likesvideos?._id]" title="{{likesvideos?.title}}">
+                        <div class="thumbnail-card card-shadow">
+                        <div class="thumb-img">
+                          <img [src]="likesvideos?.image" alt="">
+                          <div class="hover-play">
+                            <i class="fa fa-play-circle" aria-hidden="true"></i>
+                          </div>
+                        </div>
+                      </div>
+                      </a>
+                      <a [routerLink]="['/o-wow/singlevideo/',likesvideos?._id]" class="hover-black">
+                        <div class="thumb-caption-big">
+                            <div class="video-name">
+                              <h3>{{likesvideos?.title}}</h3>
+                            </div>
+                            <h6 class="video-desc">
+                                {{likesvideos?.desc}}
+                            </h6>
+                            <div class="video-metadata">
+                              <div class="row">
+                                <div class="col-6"><div class="views">{{likesvideos?.views}} views</div></div>
+                              <div class="col-6 text-right"><div class="date">{{likesvideos?.date_added | date:'MMMM d, y'}}</div></div>
+                              </div>
+                            </div>
+                          </div>
+                      </a>
+
+                      </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar-videos">
+                        <div class="thumbnail-card card-shadow" *ngFor="let video of featuredvideos">
+                            <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+                          <div class="thumb-img">
+                            <img [src]="video?.image" alt="">
+                            <div class="hover-play">
+                              <i class="fa fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                          </div>
+                          <div class="thumb-caption">
+                            <div class="video-name">
+                              <h3>{{video?.title | slice:0:45}}..</h3>
+                            </div>
+                            <div class="video-metadata">
+                              <div class="row">
+                                <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                              <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section class="video-section all-videos">
+            <section class="">
+                <h2 class="text-center">More videos from Water</h2>
+
+              <div class="row">
+
+                    <div class="col-lg-4 col-md-6" *ngFor="let video of latestvideos">
+                      <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+                          <div class="thumbnail-card card-shadow">
+                              <div class="thumb-img">
+                                <img [src]="video.image" alt="">
+                                <div class="hover-play">
+                                  <i class="fa fa-play-circle" aria-hidden="true"></i>
+                                </div>
+                              </div>
+                              <div class="thumb-caption">
+                                <div class="video-name">
+                                  <h5>{{video?.title | slice:0:45}}..</h5>
+                                </div>
+                                <div class="video-metadata">
+                                  <div class="row">
+                                    <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                                  <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                      </a>
+                      </div>
+
+                      <div class="d-flex justify-content-end mt-2">
+                        <a [routerLink]="['/o-wow/video-category']">
+
+                        </a>
+                      </div>
+                </div>
+            </section>
+            </section>
+    </div>
+    </div>

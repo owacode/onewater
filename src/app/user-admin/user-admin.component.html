@@ -1,0 +1,133 @@
+<div class="filter-btn">
+  <a class="button"><i data-feather="list"></i> Options</a>
+</div>
+<div class=" no-gliters">
+  <div class="row no-gliters">
+    <div class="col">
+      <div class="dashboard-container">
+      <div class="dashboard-tabs-wrap">
+
+          <router-outlet></router-outlet>
+      </div>
+        <div class="dashboard-sidebar">
+          <div class="logo">
+            <img src="assets/img/ow-logo1.png" alt="" />
+          </div>
+          <div class="sidebar-header">
+            <h4>User Dashboard</h4>
+          </div>
+          <div class="company-info">
+            <div class="thumb">
+              <img
+                src="assets/img/jobs/dashboard/images/company-logo.png"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+            <div class="company-body">
+              <h5>Degoin</h5>
+              <span>@username</span>
+            </div>
+          </div>
+             <!--profile completeness circle-->
+    <!-- <div id="activeBorder" class="active-border">
+        <div id="circle" class="circle">
+            <span class="prec" id="prec">0%</span>
+        </div>
+      </div>
+   <p style="font-size:0.9rem;margin:1rem;text-align:center;color:#777">
+     50% profile completed.
+   </p> -->
+
+          <div class="dashboard-menu">
+            <ul>
+              <li routerLinkActive="activetab">
+                <i class="fa fa-home"></i
+                ><a [routerLink]="['./']">Platforms</a>
+              </li>
+
+               <li routerLinkActive="activetab">
+                  <i class="fa fa-plus-square"></i
+                  ><a [routerLink]="['/candidate-admin']">Candidate Dashboard</a>
+                </li>
+
+                <li routerLinkActive="activetab">
+                  <i class="fa fa-plus-square"></i
+                  ><a data-toggle="modal" data-target="#exampleModal">Make Payment</a>
+                </li>
+            </ul>
+
+            <ul class="delete">
+              <li>
+                <i class="fa fa-power-off"></i
+                ><a routerLink="/login">Logout</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Profile Modal -->
+<div
+  class="modal fade modal-delete"
+  id="modal-delete"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h4><i data-feather="trash-2"></i>Delete Account</h4>
+        <p>
+          Are you sure! You want to delete your profile. This can't be undone!
+        </p>
+        <form action="#">
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Enter password"
+            />
+          </div>
+          <div class="buttons">
+            <button class="delete-button">Save Update</button>
+            <button class="">Cancel</button>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" checked="" />
+            <label class="form-check-label"
+              >You accepts our <a href="#">Terms and Conditions</a> and
+              <a href="#">Privacy Policy</a></label
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
