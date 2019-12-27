@@ -63,7 +63,7 @@
                             <p>
                                 {{bannerblogs[1].author}}
                             </p>
-                          
+
                           </div>
                         </div>
                       </div>
@@ -87,7 +87,7 @@
                             <p>
                                 {{bannerblogs[2].author}}
                             </p>
-                           
+
                           </div>
                         </div>
                       </div>
@@ -176,7 +176,7 @@
                 <div class="author">
                   {{ blog?.date_approved | date: "MMMM d, y" }}
                 </div>
-                <div class="likes"><i class="fa fa-heart"></i>79 likes</div>
+                <div class="likes"><i class="fa fa-heart"></i>{{ blog?.likecount}} likes</div>
                 <div class="read">
                   {{blog?.read_time}} mins read
                 </div>
@@ -218,7 +218,7 @@
                         </h4>
                       </a>
                       <div class="blog-category">
-    
+
                         <p class="text-white">
                           {{item.sub_category | titlecase}}
                         </p>
@@ -233,7 +233,7 @@
                       <div class="row card-btn">
                         <div class="col-6 col-lg-6 col-sm-4">
                           <div class="like-btn">
-                                <i class="fa fa-heart"></i> {{ item.likes.length }}
+                                <i class="fa fa-heart"></i> {{ item?.likecount}}
                           </div>
                         </div>
                         <div class="col-6 col-lg-6 col-sm-4">
@@ -246,9 +246,9 @@
                   </div>
                 </a>
               </div>
-    
+
             </ngx-masonry>
-    
+
         </div>
     </div>
     <div class="col-lg-3 no-gutter order-first">
@@ -285,7 +285,7 @@
                         </div>
                       </div>
                     </div>
-      
+
                 </div>
               </div>
             </div>

@@ -32,10 +32,10 @@
             <tweet url={{url}} text={{url}}></tweet>
         </li>
         <li class="facebook">
-          
+
         </li>
         <li class="googleplus">
-         
+
         </li>
       </ul>
     </div> -->
@@ -45,9 +45,16 @@
           </p>
           <div class="di" [innerHtml]="blog?.desc"></div>
           <div class="blog-options">
-            <div class="like-btn">
+            <div class="like-btn"  *ngIf="!liked">
               <h6>Like :</h6>
-              <a>
+              <a (click)="likeblog()">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </a>
+              <span>liked!</span>
+            </div>
+            <div class="like-btn" *ngIf="liked">
+              <h6>Liked</h6>
+              <a class="press">
                 <i class="fa fa-heart" aria-hidden="true"></i>
               </a>
               <span>liked!</span>

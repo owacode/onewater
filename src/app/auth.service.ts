@@ -4,6 +4,7 @@ import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
 import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,14 @@ export class AuthService {
   picture;
   nickname;
   name;
+  user_id;
+
+  private userAuthStatus=new Subject<{status:boolean}>();
 
   constructor(){}
+
+  isUserAuthenticated(){
+    return this.isLoggedIn;
+}
+
 }

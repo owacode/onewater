@@ -5,6 +5,7 @@
 }
 
 .hero-section{
+    background: #fff;
     .heading {
         h1{
             text-align: right;
@@ -12,6 +13,7 @@
         p{
             float: right;
             text-align: right;
+            max-width: 420px;
         }
     }
 }
@@ -22,5 +24,25 @@
 }
 
 .feature-middle{
-   transform: translateY(-50%);
+   transform: translateY(-65%);
+}
+
+.vision-section{
+    background: linear-gradient(180deg, #092b86 2%, #17399741 71%, #2044a4 ), url(/assets/img/landing/owx-vision-bg.png);
+    background-size: contain;
+}
+
+.features-section {
+    background: linear-gradient(180deg, #2044a4  2%, #173997b5 80%, #092b86fa), url(/assets/img/landing/owx-feature-bg.jpg);
+    background-position: top center;
+    background-position: top left;
+    background-size: cover;
+}
+
+/*bg blocks*/
+.block-2{
+    background: linear-gradient(90deg, #5b98ff 1%, #125da85e 100%);
+}
+.block-7{
+    background: linear-gradient(180deg, #125da85e 1%, #4b80da 100%);
 }

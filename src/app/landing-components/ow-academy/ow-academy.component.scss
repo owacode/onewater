@@ -3,6 +3,7 @@
 
 section{
     color: #092b86;
+    position: relative;
   }
 
   h1,h2{
@@ -17,7 +18,10 @@ section{
   }
 
   .hero-section{
-    background: #fff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.58) 17%, rgba(255, 255, 255, 0.89) 60% ,#fff 100%), url(/assets/img/landing/academy-hero-overlay.jpg);
+    background-position: left;
+    background-size: cover;
+
       .heading{
         h1{
             font-size: 3.5rem;
@@ -50,19 +54,28 @@ section{
       }
       
   }
-  .curved-border {
-    background: #092b86;
-      height: 50vh;
-      width: 150%;
-      margin-left: -25%;
-      border-radius: 100%;
-      margin-bottom: -250px;
-      margin-top: 60px;
+  .wave-bg-inv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotateX(180deg);
   }
+.wave-bg{
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ 
+}
     .vision-section {
-        background: #092b86;
-        margin-bottom: 0;
-        padding-bottom: 100px;
+      background: linear-gradient(180deg, #092b86 2%, #173997c4 71%, #2145a7), url(/assets/img/landing/academy-vision-bg.jpg);
+      background-size: contain;
+      background-position: right center;
+      margin-bottom: 0;
+      padding-bottom: 100px;
+      margin-top: 70px;
+      padding-top: 150px;
 
         .content{
             text-align: center;
@@ -72,9 +85,13 @@ section{
         }
     }
   .features-section {
-    background: #092b86;
+    background: linear-gradient(180deg, #2145a7 2%, #173997c4 80%, #092b86), url(/assets/img/landing/academy-feature-bg.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-top: 0;
     padding-top: 20px;
+    padding-bottom: 150px;
   }
 
   .drop-img{
@@ -113,10 +130,7 @@ section{
       }
   }
 
-  .curved-border-inv{
-      margin-bottom: 0;
-      margin-top: -250px;
-  }
+
   .login-text
 {
     text-align: center;
@@ -128,7 +142,35 @@ section{
 
 }
 
-
 .login-text a:hover{
     text-decoration: underline !important;
+}
+
+/*bg blocks*/
+.block-1 {
+  width: 700px;
+  height: 654px;
+}
+
+.block-2{
+  background: linear-gradient(90deg, #0b347a 1%, #125da85e 100%);
+  top:45vh;
+  left: -35%;
+}
+
+.block-7{
+  width: 450px;
+  height: 450px;
+  top: 71%;
+  border-radius: 70px;
+  right: -18%;
+  opacity: 0.8;
+  z-index: 2;
+  background: linear-gradient(180deg, #125da85e 1%, #0b347a 100%);
+}
+
+.donate-block-2{
+  right: -15%;
+  left: auto;
+  top: -70%;
 }

@@ -5,6 +5,7 @@ import { LandingPageComponent } from './landing-components/landing-page/landing-
 import { BlogWebsiteComponent } from './blog-website/blog-website.component';
 import { JobPortalComponent } from './job-portal/job-portal.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
+import { Authguard } from './Authguard/authguard';
 
 const routes: Routes = [
 
@@ -61,7 +62,8 @@ const routes: Routes = [
       },
       {
         path: 'blogpost/:id',
-        loadChildren: './blog-website/blog-post/blog-post.module#BlogPostModule'
+        loadChildren: './blog-website/blog-post/blog-post.module#BlogPostModule',
+        canActivate:[Authguard]
       },
       {
         path: 'authorprofile/:id',
@@ -201,6 +203,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    Authguard
+  ],
 })
 export class AppRoutingModule { }
