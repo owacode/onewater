@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
         console.log(tokens, "mmmmmm token");
         console.log(tokens[0],'tokeeeen')
         this.auth.access_token = tokens[0].split("=")[1];
-        this.auth.id_token = tokens[3].split("=")[1];
+        this.auth.id_token = tokens[4].split("=")[1];
         console.log(this.auth.id_token, this.auth.access_token, "dwdjkwbwjkb");
         this.createCookie("access_token", this.auth.access_token);
         this.createCookie("id_token", this.auth.id_token);
