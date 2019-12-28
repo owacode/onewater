@@ -3,72 +3,68 @@ class="dashboard-content-wrapper dash-tab"
 >
   <div class="platforms" >
     <h1 class="ow-head">
-      Welcome to OneWater
+      OneWater Digital Platform
     </h1>
-    <h2>
+    <!-- <h2>
       Access all our platforms from one place.
-    </h2>
-    <div class="row jus-center" >
-      <div class="col-xs-12 col">
-         <a [routerLink]="['/onewaterblog']">
-        <div class="platform-card">
-
-              <img src="assets/img/icons/blog.svg" alt="">
-
-              <p>
-                OneWater Blog
-              </p>
-            </div>
+    </h2> -->
+    <div class="platform-wrap">
+      <h2 class="sub-head">
+        Platforms
+      </h2>
+      <div class="row justify-content-center" >
+        <div class="col-md-3">
+          <a href="https://onewateracademy.herokuapp.com" target="_blank">
+          <div class="platform-card">
+                <img src="assets/img/icons/laptop.svg" alt="">
+                <p>
+                  OneWater Academy
+                </p>
+              </div>
           </a>
       </div>
-
-  <div class="col-xs-12 col">
-    <a [routerLink]="['/onevideo']">
-    <div class="platform-card">
-
-          <img src="assets/img/icons/video.svg" alt="">
-
-
-          <p>
-            O-Wow
-          </p>
-          </div>
-      </a>
-  </div>
-
-<div class="col-xs-12 col">
-    <a href="https://onewateracademy.herokuapp.com" target="_blank">
-    <div class="platform-card">
-          <img src="assets/img/icons/laptop.svg" alt="">
-          <p>
-            OneWater Academy
-          </p>
+          <div class="col-md-3">
+          <a href="#">
+          <div class="platform-card">
+                <img src="assets/img/icons/mentor.svg" alt="">
+                <p>
+                 OWXchange
+                </p>
+              </div>
+            </a>
         </div>
-    </a>
-</div>
-    <div class="col-xs-12 col">
-    <a [routerLink]="['/onewaterjobs']">
-    <div class="platform-card">
-
-          <img src="assets/img/icons/job.svg" alt="">
-
-
-          <p>
-            OneWater Jobs
-          </p>
       </div>
-      </a>
-</div>
-    <div class="col-xs-12 col">
-    <a href="#">
-    <div class="platform-card">
-          <img src="assets/img/icons/mentor.svg" alt="">
-          <p>
-            Mentor Mentee
-          </p>
+        <div class="row justify-content-center" >
+        <div class="col-md-3">
+           <a [routerLink]="['/onewaterblog']">
+          <div class="platform-card">
+  
+                <img src="assets/img/icons/blog.svg" alt="">
+  
+                <p>
+                  OneWater Blog
+                </p>
+              </div>
+            </a>
         </div>
-      </a>
-  </div>
+  
+    <div class="col-md-3">
+      <a [routerLink]="['/onevideo']">
+      <div class="platform-card">
+  
+            <img src="assets/img/icons/video.svg" alt="">
+  
+  
+            <p>
+              O-Wow
+            </p>
+            </div>
+        </a>
     </div>
+  
+  
+      </div>
+    </div>
+   
       </div>
 </div>

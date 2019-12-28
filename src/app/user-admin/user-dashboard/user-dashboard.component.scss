@@ -5,34 +5,30 @@
   
   .jus-center{justify-content: center;}
   .ow-head{
+    color: rgba(0, 0, 0, 0.23);
+    border: none;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.1rem;
+    text-align: center;
+  }
+  .platform-wrap{
+    margin: 5rem 0;
+  }
+  .sub-head{
     color: #000;
-        border: none;
-        font-size: 2.5rem;
-        font-weight: 600;
-        letter-spacing: -2px;
-        text-align: center;
-        margin-top: 10vh;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
-  .platforms{
-    h2{
-      width: 75%;
-      border: none;
-      font-size: 1.2rem;
-      color: #888;
-      font-weight: 600;
-      letter-spacing: -1px;
-      text-align: center;
-      margin: auto;
-    }
-  }
+ 
   .platform-card{
     padding: 0.5rem 1rem;
       /* box-shadow: 8px 8px 17px -2px rgba(0, 0, 0, 0.12); */
-      margin-top: 1rem;
+      margin-bottom: 1.5rem;
       border-radius: 15px;
-      min-height: 220px;
-      min-width: 150px;
-      border: 1.5px solid #e2e2e2;
+      border: 1.5px solid transparent;
+      box-shadow: 1px 1px 14px -1px #e4e5e662;
+      background-color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
