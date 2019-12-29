@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
   ) {
     var hash = window.location.hash;
     var localcookie = this.readCookie("id_token");
+    console.log(localcookie,'localcookie')
     let decodedtoken;
     if (hash || localcookie != "null") {
       if (hash) {
@@ -40,18 +41,18 @@ export class AppComponent implements OnInit {
         let fetch_token = hash.split("#");
 
         let tokens = fetch_token[1].split("&");
-        console.log(tokens, "mmmmmm token");
-        console.log(tokens[0],'tokeeeen')
+        // console.log(tokens, "mmmmmm token");
+        // console.log(tokens[0],'tokeeeen')
         this.auth.access_token = tokens[0].split("=")[1];
         this.auth.id_token = tokens[4].split("=")[1];
         console.log(this.auth.id_token, this.auth.access_token, "dwdjkwbwjkb");
         this.createCookie("access_token", this.auth.access_token);
         this.createCookie("id_token", this.auth.id_token);
-        console.log(this.auth.id_token, "fefkenfkenfk");
-        console.log(
-          this.getDecodedAccessToken(this.auth.id_token),
-          "decoded token"
-        );
+        // console.log(this.auth.id_token, "fefkenfkenfk");
+        // console.log(
+        //   this.getDecodedAccessToken(this.auth.id_token),
+        //   "decoded token"
+        // );
 
         decodedtoken = this.getDecodedAccessToken(this.auth.id_token);
         console.table(decodedtoken);
@@ -74,19 +75,19 @@ export class AppComponent implements OnInit {
         this.auth.user_id=this.readCookie("user_id")
       }
 
-      console.log(
-        this.auth.access_token,
-        "!!",
-        this.auth.id_token,
-        "!!",
-        this.auth.name,
-        "!!",
-        this.auth.nickname,
-        "!!",
-        this.auth.picture,
-        "!!id:",
-        this.auth.user_id
-      );
+      // console.log(
+      //   this.auth.access_token,
+      //   "!!",
+      //   this.auth.id_token,
+      //   "!!",
+      //   this.auth.name,
+      //   "!!",
+      //   this.auth.nickname,
+      //   "!!",
+      //   this.auth.picture,
+      //   "!!id:",
+      //   this.auth.user_id
+      // );
     }
 
     // this.blogauth.checkLocalStorage();
