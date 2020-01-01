@@ -24,7 +24,7 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <div class="landing-card">
-                        <div class="landing-img-blog">
+                        <div class="landing-blog-img">
                           <img src={{bannerblogs[0].image}} alt="" />
                         </div>
                         <div class="blog-caption">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="carousel-item ">
                       <div class="landing-card">
-                        <div class="landing-img-blog">
+                        <div class="landing-blog-img">
                           <img src={{bannerblogs[1].image}} alt="" />
                         </div>
                         <div class="blog-caption">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="carousel-item">
                       <div class="landing-card">
-                        <div class="landing-img-blog">
+                        <div class="landing-blog-img">
                           <img src={{bannerblogs[2].image}} alt="" />
                         </div>
                         <div class="blog-caption">
@@ -193,7 +193,7 @@
 </div> -->
 <div class="wrapper container-fluid">
   <div class="row no-gutter">
-    <div class="col-lg-9 no-gutter order-xl-first ">
+    <div class="col-lg-9 no-gutter order-lg-first ">
         <div class="left-section">
 
             <h2>Latest Posts</h2>
@@ -233,7 +233,7 @@
                       <div class="row card-btn">
                         <div class="col-6 col-lg-6 col-sm-4">
                           <div class="like-btn">
-                                <i class="fa fa-heart"></i> {{ item?.likecount}}
+                            {{ item?.likecount}}  <i class="fa fa-heart"></i>
                           </div>
                         </div>
                         <div class="col-6 col-lg-6 col-sm-4">

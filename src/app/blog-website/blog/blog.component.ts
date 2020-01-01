@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 declare var $: any;
-declare var ScrollMagic : any;
-declare var TimelineMax : any;
 
 @Component({
   selector: 'app-blog',
@@ -230,10 +228,7 @@ export class BlogComponent implements OnInit {
         items: 2,
         stagePadding: 50
       },
-      1200: {
-        items: 3,
-      },
-      1500: {
+     1000: {
         items: 3,
       }
     }
@@ -279,61 +274,6 @@ export class BlogComponent implements OnInit {
   constructor(public http: HttpClient) { }
 
   ngOnInit() {  
-  //   let el = document.getElementById('sidebar');
-  //   let container = document.getElementById('wrapper');
-  //   let extraHeight = $(window).height() * 0.8;
-  //   let windowHeight = $(window).height();
-  //   let stickyTop = $(container).offset().top + extraHeight + 260;
-  //   let debounce_timer;
-  //   let windowTop = $(window).scrollTop();
-  //   console.log(windowTop,stickyTop);
-  
-  //   $(window).on("scroll", function () {
-  //     if(debounce_timer) {
-  //       window.clearTimeout(debounce_timer);
-  //      }
-  
-  //    debounce_timer = window.setTimeout(function() {
-  //       // run your actual function here
-  //     let limit = $('.footer').offset().top + extraHeight - 530;
-  //     if(windowTop < stickyTop) {
-  //       $(el).removeClass('affix');
-  //     }
-  //     if (windowTop > stickyTop) {
-  //       $(el).addClass('affix');
-  //     }
-  //     if (windowTop + windowHeight > limit) {
-  //       $(el).removeClass('affix');
-  //       $(el).addClass('abs');
-  //     }
-  //     else {
-  //       $(el).removeClass('abs');
-  //     }
-  //       console.log('Fire');
-  // }, 10)
-  // });
-  
-
-    // var container =  document.getElementById("wrapper");
-    // function getHeight(){
-    //   var scrollHeight = $(container).height();
-    //  // console.log(scrollHeight);
-    //   return scrollHeight;
-    // }
-    // var controller = new ScrollMagic.Controller({
-    // });
-    // var scene1 = new ScrollMagic.Scene({
-    //   triggerElement:'.wrapper',
-    //   triggerHook:0.12,
-      
-    // })
-    // .duration(getHeight)
-    // //.setPin("#sidebar")
-    // .setClassToggle('#sidebar', 'affix')
-    // .addIndicators()
-    // .refresh(getHeight())
-    // .addTo(controller);
-
 
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/approveblogs')
       .subscribe(result => {

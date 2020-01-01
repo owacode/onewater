@@ -19,12 +19,16 @@ body {
 }
 
 $modularscale: (
+  320px: (
+    base: 11px,
+    ratio: 1.2,
+  ),
   380px: (
-    base: 12px,
+    base: 14px,
     ratio: 1.22,
   ),
   480px: (
-    base: 13px,
+    base: 14px,
     ratio: 1.22,
   ),
   768px: (
@@ -242,7 +246,7 @@ margin: 1rem;}
 
 @media all and (max-width:360px){
   p,h6{
-    font-size: 1.05rem;
+    @include ms-respond(font-size,0);
   }
 
 }

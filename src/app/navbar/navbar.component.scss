@@ -10,7 +10,7 @@
 .slide-out-mobile{
 	transform: translateX(0%) !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1124px) {
 
 	.hamburger{
 		display: block !important;
@@ -260,7 +260,7 @@ header {
 
   /*-----------NAVBAR RESPONSIVE STYING-------------*/
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1124px) {
     .navbar .menu {
       width: 100%;
       min-height: 100vh;
@@ -358,4 +358,14 @@ header {
     font-size: 2.7rem;
     text-align: center;
   }
+}
+
+@media screen and (max-width: 360px){
+  header .navbar-on-scroll {
+    height: 50px;
+}
+header .navbar-on-scroll .logo-wrap {
+  height: 50px;
+  width: 70px;
+}
 }

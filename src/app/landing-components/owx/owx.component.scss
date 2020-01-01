@@ -20,7 +20,9 @@
 
 .owx-hero-img{
     transform: rotateY(180deg);
-    width: 85%;
+    width: 75%;
+    position: relative;
+    z-index: 10;
 }
 
 .feature-middle{
@@ -29,7 +31,8 @@
 
 .vision-section{
     background: linear-gradient(180deg, #092b86 2%, #17399741 71%, #2044a4 ), url(/assets/img/landing/owx-vision-bg.png);
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
 }
 
 .features-section {
@@ -42,7 +45,71 @@
 /*bg blocks*/
 .block-2{
     background: linear-gradient(90deg, #5b98ff 1%, #125da85e 100%);
+    display: none;
 }
 .block-7{
     background: linear-gradient(180deg, #125da85e 1%, #4b80da 100%);
 }
+
+@media all and (max-width:991px){
+    .block-2 {
+    width: 600px;
+    height: 600px;
+    transform: rotate(45deg);
+    left: -18%;
+    display: block;
+    opacity: 0.5;
+    }
+    .block-7{
+        display: none;
+    }
+    .owx-hero-img,.owx-about-img{
+        max-width: 500px;
+        margin: auto;
+    }
+    .about-section{
+        .block-2{
+            top: auto;
+            left: -48%;
+    }
+}
+
+.features-section .col-md-3 {
+    padding: 0 0.5em;
+}
+
+    .hero-section{
+        .heading {
+            h1{
+                text-align: center;
+            }
+            p{
+                float: none;
+                text-align: center;
+                max-width: 500px;
+            }
+        }
+    }
+}
+
+@media all and (max-width:520px){
+    .block-2{
+        width: 534px;
+    height: 610px;
+    }
+    .about-section .block-2 {
+      width: 400px;
+      height: 400px;
+      top: auto;
+      border-radius: 10%;
+      left: -75%;
+      animation: none;
+    }
+    .feature-middle{
+        transform: translateY(0);
+    }
+    .feature-card{
+        margin: 1rem 0;
+    }
+}
+

@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
     let menu = document.querySelector(".menu");
 
     //for sticking the header
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1124) {
       $(window).on("scroll", function () {
         if ($(this).scrollTop() > 80) {
           $(".navbar").addClass("navbar-on-scroll");
@@ -65,7 +65,7 @@ export class NavbarComponent implements OnInit {
     }
 
     //toggle hamburger on toggle
-    if (innerWidth <= 768) {
+    if (innerWidth <= 1124) {
       $(links).on("click", function () {
         $(menu).toggleClass("slide-out-mobile");
         $(hamburger).toggleClass("open");

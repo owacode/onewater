@@ -9,7 +9,7 @@
 
           <router-outlet></router-outlet>
           <div class="footer">
-            &copy; copyright <a href="https://onewater.herokuapp.com">OneWater 2020</a> 
+            &copy; copyright <a href="https://onewater.herokuapp.com">OneWater 2020</a>
           </div>
       </div>
         <div class="dashboard-sidebar">
@@ -28,7 +28,7 @@
               />
             </div>
             <div class="company-body">
-              <h5>Morgan</h5>
+              <h5>{{name}}</h5>
               <span>morgan@gmail.com</span>
             </div>
           </div>
@@ -63,7 +63,7 @@
             <ul class="delete">
               <li>
                 <i class="fa fa-power-off"></i
-                ><a routerLink="/login">Logout</a>
+                ><a (click)="logout()" href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home">Logout</a>
               </li>
 
             </ul>

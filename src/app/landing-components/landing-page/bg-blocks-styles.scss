@@ -323,12 +323,15 @@
 }
 
   @media all and (max-width:480px){
-    .block-2{
-      top: -44vh;
-    border-radius: 43%;
-    left: -31%;
-    transform: rotate(15deg);
-    }
+  .block-2 {
+  width: 534px;
+  height: 610px;
+  top: -17vh;
+  transform: rotate(308deg);
+  left: -15%;
+  border-radius: 43%;
+  animation: wave 10s infinite forwards linear;
+  }
     .block-1{
       display: none;
     }
@@ -377,7 +380,7 @@
     position: absolute;
     top: 0;
     top: 66%;
-        border-radius: 50px;
+    border-radius: 50px;
     transform: rotate(-45deg);
     right: -44%;
     opacity: 0.28;
@@ -405,4 +408,19 @@
   right: 1%;
   bottom: 5%;
 }
+  }
+
+  @keyframes wave{
+    0%{
+      transform: rotate(0);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+
+  @media all and (max-width:360px){
+    .block-2 {
+    top: -34vh;
+    }
   }
