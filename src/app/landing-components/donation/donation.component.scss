@@ -1,32 +1,17 @@
+@import '../landingpage-common.scss';
+
 .cover-photo{
-    height: 110vh;
-    background-attachment: fixed;
     background: linear-gradient(180deg, rgba(0, 30, 199, 0.82) 20%, rgba(13, 0, 212, 0.57) 100%), url(/assets/img/landing/donate-bg1.png);
+    background-attachment: fixed;
     background-position: center top;
+    background-size: cover;
     background-repeat: no-repeat;
-}
-.section-intro{
-    margin-top: -85vh;
-    h1{
-        color: #fff;
-        font-size: 3.8rem;
-        font-weight: 600;
-    }
-    h2{
-        margin-top:35px;
-        color: #fff;
-    }
-}
-.section-1{
-    margin-top: 40vh;
-    h2{
-        margin-bottom: 35px;
-    }
 }
 
 .donate-img{
     margin-top: -10vh;
 }
+
 .mybtn{
       margin: 4rem 0 1rem;
       font-size: 1.5rem;

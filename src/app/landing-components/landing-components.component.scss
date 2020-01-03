@@ -1,27 +1,27 @@
-p{
+p {
   font-weight: 500;
-  color: #fff;;
+  color: #fff;
 }
-.row{
+.row {
   align-items: center;
 }
-h1,h2{
+h1,
+h2 {
   color: #fff;
   font-weight: 600;
   z-index: 20;
   position: relative;
 }
-h1{
+h1 {
   text-align: center;
 }
-.hero-section{
+.hero-section {
   min-height: 100vh;
   position: relative;
   padding: 0;
-  /*background: linear-gradient(180deg, rgba(0, 31, 204, 0.82) 20%, rgba(255, 255, 255, 0.68) 100%), url(/assets/img/job-header-bg.jpeg);*/
-overflow-y: visible;
-  .heading{
-    h1{
+  overflow-y: visible;
+  .heading {
+    h1 {
       font-size: 5.5rem;
       letter-spacing: -0.3rem;
       position: relative;
@@ -30,114 +30,87 @@ overflow-y: visible;
       color: #fff;
       text-align: left;
     }
-    
-h3{
-  color: #fff;
-  z-index: 20;
-  position: relative;
-}
-    p{
-margin: 2rem 0; 
-width:95%;
- position: relative;
-    z-index: 10;
-    color: #fff;
+
+    h3 {
+      color: #fff;
+      z-index: 20;
+      position: relative;
+    }
+    p {
+      margin: 2rem 0;
+      width: 95%;
+      position: relative;
+      z-index: 10;
+      color: #fff;
     }
   }
-  .hero-img{
+  .hero-img {
     width: 100%;
     position: relative;
     z-index: 4;
   }
- 
 }
 
-h1{
-    margin: 25px auto;
+h1 {
+  margin: 25px auto;
+  text-align: center;
+}
+h2 {
+  margin: 30px 0;
+}
+.cover-photo {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 30, 199, 0.88) 20%,
+      rgba(13, 0, 212, 0.94) 100%
+    ),
+    url(/assets/img/landing/about-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media screen and (max-width: 991px) {
+  .hero-section {
     text-align: center;
-}
-h2{
-    margin: 30px 0;
-}
-  .cover-photo {
-    background-attachment: fixed;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 30, 199, 0.88) 20%,
-        rgba(13, 0, 212, 0.94) 100%
-      ),
-      url(/assets/img/landing/about-bg.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .page-title {
-    color: #092b86;
-    h1 {
-      font-size: 2.7rem;
-      text-align: center;
-      letter-spacing: -2.3px;
-      font-weight: 700;
-    }
-    padding: 0;
-  }
-  .section-intro{
-    padding-top: 10px;
-    margin: 75px auto;
-    h1{
-        color: #000;
-    }
-    h3{
-        text-align: center;
-        margin:65px;
-        color: #000;
-        font-weight: 500;
-    }
-}
-
-
-@media screen and (max-width:991px){
-  .hero-section{
-    text-align: center;
-    .hero-img{
+    .hero-img {
       width: 75%;
     }
-    .heading{
-      h1{
+    .heading {
+      h1 {
         text-align: center;
         font-size: 4rem;
         letter-spacing: -0.25rem;
       }
     }
-    h2{
+    h2 {
       text-align: center;
     }
   }
 }
 
-@media all and (max-width:360px){
-
-  .hero-section{
-      .heading h1{
-          font-size: 3rem !important;
-          letter-spacing: -0.2rem;
-      }
-
-   img{
-    margin-top: 12vh;
-    width: 90% !important;
-  }
-}
-}
-@media all and (max-width:320px){
-  .hero-section{
-    .heading h1{
-        font-size: 2.5rem !important;
-        letter-spacing: -0.15rem;
+@media all and (max-width: 360px) {
+  .hero-section {
+    .heading h1 {
+      font-size: 3rem !important;
+      letter-spacing: -0.2rem;
     }
 
- img{
-  margin-top: 15vh;
+    img {
+      margin-top: 12vh;
+      width: 90% !important;
+    }
+  }
 }
-}
+@media all and (max-width: 320px) {
+  .hero-section {
+    .heading h1 {
+      font-size: 2.5rem !important;
+      letter-spacing: -0.15rem;
+    }
+
+    img {
+      margin-top: 15vh;
+    }
+  }
 }

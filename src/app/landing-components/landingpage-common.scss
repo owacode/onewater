@@ -1,0 +1,102 @@
+h2{
+    margin-bottom: 2rem;
+}
+
+.cover-photo{
+    height: 100vh;
+}
+
+.intro-content{
+    img{
+        width:85%;
+    }
+}
+
+.wave-bg-inv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotateX(180deg);
+  }
+.wave-bg{
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ 
+}
+
+.section-blue {
+    background: #092b86;
+    color: #fff;
+    position: relative;
+    padding-top: 100px;
+  }
+
+.gradient-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: bottom center;
+    display: flex;
+    align-items: center;
+  }
+
+  .page-title{
+    min-height: 100vh;
+    margin-top: -100vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    h1{
+      font-size: 5.5rem;
+      letter-spacing: -0.3rem;
+      position: relative;
+      z-index: 10;
+      font-weight: 500;
+    }
+    h1,h3{
+        color: #fff;
+    }
+    h3{
+        max-width: 550px;
+    }
+  }
+
+  .half-width-text{
+    max-width:600px;
+}
+
+.section-intro{
+    padding-top: 0;
+  }
+
+  @media screen and (max-width: 991px) {
+      .page-title {
+        h1 {
+          text-align: center;
+          font-size: 4rem;
+          letter-spacing: -0.25rem;
+        }
+      }
+}
+
+@media screen and (max-width: 360px) {
+    .page-title {
+      h1 {
+        font-size: 3rem;
+        letter-spacing: -0.2rem;
+      }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .page-title {
+      h1 {
+        font-size: 2.5rem;
+        letter-spacing: -0.15rem;
+      }
+    }
+}

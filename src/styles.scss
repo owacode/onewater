@@ -9,6 +9,12 @@
 @import './commonstyles/quill-editor-styless.scss';
 @import '../node_modules/modularscale-sass/stylesheets/modularscale';
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
