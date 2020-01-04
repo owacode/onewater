@@ -1,5 +1,5 @@
 h2{
-    margin-bottom: 2rem;
+    margin: 1rem auto 2rem;
 }
 
 .cover-photo{
@@ -74,13 +74,42 @@ h2{
   }
 
   @media screen and (max-width: 991px) {
+    .cover-photo{
+      height: 50vh;
+    }
       .page-title {
+        min-height: 50vh;
+        margin-top: -50vh;
         h1 {
           text-align: center;
           font-size: 4rem;
           letter-spacing: -0.25rem;
         }
+        h3{
+          margin: auto;
+          text-align: center;
+        }
       }
+      .img-wrap{
+        text-align: center;
+        img{
+          max-width: 400px;
+        }
+      }
+}
+@media screen and (max-width:520px){
+  .cover-photo{
+    height: 55vh;
+
+    .wave{
+      bottom: -55%;
+      background-position: center;
+    }
+  }
+    .page-title {
+      min-height: 55vh;
+      margin-top: -55vh;
+    }
 }
 
 @media screen and (max-width: 360px) {

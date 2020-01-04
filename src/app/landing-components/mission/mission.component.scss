@@ -38,13 +38,23 @@
     background-position: bottom right;
 }
 
-.section-3,.section-2{
-    h1{
-        margin-bottom: 2.5rem;
-    }
+.section-3 h2{
+    text-align: right;
 }
 
 .img{
-max-width: 350px;
+max-width: 400px;
 margin: auto;
+}
+
+@media all and (max-width:991px){
+    .img{
+        margin: 1.5rem auto 1rem;
+    }
+    .section-1{
+        min-height: 50vh;
+    }
+    .section-2, .section-3{
+        h2{text-align: center;}
+    }
 }

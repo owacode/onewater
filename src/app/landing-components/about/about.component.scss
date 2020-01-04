@@ -61,6 +61,30 @@
     position: relative;
   }
 }
-@media screen and (max-width:768px){
-  
+@media screen and (max-width:991px){
+  .section-1{
+    min-height: 70vh;
+  }
+  .blue-intro-img{
+    max-width: 550px;
+    margin: auto;
+  }
+  .img{
+    text-align: center;
+    img{
+      max-width: 400px;
+    }
+  }
+  .section-2 , .section-3 {
+    h2,p{
+      text-align: center;
+    }
+  }
+  .section-3{
+    padding-bottom: 350px;
+    margin-bottom: -390px;
 }
+  }
+  @media screen and (max-width:520px){
+
+  }
