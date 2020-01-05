@@ -1,40 +1,45 @@
 #login{
     min-height: 100vh;
     padding: 4.5rem 0;
-    background: #010D5F;
+    background-color: #010D5F;
   //   background: linear-gradient(180deg, rgba(1, 13, 95, 0.82) 20%, rgba(1, 13, 95, 0.7) 100%),url(/assets/img/single-video-bg.png);
   // background-size: cover;
   // background-position: bottom center;
     position: relative;
     display: flex;
     align-items: center;
+    h2{
+      text-align: left;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: #fff;
+      border: none;
+      strong{
+        font-size: 3.2rem;
+        font-weight: bold;
+      }
+    }
   }
   .form-box{
     text-align: center;
     position: relative;
     z-index: 2;
-  }
-  h1{
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: -3px;
-    padding-bottom: 1rem;
-    text-align: center;
-    border-bottom: 1px #ccc solid;
-  }
-  h2{
-    text-align: left;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -2px;
-    color: #fff;
-    border: none;
-    strong{
-      font-size: 3.2rem;
+
+    h1{
+      font-size: 2.5rem;
       font-weight: bold;
-      letter-spacing: -2px;
+      letter-spacing: -3px;
+      padding-bottom: 1rem;
+      text-align: center;
+      color: #000 !important;
+      border-bottom: 1px #ccc solid;
     }
+
   }
+ 
+
+
   .login-img{
     width: 75%;
     margin: auto;
@@ -165,21 +170,26 @@
           width: 100%;
           padding: 20px 40px;
       }
-  
-      h1{
-        font-size: 2.5rem;
-        letter-spacing: -2px;
-      }
-      h2{
-        text-align: center;
-        font-size: 1.6rem;
-        letter-spacing: -1px;
-        margin-bottom: 2rem;
-        strong{
-          font-size: 2.2rem;
-          letter-spacing: -1.2px;
+      #login{
+        h2{
+          text-align: center;
+          font-size: 1.6rem;
+          letter-spacing: -1px;
+          margin-bottom: 2rem;
+          strong{
+            font-size: 2.2rem;
+            letter-spacing: -1.2px;
+          }
         }
       }
+      .form-box{
+        h1{
+          font-size: 2.5rem;
+          letter-spacing: -2px;
+        }
+      }
+      
+    
   
   }
   
