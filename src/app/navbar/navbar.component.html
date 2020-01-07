@@ -23,27 +23,7 @@
                   <li *ngIf="auth.isLoggedIn" class="navlink"><a (click)="logout()" href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home">Logout </a></li>
                   <!-- https://YOUR_DOMAIN/v2/logout -->
                   <li *ngIf="!auth.isLoggedIn" class="navlink"><a [routerLink]="['/signup']">Signup </a></li>
-
-                  <!-- <li class="navlink"><a [routerLink]="['/login']">Login / Signup </a></li> -->
-
-                  <!-- <li class="navlink hover-dd"><a> platform </a>
-                    <div class="dd-menu">
-                        <li><a [routerLink]="['/onewaterblog']">OneWater Blog</a></li>
-                        <li><a [routerLink]="['/onewaterjobs']">OneWater Jobs</a></li>
-                        <li><a [routerLink]="['/onevideo']">O-Wow</a></li>
-                        <li><a href="https://onewateracademy.herokuapp.com">OneWater Academy</a></li>
-                        <li><a [routerLink]="['/']">Mentor Mentee</a></li>
-                    </div>
-                </li> -->
-
               </ul>
-              <!-- <div class="menu-contact">
-                  <div class="row">
-                      <div class="col-4"> <h5>Contact Us:</h5></div>
-                      <div class="col-4">  <p>+914646464 </p></div>
-                      <div class="col-4"><p>zeit@co.in</p></div>
-                  </div>
-              </div> -->
               <div class="copyright">
                   <h6>
                       &copy; Copyright OneWater 2019

@@ -295,7 +295,10 @@ header {
       flex-direction: column;
     }
     .navbar .menu ul li a {
-      color: rgb(6, 44, 150);
+      color: rgb(6, 44, 150) !important;
+    }
+    .navbar .menu ul li a::before {
+      background-color: rgb(6, 44, 150) !important;
     }
     .menu-contact {
       display: block;

@@ -30,17 +30,13 @@ export class BlogPostComponent implements OnInit {
     responsiveClass: true,
     responsive: {
       0: {
-        items: 1,
-        stagePadding: 10
+        items: 1
       },
-      600: {
+      768: {
         items: 2
       },
-      1200: {
-        items: 3
-      },
-      1500: {
-        items: 3
+      900: {
+        items: 2
       }
     }
   };
@@ -54,20 +50,6 @@ export class BlogPostComponent implements OnInit {
       });
     });
 
-    var winHeight = $(window).height(),
-      docHeight = $(document).height(),
-      progressBar = $("progress"),
-      max,
-      value;
-
-    /* Set the max scrollable area */
-    max = docHeight - winHeight;
-    progressBar.attr("max", max);
-
-    $(document).on("scroll", function() {
-      value = $(window).scrollTop();
-      progressBar.attr("value", value);
-    });
 
     this.router.params.subscribe(result => {
       this.blogid=result.id;

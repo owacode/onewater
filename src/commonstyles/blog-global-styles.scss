@@ -1,6 +1,3 @@
-
-
-
 /*-----------CARDS STYLING---------------------*/
 
 /*---------category box styling------------*/
@@ -22,7 +19,6 @@
       margin: 0.2rem auto;
     }
   }
- 
 }
 .categories-card,.subcategories-card{
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 43%, 0.2);
@@ -158,10 +154,10 @@ left: 1.2rem;
       border-radius: 10px;
       background: #0051c9;
       padding: 0.35rem;
-      margin: 2rem 0.5rem;
+      margin: 2rem auto;
       position: relative;
       overflow: hidden;
-
+      max-width: 320px;
     }
 
     .outer-overlay{
@@ -204,6 +200,4 @@ left: 1.2rem;
       .cover-photo{
         height: 30vh;
 
-        .outer-card{margin: 2rem auto;
-        max-width: 300px;}
       }}
