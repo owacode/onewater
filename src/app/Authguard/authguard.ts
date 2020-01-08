@@ -20,6 +20,7 @@ export class Authguard implements CanActivate {
 
             if(!this.loginstatus){
                 console.log('not logged in');
+                alert ("Please Login to use this Service");
             //    $('#blogModal').css("display", "block");
             //    $('#blogModal').addClass("show");
                 this.router.navigate(['/home']);
