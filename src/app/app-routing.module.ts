@@ -88,8 +88,15 @@ const routes: Routes = [
     path: 'onewaterblog/author-reg',
     loadChildren: './authors/author-registration/author-registration.module#AuthorRegistrationModule'
   },
-  //-----------JOB PAGES ROUTING---------------//
 
+    //-----------AUTHOR ADMIN PANEL---------------//
+
+    {
+      path: 'author',
+      loadChildren: './authors/author-admin/author-admin.module#AuthorAdminModule'
+    },
+
+  //-----------JOB PAGES ROUTING---------------//
   {
     path: 'onewaterjobs',
     component: JobPortalComponent,
@@ -117,12 +124,19 @@ const routes: Routes = [
       {
         path: 'emp-login',
         loadChildren: './employers/employer-login/employer-login.module#EmployerLoginModule'
-      },
-      {
-        path: 'emp-reg',
-        loadChildren: './employers/employer-registeration/employer-registeration.module#EmployerRegisterationModule'
       }
     ]
+  },
+   //-----------Employer Registeration page -----------------//
+   {
+    path: 'onewaterjobs/emp-reg',
+    loadChildren: './employers/employer-registeration/employer-registeration.module#EmployerRegisterationModule'
+  },
+
+  //-----------EMPLOYER ADMIN PANEL---------------//
+  {
+    path: 'employer',
+    loadChildren: './employers/employer-admin/employer-admin.module#EmployerAdminModule'
   },
 
   //-----------VIDEO PAGES ROUTING---------------//
@@ -150,22 +164,13 @@ const routes: Routes = [
     ]
   },
 
-  //-----------AUTHOR ADMIN PANEL---------------//
-
-  {
-    path: 'author',
-    loadChildren: './authors/author-admin/author-admin.module#AuthorAdminModule'
-  },
-
-  //-----------EMPLOYER ADMIN PANEL---------------//
-
-  {
-    path: 'employer',
-    loadChildren: './employers/employer-admin/employer-admin.module#EmployerAdminModule'
-  },
+ //-----------User Registeration page -----------------//
+ {
+  path: 'user-reg',
+  loadChildren: './user-registration/user-registration.module#UserRegistrationModule'
+},
 
   //-----------USER ADMIN PANEL---------------//
-
   {
     path: 'user-admin',
     loadChildren: './user-admin/user-admin.module#UserAdminModule',
@@ -194,11 +199,11 @@ const routes: Routes = [
     path: 'thankyou-author',
     loadChildren: './email-verified-author/email-verified-author.module#EmailVerifiedAuthorModule'
   },
-  {
-    path: '**',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: '/home',
+  //   pathMatch: 'full'
+  // },
 
 ];
 

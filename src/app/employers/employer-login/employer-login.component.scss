@@ -13,3 +13,22 @@
     align-items: center;
   }
  
+  @media all and (max-width:768px){
+
+    #login {
+      background-size: cover;;
+      p{
+        margin: 1rem auto;
+      }
+     
+  
+      h2{
+        text-align: center;
+      }
+    }
+   }
+   @media all and (max-width:480px){
+    #login{
+      padding: 10vh 0 5vh !important;
+    }
+   }

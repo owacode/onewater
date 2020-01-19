@@ -124,7 +124,7 @@ header {
   .menu ul li a:link, .menu ul li a:visited {
     text-decoration: none;
     font-size: 16px;
-    color: #fff !important;
+    color: #fff ;
     font-weight: 600;
     padding: 12px;
     text-transform: capitalize;
@@ -214,10 +214,10 @@ header {
   }
 	.blue-link ul li {
 		a {
-		color: #000;
+		color: #000 !important;
 	}
 	a::before{
-		background: #000;
+		background: #000 !important;
 	}
 }
 
@@ -234,6 +234,10 @@ header {
     transform: translateX(0);
   }
 
+  .logo-blue{
+    display: none;
+  }
+  
  .logo-wrap,
  .menu {
     height: 70px;

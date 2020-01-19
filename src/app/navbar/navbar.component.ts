@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   constructor(public router: Router, public http: HttpClient, public auth:AuthService) {  }
   ngOnInit() {
 
-    this.router.events.forEach((event) => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (event['url'] == '/onewaterblog/author-login' ||
           event['url'].includes('/onewaterblog/category') ||
@@ -27,6 +27,24 @@ export class NavbarComponent implements OnInit {
         }
       }
     });
+
+    // $(document).ready(function() {
+    //   if (window.location.href.indexOf("author-login") > -1 || 
+    //       window.location.href.indexOf("onewaterblog/category") > -1 ||
+    //       window.location.href.indexOf("o-wow/video-category") > -1 ||
+    //       window.location.href.indexOf("emp-login") > -1
+    //   ) {
+    //     console.log("turn header blue");
+    //     $(".menu").addClass("blue-link");
+    //     $(".logo-white").css("display","none");
+    //     $(".logo-blue").css("display","block");
+    //   }
+    //   else{
+    //     console.log("turn header white");
+    //     $(".logo-white").css("display","block");
+    //     $(".logo-blue").css("display","none");
+    //   }
+    // });
 
     //---------------HEADER-------------//
 

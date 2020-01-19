@@ -34,6 +34,7 @@
       text-align: center;
       color: #000 !important;
       border-bottom: 1px #ccc solid;
+      margin-top: 0;
     }
 
   }
@@ -111,9 +112,17 @@
       color: #fff;
        border-radius: 10px;
       background:#071FAD;
+      border: 1.5px solid transparent;
       font-size: 22px;
       font-weight: 600;
       cursor: pointer;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .vldform__button:hover{
+    border: 1.5px solid  #071FAD;
+    background: #fff;
+    color: #071FAD;
   }
   
   .vldform__signup {
