@@ -2,15 +2,15 @@
 <section class="emp-registration">
     <div class="container">
 
-      <h1 *ngIf="!submited">
+      <h1>
         Hello! welcome to <span> OneWater</span> <br>
         Fill up the form below and get started!
       </h1>
 
-      <h1 *ngIf="submited">
+      <!-- <h1 *ngIf="submited">
           Hello! welcome to <span> OneWater</span> <br>
           Your details have been registred. Please wait until your profile gets verified!
-        </h1>
+        </h1> -->
 
       <div class="dashboard-content-wrapper dash-tab">
         <form class="dashboard-form" >
@@ -27,10 +27,10 @@
                   formControlName="user_name"
                 />
               </div>
-              <div class="row form-group" *ngIf=" form.get('author_name').invalid &&profilesubmit" >
+              <!-- <div class="row form-group" >
                 <p style="color: red; margin:0px auto">
                     Enter Name </p>
-            </div>
+            </div> -->
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label"> Email</label>
@@ -42,10 +42,10 @@
                   formControlName="email"
                 />
               </div>
-              <div class="row form-group" *ngIf=" form.get('author_name').invalid &&profilesubmit" >
+              <!-- <div class="row form-group"  >
                 <p style="color: red; margin:0px auto">
                     Enter email </p>
-            </div>
+            </div> -->
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Phone</label>
@@ -57,10 +57,10 @@
                   formControlName="mobile"
                 />
               </div>
-              <div class="row form-group" *ngIf=" form.get('mobile').invalid &&profilesubmit" >
+              <!-- <div class="row form-group" >
                 <p style="color: red; margin:0px auto">
                     Enter Your Mobile No. </p>
-            </div>
+            </div> -->
             </div>
 
             <div class="form-group row">
@@ -73,10 +73,10 @@
                   formControlName="mobile"
                 />
               </div>
-              <div class="row form-group" *ngIf=" form.get('mobile').invalid &&profilesubmit" >
+              <!-- <div class="row form-group"  >
                 <p style="color: red; margin:0px auto">
                     Select your country </p>
-            </div>
+            </div> -->
             </div>
 
             <div class="form-group row">
@@ -89,10 +89,10 @@
                   <option value="3"> company 3</option>
                 </select>
               </div>
-              <div class="row form-group" *ngIf=" form.get('mobile').invalid &&profilesubmit" >
+              <!-- <div class="row form-group"  >
                 <p style="color: red; margin:0px auto">
                     Select your country </p>
-            </div>
+            </div> -->
             </div>
       
           </div>
