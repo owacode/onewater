@@ -12,7 +12,7 @@ import { AuthService } from '../auth.service';
 export class NavbarComponent implements OnInit {
   headerBlue = false;
 
-  constructor(public router: Router, public http: HttpClient, public auth:AuthService) {  }
+  constructor(public router: Router, public http: HttpClient, public auth: AuthService) { }
   ngOnInit() {
 
     this.router.events.subscribe((event) => {
@@ -28,30 +28,30 @@ export class NavbarComponent implements OnInit {
       }
     });
 
-    // $(document).ready(function() {
-    //   if (window.location.href.indexOf("author-login") > -1 || 
-    //       window.location.href.indexOf("onewaterblog/category") > -1 ||
-    //       window.location.href.indexOf("o-wow/video-category") > -1 ||
-    //       window.location.href.indexOf("emp-login") > -1
-    //   ) {
-    //     console.log("turn header blue");
-    //     $(".menu").addClass("blue-link");
-    //     $(".logo-white").css("display","none");
-    //     $(".logo-blue").css("display","block");
-    //   }
-    //   else{
-    //     console.log("turn header white");
-    //     $(".logo-white").css("display","block");
-    //     $(".logo-blue").css("display","none");
-    //   }
-    // });
-
     //---------------HEADER-------------//
 
     let menu_links = document.querySelectorAll(".menu ul li");
     let hamburger = document.querySelector(".hamburger");
     let links = document.querySelectorAll(".navlink a");
     let menu = document.querySelector(".menu");
+
+    var updateNavbar = function () {
+      //toggle hamburger on toggle
+      if (innerWidth <= 1124) {
+        $(links).on("click", function () {
+          $(menu).toggleClass("slide-out-mobile");
+          $(hamburger).toggleClass("open");
+        });
+        $(hamburger).on("click", function () {
+          $(menu).toggleClass("slide-out-mobile");
+        });
+      }
+
+      $(hamburger).on("click", function () {
+        // $(menu).toggleClass("menu-opened");
+        $(this).toggleClass("open");
+      });
+    }
 
     //for sticking the header
     if (window.innerWidth >= 1124) {
@@ -82,21 +82,7 @@ export class NavbarComponent implements OnInit {
       });
     }
 
-    //toggle hamburger on toggle
-    if (innerWidth <= 1124) {
-      $(links).on("click", function () {
-        $(menu).toggleClass("slide-out-mobile");
-        $(hamburger).toggleClass("open");
-      });
-      $(hamburger).on("click", function () {
-        $(menu).toggleClass("slide-out-mobile");
-      });
-    }
-
-    $(hamburger).on("click", function () {
-      // $(menu).toggleClass("menu-opened");
-      $(this).toggleClass("open");
-    });
+    updateNavbar();
 
   }
 
@@ -107,7 +93,7 @@ export class NavbarComponent implements OnInit {
       })
   }
 
-  logout(){
+  logout() {
     this.deleteCookie('name')
     this.deleteCookie('nickname')
     this.deleteCookie('access_token')
@@ -117,13 +103,13 @@ export class NavbarComponent implements OnInit {
 
   deleteCookie(name) {
     this.createCookie(name, null);
-}
+  }
 
-createCookie(key, value) {
-  let cookie = escape(key) + "=" + escape(value) + ";";
-  document.cookie = cookie;
-  console.log(cookie);
-  console.log("Creating new cookie with key: " + key + " value: " + value);
-}
+  createCookie(key, value) {
+    let cookie = escape(key) + "=" + escape(value) + ";";
+    document.cookie = cookie;
+    console.log(cookie);
+    console.log("Creating new cookie with key: " + key + " value: " + value);
+  }
 
 }

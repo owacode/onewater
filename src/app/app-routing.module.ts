@@ -139,6 +139,7 @@ const routes: Routes = [
     loadChildren: './employers/employer-admin/employer-admin.module#EmployerAdminModule'
   },
 
+  
   //-----------VIDEO PAGES ROUTING---------------//
 
   {
@@ -162,6 +163,17 @@ const routes: Routes = [
         loadChildren: './video-website/video-category/video-category.module#VideoCategoryModule'
       }
     ]
+  },
+   //-----------Instructor Login page -----------------//
+  {
+    path: 'instructor-login',
+    loadChildren: './instructors/instructor-login/instructor-login.module#InstructorLoginModule'
+  },
+
+  //-----------Instructor REgistration page -----------------//
+  {
+    path: 'instructor-reg',
+    loadChildren: './instructors/instructor-registration/instructor-registration.module#InstructorRegistrationModule'
   },
 
  //-----------User Registeration page -----------------//
@@ -199,11 +211,11 @@ const routes: Routes = [
     path: 'thankyou-author',
     loadChildren: './email-verified-author/email-verified-author.module#EmailVerifiedAuthorModule'
   },
-  // {
-  //   path: '**',
-  //   redirectTo: '/home',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
 
 ];
 

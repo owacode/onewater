@@ -51,6 +51,8 @@
     background: linear-gradient(180deg, #125da85e 1%, #4b80da 100%);
 }
 
+
+
 @media all and (max-width:991px){
     .block-2 {
     width: 600px;
@@ -93,6 +95,8 @@
 }
 
 @media all and (max-width:520px){
+    .hero-section {background: #092b86;}
+      
     .block-2{
         width: 534px;
     height: 610px;

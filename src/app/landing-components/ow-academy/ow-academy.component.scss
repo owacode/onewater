@@ -17,6 +17,46 @@ section{
       text-transform: capitalize;
   }
 
+  .author-btn {
+    text-align: center;
+    margin: 30px 0 70px;
+    z-index: 10;
+    position: relative;
+  
+    .reg-text {
+      padding: 75px 0;
+    }
+    background: transparent;
+    h3 {
+      text-align: center;
+      margin: 2rem auto;
+      color: #000c61;
+      font-weight: 600;
+    }
+    a {
+      text-align: center;
+      border-radius: 3px;
+      color: #000c61;
+      padding: 8px 16px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0 1rem;
+      border-radius: 5px;
+      box-shadow: none;
+      transition: all 0.3s ease-in-out;
+      border: 1.5px solid #000c61;
+    }
+    a:hover {
+      color: #fff;
+      background: #246df8;
+    }
+    img {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+
+  
   .hero-section{
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.58) 17%, rgba(255, 255, 255, 0.89) 60% ,#fff 100%), url(/assets/img/landing/academy-hero-overlay.jpg);
     background-position: left;
@@ -236,7 +276,10 @@ section{
   display: block;
 }
 }
+
+
 @media all and (max-width:520px){
+  .hero-section {background: #092b86;margin-bottom: 50px;}
   .block-2 {
   top: -17vh ;
   }

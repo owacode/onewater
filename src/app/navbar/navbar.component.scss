@@ -131,7 +131,7 @@ header {
     font-family: "Montserrat", sans-serif;
     letter-spacing: -0.5px;
     transition: all 0.3s ease-out;
-    position: relative;
+    position: relative !important;
   }
 
   .menu ul li a::before {
@@ -252,6 +252,7 @@ header {
  .menu ul li a {
     font-size: 16px;
      color:  rgb(6, 44, 150) !important;
+     
    }
   .menu ul li a::before {
     background: rgb(6, 44, 150) !important;

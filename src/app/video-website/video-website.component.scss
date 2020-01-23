@@ -57,29 +57,36 @@ global styles for website video
 
   .thumb-caption{
     position: relative;
-    min-height: 100px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     h5{
       line-height: 1.5rem;
       margin: 0.5rem ;
     }
     .video-metadata{
-      padding:  0.5rem;
-      position: absolute;
-      bottom: 0px;
-      width:100%;
-      .col-6:nth-child(2){
-        text-align: right !important;
-      }
+      padding:  8px;
+      
+      display: flex;
+      justify-content: space-between;
       .views, .date {
+        margin: 0 2px;
         font-weight: 600;
         font-size: 11px;
         color: #444;
+      }
+      .date{
+        text-align: right;
       }
     }
   }
 }
 .thumb-img{
   height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
   img{
     object-fit: cover;
@@ -88,7 +95,6 @@ global styles for website video
 }
 .thumbnail-card:hover .thumb-img .hover-play{
       opacity: 1;
-
       i{
         transform: scale(1);
       }

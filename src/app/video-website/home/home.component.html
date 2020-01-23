@@ -696,32 +696,35 @@
                 [routerLink]="['/o-wow/singlevideo/', video._id]"
                 title="{{ video?.title }}"
               >
-                <div class="thumb-img">
-                  <img [src]="video?.image" alt="" />
-                  <div class="hover-play">
-                    <i class="fa fa-play-circle" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="thumb-caption">
-                  <div class="video-name">
-                    <h3>{{ video?.title | slice: 0:45 }}..</h3>
-                  </div>
-                  <div class="channel">
-                    John Wick
-                  </div>
-                  <div class="video-metadata">
-                    <div class="row">
-                      <div class="col-6">
-                        <div class="views">{{ video?.views }} views</div>
-                      </div>
-                      <div class="col-6">
-                        <div class="date">
-                          {{ video?.date_added | date: "MMMM d, y" }}
-                        </div>
-                      </div>
+              <div class="row">
+                <div class="col-5 no-gutter">
+                  <div class="thumb-img">
+                    <img [src]="video?.image" alt="" />
+                    <div class="hover-play">
+                      <i class="fa fa-play-circle" aria-hidden="true"></i>
                     </div>
                   </div>
                 </div>
+                <div class="col-7 no-gutter">
+                  <div class="thumb-caption">
+                    <div class="video-name">
+                      <h3>{{ video?.title | slice: 0:45 }}..</h3>
+                    </div>
+                    <div class="channel">
+                      John Wick
+                    </div>
+                    <div class="video-metadata">
+                     
+                          <div class="views">{{ video?.views }} views</div>
+                          <div class="date">
+                            {{ video?.date_added | date: "MMMM d, y" }}
+                          </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              
               </a>
             </div>
           </div>
