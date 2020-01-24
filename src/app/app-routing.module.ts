@@ -220,11 +220,11 @@ const routes: Routes = [
     path: 'thankyou-author',
     loadChildren: './email-verified-author/email-verified-author.module#EmailVerifiedAuthorModule'
   },
-  // {
-  //   path: '**',
-  //   redirectTo: '/home',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
 
 ];
 
