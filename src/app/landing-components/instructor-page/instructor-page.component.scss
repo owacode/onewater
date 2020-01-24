@@ -1,0 +1,14 @@
+@import '../landing-page/bg-blocks-styles.scss';
+@import '../landing-components.component.scss';
+
+.hero-section{
+    background: #092b86;
+
+    .heading{
+        h1{
+            font-size: 3.5rem;
+            letter-spacing: -0.1rem;
+            text-align: center;
+        }
+    }
+}

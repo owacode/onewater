@@ -46,6 +46,10 @@ const routes: Routes = [
       {
         path: 'owx',
         loadChildren: './landing-components/owx/owx.module#OwxModule'
+      },
+      {
+        path: 'instructor',
+        loadChildren: './landing-components/instructor-page/instructor-page.module#InstructorPageModule'
       }
     ]
   },
@@ -175,6 +179,11 @@ const routes: Routes = [
     path: 'instructor-reg',
     loadChildren: './instructors/instructor-registration/instructor-registration.module#InstructorRegistrationModule'
   },
+    //-----------Instructor Admin Panel -----------------//
+    {
+      path: 'instructor-admin',
+      loadChildren: './instructors/instructor-admin/instructor-admin.module#InstructorAdminModule'
+    },
 
  //-----------User Registeration page -----------------//
  {
@@ -211,11 +220,11 @@ const routes: Routes = [
     path: 'thankyou-author',
     loadChildren: './email-verified-author/email-verified-author.module#EmailVerifiedAuthorModule'
   },
-  {
-    path: '**',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: '/home',
+  //   pathMatch: 'full'
+  // },
 
 ];
 

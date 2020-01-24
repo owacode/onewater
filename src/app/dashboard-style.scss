@@ -412,21 +412,42 @@
   letter-spacing: -0.4px;
 }
 .dashboard-recent-activity .activity-list {
-  padding: 20px;
-  margin: 1rem;
+  padding:1.5rem 1rem;
+  margin: 1rem 0;
   border-radius: 15px;
   display: flex;
-  box-shadow: 4px 4px 12px 2px #00000012;
+  flex-direction: column;
+  box-shadow: 1px 1px 14px -1px #e4e5e662;
   background: #fff;
-  align-items: center;
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
+  align-items: flex-start;
   transition: all 0.3s ease;
-
+  border: 1.5px solid transparent;
+  cursor: pointer;
   i {
     font-size: 1.2rem;
     margin-right: 1rem;
   }
 }
+.dashboard-recent-activity .activity-list:hover{
+background: #fff;
+border-color: #428dfe;
+}
+// .dashboard-recent-activity .activity-list {
+//   padding: 20px;
+//   margin: 1rem;
+//   border-radius: 15px;
+//   display: flex;
+//   box-shadow: 4px 4px 12px 2px #00000012;
+//   background: #fff;
+//   align-items: center;
+//   /* border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
+//   transition: all 0.3s ease;
+
+//   i {
+//     font-size: 1.2rem;
+//     margin-right: 1rem;
+//   }
+// }
 .dashboard-recent-activity .activity-list h5 {
   font-size: 0.95rem;
   color: #444;
@@ -453,9 +474,9 @@
 .dashboard-recent-activity .activity-list .close-activity i:hover {
   background: #ff3366;
 }
-.dashboard-recent-activity .activity-list:hover {
-  background: #fafafa;
-}
+// .dashboard-recent-activity .activity-list:hover {
+//   background: #fafafa;
+// }
 .dashboard-recent-activity .activity-list:hover > i {
   color: #01d13d;
 }
@@ -525,7 +546,7 @@
 }
 .dashboard-form{
   background: #fff;
-  padding: 50px 30px;
+  padding: 20px 30px;
   border-radius: 18px;
 }
 .dashboard-form .form-group {

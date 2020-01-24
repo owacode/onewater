@@ -15,6 +15,22 @@ h2 {
 h1 {
   text-align: center;
 }
+
+.wave-bg-inv{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotateX(180deg);
+}
+.wave-bg{
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+
+}
+
 .hero-section {
   min-height: 100vh;
   position: relative;
