@@ -12,10 +12,10 @@ import { AuthService } from '../auth.service';
 export class NavbarComponent implements OnInit {
   headerBlue = false;
 
-  constructor(public router: Router, public http: HttpClient, public auth:AuthService) {  }
+  constructor(public router: Router, public http: HttpClient, public auth: AuthService) { }
   ngOnInit() {
 
-    this.router.events.forEach((event) => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (event['url'] == '/onewaterblog/author-login' ||
           event['url'].includes('/onewaterblog/category') ||
@@ -34,6 +34,24 @@ export class NavbarComponent implements OnInit {
     let hamburger = document.querySelector(".hamburger");
     let links = document.querySelectorAll(".navlink a");
     let menu = document.querySelector(".menu");
+
+    var updateNavbar = function () {
+      //toggle hamburger on toggle
+      if (innerWidth <= 1124) {
+        $(links).on("click", function () {
+          $(menu).toggleClass("slide-out-mobile");
+          $(hamburger).toggleClass("open");
+        });
+        $(hamburger).on("click", function () {
+          $(menu).toggleClass("slide-out-mobile");
+        });
+      }
+
+      $(hamburger).on("click", function () {
+        // $(menu).toggleClass("menu-opened");
+        $(this).toggleClass("open");
+      });
+    }
 
     //for sticking the header
     if (window.innerWidth >= 1124) {
@@ -64,21 +82,7 @@ export class NavbarComponent implements OnInit {
       });
     }
 
-    //toggle hamburger on toggle
-    if (innerWidth <= 1124) {
-      $(links).on("click", function () {
-        $(menu).toggleClass("slide-out-mobile");
-        $(hamburger).toggleClass("open");
-      });
-      $(hamburger).on("click", function () {
-        $(menu).toggleClass("slide-out-mobile");
-      });
-    }
-
-    $(hamburger).on("click", function () {
-      // $(menu).toggleClass("menu-opened");
-      $(this).toggleClass("open");
-    });
+    updateNavbar();
 
   }
 
@@ -89,7 +93,7 @@ export class NavbarComponent implements OnInit {
       })
   }
 
-  logout(){
+  logout() {
     this.deleteCookie('name')
     this.deleteCookie('nickname')
     this.deleteCookie('access_token')
@@ -99,13 +103,13 @@ export class NavbarComponent implements OnInit {
 
   deleteCookie(name) {
     this.createCookie(name, null);
-}
+  }
 
-createCookie(key, value) {
-  let cookie = escape(key) + "=" + escape(value) + ";";
-  document.cookie = cookie;
-  console.log(cookie);
-  console.log("Creating new cookie with key: " + key + " value: " + value);
-}
+  createCookie(key, value) {
+    let cookie = escape(key) + "=" + escape(value) + ";";
+    document.cookie = cookie;
+    console.log(cookie);
+    console.log("Creating new cookie with key: " + key + " value: " + value);
+  }
 
 }

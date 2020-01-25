@@ -1,6 +1,7 @@
 import { CanActivate, RouterStateSnapshot, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import * as $ from 'jquery';
 import { AuthService } from '../auth.service';
 @Injectable()
 export class Authguard implements CanActivate {
@@ -19,7 +20,9 @@ export class Authguard implements CanActivate {
 
             if(!this.loginstatus){
                 console.log('not logged in');
-                alert("Please Login To See the Blog")
+                alert ("Please Login to use this Service");
+            //    $('#blogModal').css("display", "block");
+            //    $('#blogModal').addClass("show");
                 this.router.navigate(['/home']);
             }
             return true;

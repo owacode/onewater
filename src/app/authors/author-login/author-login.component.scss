@@ -2,7 +2,7 @@
 
 #login{
     min-height: 100vh;
-    padding: 12vh 0;
+    //padding: 12vh 0;
    background: url(/assets/img/author-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -18,6 +18,7 @@
       color: #000;
       letter-spacing: -2.5px;
       border: none;
+      margin-top: 0;
       padding:  0;
       strong{
         font-size: 3rem;
@@ -31,8 +32,29 @@
     }
   }
 
+  .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.658);
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    animation: fade_in forwards 0.2s forwards ease-in;
+    display: none;
+  }
+
+  @keyframes fade_in{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
   .form-box{
-      margin-top: 10vh;
+      //margin-top: 10vh;
     text-align: center;
     position: relative;
     z-index: 2;
@@ -48,18 +70,30 @@
       border-bottom: 1px #ccc solid;
     }
 
+    
+    p{
+      margin: 1rem auto !important;
+
+      a{
+        font-weight: 600;
+        cursor: pointer;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+    }
   }
-
-
 
   .modal.show .modal-dialog {
     -webkit-transform: none;
     transform: none;
     width: 100%;
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2000;
+    position: relative;
   }
 
   .modal button{
@@ -94,4 +128,39 @@
     }
   }
 
- 
+ @media all and (max-width:768px){
+
+  #login {
+    background-size: cover;;
+    p{
+      margin: 1rem auto;
+    }
+   
+
+    h2{
+      text-align: center;
+    }
+  }
+ }
+ @media all and (max-width:480px){
+  #login{
+    padding: 10vh 0 5vh !important;
+    h2{
+      margin-top: 5vh;
+    }
+  }
+ }
+
+ .modal-animate{
+   animation: appear 0.3s forwards cubic-bezier(0.455, 0.03, 0.515, 0.955);
+ }
+
+ @keyframes appear {
+   0%{
+   transform:scale(0) ;
+   }
+   100%{
+     transform: scale(1);
+   }
+
+ }

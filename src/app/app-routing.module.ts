@@ -46,6 +46,10 @@ const routes: Routes = [
       {
         path: 'owx',
         loadChildren: './landing-components/owx/owx.module#OwxModule'
+      },
+      {
+        path: 'instructor',
+        loadChildren: './landing-components/instructor-page/instructor-page.module#InstructorPageModule'
       }
     ]
   },
@@ -88,8 +92,15 @@ const routes: Routes = [
     path: 'onewaterblog/author-reg',
     loadChildren: './authors/author-registration/author-registration.module#AuthorRegistrationModule'
   },
-  //-----------JOB PAGES ROUTING---------------//
 
+    //-----------AUTHOR ADMIN PANEL---------------//
+
+    {
+      path: 'author',
+      loadChildren: './authors/author-admin/author-admin.module#AuthorAdminModule'
+    },
+
+  //-----------JOB PAGES ROUTING---------------//
   {
     path: 'onewaterjobs',
     component: JobPortalComponent,
@@ -117,14 +128,22 @@ const routes: Routes = [
       {
         path: 'emp-login',
         loadChildren: './employers/employer-login/employer-login.module#EmployerLoginModule'
-      },
-      {
-        path: 'emp-reg',
-        loadChildren: './employers/employer-registeration/employer-registeration.module#EmployerRegisterationModule'
       }
     ]
   },
+   //-----------Employer Registeration page -----------------//
+   {
+    path: 'onewaterjobs/emp-reg',
+    loadChildren: './employers/employer-registeration/employer-registeration.module#EmployerRegisterationModule'
+  },
 
+  //-----------EMPLOYER ADMIN PANEL---------------//
+  {
+    path: 'employer',
+    loadChildren: './employers/employer-admin/employer-admin.module#EmployerAdminModule'
+  },
+
+  
   //-----------VIDEO PAGES ROUTING---------------//
 
   {
@@ -149,23 +168,30 @@ const routes: Routes = [
       }
     ]
   },
-
-  //-----------AUTHOR ADMIN PANEL---------------//
-
+   //-----------Instructor Login page -----------------//
   {
-    path: 'author',
-    loadChildren: './authors/author-admin/author-admin.module#AuthorAdminModule'
+    path: 'instructor-login',
+    loadChildren: './instructors/instructor-login/instructor-login.module#InstructorLoginModule'
   },
 
-  //-----------EMPLOYER ADMIN PANEL---------------//
-
+  //-----------Instructor REgistration page -----------------//
   {
-    path: 'employer',
-    loadChildren: './employers/employer-admin/employer-admin.module#EmployerAdminModule'
+    path: 'instructor-reg',
+    loadChildren: './instructors/instructor-registration/instructor-registration.module#InstructorRegistrationModule'
   },
+    //-----------Instructor Admin Panel -----------------//
+    {
+      path: 'instructor-admin',
+      loadChildren: './instructors/instructor-admin/instructor-admin.module#InstructorAdminModule'
+    },
+
+ //-----------User Registeration page -----------------//
+ {
+  path: 'user-reg',
+  loadChildren: './user-registration/user-registration.module#UserRegistrationModule'
+},
 
   //-----------USER ADMIN PANEL---------------//
-
   {
     path: 'user-admin',
     loadChildren: './user-admin/user-admin.module#UserAdminModule',

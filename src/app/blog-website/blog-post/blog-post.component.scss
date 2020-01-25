@@ -27,10 +27,9 @@
 .post-top{
   padding-top:20vh;
 }
-.related-blogs{margin: 5rem 0;
+.related-blogs{margin: 2.5rem 0;
 h2{
   margin-bottom: 0;
-
 }
 .two-card .blog-caption {
   min-height: 140px;
@@ -410,6 +409,12 @@ figure figcaption {
   .side-card{
     padding: 0;
   }
+  .related-blogs{
+    h2{
+     text-align: center;
+    }
+  }
+  
 }
 
 @media screen and (max-width:520px){

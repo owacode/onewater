@@ -5,6 +5,10 @@
   background: #fff;
 }
 
+.outer-card{
+  max-width: 100% !important;
+}
+
 .category-head h1{
   margin: 0.5rem auto;
   @include ms-respond(font-size,8);
@@ -23,6 +27,7 @@
 
 .category-box{
   height: 120px;
+
 }
 .big-post{
   margin: 0.2rem auto 3rem;
@@ -95,6 +100,7 @@
 .outer-card{
     margin: 1rem auto;
 }
+
 .latest-card{
   background: #fff;
   position: relative;
@@ -107,6 +113,10 @@
   .blog-caption {
     padding: 1rem;
     padding-left: 0.2rem;
+
+    h4{
+      margin-top: 0;
+    }
   }
 }
 

@@ -50,6 +50,7 @@
   }
   img{
     width: 80%;
+    max-width: 350px;
   }
 }
 
@@ -102,8 +103,6 @@ h2{
 
 }
 
-
-
 p{
   font-size: 1.1rem;
   line-height: 2rem;
@@ -150,7 +149,7 @@ img{
     width: 100%;
     top: 26%;
     left: -10%;
-    background: url(/assets/img/video-bg.webp);
+    background: url(/assets/img/video-bg.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 20%;
@@ -162,7 +161,7 @@ img{
     width: 100%;
     top: -35%;
     left: 5%;
-    background: url(/assets/img/video-bg.webp);
+    background: url(/assets/img/video-bg.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 88%;
@@ -173,8 +172,15 @@ img{
   .thumbnail-card{
     position: relative;
     margin: 0.8rem 0;
-    height: 110px;
+    min-height: 110px;
+
+    .col-7{
+      padding-left: 4px !important;
+    padding-right: 16px !important;
+    }
   }
+   
+  
   .thumb-caption h3{
     font-size: 0.9rem;
     margin: 0.5rem ;
@@ -183,27 +189,18 @@ img{
     letter-spacing: -0.5px;
   }
   .thumb-img{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 40%;
     height: 100%;
+    position: absolute;
 
     img{
       height: 100%;
     }
   }
   .thumb-caption{
-    position: absolute;
-    width: 60%;
-    height: 110px;
-    right: 0;
-    top: 0;
+    height: 100%;
   }
   .video-metadata{
-    position: absolute;
     padding: 0.5rem;
-    bottom: 0;
   }
   .channel{
     font-size: 0.9rem;

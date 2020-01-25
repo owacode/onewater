@@ -51,7 +51,6 @@ $modularscale: (
   ),
 );
 
-
 h1,
 h2,
 h3,
@@ -66,23 +65,28 @@ h1{
   @include ms-respond(font-size,6);
   font-weight: 700;
   letter-spacing: -0.1rem;
+  margin-top: 2.5rem;
 }
 h2{
   @include ms-respond(font-size,4);
   font-weight: 700;
   letter-spacing: -0.09rem;
+  margin-top: 2.5rem;
 }
 h3{
   @include ms-respond(font-size,3);
   letter-spacing: -0.07rem;
+  margin-top: 2rem;
 }
 h4{
   @include ms-respond(font-size,2);
   letter-spacing: -0.05rem;
+  margin-top: 2rem;
 }
 h5{
   @include ms-respond(font-size,1);
   letter-spacing: -0.03rem;
+  margin-top: 1.5rem;
 }
 h6{
   @include ms-respond(font-size,0);

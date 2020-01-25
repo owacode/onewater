@@ -1,0 +1,29 @@
+@import '../../../job-portal/job-portal.component.scss';
+@import '../../../dashboard-style.scss';
+
+.status{
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1.5px solid transparent;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  color: rgb(255, 255, 255) !important;
+}
+.pending{
+  background: orangered;
+  border-color: rgb(150, 42, 0)
+}
+.approved{
+  background: green;
+  border-color: rgb(1, 61, 1);
+}
+h4{
+  margin: 0;
+}
+
+.content-info{
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 200%;
+}
+

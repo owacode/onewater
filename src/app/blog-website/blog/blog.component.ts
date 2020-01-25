@@ -211,7 +211,7 @@ export class BlogComponent implements OnInit {
     document.querySelector(".subcategories-card")['style'].display = "none";
   }
 
-  //owl carousel settings
+  //owl carousel settings for featured blog cards 
 
   carouselOptions = {
     margin: 25,
@@ -224,7 +224,7 @@ export class BlogComponent implements OnInit {
       0: {
         items: 1,
       },
-      600: {
+      768: {
         items: 2,
         stagePadding: 50
       },
@@ -234,6 +234,7 @@ export class BlogComponent implements OnInit {
     }
   }
 
+  //owl carousel setting for top authors
   carouselOptionsAuthors = {
     margin: 25,
     nav: true,
