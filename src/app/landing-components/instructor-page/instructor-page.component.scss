@@ -2,7 +2,11 @@
 @import '../landing-components.component.scss';
 
 .hero-section{
-    background: #092b86;
+    background: rgb(9,43,134);
+    background: radial-gradient(circle, rgba(9, 42, 134, 0.938) 20%, rgba(9,43,134,1) 100%),url(/assets/img/landing/ins-hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     .heading{
         h1{
@@ -10,5 +14,130 @@
             letter-spacing: -0.1rem;
             text-align: center;
         }
+    }
+}
+.join-btn{
+    color: #000;
+    border: 2px solid #000;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-radius: 4px;
+    position: relative;
+    z-index: 100;
+    margin: 1rem 0;
+    transition: all 0.3s ease-in-out;
+}
+.join-btn:hover{
+background: #000;
+color: #fff;
+}
+.register-card{
+    max-width: 1100px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: -200px;
+    position: relative;
+    z-index: 100;
+    padding:1.5rem 3rem;
+    border-radius: 20px;
+    transform: translateY(-50%);
+    background: #fff;
+    img{
+        max-width: 90%;
+    }
+    h2{
+        font-weight: 700;
+    }
+}
+h2{
+    text-align: center;
+}
+h2,h4{
+    color: #000;
+}
+.why-become-instructor-section{
+    margin-top: 50px;
+
+    h2,h4,p{
+        color: #000;
+    }
+    .row{
+        margin-top: 50px;
+    }
+    
+}
+.feature-box{
+    img{
+        width: 70px;
+    }
+    h4{
+        margin-top: 0.5rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+}
+.process-box{
+    img{
+        width: 80px;
+    }
+    h4{
+        margin-left: 10px;
+        margin-top: 0;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    .d-flex{
+        margin-bottom: 2rem;
+    }
+}
+/*bg blocks styles*/
+.block-5{
+    top:-20%;
+    right: -15%;
+}
+
+.block-5-bottom{
+    top: auto;
+    bottom: -5%;
+    left: -5%;
+    height: 300px;
+    width: 300px;
+    transform: scaleX(-1) rotate(45deg);
+    background: linear-gradient(90deg, #584bd3 1%, #5f70e2 35%, #edf1f5 100%);
+}
+.block-1{
+    top: 0vh;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+}
+.block-1-top{
+    left: auto;
+    right: -10%;
+}
+.process-section{
+    h2,h4,p{
+        color: #000;
+    }
+    .row{
+        margin-top: 50px;
+    }
+}
+.register-section{
+    img{
+        margin: auto;
+    }
+    h1{
+        color: #000;
+        text-align: left;
+        font-weight: 700;
+    }
+    h4{
+        color: #000;
+        margin: 2rem 0;
     }
 }
