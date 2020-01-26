@@ -14,7 +14,7 @@ const routes: Routes = [
       { path: '', component: UploadContentComponent },
       { path: 'platforms' , component: InstructorDashboardComponent},
       { path: 'past-submissions' , component: SubmittedContentComponent},
-      { path: 'content' , component: AboutContentComponent}
+      { path: 'content/:id' , component: AboutContentComponent}
     ]
   }
 ];

@@ -87,7 +87,7 @@ export class NavbarComponent implements OnInit {
   }
 
   login() {
-    this.http.get('http://localhost:3000')
+    this.http.get('https://onewater-instructor-api.herokuapp.com')
       .subscribe(result => {
         console.log(result);
       })

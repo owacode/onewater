@@ -12,45 +12,45 @@ class="dashboard-content-wrapper dash-tab"
     </div>
     <div class="data">
       <h4>
-        Water Resources Management and Policy
+        {{course?.title}}
       </h4>
     </div>
   </div>
   <div class="content-info">
     <div class="label">
-      Category: 
+      Category:
     </div>
     <div class="data">
       <h5>
-        Water Management
+        {{course?.category}}
       </h5>
     </div>
   </div>
   <div class="content-info">
     <div class="label">
-      URL: 
+      URL:
     </div>
     <div class="data">
-      <a href="" target="_blank">Click here</a>
+      <a href={{course?.content_link}} target="_blank">Click here</a>
     </div>
   </div>
   <div class="content-info">
     <div class="label">
-      Status: 
+      Status:
     </div>
     <div class="data">
       <span class="status pending">
-        pending
+        {{course?.status}}
       </span>
     </div>
   </div>
   <div class="content-info">
     <div class="label">
-      Posted on: 
+      Posted on:
     </div>
     <div class="data">
       <h5>
-        12 January, 2020
+        {{course?.date_added | date:'MMM d, y'}}
       </h5>
     </div>
   </div>
@@ -58,9 +58,15 @@ class="dashboard-content-wrapper dash-tab"
     <div class="label">
       Approved on:
     </div>
-    <div class="data">
+    <div class="data" *ngIf="course?.date_approved == null">
       <h5>
         Not approved yet
+      </h5>
+    </div>
+
+    <div class="data" *ngIf="course?.date_approved != null">
+      <h5>
+        {{course?.date_approved | date:'MMM d, y'}}
       </h5>
     </div>
   </div>

@@ -9,6 +9,7 @@ import { Location, PopStateEvent } from "@angular/common";
 import { NgxUiLoaderService } from "ngx-ui-loader"; // Import NgxUiLoaderService
 import { AuthService } from "./auth.service";
 import * as jwt_decode from "jwt-decode";
+import { InstructorService } from './instructors/instructor-admin/instructor.service';
 // import { AuthService } from './authors/services/auth.service';
 
 // import * as $ from "jquery";
@@ -28,8 +29,11 @@ export class AppComponent implements OnInit {
     public router: Router,
     private location: Location,
     public auth: AuthService,
+    public instructorservice: InstructorService,
     public route: ActivatedRoute
   ) {
+
+    this.instructorservice.checklocalstorage();
     var hash = window.location.hash;
     var localcookie = this.readCookie("id_token");
     console.log(localcookie,'localcookie')

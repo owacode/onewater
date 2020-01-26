@@ -18,7 +18,8 @@
         <div class="form-box">
           <form
             class="vldform vldauth"
-            
+            [formGroup]="loginuser"
+            (submit)="login()"
           >
             <h1>instructor Login</h1>
             <input
@@ -27,6 +28,7 @@
               name="email"
               placeholder="Email"
               required
+              formControlName="email"
             />
             <input
               class="vldform__textbox"
@@ -34,10 +36,11 @@
               name="pass"
               placeholder="Password"
               required
+              formControlName="password"
             />
             <!-- <a class="vldform__recoverypassword" (click)="showrecoveryform()">Forgot password?</a> -->
             <!-- <a href=""></a> -->
-            <button type="button" class="vldform__button" routerLink="/instructor-reg">Login</button>
+            <button type="submit" class="vldform__button">Login</button>
             <!-- <div class="social-btn"> <span>or login using </span> <br>
                  <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
                  <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
@@ -48,7 +51,7 @@
             <a class="vldform__signuplink" (click)="showregform()">Sign up</a>
           </p>
 
-          <form class="vldform vldreg">
+          <form class="vldform vldreg" [formGroup]="user" (submit)="register()">
             <h1>instructor registration</h1>
             <input
               class="vldform__textbox"
@@ -56,6 +59,7 @@
               name="name"
               placeholder=" Name"
               required
+              formControlName="name"
             />
             <input
               class="vldform__textbox"
@@ -63,16 +67,18 @@
               name="email"
               placeholder=" Email"
               required
+              formControlName="email"
             />
             <div class="row">
               <div class="col-md-6">
                 <input
-      
+
                   class="vldform__textbox halfwidth"
                   type="password"
                   name="pass"
                   placeholder="Password"
                   required
+                  formControlName="password"
                 />
               </div>
 
@@ -83,6 +89,7 @@
                   name="pass2"
                   placeholder="Confirm Password"
                   required
+                  formControlName="cpassword"
                 />
               </div>
             </div>
@@ -91,9 +98,9 @@
               class="vldform__button"
               data-toggle="modal"
               data-target="#myModal"
-              type="button"
-              value="Sign up" 
-              
+              type="submit"
+              value="Sign up"
+
             />
             <!-- <div class="social-btn"> <span>or signup using </span> <br>
                    <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
@@ -104,8 +111,8 @@
             Already a member ?
             <a (click)="showauthform()">Log in</a>
           </p>
-          
-          <!-- 
+
+          <!--
              <form class="vldform vldrecpass">
                <h1>Password Recovery</h1>
                <input class="vldform__textbox" type="email" name="email"  placeholder="Email" required>
