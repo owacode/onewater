@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InstructorService } from './instructor.service';
 
 @Component({
   selector: 'app-instructor-admin',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructorAdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(public instructorservice: InstructorService) { }
 
   ngOnInit() {
+  }
+
+  logout(){
+    this.instructorservice.logout();
   }
 
 }

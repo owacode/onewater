@@ -14,10 +14,10 @@
         </h1> -->
 
     <div class="dashboard-content-wrapper dash-tab">
-      <form class="dashboard-form">
+      <form class="dashboard-form" [formGroup]="user_registration" (submit)="register()">
         <div class="dashboard-section basic-info-input">
           <h4><i data-feather="user-check"></i>Basic Info</h4>
-          <div class="form-group row">
+          <!-- <div class="form-group row">
             <label class="col-sm-3 col-form-label">Name</label>
             <div class="col-sm-9">
               <input
@@ -27,10 +27,6 @@
                 formControlName="user_name"
               />
             </div>
-            <!-- <div class="row form-group" >
-                <p style="color: red; margin:0px auto">
-                    Enter Name </p>
-            </div> -->
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Email</label>
@@ -42,11 +38,7 @@
                 formControlName="email"
               />
             </div>
-            <!-- <div class="row form-group"  >
-                <p style="color: red; margin:0px auto">
-                    Enter email </p>
-            </div> -->
-          </div>
+          </div> -->
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Phone</label>
             <div class="col-sm-9">
@@ -54,19 +46,15 @@
                 type="text"
                 class="form-control"
                 placeholder="Enter your contact no."
-                formControlName="mobile"
+                formControlName="mobile_no"
               />
             </div>
-            <!-- <div class="row form-group" >
-                <p style="color: red; margin:0px auto">
-                    Enter Your Mobile No. </p>
-            </div> -->
           </div>
 
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Nationality</label>
             <div class="col-sm-6">
-              <select name="nationality">
+              <select formControlName="nationality" name="nationality">
                 <option value="">Select your nationality</option>
                 <option value="afghan">Afghan</option>
                 <option value="albanian">Albanian</option>
@@ -271,12 +259,9 @@
                 type="text"
                 class="form-control"
                 placeholder="Your Profession"
+                formControlName="profession"
               />
             </div>
-            <!-- <div class="row form-group" >
-                <p style="color: red; margin:0px auto">
-                    Enter Your Profession. </p>
-            </div> -->
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Linkedin Profile</label>
@@ -285,28 +270,17 @@
                 type="text"
                 class="form-control"
                 placeholder="Paste your linkedin profile url"
+                formControlName="linkedIn"
               />
             </div>
-            <!-- <div class="row form-group" >
-                <p style="color: red; margin:0px auto">
-                    Enter Your Mobile No. </p>
-            </div> -->
           </div>
         </div>
-       
+
         <div class="dashboard-section basic-info-input">
           <div class="form-group row">
             <label class="col-sm-3 col-form-label"></label>
             <div class="col-sm-9">
-              <!-- <button
-                class="button"
-                type="submit"
-                data-toggle="modal"
-                data-target="#registerModal"
-              >
-                Submit
-              </button> -->
-              <button class="button" type="button" [routerLink]="['/instructor-admin']">Submit</button>
+              <button class="button" type="submit">Submit</button>
             </div>
           </div>
         </div>
@@ -314,7 +288,6 @@
     </div>
   </div>
 </section>
-<!-- <button data-toggle="modal" data-target="#registerModal"> open modal</button> -->
 <div class="modal fade" id="registerModal" role="dialog">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
@@ -334,7 +307,7 @@
           24 hrs.
         </h2>
       </div>
-      <button type="button" class="btn btn-default" data-dismiss="modal" > 
+      <button type="button" class="btn btn-default" data-dismiss="modal" >
         OK
       </button>
     </div>

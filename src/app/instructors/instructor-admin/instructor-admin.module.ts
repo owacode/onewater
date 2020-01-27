@@ -6,12 +6,15 @@ import { InstructorAdminComponent } from './instructor-admin.component';
 import { UploadContentComponent } from './upload-content/upload-content.component';
 import { SubmittedContentComponent } from './submitted-content/submitted-content.component';
 import { AboutContentComponent } from './about-content/about-content.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [InstructorDashboardComponent, InstructorAdminComponent, UploadContentComponent, SubmittedContentComponent, AboutContentComponent],
   imports: [
     CommonModule,
-    InstructorAdminRoutingModule
+    InstructorAdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 
