@@ -43,7 +43,7 @@
   <div class="container">
   <div class="row align-items-center">
     
-    <div class="col-lg-6">
+    <div class="col-lg-6 order-lg-first">
       <h2>
         Become instructor in the academy
       </h2>
@@ -52,12 +52,15 @@
 
        
       </p>
-      <button class="btn" [routerLink]="['/home/instructor']">
-        Know more
-       </button>
+      <div class="join-btn-wrap">
+        <button class="btn" [routerLink]="['/home/instructor']">
+          Know more
+         </button>
+      </div>
+     
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 ins-img-wrap order-first">
       <img src="assets/img/landing/ins-img.png" alt="" class="hero-img">
     </div>
   </div>

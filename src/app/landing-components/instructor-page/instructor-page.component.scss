@@ -7,6 +7,9 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: 200px;
+    align-items: center;
 
     .heading{
         h1{
@@ -15,6 +18,10 @@
             text-align: center;
         }
     }
+}
+
+.hero-heading{
+    align-items: center;
 }
 .join-btn{
     color: #000;
@@ -36,18 +43,21 @@ color: #fff;
     max-width: 1100px;
     width: 90%;
     margin: auto;
-    margin-bottom: -200px;
     position: relative;
-    z-index: 100;
+    z-index: 50;
     padding:1.5rem 3rem;
     border-radius: 20px;
-    transform: translateY(-50%);
+    position: absolute;
+    left : 50%;
+    transform: translateX(-50%);
+    bottom: -25%;
     background: #fff;
     img{
-        max-width: 90%;
+        width: 90%; max-width: 500px;
     }
     h2{
         font-weight: 700;
+        margin-top: 0;
     }
 }
 h2{
@@ -139,5 +149,60 @@ h2,h4{
     h4{
         color: #000;
         margin: 2rem 0;
+    }
+}
+
+@media screen and (max-width:991px){
+    .hero-section{
+        align-items: flex-start;
+        margin-bottom: 0;
+
+        .heading {
+            h1{
+                margin-top: 25vh;
+            }
+        }
+        .register-card{
+            bottom: 25%;
+        }
+    }
+    .process-box{
+        margin-bottom: 2rem;
+        border-bottom: 1px solid rgba(13, 140, 245, 0.548);
+        .d-flex{
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width:767px){
+    .hero-section{
+        flex-direction: column;
+        .heading{
+            h1{
+                margin-top: 15vh;
+                font-size:2.5rem;
+            }
+        }
+    }
+    .register-card{
+        position: relative;
+        left: auto;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width:480px){
+    .hero-section{
+        .heading{
+            h1{
+                margin-top: 20vh;
+                font-size:2.2rem;
+            }
+        }
+    }.register-card{
+        img{
+            margin-top:0;
+        }
     }
 }

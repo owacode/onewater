@@ -138,6 +138,9 @@ section{
     }
   }
 
+  .join-btn-wrap{
+    margin: 1rem 0;
+  }
   .drop-img{
       width: 80%;
       margin: auto;
@@ -225,6 +228,9 @@ section{
       margin: auto;
       max-width:500px;
     }
+  }
+  .ins-img-wrap,.join-btn-wrap{
+    text-align:center;
   }
   .feature-card{
     margin: 0.5rem 0;
