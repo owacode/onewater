@@ -13,15 +13,16 @@
     background-attachment: fixed;
     .wave{
       transform: rotateY(180deg);
-      bottom: -25%;
+      bottom: -30%;
     }
 }
 
 .author-btn {
   text-align: center;
- margin: 30px 0 70px;
+ margin: 30px 0px 0;
  z-index: 10;
     position: relative;
+   
   .reg-text{
     padding: 75px 0;
     }
@@ -43,6 +44,7 @@
     background: #f9f9f9;
     border-radius: 5px;
     box-shadow: none;
+    transition: all 0.3s ease-in-out;
   }
   a:hover {
     color: #fff;
@@ -54,8 +56,10 @@
   }
 }
 
+
 h2{
-  margin: 30px 0;
+  margin-top: 3rem;
+  margin-bottom: 0.8rem;
 }
 
 .single-category{
@@ -81,6 +85,7 @@ h2{
 .landing-section{
   min-height: 110vh;
   margin-top: -95vh;
+  padding-bottom: 0;
 .landing-text{
   margin-top: 5rem;
   margin-bottom: 2rem;
@@ -96,7 +101,7 @@ h2{
     font-weight: 600;
     letter-spacing: -1px;
     color: #fff;
-    margin: 2rem 0;
+    margin: 2rem auto;
     position: relative;
     z-index: 5;
   }
@@ -112,7 +117,7 @@ p{
 
 .landing-video{
 text-align: center;
-margin: 2rem 0;
+margin: 2rem 0 5rem;
 position: relative;
 
 .iframe-container{
@@ -145,14 +150,14 @@ img{
 .landing-video::before{
   content: "";
     position: absolute;
-    height: 83%;
-    width: 100%;
-    top: 26%;
+    height: 80%;
+    width: 90%;
+    top: 35%;
     left: -10%;
     background: url(/assets/img/video-bg.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 20%;
+    background-position: 10%;
 }
 .landing-video::after{
   content: "";
@@ -179,7 +184,6 @@ img{
     padding-right: 16px !important;
     }
   }
-   
   
   .thumb-caption h3{
     font-size: 0.9rem;
@@ -207,12 +211,19 @@ img{
   }
 }
 .top-videos{
+
+  background: linear-gradient(0deg, rgba(255,255,255,0.26934523809523814) 70%, rgba(231,241,247,0.8323704481792717) 85%, rgba(213,231,242,1) 100%);
+
+  
    .col-sm-6{
     padding: 0 4px 4px !important;
   }
   .col-md-6{
     padding: 8px;
   }
+}
+.vod-big-wrap{
+padding: 0 5px;
 }
 .vod-small{
   .thumb-caption {
@@ -267,18 +278,25 @@ h2{
     .video-metadata{
       width: 100%;
       padding: 0.5rem;
+      .row{
+        width:100%
+      }
      .views, .date{
-      color: #fff;
+      color: rgba(255, 255, 255, 0.664);
+      font-size: 0.8rem;
      }
     }
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 991px){
   .cover-photo{height: 70vh;}
   .landing-section{
     margin-top: -65vh;
     min-height: auto;
+  }
+  .vod-big-wrap{
+    padding: 0 2vw;
   }
   .vod {
     .thumbnail-card{
@@ -317,7 +335,7 @@ h2{
   }
     }
   .landing-video{
-    padding: 4rem 0;
+    padding: 1.5rem 0;
     }
 
   .landing-video:before {
@@ -373,6 +391,12 @@ h2{
 
 
 } 
+
+@media screen and (max-width: 576px){
+  .vod-big-wrap{
+    padding: 0 15px;
+  }
+}
 
 @media screen and (max-width: 360px){
 .sidebar-videos {

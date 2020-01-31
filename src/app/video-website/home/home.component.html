@@ -58,7 +58,7 @@
       Top Videos
     </h2>
     <div class="row">
-      <div class="col-lg-6 col-md-12 h-100">
+      <div class="col-lg-6 col-md-12 h-100 vod-big-wrap">
         <div class="vod">
           <a
             [routerLink]="['/o-wow/singlevideo/', singleliked._id]"
@@ -78,16 +78,10 @@
                     John Wick
                   </div>
                   <div class="video-metadata">
-                    <div class="row">
-                      <div class="col-6">
                         <div class="views">{{ singleliked?.views }} views</div>
-                      </div>
-                      <div class="col-6">
                         <div class="date">
                           {{ singleliked?.date_added | date: "MMMM d, y" }}
                         </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -117,16 +111,11 @@
                         John Wick
                       </div>
                       <div class="video-metadata">
-                        <div class="row">
-                          <div class="col-6">
                             <div class="views">{{ video?.views }} views</div>
-                          </div>
-                          <div class="col-6">
                             <div class="date">
                               {{ video?.date_added | date: "MMMM d, y" }}
                             </div>
-                          </div>
-                        </div>
+
                       </div>
                     </div>
                   </div>
@@ -274,6 +263,8 @@
     </div>
   </div>
 </section>
+
+
 <!----------Video Section Begins--------------->
 <div class="container-fluid">
   <div class="row">
@@ -281,7 +272,7 @@
       <section class="video-section">
         <div class="my-container">
           <h2>Water</h2>
-          <owl-carousel
+          <owl-carousel *ngIf="water.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -302,20 +293,16 @@
                     <div class="video-name">
                       <h5>{{ video?.title | slice: 0:45 }}..</h5>
                     </div>
-                    <div class="channel">
+                    <!-- <div class="channel">
                       John Wick
-                    </div>
+                    </div> -->
                     <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6">
                           <div class="views">{{ video?.views }} views</div>
-                        </div>
-                        <div class="col-6">
+                      
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        </div>
-                      </div>
+                       
                     </div>
                   </div>
                 </div>
@@ -328,14 +315,14 @@
               [queryParams]="{ category: 'Water', fetchcategory: 'water' }"
             >
               <p>
-                More videos from Category
+                More videos from Water
               </p>
             </a>
           </div>
         </div>
         <div class="my-container">
           <h2>Wastewater</h2>
-          <owl-carousel
+          <owl-carousel *ngIf="wastewater.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -356,20 +343,17 @@
                     <div class="video-name">
                       <h5>{{ video?.title | slice: 0:45 }}..</h5>
                     </div>
-                    <div class="channel">
+                    <!-- <div class="channel">
                       John Wick
-                    </div>
+                    </div> -->
                     <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6">
+                     
                           <div class="views">{{ video?.views }} views</div>
-                        </div>
-                        <div class="col-6">
+                       
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        </div>
-                      </div>
+                        
                     </div>
                   </div>
                 </div>
@@ -385,14 +369,14 @@
               }"
             >
               <p>
-                More videos from Category
+                More videos from Wastewater
               </p>
             </a>
           </div>
         </div>
         <div class="my-container">
           <h2>Storm Water</h2>
-          <owl-carousel
+          <owl-carousel *ngIf="stormwater.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -413,20 +397,17 @@
                     <div class="video-name">
                       <h5>{{ video?.title | slice: 0:45 }}..</h5>
                     </div>
-                    <div class="channel">
+                    <!-- <div class="channel">
                       John Wick
-                    </div>
+                    </div> -->
                     <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6">
+                      
                           <div class="views">{{ video?.views }} views</div>
-                        </div>
-                        <div class="col-6">
+                        
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        </div>
-                      </div>
+                        
                     </div>
                   </div>
                 </div>
@@ -442,7 +423,7 @@
               }"
             >
               <p>
-                More videos from Category
+                More videos from Storm Water
               </p>
             </a>
           </div>
@@ -450,7 +431,7 @@
 
         <div class="my-container">
           <h2>Innovation Research</h2>
-          <owl-carousel
+          <owl-carousel *ngIf="innovationresearch.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -471,20 +452,17 @@
                     <div class="video-name">
                       <h5>{{ video?.title | slice: 0:45 }}..</h5>
                     </div>
-                    <div class="channel">
+                    <!-- <div class="channel">
                       John Wick
-                    </div>
+                    </div> -->
                     <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6">
+                    
                           <div class="views">{{ video?.views }} views</div>
-                        </div>
-                        <div class="col-6">
+                       
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        </div>
-                      </div>
+                       
                     </div>
                   </div>
                 </div>
@@ -500,7 +478,7 @@
               }"
             >
               <p>
-                More videos from Category
+                More videos from Innovation & Research
               </p>
             </a>
           </div>
@@ -508,7 +486,7 @@
 
         <div class="my-container">
           <h2>Sustainable Development</h2>
-          <owl-carousel
+          <owl-carousel *ngIf="sustainabledevelopment.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -529,20 +507,17 @@
                     <div class="video-name">
                       <h5>{{ video?.title | slice: 0:45 }}..</h5>
                     </div>
-                    <div class="channel">
+                    <!-- <div class="channel">
                       John Wick
-                    </div>
+                    </div> -->
                     <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6">
+                    
                           <div class="views">{{ video?.views }} views</div>
-                        </div>
-                        <div class="col-6">
+                       
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        </div>
-                      </div>
+                       
                     </div>
                   </div>
                 </div>
@@ -558,7 +533,7 @@
               }"
             >
               <p>
-                More videos from Category
+                More videos from Sustainable Development
               </p>
             </a>
           </div>
@@ -566,7 +541,7 @@
 
         <div class="my-container">
           <h2>Management & Finance</h2>
-          <owl-carousel
+          <owl-carousel *ngIf="managementsinance.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -587,20 +562,17 @@
                     <div class="video-name">
                       <h5>{{ video?.title | slice: 0:45 }}..</h5>
                     </div>
-                    <div class="channel">
+                    <!-- <div class="channel">
                       John Wick
-                    </div>
+                    </div> -->
                     <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6">
+                     
                           <div class="views">{{ video?.views }} views</div>
-                        </div>
-                        <div class="col-6">
+                       
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        </div>
-                      </div>
+                        
                     </div>
                   </div>
                 </div>
@@ -616,7 +588,7 @@
               }"
             >
               <p>
-                More videos from Category
+                More videos from Management & Finance
               </p>
             </a>
           </div>
@@ -624,7 +596,7 @@
 
         <div class="my-container">
           <h2>Legistative & Regulatory</h2>
-          <owl-carousel
+          <owl-carousel *ngIf="legistativeregulatory.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -645,20 +617,17 @@
                     <div class="video-name">
                       <h5>{{ video?.title | slice: 0:45 }}..</h5>
                     </div>
-                    <div class="channel">
+                    <!-- <div class="channel">
                       John Wick
-                    </div>
+                    </div> -->
                     <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6">
+                      
                           <div class="views">{{ video?.views }} views</div>
-                        </div>
-                        <div class="col-6">
+                       
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        </div>
-                      </div>
+                       
                     </div>
                   </div>
                 </div>
@@ -674,7 +643,7 @@
               }"
             >
               <p>
-                More videos from Category four
+                More videos from Legistative & Regulatory
               </p>
             </a>
           </div>
@@ -710,11 +679,10 @@
                     <div class="video-name">
                       <h3>{{ video?.title | slice: 0:45 }}..</h3>
                     </div>
-                    <div class="channel">
+                    <!-- <div class="channel">
                       John Wick
-                    </div>
+                    </div> -->
                     <div class="video-metadata">
-                     
                           <div class="views">{{ video?.views }} views</div>
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
@@ -723,8 +691,6 @@
                   </div>
                 </div>
               </div>
-               
-              
               </a>
             </div>
           </div>

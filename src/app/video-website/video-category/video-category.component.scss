@@ -39,8 +39,13 @@
 .top-videos{
     border-bottom: 1px #ccc solid;
     padding-bottom: 0 !important;
+    background:#fff;
 }
-
+.sidebar-videos{
+    .thumbnail-card{
+        margin-top: 0;
+    }
+}
 .thumb-caption-big{
     margin: 35px 0;
  

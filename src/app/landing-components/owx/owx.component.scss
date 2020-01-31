@@ -54,6 +54,9 @@
 
 
 @media all and (max-width:991px){
+    .hero-section{
+        background: #092b86;
+    }
     .block-2 {
     width: 600px;
     height: 600px;
@@ -67,7 +70,7 @@
     }
     .owx-hero-img,.owx-about-img{
         max-width: 500px;
-        margin: auto;
+        margin: 10vh auto 0;
     }
     .about-section{
         .block-2{
@@ -95,7 +98,15 @@
 }
 
 @media all and (max-width:520px){
-    .hero-section {background: #092b86;}
+    .hero-section {
+    
+    .heading{
+        h1{
+            font-size: 2.8rem;
+            letter-spacing: -0.2rem;
+        }
+    }
+    }
       
     .block-2{
         width: 534px;
