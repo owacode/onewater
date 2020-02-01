@@ -12,14 +12,19 @@ import * as $ from 'jquery';
 
 export class HeaderComponent implements OnInit {
 
+  screenWidth = 1091;
 
   constructor(public http: HttpClient, public auth: AuthService) { }
 
   ngOnInit() {
+    const header = document.querySelector('header');
+    const menu = document.querySelector('.menu');
+    const logo = document.querySelector('.logo');
+    const hamburger = document.querySelector('.hamburger');
+    const menulink = document.querySelectorAll('.navlink a');
 
-    let header = document.querySelector('header');
-    let fixHeader = function() {
-      if ($(window).scrollTop() > 80) {
+     let fixHeader = function(){
+      if ($(window).scrollTop() > 70) {
         $(header).addClass("fixed-header");
         //console.log("fix header");
       }
@@ -29,7 +34,15 @@ export class HeaderComponent implements OnInit {
       }
     }
 
-    $(window).on("scroll",fixHeader);
+    let showMenu = function(){
+      $(menu).toggleClass('show-menu');
+      $(logo).toggleClass('mobile-logo');
+      $(hamburger).toggleClass('clicked');
+    }
+
+      $(window).on("scroll",fixHeader);
+      $(hamburger).on("click",showMenu);
+      $(menulink).on("click",showMenu);
   }
 
   login() {

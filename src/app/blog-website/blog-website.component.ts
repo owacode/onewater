@@ -7,7 +7,6 @@ import { AuthService } from '../authors/services/auth.service';
   styleUrls: ['./blog-website.component.scss']
 })
 export class BlogWebsiteComponent implements OnInit {
-  showHeader = true ;
   constructor(public auth:AuthService) { }
 
   ngOnInit() {
