@@ -7,7 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
-//import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponentsComponent } from './landing-components/landing-components.component';
 import { LandingPageComponent } from './landing-components/landing-page/landing-page.component';
@@ -20,7 +20,7 @@ import { InstructorLoginComponent } from './instructors/instructor-login/instruc
 
 @NgModule({
   declarations: [
-    AppComponent,HeaderComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent, InstructorLoginComponent
+    AppComponent,HeaderComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent, InstructorLoginComponent, NavbarComponent
   ],
   
   exports:[],
