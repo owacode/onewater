@@ -48,9 +48,7 @@ export class HeaderComponent implements OnInit {
           event['url'] == '/instructor-login' ||
           event['url'] == '/onewaterjobs/emp-login' ||
           event['url'].includes('/onewaterblog/category') ||
-          event['url'].includes('/o-wow/video-category') ||
-           
-            ) {
+          event['url'].includes('/o-wow/video-category') ) {
           $(header).addClass('black-header');
         }
         else {
@@ -58,9 +56,8 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+
   }
-
-
 
   login() {
     this.http.get('https://onewater-instructor-api.herokuapp.com')
