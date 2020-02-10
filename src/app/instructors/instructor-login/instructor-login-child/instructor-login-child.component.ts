@@ -58,35 +58,53 @@ export class InstructorLoginChildComponent implements OnInit {
     this.registersubmitted=true;
     console.log(this.user.value);
     if(this.user.invalid){
-      $('#signupFail').css("display", "block");
-      $('#signupFail').addClass("show");
-      $('.overlay').css("display", "block");
+      console.log("details invalid")
       return;
     }
 
     if(this.user.value.password != this.user.value.cpassword) 
-    return alert("Password Not Matched");
+    {
+      return alert("Password Not Matched");
+    }
+    
     console.log('pass',this.user.value);
 
-    this.http.post('https://onewater-instructor-api.herokuapp.com/addinstructor',this.user.value)
+    this.http.post('http://localhost:3000/addinstructor',this.user.value)
     .subscribe(result=>{
-      console.log("User Added", result)
-     // alert("User Added Successfully");
-      $('#signupSuccess').css("display", "block");
-      $('#signupSuccess').addClass("show");
-      $('.overlay').css("display", "block");
+      if(result['status'] == "error"){
+        console.log("User already exist", result)
+
+        $('#signupFail').css("display", "block");
+        $('#signupFail').addClass("show");
+        $('.overlay').css("display", "block");
+      }
+      else if (result['status'] == "success"){
+        console.log("User Added succssfully", result)
+
+        $('#signupSuccess').css("display", "block");
+        $('#signupSuccess').addClass("show");
+        $('.overlay').css("display", "block");
+      }
+      else{
+        console.log("last condition", result)
+      }
     })
   }
 
   login(){
+    
     this.registersubmitted=true;
     console.log(this.loginuser.value);
     if(this.loginuser.invalid){
+      console.log("invalid details");
+        $('#invalidModal').css("display", "block");
+        $('#invalidModal').addClass("show");
+        $('.overlay').css("display", "block");
       return;
     }
-    console.log('pass',this.loginuser.value);
+    //console.log('pass',this.loginuser.value);
 
-    this.http.post<{msg:string, result:any}>('https://onewater-instructor-api.herokuapp.com/login',this.loginuser.value)
+    this.http.post<{msg:string, result:any}>('http://localhost:3000/login',this.loginuser.value)
     .subscribe(result=>{
       this.instructorservice.userid=result.result.id;
       this.instructorservice.useremail=result.result.email;
@@ -99,11 +117,23 @@ export class InstructorLoginChildComponent implements OnInit {
         $('#loginModal').css("display", "block");
         $('#loginModal').addClass("show");
         $('.overlay').css("display", "block");
+        return;
       };
 
-      if(!result.result.form_filled) this.route.navigate(['/instructor-reg']);
-      else if(result.result.status == 'pending') return alert("Your Profile is not been Approved Yet by the Admin");
-      else this.route.navigate(['/instructor-admin']);
+      if(!result.result.form_filled) 
+      this.route.navigate(['/instructor-reg']);
+
+      else if(result.result.status == 'pending') 
+      {
+        console.log("waiting to be approved by admin");
+        $('#pendingModal').css("display", "block");
+        $('#pendingModal').addClass("show");
+        $('.overlay').css("display", "block");
+        return;
+      }
+
+      else 
+      this.route.navigate(['/instructor-admin']);
     })
   }
 

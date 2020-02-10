@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn:'root'
 })
 
 export class InstructorService {
-  constructor () {}
+  constructor (private router: Router) {}
 
   userid;
   useremail;
@@ -26,6 +27,7 @@ export class InstructorService {
     localStorage.removeItem('instructor_email');
     this.userid= null;
     this.useremail =null;
+    console.log("instructor logged out");
+    this.router.navigate(["/instructor-login"]);
   }
-  
 }

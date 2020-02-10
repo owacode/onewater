@@ -19,7 +19,7 @@ export class AboutContentComponent implements OnInit {
       this.courseid = result.id;
     })
     console.log(this.courseid,'course id');
-    this.http.get<{status:any, msg:any, result:any}>('https://onewater-instructor-api.herokuapp.com/singlecourse/'+this.courseid)
+    this.http.get<{status:any, msg:any, result:any}>('http://localhost:3000/singlecourse/'+this.courseid)
     .subscribe(result=> {
       console.log(result);
       this.course = result.result[0];

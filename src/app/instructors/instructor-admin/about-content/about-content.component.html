@@ -39,9 +39,14 @@ class="dashboard-content-wrapper dash-tab"
       Status:
     </div>
     <div class="data">
-      <span class="status pending">
-        {{course?.status}}
-      </span>
+      <span class="status pending" *ngIf="course.status == 'pending'">
+        {{course.status}}
+       </span>
+
+         <span class="status approved" *ngIf="course.status == 'approved'">
+         {{course.status}}
+        </span>
+     
     </div>
   </div>
   <div class="content-info">
@@ -56,7 +61,7 @@ class="dashboard-content-wrapper dash-tab"
   </div>
   <div class="content-info">
     <div class="label">
-      Approved on:
+      Approved on : 
     </div>
     <div class="data" *ngIf="course?.date_approved == null">
       <h5>

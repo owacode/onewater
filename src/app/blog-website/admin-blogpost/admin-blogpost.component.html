@@ -1,42 +1,48 @@
 <!-- BEGIN Blog Post -->
+<!-- <div class="cover-photo" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}"> -->
+  <div class="cover-photo">
 
-<div class="cover-photo" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}">
   <div class="gradient-image"></div>
   <div class="wave"></div>
 </div>
 <div class="container blog-post-wrapper">
   <div class="row">
     <div class="col-lg-9">
-    
-        <div class=" post-top">
-          <h1>{{ blog?.title }}</h1>
+        <div class="post-top">
+          <h1>Admin Blog 1</h1>
           <div class="article-meta">
-            <img src="{{ author?.image }}" alt="Author" />
+            <img src="assets/img/jobs/candidate/thumb-1.jpg" alt="Author" />
             <div class="meta-data">
               <span class="meta-author"
                 >By
-                <a
-                  [routerLink]="['/onewaterblog/authorprofile/', author?._id]"
-                  >{{ author?.name | titlecase}}</a
-                ></span
+                <!-- <a
+                  [routerLink]="['/onewaterblog/authorprofile/', author?._id]"> -->
+                  Admin 
+                  <!-- </a > -->
+                  </span
               ><br />
-              <span class="meta-date">{{ author?.about_author | slice: 0:70  }}....</span>
+              <span class="meta-date">About admin</span>
             </div>
           </div>
 
           <p class="teaser top-teaser">
-            <strong>Category</strong> : <span>{{blog?.category | titlecase}} </span> <span>{{blog?.sub_category | titlecase}}</span>
+            <strong>Category</strong> : <span>Water </span> <span>Wastewater</span>
           </p>
-          <div class="di" [innerHtml]="blog?.desc"></div>
+<div>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt praesentium ex quia nulla, impedit dolorem dignissimos facere exercitationem in rerum? Reiciendis, odit soluta? Saepe repudiandae ipsum quisquam temporibus atque soluta culpa, minus fuga doloremque ad adipisci. Maxime deleniti quod quis obcaecati doloribus deserunt harum possimus non rerum nemo? Saepe, consequuntur pariatur quia nisi quis, voluptates nihil recusandae odit eius optio asperiores odio illum placeat sint beatae veritatis quo obcaecati in! Error facilis corrupti sed maiores doloribus doloremque, ad vel eos, aliquam optio itaque. Facilis nihil odio fuga? Minus dignissimos voluptate dicta voluptatem earum laudantium qui magni, fugit similique, atque voluptatibus modi aliquam vel. Dicta, aliquam! Id consequatur doloremque, laudantium est ipsum tenetur! Voluptates sapiente explicabo optio, ab placeat dolore itaque, vitae magni dolores magnam libero facilis modi est deserunt temporibus accusantium illo fugit aliquid sequi culpa deleniti exercitationem iste, doloremque amet. Laboriosam aliquam dolore, repellat similique odit non quia quas natus placeat et error minus, fuga officiis cupiditate sit porro? Eaque minus sint ducimus corrupti dolorem, velit labore sequi. Cum sequi nostrum pariatur quia porro tempore iste sed sint rem. Culpa, officiis similique, repellendus ducimus possimus nobis incidunt quam sit debitis, ipsam voluptatem vitae perferendis repudiandae nesciunt autem aperiam deleniti.
+  </p>
+ 
+</div>
           <div class="blog-options">
-            <div class="like-btn"  *ngIf="!liked">
+            <div class="like-btn" >
               <h6>Like :</h6>
-              <a (click)="likeblog()">
+              <a>
                 <i class="fa fa-heart" aria-hidden="true"></i>
               </a>
               <span>liked!</span>
             </div>
-            <div class="like-btn" *ngIf="liked">
+            <div class="like-btn">
               <h6>Liked</h6>
               <a class="press">
                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -45,30 +51,28 @@
             </div>
             <div class="share-btn">
               <h6>Share on :</h6>
-              <button><fb-like url="{{ url }}"></fb-like></button>
-              <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
-              <button><linkedin-share url="{{ url }}"></linkedin-share></button>
+              <!-- <button><fb-like ></fb-like></button>
+              <button><tweet></tweet></button>
+              <button><linkedin-share></linkedin-share></button> -->
             </div>
           </div>
 
           <div class="meta-bio author-box">
-            <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
-              <img src="{{ author?.image }}" alt="" />
+            <a>
+              <img src="assets/img/jobs/candidate/thumb-1.jpg" alt="" />
             </a>
             <div class="bio-text">
               <p class="bio-shl">Author</p>
               <p class="bio-hl">
-                <a
-                  [routerLink]="['/onewaterblog/authorprofile/', author._id]"
-                  >{{ author?.name | titlecase}}</a
+                <a>Admin</a
                 >
               </p>
-              <p>{{ author?.about_author | slice: 0:80 }}...</p>
+              <p>about admin...</p>
             </div>
           </div>
         </div>
 
-        <div class="related-blogs">
+        <!-- <div class="related-blogs">
           <h2>More From Author</h2>
           <owl-carousel
             [items]="authorblogs"
@@ -98,9 +102,9 @@
               </div>
             </div>
           </owl-carousel>
-      </div>
+      </div> -->
     </div>
-    <div class="col-lg-3">
+    <!-- <div class="col-lg-3">
       <div class="side-card ">
         <h2>
           Popular Blogs
@@ -163,6 +167,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

@@ -3,6 +3,7 @@ import { Route, Router } from '@angular/router';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { InstructorService } from '../instructor.service';
 import { HttpClient } from '@angular/common/http';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-upload-content',
@@ -31,14 +32,24 @@ export class UploadContentComponent implements OnInit {
     this.course.value.id= this.instructorservice.userid;
     console.log(this.course.value);
     if(this.course.invalid){
+      console.log("Content posting unsucessful, fill the form correctly")
       return;
     }
     console.log('pass',this.course.value);
-
-    this.http.post('https://onewater-instructor-api.herokuapp.com/addcourse',this.course.value)
+    this.http.post('http://localhost:3000/addcourse',this.course.value)
     .subscribe(result=>{
-      console.log("User Details Updated", result)
+      console.log("Content Posted Successfully", result);
+      $('#videoModal').css("display", "block");
+        $('#videoModal').addClass("show");
+        $('.overlay').css("display", "block");
     })
+  }
+
+  closeModal(thismodal) {
+    console.log('hit close')
+    $(thismodal).css("display", "none");
+    $(thismodal).removeClass("show");
+    $('.overlay').css("display", "none");
   }
 
 }

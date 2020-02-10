@@ -42,8 +42,8 @@ export class AuthorLoginComponent implements OnInit {
     this.auth.emailexist$.subscribe(
       () => {
         console.log("hit email not exist")
-        $('#signupModal').css("display", "block");
-        $('#signupModal').addClass("show");
+        $('#mailexistModal').css("display", "block");
+        $('#mailexistModal').addClass("show");
         $('.overlay').css("display", "block");
       }
     );
@@ -60,8 +60,8 @@ export class AuthorLoginComponent implements OnInit {
     this.auth.verifymail$.subscribe(
       () => {
         console.log("hit verify mail")
-        $('#myModal').css("display", "block");
-        $('#myModal').addClass("show");
+        $('#signupModal').css("display", "block");
+        $('#signupModal').addClass("show");
         $('.overlay').css("display", "block");
       }
     );
@@ -98,9 +98,6 @@ export class AuthorLoginComponent implements OnInit {
     }
 
     if (this.user.value.password != this.user.value.cpassword) return alert("Password Not Matched");
-
-    if (this.user.value.password != this.user.value.cpassword) return alert("Password Not Macthed");
-
     console.log(this.user.value);
     this.auth.author(this.user.value);
   }

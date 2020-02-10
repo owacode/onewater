@@ -71,7 +71,7 @@
                   type="password"
                   name="pass"
                   placeholder="Password"
-                  
+
                   required
                   formControlName="password"
                 />
@@ -207,6 +207,78 @@
         class="btn btn-default"
         data-dismiss="modal"
         (click)="closeModal(mailexistModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--profile pending for approval-->
+<div class="modal modal-animate" id="pendingModal" role="dialog" #pendingModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="closeModal(pendingModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/pending-profile.png"
+          alt=""
+        />
+        <h2>
+         Your profile has been sent to admin for approval. 
+         Please wait for the confirmation.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="closeModal(pendingModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--profile pending for approval-->
+<div class="modal modal-animate" id="invalidModal" role="dialog" #invalidModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="closeModal(invalidModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/invalid-details.png"
+          alt=""
+        />
+        <h2>
+         Please enter a valid email or password.
+         Thankyou.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="closeModal(invalidModal)"
       >
         OK
       </button>

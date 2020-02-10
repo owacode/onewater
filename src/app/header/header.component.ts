@@ -60,7 +60,7 @@ export class HeaderComponent implements OnInit {
   }
 
   login() {
-    this.http.get('https://onewater-instructor-api.herokuapp.com')
+    this.http.get('http://localhost:3000')
       .subscribe(result => {
         console.log(result);
       })

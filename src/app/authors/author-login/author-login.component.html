@@ -84,52 +84,53 @@
 </section>
 
 <!-- First Signup Modal -->
-<div class="modal modal-animate" id="myModal" role="dialog" #thismodal>
+<div class="modal modal-animate" id="signupModal" role="dialog" #signupModal>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
     <div class="modal-head">
-        <button type="button" class="close" data-dismiss="modal" (click)="closeModal(thismodal)">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" (click)="closeModal(signupModal)">&times;</button>
     </div>
       <div class="modal-body">
        <img src="assets/img/mail.png
        " alt="">
        <h2>Please verify the email by clicking the link you will receive in your inbox.</h2>
       </div>
-        <button type="button" class="btn btn-default" data-dismiss="modal"  (click)="closeModal(thismodal)">OK</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"  (click)="closeModal(signupModal)">OK</button>
     </div>
   </div>
 </div>
 
 <!-- Login before email verification Modal -->
-<div class="modal modal-animate" id="loginModal" role="dialog"  #thismodall>
+<div class="modal modal-animate" id="loginModal" role="dialog"  #loginModal>
     <div class="modal-dialog modal-md">
       <div class="modal-content">
       <div class="modal-head">
-          <button type="button" class="close" data-dismiss="modal"  (click)="closeModal(thismodall)">&times;</button>
+          <button type="button" class="close" data-dismiss="modal"  (click)="closeModal(loginModal)">&times;</button>
       </div>
         <div class="modal-body">
          <img src="assets/img/modals/verify-mail.jpg
          " alt="">
          <h2>Please verify your Email to login.</h2>
         </div>
-          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeModal(thismodall)">OK</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeModal(loginModal)">OK</button>
       </div>
     </div>
   </div>
 
 
-<div class="modal modal-animate" id="signupModal" role="dialog" #thismodalll>
+  <!--mail already exist-->
+<div class="modal modal-animate" id="mailexistModal" role="dialog" #thismodalll>
     <div class="modal-dialog modal-md">
       <div class="modal-content">
       <div class="modal-head">
-          <button type="button" class="close" data-dismiss="modal" (click)="closeModal(thismodalll)">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" (click)="closeModal(mailexistModal)">&times;</button>
       </div>
         <div class="modal-body">
          <img src="assets/img/modals/mail-sent.jpg
          " alt="">
          <h2>This Email ID is already in use on our platform. Please check your inbox if you have not verified your Email ID</h2>
         </div>
-          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeModal(thismodalll)">OK</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeModal(mailexistModal)">OK</button>
       </div>
     </div>
   </div>

@@ -11,6 +11,17 @@
       width: 100px;
     }
 }
+
+.no-content{
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h3{
+    color: rgba(0, 0, 0, 0.23);
+    text-align: center;
+  }
+}
 .slide-in{
   transform: translateX(0) !important;
 }
