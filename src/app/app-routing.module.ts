@@ -5,7 +5,9 @@ import { LandingPageComponent } from './landing-components/landing-page/landing-
 import { BlogWebsiteComponent } from './blog-website/blog-website.component';
 import { JobPortalComponent } from './job-portal/job-portal.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
+import { InstructorLoginComponent } from './instructors/instructor-login/instructor-login.component';
 import { Authguard } from './Authguard/authguard';
+
 
 const routes: Routes = [
 
@@ -50,6 +52,10 @@ const routes: Routes = [
       {
         path: 'instructor',
         loadChildren: './landing-components/instructor-page/instructor-page.module#InstructorPageModule'
+      },
+      {
+        path: 'contact',
+        loadChildren: './landing-components/contact/contact.module#ContactModule'
       }
     ]
   },
@@ -67,7 +73,7 @@ const routes: Routes = [
       {
         path: 'blogpost/:id',
         loadChildren: './blog-website/blog-post/blog-post.module#BlogPostModule',
-        canActivate:[Authguard]
+        canActivate: [Authguard]
       },
       {
         path: 'authorprofile/:id',
@@ -93,12 +99,12 @@ const routes: Routes = [
     loadChildren: './authors/author-registration/author-registration.module#AuthorRegistrationModule'
   },
 
-    //-----------AUTHOR ADMIN PANEL---------------//
+  //-----------AUTHOR ADMIN PANEL---------------//
 
-    {
-      path: 'author',
-      loadChildren: './authors/author-admin/author-admin.module#AuthorAdminModule'
-    },
+  {
+    path: 'author',
+    loadChildren: './authors/author-admin/author-admin.module#AuthorAdminModule'
+  },
 
   //-----------JOB PAGES ROUTING---------------//
   {
@@ -131,8 +137,8 @@ const routes: Routes = [
       }
     ]
   },
-   //-----------Employer Registeration page -----------------//
-   {
+  //-----------Employer Registeration page -----------------//
+  {
     path: 'onewaterjobs/emp-reg',
     loadChildren: './employers/employer-registeration/employer-registeration.module#EmployerRegisterationModule'
   },
@@ -143,7 +149,7 @@ const routes: Routes = [
     loadChildren: './employers/employer-admin/employer-admin.module#EmployerAdminModule'
   },
 
-  
+
   //-----------VIDEO PAGES ROUTING---------------//
 
   {
@@ -168,40 +174,47 @@ const routes: Routes = [
       }
     ]
   },
-   //-----------Instructor Login page -----------------//
+  //-----------Instructor Login page -----------------//
   {
     path: 'instructor-login',
-    loadChildren: './instructors/instructor-login/instructor-login.module#InstructorLoginModule'
+    component: InstructorLoginComponent,
+    children: [
+      {
+        path:'',
+        loadChildren: './instructors/instructor-login/instructor-login-child/instructor-login-child.module#InstructorLoginChildModule'
+      }
+    ]
   },
 
-  //-----------Instructor REgistration page -----------------//
+  //-----------Instructor Registration page -----------------//
   {
     path: 'instructor-reg',
     loadChildren: './instructors/instructor-registration/instructor-registration.module#InstructorRegistrationModule'
   },
-    //-----------Instructor Admin Panel -----------------//
-    {
-      path: 'instructor-admin',
-      loadChildren: './instructors/instructor-admin/instructor-admin.module#InstructorAdminModule'
-    },
 
- //-----------User Registeration page -----------------//
- {
-  path: 'user-reg',
-  loadChildren: './user-registration/user-registration.module#UserRegistrationModule'
-},
+  //-----------Instructor Admin Panel -----------------//
+  {
+    path: 'instructor-admin',
+    loadChildren: './instructors/instructor-admin/instructor-admin.module#InstructorAdminModule'
+  },
+
+  //-----------User Registeration page -----------------//
+  {
+    path: 'user-reg',
+    loadChildren: './user-registration/user-registration.module#UserRegistrationModule'
+  },
 
   //-----------USER ADMIN PANEL---------------//
   {
     path: 'user-admin',
     loadChildren: './user-admin/user-admin.module#UserAdminModule',
-    canActivate:[Authguard]
+    canActivate: [Authguard]
   },
 
   //-----------CANDIDATE ADMIN PANEL---------------//
 
   {
-    path:'candidate-admin',
+    path: 'candidate-admin',
     loadChildren: './candidates/candidates.module#CandidatesModule'
   },
 

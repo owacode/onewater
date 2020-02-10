@@ -7,7 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
-import { NavbarComponent } from './navbar/navbar.component';
+//import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponentsComponent } from './landing-components/landing-components.component';
 import { LandingPageComponent } from './landing-components/landing-page/landing-page.component';
@@ -16,11 +16,14 @@ import { JobPortalComponent } from './job-portal/job-portal.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { HeaderComponent } from './header/header.component';
+import { InstructorLoginComponent } from './instructors/instructor-login/instructor-login.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent, HeaderComponent
-  ],exports:[],
+    AppComponent,HeaderComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent, InstructorLoginComponent
+  ],
+  
+  exports:[],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

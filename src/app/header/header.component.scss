@@ -56,7 +56,8 @@ header{
 
 /*fixed header style*/
 .fixed-header{
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 4px 0 rgba(110, 110, 110, 0.15);
     height: 70px;
 
     .logo img{
@@ -144,9 +145,8 @@ header{
             }
         }
     }
-}
 
-/*class to add when hamburger is clicked*/
+    /*class to add when hamburger is clicked*/
 .menu.show-menu{
     transform: translateX(0);
 }
@@ -161,6 +161,10 @@ header{
     }
 }
 
+}
+
+
+
 @media all and (max-width:480px){
     header,.fixed-header{
         height: 60px;
@@ -169,5 +173,26 @@ header{
         img{
             width: 80px;
         }
+    }
+}
+
+/*class to add when the top of page is white*/
+.black-header{
+    .logo{
+        img{
+            filter: none;
+        }
+    }
+    .menu .navlink {
+        a{
+            color: #000;
+        }
+        a::after{
+            background-color: #000;
+        }
+        
+    }
+    .hamburger span{
+        background-color: #000;
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { AuthService } from '../auth.service';
 import * as $ from 'jquery';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,9 @@ import * as $ from 'jquery';
   styleUrls: ['./header.component.scss']
 })
 
+export class HeaderComponent implements OnInit {  
 
-export class HeaderComponent implements OnInit {
-
-  screenWidth = 1091;
-
-  constructor(public http: HttpClient, public auth: AuthService) { }
+  constructor(public http: HttpClient, public auth: AuthService, public router: Router) { }
 
   ngOnInit() {
     const header = document.querySelector('header');
@@ -43,7 +41,25 @@ export class HeaderComponent implements OnInit {
       $(window).on("scroll",fixHeader);
       $(hamburger).on("click",showMenu);
       $(menulink).on("click",showMenu);
+
+      this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          if (event['url'] == '/onewaterblog/author-login' ||
+            event['url'].includes('/onewaterblog/category') ||
+            event['url'].includes('/o-wow/video-category') ||
+            event['url'] == '/onewaterjobs/emp-login' ||
+            event['url'] == '/instructor-login'
+            ) {
+            $(header).addClass('black-header');
+          } 
+          else{
+            $(header).removeClass('black-header');
+          }
+        }
+      });
   }
+
+ 
 
   login() {
     this.http.get('https://onewater-instructor-api.herokuapp.com')

@@ -1,0 +1,17 @@
+@import '../landingpage-common.scss';
+@import '../../form-styles.scss';
+
+.cover-photo{
+    background: linear-gradient(180deg, rgba(0, 30, 199, 0.82) 20%, rgba(13, 0, 212, 0.57) 100%), url(/assets/img/landing/contact-bg.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+  }
+
+  .page-title{
+      margin-top: -90vh;
+      min-height: 80vh;
+  }
+  

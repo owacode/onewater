@@ -10,22 +10,6 @@
         </div>
         <div class="col-lg-6">
           <div class="form-box">
-             <!-- <form class="vldform vldauth" >
-               <h1>Log in</h1>
-               <input class="vldform__textbox" type="text" name="email" placeholder="Email" required>
-               <input class="vldform__textbox" type="password" name="pass"  placeholder="Password" required>
-               <a class="vldform__recoverypassword" (click)="showrecoveryform()">Forgot password?</a>
-               <a href=""></a>
-               <a [routerLink]="['/user-admin']" class="vldform__button" >Login</a>
-               <div class="social-btn"> <span>or login using </span> <br>
-                 <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
-                 <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
-                 </div>
-
-               <p class="vldform__signup">New here?
-                 <a class="vldform__signuplink" (click)="showregform()">Sign up</a>
-               </p>
-             </form> -->
 
              <form class="vldform vldreg" [formGroup]="user" (submit)="register()">
                  <h1>Sign up</h1>
@@ -44,14 +28,6 @@
                    <a href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D" target="_blank" >Log in</a>
                  </p>
              </form>
-
-             <!-- <form class="vldform vldrecpass">
-               <h1>Password Recovery</h1>
-               <input class="vldform__textbox" type="email" name="email"  placeholder="Email" required>
-               <input class="vldform__button" type="submit" value="Recovery">
-               <!-- <br><br>
-               <a (click)="showauthform()">Back to login</a> 
-             </form> -->
 
 </div>
         </div>
