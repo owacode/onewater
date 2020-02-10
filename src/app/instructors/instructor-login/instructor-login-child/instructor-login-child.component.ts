@@ -41,7 +41,7 @@ export class InstructorLoginChildComponent implements OnInit {
   ngOnInit() {
     this.showregform();
 
-    this.user= new FormGroup({
+    this.user = new FormGroup({
       name:new FormControl(null,{validators:[Validators.required]}),
       email:new FormControl(null,{validators:[Validators.required,Validators.email]}),
       password:new FormControl(null,{validators:[Validators.required, Validators.minLength(6)]}),
@@ -58,15 +58,23 @@ export class InstructorLoginChildComponent implements OnInit {
     this.registersubmitted=true;
     console.log(this.user.value);
     if(this.user.invalid){
+      $('#signupFail').css("display", "block");
+      $('#signupFail').addClass("show");
+      $('.overlay').css("display", "block");
       return;
     }
-    if(this.user.value.password != this.user.value.cpassword) return alert("Password Not Matched");
+
+    if(this.user.value.password != this.user.value.cpassword) 
+    return alert("Password Not Matched");
     console.log('pass',this.user.value);
 
     this.http.post('https://onewater-instructor-api.herokuapp.com/addinstructor',this.user.value)
     .subscribe(result=>{
       console.log("User Added", result)
-      alert("User Added Successfully");
+     // alert("User Added Successfully");
+      $('#signupSuccess').css("display", "block");
+      $('#signupSuccess').addClass("show");
+      $('.overlay').css("display", "block");
     })
   }
 
@@ -85,9 +93,16 @@ export class InstructorLoginChildComponent implements OnInit {
       localStorage.setItem('instructor_id',this.instructorservice.userid);
       localStorage.setItem('instructor_email',this.instructorservice.useremail);
       console.log("User Login Successfully", result);
-      if(result.result == 'User Email not Verified') return alert("Please Verify Your Email");
+
+      if(result.result == 'User Email not Verified') {
+        //return alert("Please Verify Your Email")
+        $('#loginModal').css("display", "block");
+        $('#loginModal').addClass("show");
+        $('.overlay').css("display", "block");
+      };
+
       if(!result.result.form_filled) this.route.navigate(['/instructor-reg']);
-      else if(result.result.status == 'pending') return alert("Your Profile is not been Approved Yet");
+      else if(result.result.status == 'pending') return alert("Your Profile is not been Approved Yet by the Admin");
       else this.route.navigate(['/instructor-admin']);
     })
   }

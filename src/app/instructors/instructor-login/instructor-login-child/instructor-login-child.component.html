@@ -38,13 +38,7 @@
               required
               formControlName="password"
             />
-            <!-- <a class="vldform__recoverypassword" (click)="showrecoveryform()">Forgot password?</a> -->
-            <!-- <a href=""></a> -->
             <button type="submit" class="vldform__button">Login</button>
-            <!-- <div class="social-btn"> <span>or login using </span> <br>
-                 <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
-                 <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
-                 </div> -->
           </form>
           <p class="vldform__signup" id="login-text">
             New here?
@@ -77,6 +71,7 @@
                   type="password"
                   name="pass"
                   placeholder="Password"
+                  
                   required
                   formControlName="password"
                 />
@@ -96,29 +91,15 @@
 
             <input
               class="vldform__button"
-              data-toggle="modal"
-              data-target="#myModal"
               type="submit"
               value="Sign up"
             />
-            <!-- <div class="social-btn"> <span>or signup using </span> <br>
-                   <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
-                   <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
-                   </div> -->
           </form>
           <p class="vldform__signup" id="signup-text">
             Already a member ?
             <a (click)="showauthform()">Log in</a>
           </p>
 
-          <!--
-             <form class="vldform vldrecpass">
-               <h1>Password Recovery</h1>
-               <input class="vldform__textbox" type="email" name="email"  placeholder="Email" required>
-               <input class="vldform__button" type="submit" value="Recovery">
-               <br><br>
-               <a (click)="showauthform()">Back to login</a>
-             </form> -->
         </div>
       </div>
     </div>
@@ -126,7 +107,7 @@
 </section>
 
 <!-- First Signup Modal -->
-<div class="modal modal-animate" id="myModal" role="dialog" #thismodal>
+<div class="modal modal-animate" id="signupSuccess" role="dialog" #signupModal>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
@@ -134,7 +115,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(thismodal)"
+          (click)="closeModal(signupModal)"
         >
           &times;
         </button>
@@ -154,7 +135,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(thismodal)"
+        (click)="closeModal(signupModal)"
       >
         OK
       </button>
@@ -163,7 +144,7 @@
 </div>
 
 <!-- Login before email verification Modal -->
-<div class="modal modal-animate" id="loginModal" role="dialog" #thismodall>
+<div class="modal modal-animate" id="loginModal" role="dialog" #loginModal>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
@@ -171,7 +152,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(thismodall)"
+          (click)="closeModal(loginModal)"
         >
           &times;
         </button>
@@ -188,7 +169,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(thismodall)"
+        (click)="closeModal(loginModal)"
       >
         OK
       </button>
@@ -196,7 +177,8 @@
   </div>
 </div>
 
-<div class="modal modal-animate" id="signupModal" role="dialog" #thismodalll>
+<!--if email already exist modal-->
+<div class="modal modal-animate" id="signupFail" role="dialog" #mailexistModal>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
@@ -204,7 +186,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(thismodalll)"
+          (click)="closeModal(mailexistModal)"
         >
           &times;
         </button>
@@ -224,7 +206,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(thismodalll)"
+        (click)="closeModal(mailexistModal)"
       >
         OK
       </button>

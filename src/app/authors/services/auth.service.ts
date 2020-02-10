@@ -7,6 +7,7 @@ import * as $ from 'jquery';
 @Injectable({
   providedIn:'root'
 })
+
 export class AuthService {
   constructor(public http:HttpClient, public route: Router){}
   public authoremail;

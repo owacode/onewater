@@ -21,12 +21,11 @@ export class InstructorService {
     else return;
   }
 
-
   logout(){
     localStorage.removeItem('instructor_id');
     localStorage.removeItem('instructor_email');
-
     this.userid= null;
     this.useremail =null;
   }
+  
 }

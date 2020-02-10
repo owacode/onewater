@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Route, Router } from '@angular/router';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { InstructorService } from '../instructor-admin/instructor.service';
+
 @Component({
   selector: 'app-instructor-registration',
   templateUrl: './instructor-registration.component.html',
@@ -39,6 +40,11 @@ export class InstructorRegistrationComponent implements OnInit {
     .subscribe(result=>{
       console.log("User Details Updated", result)
     })
+
+  
+  }
+  logout(){
+    this.instructorservice.logout();
   }
 
 }
