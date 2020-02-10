@@ -10,7 +10,7 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent implements OnInit {  
+export class HeaderComponent implements OnInit {
 
   constructor(public http: HttpClient, public auth: AuthService, public router: Router) { }
 
@@ -21,45 +21,46 @@ export class HeaderComponent implements OnInit {
     const hamburger = document.querySelector('.hamburger');
     const menulink = document.querySelectorAll('.navlink a');
 
-     let fixHeader = function(){
+    let fixHeader = function () {
       if ($(window).scrollTop() > 70) {
         $(header).addClass("fixed-header");
         //console.log("fix header");
       }
-      else{
+      else {
         $(header).removeClass("fixed-header");
         //console.log("remove header");
       }
     }
 
-    let showMenu = function(){
+    let showMenu = function () {
       $(menu).toggleClass('show-menu');
       $(logo).toggleClass('mobile-logo');
       $(hamburger).toggleClass('clicked');
     }
 
-      $(window).on("scroll",fixHeader);
-      $(hamburger).on("click",showMenu);
-      $(menulink).on("click",showMenu);
+    $(window).on("scroll", fixHeader);
+    $(hamburger).on("click", showMenu);
+    $(menulink).on("click", showMenu);
 
-      this.router.events.subscribe((event) => {
-        if (event instanceof NavigationEnd) {
-          if (event['url'] == '/onewaterblog/author-login' ||
-            event['url'].includes('/onewaterblog/category') ||
-            event['url'].includes('/o-wow/video-category') ||
-            event['url'] == '/onewaterjobs/emp-login' ||
-            event['url'] == '/instructor-login'
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        if (event['url'] == '/onewaterblog/author-login' ||
+          event['url'] == '/instructor-login' ||
+          event['url'] == '/onewaterjobs/emp-login' ||
+          event['url'].includes('/onewaterblog/category') ||
+          event['url'].includes('/o-wow/video-category') ||
+           
             ) {
-            $(header).addClass('black-header');
-          } 
-          else{
-            $(header).removeClass('black-header');
-          }
+          $(header).addClass('black-header');
         }
-      });
+        else {
+          $(header).removeClass('black-header');
+        }
+      }
+    });
   }
 
- 
+
 
   login() {
     this.http.get('https://onewater-instructor-api.herokuapp.com')
