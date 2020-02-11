@@ -16,11 +16,14 @@ import { JobPortalComponent } from './job-portal/job-portal.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { HeaderComponent } from './header/header.component';
+import { InstructorLoginComponent } from './instructors/instructor-login/instructor-login.component';
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent, HeaderComponent
-  ],exports:[],
+    AppComponent,HeaderComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent, InstructorLoginComponent, NavbarComponent
+  ],
+  
+  exports:[],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -34,12 +34,18 @@
   <div class="container">
       <div class="block-3"></div>
       <div class="block-4"></div>
-    <div class="heading">
-      <h1>
-        OneWater provides you access to 5 platforms all through one login.
-      </h1>
-      <div class="platform-intro-img">
-        <img src="assets/img/landing/platform1.png" alt="">
+      <div class="heading">
+      <div class="row">
+        <div class="col-lg-12 order-lg-first">
+          <h1>
+            OneWater provides you access to 5 platforms all through one login.
+          </h1>
+        </div>
+        <div class="col-lg-12 order-first">
+          <div class="platform-intro-img">
+            <img src="assets/img/landing/platform1.png" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -70,7 +76,7 @@
                             Communities of Practice which are timely and relevant and led by Subject Matter Experts around the globe.
                         </p>
                         <div class="mybtn">
-                            <a href="https://onewateracademy.herokuapp.com">
+                            <a routerLink="/home/learningacademy">
                               Go to OneWater Academy
                             </a>
                         </div>
@@ -110,7 +116,7 @@
                               Connect and nurture young water professionals.
                           </p>
                           <div class="mybtn">
-                              <a [routerLink]="['/']">
+                              <a routerLink="/home/owx">
                                 Go to Mentor Mentee
                               </a>
                           </div>

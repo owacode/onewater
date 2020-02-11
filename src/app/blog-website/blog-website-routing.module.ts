@@ -8,6 +8,5 @@ import { Routes, RouterModule } from '@angular/router';
 export class BlogWebsiteRoutingModule implements OnInit{ 
   constructor(){}
   ngOnInit(){
-    
   }
 }

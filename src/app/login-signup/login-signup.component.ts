@@ -9,26 +9,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginSignupComponent implements OnInit {
 
-      // showregform(){
-      // document.querySelector(".vldauth")['style'].display = "none";
-      // document.querySelector(".vldreg")['style'].display = "flex";
-      // }
-
-      //  showauthform(){
-      // document.querySelector(".vldauth")['style'].display = "flex";
-      // document.querySelector(".vldreg")['style'].display = "none";
-      // document.querySelector(".vldrecpass")['style'].display = "none";
-      // }
-
-      //  showrecoveryform(){
-      // document.querySelector(".vldauth")['style'].display = "none";
-      // document.querySelector(".vldrecpass")['style'].display = "flex";
-      // }
-
   constructor(public http:HttpClient) { }
   user;
   ngOnInit() {
-    
     this.user= new FormGroup({
       name:new FormControl(null,{validators:[Validators.required]}),
       email:new FormControl(null,{validators:[Validators.required,Validators.email]}),
@@ -36,7 +19,9 @@ export class LoginSignupComponent implements OnInit {
       cpassword:new FormControl(null,{validators:[Validators.required]})
     });
   }
+
   registersubmitted:boolean=false;
+  
   register(){
     this.registersubmitted=true;
     console.log(this.user.value);

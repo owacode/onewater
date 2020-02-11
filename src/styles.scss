@@ -15,6 +15,10 @@
   box-sizing: border-box;
 }
 
+*:focus{
+  outline: none;
+}
+
 html,
 body {
   margin: 0;
@@ -152,9 +156,11 @@ button {
   transition: all 0.5s ease-in;
   outline: 0 !important;
 }
+
 button:hover {
-  color: dodgerblue;
+  background-color: dodgerblue;
   box-shadow: 2px 2px 8px 2px #8991a05c;
+  color: #fff;
 }
 .card-shadow{
   box-shadow: 0 2px 6px 0 rgba(110, 110, 110, 0.2);

@@ -13,7 +13,6 @@ import { HttpClient } from '@angular/common/http';
 export class AuthorRegistrationComponent implements OnInit {
 
   constructor(public auth: AuthService, public common:CommonService, public http:HttpClient) { }
-
   form:FormGroup;
   imagePreview;
   submited:boolean=false;
@@ -23,6 +22,8 @@ export class AuthorRegistrationComponent implements OnInit {
   editableprofile;
   profilesubmit:boolean=false;
   public showsubmit:boolean=false;
+
+
   ngOnInit() {
 
 if(localStorage.getItem('form_filled_job')  == 'true'){

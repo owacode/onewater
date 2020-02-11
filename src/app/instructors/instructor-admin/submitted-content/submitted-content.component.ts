@@ -13,7 +13,7 @@ export class SubmittedContentComponent implements OnInit {
   courses;
 
   ngOnInit() {
-    this.http.get<{status:any, msg:any, result:any}>('https://onewater-instructor-api.herokuapp.com/getinstructorcourses/'+this.instructorservice.userid)
+    this.http.get<{status:any, msg:any, result:any}>('https://onewater-instructor-api.herokuapp.com/getinstructorcourses/'+ this.instructorservice.userid)
     .subscribe(result=> {
       console.log(result);
       this.courses = result.result

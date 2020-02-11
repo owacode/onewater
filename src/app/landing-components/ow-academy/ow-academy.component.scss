@@ -28,10 +28,12 @@ section{
       margin: auto;
       text-transform: capitalize;
   }
-
+.btn:hover{
+  color: #fff;
+}
   .author-btn {
     text-align: center;
-    margin: 30px 0 70px;
+    margin: 30px 0 0px;
     z-index: 10;
     position: relative;
   
@@ -138,6 +140,9 @@ section{
     }
   }
 
+  .join-btn-wrap{
+    margin: 1rem 0;
+  }
   .drop-img{
       width: 80%;
       margin: auto;
@@ -221,10 +226,19 @@ section{
 
 @media all and (max-width: 991px){
   .hero-section{
+    background: #092b86;
     .heading p{
       margin: auto;
       max-width:500px;
     }
+  }
+  .author-btn{
+    .reg-text{
+      padding: 25px 0;
+    }
+  }
+  .ins-img-wrap,.join-btn-wrap{
+    text-align:center;
   }
   .feature-card{
     margin: 0.5rem 0;
@@ -278,6 +292,9 @@ section{
 
 
 @media all and (max-width:520px){
+  .author-btn{
+    margin-bottom: 100px;
+  }
   .hero-section {background: #092b86;margin-bottom: 50px;}
   .block-2 {
   top: -17vh ;

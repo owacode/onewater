@@ -15,7 +15,12 @@ class="dashboard-content-wrapper dash-tab"
       </div>
     </div>
 <div class="row">
-  <div class="col-lg-4 col-xl-4 col-md-4 col-sm-6 col-xs-12"  *ngFor="let course of courses">
+  <div class="col-12 no-content" *ngIf="!courses.length">
+    <h3>
+      You have not posted any content yet click <a [routerLink]="['/instructor-admin']"> <u>here</u></a> to post one.
+    </h3>
+  </div>
+  <div class="col-12" *ngFor="let course of courses">
     <div class="activity-list">
       <div class="content-info">
         <h4>{{ course.title }}</h4>
@@ -65,24 +70,26 @@ class="dashboard-content-wrapper dash-tab"
 
       <div class="content-info">
         Status : <span class="status approved">
-         approved
+         {{course.status}}
         </span>
       </div>
 
       <div class="content-info">
-        URL : <span>
-          <a href="" target="_blank"> click here</a>
+        URL : {{course.content_link}} <span>
+          <a href={{course.content_link}} target="_blank"> click here</a>
 
         </span>
       </div>
 
       <div class="close-activity buttons">
-        <a class="button" [routerLink]="['/instructor-admin/content']">View</a>
+        <a class="button" [routerLink]="['/instructor-admin/content/',course._id]">View</a>
       </div>
   </div>
   </div> -->
+  </div>
+
 </div>
 
 
 </div></div>
-</div>
+<!-- </div> -->

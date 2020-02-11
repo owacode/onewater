@@ -38,13 +38,12 @@ export class AuthService {
     this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blog-api.herokuapp.com/login', user)
     .subscribe(result=> {
 
-
+console.log(result,'test reult')
       if(result.status == 'error'){
-        if(result.msg='User Email not Verified') this.notverifiedCallSource.next();
+        if(result.msg == 'Incorrect Password') return alert("Incorrect Password");
+        else if(result.msg=='User Email not Verified') return this.notverifiedCallSource.next();
 
-        // if(result.msg='No User Found') this.emailexistCallSource.next();
       }
-      console.log(result);
       if(result.status =='error') return;
       this.authoremail=result.result.email;
       this.authorid=result.result.id;
@@ -96,7 +95,7 @@ export class AuthService {
     this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blog-api.herokuapp.com/unapproved-author', user)
     .subscribe(result=> {
       if(result.status == 'error'){
-        if(result.msg='No User Found') this.emailexistCallSource.next();
+        if(result.msg=='No User Found') this.emailexistCallSource.next();
 
         // if(result.msg='No User Found') this.emailexistCallSource.next();
       }

@@ -40,5 +40,8 @@ export class InstructorRegistrationComponent implements OnInit {
       console.log("User Details Updated", result)
     })
   }
+  logout(){
+    this.instructorservice.logout();
+  }
 
 }

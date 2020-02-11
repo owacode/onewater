@@ -1,6 +1,5 @@
 <!-- BEGIN Blog Post -->
 
-<!-- <progress value="0"></progress> -->
 <div class="cover-photo" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}">
   <div class="gradient-image"></div>
   <div class="wave"></div>
@@ -24,21 +23,6 @@
               <span class="meta-date">{{ author?.about_author | slice: 0:70  }}....</span>
             </div>
           </div>
-          <!-- <div class="share-button">
-      <input class="toggle-input" id="toggle-input" type="checkbox" />
-      <label for="toggle-input" class="toggle"></label>
-      <ul class="network-list">
-        <li class="twitter">
-            <tweet url={{url}} text={{url}}></tweet>
-        </li>
-        <li class="facebook">
-
-        </li>
-        <li class="googleplus">
-
-        </li>
-      </ul>
-    </div> -->
 
           <p class="teaser top-teaser">
             <strong>Category</strong> : <span>{{blog?.category | titlecase}} </span> <span>{{blog?.sub_category | titlecase}}</span>
