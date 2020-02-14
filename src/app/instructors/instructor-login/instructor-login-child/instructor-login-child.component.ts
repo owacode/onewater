@@ -33,6 +33,8 @@ export class InstructorLoginChildComponent implements OnInit {
     $('.overlay').css("display", "none");
   }
 
+
+
   constructor(public http:HttpClient, public route: Router, public instructorservice: InstructorService) { }
   user;
   loginuser;
@@ -40,7 +42,6 @@ export class InstructorLoginChildComponent implements OnInit {
 
   ngOnInit() {
     this.showregform();
-
     this.user = new FormGroup({
       name:new FormControl(null,{validators:[Validators.required]}),
       email:new FormControl(null,{validators:[Validators.required,Validators.email]}),

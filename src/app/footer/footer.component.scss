@@ -25,12 +25,21 @@ a{
   }
 
 }
+.phone-links{
+  display:block;
+  span{
+    display: block;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.76);
+  }
+}
 .footer{
   padding:2rem;
   padding-top: 35vh;
   margin-top: 5vh;
   background-image: url(/assets/img/footer-wave.png);
   background-size: cover;
+  background-position-x: -2px;
   background-position-y: bottom;
   background-repeat: no-repeat;
   position: relative;
@@ -91,10 +100,9 @@ font-weight: 500;
 
     }
   }
-  @media screen and (max-width:768px){
+  @media screen and (max-width:991px){
     .footer{
       text-align: center;
-      padding-top: 250px;
     }
   }
   @media screen and (max-width:520px){

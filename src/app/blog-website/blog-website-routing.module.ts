@@ -5,8 +5,5 @@ import { Routes, RouterModule } from '@angular/router';
   imports: [],
   exports: [RouterModule]
 })
-export class BlogWebsiteRoutingModule implements OnInit{ 
-  constructor(){}
-  ngOnInit(){
-  }
+export class BlogWebsiteRoutingModule{ 
 }

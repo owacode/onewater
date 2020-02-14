@@ -33,7 +33,25 @@
   ),
   url(/assets/img/landing/about-intro-img.jpeg);
 }
-
+.half-width-text-right{
+  margin-left: auto;
+  max-width: 500px;
+}
+.section-team{
+  text-align: right;
+    img{
+      filter: hue-rotate(-37deg);
+    }
+}
+.btn{
+  font-weight: 700;
+  padding: 12px 16px;
+  margin: auto;
+  text-transform: capitalize;
+}
+.btn:hover{
+color: #fff;
+}
 .blue-section-intro {
   padding: 70px 0;
   text-align: center;
@@ -49,7 +67,7 @@
 
 .section-3 {
   padding-bottom: 45vh;
-  margin-bottom: -40vh;
+  margin-bottom: -45vh;
 }
 .img {
   margin: auto;

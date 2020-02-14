@@ -1,7 +1,7 @@
 <div class="category-wrap">
     <div class="container">
     <div class="category-head">
-      <h1> {{category}}
+      <h1> {{category | titlecase}}
       </h1>
     </div>
     <section class="top-videos">
@@ -39,6 +39,9 @@
                       </div>
                 </div>
                 <div class="col-lg-4">
+                  <h2 style="margin-top: 0;">
+                    Latest from {{category | titlecase}}
+                  </h2>
                     <div class="sidebar-videos">
                       <div class="row justify-content-center">
                         <div
