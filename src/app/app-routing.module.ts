@@ -76,7 +76,7 @@ const routes: Routes = [
         canActivate: [Authguard]
       },
       {
-        path: 'admin-blogpost',
+        path: 'admin-blogpost/:id',
         loadChildren: './blog-website/admin-blogpost/admin-blogpost.module#AdminBlogpostModule',
         // canActivate: [Authguard]
       },

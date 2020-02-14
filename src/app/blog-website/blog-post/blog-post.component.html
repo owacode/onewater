@@ -7,7 +7,7 @@
 <div class="container blog-post-wrapper">
   <div class="row">
     <div class="col-lg-9">
-    
+
         <div class=" post-top">
           <h1>{{ blog?.title }}</h1>
           <div class="article-meta">
@@ -106,59 +106,15 @@
           Popular Blogs
         </h2>
         <div class="row">
-          <div class="col-lg-12 col-md-6 col-sm-12">
+          <div class="col-lg-12 col-md-6 col-sm-12" *ngFor="let blog of mostlikedblogs">
             <div class="blog-card card-shadow">
-              <a [routerLink]="['/onewaterblog/blogpost']">
-                Leak of Microsoft Salaries Shows Fight for Higher
-                Compensation</a
+              <a [routerLink]="['/onewaterblog/blogpost', blog?._id]">
+                {{blog?.title}}</a
               >
               <p>
-                7 mins read
+                {{blog?.read_time}} mins read
               </p>
-              <p><i class="fa fa-heart"></i>21 likes</p>
-            </div>
-          </div>
-
-          <div class="col-lg-12 col-md-6 col-sm-12">
-            <div class="blog-card card-shadow">
-              <a [routerLink]="['/onewaterblog/blogpost']">
-                10 Interesting Facts About Caffeine.</a
-              >
-              <p>
-                7 mins read
-              </p>
-              <p><i class="fa fa-heart"></i>21 likes</p>
-            </div>
-          </div>
-          <div class="col-lg-12 col-md-6 col-sm-12">
-            <div class="blog-card card-shadow">
-              <a [routerLink]="['/onewaterblog/blogpost']">
-                Key Benefits Of Family Photography.</a
-              >
-              <p>
-                7 mins read
-              </p>
-              <p><i class="fa fa-heart"></i>21 likes</p>
-            </div>
-          </div>
-          <div class="col-lg-12 col-md-6 col-sm-12">
-            <div class="blog-card card-shadow">
-              <a href="#"> Throwback To The Good Old Days.</a>
-              <p>
-                7 mins read
-              </p>
-              <p><i class="fa fa-heart"></i>21 likes</p>
-            </div>
-          </div>
-          <div class="col-lg-12 col-md-6 col-sm-12">
-            <div class="blog-card card-shadow">
-              <a [routerLink]="['/onewaterblog/blogpost']">
-                Healthy Mediterranean Salad Recipes</a
-              >
-              <p>
-                7 mins read
-              </p>
-              <p><i class="fa fa-heart"></i>21 likes</p>
+              <p><i class="fa fa-heart"></i>{{blog?.likecount}} likes</p>
             </div>
           </div>
         </div>

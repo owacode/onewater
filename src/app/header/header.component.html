@@ -13,13 +13,11 @@
       <li class="navlink"><a routerLink="/onewaterblog">Blog</a></li>
       <li class="navlink"><a routerLink="/home/about">About</a></li>
       <li class="navlink"><a routerLink="/home/contact">Contact</a></li>
-      
+
       <li *ngIf="!auth.isLoggedIn" class="navlink"><a href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D">Login </a></li>
 
       <li *ngIf="!auth.isLoggedIn" class="navlink"><a [routerLink]="['/signup']">Signup </a></li>
-
       <li *ngIf="auth.isLoggedIn" class="navlink"><a (click)="logout()" href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home">Logout </a></li>
-      <!-- https://YOUR_DOMAIN/v2/logout -->
     </ul>
   </nav>
   <div class="hamburger">

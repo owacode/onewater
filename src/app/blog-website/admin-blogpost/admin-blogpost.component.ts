@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-admin-blogpost',
@@ -7,10 +10,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminBlogpostComponent implements OnInit {
 
-  url="some url";
-  constructor() { }
+  url;
+  blog;
+  liked;
+  blogid;
+  constructor(public route:ActivatedRoute, public http: HttpClient, public auth:AuthService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(result=> {
+      console.log(result);
+      this.blogid=result.id;
+      this.url = `https://onewater.herokuapp.com/blog/${result.id}`;
+      this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/homeblog/'+result.id)
+      .subscribe(result => {
+        console.log(result, 'bannerrrr');
+        this.blog = result.result[0];
+        console.log(this.blog);
+      })
+    })
+  }
+
+  likeblog() {
+    this.liked = true;
+    const data={
+      blogid:this.blogid,
+      userid:this.auth.user_id
+    }
+    this.http.post('https://onewater-blog-api.herokuapp.com/like',data)
+    .subscribe(result=>{
+      console.log(result);
+    })
+  }
+
+  isLiked(data){
+    console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
+    console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    this.http.get<{status:string,result:string}>(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    .subscribe(result=>{
+      console.log(result);
+      if(result.result=='1') {
+        this.liked=true;
+      }else{
+        this.liked=false;
+      }
+    })
   }
 
 }

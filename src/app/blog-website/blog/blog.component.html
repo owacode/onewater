@@ -31,7 +31,7 @@
                           <div class="tag">
                             Technology
                           </div>
-                          <a [routerLink]="['/onewaterblog/admin-blogpost']"
+                          <a [routerLink]="['/onewaterblog/admin-blogpost',bannerblogs[0]._id]"
                             ><h3>
                               {{bannerblogs[0].title}}
                             </h3></a
@@ -53,7 +53,7 @@
                           <div class="tag">
                             Technology
                           </div>
-                          <a [routerLink]="['/onewaterblog/admin-blogpost']">
+                          <a [routerLink]="['/onewaterblog/admin-blogpost',bannerblogs[1]._id]">
                             <h3>
                               {{bannerblogs[1].title}}
                             </h3></a
@@ -77,7 +77,7 @@
                           <div class="tag">
                             Entertainment
                           </div>
-                          <a [routerLink]="['/onewaterblog/admin-blogpost']">
+                          <a [routerLink]="['/onewaterblog/admin-blogpost/',bannerblogs[2]._id]">
                             <h3>
                               {{bannerblogs[2].title}}
                             </h3></a

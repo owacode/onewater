@@ -16,6 +16,7 @@ export class BlogPostComponent implements OnInit {
   url;
   liked;
   blogid;
+  mostlikedblogs;
 
   carouselOptions = {
     margin: 10,
@@ -44,6 +45,7 @@ export class BlogPostComponent implements OnInit {
   constructor(public router: ActivatedRoute, public http: HttpClient, public auth:AuthService) {}
 
   ngOnInit() {
+    this.getmostlikedblogs();
     $(function() {
       $(".blog-options .like-btn a").click(function() {
         $(".like-btn a, span").addClass("press", 500);
@@ -86,9 +88,20 @@ export class BlogPostComponent implements OnInit {
         "https://onewater-blog-api.herokuapp.com/authorapprovedblogs/" + id
       )
       .subscribe(result => {
-        console.log(result, "mohit ");
+        console.log(result, "author blogs ");
         this.authorblogs = result.result.reverse();
         this.authorblogs = this.authorblogs.slice(0, 5);
+      });
+  }
+
+  getmostlikedblogs() {
+    this.http
+      .get<{ status: string; msg: string; result: any }>(
+        "https://onewater-blogapi.herokuapp.com/mostlikedblogs"
+      )
+      .subscribe(result => {
+        console.log(result, "most liked blogs ");
+        this.mostlikedblogs = result.result;
       });
   }
 
