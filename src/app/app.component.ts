@@ -32,14 +32,16 @@ export class AppComponent implements OnInit {
     public instructorservice: InstructorService,
     public route: ActivatedRoute
   ) {
-
     this.instructorservice.checklocalstorage();
     var hash = 'null'
     hash = window.location.hash;
     var localcookie = this.readCookie("id_token");
     let decodedtoken;
-    if (hash != "" || localcookie != null) {
+    console.log(hash,localcookie,'ieifei')
+    if (hash || (localcookie != 'null' && localcookie !=null)) {
+      console.log('if true')
       if (hash) {
+      console.log('if true 1')
         this.auth.isLoggedIn = true;
         let fetch_token = hash.split("#");
 

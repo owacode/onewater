@@ -11,6 +11,7 @@ export class CategoryComponent implements OnInit {
 
   showSubCat=false;
   currentCategory;
+  mostlikedblogs;
 
   categories = [
     {
@@ -206,9 +207,7 @@ export class CategoryComponent implements OnInit {
   constructor(public route:ActivatedRoute, public http:HttpClient) { }
 
   ngOnInit() {
-
-
-
+    this.getmostlikedblogs();
     this.route.queryParams.subscribe(result=>{
       console.log(result);
       this.category=result.category;
@@ -268,9 +267,6 @@ console.log(this.fetchcategory,'effe');
         this.getauthor(this.singleblog.author_id);
       })
     })
-
-
-
   }
 
   getauthor(id){
@@ -279,6 +275,17 @@ console.log(this.fetchcategory,'effe');
       console.log(result, 'author');
       this.author=result.result[0]
     })
+  }
+
+  getmostlikedblogs() {
+    this.http
+      .get<{ status: string; msg: string; result: any }>(
+        "https://onewater-blogapi.herokuapp.com/mostlikedblogs"
+      )
+      .subscribe(result => {
+        console.log(result, "most liked blogs ");
+        this.mostlikedblogs = result.result.slice(0,3);
+      });
   }
 
 }
