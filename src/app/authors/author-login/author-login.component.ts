@@ -67,6 +67,12 @@ export class AuthorLoginComponent implements OnInit {
     );
   }
 
+  closeModal(thismodal) {
+    console.log('close Modal')
+    $(thismodal).css("display", "none");
+    $(thismodal).removeClass("show");
+    $('.overlay').css("display", "none");
+  }
 
   ngOnInit() {
     this.auth.checkLocalStorage();
