@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { AuthorRegistrationComponent } from './author-registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterModule } from 'src/app/footer/footer.module';
+
 const routes: Route[]=[
     {
     path: '',
@@ -19,7 +21,8 @@ const routes: Route[]=[
     RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FooterModule
   ]
 })
 export class AuthorRegistrationModule { }

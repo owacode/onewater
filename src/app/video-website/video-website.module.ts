@@ -6,7 +6,7 @@ import { VideoWebsiteRoutingModule } from './video-website-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    VideoWebsiteRoutingModule
+    VideoWebsiteRoutingModule,
   ]
 })
 export class VideoWebsiteModule { }

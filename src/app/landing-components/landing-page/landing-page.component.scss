@@ -1,9 +1,18 @@
 @import "./bg-blocks-styles.scss";
 @import "../landing-components.component.scss";
+@import '../../modal-styles.scss';
 
 section {
   //background: #2b5ada;
   background: #092b86;
+}
+
+.hero-section {
+  .heading {
+    h1 {
+      font-size: 5.5rem;
+    }
+  }
 }
 
 .about-section {
@@ -203,46 +212,6 @@ section {
   margin: 2.5rem auto;
 }
 
-.modal.show .modal-dialog {
-  -webkit-transform: none;
-  transform: none;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.modal button {
-  color: #000;
-  border-color: #000;
-  background: transparent;
-  font-weight: bold;
-  padding: 1rem;
-  width: 80%;
-  margin: 2rem auto;
-}
-.modal-head {
-  button {
-    width: 20px;
-    margin: 0 20px;
-    box-shadow: none;
-  }
-}
-.modal-body {
-  text-align: center;
-  h2 {
-    text-align: center;
-    color: #000;
-    font-size: 1.5rem;
-    letter-spacing: -0.5px;
-    padding: 5px;
-    margin: 0;
-  }
-  img {
-    width: 65%;
-    margin: 2rem auto;
-  }
-}
 
 .vldform__textbox {
   outline: none;

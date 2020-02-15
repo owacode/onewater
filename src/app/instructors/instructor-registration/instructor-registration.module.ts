@@ -4,6 +4,7 @@ import { InstructorRegistrationComponent } from './instructor-registration.compo
 import { Route, RouterModule } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterModule } from 'src/app/footer/footer.module';
 
 const routes: Route[]=[
     {
@@ -22,7 +23,8 @@ const routes: Route[]=[
     CommonModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FooterModule
   ]
 })
 export class InstructorRegistrationModule { }

@@ -66,12 +66,7 @@ export class AuthorLoginComponent implements OnInit {
       }
     );
   }
-  closeModal(thismodal) {
-    console.log('hit close')
-    $(thismodal).css("display", "none");
-    $(thismodal).removeClass("show");
-    $('.overlay').css("display", "none");
-  }
+
 
   ngOnInit() {
     this.auth.checkLocalStorage();
@@ -106,8 +101,13 @@ export class AuthorLoginComponent implements OnInit {
   login() {
     this.loginsubmitted = true;
     if (this.loginuser.invalid) {
-      return;
+        console.log("invalid details");
+          $('#invalidModal').css("display", "block");
+          $('#invalidModal').addClass("show");
+          $('.overlay').css("display", "block");
+        return;
     }
+
     console.log(this.loginuser.value);
     this.auth.login(this.loginuser.value);
   }

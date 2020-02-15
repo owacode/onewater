@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserRegistrationComponent } from './user-registration.component';
 import { Route, RouterModule } from '@angular/router';
+import { FooterModule } from '../footer/footer.module';
 
 const routes: Route[]=[
     {
@@ -17,7 +18,8 @@ const routes: Route[]=[
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    FooterModule
   ]
 })
 

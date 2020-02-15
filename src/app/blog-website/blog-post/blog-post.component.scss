@@ -3,11 +3,10 @@
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-attachment: fixed;
   .wave{
     position: absolute;
-
         height: 100%;
         bottom: -30%;
         width: 100%;
@@ -22,10 +21,10 @@
   width: 100%;
 }
 .blog-post-wrapper{
-  margin-top: -18vh;
+  margin-top: 2vh;
 }
 .post-top{
-  padding-top:20vh;
+  padding-top:0vh;
 }
 .related-blogs{margin: 2.5rem 0;
 h2{
@@ -128,19 +127,6 @@ figure figcaption {
   }
 }
 
-.comment-box
-{
-  width: 100%;
-  padding: 1rem;
-  height: 150px;
-}
-
-.meta-bio .wrapper {
-  padding: 40px 0px;
-  border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
-}
-
 .meta-bio img {
   display: inline-block;
   width: 90px;
@@ -231,7 +217,6 @@ figure figcaption {
   .share-btn{
     display: inline-block;
     float: right;
-
     button{
       box-shadow: none;
       background: transparent;
@@ -290,7 +275,7 @@ figure figcaption {
 
 
 .side-card{
-  padding: 10vh 0 3vh;
+  padding: 2vh 0 3vh;
 
   .blog-card{
   padding: 1rem;
@@ -322,7 +307,6 @@ figure figcaption {
 
 }
 
-
 .categories {
   .cat {
     background: #f0f0f0;
@@ -346,24 +330,16 @@ figure figcaption {
 }
 
 @media only screen and (max-width: 720px) {
-  .wrapper,
-  .masthead {
-    width: 100%;
+  .blog-post-wrapper{
+    margin-top: -2vh;
   }
 
-  .masthead {
-    min-width: 0px;
-  }
-
-
-  .teaser,
+ .teaser,
   p,
   blockquote,
   ul {
     font-size: 16px;
   }
-
-
 
 .bio-text .bio-shl {
   font-size: 14px;
@@ -387,7 +363,6 @@ figure figcaption {
     width: 90px;
     height: 90px;
   }
-
 }
 
 .title {
@@ -403,9 +378,7 @@ figure figcaption {
 }
 
 @media screen and (max-width:768px){
-  .post-top{
-    padding-top: 15vh;
-  }
+
   .side-card{
     padding: 0;
   }
@@ -414,10 +387,9 @@ figure figcaption {
      text-align: center;
     }
   }
-  
 }
 
-@media screen and (max-width:520px){
+@media screen and (max-width:576px){
   .author-box{text-align: center;}
   .bio-text{
     width: 100%;
@@ -430,7 +402,6 @@ figure figcaption {
 .bio-text .bio-shl {
   text-align: center;
 }
-
     .bio-hl{
       text-align: center;
     }
@@ -440,9 +411,6 @@ figure figcaption {
   }
   h1{
     font-size: 2rem;
-  }
-  .post-top{
-    padding-top: 20vh;
   }
   .outer-card{
     margin: 1rem 2rem;
@@ -461,7 +429,7 @@ figure figcaption {
       }
     }
   .blog-post-wrapper{
-    margin-top: -25vh;
+    margin-top: 2vh;
   }
 
 .side-card .blog-card{
@@ -474,10 +442,7 @@ figure figcaption {
 .teaser, p {
   text-align: left;
 }
-.share-button{
-  margin-right: 1rem;
-  margin-top: 5rem;
-}
+
  .blog-options .share-btn i, .blog-options  .like-btn i{
     font-size: 1.6rem;
   }

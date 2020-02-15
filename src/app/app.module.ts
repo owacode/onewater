@@ -7,20 +7,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
 import { LandingComponentsComponent } from './landing-components/landing-components.component';
 import { LandingPageComponent } from './landing-components/landing-page/landing-page.component';
 import { BlogWebsiteComponent } from './blog-website/blog-website.component';
 import { JobPortalComponent } from './job-portal/job-portal.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
 import { NgxPayPalModule } from 'ngx-paypal';
-import { HeaderComponent } from './header/header.component';
-import { InstructorLoginComponent } from './instructors/instructor-login/instructor-login.component';
+import { HeaderModule } from './header/header.module';
+import { FooterModule } from './footer/footer.module';
 
 @NgModule({
   declarations: [
-    AppComponent,HeaderComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent, InstructorLoginComponent, NavbarComponent
+    AppComponent,LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent
   ],
   
   exports:[],
@@ -33,7 +31,9 @@ import { InstructorLoginComponent } from './instructors/instructor-login/instruc
     HttpClientModule,
     NgxUiLoaderModule,
     NgxUiLoaderRouterModule,
-    NgxPayPalModule
+    NgxPayPalModule,
+    HeaderModule,
+    FooterModule
   ],
 
   providers: [],

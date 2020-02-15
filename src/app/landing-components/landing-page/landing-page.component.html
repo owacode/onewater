@@ -1,3 +1,4 @@
+<div class="overlay"></div>
 <section class="hero-section d-flex align-items-center">
   <div class="container">
     <div class="row align-items-center justify-content-center">
@@ -483,7 +484,7 @@
       </div>
 
 
-  <!-- Modal -->
+  <!-- Modal for newsletter -->
   <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog modal-md">
         <div class="modal-content">
@@ -496,9 +497,10 @@
            <img src="assets/img/landing/newsletter-modal.png
            " alt="">
            <form [formGroup]="form" >
+             
            <input formControlName="name" class="vldform__textbox" type="text" placeholder="name" required>
-
            <input formControlName="email" class="vldform__textbox" type="email" placeholder="email" required>
+           
            <button type="submit" (click)="subscribe()" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#thanksmodal">Submit</button>
           </form>
           </div>
@@ -507,7 +509,7 @@
       </div>
     </div>
 
-      <!-- Modal -->
+      <!-- Modal after user subscribe to newsletter -->
   <div class="modal fade" id="thanksmodal" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
@@ -521,6 +523,30 @@
          <button class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
 
+      </div>
+    </div>
+  </div>
+
+  <!--modal to show if user is not logged in-->
+  <div class="modal fade" id="blogModal" #blogModal>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-head">
+          <button type="button" class="close" data-dismiss="modal" (click)="closeModal(blogModal)">&times;</button>
+      </div>
+  
+      <div class="modal-body">
+        <img src="assets/img/modals/blog-modal.png
+        " alt="">
+        <h2>Please login to read the blog.</h2>
+       </div>
+       <button type="button" class="btn btn-default" style="padding: 0;" data-dismiss="modal" (click)="closeModal(blogModal)">
+         <a href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D" style="display: block;
+         margin: 1rem 0;">
+          Login now
+         </a>
+        </button>
       </div>
     </div>
   </div>

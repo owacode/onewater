@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { EmployerRegisterationComponent } from './employer-registeration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterModule } from 'src/app/footer/footer.module';
 
 const routes: Route[]=[
     {
@@ -20,7 +21,8 @@ const routes: Route[]=[
     RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FooterModule
   ]
 })
 export class EmployerRegisterationModule { }

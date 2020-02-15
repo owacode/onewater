@@ -4,6 +4,7 @@ import { SingleVideoComponent } from './single-video.component';
 import { Route, RouterModule } from '@angular/router';
 import { OwlModule } from 'ngx-owl-carousel';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
+import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
 
 const routes: Route[]=[
     {
@@ -19,7 +20,8 @@ const routes: Route[]=[
   RouterModule.forChild(routes),
   CommonModule,
   OwlModule,
-  JwSocialButtonsModule
+  JwSocialButtonsModule,
+  CommonPipesModule
   ]
 })
 

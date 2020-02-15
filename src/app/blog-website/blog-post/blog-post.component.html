@@ -7,7 +7,6 @@
 <div class="container blog-post-wrapper">
   <div class="row">
     <div class="col-lg-9">
-
         <div class=" post-top">
           <h1>{{ blog?.title }}</h1>
           <div class="article-meta">
@@ -87,7 +86,9 @@
                     <div class="blog-meta-data">
                       <div class="author">By {{ author?.name | titlecase}}</div>
                       <div class="likes">
-                        <i class="fa fa-heart"></i>79 likes
+                        <i class="fa fa-heart"></i>
+                        <span *ngIf="!blog?.likecount">No likes</span>
+                        <span *ngIf="blog?.likecount">{{blog?.likecount}} likes</span>
                       </div>
                       <div class="read">
                         7 mins read

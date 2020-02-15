@@ -4,6 +4,7 @@ import { BlogComponent } from './blog.component';
 import { RouterModule,Route } from '@angular/router';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
 
 const routes: Route[]=[
     {
@@ -19,7 +20,8 @@ const routes: Route[]=[
    RouterModule.forChild(routes),
    OwlModule,
    NgxMasonryModule,
-   CommonModule
+   CommonModule,
+   CommonPipesModule
    ]
    })
 export class BlogModule { }

@@ -12,20 +12,20 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 
 export class HeaderComponent implements OnInit {
 
-  
+
 
   constructor(public http: HttpClient, public auth: AuthService, public router: Router) { }
 
   ngOnInit() {
 
-  const header = document.querySelector('header');
-  const menu = document.querySelector('.menu');
-  const logo = document.querySelector('.logo');
-  const hamburger = document.querySelector('.hamburger');
-  const menulink = document.querySelectorAll('.navlink a');
+    const header = document.querySelector('header');
+    const menu = document.querySelector('.menu');
+    const logo = document.querySelector('.logo');
+    const hamburger = document.querySelector('.hamburger');
+    const menulink = document.querySelectorAll('.navlink a');
 
-  this.toggleHeader();
-  
+    this.toggleHeader();
+
     let fixHeader = function () {
       if ($(window).scrollTop() > 70) {
         $(header).addClass("fixed-header");
@@ -49,13 +49,13 @@ export class HeaderComponent implements OnInit {
   }
   toggleHeader() {
     this.router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
+      if (event instanceof NavigationEnd) {
         if (
-          event['url'] == '/instructor-login' ||
           event['url'] == '/onewaterblog/author-login' ||
           event['url'] == '/onewaterjobs/emp-login' ||
           event['url'].includes('/onewaterblog/category') ||
-          event['url'].includes('/o-wow/video-category')) {
+          event['url'].includes('/o-wow/video-category') ||
+          event['url'] == '/instructor-login') {
           $('header').addClass('black-header');
         }
         else {

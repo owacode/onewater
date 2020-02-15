@@ -169,8 +169,8 @@
           <div class="two-card">
             <img [src]="blog.image" alt="" />
             <div class="blog-caption">
-              <a [routerLink]="['/onewaterblog/blogpost/', blog._id]">
-                <h5>{{ blog?.title | slice: 0:25 }}...</h5>
+              <a [routerLink]="['/onewaterblog/blogpost/', blog._id]" title="{{blog?.title}}">
+                <h5>{{ blog?.title | shorten:25 }}</h5>
               </a>
               <div class="blog-meta-data">
                 <div class="author">
@@ -294,42 +294,5 @@
   </div>
 </div>
 
-<!--button to open the modal-->
 
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Open modal
-</button> -->
 
-<div class="modal fade" id="blogModal">
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="modal-head">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-    </div>
-
-    <div class="modal-body">
-      <img src="assets/img/modals/blog-modal.png
-      " alt="">
-      <h2>Please login to read the blog.</h2>
-     </div>
-     <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-    </div>
-  </div>
-</div>
-
-<!-- <div class="modal" id="blogmodal" role="dialog" #thismodal>
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-    <div class="modal-head">
-        <button type="button" class="close" data-dismiss="modal" (click)="closeModal(thismodal)">&times;</button>
-    </div>
-      <div class="modal-body">
-       <img src="assets/img/modals/blog-modal.png
-       " alt="">
-       <h2>Please login to read the blog.</h2>
-      </div>
-        <button type="button" class="btn btn-default" data-dismiss="modal"  (click)="closeModal(thismodal)">OK</button>
-    </div>
-  </div>
-</div> -->

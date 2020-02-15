@@ -44,7 +44,7 @@
                  <img src={{blog?.image}} alt="">  </div>
                  <div class="blog-caption">
                    <a [routerLink]="['/onewaterblog/blogpost/', blog._id]">
-                 <h6>{{blog?.title}}</h6>
+                 <h6>{{blog?.title | shorten:30}}</h6>
                  </a>
                  <div class="blog-meta-data">
                    <div class="likes">

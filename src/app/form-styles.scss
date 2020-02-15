@@ -154,7 +154,7 @@
           transform: translateY(5px)
       }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
   
       .vldform {
           width: 550px;
@@ -165,12 +165,23 @@
         display:none;
       }
     
-    
       h2{
         text-align: center;
       }
       .left-content{
         text-align: center;
+      }
+
+      #login {
+        background-size: cover;;
+        p{
+          margin: 1rem auto;
+        }
+       
+    
+        h2{
+          text-align: center;
+        }
       }
   }
   @media (max-width: 520px) {
@@ -197,9 +208,6 @@
           letter-spacing: -2px;
         }
       }
-      
-    
-  
   }
   
   @media (max-width: 360px) {

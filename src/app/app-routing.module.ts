@@ -5,7 +5,6 @@ import { LandingPageComponent } from './landing-components/landing-page/landing-
 import { BlogWebsiteComponent } from './blog-website/blog-website.component';
 import { JobPortalComponent } from './job-portal/job-portal.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
-import { InstructorLoginComponent } from './instructors/instructor-login/instructor-login.component';
 import { Authguard } from './Authguard/authguard';
 
 
@@ -180,16 +179,10 @@ const routes: Routes = [
     ]
   },
   //-----------Instructor Login page -----------------//
-  {
-    path: 'instructor-login',
-    component: InstructorLoginComponent,
-    children: [
-      {
-        path:'',
-        loadChildren: './instructors/instructor-login/instructor-login-child/instructor-login-child.module#InstructorLoginChildModule'
-      }
-    ]
-  },
+    {
+       path:'instructor-login',
+      loadChildren: './instructors/instructor-login/instructor-login.module#InstructorLoginModule'
+    },
 
   //-----------Instructor Registration page -----------------//
   {

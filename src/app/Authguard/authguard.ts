@@ -5,9 +5,7 @@ import * as $ from 'jquery';
 import { AuthService } from '../auth.service';
 @Injectable()
 export class Authguard implements CanActivate {
-
     loginstatus:boolean=false;
-
     constructor(private authuser:AuthService ,public router:Router){}
 
     canActivate(
@@ -20,11 +18,10 @@ export class Authguard implements CanActivate {
 
             if(!this.loginstatus){
                 console.log('not logged in');
-                alert ("Please Login to use this Service");
-            //    $('#blogModal').css("display", "block");
-            //    $('#blogModal').addClass("show");
+                localStorage.setItem("triggerBlogModal","false");
                 this.router.navigate(['/home']);
             }
+
             return true;
 
         }

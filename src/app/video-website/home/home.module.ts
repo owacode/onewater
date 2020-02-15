@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { OwlModule } from 'ngx-owl-carousel';
+import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
 
 const routes: Route[]=[
     {
@@ -17,7 +18,8 @@ const routes: Route[]=[
   imports: [
   RouterModule.forChild(routes),
   CommonModule,
-  OwlModule
+  OwlModule,
+  CommonPipesModule
   ]
 })
 

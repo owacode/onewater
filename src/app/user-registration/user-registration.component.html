@@ -1,6 +1,7 @@
 <button class="button logout-button" type="button" data-feather="user-check">
   <i class="fa fa-power-off"></i> Logout
 </button>
+
 <section class="emp-registration">
   <div class="container">
     <h1>
@@ -328,129 +329,10 @@
                 <option value="3"> company 3</option>
               </select>
             </div>
-            <!-- <div class="row form-group"  >
-                    <p style="color: red; margin:0px auto">
-                        Select your country </p>
-                </div> -->
+          
           </div>
         </div>
-        <!-- <div class="dashboard-section media-inputs">
-            <h4><i data-feather="image"></i>Profile Photo</h4>
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Upload photo</label>
-              <div class="col-sm-9">
-                <div class="input-group image-upload-input">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input style="display: none"  type="file" #file   >
-                      <button type="button" (click)="file.click()">Select Image</button>
-                    </div>
-                    <div class="row form-group" *ngIf=" form.get('author_image').invalid &&profilesubmit" >
-                      <p style="color: red; margin:0px auto">
-                          Please Select Your Picture </p>
-                  </div>
-                  </div>
-                  <div class="active">
-                    <div class="upload-images">
-                      <div class="pic" *ngIf="imagePreview!='' && imagePreview">
 
-                          <img style="width: 120px;" [src]="imagePreview">
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="dashboard-section social-inputs">
-            <h4><i data-feather="cast"></i>Social Networks</h4>
-            <div class="form-group row">
-              <div class="offset-sm-3 col-sm-9">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fa fa-linkedin"></i>
-                    </div>
-                  </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Linkedin profile url"
-                    formControlName="linkedin"
-                  />
-                </div>
-                <div class="row form-group" *ngIf=" form.get('linkedin').invalid &&profilesubmit" >
-                  <p style="color: red; margin:0px auto">
-                      Enter Your LinkedIn Profile Link </p>
-              </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Social Links</label>
-              <div class="col-sm-9">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fa fa-facebook-f"></i>
-                    </div>
-                  </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Facebook profile url"
-                    formControlName="facebook"
-                  />
-                </div>
-                <div class="row form-group" *ngIf=" form.get('facebook').invalid &&profilesubmit" >
-                  <p style="color: red; margin:0px auto">
-                    Enter Your Facebook Profile Link </p>
-              </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="offset-sm-3 col-sm-9">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fa fa-twitter"></i>
-                    </div>
-                  </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Twitter profile url"
-                    formControlName="twitter"
-                  />
-                </div>
-                <div class="row form-group" *ngIf=" form.get('twitter').invalid &&profilesubmit" >
-                  <p style="color: red; margin:0px auto">
-                    Enter Your Twitter Profile Link </p>
-              </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="offset-sm-3 col-sm-9">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fa fa-instagram"></i>
-                    </div>
-                  </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Instagram profile url"
-                    formControlName="instagram"
-                  />
-                </div>
-                <div class="row form-group" *ngIf=" form.get('instagram').invalid &&profilesubmit" >
-                  <p style="color: red; margin:0px auto">
-                    Enter Your Instagram Profile Link </p>
-              </div>
-              </div>
-            </div>
-          </div> -->
         <div class="dashboard-section basic-info-input">
           <div class="form-group row">
             <label class="col-sm-3 col-form-label"></label>
@@ -497,74 +379,4 @@
   </div>
 </div>
 
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <img
-          src="/assets/img/ow-logo1.png"
-          alt="one-water-logo"
-          class="one-water-logo"
-        />
-        <div class="social-links">
-          <a href="https://twitter.com/onewateracademy" target="_blank">
-            <i class="fa fa-twitter" aria-hidden="true"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/company/onewateracademy"
-            target="_blank"
-          >
-            <i class="fa fa-linkedin" aria-hidden="true"></i
-          ></a>
-          <a href="https://www.facebook.com/onewateracademy/" target="_blank">
-            <i class="fa fa-facebook" aria-hidden="true"></i
-          ></a>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="site-links">
-          <!-- <h4 class="footer-head"></h4> -->
-          <ul>
-            <li><a routerLink="/home">home</a></li>
-            <li><a routerLink="/home/about">about us</a></li>
-            <li><a routerLink="/home/mission">our mission</a></li>
-            <li><a routerLink="/home/vision">our vision</a></li>
-            <li><a routerLink="/home/donate">Donate to OneWater</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="contact">
-          <ul>
-            <li>
-              <h6>
-                <i class="fa fa-map-marker" aria-hidden="true"></i>Address
-              </h6>
-              <a>
-                Lorem, ipsum dolor. Florida
-              </a>
-            </li>
-            <li>
-              <h6><i class="fa fa-phone" aria-hidden="true"></i>Phone</h6>
-              <a>
-                7464676
-              </a>
-            </li>
-            <li>
-              <h6><i class="fa fa-phone" aria-hidden="true"></i>Email</h6>
-              <a>
-                onewater.org@gmail.com
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-text">
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi velit
-        vel ullam tempore eum expedita, quidem dolorem. In, quod. Voluptates.
-      </p>
-    </div>
-  </div>
-</footer>
+<app-footer></app-footer>

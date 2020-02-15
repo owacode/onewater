@@ -63,7 +63,7 @@
         </div>
         <div class="thumb-caption">
           <div class="video-name">
-          <a [routerLink]="['/o-wow/singlevideo/', videoo._id]"><h5>{{videoo?.title | slice:0:50}}..</h5></a>
+          <a [routerLink]="['/o-wow/singlevideo/', videoo._id]"><h5>{{videoo?.title | shorten:35}}</h5></a>
           </div>
           
           <div class="video-metadata">

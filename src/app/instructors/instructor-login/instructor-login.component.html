@@ -1,4 +1,290 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
+<div class="overlay"></div>
+<section id="login">
+  <!-- <div class="wave-bg"></div> -->
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 left-content">
+        <h2>
+          OneWater
+          <strong>Academy</strong>
+        </h2>
+        <p>
+          Be an instructor on OneWater Academy and share your knowledge wiht the
+          world.
+        </p>
+        <img src="assets/img/ins-login.png" alt="" class="login-img" />
+      </div>
+      <div class="col-lg-6">
+        <div class="form-box">
+          <form
+            class="vldform vldauth"
+            [formGroup]="loginuser"
+            (submit)="login()"
+          >
+            <h1>instructor Login</h1>
+            <input
+              class="vldform__textbox"
+              type="text"
+              name="email"
+              placeholder="Email"
+              required
+              formControlName="email"
+            />
+            <input
+              class="vldform__textbox"
+              type="password"
+              name="pass"
+              placeholder="Password"
+              required
+              formControlName="password"
+            />
+            <button type="submit" class="vldform__button">Login</button>
+          </form>
+          <p class="vldform__signup" id="login-text">
+            New here?
+            <a class="vldform__signuplink" (click)="showregform()">Sign up</a>
+          </p>
+
+          <form class="vldform vldreg" [formGroup]="user" (submit)="register()">
+            <h1>instructor registration</h1>
+            <input
+              class="vldform__textbox"
+              type="text"
+              name="name"
+              placeholder=" Name"
+              required
+              formControlName="name"
+            />
+            <input
+              class="vldform__textbox"
+              type="email"
+              name="email"
+              placeholder=" Email"
+              required
+              formControlName="email"
+            />
+            <div class="row">
+              <div class="col-md-6">
+                <input
+
+                  class="vldform__textbox halfwidth"
+                  type="password"
+                  name="pass"
+                  placeholder="Password"
+
+                  required
+                  formControlName="password"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <input
+                  class="vldform__textbox halfwidth"
+                  type="password"
+                  name="pass2"
+                  placeholder="Confirm Password"
+                  required
+                  formControlName="cpassword"
+                />
+              </div>
+            </div>
+
+            <input
+              class="vldform__button"
+              type="submit"
+              value="Sign up"
+            />
+          </form>
+          <p class="vldform__signup" id="signup-text">
+            Already a member ?
+            <a (click)="showauthform()">Log in</a>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <app-footer></app-footer>
+<!---------MODALS------------>
+<!-- First Signup Modal -->
+<div class="modal modal-animate" id="signupSuccess" role="dialog" #signupModal>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-head">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            (click)="closeModal(signupModal)"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <img
+            src="assets/img/mail.png
+         "
+            alt=""
+          />
+          <h2>
+            Please verify the email by clicking the link you will receive in your
+            inbox.
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="btn btn-default"
+          data-dismiss="modal"
+          (click)="closeModal(signupModal)"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Login before email verification Modal -->
+<div class="modal modal-animate" id="loginModal" role="dialog" #loginModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="closeModal(loginModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/verify-mail.jpg
+         "
+          alt=""
+        />
+        <h2>Please verify your Email to login.</h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="closeModal(loginModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--if email already exist modal-->
+<div class="modal modal-animate" id="signupFail" role="dialog" #mailexistModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="closeModal(mailexistModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/mail-sent.jpg
+         "
+          alt=""
+        />
+        <h2>
+          This Email ID is already in use on our platform. Please check your
+          inbox if you have not verified your Email ID
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="closeModal(mailexistModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--profile pending for approval-->
+<div class="modal modal-animate" id="pendingModal" role="dialog" #pendingModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="closeModal(pendingModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/pending-profile.png"
+          alt=""
+        />
+        <h2>
+         Your profile has been sent to admin for approval. 
+         Please wait for the confirmation.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="closeModal(pendingModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--wrong credentials in login-->
+<div class="modal modal-animate" id="invalidModal" role="dialog" #invalidModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="closeModal(invalidModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/invalid-details.png"
+          alt=""
+        />
+        <h2>
+         Please enter a valid email or password.
+         Thankyou.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="closeModal(invalidModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
 

@@ -101,6 +101,7 @@ header{
         position: relative;
         display: block;
         border-radius: 1.5px;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 }
 
@@ -158,6 +159,15 @@ header{
 .hamburger.clicked{
     span{
         background-color: #000461;
+    }
+    span:nth-child(1){
+        transform: rotate(-45deg) translateY(12px);
+    }
+    span:nth-child(2){
+        opacity: 0;
+    }
+    span:nth-child(3){
+        transform: rotate(45deg) translateY(-12px);
     }
 }
 

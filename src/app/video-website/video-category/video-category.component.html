@@ -65,7 +65,7 @@
                             <div class="col-7 no-gutter">
                               <div class="thumb-caption">
                                 <div class="video-name">
-                                  <h3>{{ video?.title | slice: 0:45 }}..</h3>
+                                  <h3>{{ video?.title |shorten:35 }}</h3>
                                 </div>
                                 <!-- <div class="channel">
                                   John Wick
@@ -107,7 +107,7 @@
                               </div>
                               <div class="thumb-caption">
                                 <div class="video-name">
-                                  <h5>{{video?.title | slice:0:45}}..</h5>
+                                  <h5>{{video?.title | shorten:35}}</h5>
                                 </div>
                                 <div class="video-metadata">
                                 <div class="views">{{video?.views}} views</div>

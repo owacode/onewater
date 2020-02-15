@@ -275,7 +275,6 @@ export class BlogComponent implements OnInit {
   constructor(public http: HttpClient) { }
 
   ngOnInit() {  
-
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/approveblogs')
       .subscribe(result => {
         console.log(result);
