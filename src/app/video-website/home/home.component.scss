@@ -311,7 +311,7 @@ h2{
     font-size: 1rem;
 }
 }
-@media screen and (max-width: 520px){
+@media screen and (max-width: 576px){
 
   .vod-small{
     width: 94%;
@@ -336,6 +336,7 @@ h2{
     }
   .landing-video{
     padding: 1.5rem 0;
+    margin-bottom: 0;
     }
 
   .landing-video:before {

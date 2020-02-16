@@ -15,3 +15,8 @@
       min-height: 80vh;
   }
   
+  @media all and (max-width:576px){
+      .intro-content{
+          margin-top: 10vh;
+      }
+  }

@@ -224,6 +224,12 @@ section{
   left: auto;
   top: -70%;
 }
+.mobile-wave{
+  display: none;
+  img{
+    width: 100% !important;
+  }
+}
 
 @media all and (max-width:1300px){
   .block-2{
@@ -231,6 +237,18 @@ section{
   }
 }
 @media all and (max-width: 991px){
+  .vision-section{
+    padding-top: 5vh;
+  }
+  .features-section{
+    padding-bottom: 80px;
+  }
+  .mobile-wave{
+    display: block;
+  }
+  .hero-section .heading{
+    margin-bottom: 15vh;
+  }
   .hero-section{
     background: #092b86;
     .heading p{

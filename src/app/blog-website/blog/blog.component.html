@@ -176,7 +176,7 @@
                 <div class="author">
                   {{ blog?.date_approved | date: "MMMM d, y" }}
                 </div>
-                <div class="likes"><i class="fa fa-heart"></i>{{ blog?.likecount}} likes</div>
+                <div class="likes" *ngIf="blog?.likecount"><i class="fa fa-heart"></i>{{ blog?.likecount}} likes</div>
                 <div class="read">
                   {{blog?.read_time}} mins read
                 </div>
@@ -232,8 +232,8 @@
                       </div>
                       <div class="row card-btn">
                         <div class="col-6 col-lg-6 col-sm-4">
-                          <div class="like-btn">
-                            {{ item?.likecount}}  <i class="fa fa-heart"></i>
+                          <div class="like-btn" *ngIf="item?.likecount">
+                            <i class="fa fa-heart"></i> {{ item?.likecount}} 
                           </div>
                         </div>
                         <div class="col-6 col-lg-6 col-sm-4">

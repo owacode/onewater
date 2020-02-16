@@ -80,9 +80,9 @@
   }
 }
 
-@media all and (max-width: 520px) {
+@media all and (max-width: 576px) {
   .donation-form {
-    margin-top: 30px;
+    margin-top: 0px;
   }
   .cover-photo {
     height: 80vh;
@@ -90,5 +90,10 @@
   .page-title {
     min-height: 80vh;
     margin-top: -80vh;
+  }
+  .donate-section{
+    img{
+      display: none;
+    }
   }
 }

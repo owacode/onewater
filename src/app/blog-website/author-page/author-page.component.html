@@ -67,7 +67,7 @@
             <!-- <div class="author">
               By {{blog.author}}
             </div> -->
-            <div class="likes">
+            <div class="likes" *ngIf="blog?.likecount">
                 <i class="fa fa-heart"></i>{{blog.likecount}} likes
             </div>
             <div class="read">

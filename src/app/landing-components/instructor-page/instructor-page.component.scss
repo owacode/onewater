@@ -9,8 +9,9 @@
     background-repeat: no-repeat;
     position: relative;
     margin-bottom: 200px;
+    display: flex;
     align-items: center;
-
+    justify-content: center;
     .heading{
         h1{
             font-size: 3.5rem;
@@ -20,9 +21,6 @@
     }
 }
 
-.hero-heading{
-    align-items: center;
-}
 .join-btn{
     color: #000;
     border: 2px solid #000;
@@ -67,7 +65,7 @@ h2,h4{
     color: #000;
 }
 .why-become-instructor-section{
-    margin-top: 50px;
+    margin-top: 10vh;
 
     h2,h4,p{
         color: #000;
@@ -133,6 +131,9 @@ h2,h4{
     h2,h4,p{
         color: #000;
     }
+    p{
+        text-align: left;
+    }
     .row{
         margin-top: 50px;
     }
@@ -154,17 +155,15 @@ h2,h4{
 
 @media screen and (max-width:991px){
     .hero-section{
-        align-items: flex-start;
         margin-bottom: 0;
-
         .heading {
             h1{
-                margin-top: 25vh;
+                max-width: 85%;
             }
         }
-        .register-card{
-            bottom: 25%;
-        }
+        // .register-card{
+        //     bottom: 25%;
+        // }
     }
     .process-box{
         margin-bottom: 2rem;
@@ -175,28 +174,30 @@ h2,h4{
     }
 }
 
-@media screen and (max-width:767px){
+@media screen and (max-width:768px){
     .hero-section{
-        flex-direction: column;
         .heading{
             h1{
-                margin-top: 15vh;
                 font-size:2.5rem;
             }
         }
     }
-    .register-card{
-        position: relative;
-        left: auto;
-        transform: translateX(0);
+    .why-become-instructor-section{
+        margin-top: 23vh;
     }
+    // .register-card{
+    //     position: relative;
+    //     left: auto;
+    //     transform: translateX(0);
+    // }
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:576px){
     .hero-section{
+        align-items: flex-start;
+        padding-top: 20vh;
         .heading{
             h1{
-                margin-top: 20vh;
                 font-size:2.2rem;
             }
         }
@@ -205,4 +206,13 @@ h2,h4{
             margin-top:0;
         }
     }
+    .feature-box{
+        text-align: center;
+    }
+    .register-section{
+        text-align: center;
+        h1 {
+            text-align: center;
+        }
+    } 
 }

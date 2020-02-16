@@ -22,7 +22,7 @@
   }
   
 .all-videos{
-    padding: 50px 0 !important;
+    padding: 50px 0;
 
     h2{
         margin-bottom: 50px;
@@ -72,4 +72,15 @@
     .category-head h1{
         text-align: center;
       }
+      .sidebar-videos{
+        margin-top: 3rem;
+      }
+    
+}
+
+@media all and (max-width:576px){
+      .all-videos{
+        padding: 20px 0;
+      }
+    
 }

@@ -47,7 +47,7 @@
                  <h6>{{blog?.title | shorten:30}}</h6>
                  </a>
                  <div class="blog-meta-data">
-                   <div class="likes">
+                   <div class="likes" *ngIf="blog?.likecount">
                        <i class="fa fa-heart"></i>{{blog?.likecount}} likes
                    </div>
                    <div class="read">
@@ -82,8 +82,8 @@
                       <div class="author">
                         By {{author?.name | titlecase}}
                       </div>
-                      <div class="likes">
-                          <i class="fa fa-heart"></i>79 likes
+                      <div class="likes" *ngIf="blog?.likecount">
+                          <i class="fa fa-heart"></i>{{blog?.likecount}} likes
                       </div>
                       <div class="read">
                           7 mins read
