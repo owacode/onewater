@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, EmailValidator } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import * as $ from 'jquery';
-import * as modal from 'bootstrap';
+import { Router } from '@angular/router';
 declare var modal: any;
-// declare var $:any;
 
 @Component({
   selector: 'app-author-login',
@@ -38,7 +37,7 @@ export class AuthorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
-  constructor(public auth: AuthService) {
+  constructor(public auth: AuthService, public route:Router) {
     this.auth.emailexist$.subscribe(
       () => {
         console.log("hit email not exist")
@@ -60,9 +59,9 @@ export class AuthorLoginComponent implements OnInit {
     this.auth.verifymail$.subscribe(
       () => {
         console.log("hit verify mail")
-        $('#signupModal').css("display", "block");
-        $('#signupModal').addClass("show");
-        $('.overlay').css("display", "block");
+        // $('#signupModal').css("display", "block");
+        // $('#signupModal').addClass("show");
+        // $('.overlay').css("display", "block");
       }
     );
   }
@@ -100,22 +99,79 @@ export class AuthorLoginComponent implements OnInit {
 
     if (this.user.value.password != this.user.value.cpassword) return alert("Password Not Matched");
     console.log(this.user.value);
-    this.auth.author(this.user.value);
+    this.auth.author(this.user.value).subscribe(result=> {
+      if(result.status == 'error'){
+        console.log("email already exist");
+              $('#pendingModal').css("display", "block");
+              $('#pendingModal').addClass("show");
+              $('.overlay').css("display", "block");
+      }
+      else{
+        console.log("author added successfully");
+              $('#signupModal').css("display", "block");
+              $('#signupModal').addClass("show");
+              $('.overlay').css("display", "block");
+      }
+
+    });
   }
 
   loginsubmitted: boolean = false;
   login() {
     this.loginsubmitted = true;
+
     if (this.loginuser.invalid) {
-        console.log("invalid details");
-          $('#invalidModal').css("display", "block");
-          $('#invalidModal').addClass("show");
-          $('.overlay').css("display", "block");
+        console.log("invalid detail format");
         return;
     }
 
     console.log(this.loginuser.value);
-    this.auth.login(this.loginuser.value);
+    this.auth.login(this.loginuser.value).subscribe(result=> {
+
+      console.log(result,'test reult')
+            if(result.status == 'error' || result.msg == 'Incorrect Password'){
+              console.log("invalid credentials");
+              $('#invalidModal').css("display", "block");
+              $('#invalidModal').addClass("show");
+              $('.overlay').css("display", "block");
+            }
+            if(result.status =='error') return;
+            this.auth.authoremail=result.result.email;
+            this.auth.authorid=result.result.id;
+            this.auth.authorname=result.result.name
+            this.auth.authormainid=result.result.mainid;
+            this.auth.authorapprovedid=result.result.approvedid;
+            if(result.result.form_filled){
+              localStorage.setItem('onewaterauthortoken',result.result.token)
+              localStorage.setItem('authoremail',this.auth.authoremail)
+              localStorage.setItem('authorid',this.auth.authorid)
+              localStorage.setItem('authormainid',this.auth.authormainid)
+              localStorage.setItem('name',result.result.name)
+              localStorage.setItem('image',result.result.image)
+              localStorage.setItem('form_filled_job',result.result.form_filled)
+              if(result.result.approvedid=='null') {
+                // return(alert("Profile Not Approved Yet"));
+                this.auth.approvedLitsener.next({
+                  status:false
+                })
+               return this.route.navigate(['/onewaterblog/author-reg']);
+              }
+              this.auth.approvedLitsener.next({
+                status:true
+              })
+              localStorage.setItem('authorapprovedid',this.auth.authorapprovedid)
+              this.route.navigate(['/author']);
+            }else{
+              localStorage.setItem('onewaterauthortoken',result.result.token)
+              localStorage.setItem('name',result.result.name)
+              localStorage.setItem('image',result.result.image)
+              localStorage.setItem('authoremail',this.auth.authoremail)
+              localStorage.setItem('authorid',this.auth.authorid)
+              localStorage.setItem('authormainid',this.auth.authormainid)
+              localStorage.setItem('form_filled_job',result.result.form_filled)
+              this.route.navigate(['/onewaterblog/author-reg']);
+            }
+          })
   }
 
 }

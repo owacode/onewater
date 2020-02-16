@@ -11,9 +11,7 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 })
 
 export class HeaderComponent implements OnInit {
-
-
-
+  
   constructor(public http: HttpClient, public auth: AuthService, public router: Router) { }
 
   ngOnInit() {

@@ -1,3 +1,4 @@
+<div class="overlay"></div>
 <section id="login">
   <div class="wave-bg"></div>
     <div class="container">
@@ -20,10 +21,10 @@
                  <button class="vldform__button" type="submit">Sign up</button>
                </div>
 
-                 <div class="social-btn"> <span>or signup using </span> <br>
+                 <!-- <div class="social-btn"> <span>or signup using </span> <br>
                    <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
                    <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
-                   </div>
+                   </div> -->
                  <p class="vldform__signup">Already a member ?
                    <a href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D" target="_blank" >Log in</a>
                  </p>
@@ -36,3 +37,86 @@
 
     </div>
 </section>
+
+
+<!---------MODALS------------>
+
+<!-- First Signup Modal -->
+<div class="modal modal-animate" id="signupModal" role="dialog" #signupModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="closeModal(signupModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/mail.png
+       "
+          alt=""
+        />
+        <h2>
+          Please verify the email by clicking the link you will receive in your
+          inbox.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="closeModal(signupModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!----mail already exist modal--->
+<div
+  class="modal modal-animate"
+  id="mailexistModal"
+  role="dialog"
+  #mailexistModal
+>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="closeModal(mailexistModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/mail-sent.jpg
+         "
+          alt=""
+        />
+        <h2>
+          This Email ID is already in use on our platform. Please check your
+          inbox if you have not verified your Email ID
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="closeModal(mailexistModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>

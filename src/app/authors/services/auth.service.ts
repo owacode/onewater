@@ -35,52 +35,7 @@ export class AuthService {
       email:values.email,
       password:values.password
     }
-    this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blog-api.herokuapp.com/login', user)
-    .subscribe(result=> {
-
-console.log(result,'test reult')
-      if(result.status == 'error'){
-        if(result.msg == 'Incorrect Password') return alert("Incorrect Password");
-        else if(result.msg=='User Email not Verified') return this.notverifiedCallSource.next();
-
-      }
-      if(result.status =='error') return;
-      this.authoremail=result.result.email;
-      this.authorid=result.result.id;
-      this.authorname=result.result.name
-      this.authormainid=result.result.mainid;
-      this.authorapprovedid=result.result.approvedid;
-      if(result.result.form_filled){
-        localStorage.setItem('onewaterauthortoken',result.result.token)
-        localStorage.setItem('authoremail',this.authoremail)
-        localStorage.setItem('authorid',this.authorid)
-        localStorage.setItem('authormainid',this.authormainid)
-        localStorage.setItem('name',result.result.name)
-        localStorage.setItem('image',result.result.image)
-        localStorage.setItem('form_filled_job',result.result.form_filled)
-        if(result.result.approvedid=='null') {
-          // return(alert("Profile Not Approved Yet"));
-          this.approvedLitsener.next({
-            status:false
-          })
-         return this.route.navigate(['/onewaterblog/author-reg']);
-        }
-        this.approvedLitsener.next({
-          status:true
-        })
-        localStorage.setItem('authorapprovedid',this.authorapprovedid)
-        this.route.navigate(['/author']);
-      }else{
-        localStorage.setItem('onewaterauthortoken',result.result.token)
-        localStorage.setItem('name',result.result.name)
-        localStorage.setItem('image',result.result.image)
-        localStorage.setItem('authoremail',this.authoremail)
-        localStorage.setItem('authorid',this.authorid)
-        localStorage.setItem('authormainid',this.authormainid)
-        localStorage.setItem('form_filled_job',result.result.form_filled)
-        this.route.navigate(['/onewaterblog/author-reg']);
-      }
-    })
+    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blog-api.herokuapp.com/login', user);
   }
 
   getToken(){
@@ -92,17 +47,7 @@ console.log(result,'test reult')
       email:values.author_email,
       password:values.password
     }
-    this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blog-api.herokuapp.com/unapproved-author', user)
-    .subscribe(result=> {
-      if(result.status == 'error'){
-        if(result.msg=='No User Found') this.emailexistCallSource.next();
-
-        // if(result.msg='No User Found') this.emailexistCallSource.next();
-      }
-
-      if(result.status == 'success') this.verifymailCallSource.next();
-      console.log(result);
-    })
+    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blog-api.herokuapp.com/unapproved-author', user);
   }
   checkLocalStorage(){
     console.log('check local hit')

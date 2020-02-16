@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, EmailValidator } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login-signup',
@@ -11,6 +12,14 @@ export class LoginSignupComponent implements OnInit {
 
   constructor(public http:HttpClient) { }
   user;
+
+  closeModal(thismodal) {
+    console.log('close Modal')
+    $(thismodal).css("display", "none");
+    $(thismodal).removeClass("show");
+    $('.overlay').css("display", "none");
+  }
+  
   ngOnInit() {
     this.user= new FormGroup({
       name:new FormControl(null,{validators:[Validators.required]}),
@@ -31,10 +40,21 @@ export class LoginSignupComponent implements OnInit {
     if(this.user.value.password != this.user.value.cpassword) return alert("Password Not Matched");
     console.log('pass',this.user.value);
 
-    this.http.post('https://onewater-auth.herokuapp.com/newuser',this.user.value)
+    this.http.post<{status:any,payload:any}>('https://onewater-auth.herokuapp.com/newuser',this.user.value)
     .subscribe(result=>{
-      console.log("User Added", result)
-      alert("User Added Successfully");
+      if(result.status == "error"){
+        console.log("user already exist")
+        $('#mailexistModal').css("display", "block");
+        $('#mailexistModal').addClass("show");
+        $('.overlay').css("display", "block");
+      }
+      else if(result.status == "success"){
+        console.log("user added successfully")
+        $('#signupModal').css("display", "block");
+        $('#mailesignupModalxistModal').addClass("show");
+        $('.overlay').css("display", "block");
+      }
+      
     })
   }
 

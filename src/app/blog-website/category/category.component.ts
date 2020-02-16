@@ -222,40 +222,6 @@ export class CategoryComponent implements OnInit {
         }
       }
 
-      // if( this.category=='Water' && this.subcategory == 'Distribution System') this.fetchcategory='distribution';
-      // if( this.category=='Water' && this.subcategory == 'Water Conservation') this.fetchcategory='conservation'
-      // if( this.category=='Water' && this.subcategory == 'Drinking Water Quality') this.fetchcategory='drinking'
-      // if( this.category=='Water' && this.subcategory == 'Water Treatment & Operations') this.fetchcategory='watertreatment'
-      // if( this.category=='Water' && this.subcategory == 'Desalination') this.fetchcategory='desalination';
-
-      // if( this.category=='Wastewater' && this.subcategory == 'Biosolids') this.fetchcategory='biosolids'
-      // if( this.category=='Wastewater' && this.subcategory == 'Collection Systems') this.fetchcategory='collection'
-      // if( this.category=='Wastewater' && this.subcategory == 'Water Reuse and Resource Recovery') this.fetchcategory='reuse'
-      // if( this.category=='Wastewater' && this.subcategory == 'Odor and corrosion management') this.fetchcategory='odor'
-      // if( this.category=='Wastewater' && this.subcategory == 'Wastewater treatment & Operations') this.fetchcategory='wastewatertreatment';
-
-      // if( this.category=='Stormwater' && this.subcategory == 'Watershed') this.fetchcategory='watershed'
-      // if( this.category=='Stormwater' && this.subcategory == 'Hydrology') this.fetchcategory='hydrology';
-
-      // if( this.category=='Innovation & Research' && this.subcategory == 'Water Science & Research') this.fetchcategory='waterscience'
-      // if( this.category=='Innovation & Research' && this.subcategory == 'Students') this.fetchcategory='students'
-      // if( this.category=='Innovation & Research' && this.subcategory == 'Young Professionals') this.fetchcategory='youngpros'
-
-      // if( this.category=='Sustainable Development' && this.subcategory == 'Climate Change') this.fetchcategory='climate'
-      // if( this.category=='Sustainable Development' && this.subcategory == 'Resiliency') this.fetchcategory='resiliency'
-      // if( this.category=='Sustainable Development' && this.subcategory == 'Energy') this.fetchcategory='energy'
-      // if( this.category=='Sustainable Development' && this.subcategory == 'Regional Activities/ Cast Studies') this.fetchcategory='reg';
-
-      // if( this.category=='Management & Finance' && this.subcategory == 'Workforce Development') this.fetchcategory='workforce'
-      // if( this.category=='Management & Finance' && this.subcategory == 'Asset management') this.fetchcategory='asset'
-      // if( this.category=='Management & Finance' && this.subcategory == 'Utility management') this.fetchcategory='util'
-      // if( this.category=='Management & Finance' && this.subcategory == 'Financing') this.fetchcategory='finance'
-      // if( this.category=='Management & Finance' && this.subcategory == 'Construction management') this.fetchcategory='cons'
-      // if( this.category=='Management & Finance' && this.subcategory == 'Leadership') this.fetchcategory='leader';
-
-      // if( this.category=='Legislative & Regulatory' && this.subcategory == 'Government Affairs') this.fetchcategory='govt'
-      // if( this.category=='Legislative & Regulatory' && this.subcategory == 'Safety and Security') this.fetchcategory='safety'
-
 
 console.log(this.fetchcategory,'effe');
       this.http.get<{status: any, msg: any, result:any}>('https://onewater-blog-api.herokuapp.com/category/'+this.sname)
