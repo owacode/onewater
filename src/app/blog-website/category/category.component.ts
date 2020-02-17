@@ -203,10 +203,9 @@ export class CategoryComponent implements OnInit {
   sname;
   tempcate;
 
-
   constructor(public route:ActivatedRoute, public http:HttpClient) { }
-
   ngOnInit() {
+
     this.getmostlikedblogs();
     this.route.queryParams.subscribe(result=>{
       console.log(result);
@@ -219,6 +218,7 @@ export class CategoryComponent implements OnInit {
       for(let i=0;i<this.categories.length;i++){
         if(this.categories[i].name == this.category){
           this.currentCategory = this.categories[i].subcat;
+         //console.log(this.currentCategory);
         }
       }
 

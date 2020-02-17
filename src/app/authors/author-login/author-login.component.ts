@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, EmailValidator } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
-import * as $ from 'jquery';
 import { Router } from '@angular/router';
-declare var modal: any;
+import { ModalFunctions } from '../../shared-functions/modal-functions';
 
 @Component({
   selector: 'app-author-login',
@@ -37,45 +36,35 @@ export class AuthorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
-  constructor(public auth: AuthService, public route:Router) {
+  constructor(public auth: AuthService, public route:Router, public modal:ModalFunctions) {
     this.auth.emailexist$.subscribe(
       () => {
         console.log("hit email not exist")
-        $('#mailexistModal').css("display", "block");
-        $('#mailexistModal').addClass("show");
-        $('.overlay').css("display", "block");
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#mailexistModal');
       }
     );
 
     this.auth.notverifiedmail$.subscribe(
       () => {
         console.log("hit not verified")
-        $('#loginModal').css("display", "block");
-        $('#loginModal').addClass("show");
-        $('.overlay').css("display", "block");
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#loginModal');
       }
     );
 
     this.auth.verifymail$.subscribe(
       () => {
         console.log("hit verify mail")
-        // $('#signupModal').css("display", "block");
-        // $('#signupModal').addClass("show");
-        // $('.overlay').css("display", "block");
+        this.modal.hideBtnLoader();
       }
     );
-  }
-
-  closeModal(thismodal) {
-    console.log('close Modal')
-    $(thismodal).css("display", "none");
-    $(thismodal).removeClass("show");
-    $('.overlay').css("display", "none");
   }
 
   ngOnInit() {
     this.auth.checkLocalStorage();
     this.showregform();
+   
     this.user = new FormGroup({
       author_name: new FormControl(null, { validators: [Validators.required] }),
       author_email: new FormControl(null, { validators: [Validators.required, Validators.email] }),
@@ -102,15 +91,13 @@ export class AuthorLoginComponent implements OnInit {
     this.auth.author(this.user.value).subscribe(result=> {
       if(result.status == 'error'){
         console.log("email already exist");
-              $('#pendingModal').css("display", "block");
-              $('#pendingModal').addClass("show");
-              $('.overlay').css("display", "block");
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#mailexistModal');
       }
       else{
         console.log("author added successfully");
-              $('#signupModal').css("display", "block");
-              $('#signupModal').addClass("show");
-              $('.overlay').css("display", "block");
+              this.modal.hideBtnLoader();
+              this.modal.openModal('#signupModal');
       }
 
     });
@@ -122,6 +109,7 @@ export class AuthorLoginComponent implements OnInit {
 
     if (this.loginuser.invalid) {
         console.log("invalid detail format");
+        this.modal.hideBtnLoader();
         return;
     }
 
@@ -131,10 +119,10 @@ export class AuthorLoginComponent implements OnInit {
       console.log(result,'test reult')
             if(result.status == 'error' || result.msg == 'Incorrect Password'){
               console.log("invalid credentials");
-              $('#invalidModal').css("display", "block");
-              $('#invalidModal').addClass("show");
-              $('.overlay').css("display", "block");
+              this.modal.hideBtnLoader();
+              this.modal.openModal('#invalidModal');
             }
+
             if(result.status =='error') return;
             this.auth.authoremail=result.result.email;
             this.auth.authorid=result.result.id;

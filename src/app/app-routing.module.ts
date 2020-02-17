@@ -231,6 +231,10 @@ const routes: Routes = [
     path: 'thankyou-author',
     loadChildren: './email-verified-author/email-verified-author.module#EmailVerifiedAuthorModule'
   },
+  // {
+  //   path: 'thankyou-instructor',
+  //   loadChildren: './email-verified-instructor/email-verified-instructor.module#EmailVerfiedInstructorModule'
+  // },
   {
     path: '**',
     redirectTo: '/home',

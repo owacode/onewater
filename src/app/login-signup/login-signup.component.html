@@ -18,7 +18,14 @@
                  <input class="vldform__textbox" formControlName="email" type="email" name="email"  placeholder="Email" required>
                  <div class="row"><div class="col-md-6"> <input class="vldform__textbox halfwidth" formControlName="password" type="password" name="pass"  placeholder="Password" required></div>
                  <div class="col-md-6"><input class="vldform__textbox halfwidth" formControlName="cpassword" type="password" name="pass2"  placeholder="Confirm Password" required></div>
-                 <button class="vldform__button" type="submit">Sign up</button>
+                 <button class="vldform__button" type="submit" (click)="modal.showBtnLoader()">
+                   <span class="btn-loading-content">
+                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
+                   </span>
+                   <span class="btn-default-content">
+                    Sign up
+                   </span>
+                  </button>
                </div>
 
                  <!-- <div class="social-btn"> <span>or signup using </span> <br>
@@ -50,7 +57,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(signupModal)"
+          (click)="modal.closeModal(signupModal)"
         >
           &times;
         </button>
@@ -70,7 +77,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(signupModal)"
+        (click)="modal.closeModal(signupModal)"
       >
         OK
       </button>
@@ -93,7 +100,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(mailexistModal)"
+          (click)="modal.closeModal(mailexistModal)"
         >
           &times;
         </button>
@@ -113,7 +120,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(mailexistModal)"
+        (click)="modal.closeModal(mailexistModal)"
       >
         OK
       </button>

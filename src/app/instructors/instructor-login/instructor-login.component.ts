@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Route, Router } from '@angular/router';
 import { InstructorService } from '../instructor-admin/instructor.service';
+import { ModalFunctions } from '../../shared-functions/modal-functions';
 
 @Component({
   selector: 'app-instructor-login',
@@ -27,16 +27,7 @@ export class InstructorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
-  closeModal(thismodal) {
-    console.log('hit close')
-    $(thismodal).css("display", "none");
-    $(thismodal).removeClass("show");
-    $('.overlay').css("display", "none");
-  }
-
-
-
-  constructor(public http:HttpClient, public route: Router, public instructorservice: InstructorService) { }
+  constructor(public http:HttpClient, public route: Router, public instructorservice: InstructorService, public modal : ModalFunctions) { }
   user;
   loginuser;
   registersubmitted:boolean=false;
@@ -61,6 +52,7 @@ export class InstructorLoginComponent implements OnInit {
     console.log(this.user.value);
     if(this.user.invalid){
       console.log("details invalid")
+      this.modal.hideBtnLoader();
       return;
     }
 
@@ -75,20 +67,13 @@ export class InstructorLoginComponent implements OnInit {
     .subscribe(result=>{
       if(result['status'] == "error"){
         console.log("User already exist", result)
-
-        $('#signupFail').css("display", "block");
-        $('#signupFail').addClass("show");
-        $('.overlay').css("display", "block");
+        this.modal.hideBtnLoader();
+        this.modal.openModal("#signupFail");
       }
       else if (result['status'] == "success"){
-        console.log("User Added succssfully", result)
-
-        $('#signupSuccess').css("display", "block");
-        $('#signupSuccess').addClass("show");
-        $('.overlay').css("display", "block");
-      }
-      else{
-        console.log("last condition", result)
+        console.log("User Added succssfully", result);
+        this.modal.hideBtnLoader();
+        this.modal.openModal("#signupSuccess");
       }
     })
   }
@@ -99,9 +84,8 @@ export class InstructorLoginComponent implements OnInit {
     console.log(this.loginuser.value);
     if(this.loginuser.invalid){
       console.log("invalid details");
-        $('#invalidModal').css("display", "block");
-        $('#invalidModal').addClass("show");
-        $('.overlay').css("display", "block");
+      this.modal.openModal("#invalidModal");
+        this.modal.hideBtnLoader();
       return;
     }
     //console.log('pass',this.loginuser.value);
@@ -115,17 +99,15 @@ export class InstructorLoginComponent implements OnInit {
       console.log("User Login Successfully", result);
 
       if(result.result == 'Incorrect Password') {
-        $('#invalidModal').css("display", "block");
-        $('#invalidModal').addClass("show");
-        $('.overlay').css("display", "block");
+        this.modal.hideBtnLoader();
+        this.modal.openModal("#invalidModal");
         return;
       }
 
       if(result.result == 'User Email not Verified') {
-        //return alert("Please Verify Your Email")
-        $('#loginModal').css("display", "block");
-        $('#loginModal').addClass("show");
-        $('.overlay').css("display", "block");
+        console.log("email not verified")
+        this.modal.hideBtnLoader();
+        this.modal.openModal("#loginModal");
         return;
       };
 
@@ -135,9 +117,8 @@ export class InstructorLoginComponent implements OnInit {
       else if(result.result.status == 'pending')
       {
         console.log("waiting to be approved by admin");
-        $('#pendingModal').css("display", "block");
-        $('#pendingModal').addClass("show");
-        $('.overlay').css("display", "block");
+        this.modal.hideBtnLoader();
+        this.modal.openModal("#pendingModal");
         return;
       }
 

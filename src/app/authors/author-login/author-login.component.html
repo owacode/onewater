@@ -57,14 +57,16 @@
             <a class="vldform__recoverypassword" (click)="showrecoveryform()"
               >Forgot password?</a
             >
-            <a href=""></a>
-
-            <input class="vldform__button" type="submit" value="Login" />
-            <!-- <button type="submit" class="vldform__button" >Login</button> -->
-            <!-- <div class="social-btn"> <span>or login using </span> <br>
-                 <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
-                 <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
-                 </div> -->
+            <!-- <input class="vldform__button" type="submit" value="Login"  /> -->
+            <button class="vldform__button" type="submit" (click)="modal.showBtnLoader()">
+              <span class="btn-loading-content">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
+               </span>
+               <span class="btn-default-content">
+                Login
+               </span>
+            </button> 
+          
           </form>
           <p class="vldform__signup" id="login-text">
             New here?
@@ -138,11 +140,14 @@
               </div>
             </div>
 
-            <input class="vldform__button" type="submit" value="Sign up" />
-            <!-- <div class="social-btn"> <span>or signup using </span> <br>
-                   <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
-                   <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
-                   </div> -->
+            <button class="vldform__button" type="submit" (click)="modal.showBtnLoader()">
+              <span class="btn-loading-content">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
+               </span>
+               <span class="btn-default-content">
+                Sign up
+               </span>
+            </button>
           </form>
           <p class="vldform__signup" id="signup-text">
             Already a member ?
@@ -179,7 +184,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(signupModal)"
+          (click)="modal.closeModal(signupModal)"
         >
           &times;
         </button>
@@ -199,7 +204,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(signupModal)"
+        (click)="modal.closeModal(signupModal)"
       >
         OK
       </button>
@@ -216,7 +221,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(loginModal)"
+          (click)="modal.closeModal(loginModal)"
         >
           &times;
         </button>
@@ -233,7 +238,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(loginModal)"
+        (click)="modal.closeModal(loginModal)"
       >
         OK
       </button>
@@ -255,7 +260,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(mailexistModal)"
+          (click)="modal.closeModal(mailexistModal)"
         >
           &times;
         </button>
@@ -275,7 +280,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(mailexistModal)"
+        (click)="modal.closeModal(mailexistModal)"
       >
         OK
       </button>
@@ -292,7 +297,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(pendingModal)"
+          (click)="modal.closeModal(pendingModal)"
         >
           &times;
         </button>
@@ -311,7 +316,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(pendingModal)"
+        (click)="modal.closeModal(pendingModal)"
       >
         OK
       </button>
@@ -328,7 +333,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(invalidModal)"
+          (click)="modal.closeModal(invalidModal)"
         >
           &times;
         </button>
@@ -346,7 +351,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="closeModal(invalidModal)"
+        (click)="modal.closeModal(invalidModal)"
       >
         OK
       </button>
