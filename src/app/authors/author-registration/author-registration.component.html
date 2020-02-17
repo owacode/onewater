@@ -205,11 +205,11 @@
               </div>
             </div>
           </div>
-          <div *ngIf="!showsubmit" class="dashboard-section basic-info-input">
+          <div class="dashboard-section basic-info-input">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label"></label>
               <div class="col-sm-9">
-                <button class="button" type="submit">
+                <button class="button" type="submit" (click)="modal.showBtnLoader()">
                   <span class="btn-loading-content">
                     <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
                    </span>

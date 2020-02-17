@@ -37,28 +37,7 @@ export class AuthorLoginComponent implements OnInit {
   }
 
   constructor(public auth: AuthService, public route:Router, public modal:ModalFunctions) {
-    this.auth.emailexist$.subscribe(
-      () => {
-        console.log("hit email not exist")
-        this.modal.hideBtnLoader();
-        this.modal.openModal('#mailexistModal');
-      }
-    );
 
-    this.auth.notverifiedmail$.subscribe(
-      () => {
-        console.log("hit not verified")
-        this.modal.hideBtnLoader();
-        this.modal.openModal('#loginModal');
-      }
-    );
-
-    this.auth.verifymail$.subscribe(
-      () => {
-        console.log("hit verify mail")
-        this.modal.hideBtnLoader();
-      }
-    );
   }
 
   ngOnInit() {
@@ -76,6 +55,7 @@ export class AuthorLoginComponent implements OnInit {
       email: new FormControl(null, { validators: [Validators.required, Validators.email] }),
       password: new FormControl(null, { validators: [Validators.required] }),
     });
+
   }
 
   registersubmitted: boolean = false;
@@ -90,7 +70,7 @@ export class AuthorLoginComponent implements OnInit {
     if (this.user.value.password != this.user.value.cpassword) {
       this.modal.hideBtnLoader();
       this.modal.openModal("#passModal");
-      return
+      return;
     };
     console.log(this.user.value);
     this.auth.author(this.user.value).subscribe(result=> {
@@ -98,11 +78,13 @@ export class AuthorLoginComponent implements OnInit {
         console.log("email already exist");
         this.modal.hideBtnLoader();
         this.modal.openModal('#mailexistModal');
+        return;
       }
       else{
         console.log("author added successfully");
               this.modal.hideBtnLoader();
               this.modal.openModal('#signupModal');
+              return;
       }
 
     });
@@ -122,10 +104,23 @@ export class AuthorLoginComponent implements OnInit {
     this.auth.login(this.loginuser.value).subscribe(result=> {
 
       console.log(result,'test reult')
-            if(result.status == 'error' || result.msg == 'Incorrect Password'){
+            if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
               console.log("invalid credentials");
               this.modal.hideBtnLoader();
               this.modal.openModal('#invalidModal');
+              return;
+            }
+            else if(result.msg == 'User Email not Verified'){
+              console.log("user email not verified");
+              this.modal.hideBtnLoader();
+              this.modal.openModal('#loginModal');
+              return;
+            }
+            else if(result.result.form_filled == true && result.result.approvedid == "null"){
+              console.log("waiting for approval")
+              this.modal.hideBtnLoader();
+              this.modal.openModal('#pendingModal');
+              return;
             }
 
             if(result.status =='error') return;

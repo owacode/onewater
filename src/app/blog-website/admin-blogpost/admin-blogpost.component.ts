@@ -21,7 +21,7 @@ export class AdminBlogpostComponent implements OnInit {
       console.log(result);
       this.blogid=result.id;
       this.url = `https://onewater.herokuapp.com/blog/${result.id}`;
-      this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/homeblog/'+result.id)
+      this.http.get<{ status: string, msg: string, result: any }>('https://onewateracademy-blogapi.herokuapp.com/homeblog/'+result.id)
       .subscribe(result => {
         console.log(result, 'bannerrrr');
         this.blog = result.result[0];
@@ -36,7 +36,7 @@ export class AdminBlogpostComponent implements OnInit {
       blogid:this.blogid,
       userid:this.auth.user_id
     }
-    this.http.post('https://onewater-blog-api.herokuapp.com/like',data)
+    this.http.post('https://onewateracademy-blogapi.herokuapp.com/like',data)
     .subscribe(result=>{
       console.log(result);
     })

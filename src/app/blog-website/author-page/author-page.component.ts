@@ -16,7 +16,7 @@ export class AuthorPageComponent implements OnInit {
   ngOnInit() {
     this.router.params.subscribe(result=> {
       console.log(result)
-      this.http.get<{status:string, msg:string, result:any}>('https://onewater-blog-api.herokuapp.com/approvedauthor/'+result.id)
+      this.http.get<{status:string, msg:string, result:any}>('https://onewateracademy-blogapi.herokuapp.com/approvedauthor/'+result.id)
       .subscribe(result=>{
         console.log(result);
          this.author=result.result[0];
@@ -26,7 +26,7 @@ export class AuthorPageComponent implements OnInit {
   }
 
   getblogs(id){
-    this.http.get<{status:string, msg:string, result:any}>('https://onewater-blog-api.herokuapp.com/authorapprovedblogs/'+id)
+    this.http.get<{status:string, msg:string, result:any}>('https://onewateracademy-blogapi.herokuapp.com/authorapprovedblogs/'+id)
     .subscribe(result=>{
       console.log(result,'mohit ');
        this.authorblogs=result.result.reverse();

@@ -35,7 +35,7 @@ export class AuthService {
       email:values.email,
       password:values.password
     }
-    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blog-api.herokuapp.com/login', user);
+    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewateracademy-blogapi.herokuapp.com/login', user);
   }
 
   getToken(){
@@ -47,7 +47,7 @@ export class AuthService {
       email:values.author_email,
       password:values.password
     }
-    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blog-api.herokuapp.com/unapproved-author', user);
+    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewateracademy-blogapi.herokuapp.com/unapproved-author', user);
   }
   checkLocalStorage(){
     console.log('check local hit')
@@ -126,11 +126,8 @@ approvedauthorLitsener(){
     author.append('mainid',this.authormainid)
 
     console.log(this.authormainid, this.authorid,'dwdw');
-    this.http.post('https://onewater-blog-api.herokuapp.com/update-authorprofile',author)
-    .subscribe(result=> {
-      console.log(result);
-      // alert("Profile Send For Verification You will be respond Back");
-    })
+    return this.http.post('https://onewateracademy-blogapi.herokuapp.com/update-authorprofile',author);
+    
   }
 
   authorUpdate(values){
@@ -162,14 +159,14 @@ approvedauthorLitsener(){
     }
 
     console.log(this.authormainid, this.authorapprovedid,'dwdw');
-    this.http.post('https://onewater-blog-api.herokuapp.com/update-approveprofile',data)
+    this.http.post('https://onewateracademy-blogapi.herokuapp.com/update-approveprofile',data)
     .subscribe(result=> {
       console.log(result);
       // alert("Profile Send For Verification You will be respond Back");
     })
   }
   addNewJob(values){
-    this.http.post('https://onewater-blog-api.herokuapp.com/createjob',values)
+    this.http.post('https://onewateracademy-blogapi.herokuapp.com/createjob',values)
     .subscribe(result=> {
       console.log(result);
     })

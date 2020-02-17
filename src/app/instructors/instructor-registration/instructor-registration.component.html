@@ -23,7 +23,7 @@
             <label class="col-sm-3 col-form-label">Phone</label>
             <div class="col-sm-9">
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 placeholder="Enter your contact no."
                 formControlName="mobile_no"
@@ -260,7 +260,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label"></label>
             <div class="col-sm-9">
-                <button class="button" type="submit">
+                <button class="button" type="submit" (click)="modal.showBtnLoader()">
                   <span class="btn-loading-content">
                     <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
                    </span>

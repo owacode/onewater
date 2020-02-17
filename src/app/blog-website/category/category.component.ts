@@ -224,7 +224,7 @@ export class CategoryComponent implements OnInit {
 
 
 console.log(this.fetchcategory,'effe');
-      this.http.get<{status: any, msg: any, result:any}>('https://onewater-blog-api.herokuapp.com/category/'+this.sname)
+      this.http.get<{status: any, msg: any, result:any}>('https://onewateracademy-blogapi.herokuapp.com/category/'+this.sname)
       .subscribe(result=>{
         console.log(result);
         this.blogs=result.result;
@@ -236,7 +236,7 @@ console.log(this.fetchcategory,'effe');
   }
 
   getauthor(id){
-    this.http.get<{status:string, msg:string, result:any}>('https://onewater-blog-api.herokuapp.com/approvedauthor/'+id)
+    this.http.get<{status:string, msg:string, result:any}>('https://onewateracademy-blogapi.herokuapp.com/approvedauthor/'+id)
     .subscribe(result=>{
       console.log(result, 'author');
       this.author=result.result[0]
@@ -246,7 +246,7 @@ console.log(this.fetchcategory,'effe');
   getmostlikedblogs() {
     this.http
       .get<{ status: string; msg: string; result: any }>(
-        "https://onewater-blogapi.herokuapp.com/mostlikedblogs"
+        "https://onewateracademy-blogapi.herokuapp.com/mostlikedblogs"
       )
       .subscribe(result => {
         console.log(result, "most liked blogs ");

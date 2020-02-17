@@ -27,7 +27,7 @@ export class CommonService {
     data.append('readtime',min.toString());
     data.append('category','Technology');
     data.append('category','Health');
-    this.http.post<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/unapproved-blog',data)
+    this.http.post<{status:string, msg:string,result:any}>('https://onewateracademy-blogapi.herokuapp.com/unapproved-blog',data)
     .subscribe(result=>{
       console.log(result);
 
@@ -36,7 +36,7 @@ export class CommonService {
   }
 
   addVideo(values){
-    this.http.post("https://onewater-blog-api.herokuapp.com/post-video",values)
+    this.http.post("https://onewateracademy-blogapi.herokuapp.com/post-video",values)
     .subscribe(result=>{
       console.log(result);
       alert("Video Posted Successfully");
@@ -47,31 +47,31 @@ export class CommonService {
     const data={
       email: localStorage.getItem('authoremail')
     }
-    return this.http.get<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/singlevideo/'+localStorage.getItem('authoremail'));
+    return this.http.get<{status:string, msg:string,result:any}>('https://onewateracademy-blogapi.herokuapp.com/singlevideo/'+localStorage.getItem('authoremail'));
    }
 
   getAllBlogs(){
-   return this.http.get<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/authorallblogs/'+this.blogauth.authorapprovedid);
+   return this.http.get<{status:string, msg:string,result:any}>('https://onewateracademy-blogapi.herokuapp.com/authorallblogs/'+this.blogauth.authorapprovedid);
   }
 
   getPendingBlogs(){
-    return this.http.get<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/authorunapprovedblogs/'+this.blogauth.authorapprovedid);
+    return this.http.get<{status:string, msg:string,result:any}>('https://onewateracademy-blogapi.herokuapp.com/authorunapprovedblogs/'+this.blogauth.authorapprovedid);
    }
 
   getApprovedBlogs(){
-    return this.http.get<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/authorapprovedblogs/'+this.blogauth.authorapprovedid);
+    return this.http.get<{status:string, msg:string,result:any}>('https://onewateracademy-blogapi.herokuapp.com/authorapprovedblogs/'+this.blogauth.authorapprovedid);
   }
 
   getSingleApprovedBlogs(id){
-    return this.http.get<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/singleappblog/'+id);
+    return this.http.get<{status:string, msg:string,result:any}>('https://onewateracademy-blogapi.herokuapp.com/singleappblog/'+id);
   }
 
   getUser(){
-    return this.http.get<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/single-author/'+this.blogauth.authorapprovedid);
+    return this.http.get<{status:string, msg:string,result:any}>('https://onewateracademy-blogapi.herokuapp.com/single-author/'+this.blogauth.authorapprovedid);
   }
 
   getSingleAllBlog(id){
     console.log(id,'jjj')
-    return this.http.get<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/allblogs/'+id);
+    return this.http.get<{status:string, msg:string,result:any}>('https://onewateracademy-blogapi.herokuapp.com/allblogs/'+id);
   }
 }

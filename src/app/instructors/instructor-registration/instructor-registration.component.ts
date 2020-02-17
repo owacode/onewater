@@ -36,13 +36,12 @@ export class InstructorRegistrationComponent implements OnInit {
       return;
     }
 
-    this.modal.hideBtnLoader();
-    this.modal.openModal("#registerModal");
-
     console.log('pass',this.user_registration.value);
     this.http.post('https://onewater-instructor-api.herokuapp.com/updateinstructor',this.user_registration.value)
     .subscribe(result=>{
-      console.log("User Details Updated", result)
+      console.log("User Details Updated", result);
+      this.modal.hideBtnLoader();
+      this.modal.openModal("#registerModal");
     })
   }
   logout(){

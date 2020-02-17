@@ -28,7 +28,7 @@ export class AuthorRegistrationComponent implements OnInit {
   ngOnInit() {
 
 if(localStorage.getItem('form_filled_job')  == 'true'){
-  this.http.get<{status:string, msg:string, result:any}>('https://onewater-blog-api.herokuapp.com/notauthor/'+localStorage.getItem('authorid'))
+  this.http.get<{status:string, msg:string, result:any}>('https://onewateracademy-blogapi.herokuapp.com/notauthor/'+localStorage.getItem('authorid'))
   .subscribe(result=> {
     this.showsubmit=true;
     console.log(result);
@@ -82,14 +82,20 @@ if(localStorage.getItem('form_filled_job')  == 'true'){
         return;
       }
 
-    this.modal.hideBtnLoader();
-    this.modal.openModal("#registerModal");
+    
     
     console.log(this.form.value);
     this.area=this.form.value.interest.split('\n');
     this.form.value.interest=this.area;
+    
     console.log(this.form.value,'sss');
-    this.auth.authorRegistration(this.form.value);
+    this.auth.authorRegistration(this.form.value).subscribe(result=> {
+      console.log(result, "author details registered successfully");
+      this.modal.hideBtnLoader();
+      this.modal.openModal("#registerModal");
+    })
+
+    
   }
 
   logout(){
