@@ -83,10 +83,15 @@ export class AuthorLoginComponent implements OnInit {
   register() {
     this.registersubmitted = true;
     if (this.user.invalid) {
+      this.modal.hideBtnLoader();
       return;
     }
 
-    if (this.user.value.password != this.user.value.cpassword) return alert("Password Not Matched");
+    if (this.user.value.password != this.user.value.cpassword) {
+      this.modal.hideBtnLoader();
+      this.modal.openModal("#passModal");
+      return
+    };
     console.log(this.user.value);
     this.auth.author(this.user.value).subscribe(result=> {
       if(result.status == 'error'){

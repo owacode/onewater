@@ -2,7 +2,6 @@
 <button class="button logout-button" type="button" data-feather="user-check" (click)="logout()"><i class="fa fa-power-off"></i> Logout</button>
 <section class="emp-registration">
     <div class="container">
-
       <h1 *ngIf="!submited">
         Hello! welcome to <span> OneWater Blog.</span> <br>
         Fill up the form below and get started!
@@ -210,7 +209,14 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label"></label>
               <div class="col-sm-9">
-                <button class="button" type="submit" data-toggle="modal" data-target="#registerModal">Submit</button>
+                <button class="button" type="submit">
+                  <span class="btn-loading-content">
+                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
+                   </span>
+                   <span class="btn-default-content">
+                    Submit
+                   </span>
+                </button>
               </div>
             </div>
           </div>
@@ -218,23 +224,20 @@
       </div>
     </div>
   </section>
-
-
 <app-footer></app-footer>
 
-  <!-- <button data-toggle="modal" data-target="#registerModal"> open modal</button> -->
-  <div class="modal fade" id="registerModal" role="dialog" >
+  <div class="modal fade" id="registerModal" role="dialog" #registerModal>
     <div class="modal-dialog modal-md">
       <div class="modal-content">
       <div class="modal-head">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" (click)="modal.closeModal(registerModal)">&times;</button>
       </div>
         <div class="modal-body">
          <img src="assets/img/modals/register.jpg
          " alt="">
          <h2>Your profile has been submitted for review. We will get back to you in 24 hrs.</h2>
         </div>
-          <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal.closeModal(registerModal)">OK</button>
       </div>
     </div>
 </div>

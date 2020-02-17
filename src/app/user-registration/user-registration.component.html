@@ -9,11 +9,6 @@
       Fill up the form below and get started!
     </h1>
 
-    <!-- <h1 *ngIf="submited">
-          Hello! welcome to <span> OneWater</span> <br>
-          Your details have been registred. Please wait until your profile gets verified!
-        </h1> -->
-
     <div class="dashboard-content-wrapper dash-tab">
       <form class="dashboard-form">
         <div class="dashboard-section basic-info-input">
@@ -337,13 +332,13 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label"></label>
             <div class="col-sm-9">
-              <button
-                class="button"
-                type="submit"
-                data-toggle="modal"
-                data-target="#registerModal"
-              >
-                Submit
+              <button class="button" type="submit">
+                <span class="btn-loading-content">
+                  <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
+                 </span>
+                 <span class="btn-default-content">
+                  Submit
+                 </span>
               </button>
             </div>
           </div>
@@ -352,31 +347,22 @@
     </div>
   </div>
 </section>
-<!-- <button data-toggle="modal" data-target="#registerModal"> open modal</button> -->
-<div class="modal fade" id="registerModal" role="dialog">
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <div class="modal-head">
-        <button type="button" class="close" data-dismiss="modal">
-          &times;
-        </button>
-      </div>
-      <div class="modal-body">
-        <img
-          src="assets/img/modals/register.jpg
-           "
-          alt=""
-        />
-        <h2>
-          Your profile has been submitted for review. We will get back to you in
-          24 hrs.
-        </h2>
-      </div>
-      <button type="button" class="btn btn-default" data-dismiss="modal">
-        OK
-      </button>
-    </div>
-  </div>
-</div>
+
 
 <app-footer></app-footer>
+
+<!-- <div class="modal fade" id="registerModal" role="dialog" #registerModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+    <div class="modal-head">
+        <button type="button" class="close" data-dismiss="modal" (click)="modal.closeModal(registerModal)">&times;</button>
+    </div>
+      <div class="modal-body">
+       <img src="assets/img/modals/register.jpg
+       " alt="">
+       <h2>Your profile has been submitted for review. We will get back to you in 24 hrs.</h2>
+      </div>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal.closeModal(registerModal)">OK</button>
+    </div>
+  </div>
+</div> -->

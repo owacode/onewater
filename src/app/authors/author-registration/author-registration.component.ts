@@ -4,6 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { Subscription } from 'rxjs';
 import { CommonService } from '../services/common.service';
 import { HttpClient } from '@angular/common/http';
+import { ModalFunctions } from '../../shared-functions/modal-functions';
 
 @Component({
   selector: 'app-author-registration',
@@ -12,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthorRegistrationComponent implements OnInit {
 
-  constructor(public auth: AuthService, public common:CommonService, public http:HttpClient) { }
+  constructor(public auth: AuthService, public common:CommonService, public http:HttpClient, public modal : ModalFunctions) { }
   form:FormGroup;
   imagePreview;
   submited:boolean=false;
@@ -77,13 +78,18 @@ if(localStorage.getItem('form_filled_job')  == 'true'){
     this.profilesubmit=true;
     if(this.form.invalid)
       {
+        this.modal.hideBtnLoader();
         return;
       }
+
+    this.modal.hideBtnLoader();
+    this.modal.openModal("#registerModal");
+    
     console.log(this.form.value);
     this.area=this.form.value.interest.split('\n');
     this.form.value.interest=this.area;
     console.log(this.form.value,'sss');
-     this.auth.authorRegistration(this.form.value);
+    this.auth.authorRegistration(this.form.value);
   }
 
   logout(){

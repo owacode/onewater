@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Route, Router } from '@angular/router';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { InstructorService } from '../instructor-admin/instructor.service';
+import { ModalFunctions } from '../../shared-functions/modal-functions';
+
 @Component({
   selector: 'app-instructor-registration',
   templateUrl: './instructor-registration.component.html',
@@ -10,7 +12,7 @@ import { InstructorService } from '../instructor-admin/instructor.service';
 })
 export class InstructorRegistrationComponent implements OnInit {
 
-  constructor(public http: HttpClient, public instructorservice:InstructorService) { }
+  constructor(public http: HttpClient, public instructorservice:InstructorService, public modal : ModalFunctions) { }
   user_registration;
   submited:Boolean=false;
 
@@ -33,8 +35,11 @@ export class InstructorRegistrationComponent implements OnInit {
       console.log("error")
       return;
     }
-    console.log('pass',this.user_registration.value);
 
+    this.modal.hideBtnLoader();
+    this.modal.openModal("#registerModal");
+
+    console.log('pass',this.user_registration.value);
     this.http.post('https://onewater-instructor-api.herokuapp.com/updateinstructor',this.user_registration.value)
     .subscribe(result=>{
       console.log("User Details Updated", result)

@@ -35,6 +35,7 @@ width: 100%;
   min-height: 100vh;
   position: relative;
   padding: 0;
+  padding:5vw 0;
   overflow-y: visible;
   .heading {
     h1 {
@@ -85,7 +86,11 @@ h2 {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
+@media screen and (max-width: 1024px) {
+  .hero-section {
+    min-height: 60vh;
+  }
+}
 @media screen and (max-width: 991px) {
   .hero-section {
     text-align: center;
@@ -106,7 +111,11 @@ h2 {
   }
 }
 
-
+@media all and (max-width: 576px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+}
 
 @media all and (max-width: 360px) {
   .hero-section {

@@ -40,6 +40,7 @@
           .banner {
             margin-top: 10vh;
             text-align: center;
+            min-height: 60vh;
           }
         }
       }
@@ -69,7 +70,7 @@
         }
 
       }
-      @media screen and (max-width: 520px) {
+      @media screen and (max-width: 576px) {
         .landing-section {
           min-height: 100vh;
 

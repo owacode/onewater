@@ -224,17 +224,17 @@ const routes: Routes = [
   },
 
   {
-    path: 'thankyou-employer',
+    path: 'thankyou-user',
     loadChildren: './email-verified-employer/email-verified-employer.module#EmailVerifiedEmployerModule'
   },
   {
     path: 'thankyou-author',
     loadChildren: './email-verified-author/email-verified-author.module#EmailVerifiedAuthorModule'
   },
-  // {
-  //   path: 'thankyou-instructor',
-  //   loadChildren: './email-verified-instructor/email-verified-instructor.module#EmailVerfiedInstructorModule'
-  // },
+  {
+    path: 'thankyou-instructor',
+    loadChildren: './email-verfied-instructor/email-verfied-instructor.module#EmailVerfiedInstructorModule'
+  },
   {
     path: '**',
     redirectTo: '/home',

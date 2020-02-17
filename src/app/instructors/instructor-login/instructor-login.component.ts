@@ -14,6 +14,7 @@ import { ModalFunctions } from '../../shared-functions/modal-functions';
 export class InstructorLoginComponent implements OnInit {
 
   showregform() {
+    this.modal.hideBtnLoader();
     document.querySelector(".vldauth")['style'].display = "none";
     document.querySelector(".vldreg")['style'].display = "flex";
     document.getElementById("login-text")['style'].display = "none"
@@ -21,6 +22,7 @@ export class InstructorLoginComponent implements OnInit {
   }
 
   showauthform() {
+    this.modal.hideBtnLoader();
     document.querySelector(".vldauth")['style'].display = "flex";
     document.querySelector(".vldreg")['style'].display = "none";
     document.getElementById("login-text")['style'].display = "block"
@@ -51,16 +53,17 @@ export class InstructorLoginComponent implements OnInit {
     this.registersubmitted=true;
     console.log(this.user.value);
     if(this.user.invalid){
-      console.log("details invalid")
       this.modal.hideBtnLoader();
+      console.log("details invalid")
       return;
     }
 
     if(this.user.value.password != this.user.value.cpassword)
     {
-      return alert("Password Not Matched");
+      this.modal.hideBtnLoader();
+      this.modal.openModal("#passModal");
+      return;
     }
-
     console.log('pass',this.user.value);
 
     this.http.post('https://onewater-instructor-api.herokuapp.com/addinstructor',this.user.value)
@@ -79,12 +82,11 @@ export class InstructorLoginComponent implements OnInit {
   }
 
   login(){
-
     this.registersubmitted=true;
     console.log(this.loginuser.value);
     if(this.loginuser.invalid){
+      this.modal.hideBtnLoader();
       console.log("invalid details");
-        this.modal.hideBtnLoader();
       return;
     }
     //console.log('pass',this.loginuser.value);
@@ -96,8 +98,8 @@ export class InstructorLoginComponent implements OnInit {
       localStorage.setItem('instructor_id',this.instructorservice.userid);
       localStorage.setItem('instructor_email',this.instructorservice.useremail);
       console.log("User Login Successfully", result);
-
-      if(result.result == 'Incorrect Password') {
+  
+      if(result.result == 'Incorrect Password' || result.result == 'No User Found') {
         this.modal.hideBtnLoader();
         this.modal.openModal("#invalidModal");
         return;

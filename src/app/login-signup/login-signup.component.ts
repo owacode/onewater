@@ -32,7 +32,11 @@ export class LoginSignupComponent implements OnInit {
       this.modal.hideBtnLoader();
       return;
     }
-    if(this.user.value.password != this.user.value.cpassword) return alert("Password Not Matched");
+    if(this.user.value.password != this.user.value.cpassword) {
+      this.modal.hideBtnLoader();
+      this.modal.openModal("#passModal");
+      return;
+    };
     console.log('pass',this.user.value);
 
     this.http.post<{status:any,payload:any}>('https://onewater-auth.herokuapp.com/newuser',this.user.value)
