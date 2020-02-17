@@ -31,6 +31,12 @@
               required
               formControlName="email"
             />
+            <p
+              style="color: red"
+              *ngIf="registersubmitted && loginuser.get('email').invalid"
+            >
+              Please Enter Email
+            </p>
             <input
               class="vldform__textbox"
               type="password"
@@ -39,14 +45,24 @@
               required
               formControlName="password"
             />
-            <button class="vldform__button" type="submit" (click)="modal.showBtnLoader()">
+            <p
+            style="color: red"
+            *ngIf="registersubmitted && loginuser.get('password').invalid"
+          >
+            Enter a Valid Password
+          </p>
+            <button
+              class="vldform__button"
+              type="submit"
+              (click)="modal.showBtnLoader()"
+            >
               <span class="btn-loading-content">
-                <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
-               </span>
-               <span class="btn-default-content">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+              </span>
+              <span class="btn-default-content">
                 Login
-               </span>
-            </button> 
+              </span>
+            </button>
           </form>
           <p class="vldform__signup" id="login-text">
             New here?
@@ -63,6 +79,12 @@
               required
               formControlName="name"
             />
+            <p
+            style="color: red"
+            *ngIf="registersubmitted && user.get('name').invalid"
+          >
+            Please Enter a Name
+          </p>
             <input
               class="vldform__textbox"
               type="email"
@@ -71,18 +93,28 @@
               required
               formControlName="email"
             />
+            <p
+            style="color: red"
+            *ngIf="registersubmitted && user.get('email').invalid"
+          >
+            Please Enter a Valid Email
+          </p>
             <div class="row">
               <div class="col-md-6">
                 <input
-
                   class="vldform__textbox halfwidth"
                   type="password"
                   name="pass"
                   placeholder="Password"
-
                   required
                   formControlName="password"
                 />
+                <p
+                  style="color: red"
+                  *ngIf="registersubmitted && user.get('password').invalid"
+                >
+                  Enter Password of Length Minlength Six
+                </p>
               </div>
 
               <div class="col-md-6">
@@ -94,23 +126,32 @@
                   required
                   formControlName="cpassword"
                 />
+                <p
+                style="color: red"
+                *ngIf="registersubmitted && user.get('cpassword').invalid"
+              >
+                Please Enter Confirm Password
+              </p>
               </div>
             </div>
 
-            <button class="vldform__button" type="submit" (click)="modal.showBtnLoader()">
+            <button
+              class="vldform__button"
+              type="submit"
+              (click)="modal.showBtnLoader()"
+            >
               <span class="btn-loading-content">
-                <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
-               </span>
-               <span class="btn-default-content">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+              </span>
+              <span class="btn-default-content">
                 Signup
-               </span>
-            </button> 
+              </span>
+            </button>
           </form>
           <p class="vldform__signup" id="signup-text">
             Already a member ?
             <a (click)="showauthform()">Log in</a>
           </p>
-
         </div>
       </div>
     </div>
@@ -121,41 +162,41 @@
 
 <!-- First Signup Modal -->
 <div class="modal modal-animate" id="signupSuccess" role="dialog" #signupModal>
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-head">
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            (click)="modal.closeModal(signupModal)"
-          >
-            &times;
-          </button>
-        </div>
-        <div class="modal-body">
-          <img
-            src="assets/img/mail.png
-         "
-            alt=""
-          />
-          <h2>
-            Please verify the email by clicking the link you will receive in your
-            inbox.
-          </h2>
-        </div>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
         <button
           type="button"
-          class="btn btn-default"
+          class="close"
           data-dismiss="modal"
           (click)="modal.closeModal(signupModal)"
         >
-          OK
+          &times;
         </button>
       </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/mail.png
+         "
+          alt=""
+        />
+        <h2>
+          Please verify the email by clicking the link you will receive in your
+          inbox.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(signupModal)"
+      >
+        OK
+      </button>
     </div>
   </div>
-  
+</div>
+
 <!-- Login before email verification Modal -->
 <div class="modal modal-animate" id="loginModal" role="dialog" #loginModal>
   <div class="modal-dialog modal-md">
@@ -242,13 +283,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <img
-          src="assets/img/modals/pending-profile.png"
-          alt=""
-        />
+        <img src="assets/img/modals/pending-profile.png" alt="" />
         <h2>
-         Your profile has been sent to admin for approval. 
-         Please wait for the confirmation.
+          Your profile has been sent to admin for approval. Please wait for the
+          confirmation.
         </h2>
       </div>
       <button
@@ -278,10 +316,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <img
-          src="assets/img/modals/invalid-details.png"
-          alt=""
-        />
+        <img src="assets/img/modals/invalid-details.png" alt="" />
         <h2>
           You have entered wrong email or password. Please try again.
         </h2>
@@ -297,4 +332,3 @@
     </div>
   </div>
 </div>
-

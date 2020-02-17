@@ -1,50 +1,112 @@
 <div class="overlay"></div>
 <section id="login">
   <div class="wave-bg"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 left-content">
-          <h2>Welcome to <br>
-              <strong> OneWater</strong>
-          </h2>
-          <img src="assets/img/login-img.png" alt="" class="login-img">
-        </div>
-        <div class="col-lg-6">
-          <div class="form-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 left-content">
+        <h2>
+          Welcome to <br />
+          <strong> OneWater</strong>
+        </h2>
+        <img src="assets/img/login-img.png" alt="" class="login-img" />
+      </div>
+      <div class="col-lg-6">
+        <div class="form-box">
+          <form class="vldform vldreg" [formGroup]="user" (submit)="register()">
+            <h1>Sign up</h1>
+            <input
+              class="vldform__textbox"
+              formControlName="name"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <p
+            style="color: red"
+            *ngIf="registersubmitted && user.get('name').invalid"
+          >
+            Please Enter a Name
+          </p>
+            <input
+              class="vldform__textbox"
+              formControlName="email"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <p
+            style="color: red"
+            *ngIf="registersubmitted && user.get('email').invalid"
+          >
+            Please Enter a Valid Email
+          </p>
+            <div class="row">
+              <div class="col-md-6">
+                <input
+                  class="vldform__textbox halfwidth"
+                  formControlName="password"
+                  type="password"
+                  name="pass"
+                  placeholder="Password"
+                  required
+                />
+                <p
+                style="color: red"
+                *ngIf="registersubmitted && user.get('password').invalid"
+              >
+                Enter Password of Length Minlength Six
+              </p>
+              </div>
+              <div class="col-md-6">
+                <input
+                  class="vldform__textbox halfwidth"
+                  formControlName="cpassword"
+                  type="password"
+                  name="pass2"
+                  placeholder="Confirm Password"
+                  required
+                />
+                <p
+                style="color: red"
+                *ngIf="registersubmitted && user.get('cpassword').invalid"
+              >
+                Please Enter Confirm Password
+              </p>
+              </div>
+              <button
+                class="vldform__button"
+                type="submit"
+                (click)="modal.showBtnLoader()"
+              >
+                <span class="btn-loading-content">
+                  <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+                </span>
+                <span class="btn-default-content">
+                  Sign up
+                </span>
+              </button>
+            </div>
 
-             <form class="vldform vldreg" [formGroup]="user" (submit)="register()">
-                 <h1>Sign up</h1>
-                 <input class="vldform__textbox" formControlName="name" type="text" name="name" placeholder="Name" required >
-                 <input class="vldform__textbox" formControlName="email" type="email" name="email"  placeholder="Email" required>
-                 <div class="row"><div class="col-md-6"> <input class="vldform__textbox halfwidth" formControlName="password" type="password" name="pass"  placeholder="Password" required></div>
-                 <div class="col-md-6"><input class="vldform__textbox halfwidth" formControlName="cpassword" type="password" name="pass2"  placeholder="Confirm Password" required></div>
-                 <button class="vldform__button" type="submit" (click)="modal.showBtnLoader()">
-                   <span class="btn-loading-content">
-                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
-                   </span>
-                   <span class="btn-default-content">
-                    Sign up
-                   </span>
-                  </button>
-               </div>
-
-                 <!-- <div class="social-btn"> <span>or signup using </span> <br>
+            <!-- <div class="social-btn"> <span>or signup using </span> <br>
                    <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
                    <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
                    </div> -->
-                 <p class="vldform__signup">Already a member ?
-                   <a href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D" target="_blank" >Log in</a>
-                 </p>
-             </form>
-
-</div>
+            <p class="vldform__signup">
+              Already a member ?
+              <a
+                href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D"
+                target="_blank"
+                >Log in</a
+              >
+            </p>
+          </form>
         </div>
-
       </div>
-
     </div>
+  </div>
 </section>
-
 
 <!---------MODALS------------>
 
@@ -84,7 +146,6 @@
     </div>
   </div>
 </div>
-
 
 <!----mail already exist modal--->
 <div

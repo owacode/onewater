@@ -12,7 +12,7 @@ import { ModalFunctions } from '../shared-functions/modal-functions';
 export class LoginSignupComponent implements OnInit {
   constructor(public http:HttpClient, public modal: ModalFunctions) { }
   user;
-  
+
   ngOnInit() {
     this.user= new FormGroup({
       name:new FormControl(null,{validators:[Validators.required]}),
@@ -23,12 +23,13 @@ export class LoginSignupComponent implements OnInit {
   }
 
   registersubmitted:boolean=false;
-  
-  
+
+
   register(){
     this.registersubmitted=true;
     console.log(this.user.value);
     if(this.user.invalid){
+      this.modal.hideBtnLoader();
       return;
     }
     if(this.user.value.password != this.user.value.cpassword) return alert("Password Not Matched");

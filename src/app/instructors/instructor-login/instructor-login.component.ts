@@ -84,7 +84,6 @@ export class InstructorLoginComponent implements OnInit {
     console.log(this.loginuser.value);
     if(this.loginuser.invalid){
       console.log("invalid details");
-      this.modal.openModal("#invalidModal");
         this.modal.hideBtnLoader();
       return;
     }
