@@ -1,0 +1,103 @@
+/*-------------------------------------
+      -------------LANDING  SECTION-----------
+      ----------------------------------------*/
+.landing-section {
+  position: relative;
+  margin-top: -80vh;
+  margin-bottom: 50px;
+  padding: 0 !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+
+.landing-section .banner {
+  text-align: left;
+  padding: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.landing-section .landing-text {
+  margin-top: 20%;
+  z-index: 1;
+}
+
+.landing-section .platform-heading {
+  font-size: 4.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin: 1rem;
+  color: #fff;
+  text-align: left;
+  letter-spacing: -0.35rem;
+  border: none;
+}
+
+.landing-section .platform-heading strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+  .landing-section .banner {
+    margin-top: 10vh;
+    text-align: center;
+    min-height: 60vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing-section .landing-text {
+    margin-top: 10%;
+  }
+  .cover-photo {
+    height: 25vh;
+  }
+}
+
+@media screen and (max-height: 420px) {
+  .landing-section .landing-text {
+    margin-top: 10%;
+    text-align: center;
+  }
+  .landing-section .landing-text h2 {
+    font-size: 2.1rem;
+  }
+  .landing-section .landing-text h2 strong {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .landing-section {
+    min-height: 100vh;
+  }
+  .landing-section .landing-blogs .carousel-inner {
+    margin-top: 5vh;
+  }
+  .landing-section .banner {
+    padding: 1rem;
+    width: 100%;
+  }
+  .landing-section .banner img {
+    margin: 2rem auto 0;
+  }
+  .landing-section .landing-text {
+    margin: auto;
+    margin-top: 25%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    padding: 1rem 2rem;
+  }
+  .landing-section .landing-text h2 {
+    font-size: 2.2rem;
+    margin: auto;
+  }
+  .landing-section .landing-text h2 strong {
+    font-size: 3.7rem;
+  }
+  h2 {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=landing-section-styles.css.map */

@@ -1,7 +1,6 @@
 <app-header></app-header>
 <div class="overlay"></div>
 <section id="login">
-  <!-- <div class="wave-bg"></div> -->
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 left-content">
@@ -17,58 +16,8 @@
       </div>
       <div class="col-lg-6">
         <div class="form-box">
-          <form
-            class="vldform vldauth"
-            [formGroup]="loginuser"
-            (submit)="login()"
-          >
-            <h1>instructor Login</h1>
-            <input
-              class="vldform__textbox"
-              type="text"
-              name="email"
-              placeholder="Email"
-              required
-              formControlName="email"
-            />
-            <p
-              style="color: red"
-              *ngIf="registersubmitted && loginuser.get('email').invalid"
-            >
-              Please Enter Email
-            </p>
-            <input
-              class="vldform__textbox"
-              type="password"
-              name="pass"
-              placeholder="Password"
-              required
-              formControlName="password"
-            />
-            <p
-            style="color: red"
-            *ngIf="registersubmitted && loginuser.get('password').invalid"
-          >
-            Enter a Valid Password
-          </p>
-            <button 
-              class="vldform__button"
-              type="submit"
-              (click)="modal.showBtnLoader()"
-            >
-              <span class="btn-loading-content">
-                <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
-              </span>
-              <span class="btn-default-content">
-                Login
-              </span>
-            </button>
-          </form>
-          <p class="vldform__signup" id="login-text">
-            New here?
-            <a class="vldform__signuplink" (click)="showregform()">Sign up</a>
-          </p>
 
+          <!------------------------SIGNUP FORM------------------>
           <form class="vldform vldreg" [formGroup]="user" (submit)="register()">
             <h1>instructor registration</h1>
             <input
@@ -152,6 +101,88 @@
             Already a member ?
             <a (click)="showauthform()">Log in</a>
           </p>
+                    <!------------------------LOGIN FORM----------------------->
+                    <form
+                    class="vldform vldauth"
+                    [formGroup]="loginuser"
+                    (submit)="login()"
+                  >
+                    <h1>instructor Login</h1>
+                    <input
+                      class="vldform__textbox"
+                      type="text"
+                      name="email"
+                      placeholder="Email"
+                      required
+                      formControlName="email"
+                    />
+                    <p
+                      style="color: red"
+                      *ngIf="registersubmitted && loginuser.get('email').invalid"
+                    >
+                      Please Enter Email
+                    </p>
+                    <input
+                      class="vldform__textbox"
+                      type="password"
+                      name="pass"
+                      placeholder="Password"
+                      required
+                      formControlName="password"
+                    />
+                    <p
+                    style="color: red"
+                    *ngIf="registersubmitted && loginuser.get('password').invalid"
+                  >
+                    Enter a Valid Password
+                  </p>
+
+                  <a class="vldform__recoverypassword" (click)="showrecoveryform()"
+              >Forgot password?</a
+            >
+
+                    <button 
+                      class="vldform__button"
+                      type="submit"
+                      (click)="modal.showBtnLoader()"
+                    >
+                      <span class="btn-loading-content">
+                        <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+                      </span>
+                      <span class="btn-default-content">
+                        Login
+                      </span>
+                    </button>
+                  </form>
+                  <p class="vldform__signup" id="login-text">
+                    New here?
+                    <a class="vldform__signuplink" (click)="showregform()">Sign up</a>
+                  </p>
+                  <!--------------------FORFOR PASSWORD FORM-------------->
+          <form class="vldform vldrecpass">
+            <h1>Password Recovery</h1>
+            <input
+              class="vldform__textbox"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <button
+              class="vldform__button"
+              type="submit"
+              (click)="modal.showBtnLoader()"
+            >
+              <span class="btn-loading-content">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+              </span>
+              <span class="btn-default-content">
+                Submit
+              </span>
+            </button>
+            <br /><br />
+            <a (click)="showauthform()">Back to login</a>
+          </form>
         </div>
       </div>
     </div>
@@ -365,3 +396,34 @@
   </div>
 </div>
 
+<!--forgot password modal-->
+<div class="modal modal-animate" id="pendingModal" role="dialog" #forgotpassModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(forgotpassModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/img/modals/pending-profile.png" alt="" />
+        <h2>
+         Password Recovery link has been sent to your register email id. Please check it to set new password.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(forgotpassModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>

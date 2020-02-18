@@ -12,7 +12,8 @@ import * as jwt_decode from "jwt-decode";
 import { InstructorService } from './instructors/instructor-admin/instructor.service';
 // import { AuthService } from './authors/services/auth.service';
 
-// import * as $ from "jquery";
+import * as $ from "jquery";
+import { ModalFunctions } from './shared-functions/modal-functions';
 
 @Component({
   selector: "app-root",
@@ -30,7 +31,8 @@ export class AppComponent implements OnInit {
     private location: Location,
     public auth: AuthService,
     public instructorservice: InstructorService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    public modal: ModalFunctions
   ) {
     this.instructorservice.checklocalstorage();
     var hash = 'null'
@@ -87,24 +89,9 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.router.events.forEach(event => {
-      if (event instanceof NavigationStart) {
-        if (
-          event["url"] == "/login" ||
-          event["url"] == "/dashboard" ||
-          event["url"] == "/thankyou-author" ||
-          event["url"] == "/thankyou-employer" ||
-          event["url"].includes("/onewaterjobs/employer/") ||
-          event["url"].includes("/onewaterblog/author-admin") ||
-          event["url"].includes("/user-admin/")
-        ) {
-          this.showLogin = false;
-        } else {
-          this.showLogin = true;
-        }
-      }
-    });
-  }
+
+    
+}
 
   getDecodedAccessToken(token: string): any {
     try {

@@ -5,13 +5,19 @@ import * as $ from 'jquery';
     providedIn:'root'
   })
 
-
 export class ModalFunctions {
 
     openModal(thismodal){
+      var thismodalhash;
         $(thismodal).css("display", "block");
         $(thismodal).addClass("show");
         $('.overlay').css("display", "block");
+
+        $(document).on("keydown", (e) => {
+          if(e.key === "Escape"){
+            this.closeModal(thismodal);
+          }
+      });
       }
     
       closeModal(thismodal) {
@@ -19,6 +25,8 @@ export class ModalFunctions {
         $(thismodal).css("display", "none");
         $(thismodal).removeClass("show");
         $('.overlay').css("display", "none");
+
+        
       }
     
       showBtnLoader(){

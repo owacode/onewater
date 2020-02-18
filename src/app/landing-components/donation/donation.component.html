@@ -1,3 +1,4 @@
+<div class="overlay"></div>
 <div class="cover-photo">
   <div class="wave"></div>
 </div>
@@ -81,14 +82,24 @@
               required
               formControlName="name"
             />
+            <p
+            style="color: red"
+            *ngIf="formSubmitted && userpayment.get('name').invalid"
+          >
+            Please Enter a Name
+          </p>
             <input
               class="vldform__textbox"
               type="email"
               name="email"
-              placeholder="email"
+              placeholder="Email"
               required
               formControlName="email"
             />
+            <p
+            style="color: red"
+            *ngIf="formSubmitted && userpayment.get('email').invalid"
+          >
             <input
               class="vldform__textbox halfwidth"
               type="number"
@@ -97,6 +108,13 @@
               required
               formControlName="amount"
             />
+
+            <p
+            style="color: red"
+            *ngIf="formSubmitted && userpayment.get('amount').invalid"
+          >
+            PLease Enter an Amount
+          </p>
 
             <div class="mybtn" style="text-align: center;">
               <ngx-paypal [config]="payPalConfig"></ngx-paypal>
@@ -107,3 +125,67 @@
     </div>
   </div>
 </section>
+
+<!--payment successful modal-->
+<div class="modal modal-animate" id="paymentSuccessful" role="dialog" #paymentSuccessful>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(paymentSuccessful)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/img/modals/thank-donate.png" style="width: 75%;" alt="" />
+        <h2>
+          Thankyou for your contribution.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(paymentSuccessful)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--payment successful modal-->
+<div class="modal modal-animate" id="paymentFailed" role="dialog" #paymentFailed>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(paymentFailed)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/img/modals/wrong.svg" style="width: 25%;" alt="" />
+        <h2>
+          Payment failed. Please try again.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(paymentFailed)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>

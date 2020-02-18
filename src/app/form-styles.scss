@@ -39,7 +39,24 @@
 
   }
  
+form p {
+  font-size: 0.8rem;
+  margin:0.5rem !important;
+  text-align: left !important;
+  color: rgb(189, 28, 28);
+  animation: pop_in 0.3s ease-in-out;
+}
 
+@keyframes pop_in{
+  0%{
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   .login-img{
     width: 75%;
@@ -77,7 +94,7 @@
   .vldform__textbox {
     outline: none;
     font-size: 1rem;
-        margin-top: 1.5rem;
+        margin-top: 1.3rem;
         padding-bottom: 8px;
         width: 100%;
         background: #061fad14;

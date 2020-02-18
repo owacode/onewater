@@ -1,0 +1,145 @@
+p {
+  font-weight: 500;
+  color: #fff;
+}
+
+.row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1,
+h2 {
+  color: #fff;
+  font-weight: 600;
+  z-index: 20;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+}
+
+.wave-bg-inv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.wave-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  padding: 0;
+  padding: 5vw 0;
+  overflow-y: visible;
+}
+
+.hero-section .heading h1 {
+  font-size: 4.5rem;
+  letter-spacing: -0.2rem;
+  position: relative;
+  z-index: 10;
+  font-weight: 500;
+  color: #fff;
+  text-align: left;
+}
+
+.hero-section .heading h3 {
+  color: #fff;
+  z-index: 20;
+  position: relative;
+}
+
+.hero-section .heading p {
+  margin: 2rem 0;
+  width: 95%;
+  position: relative;
+  z-index: 10;
+  color: #fff;
+}
+
+.hero-section .hero-img {
+  width: 100%;
+  position: relative;
+  z-index: 4;
+}
+
+h1 {
+  margin: 25px auto;
+  text-align: center;
+}
+
+h2 {
+  margin: 30px 0;
+}
+
+.cover-photo {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(0, 30, 199, 0.88)), to(rgba(13, 0, 212, 0.94))), url(/assets/img/landing/about-bg.jpg);
+  background: linear-gradient(180deg, rgba(0, 30, 199, 0.88) 20%, rgba(13, 0, 212, 0.94) 100%), url(/assets/img/landing/about-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-section {
+    min-height: 60vh;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .hero-section {
+    text-align: center;
+  }
+  .hero-section .hero-img {
+    width: 75%;
+    margin-top: 10vh;
+  }
+  .hero-section .heading h1 {
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: -0.25rem;
+  }
+  .hero-section h2 {
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .hero-section .heading h1 {
+    font-size: 3rem !important;
+    letter-spacing: -0.2rem;
+  }
+  .hero-section img {
+    margin-top: 12vh;
+    width: 90% !important;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .hero-section .heading h1 {
+    font-size: 2.5rem !important;
+    letter-spacing: -0.15rem;
+  }
+  .hero-section img {
+    margin-top: 15vh;
+  }
+}
+/*# sourceMappingURL=landing-components.component.css.map */

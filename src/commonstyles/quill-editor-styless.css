@@ -1,0 +1,67 @@
+/*-----quill editor styles-------*/
+blockquote {
+  color: #545454;
+  font-size: 1rem;
+  line-height: 180%;
+  background: #f4f6fad2;
+  font-style: italic;
+  margin: 1.5rem 0;
+  margin-left: 55px;
+  padding: 24px;
+  padding-left: 30px;
+  position: relative;
+  border-left: 5px solid #cccccc;
+}
+
+blockquote cite {
+  display: none;
+}
+
+blockquote:before, blockquote:after {
+  font-size: 16px;
+  font-style: normal;
+  color: #777777;
+  text-transform: uppercase;
+  font-family: 'Cutive Mono', monospace;
+}
+
+ul {
+  margin: 1rem;
+  margin-left: 50px;
+}
+
+ul li {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+pre {
+  color: #fff;
+  padding: 1rem 2rem;
+  background: #212529;
+}
+
+.ql-align-right {
+  text-align: right;
+}
+
+.ql-align-center {
+  text-align: center;
+}
+
+.ql-align-justify {
+  text-align: justify;
+}
+
+.ql-size-small {
+  font-size: 80%;
+}
+
+.ql-size-large {
+  font-size: 150%;
+}
+
+.ql-size-huge {
+  font-size: 180%;
+}
+/*# sourceMappingURL=quill-editor-styless.css.map */

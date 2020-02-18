@@ -29,6 +29,13 @@ export class InstructorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
+  showrecoveryform() {
+    document.querySelector(".vldauth")['style'].display = "none";
+    document.querySelector(".vldrecpass")['style'].display = "flex";
+    document.getElementById("login-text")['style'].display = "none"
+    document.getElementById("signup-text")['style'].display = "none"
+  }
+
   constructor(public http:HttpClient, public route: Router, public instructorservice: InstructorService, public modal : ModalFunctions) { }
   user;
   loginuser;

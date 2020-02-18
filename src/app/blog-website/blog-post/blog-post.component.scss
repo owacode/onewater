@@ -133,6 +133,8 @@ figure figcaption {
   height: 90px;
   border-radius: 100%;
   padding: 2px;
+  object-fit: cover;
+  object-position: center;
   border: 1px solid #666;
   transition: all ease-out 0.2s;
 }

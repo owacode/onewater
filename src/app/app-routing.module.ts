@@ -222,7 +222,10 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: './login-signup/login-signup.module#LoginSignupModule'
   },
-
+  {
+    path: 'recover-password',
+    loadChildren: './recover-password/recover-password.module#RecoverPasswordModule'
+  },
   {
     path: 'thankyou-user',
     loadChildren: './email-verified-employer/email-verified-employer.module#EmailVerifiedEmployerModule'

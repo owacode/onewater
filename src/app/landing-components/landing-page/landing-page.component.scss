@@ -94,6 +94,7 @@ section {
   color: #fff;
   margin: 1rem auto;
 }
+
 .feature-icon {
   background-color: transparent;
   border-radius: 10px;
@@ -111,6 +112,7 @@ section {
     color: #fff;
   }
 }
+
 .call-to-action-section {
   padding: 150px 0 180px;
   position: relative;
@@ -133,8 +135,8 @@ section {
 .cta-img {
   width: 150px;
   position: absolute;
-  left: 10%;
-  top: 5%;
+  left: 5%;
+  top: 3%;
   margin: auto;
 }
 .mybtn {
@@ -242,6 +244,9 @@ section {
   }
   .call-to-action-section {
     padding: 120px 0 80px;
+  }
+  .cta-img {
+    width: 120px;
   }
 }
 

@@ -6,6 +6,8 @@ import {
   IPayPalConfig,
   ICreateOrderRequest
 } from 'ngx-paypal';
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
+
 @Component({
   selector: 'app-donation',
   templateUrl: './donation.component.html',
@@ -14,8 +16,9 @@ import {
 export class DonationComponent implements OnInit {
   public payPalConfig ? : IPayPalConfig;
   public showSuccess;
+  formSubmitted:Boolean = false;
   userpayment;
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient, public modal: ModalFunctions) { }
 
   ngOnInit() {
     this.initConfig();
@@ -80,19 +83,26 @@ export class DonationComponent implements OnInit {
         console.log('onApprove - you can get full order details inside onApprove: ', details);
       });
     },
+    
     onClientAuthorization: (data) => {
       console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
       this.showSuccess = true;
       this.http.post<{status:string,msg:string}>('https://onewater-auth.herokuapp.com/pay',this.userpayment.value)
       .subscribe(result=>{
         console.log(result);
+        this.modal.hideBtnLoader();
+        this.modal.openModal("#paymentSuccessful");
       })
     },
     onCancel: (data, actions) => {
       console.log('OnCancel', data, actions);
+      this.modal.hideBtnLoader();
+      this.modal.openModal("#paymentFailed");
     },
     onError: err => {
       console.log('OnError', err);
+      this.modal.hideBtnLoader();
+      this.modal.openModal("#paymentFailed");
     },
     onClick: (data, actions) => {
 

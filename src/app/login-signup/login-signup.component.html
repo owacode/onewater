@@ -14,20 +14,41 @@
         <div class="form-box">
           <form class="vldform vldreg" [formGroup]="user" (submit)="register()">
             <h1>Sign up</h1>
-            <input
-              class="vldform__textbox"
-              formControlName="name"
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-            />
-            <p
-            style="color: red"
-            *ngIf="registersubmitted && user.get('name').invalid"
-          >
-            Please Enter a Name
-          </p>
+            <div class="row">
+              <div class="col-md-6">
+                <input
+                class="vldform__textbox"
+                formControlName="firstname"
+                type="text"
+                name="firstname"
+                placeholder="First Name"
+                required
+              />
+              <p
+             
+              *ngIf="registersubmitted && user.get('name').invalid"
+            >
+              Firstname is required!
+            </p>
+              </div>
+              <div class="col-md-6">
+                <input
+                class="vldform__textbox"
+                formControlName="lastname"
+                type="text"
+                name="lastname"
+                placeholder="Last Name"
+                required
+              />
+              <p
+             
+              *ngIf="registersubmitted && user.get('name').invalid"
+            >
+              Lastname is required!
+            </p>
+              </div>
+            </div>
+           
             <input
               class="vldform__textbox"
               formControlName="email"
@@ -37,10 +58,10 @@
               required
             />
             <p
-            style="color: red"
+           
             *ngIf="registersubmitted && user.get('email').invalid"
           >
-            Please Enter a Valid Email
+            Enter a valid email id!
           </p>
             <div class="row">
               <div class="col-md-6">
@@ -53,10 +74,10 @@
                   required
                 />
                 <p
-                style="color: red"
+               
                 *ngIf="registersubmitted && user.get('password').invalid"
               >
-                Enter Password of Length Minlength Six
+                Password must have minimum 6 characters!
               </p>
               </div>
               <div class="col-md-6">
@@ -69,10 +90,10 @@
                   required
                 />
                 <p
-                style="color: red"
+               
                 *ngIf="registersubmitted && user.get('cpassword').invalid"
               >
-                Please Enter Confirm Password
+                Confirm your password!
               </p>
               </div>
               <button
@@ -93,7 +114,7 @@
                    <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
                    <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
                    </div> -->
-            <p class="vldform__signup">
+            <p class="vldform__signup" style="color: #777;font-size: 1rem;font-weight: 600;">
               Already a member ?
               <a
                 href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D"
