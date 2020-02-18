@@ -1,16 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import {PageScrollConfig} from 'ng2-page-scroll';
-
+import {
+  IPayPalConfig,
+  ICreateOrderRequest
+} from 'ngx-paypal';
 @Component({
   selector: 'app-donation',
   templateUrl: './donation.component.html',
   styleUrls: ['./donation.component.scss']
 })
 export class DonationComponent implements OnInit {
-
-  constructor() { }
+  public payPalConfig ? : IPayPalConfig;
+  public showSuccess;
+  userpayment;
+  constructor(public http:HttpClient) { }
 
   ngOnInit() {
+    this.initConfig();
+    this.userpayment= new FormGroup({
+      name:new FormControl(null,{validators:[Validators.required]}),
+      email:new FormControl(null,{validators:[Validators.required,Validators.email]}),
+      amount:new FormControl(null,{validators:[Validators.required]})
+    });
     PageScrollConfig.defaultScrollOffset = 100;
     PageScrollConfig.defaultEasingLogic = {
         ease: (t: number, b: number, c: number, d: number): number => {
@@ -22,5 +35,70 @@ export class DonationComponent implements OnInit {
         }
     };
   }
+  private initConfig(): void {
+    this.payPalConfig = {
+    currency: 'USD',
+    clientId: 'AZXdzxfW1FQC8ntB29YV2q33s5lbekfwSIACIL9fE3XMXP8R4s4EGvLaV02n4Xrk65OcthkhfQ-uxBhA',
+    createOrderOnClient: (data) => <ICreateOrderRequest>{
+      intent: 'CAPTURE',
+      purchase_units: [
+        {
+          amount: {
+            currency_code: 'USD',
+            value: `${this.userpayment.value.amount}`,
+            breakdown: {
+              item_total: {
+                currency_code: 'USD',
+                value: `${this.userpayment.value.amount}`
+              }
+            }
+          },
+          items: [
+            {
+              name: 'Enterprise Subscription',
+              quantity: '1',
+              category: 'DIGITAL_GOODS',
+              unit_amount: {
+                currency_code: 'USD',
+                value: `${this.userpayment.value.amount}`,
+              },
+            }
+          ]
+        }
+      ]
+    },
+    advanced: {
+      commit: 'true'
+    },
+    style: {
+      label: 'paypal',
+      layout: 'vertical'
+    },
+    onApprove: (data, actions) => {
+      console.log('onApprove - transaction was approved, but not authorized', data, actions);
+      actions.order.get().then(details => {
+        console.log('onApprove - you can get full order details inside onApprove: ', details);
+      });
+    },
+    onClientAuthorization: (data) => {
+      console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+      this.showSuccess = true;
+      this.http.post<{status:string,msg:string}>('https://onewater-auth.herokuapp.com/pay',this.userpayment.value)
+      .subscribe(result=>{
+        console.log(result);
+      })
+    },
+    onCancel: (data, actions) => {
+      console.log('OnCancel', data, actions);
+    },
+    onError: err => {
+      console.log('OnError', err);
+    },
+    onClick: (data, actions) => {
 
+    console.log('@@@@@@@@@@@',this.userpayment.value)
+      console.log('onClick', data, actions);
+    },
+  };
+  }
 }

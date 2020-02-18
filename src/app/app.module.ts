@@ -20,7 +20,7 @@ import { FooterModule } from './footer/footer.module';
   declarations: [
     AppComponent,LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent
   ],
-  
+
   exports:[],
   imports: [
     BrowserModule,

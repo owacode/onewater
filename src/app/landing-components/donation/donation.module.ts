@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { DonationComponent } from './donation.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
-
+import { NgxPayPalModule } from 'ngx-paypal';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Route[]=[
     {
     path: '',
@@ -19,7 +20,10 @@ const routes: Route[]=[
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
-    Ng2PageScrollModule
+    Ng2PageScrollModule,
+    NgxPayPalModule,
+    FormsModule,
+    ReactiveFormsModule
     ]
 })
 export class DonationModule { }

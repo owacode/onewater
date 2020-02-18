@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl, EmailValidator } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ModalFunctions } from '../shared-functions/modal-functions';
 
