@@ -1,4 +1,4 @@
-@import '../../../job-portal/job-portal.component.scss';
+
 @import '../../../dashboard-style.scss';
 
 .status-btn{
@@ -8,22 +8,19 @@
 }
 
 .dashboard-recent-activity .activity-list {
-    padding: 8px;
+    padding: 1.2rem 0.6rem;
     margin: 1rem 0;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 4px 4px 12px 2px #00000012;
+    
     background: #fff;
     align-items: center;
     transition: all 0.3s ease;
 
     .content{
-        padding: 8px;
+        padding:0.4rem 0;
     }
-
     h5{
-        margin-top: 8px;
+        margin-top: 0.2rem;
     }
     img{
         border-radius: 8px;

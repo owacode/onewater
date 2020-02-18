@@ -3,58 +3,66 @@ class="dashboard-content-wrapper dash-tab"
 >
 <div class="dashboard-section user-statistic-block">
   <div class="row w-100">
-    <div class="col-lg-3">
+    <div class="col-md-3">
       <div class="user-statistic">
-        <i data-feather="command"></i>
-        <h3>{{totalblogs}}</h3>
+        <span>
+          <i data-feather="command"></i>
+          <h3>{{totalblogs}}</h3>
+        </span>
+        
         <span>Blogs <br> Posted</span>
       </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-md-3">
       <div class="user-statistic">
+       <span>
         <i data-feather="file-text"></i>
-        <h3>{{approvedblogs}}</h3>
+        <h3> {{approvedblogs}}</h3>
+       </span>
+       
         <span>Blogs <br> Aproved</span>
       </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-md-3">
       <div class="user-statistic">
+       <span>
         <i data-feather="users"></i>
-        <h3>{{totalvideos}}</h3>
+        <h3> {{totalvideos}}</h3>
+       </span>
+     
         <span>Video <br> Posted</span>
       </div>
     </div>
 
   </div>
 </div>
-<!-- <div class="dashboard-section dashboard-view-chart">
-        <canvas id="view-chart" width="400" height="200"></canvas>
-      </div> -->
+
 <div class="dashboard-section dashboard-recent-activity">
-  <h4 class="title">Recently posted blogs</h4>
-
-  <div class="activity-list" *ngFor="let blog of recentblogs">
-      <div class="thumb">
-          <img
-            [src]=blog.image
-            class="img-fluid"
-            alt=""
-          />
+  <div class="row">
+    <div class="col-md-12"><h4 class="title"><i data-feather="edit-2"></i> Recently posted blogs</h4>
+      <div class="activity-list" *ngFor="let blog of recentblogs">
+          <div class="thumb">
+              <img
+                [src]=blog.image
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+        <div class="content">
+          <h5>{{blog.title}}</h5>
+          <span class="time">{{blog.date_added | date:'MMMM d,yyyy'}}</span>
+          <br>
+          <span class="time status-btn"  [ngStyle]="{
+            'background-color':blog.status === 'approved' ? '#8eff96' : '#ff988e' ,'color':blog.status === 'approved' ? '#015a01' : '#bd0303' }
+          ">
+          {{ blog.status}}
+           </span>
         </div>
-    <div class="content">
-      <h5>{{blog.title}}</h5>
-      <span class="time">{{blog.date_added | date:'MMMM d,yyyy'}}</span>
-      <br>
-      <span class="time status-btn"  [ngStyle]="{
-        'background-color':blog.status === 'approved' ? '#8eff96' : '#ff988e' ,'color':blog.status === 'approved' ? '#015a01' : '#bd0303' }
-      ">
-      {{ blog.status}}
-       </span>
-    </div>
-    <div class="close-activity buttons">
-      <a class="button" routerLink="/onewaterblog/author/blog-details">View</a>
-    </div>
+        <div class="close-activity buttons">
+          <a class="button" [routerLink]="['/author/blog-details/',blog._id]">View</a>
+        </div>
+      </div></div>
   </div>
-
+  
 </div>
 </div>

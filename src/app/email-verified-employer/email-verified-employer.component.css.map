@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,EAAE,CAAA;EACE,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,IAAI;EACZ,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,IAAI;CAClB;;AACD,AAAA,EAAE,CAAA;EACE,WAAW,EAAE,GAAG;EAChB,UAAU,EAAE,IAAI;CACnB;;AACD,AAAA,KAAK,CAAA;EACD,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,UAAU,EAAE,KAAK;EACjB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CACtB;;AACD,AAAA,CAAC,EAAC,IAAI,CAAA;EACF,KAAK,EAAE,OAAO;CACjB",
-    "sources": [
-        "email-verified-employer.component.scss"
-    ],
-    "names": [],
-    "file": "email-verified-employer.component.css"
-}
