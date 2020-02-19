@@ -1,4 +1,5 @@
 @import '../../../dashboard-style.scss';
+@import '../../../modal-styles.scss';
 
 h4 {
     margin-bottom: 2rem !important;
@@ -17,43 +18,21 @@ h4 {
     }
   }
 
-  .modal.show .modal-dialog {
-    -webkit-transform: none;
-    transform: none;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  form p {
+    font-size: 0.8rem;
+    margin:0.5rem 0!important;
+    text-align: left !important;
+    color: rgb(189, 28, 28);
+    animation: pop_in 0.3s ease-in-out;
   }
-  .modal button{
-    color: #000;
-    border-color: #000;
-    background: transparent;
-    font-weight: bold;
-    padding: 1rem;
-    width: 80%;
-    margin: 2rem auto;
-    border-block: 2px solid #000;;
-  }
-  .modal-head{
-    button{
-      margin: 0;
-      box-shadow: none;
-      width: 50px;    }
-  }
-  .modal-body{
-    text-align: center;
-    h2{
-      text-align: center;
-      color:#000;
-      font-size: 1.5rem;
-      letter-spacing: -0.5px;
-      padding: 5px;
-      margin: 0;
+  
+  @keyframes pop_in{
+    0%{
+      opacity: 0;
+      transform: translateY(4px);
     }
-    img{
-      width: 65%;
-      margin: 2rem auto;
+    100%{
+      opacity: 1;
+      transform: translateY(0);
     }
   }

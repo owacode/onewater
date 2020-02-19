@@ -3,6 +3,7 @@ import * as Feather from 'feather-icons';
 import { CommonService } from '../../services/common.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthorAuthService } from '../../services/author-auth.service';
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 
 @Component({
   selector: 'app-author-edit-profile',
@@ -11,7 +12,7 @@ import { AuthorAuthService } from '../../services/author-auth.service';
 })
 export class AuthorEditProfileComponent implements OnInit {
 
-  constructor(public common:CommonService, public auth: AuthorAuthService) { }
+  constructor(public common:CommonService, public auth: AuthorAuthService, public modal: ModalFunctions) { }
   form:FormGroup;
   imagePreview;
   submited:boolean=false;
@@ -28,10 +29,10 @@ export class AuthorEditProfileComponent implements OnInit {
       location:new FormControl(null,{validators:[Validators.required]}),
       author_desc:new FormControl(null),
       interest:new FormControl(null,{validators:[Validators.required]}),
-      facebook:new FormControl(null,{validators:[Validators.required]}),
+      
       linkedin:new FormControl(null,{validators:[Validators.required]}),
       twitter:new FormControl(null,{validators:[Validators.required]}),
-      instagram:new FormControl(null,{validators:[Validators.required]}),
+      
     });
     this.common.getUser()
     .subscribe(result=> {
@@ -43,9 +44,7 @@ export class AuthorEditProfileComponent implements OnInit {
         author_desc:this.editableprofile.about_author,
         interest:this.editableprofile.interest_category,
         linkedin:this.editableprofile.linkedIn_id,
-        facebook:this.editableprofile.facebook_id,
-        twitter:this.editableprofile.twitter_id,
-        instagram:this.editableprofile.instagram_id})
+        twitter:this.editableprofile.twitter_id})
     })
   }
 
@@ -66,12 +65,15 @@ export class AuthorEditProfileComponent implements OnInit {
     console.log(this.form);
      if(this.form.invalid)
       {
+        this.modal.hideBtnLoader();
         return;
       }
     console.log(this.form.value);
     // this.area=this.form.value.interest.split(',');
     // this.form.value.interest=this.area;
      this.auth.authorUpdate(this.form.value);
+     this.modal.hideBtnLoader();
+     this.modal.openModal("#updateProfileModal");
   }
 
 }

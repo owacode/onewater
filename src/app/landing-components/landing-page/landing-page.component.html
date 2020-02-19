@@ -495,7 +495,7 @@
           Subscribe to the newsletter now.
         </p>
         <div class="mybtn">
-          <a data-toggle="modal" data-target="#myModal">
+          <a (click)="modal.openModal('#subscribeModal')">
             Subscribe
           </a>
         </div>
@@ -505,11 +505,11 @@
 </div>
 
 <!-- Modal for newsletter -->
-<div class="modal fade modal-no-animate" id="myModal" role="dialog">
+<div class="modal fade modal-no-animate" id="subscribeModal" role="dialog" #subscribeModal>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
-        <button type="button" class="close" data-dismiss="modal">
+        <button type="button" class="close" data-dismiss="modal" (click)="modal.closeModal(subscribeModal)">
           &times;
         </button>
       </div>
@@ -522,6 +522,7 @@
         />
         <form [formGroup]="form">
           <input
+          name="name"
             formControlName="name"
             class="vldform__textbox"
             type="text"
@@ -530,6 +531,7 @@
           />
           <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p>
           <input
+          name="email"
             formControlName="email"
             class="vldform__textbox"
             type="email"
@@ -545,6 +547,7 @@
             (click)="subscribe()"
             class="btn btn-default"
           >
+
           <span class="btn-loading-content">
             <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
           </span>
@@ -591,7 +594,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="closeModal(blogModal)"
+          (click)="modal.closeModal(blogModal)"
         >
           &times;
         </button>
@@ -610,7 +613,7 @@
         class="btn btn-default"
         style="padding: 0;"
         data-dismiss="modal"
-        (click)="closeModal(blogModal)"
+        (click)="modal.closeModal(blogModal)"
       >
         <a
           href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D"
@@ -620,6 +623,28 @@
           Login now
         </a>
       </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal after user subscribe to newsletter -->
+<div class="modal fade" id="alreadysubscribedmodal" role="dialog" #alreadysubscribedmodal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="modal.closeModal(alreadysubscribedmodal)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/verify-mail.jpg"
+          alt=""
+        />
+        <h2>Email you entered has already been subscribed. <br>
+          Thankyou</h2>
+        <button class="btn btn-default" (click)="modal.closeModal(alreadysubscribedmodal)">Close</button>
+      </div>
     </div>
   </div>
 </div>

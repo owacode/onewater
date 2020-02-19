@@ -5,32 +5,39 @@ class="dashboard-content-wrapper dash-tab"
   <div class="row justify-content-center w-100">
     <div class="col-md-3">
       <div class="user-statistic">
-        <span>
-          <i data-feather="edit"></i>
-          <h3>{{totalblogs}}</h3>
-        </span>
+        <a routerLink="/author/all-blogs">
+          <span>
+            <i data-feather="edit"></i>
+            <h3>{{totalblogs}}</h3>
+          </span>
+          
+          <span>Blogs Posted</span>
+        </a>
         
-        <span>Blogs Posted</span>
       </div>
     </div>
     <div class="col-md-3">
       <div class="user-statistic">
+        <a routerLink="/author/approved-blogs">
        <span>
         <i data-feather="check-square"></i>
         <h3> {{approvedblogs}}</h3>
        </span>
        
         <span>Blogs Aproved</span>
+        </a>
       </div>
     </div>
     <div class="col-md-3">
       <div class="user-statistic">
+        <a routerLink="/author/videos">
        <span>
         <i data-feather="video"></i>
         <h3> {{totalvideos}}</h3>
        </span>
      
         <span>Video Posted</span>
+        </a>
       </div>
     </div>
 

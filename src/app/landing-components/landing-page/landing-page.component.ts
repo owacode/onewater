@@ -19,9 +19,7 @@ export class LandingPageComponent implements OnInit {
   ngOnInit() {
 
     if(localStorage.getItem("triggerBlogModal") == "false"){
-      $('#blogModal').css("display", "block");
-      $('#blogModal').addClass("show");
-      $('.overlay').css("display", "block");
+      this.modal.openModal("#blogModal");
       localStorage.removeItem("triggerBlogModal");
     }
 
@@ -36,13 +34,23 @@ export class LandingPageComponent implements OnInit {
     this.submited = true;
     console.log(this.form.value);
     if(this.form.invalid){
-      console.log("Invalid Newsletter");
+      console.log("Invalid newsletter details");
+      this.modal.hideBtnLoader();
       return;
     }
-    this.http.post('https://onewater-job-api.herokuapp.com/subscribe',this.form.value)
+    this.http.post<{ status: string}>('https://onewater-job-api.herokuapp.com/subscribe',this.form.value)
     .subscribe(result=>{
-      console.log(result,'suscribed');
+      if(result.status == "error"){
+        console.log(result,'already suscribed');
+        this.modal.hideBtnLoader();
+        this.modal.closeModal('#subscribeModal');
+        this.modal.openModal("#alreadysubscribedmodal");
+        return;
+      }
+
+      console.log(result,'suscribed successfully');
       this.modal.hideBtnLoader();
+      this.modal.closeModal('#subscribeModal');
       this.modal.openModal("#thanksmodal");
     })
   }

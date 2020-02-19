@@ -6,6 +6,7 @@ import 'quill/dist/quill.snow.css';
 import imageUpload from 'quill-plugin-image-upload';
 import { HttpClient } from '@angular/common/http';
 import { CommonService } from '../../services/common.service';
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 
 @Component({
   selector: 'app-post-blog',
@@ -19,7 +20,7 @@ export class PostBlogComponent implements OnInit {
   image:FormGroup;
   imagePreview;
   submited:boolean=false;
-  constructor(public http:HttpClient, public common:CommonService) {     this.image= new FormGroup({
+  constructor(public http:HttpClient, public common:CommonService, public modal : ModalFunctions) {     this.image= new FormGroup({
     image:new FormControl(null)
   }) }
 
@@ -76,6 +77,8 @@ Quill.register('modules/imageUpload', imageUpload);
     this.htmlStr=this.form.value.data;
     // console.log(this.htmlStr);
     this.common.addBlog(this.form.value);
+    this.modal.hideBtnLoader();
+    this.modal.openModal("#blogModal");
   }
 
 }

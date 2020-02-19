@@ -39,7 +39,7 @@ export class CommonService {
     this.http.post("https://onewateracademy-blogapi.herokuapp.com/post-video",values)
     .subscribe(result=>{
       console.log(result);
-      alert("Video Posted Successfully");
+      //alert("Video Posted Successfully");
     })
   }
 
