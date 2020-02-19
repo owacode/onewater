@@ -1010,8 +1010,9 @@
 }
 
 .dashboard-sidebar .company-info .thumb {
-  border-radius: 3px;
+  border-radius: 50%;
   position: relative;
+  background-color: #fff;
 }
 .dashboard-sidebar .company-info .thumb img {
   position: absolute;

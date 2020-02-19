@@ -22,7 +22,7 @@ export class InstructorRegistrationComponent implements OnInit {
       mobile_no:new FormControl(null,{validators:[Validators.required]}),
       nationality:new FormControl(null,{validators:[Validators.required]}),
       profession:new FormControl(null,{validators:[Validators.required]}),
-      linkedIn:new FormControl(null,{validators:[Validators.required]})
+      //linkedIn:new FormControl(null,{validators:[Validators.required]})
     });
   }
 
