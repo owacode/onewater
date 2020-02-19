@@ -31,7 +31,7 @@
                   </p>
               </div>
               </div>
-             
+
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Phone</label>
@@ -46,7 +46,7 @@
                   <p>Please enter your phone number!</p>
               </div>
               </div>
-             
+
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Address</label>
@@ -61,7 +61,7 @@
                   <p>Please enter your location!</p>
               </div>
               </div>
-              
+
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Interests</label>
@@ -76,7 +76,7 @@
                   <p>Please enter your interests </p>
               </div>
               </div>
-              
+
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Bio</label>
@@ -99,7 +99,7 @@
                         <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
                       <button type="button" (click)="file.click()">Select Image</button>
                     </div>
-                   
+
                   </div>
                   <div class="active">
                     <div class="upload-images">
@@ -131,7 +131,7 @@
                     placeholder="Linkedin profile url"
                     formControlName="linkedin"
                   />
-                 
+
                 </div>
                 <div class="row form-group" *ngIf=" form.get('linkedin').invalid &&profilesubmit" >
                   <p>Enter your Linkedin profile url!</p>
@@ -140,25 +140,6 @@
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Social Links</label>
-              <div class="col-sm-9">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fa fa-facebook-f"></i>
-                    </div>
-                  </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Facebook profile url"
-                    formControlName="facebook"
-                  />
-                  
-                </div>
-                <div class="form-group" *ngIf=" form.get('facebook').invalid &&profilesubmit" >
-                  <p>Enter your Facebook profile url!</p>
-              </div>
-              </div>
             </div>
             <div class="form-group row">
               <div class="offset-sm-3 col-sm-9">
@@ -174,31 +155,10 @@
                     placeholder="Twitter profile url"
                     formControlName="twitter"
                   />
-                  
+
                 </div>
                 <div class="form-group" *ngIf=" form.get('twitter').invalid &&profilesubmit" >
                   <p>Enter your Twitter profile url!</p>
-              </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="offset-sm-3 col-sm-9">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fa fa-instagram"></i>
-                    </div>
-                  </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Instagram profile url"
-                    formControlName="instagram"
-                  />
-                 
-                </div>
-                <div class="form-group" *ngIf=" form.get('instagram').invalid &&profilesubmit" >
-                  <p>Enter your Instagram profile url!</p>
               </div>
               </div>
             </div>
@@ -209,7 +169,7 @@
               <div class="col-sm-9">
                 <button class="button" type="submit" *ngIf="!submited" (click)="modal.showBtnLoader()">
                   <span class="btn-loading-content">
-                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
+                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
                    </span>
                    <span class="btn-default-content">
                     Submit
