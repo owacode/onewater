@@ -1,24 +1,33 @@
 <div class="overlay"></div>
-<button class="button logout-button" type="button" data-feather="user-check" (click)="logout()">
+<button
+  class="button logout-button"
+  type="button"
+  data-feather="user-check"
+  (click)="logout()"
+>
   <i class="fa fa-power-off"></i> Logout
 </button>
 <section class="emp-registration">
   <div class="container">
-    <h1>
+    <h1 *ngIf="!submited">
       Hello! Welcome to <span> OneWater Academy</span> <br />
       Fill up the form below and get started!
     </h1>
 
-    <!-- <h1 *ngIf="submited">
-          Hello! welcome to <span> OneWater</span> <br>
-          Your details have been registred. Please wait until your profile gets verified!
-        </h1> -->
+    <h1 *ngIf="submited">
+      Hello! welcome to <span> OneWater</span> <br />
+      Your details have been registred. Please wait until your profile gets
+      verified!
+    </h1>
 
     <div class="dashboard-content-wrapper dash-tab">
-      <form class="dashboard-form" [formGroup]="user_registration" (submit)="register()">
+      <form
+        class="dashboard-form"
+        [formGroup]="user_registration"
+        (submit)="register()"
+      >
         <div class="dashboard-section basic-info-input">
           <h4><i data-feather="user-check"></i>Basic Info</h4>
-
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Phone</label>
             <div class="col-sm-9">
@@ -28,11 +37,13 @@
                 placeholder="Enter your contact no."
                 formControlName="mobile_no"
               />
+              <div
+                class="form-group"
+                *ngIf="user_registration.get('mobile_no').invalid && submited"
+              >
+                <p>Please enter your contact number!</p>
+              </div>
             </div>
-            <div class="row form-group" *ngIf=" user_registration.get('mobile_no').invalid &&submited" >
-              <p style="color: red; margin:0px auto">
-                  Enter Contact No. </p>
-          </div>
           </div>
 
           <div class="form-group row">
@@ -133,7 +144,9 @@
                 <option value="jordanian">Jordanian</option>
                 <option value="kazakhstani">Kazakhstani</option>
                 <option value="kenyan">Kenyan</option>
-                <option value="kittian and nevisian">Kittian and Nevisian</option>
+                <option value="kittian and nevisian"
+                  >Kittian and Nevisian</option
+                >
                 <option value="kuwaiti">Kuwaiti</option>
                 <option value="kyrgyz">Kyrgyz</option>
                 <option value="laotian">Laotian</option>
@@ -218,7 +231,9 @@
                 <option value="thai">Thai</option>
                 <option value="togolese">Togolese</option>
                 <option value="tongan">Tongan</option>
-                <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+                <option value="trinidadian or tobagonian"
+                  >Trinidadian or Tobagonian</option
+                >
                 <option value="tunisian">Tunisian</option>
                 <option value="turkish">Turkish</option>
                 <option value="tuvaluan">Tuvaluan</option>
@@ -233,11 +248,13 @@
                 <option value="zambian">Zambian</option>
                 <option value="zimbabwean">Zimbabwean</option>
               </select>
+              <div
+                class="form-group"
+                *ngIf="user_registration.get('nationality').invalid && submited"
+              >
+                <p>Please enter your nationality!</p>
+              </div>
             </div>
-            <div class="row form-group" *ngIf=" user_registration.get('nationality').invalid &&submited" >
-              <p style="color: red; margin:0px auto">
-                  Enter Nationality</p>
-          </div>
           </div>
 
           <div class="form-group row">
@@ -249,11 +266,13 @@
                 placeholder="Your Profession"
                 formControlName="profession"
               />
+              <div
+                class="form-group"
+                *ngIf="user_registration.get('profession').invalid && submited"
+              >
+                <p>Please enter your profession!</p>
+              </div>
             </div>
-            <div class="row form-group" *ngIf=" user_registration.get('profession').invalid &&submited" >
-              <p style="color: red; margin:0px auto">
-                  Enter Profession </p>
-          </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 col-form-label">Linkedin Profile</label>
@@ -264,11 +283,13 @@
                 placeholder="Paste your linkedin profile url"
                 formControlName="linkedIn"
               />
+              <div
+                class="form-group"
+                *ngIf="user_registration.get('linkedIn').invalid && submited"
+              >
+                <p>Please enter your Linkedin profile url!</p>
+              </div>
             </div>
-            <div class="row form-group" *ngIf=" user_registration.get('linkedIn').invalid &&submited" >
-              <p style="color: red; margin:0px auto">
-                  Enter Linkedin Profile </p>
-          </div>
           </div>
         </div>
 
@@ -276,13 +297,17 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label"></label>
             <div class="col-sm-9">
-                <button class="button" type="submit" (click)="modal.showBtnLoader()">
-                  <span class="btn-loading-content">
-                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
-                   </span>
-                   <span class="btn-default-content">
-                    Submit
-                   </span>
+              <button *ngIf="!submited"
+                class="button"
+                type="submit"
+                (click)="modal.showBtnLoader()"
+              >
+                <span class="btn-loading-content">
+                  <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+                </span>
+                <span class="btn-default-content">
+                  Submit
+                </span>
               </button>
             </div>
           </div>
@@ -292,19 +317,38 @@
   </div>
 </section>
 
-
 <div class="modal fade" id="registerModal" role="dialog" #registerModal>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
-    <div class="modal-head">
-        <button type="button" class="close" data-dismiss="modal" (click)="modal.closeModal(registerModal)">&times;</button>
-    </div>
-      <div class="modal-body">
-       <img src="assets/img/modals/register.jpg
-       " alt="">
-       <h2>Your profile has been submitted for review. We will get back to you in 24 hrs.</h2>
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(registerModal)"
+        >
+          &times;
+        </button>
       </div>
-        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal.closeModal(registerModal)">OK</button>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/register.jpg
+       "
+          alt=""
+        />
+        <h2>
+          Your profile has been submitted for review. We will get back to you in
+          24 hrs.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(registerModal)"
+      >
+        OK
+      </button>
     </div>
   </div>
 </div>

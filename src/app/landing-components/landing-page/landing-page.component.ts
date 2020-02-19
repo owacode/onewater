@@ -3,6 +3,7 @@ import * as Feather from 'feather-icons';
 import * as $ from 'jquery';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 
 @Component({
   selector: 'app-landing-page',
@@ -13,7 +14,7 @@ export class LandingPageComponent implements OnInit {
 
   form:FormGroup;
   public submited: Boolean = false;
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient, public modal: ModalFunctions) { }
 
   ngOnInit() {
 
@@ -31,13 +32,6 @@ export class LandingPageComponent implements OnInit {
     })
   }
 
-  closeModal(thismodal) {
-    console.log('close Modal')
-    $(thismodal).css("display", "none");
-    $(thismodal).removeClass("show");
-    $('.overlay').css("display", "none");
-  }
-
   subscribe(){
     this.submited = true;
     console.log(this.form.value);
@@ -48,6 +42,8 @@ export class LandingPageComponent implements OnInit {
     this.http.post('https://onewater-job-api.herokuapp.com/subscribe',this.form.value)
     .subscribe(result=>{
       console.log(result,'suscribed');
+      this.modal.hideBtnLoader();
+      this.modal.openModal("#thanksmodal");
     })
   }
 

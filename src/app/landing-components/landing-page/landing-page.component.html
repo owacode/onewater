@@ -528,7 +528,7 @@
             placeholder="name"
             required
           />
-          <p style="color: red;" *ngIf="submited && form.get('name').invalid">Enter Your Name</p>
+          <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p>
           <input
             formControlName="email"
             class="vldform__textbox"
@@ -537,16 +537,20 @@
             required
           />
 
-          <p style="color: red;" *ngIf="submited && form.get('email').invalid">Enter a Valid Email</p>
+          <p *ngIf="submited && form.get('email').invalid">Enter a Valid Email</p>
 
           <button
             type="submit"
+            (click)="modal.showBtnLoader()"
             (click)="subscribe()"
             class="btn btn-default"
-            data-toggle="modal"
-            data-target="#thanksmodal"
           >
-            Submit
+          <span class="btn-loading-content">
+            <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+          </span>
+          <span class="btn-default-content">
+           Submit
+          </span>
           </button>
         </form>
       </div>
@@ -555,11 +559,11 @@
 </div>
 
 <!-- Modal after user subscribe to newsletter -->
-<div class="modal fade" id="thanksmodal" role="dialog">
+<div class="modal fade" id="thanksmodal" role="dialog" #thanksmodal>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
-        <button type="button" class="close" data-dismiss="modal">
+        <button type="button" class="close" (click)="modal.closeModal(thanksmodal)">
           &times;
         </button>
       </div>
@@ -571,7 +575,7 @@
           alt=""
           style="width:35%; margin:auto;"
         />
-        <button class="btn btn-default" data-dismiss="modal">Close</button>
+        <button class="btn btn-default" (click)="modal.closeModal(thanksmodal)">Close</button>
       </div>
     </div>
   </div>

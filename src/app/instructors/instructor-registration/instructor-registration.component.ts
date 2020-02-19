@@ -45,6 +45,7 @@ export class InstructorRegistrationComponent implements OnInit {
       this.modal.openModal("#registerModal");
     })
   }
+  
   logout(){
     this.instructorservice.logout();
   }

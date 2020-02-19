@@ -236,7 +236,7 @@
   }
 }
 .dashboard-sidebar .dashboard-menu {
-  padding: 0;
+  padding: 0 0 2rem;
   position: relative;
   min-height: 50vh;
 }
@@ -246,40 +246,46 @@
   list-style: none;
 }
 .dashboard-sidebar .dashboard-menu ul li {
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
 }
 .dashboard-sidebar .dashboard-menu ul li i {
   color: rgba(255, 255, 255, 0.448);
   width: 25px;
+  margin-right: 0.5rem;
 }
 .dashboard-sidebar .dashboard-menu ul li a {
-  padding: 10px 15px;
-  color: rgba(255, 255, 255, 0.448);
+  padding: 10px;
+  color: #fff;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   width: 100%;
+  display: block;
   cursor: pointer;
+  border-radius: 3px;
 }
 .dashboard-sidebar .dashboard-menu ul li:hover i,
 .activetab i {
-  color: #fff;
+  color: rgb(12, 57, 100) !important;
 }
 .dashboard-sidebar .dashboard-menu ul li:hover a,
 .activetab a {
-  color: #fff !important;
-  border-radius: 5px;
+  color: rgb(12, 57, 100) !important;
+  background-color: rgba(255, 255, 255, 0.411);
+  font-weight: 700 !important;
 }
 
 .dashboard-sidebar .dashboard-menu ul.delete li i {
   color: #ff3366;
 }
 .dashboard-sidebar .dashboard-menu ul.delete li:hover i {
-  color: #ff3366;
+  color: #ff3366 !important;
 }
 .dashboard-sidebar .dashboard-menu ul.delete li:hover a {
-  color: #fff;
+  color: #fff !important;
   /* background-image: linear-gradient(to right, rgba(255, 51, 102, 0.2), rgba(255, 51, 102, 0)); */
-  background: #ff3366;
+  background: #ff3366 !important;
 }
 
 .buttons {
@@ -991,16 +997,15 @@
       Employer Dashboard
   ---------------------------------------------*/
 .dashboard-sidebar .company-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  padding: 1rem 1rem 1rem 0;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  padding: 0;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 0 0.5rem;
   flex-direction: column;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
   justify-content: center;
+  border-bottom: 2px solid #ffffff6e;
 }
 
 .dashboard-sidebar .company-info .thumb {
@@ -1023,6 +1028,7 @@
     font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
+    margin-top: 0.5rem;
   }
 }
 

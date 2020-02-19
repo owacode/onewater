@@ -17,6 +17,7 @@ export class AuthorLoginComponent implements OnInit {
   loginuser: FormGroup;
 
   showregform() {
+    this.modal.hideBtnLoader();
     document.querySelector(".vldauth")['style'].display = "none";
     document.querySelector(".vldreg")['style'].display = "flex";
     document.getElementById("login-text")['style'].display = "none"
@@ -24,6 +25,7 @@ export class AuthorLoginComponent implements OnInit {
   }
 
   showauthform() {
+    this.modal.hideBtnLoader();
     document.querySelector(".vldauth")['style'].display = "flex";
     document.querySelector(".vldreg")['style'].display = "none";
     document.querySelector(".vldrecpass")['style'].display = "none";
@@ -32,6 +34,7 @@ export class AuthorLoginComponent implements OnInit {
   }
 
   showrecoveryform() {
+    this.modal.hideBtnLoader();
     document.querySelector(".vldauth")['style'].display = "none";
     document.querySelector(".vldrecpass")['style'].display = "flex";
     document.getElementById("login-text")['style'].display = "none"
@@ -97,7 +100,8 @@ export class AuthorLoginComponent implements OnInit {
     console.log(this.userauth.access_token,localStorage.getItem('instructor_email'))
     if(this.userauth.access_token != null || localStorage.getItem('instructor_email')) {
       this.modal.hideBtnLoader();
-      return alert("Please Logout of other platform to use this service");
+      this.modal.openModal('#platformModal');
+      return;
     }
     this.loginsubmitted = true;
 

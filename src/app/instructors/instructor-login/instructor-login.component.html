@@ -29,10 +29,10 @@
               formControlName="name"
             />
             <p
-            style="color: red"
+           
             *ngIf="registersubmitted && user.get('name').invalid"
           >
-            Please Enter a Name
+            Name is required!
           </p>
             <input
               class="vldform__textbox"
@@ -43,10 +43,10 @@
               formControlName="email"
             />
             <p
-            style="color: red"
+           
             *ngIf="registersubmitted && user.get('email').invalid"
           >
-            Please Enter a Valid Email
+            Please enter a valid email id!
           </p>
             <div class="row">
               <div class="col-md-6">
@@ -59,10 +59,10 @@
                   formControlName="password"
                 />
                 <p
-                  style="color: red"
+                 
                   *ngIf="registersubmitted && user.get('password').invalid"
                 >
-                  Enter Password of Length Minlength Six
+                Password must have minimum 6 characters!
                 </p>
               </div>
 
@@ -76,10 +76,10 @@
                   formControlName="cpassword"
                 />
                 <p
-                style="color: red"
+               
                 *ngIf="registersubmitted && user.get('cpassword').invalid"
               >
-                Please Enter Confirm Password
+              Confirm your password!
               </p>
               </div>
             </div>
@@ -117,10 +117,10 @@
                       formControlName="email"
                     />
                     <p
-                      style="color: red"
+                     
                       *ngIf="registersubmitted && loginuser.get('email').invalid"
                     >
-                      Please Enter Email
+                    Please enter a valid emal id!
                     </p>
                     <input
                       class="vldform__textbox"
@@ -131,10 +131,10 @@
                       formControlName="password"
                     />
                     <p
-                    style="color: red"
+                   
                     *ngIf="registersubmitted && loginuser.get('password').invalid"
                   >
-                    Enter a Valid Password
+                  Please enter your password!
                   </p>
 
                   <a class="vldform__recoverypassword" (click)="showrecoveryform()"
@@ -381,7 +381,7 @@
       <div class="modal-body">
         <img src="assets/img/modals/wrong.svg" style="width: 25%;" alt="" />
         <h2>
-          Password did not matched. Please try again.
+          Password and Confirm Password must have same value. Please try again.
         </h2>
       </div>
       <button
@@ -395,6 +395,39 @@
     </div>
   </div>
 </div>
+
+<!--logout from other platforms modal-->
+<div class="modal modal-animate" id="platformModal" role="dialog" #platformModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(platformModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/img/modals/platform.png" alt="" />
+        <h2>
+          Please logout from other platforms to use this service.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(platformModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
 
 <!--forgot password modal-->
 <div class="modal modal-animate" id="pendingModal" role="dialog" #forgotpassModal>

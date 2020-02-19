@@ -94,7 +94,9 @@ export class InstructorLoginComponent implements OnInit {
   login(){
     console.log(localStorage.getItem('authoremail'), this.auth.access_token)
     if(this.auth.access_token != null || localStorage.getItem('authoremail')){
-      return alert("Please Logout of other platform to use this service")
+      this.modal.hideBtnLoader();
+      this.modal.openModal('#platformModal');
+      return;
     }
     this.registersubmitted=true;
     console.log(this.loginuser.value);

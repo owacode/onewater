@@ -26,26 +26,27 @@
                   placeholder="Full Name"
                   formControlName="author_name"
                 />
+                <div class="form-group" *ngIf=" form.get('author_name').invalid &&profilesubmit" >
+                  <p>Please enter your name!
+                  </p>
               </div>
-              <div class="row form-group" *ngIf=" form.get('author_name').invalid &&profilesubmit" >
-                <p style="color: red; margin:0px auto">
-                    Enter Name </p>
-            </div>
+              </div>
+             
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Phone</label>
               <div class="col-sm-9">
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
-                  placeholder="+55 123 4563 4643"
+                  placeholder="Enter your mobile number"
                   formControlName="mobile"
                 />
+                <div class="form-group" *ngIf=" form.get('mobile').invalid &&profilesubmit" >
+                  <p>Please enter your phone number!</p>
               </div>
-              <div class="row form-group" *ngIf=" form.get('mobile').invalid &&profilesubmit" >
-                <p style="color: red; margin:0px auto">
-                    Enter Your Mobile No. </p>
-            </div>
+              </div>
+             
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Address</label>
@@ -53,14 +54,14 @@
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Washington D.C"
+                  placeholder="Enter your location"
                   formControlName="location"
                 />
+                <div class="form-group" *ngIf=" form.get('location').invalid &&profilesubmit" >
+                  <p>Please enter your location!</p>
               </div>
-              <div class="row form-group" *ngIf=" form.get('location').invalid &&profilesubmit" >
-                <p style="color: red; margin:0px auto">
-                    Enter Your Location </p>
-            </div>
+              </div>
+              
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Interests</label>
@@ -68,24 +69,23 @@
                 <textarea
                   type="text"
                   class="form-control"
-                  placeholder="Interests"
+                  placeholder="Enter your interests by hitting return/enter after each interest"
                   formControlName="interest"
                 ></textarea>
+                <div class="row form-group" *ngIf="form.get('interest').invalid &&profilesubmit" >
+                  <p>Please enter your interests </p>
               </div>
-              <div class="row form-group" *ngIf=" form.get('interest').invalid &&profilesubmit" >
-                <p style="color: red; margin:0px auto">
-                    Enter Your Intrest </p>
-            </div>
+              </div>
+              
             </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Bio</label>
               <div class="col-sm-9">
                 <textarea formControlName="author_desc" class="form-control" placeholder="Write something about yourself..."></textarea>
+                <div class="form-group" *ngIf="form.get('author_desc').invalid &&profilesubmit" >
+                  <p>Please enter description!</p>
               </div>
-              <div class="row form-group" *ngIf=" form.get('author_desc').invalid &&profilesubmit" >
-                <p style="color: red; margin:0px auto">
-                    Enter the Author Description </p>
-            </div>
+              </div>
             </div>
           </div>
             <div class="dashboard-section media-inputs">
@@ -99,21 +99,19 @@
                         <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
                       <button type="button" (click)="file.click()">Select Image</button>
                     </div>
-                    <div class="row form-group" *ngIf=" form.get('author_image').invalid &&profilesubmit" >
-                      <p style="color: red; margin:0px auto">
-                          Please Select Your Picture </p>
-                  </div>
+                   
                   </div>
                   <div class="active">
                     <div class="upload-images">
                       <div class="pic" *ngIf="imagePreview!='' && imagePreview">
-
                           <img style="width: 120px;" [src]="imagePreview">
-
                       </div>
                     </div>
                   </div>
                 </div>
+                <div class="form-group" *ngIf=" form.get('author_image').invalid &&profilesubmit" >
+                  <p>Please select profile picture!</p>
+              </div>
               </div>
             </div>
           </div>
@@ -133,10 +131,10 @@
                     placeholder="Linkedin profile url"
                     formControlName="linkedin"
                   />
+                 
                 </div>
                 <div class="row form-group" *ngIf=" form.get('linkedin').invalid &&profilesubmit" >
-                  <p style="color: red; margin:0px auto">
-                      Enter Your LinkedIn Profile Link </p>
+                  <p>Enter your Linkedin profile url!</p>
               </div>
               </div>
             </div>
@@ -155,10 +153,10 @@
                     placeholder="Facebook profile url"
                     formControlName="facebook"
                   />
+                  
                 </div>
-                <div class="row form-group" *ngIf=" form.get('facebook').invalid &&profilesubmit" >
-                  <p style="color: red; margin:0px auto">
-                    Enter Your Facebook Profile Link </p>
+                <div class="form-group" *ngIf=" form.get('facebook').invalid &&profilesubmit" >
+                  <p>Enter your Facebook profile url!</p>
               </div>
               </div>
             </div>
@@ -176,10 +174,10 @@
                     placeholder="Twitter profile url"
                     formControlName="twitter"
                   />
+                  
                 </div>
-                <div class="row form-group" *ngIf=" form.get('twitter').invalid &&profilesubmit" >
-                  <p style="color: red; margin:0px auto">
-                    Enter Your Twitter Profile Link </p>
+                <div class="form-group" *ngIf=" form.get('twitter').invalid &&profilesubmit" >
+                  <p>Enter your Twitter profile url!</p>
               </div>
               </div>
             </div>
@@ -197,10 +195,10 @@
                     placeholder="Instagram profile url"
                     formControlName="instagram"
                   />
+                 
                 </div>
-                <div class="row form-group" *ngIf=" form.get('instagram').invalid &&profilesubmit" >
-                  <p style="color: red; margin:0px auto">
-                    Enter Your Instagram Profile Link </p>
+                <div class="form-group" *ngIf=" form.get('instagram').invalid &&profilesubmit" >
+                  <p>Enter your Instagram profile url!</p>
               </div>
               </div>
             </div>
@@ -209,7 +207,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label"></label>
               <div class="col-sm-9">
-                <button class="button" type="submit" (click)="modal.showBtnLoader()">
+                <button class="button" type="submit" *ngIf="!submited" (click)="modal.showBtnLoader()">
                   <span class="btn-loading-content">
                     <i class="fa fa-circle-o-notch fa-spin"></i> Loading... 
                    </span>

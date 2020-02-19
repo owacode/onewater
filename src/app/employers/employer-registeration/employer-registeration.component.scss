@@ -6,6 +6,24 @@
   background-position: top center;
   background-repeat: no-repeat;
 }
+form p {
+  font-size: 0.8rem;
+  margin:0.5rem 0!important;
+  text-align: left !important;
+  color: rgb(189, 28, 28);
+  animation: pop_in 0.3s ease-in-out;
+}
+
+@keyframes pop_in{
+  0%{
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 h4 {
   margin-bottom: 2rem !important;
   font-size: 1.8rem !important;
