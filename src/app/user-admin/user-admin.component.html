@@ -5,7 +5,7 @@
   <div class="row no-gliters">
     <div class="col">
       <div class="dashboard-container">
-      <div class="dashboard-tabs-wrap">
+        <div class="dashboard-tabs-wrap">
           <router-outlet></router-outlet>
           <!-- <div class="footer">
             &copy; copyright <a href="https://onewater.herokuapp.com">OneWater 2020</a>
@@ -33,8 +33,7 @@
           <div class="dashboard-menu">
             <ul>
               <li routerLinkActive="activetab">
-                <i class="fa fa-home"></i
-                ><a [routerLink]="['./']">Platforms</a>
+                <i class="fa fa-home"></i><a [routerLink]="['./']">Platforms</a>
               </li>
 
             </ul>
@@ -42,9 +41,12 @@
             <ul class="delete">
               <li>
                 <i class="fa fa-power-off"></i
-                ><a (click)="logout()" href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home">Logout</a>
+                ><a
+                  (click)="logout()"
+                  href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home"
+                  >Logout</a
+                >
               </li>
-
             </ul>
           </div>
         </div>
@@ -93,14 +95,25 @@
   </div>
 </div>
 
-
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -108,7 +121,9 @@
         <ngx-paypal [config]="payPalConfig"></ngx-paypal>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
       </div>
     </div>
   </div>

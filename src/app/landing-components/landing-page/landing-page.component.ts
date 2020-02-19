@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class LandingPageComponent implements OnInit {
 
   form:FormGroup;
+  public submited: Boolean = false;
   constructor(public http:HttpClient) { }
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class LandingPageComponent implements OnInit {
     Feather.replace();
     this.form= new FormGroup({
       name:new FormControl(null, {validators:[Validators.required]}),
-      email:new FormControl(null, {validators:[Validators.required]}),
+      email:new FormControl(null, {validators:[Validators.required,Validators.email]}),
     })
   }
 
@@ -38,10 +39,14 @@ export class LandingPageComponent implements OnInit {
   }
 
   subscribe(){
-    console.log(this.form.value)
-    this.http.post('https://onewater-job-api.herokuapp.com/suscribed',this.form.value)
+    this.submited = true;
+    console.log(this.form.value);
+    if(this.form.invalid){
+      console.log("Invalid Newsletter");
+      return;
+    }
+    this.http.post('https://onewater-job-api.herokuapp.com/subscribe',this.form.value)
     .subscribe(result=>{
-      //alert("Thanks for Subscribing!");
       console.log(result,'suscribed');
     })
   }

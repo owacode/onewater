@@ -33,6 +33,7 @@ export class InstructorRegistrationComponent implements OnInit {
     if(this.user_registration.invalid){
       console.log(this.user_registration);
       console.log("error")
+      this.modal.hideBtnLoader();
       return;
     }
 

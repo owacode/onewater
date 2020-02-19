@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import {Router} from '@angular/router';
 import { Subject } from 'rxjs';
-import { AuthService } from './auth.service';
+import { AuthorAuthService } from './author-auth.service';
 import * as $ from 'jquery';
 import { XSRF_COOKIE_NAME } from '@angular/common/http/src/xsrf';
 
@@ -10,7 +10,7 @@ import { XSRF_COOKIE_NAME } from '@angular/common/http/src/xsrf';
   providedIn:'root'
 })
 export class CommonService {
-  constructor(public http:HttpClient, public route: Router, public blogauth:AuthService){}
+  constructor(public http:HttpClient, public route: Router, public blogauth:AuthorAuthService){}
 
   addBlog(value){
     const data= new FormData();

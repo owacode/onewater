@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Route, Router } from '@angular/router';
 import { InstructorService } from '../instructor-admin/instructor.service';
 import { ModalFunctions } from '../../shared-functions/modal-functions';
+import { AuthorAuthService } from 'src/app/authors/services/author-auth.service';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-instructor-login',
@@ -25,6 +27,7 @@ export class InstructorLoginComponent implements OnInit {
     this.modal.hideBtnLoader();
     document.querySelector(".vldauth")['style'].display = "flex";
     document.querySelector(".vldreg")['style'].display = "none";
+    document.querySelector(".vldrecpass")['style'].display = "none";
     document.getElementById("login-text")['style'].display = "block"
     document.getElementById("signup-text")['style'].display = "none"
   }
@@ -36,7 +39,7 @@ export class InstructorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
-  constructor(public http:HttpClient, public route: Router, public instructorservice: InstructorService, public modal : ModalFunctions) { }
+  constructor(public http:HttpClient, public route: Router, public instructorservice: InstructorService, public authorservice: AuthorAuthService,public auth:AuthService , public modal : ModalFunctions) { }
   user;
   loginuser;
   registersubmitted:boolean=false;
@@ -89,6 +92,10 @@ export class InstructorLoginComponent implements OnInit {
   }
 
   login(){
+    console.log(localStorage.getItem('authoremail'), this.auth.access_token)
+    if(this.auth.access_token != null || localStorage.getItem('authoremail')){
+      return alert("Please Logout of other platform to use this service")
+    }
     this.registersubmitted=true;
     console.log(this.loginuser.value);
     if(this.loginuser.invalid){
@@ -105,7 +112,7 @@ export class InstructorLoginComponent implements OnInit {
       localStorage.setItem('instructor_id',this.instructorservice.userid);
       localStorage.setItem('instructor_email',this.instructorservice.useremail);
       console.log("User Login Successfully", result);
-  
+
       if(result.result == 'Incorrect Password' || result.result == 'No User Found') {
         this.modal.hideBtnLoader();
         this.modal.openModal("#invalidModal");
