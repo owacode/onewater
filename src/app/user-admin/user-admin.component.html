@@ -7,40 +7,29 @@
       <div class="dashboard-container">
       <div class="dashboard-tabs-wrap">
           <router-outlet></router-outlet>
-          <div class="footer">
+          <!-- <div class="footer">
             &copy; copyright <a href="https://onewater.herokuapp.com">OneWater 2020</a>
-          </div>
+          </div> -->
       </div>
         <div class="dashboard-sidebar">
           <div class="logo">
-            <img src="onewater/assets/img/ow-logo1.png" alt="" />
+            <img src="/assets/img/ow-logo-white.png" alt="" />
           </div>
-          <!-- <div class="sidebar-header">
+          <div class="sidebar-header">
             <h4>User Dashboard</h4>
-          </div> -->
+          </div>
           <div class="company-info">
             <div class="thumb">
               <img
-                src="/assets/img/user-img.jfif"
+                src="/assets/img/user.svg"
                 class="img-fluid"
                 alt=""
               />
             </div>
             <div class="company-body">
-              <h5>{{name}}</h5>
-              <span>morgan@gmail.com</span>
+              <h5>Hi, {{name}}</h5>
             </div>
           </div>
-             <!--profile completeness circle-->
-    <!-- <div id="activeBorder" class="active-border">
-        <div id="circle" class="circle">
-            <span class="prec" id="prec">0%</span>
-        </div>
-      </div>
-   <p style="font-size:0.9rem;margin:1rem;text-align:center;color:#777">
-     50% profile completed.
-   </p> -->
-
           <div class="dashboard-menu">
             <ul>
               <li routerLinkActive="activetab">
@@ -48,15 +37,6 @@
                 ><a [routerLink]="['./']">Platforms</a>
               </li>
 
-               <!-- <li routerLinkActive="activetab">
-                  <i class="fa fa-plus-square"></i
-                  ><a [routerLink]="['/candidate-admin']">Candidate Dashboard</a>
-                </li>
-
-                <li routerLinkActive="activetab">
-                  <i class="fa fa-plus-square"></i
-                  ><a data-toggle="modal" data-target="#exampleModal">Make Payment</a>
-                </li> -->
             </ul>
 
             <ul class="delete">

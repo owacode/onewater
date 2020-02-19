@@ -2,35 +2,35 @@
 class="dashboard-content-wrapper dash-tab"
 >
 <div class="dashboard-section user-statistic-block">
-  <div class="row w-100">
+  <div class="row justify-content-center w-100">
     <div class="col-md-3">
       <div class="user-statistic">
         <span>
-          <i data-feather="command"></i>
+          <i data-feather="edit"></i>
           <h3>{{totalblogs}}</h3>
         </span>
         
-        <span>Blogs <br> Posted</span>
+        <span>Blogs Posted</span>
       </div>
     </div>
     <div class="col-md-3">
       <div class="user-statistic">
        <span>
-        <i data-feather="file-text"></i>
+        <i data-feather="check-square"></i>
         <h3> {{approvedblogs}}</h3>
        </span>
        
-        <span>Blogs <br> Aproved</span>
+        <span>Blogs Aproved</span>
       </div>
     </div>
     <div class="col-md-3">
       <div class="user-statistic">
        <span>
-        <i data-feather="users"></i>
+        <i data-feather="video"></i>
         <h3> {{totalvideos}}</h3>
        </span>
      
-        <span>Video <br> Posted</span>
+        <span>Video Posted</span>
       </div>
     </div>
 
@@ -40,6 +40,9 @@ class="dashboard-content-wrapper dash-tab"
 <div class="dashboard-section dashboard-recent-activity">
   <div class="row">
     <div class="col-md-12"><h4 class="title"><i data-feather="edit-2"></i> Recently posted blogs</h4>
+      <div class="no-content" *ngIf="!recentblogs.length">
+        You have not posted any blog yet. <br> Click <a routerLink="/author/post-blog'">here</a> to post one.
+      </div>
       <div class="activity-list" *ngFor="let blog of recentblogs">
           <div class="thumb">
               <img
