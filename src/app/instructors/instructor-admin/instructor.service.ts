@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 export class InstructorService {
   constructor (private router: Router) {}
 
-  userid;
-  useremail;
+  userid=null;
+  useremail=null;
 
   checklocalstorage(){
     console.log("checking Localstorage Instructor")

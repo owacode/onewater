@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Feather from 'feather-icons';
 import { CommonService } from '../../services/common.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthorAuthService } from '../../services/author-auth.service';
 
 @Component({
   selector: 'app-author-edit-profile',
@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class AuthorEditProfileComponent implements OnInit {
 
-  constructor(public common:CommonService, public auth: AuthService) { }
+  constructor(public common:CommonService, public auth: AuthorAuthService) { }
   form:FormGroup;
   imagePreview;
   submited:boolean=false;

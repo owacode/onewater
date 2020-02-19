@@ -470,6 +470,7 @@
             placeholder="name"
             required
           />
+          <p style="color: red;" *ngIf="submited && form.get('name').invalid">Enter Your Name</p>
           <input
             formControlName="email"
             class="vldform__textbox"
@@ -478,11 +479,12 @@
             required
           />
 
+          <p style="color: red;" *ngIf="submited && form.get('email').invalid">Enter a Valid Email</p>
+
           <button
             type="submit"
             (click)="subscribe()"
             class="btn btn-default"
-            data-dismiss="modal"
             data-toggle="modal"
             data-target="#thanksmodal"
           >

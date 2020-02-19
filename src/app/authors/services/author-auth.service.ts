@@ -7,28 +7,18 @@ import * as $ from 'jquery';
 @Injectable({
   providedIn:'root'
 })
-export class AuthService {
+export class AuthorAuthService {
   constructor(public http:HttpClient, public route: Router){}
-  public authoremail;
-  public authorid;
-  public authorname;
-  public authorimage;
-  public authormainid;
-  public authorapprovedid;
+  public authoremail = null;
+  public authorid = null;
+  public authorname = null;
+  public authorimage = null;
+  public authormainid = null;
+  public authorapprovedid = null;
   public loggedIn:boolean=false;
   private token:string=null;
   public loggedinLitsener=new Subject<{status:boolean}>();
   public approvedLitsener=new Subject<{status:boolean}>();
-  // Observable string sources
-  private emailexistCallSource = new Subject<any>();
-  emailexist$ = this.emailexistCallSource.asObservable();
-
-  private notverifiedCallSource = new Subject<any>();
-  notverifiedmail$ = this.notverifiedCallSource.asObservable();
-
-  private verifymailCallSource = new Subject<any>();
-  verifymail$ = this.verifymailCallSource.asObservable();
-
 
   login(values){
     const user={
@@ -127,7 +117,7 @@ approvedauthorLitsener(){
 
     console.log(this.authormainid, this.authorid,'dwdw');
     return this.http.post('https://onewateracademy-blogapi.herokuapp.com/update-authorprofile',author);
-    
+
   }
 
   authorUpdate(values){

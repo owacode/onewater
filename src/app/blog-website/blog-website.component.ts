@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../authors/services/auth.service';
+import { AuthorAuthService } from '../authors/services/author-auth.service';
 
 @Component({
   selector: 'app-blog-website',
@@ -7,9 +7,9 @@ import { AuthService } from '../authors/services/auth.service';
   styleUrls: ['./blog-website.component.scss']
 })
 export class BlogWebsiteComponent implements OnInit {
-  constructor(public auth:AuthService) { }
+  constructor(public auth:AuthorAuthService) { }
 
   ngOnInit() {
- 
+
   }
 }

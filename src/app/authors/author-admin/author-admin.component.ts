@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Feather from 'feather-icons';
 import * as $ from "jquery";
 import { CommonService } from '../services/common.service';
-import { AuthService } from '../services/auth.service';
+import { AuthorAuthService } from '../services/author-auth.service';
 
 @Component({
   selector: 'app-author-admin',
@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class AuthorAdminComponent implements OnInit {
 
-  constructor(public common:CommonService, public auth: AuthService) { }
+  constructor(public common:CommonService, public auth: AuthorAuthService) { }
   author;
 
   ngOnInit() {

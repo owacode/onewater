@@ -83,7 +83,7 @@ export class DonationComponent implements OnInit {
         console.log('onApprove - you can get full order details inside onApprove: ', details);
       });
     },
-    
+
     onClientAuthorization: (data) => {
       console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
       this.showSuccess = true;
@@ -105,8 +105,6 @@ export class DonationComponent implements OnInit {
       this.modal.openModal("#paymentFailed");
     },
     onClick: (data, actions) => {
-
-    console.log('@@@@@@@@@@@',this.userpayment.value)
       console.log('onClick', data, actions);
     },
   };

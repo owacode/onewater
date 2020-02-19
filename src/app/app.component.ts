@@ -90,7 +90,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
 
-    
+
 }
 
   getDecodedAccessToken(token: string): any {

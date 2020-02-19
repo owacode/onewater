@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, EmailValidator } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+import { AuthorAuthService } from '../services/author-auth.service';
 import { Router } from '@angular/router';
 import { ModalFunctions } from '../../shared-functions/modal-functions';
+import { AuthService } from 'src/app/auth.service';
+import { InstructorService } from 'src/app/instructors/instructor-admin/instructor.service';
 
 @Component({
   selector: 'app-author-login',
@@ -36,14 +38,14 @@ export class AuthorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
-  constructor(public auth: AuthService, public route:Router, public modal:ModalFunctions) {
+  constructor(public auth: AuthorAuthService, public userauth: AuthService, public route:Router, public modal:ModalFunctions, public instructorauth: InstructorService) {
 
   }
 
   ngOnInit() {
     this.auth.checkLocalStorage();
     this.showregform();
-   
+
     this.user = new FormGroup({
       author_name: new FormControl(null, { validators: [Validators.required] }),
       author_email: new FormControl(null, { validators: [Validators.required, Validators.email] }),
@@ -59,7 +61,7 @@ export class AuthorLoginComponent implements OnInit {
   }
 
   registersubmitted: boolean = false;
-  
+
   register() {
     this.registersubmitted = true;
     if (this.user.invalid) {
@@ -92,6 +94,11 @@ export class AuthorLoginComponent implements OnInit {
 
   loginsubmitted: boolean = false;
   login() {
+    console.log(this.userauth.access_token,localStorage.getItem('instructor_email'))
+    if(this.userauth.access_token != null || localStorage.getItem('instructor_email')) {
+      this.modal.hideBtnLoader();
+      return alert("Please Logout of other platform to use this service");
+    }
     this.loginsubmitted = true;
 
     if (this.loginuser.invalid) {
