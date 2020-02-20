@@ -4,6 +4,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { InstructorService } from '../instructor.service';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 
 @Component({
   selector: 'app-upload-content',
@@ -12,7 +13,7 @@ import * as $ from 'jquery';
 })
 export class UploadContentComponent implements OnInit {
 
-  constructor(public instructorservice: InstructorService, public http:HttpClient) { }
+  constructor(public instructorservice: InstructorService, public http:HttpClient, public modal: ModalFunctions) { }
   course;
   submited:Boolean=false;
 
@@ -32,16 +33,16 @@ export class UploadContentComponent implements OnInit {
     this.course.value.id= this.instructorservice.userid;
     console.log(this.course.value);
     if(this.course.invalid){
-      console.log("Content posting unsucessful, fill the form correctly")
+      console.log("Content posting unsucessful, fill the form correctly");
+      this.modal.hideBtnLoader();
       return;
     }
     console.log('pass',this.course.value);
     this.http.post('https://onewater-instructor-api.herokuapp.com/addcourse',this.course.value)
     .subscribe(result=>{
       console.log("Content Posted Successfully", result);
-      $('#videoModal').css("display", "block");
-        $('#videoModal').addClass("show");
-        $('.overlay').css("display", "block");
+      this.modal.hideBtnLoader();
+      this.modal.openModal('#videoModal');
     })
   }
 

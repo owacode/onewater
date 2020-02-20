@@ -28,10 +28,9 @@ export class PostVideoComponent implements OnInit {
     this.form.value.email=localStorage.getItem('authoremail')
     this.form.value.name=localStorage.getItem('name')
     console.log(this.form.value);
-    this.modal.hideBtnLoader();
-    this.modal.openModal("#videoModal");
     this.common.addVideo(this.form.value);
-
+   // this.modal.hideBtnLoader();
+    this.modal.openModal("#videoModal");
   }
 
 }

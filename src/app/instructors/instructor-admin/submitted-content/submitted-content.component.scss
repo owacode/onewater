@@ -1,4 +1,4 @@
-@import '../../../job-portal/job-portal.component.scss';
+
 @import '../../../dashboard-style.scss';
 
 .status{
@@ -27,3 +27,6 @@ h4{
   line-height: 200%;
 }
 
+.buttons {
+  justify-content: flex-end;
+}

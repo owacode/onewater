@@ -62,8 +62,8 @@ export class AuthorRegistrationComponent implements OnInit {
       author_desc: new FormControl(null, { validators: [Validators.required] }),
       interest: new FormControl(null, { validators: [Validators.required] }),
       mobile: new FormControl(null, { validators: [Validators.required] }),
-      // linkedin: new FormControl(null, { validators: [Validators.required] }),
-      // twitter: new FormControl(null, { validators: [Validators.required] })
+      linkedin: new FormControl(null),
+      twitter: new FormControl(null)
     });
   }
 

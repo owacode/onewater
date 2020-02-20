@@ -77,7 +77,7 @@ Quill.register('modules/imageUpload', imageUpload);
     this.htmlStr=this.form.value.data;
     // console.log(this.htmlStr);
     this.common.addBlog(this.form.value);
-    this.modal.hideBtnLoader();
+    //this.modal.hideBtnLoader();
     this.modal.openModal("#blogModal");
   }
 
