@@ -12,6 +12,9 @@
             placeholder="Title"
             formControlName="title"
           />
+          <p style="color: red;" *ngIf="submited && form.get('title').invalid">
+            Title is required!
+          </p>
         </div>
       </div>
 
@@ -31,6 +34,9 @@
                   <button type="button" (click)="file.click()">
                     Select Image
                   </button>
+                  <p style="color: red;" *ngIf="submited && form.get('image').invalid">
+                    Image is required!
+                  </p>
                 </div>
               </div>
               <div class="active">

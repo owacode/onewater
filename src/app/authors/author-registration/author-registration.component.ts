@@ -89,11 +89,12 @@ export class AuthorRegistrationComponent implements OnInit {
     console.log(this.form.value);
     this.area = this.form.value.interest.split("\n");
     this.form.value.interest = this.area;
-
     console.log(this.form.value, "sss");
     this.auth.authorRegistration(this.form.value).subscribe(result => {
       console.log(result, "author details registered successfully");
       this.modal.hideBtnLoader();
+      this.form.reset();
+      this.profilesubmit = false;
       this.modal.openModal("#registerModal");
     });
   }

@@ -42,10 +42,12 @@ export class InstructorRegistrationComponent implements OnInit {
     .subscribe(result=>{
       console.log("User Details Updated", result);
       this.modal.hideBtnLoader();
+      this.user_registration.reset();
+      this.submited = false;
       this.modal.openModal("#registerModal");
     })
   }
-  
+
   logout(){
     this.instructorservice.logout();
   }

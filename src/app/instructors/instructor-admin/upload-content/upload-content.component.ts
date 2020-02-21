@@ -42,6 +42,8 @@ export class UploadContentComponent implements OnInit {
     .subscribe(result=>{
       console.log("Content Posted Successfully", result);
       this.modal.hideBtnLoader();
+      this.course.reset();
+      this.submited = false;
       this.modal.openModal('#videoModal');
     })
   }

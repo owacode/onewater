@@ -72,11 +72,18 @@ Quill.register('modules/imageUpload', imageUpload);
   }
 
   submit(){
-    console.log('hit')
+    this.submited=true;
+    if(this.form.invalid){
+      console.log("invalid form for post blog");
+      return;
+    }
+    console.log('hit');
     console.log(this.form.value);
     this.htmlStr=this.form.value.data;
     // console.log(this.htmlStr);
     this.common.addBlog(this.form.value);
+    this.form.reset();
+    this.submited = false;
     //this.modal.hideBtnLoader();
     this.modal.openModal("#blogModal");
   }

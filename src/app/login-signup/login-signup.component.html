@@ -22,7 +22,7 @@
               placeholder="Name"
               required
             />
-            <p *ngIf="registersubmitted && user.get('name').invalid">
+            <p style="color: red;" *ngIf="registersubmitted && user.get('name').invalid">
               Name is required!
             </p>
 
@@ -34,7 +34,7 @@
               placeholder="Email"
               required
             />
-            <p *ngIf="registersubmitted && user.get('email').invalid">
+            <p style="color: red;" *ngIf="registersubmitted && user.get('email').invalid">
               Enter a valid email id!
             </p>
             <div class="row">
@@ -47,7 +47,7 @@
                   placeholder="Password"
                   required
                 />
-                <p *ngIf="registersubmitted && user.get('password').invalid">
+                <p style="color: red;" *ngIf="registersubmitted && user.get('password').invalid">
                   Password must have minimum 6 characters!
                 </p>
               </div>
@@ -60,7 +60,7 @@
                   placeholder="Confirm Password"
                   required
                 />
-                <p *ngIf="registersubmitted && user.get('cpassword').invalid">
+                <p style="color: red;" *ngIf="registersubmitted && user.get('cpassword').invalid">
                   Confirm your password!
                 </p>
               </div>

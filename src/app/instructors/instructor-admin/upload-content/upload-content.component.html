@@ -21,6 +21,9 @@ class="dashboard-content-wrapper dash-tab"
           placeholder="Title of your course"
           formControlName="title"
         />
+        <p style="color: red;" *ngIf="submited && course.get('title').invalid">
+          Title is required!
+        </p>
       </div>
     </div>
     <div class="form-group row">
@@ -32,6 +35,9 @@ class="dashboard-content-wrapper dash-tab"
           placeholder="Paste content link here"
           formControlName="content_link"
         />
+        <p style="color: red;" *ngIf="submited && course.get('content_link').invalid">
+          Content Link is required!
+        </p>
       </div>
     </div>
     <div class="form-group row">
@@ -43,6 +49,9 @@ class="dashboard-content-wrapper dash-tab"
           placeholder="Category of content"
           formControlName="category"
         >
+        <p style="color: red;" *ngIf="submited && course.get('category').invalid">
+          Category is required!
+        </p>
       </div>
     </div>
 
