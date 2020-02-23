@@ -34,10 +34,10 @@
               required
             />
             <p
-             
+
               *ngIf="loginsubmitted && loginuser.get('email').invalid"
             >
-              Please enter a valid emal id!
+              Please enter a valid email id!
             </p>
 
             <input
@@ -49,7 +49,7 @@
               required
             />
             <p
-             
+
               *ngIf="loginsubmitted && loginuser.get('password').invalid"
             >
             Please enter your password!
@@ -58,7 +58,7 @@
             <a class="vldform__recoverypassword" (click)="showrecoveryform()"
               >Forgot password?</a
             >
-           
+
             <button
               class="vldform__button"
               type="submit"
@@ -103,7 +103,7 @@
               required
             />
             <p
-             
+
               *ngIf="registersubmitted && user.get('author_email').invalid"
             >
               Please enter a valid email id!
@@ -120,7 +120,7 @@
                   required
                 />
                 <p
-                 
+
                   *ngIf="registersubmitted && user.get('password').invalid"
                 >
                   Password must have minimum 6 characters!
@@ -136,7 +136,7 @@
                   required
                 />
                 <p
-                 
+
                   *ngIf="registersubmitted && user.get('cpassword').invalid"
                 >
                  Confirm your password!
@@ -164,7 +164,7 @@
 
 
           <!--------------PASSWORD RECOVERY FORM------------------->
-          <form class="vldform vldrecpass">
+          <form class="vldform vldrecpass" [formGroup]="resetpassform" (submit)="resetpassword()">
             <h1>Password Recovery</h1>
             <input
               class="vldform__textbox"
@@ -172,6 +172,7 @@
               name="email"
               placeholder="Email"
               required
+              formControlName="email"
             />
             <button
               class="vldform__button"

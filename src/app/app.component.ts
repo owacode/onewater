@@ -88,10 +88,7 @@ export class AppComponent implements OnInit {
       }
     });
   }
-  ngOnInit() {
-
-
-}
+  ngOnInit() {}
 
   getDecodedAccessToken(token: string): any {
     try {

@@ -223,7 +223,7 @@ const routes: Routes = [
     loadChildren: './login-signup/login-signup.module#LoginSignupModule'
   },
   {
-    path: 'recover-password',
+    path: 'recover-password/:token',
     loadChildren: './recover-password/recover-password.module#RecoverPasswordModule'
   },
   {

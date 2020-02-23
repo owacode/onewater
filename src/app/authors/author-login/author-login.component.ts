@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ModalFunctions } from '../../shared-functions/modal-functions';
 import { AuthService } from 'src/app/auth.service';
 import { InstructorService } from 'src/app/instructors/instructor-admin/instructor.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-author-login',
@@ -15,6 +16,9 @@ export class AuthorLoginComponent implements OnInit {
 
   user: FormGroup;
   loginuser: FormGroup;
+  resetpassform: FormGroup;
+  loginsubmitted: boolean = false;
+  registersubmitted: boolean = false;
 
   showregform() {
     this.modal.hideBtnLoader();
@@ -41,7 +45,7 @@ export class AuthorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
-  constructor(public auth: AuthorAuthService, public userauth: AuthService, public route:Router, public modal:ModalFunctions, public instructorauth: InstructorService) {
+  constructor(public http: HttpClient, public auth: AuthorAuthService, public userauth: AuthService, public route:Router, public modal:ModalFunctions, public instructorauth: InstructorService) {
 
   }
 
@@ -61,9 +65,11 @@ export class AuthorLoginComponent implements OnInit {
       password: new FormControl(null, { validators: [Validators.required] }),
     });
 
-  }
+    this.resetpassform = new FormGroup({
+      email: new FormControl(null, { validators: [Validators.required, Validators.email] })
+    });
 
-  registersubmitted: boolean = false;
+  }
 
   register() {
     this.registersubmitted = true;
@@ -95,7 +101,6 @@ export class AuthorLoginComponent implements OnInit {
     });
   }
 
-  loginsubmitted: boolean = false;
   login() {
     console.log(this.userauth.access_token,localStorage.getItem('instructor_email'))
     if(this.userauth.access_token != null || localStorage.getItem('instructor_email')) {
@@ -171,6 +176,21 @@ export class AuthorLoginComponent implements OnInit {
               this.route.navigate(['/onewaterblog/author-reg']);
             }
           })
+  }
+
+  resetpassword() {
+    console.log(this.resetpassform.value);
+    if(this.resetpassform.invalid){
+      console.log('invalid reset form');
+      this.modal.hideBtnLoader();
+      return;
+    }
+
+    this.http.post<{status: string, msg: string, result: any}>('https://onewater-blogapi.herokuapp.com/reset-password',this.resetpassform.value)
+    .subscribe(result=> {
+      console.log(result);
+      this.modal.hideBtnLoader();
+    })
   }
 
 }
