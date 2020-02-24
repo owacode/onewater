@@ -47,11 +47,19 @@ export class RecoverPasswordComponent implements OnInit {
       return;
     }
 
-    this.http.post<{status: string, msg: string, result: any}>('https://onewater-blogapi.herokuapp.com/update-password',this.resetpassword.value)
-    .subscribe(result=> {
-      console.log(result);
-      this.modal.hideBtnLoader();
-    })
+    if(this.decoded_token.platform == 'blog_author') {
+      this.http.post<{status: string, msg: string, result: any}>('https://onewater-blogapi.herokuapp.com/update-password',this.resetpassword.value)
+      .subscribe(result=> {
+        console.log(result);
+        this.modal.hideBtnLoader();
+      })
+    }else if(this.decoded_token.platform == 'instructor') {
+      this.http.post<{status: string, msg: string, result: any}>('https://onewater-instructor-api.herokuapp.com/update-password',this.resetpassword.value)
+      .subscribe(result=> {
+        console.log(result);
+        this.modal.hideBtnLoader();
+      })
+    }
 
   }
 

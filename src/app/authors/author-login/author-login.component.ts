@@ -19,6 +19,7 @@ export class AuthorLoginComponent implements OnInit {
   resetpassform: FormGroup;
   loginsubmitted: boolean = false;
   registersubmitted: boolean = false;
+  resetpasssubmitted: boolean = false;
 
   showregform() {
     this.modal.hideBtnLoader();
@@ -179,6 +180,7 @@ export class AuthorLoginComponent implements OnInit {
   }
 
   resetpassword() {
+    this.resetpasssubmitted = true;
     console.log(this.resetpassform.value);
     if(this.resetpassform.invalid){
       console.log('invalid reset form');

@@ -40,9 +40,12 @@ export class InstructorLoginComponent implements OnInit {
   }
 
   constructor(public http:HttpClient, public route: Router, public instructorservice: InstructorService, public authorservice: AuthorAuthService,public auth:AuthService , public modal : ModalFunctions) { }
-  user;
-  loginuser;
+  user: FormGroup;
+  loginuser: FormGroup;
+  resetpassform: FormGroup;
+  loginsubmitted: boolean = false;
   registersubmitted:boolean=false;
+  resetpasssubmitted: boolean = false;
 
   ngOnInit() {
     this.showregform();
@@ -56,6 +59,10 @@ export class InstructorLoginComponent implements OnInit {
     this.loginuser= new FormGroup({
       email:new FormControl(null,{validators:[Validators.required,Validators.email]}),
       password:new FormControl(null,{validators:[Validators.required, Validators.minLength(6)]}),
+    });
+
+    this.resetpassform = new FormGroup({
+      email: new FormControl(null, { validators: [Validators.required, Validators.email] })
     });
   }
 
@@ -98,7 +105,7 @@ export class InstructorLoginComponent implements OnInit {
       this.modal.openModal('#platformModal');
       return;
     }
-    this.registersubmitted=true;
+    this.loginsubmitted = true;
     console.log(this.loginuser.value);
     if(this.loginuser.invalid){
       this.modal.hideBtnLoader();
@@ -144,5 +151,20 @@ export class InstructorLoginComponent implements OnInit {
     })
   }
 
+  resetpassword() {
+    this.resetpasssubmitted = true;
+    console.log(this.resetpassform.value,'instructor');
+    if(this.resetpassform.invalid){
+      console.log('invalid reset form');
+      this.modal.hideBtnLoader();
+      return;
+    }
+
+    this.http.post<{status: string, msg: string, result: any}>('https://onewater-instructor-api.herokuapp.com/reset-password',this.resetpassform.value)
+    .subscribe(result=> {
+      console.log(result);
+      this.modal.hideBtnLoader();
+    })
+  }
 }
 

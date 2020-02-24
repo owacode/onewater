@@ -29,7 +29,7 @@
               formControlName="name"
             />
             <p
-           
+
             *ngIf="registersubmitted && user.get('name').invalid"
           >
             Name is required!
@@ -43,7 +43,7 @@
               formControlName="email"
             />
             <p
-           
+
             *ngIf="registersubmitted && user.get('email').invalid"
           >
             Please enter a valid email id!
@@ -59,7 +59,7 @@
                   formControlName="password"
                 />
                 <p
-                 
+
                   *ngIf="registersubmitted && user.get('password').invalid"
                 >
                 Password must have minimum 6 characters!
@@ -76,7 +76,7 @@
                   formControlName="cpassword"
                 />
                 <p
-               
+
                 *ngIf="registersubmitted && user.get('cpassword').invalid"
               >
               Confirm your password!
@@ -117,8 +117,8 @@
                       formControlName="email"
                     />
                     <p
-                     
-                      *ngIf="registersubmitted && loginuser.get('email').invalid"
+
+                      *ngIf="loginsubmitted && loginuser.get('email').invalid"
                     >
                     Please enter a valid emal id!
                     </p>
@@ -131,8 +131,8 @@
                       formControlName="password"
                     />
                     <p
-                   
-                    *ngIf="registersubmitted && loginuser.get('password').invalid"
+
+                    *ngIf="loginsubmitted && loginuser.get('password').invalid"
                   >
                   Please enter your password!
                   </p>
@@ -141,7 +141,7 @@
               >Forgot password?</a
             >
 
-                    <button 
+                    <button
                       class="vldform__button"
                       type="submit"
                       (click)="modal.showBtnLoader()"
@@ -159,7 +159,7 @@
                     <a class="vldform__signuplink" (click)="showregform()">Sign up</a>
                   </p>
                   <!--------------------FORFOR PASSWORD FORM-------------->
-          <form class="vldform vldrecpass">
+          <form class="vldform vldrecpass" [formGroup]="resetpassform" (submit)="resetpassword()">
             <h1>Password Recovery</h1>
             <input
               class="vldform__textbox"
@@ -167,7 +167,11 @@
               name="email"
               placeholder="Email"
               required
+              formControlName="email"
             />
+            <p *ngIf="resetpasssubmitted && resetpassform.get('email').invalid">
+          Please enter your email!
+          </p>
             <button
               class="vldform__button"
               type="submit"
