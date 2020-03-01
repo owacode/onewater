@@ -1,0 +1,130 @@
+ul {
+  margin: 0;
+}
+
+a {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.one-water-logo {
+  width: 160px;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+  margin: auto;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+.footer-text p {
+  width: 80%;
+  margin: auto;
+  color: white;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.phone-links {
+  display: block;
+}
+
+.phone-links span {
+  display: block;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.footer {
+  padding: 2rem;
+  padding-top: 35vh;
+  margin-top: 5vh;
+  background-image: url(/assets/img/footer-wave.png);
+  background-size: cover;
+  background-position-x: -2px;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+}
+
+.social-links {
+  padding: 1rem;
+}
+
+a {
+  margin: 0.5rem;
+}
+
+a i {
+  font-size: 1.4rem;
+  color: #8facfd;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+a i:hover {
+  color: #fff;
+}
+
+.site-links a {
+  text-transform: capitalize;
+}
+
+ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+ul li a {
+  color: #8facfd;
+  font-weight: 500;
+  letter-spacing: -0.02rem;
+  line-height: 1.7;
+}
+
+ul li a:hover {
+  color: #fff;
+  font-weight: 500;
+}
+
+.contact {
+  font-size: 0.95rem;
+}
+
+.contact li {
+  margin-bottom: 2rem;
+}
+
+.contact h6 {
+  font-size: 1rem;
+  margin: 0.2rem;
+  color: white;
+  font-weight: 500;
+}
+
+.contact i {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .footer {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .footer {
+    padding-top: 150px;
+  }
+}
+/*# sourceMappingURL=footer.component.css.map */

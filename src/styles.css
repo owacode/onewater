@@ -892,4 +892,8 @@ button:hover {
     font-size: 16px;
   }
 }
+
+.btn-loading-content {
+  display: none;
+}
 /*# sourceMappingURL=styles.css.map */

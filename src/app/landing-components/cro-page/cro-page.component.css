@@ -1,0 +1,326 @@
+h2 {
+  margin: 1rem auto 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 0;
+}
+
+.cover-photo {
+  height: 100vh;
+}
+
+.intro-content img {
+  width: 85%;
+}
+
+.wave-bg-inv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.wave-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.section-blue {
+  background: #092b86;
+  color: #fff;
+  position: relative;
+  padding-top: 100px;
+}
+
+.gradient-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-position: bottom center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-title {
+  min-height: 100vh;
+  margin-top: -100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+
+.page-title h1 {
+  font-size: 5.5rem;
+  letter-spacing: -0.3rem;
+  position: relative;
+  z-index: 10;
+  font-weight: 500;
+}
+
+.page-title h1,
+.page-title h3 {
+  color: #fff;
+}
+
+.page-title h3 {
+  max-width: 550px;
+}
+
+.half-width-text {
+  max-width: 600px;
+}
+
+.section-intro {
+  padding-top: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .cover-photo {
+    height: 70vh;
+  }
+  .page-title {
+    min-height: 70vh;
+    margin-top: -70vh;
+  }
+  .page-title h1 {
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: -0.25rem;
+  }
+  .page-title h3 {
+    margin: auto;
+    text-align: center;
+  }
+  .img-wrap {
+    text-align: center;
+  }
+  .img-wrap img {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .cover-photo {
+    height: 60vh;
+  }
+  .cover-photo .wave {
+    bottom: -55%;
+    background-position: center;
+  }
+  .page-title {
+    min-height: 60vh;
+    margin-top: -60vh;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .page-title h1 {
+    font-size: 3rem;
+    letter-spacing: -0.2rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page-title h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.15rem;
+  }
+}
+
+.cover-photo {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(0, 30, 199, 0.82)), to(rgba(13, 0, 212, 0.57))), url(/assets/img/landing/about-wave-bg.jpg);
+  background: linear-gradient(180deg, rgba(0, 30, 199, 0.82) 20%, rgba(13, 0, 212, 0.57) 100%), url(/assets/img/landing/about-wave-bg.jpg);
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.section-1 {
+  position: relative;
+  background: -webkit-gradient(linear, left bottom, left top, from(white), color-stop(75%, rgba(255, 255, 255, 0.514723)), to(white)), url(/assets/img/landing/water-bg.jpg);
+  background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0.514723) 75%, white 100%), url(/assets/img/landing/water-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 85%;
+  min-height: 100vh;
+  background-position: bottom right;
+}
+
+.gradient-bg {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(19%, white), color-stop(56%, rgba(255, 255, 255, 0.678)), to(white)), url(/assets/img/landing/about-intro-img.jpeg);
+  background-image: linear-gradient(0deg, white 19%, rgba(255, 255, 255, 0.678) 56%, white 100%), url(/assets/img/landing/about-intro-img.jpeg);
+}
+
+.half-width-text-right {
+  margin-left: auto;
+  max-width: 500px;
+}
+
+.section-team {
+  text-align: right;
+}
+
+.section-team img {
+  -webkit-filter: hue-rotate(-37deg);
+          filter: hue-rotate(-37deg);
+}
+
+.btn {
+  font-weight: 700;
+  padding: 12px 16px;
+  margin: auto;
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.blue-section-intro {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.blue-intro-img {
+  max-width: 700px;
+  margin: 3rem auto 0;
+}
+
+.section-2 {
+  position: relative;
+  z-index: 1;
+}
+
+.section-3 {
+  padding-bottom: 45vh;
+  margin-bottom: -45vh;
+}
+
+.img {
+  margin: auto;
+  max-width: 80%;
+  position: relative;
+}
+
+.img img {
+  z-index: 3;
+  position: relative;
+}
+
+@media screen and (max-width: 991px) {
+  .section-1 {
+    min-height: 70vh;
+  }
+  .section-team {
+    text-align: center;
+  }
+  .blue-intro-img {
+    max-width: 550px;
+    margin: auto;
+  }
+  .img {
+    text-align: center;
+  }
+  .img img {
+    max-width: 400px;
+  }
+  .section-2 h2, .section-2 p, .section-3 h2, .section-3 p {
+    text-align: center;
+  }
+  .blue-section-intro {
+    padding: 0 0 70px;
+  }
+  .intro-content h2 {
+    margin-top: 2rem;
+  }
+}
+
+.intro-content img {
+  width: 95%;
+}
+
+.top-auth-img {
+  text-align: center;
+  z-index: 5;
+  position: relative;
+}
+
+.top-auth-img img {
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  width: 140px;
+  height: 140px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 0.2rem;
+  border: 1.5px #fff solid;
+  margin: 1rem auto 2rem;
+  background: #052860;
+  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.54), 0px 3px 14px 7px rgba(0, 0, 0, 0.29);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.54), 0px 3px 14px 7px rgba(0, 0, 0, 0.29);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.top-auth-img img:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.author-name {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+blockquote {
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+blockquote p {
+  font-size: 1.2rem;
+  line-height: 2;
+  font-style: italic;
+  font-weight: 400;
+}
+
+blockquote i {
+  color: #fff;
+  position: absolute;
+  font-size: 5rem;
+  opacity: 0.15;
+  top: 0.5rem;
+  left: 0;
+}
+
+.outer-card {
+  max-width: 100%;
+  padding: 0.8rem;
+  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.49), 0 4px 6px -2px rgba(0, 0, 0, 0.76);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.49), 0 4px 6px -2px rgba(0, 0, 0, 0.76);
+}
+
+.two-card {
+  padding: 1rem 1.5rem;
+  background: #000239eb;
+}
+/*# sourceMappingURL=cro-page.component.css.map */
