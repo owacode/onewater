@@ -1,0 +1,71 @@
+@import '../about/about.component.scss';
+
+.intro-content{
+    img {
+        width: 95%;
+    }
+}
+
+
+  
+    .top-auth-img {
+      text-align: center;
+      z-index: 5;
+      position: relative;
+      img {
+        transition: 0.3s all ease-in-out;
+    width: 140px;
+    height: 140px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 0.2rem;
+    border: 1.5px #fff solid;
+    margin: 1rem auto 2rem;
+    background: #052860;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.54), 0px 3px 14px 7px rgba(0, 0, 0, 0.29);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+  
+      img:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.22);
+      }
+    }
+    .author-name {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+  
+
+  blockquote{
+    padding: 1.5rem 0;
+    position: relative;
+    p{
+      font-size: 1.2rem;
+    line-height: 2;
+    font-style: italic;
+    font-weight: 400;
+    }
+
+    i{
+      color: #fff;
+      position: absolute;
+      font-size: 5rem;
+      opacity: 0.15;
+      top: 0.5rem;
+      left: 0;
+    }
+  }
+
+  .outer-card{
+      max-width: 100%;
+      padding: 0.8rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.49), 0 4px 6px -2px rgba(0, 0, 0, 0.76);
+  }
+
+  .two-card{
+    padding: 1rem 1.5rem;
+    background: #000239eb;
+  }

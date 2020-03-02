@@ -206,6 +206,58 @@ section {
   padding: 50px 0 50vh;
   margin-bottom: -45vh;
 }
+
+.cro-section,.mayor-section{
+  background-size: cover;
+  background-repeat: no-repeat;
+  blockquote{
+    margin: 3rem 0;
+    position: relative;
+    p{
+      font-size: 1.2rem;
+    line-height: 2;
+    font-style: italic;
+    font-weight: 400;
+    }
+
+    i{
+      color: #fff;
+      position: absolute;
+      font-size: 5rem;
+      opacity: 0.15;
+      top: -2rem;
+    }
+  }
+}
+
+.mayor-section{
+  background-image: linear-gradient(to bottom, #092b86 2%, rgba(9, 43, 134, 1) 64%, #092b86 94%), url(/assets/img/landing/mayor-bg.jpg);
+  background-position: top right;
+  h1{
+    text-align: left;
+  }
+  blockquote{
+    margin: 4rem 0;
+
+    i{
+      left: 0;
+    }
+  }
+}
+.cro-section{
+  background-image: linear-gradient(to bottom, #092b86  2%, rgba(9, 43, 134, 1) 64%, #092b86 94%), url(/assets/img/landing/cro-bg.jpg);
+  background-position: top left;
+  text-align: right;
+  h1{
+    text-align: right;
+  }
+blockquote{
+  i{
+    right: 0;
+  }
+}
+}
+
 .donation-section {
   padding: 50px 0 100px;
   h4 {

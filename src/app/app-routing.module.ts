@@ -55,6 +55,10 @@ const routes: Routes = [
       {
         path: 'contact',
         loadChildren: './landing-components/contact/contact.module#ContactModule'
+      },
+      {
+        path: 'cro-page',
+        loadChildren: './landing-components/cro-page/cro-page.module#CroPageModule'
       }
     ]
   },

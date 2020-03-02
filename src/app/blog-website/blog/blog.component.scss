@@ -303,14 +303,6 @@ h2 {
   }
 }
 
-.ads {
-  .carousel-inner .carousel-item img {
-    border-radius: 12px;
-    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
-    width: 100%;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .landing-blogs .carousel-inner {
     margin-top: 0;
@@ -319,6 +311,7 @@ h2 {
     height: 55vh;
   }
 }
+
 @media screen and (max-width: 520px) {
   h2 {
     margin: 20px 0;
