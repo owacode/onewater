@@ -18,22 +18,6 @@
           <div class="dashboard-section basic-info-input">
             <h4><i data-feather="user-check"></i>Basic Info</h4>
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label"> Name</label>
-              <div class="col-sm-9">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Full Name"
-                  formControlName="author_name"
-                />
-                <div class="form-group" *ngIf=" form.get('author_name').invalid &&profilesubmit" >
-                  <p>Please enter your name!
-                  </p>
-              </div>
-              </div>
-
-            </div>
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label">Phone</label>
               <div class="col-sm-9">
                 <input
@@ -63,30 +47,17 @@
               </div>
 
             </div>
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Interests</label>
-              <div class="col-sm-9">
-                <textarea
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter your interests by hitting return/enter after each interest"
-                  formControlName="interest"
-                ></textarea>
-                <div class="row form-group" *ngIf="form.get('interest').invalid &&profilesubmit" >
-                  <p>Please enter your interests </p>
-              </div>
-              </div>
 
-            </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Bio</label>
               <div class="col-sm-9">
-                <textarea formControlName="author_desc" class="form-control" placeholder="Write something about yourself..."></textarea>
-                <div class="form-group" *ngIf="form.get('author_desc').invalid &&profilesubmit" >
-                  <p>Please enter description!</p>
+                <textarea formControlName="author_bio" class="form-control" placeholder="Write something about yourself..."></textarea>
+                <div class="form-group" *ngIf="form.get('author_bio').invalid &&profilesubmit" >
+                  <p>Please enter your Bio!</p>
               </div>
               </div>
             </div>
+
           </div>
             <div class="dashboard-section media-inputs">
             <h4><i data-feather="image"></i>Profile Photo</h4>
@@ -117,8 +88,8 @@
           </div>
           <div class="dashboard-section social-inputs">
             <h4><i data-feather="cast"></i>Social Networks</h4>
-            
-            
+
+
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Social Links</label>
               <div class="offset-sm-3 col-sm-9">

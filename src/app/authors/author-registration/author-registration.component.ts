@@ -21,8 +21,6 @@ export class AuthorRegistrationComponent implements OnInit {
   form: FormGroup;
   imagePreview;
   submited: boolean = false;
-  area = [];
-  temp = [];
   tempsus: Subscription;
   editableprofile;
   profilesubmit: boolean = false;
@@ -44,12 +42,8 @@ export class AuthorRegistrationComponent implements OnInit {
             author_name: this.editableprofile.name,
             location: this.editableprofile.location,
             author_image: this.editableprofile.image,
-            author_desc: this.editableprofile.about_author,
-            interest: this.editableprofile.interest_category,
             linkedin: this.editableprofile.linkedIn_id,
-            facebook: this.editableprofile.facebook_id,
             twitter: this.editableprofile.twitter_id,
-            instagram: this.editableprofile.instagram_id
           });
           this.imagePreview = this.editableprofile.image;
         });
@@ -59,8 +53,7 @@ export class AuthorRegistrationComponent implements OnInit {
       author_name: new FormControl(null, { validators: [Validators.required] }),
       location: new FormControl(null, { validators: [Validators.required] }),
       author_image: new FormControl(null, {validators: [Validators.required]}),
-      author_desc: new FormControl(null, { validators: [Validators.required] }),
-      interest: new FormControl(null, { validators: [Validators.required] }),
+      author_bio: new FormControl(null, {validators: [Validators.required]}),
       mobile: new FormControl(null, { validators: [Validators.required] }),
       linkedin: new FormControl(null),
       twitter: new FormControl(null)
@@ -69,6 +62,11 @@ export class AuthorRegistrationComponent implements OnInit {
 
   onImagePick(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
+    console.log(file);
+    console.log(file.type.includes('image'));
+    if(!file.type.includes('image')) {
+      return alert("Only image is supported");
+    }
     this.form.patchValue({ author_image: file });
     this.form.get("author_image").updateValueAndValidity();
     const filereader = new FileReader();
@@ -87,14 +85,12 @@ export class AuthorRegistrationComponent implements OnInit {
     }
 
     console.log(this.form.value);
-    this.area = this.form.value.interest.split("\n");
-    this.form.value.interest = this.area;
-    console.log(this.form.value, "sss");
     this.auth.authorRegistration(this.form.value).subscribe(result => {
       console.log(result, "author details registered successfully");
       this.modal.hideBtnLoader();
       this.form.reset();
       this.profilesubmit = false;
+      this.imagePreview=null;
       this.modal.openModal("#registerModal");
     });
   }

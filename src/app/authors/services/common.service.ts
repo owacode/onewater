@@ -1,10 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject } from "rxjs";
 import { AuthorAuthService } from "./author-auth.service";
-import * as $ from "jquery";
-import { XSRF_COOKIE_NAME } from "@angular/common/http/src/xsrf";
 
 @Injectable({
   providedIn: "root"
@@ -29,8 +26,6 @@ export class CommonService {
     data.append("image", value.image);
     data.append("desc", value.data);
     data.append("readtime", min.toString());
-    data.append("category", "Technology");
-    data.append("category", "Health");
     this.http
       .post<{ status: string; msg: string; result: any }>(
         "https://onewateracademy-blogapi.herokuapp.com/unapproved-blog",
@@ -39,6 +34,47 @@ export class CommonService {
       .subscribe(result => {
         console.log(result);
       });
+  }
+
+  addToSavedBlog(value) {
+    const data = new FormData();
+    data.append("title", value.title);
+    data.append("authorid", this.blogauth.authorapprovedid);
+    data.append("image", value.image);
+    data.append("desc", value.data);
+    return this.http
+      .post<{ status: string; msg: string; result: any }>(
+        "https://onewater-blogapi.herokuapp.com/save-blog",
+        data
+      );
+
+  }
+
+  updateToSavedBlog(value) {
+    const data = new FormData();
+    data.append("title", value.title);
+    data.append("authorid", this.blogauth.authorapprovedid);
+    data.append("desc", value.data);
+    return this.http
+      .patch<{ status: string; msg: string; result: any }>(
+        "https://onewater-blogapi.herokuapp.com/update-saved-blog",
+        data
+      );
+
+  }
+
+  updateToSavedBlogWithImage(value) {
+    const data = new FormData();
+    data.append("title", value.title);
+    data.append("authorid", this.blogauth.authorapprovedid);
+    data.append("desc", value.data);
+    data.append("image", value.image);
+    return this.http
+      .patch<{ status: string; msg: string; result: any }>(
+        "https://onewater-blogapi.herokuapp.com/updateimage-saved-blog",
+        data
+      );
+
   }
 
   addVideo(values) {
@@ -65,6 +101,14 @@ export class CommonService {
       "https://onewateracademy-blogapi.herokuapp.com/authorallblogs/" +
         this.blogauth.authorapprovedid
     );
+  }
+
+  getSavedBlog(id) {
+    return this.http
+      .get<{ status: string; msg: string; result: any }>(
+        "https://onewateracademy-blogapi.herokuapp.com/save-blog"
+      );
+
   }
 
   getPendingBlogs() {
@@ -98,6 +142,26 @@ export class CommonService {
     console.log(id, "jjj");
     return this.http.get<{ status: string; msg: string; result: any }>(
       "https://onewateracademy-blogapi.herokuapp.com/allblogs/" + id
+    );
+  }
+
+  deleteApproveBlog(mainid,approveid) {
+    const id = {
+      mainid : mainid,
+      approveid:approveid
+    }
+    return this.http.post<{ status: string; msg: string; result: any }>(
+      "http://localhost:3000/deleteapproveblog",id
+    );
+  }
+
+  deleteUnApproveBlog(mainid,unapproveid) {
+    const id = {
+      mainid : mainid,
+      unapproveid:unapproveid
+    }
+    return this.http.post<{ status: string; msg: string; result: any }>(
+      "http://localhost:3000/deleteunapproveblog",id
     );
   }
 }

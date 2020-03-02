@@ -8,7 +8,6 @@ import * as $ from 'jquery';
   providedIn:'root'
 })
 export class AuthorAuthService {
-  constructor(public http:HttpClient, public route: Router){}
   public authoremail = null;
   public authorid = null;
   public authorname = null;
@@ -19,6 +18,12 @@ export class AuthorAuthService {
   private token:string=null;
   public loggedinLitsener=new Subject<{status:boolean}>();
   public approvedLitsener=new Subject<{status:boolean}>();
+
+  constructor(public http:HttpClient, public route: Router){
+    this.authorid = localStorage.getItem('authorid');
+    this.authormainid = localStorage.getItem('authormainid');
+    console.log('hit',this.authorid,this.authormainid)
+  }
 
   login(values){
     const user={
@@ -104,19 +109,16 @@ approvedauthorLitsener(){
     author.append('name',localStorage.getItem('name'))
     author.append('email',localStorage.getItem('authoremail'))
     author.append('location',values.location)
-    author.append('author_image',values.author_image)
-    author.append('about_author',values.author_desc)
-    author.append('interest_category',values.interest);
+    author.append('image',values.author_image)
+    author.append('bio',values.author_bio)
     author.append('mobile',values.mobile);
-    author.append('facebook',values.facebook)
     author.append('linkedIn',values.linkedin)
     author.append('twitter',values.twitter)
-    author.append('instagram',values.instagram)
     author.append('id',this.authorid)
     author.append('mainid',this.authormainid)
 
     console.log(this.authormainid, this.authorid,'dwdw');
-    return this.http.post('https://onewateracademy-blogapi.herokuapp.com/update-authorprofile',author);
+    return this.http.post('http://localhost:3000/update-authorprofile',author);
 
   }
 
@@ -128,10 +130,8 @@ approvedauthorLitsener(){
     author.append('about_author',values.author_desc)
     author.append('interest_category',values.interest);
     author.append('mobile',values.mobile);
-    author.append('facebook',values.facebook)
     author.append('linkedIn',values.linkedin)
     author.append('twitter',values.twitter)
-    author.append('instagram',values.instagram)
     author.append('id',this.authorapprovedid)
     author.append('mainid',this.authormainid)
 

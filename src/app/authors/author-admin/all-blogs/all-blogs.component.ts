@@ -33,4 +33,20 @@ export class AllBlogsComponent implements OnInit {
    }
   }
 
+  deleteApproveBlog(mainid,approve_id) {
+    console.log(mainid,approve_id);
+    this.common.deleteApproveBlog(mainid,approve_id)
+    .subscribe(result=> {
+      console.log('approve blog deleted successfully');
+    })
+  }
+
+  deleteUnApproveBlog(mainid,unapprove_id) {
+    console.log(mainid,unapprove_id);
+    this.common.deleteUnApproveBlog(mainid,unapprove_id)
+    .subscribe(result=> {
+      console.log('unapprove blog deleted successfully');
+    })
+  }
+
 }

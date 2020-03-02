@@ -1,6 +1,6 @@
 <div class="overlay"></div>
 <div class="dashboard-content-wrapper dash-tab">
-  <form class="dashboard-form" [formGroup]="form" (submit)="submit()">
+  <form class="dashboard-form" [formGroup]="form">
     <div class="dashboard-section basic-info-input">
       <h2 class="heading"><i data-feather="plus"></i>Post new blog</h2>
       <div class="form-group row">
@@ -56,7 +56,8 @@
     </div>
     <div class="dashboard-section basic-info-input">
       <div class="form-group row">
-        <button class="button" type="submit">Save Changes</button>
+        <button (click)="savedblog()" class="button" type="button">Save Changes</button>
+        <button (click)="submit()" class="button" type="button">Post Blog</button>
       </div>
     </div>
   </form>
