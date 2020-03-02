@@ -1,6 +1,6 @@
 <div class="overlay"></div>
 <div class="dashboard-content-wrapper dash-tab">
-  <form class="dashboard-form">
+  <form class="dashboard-form" [formGroup]="form">
     <div class="dashboard-section basic-info-input">
       <h2 class="heading"><i data-feather="plus"></i>Edit Saved Blog</h2>
       <div class="form-group row">
@@ -42,7 +42,7 @@
               <div class="active">
                 <div class="upload-images">
                   <div class="pic">
-                    <img style="width: 120px;" src="https://images.pexels.com/photos/3706707/pexels-photo-3706707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                    <img style="width: 120px;" [src]="imagePreview" />
                   </div>
                 </div>
               </div>

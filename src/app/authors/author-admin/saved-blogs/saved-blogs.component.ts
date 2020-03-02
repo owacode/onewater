@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AuthorAuthService } from '../../services/author-auth.service';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-saved-blogs',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SavedBlogsComponent implements OnInit {
 
-  constructor() { }
+  savedblogs;
+  constructor(public route:ActivatedRoute, public commonservice: CommonService, public authservice: AuthorAuthService) { }
 
   ngOnInit() {
+      this.commonservice.getSavedBlog(this.authservice.authorapprovedid)
+      .subscribe(result=>{
+        console.log(result)
+        this.savedblogs=result.result;
+        console.log(this.savedblogs);
+      })
   }
 
 }

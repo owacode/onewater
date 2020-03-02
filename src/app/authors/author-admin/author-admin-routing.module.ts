@@ -13,7 +13,7 @@ const routes: Routes = [
       { path: 'edit-profile', loadChildren: './author-edit-profile/author-edit-profile.module#AuthorEditProfileModule' },
       { path: 'all-blogs', loadChildren: './all-blogs/all-blogs.module#AllBlogsModule' },
       { path: 'saved-blogs', loadChildren: './saved-blogs/saved-blogs.module#SavedBlogsModule' },
-      { path: 'edit-blog', loadChildren: './edit-saved-blogs/edit-saved-blogs.module#EditSavedBlogsModule' },
+      { path: 'edit-blog/:id', loadChildren: './edit-saved-blogs/edit-saved-blogs.module#EditSavedBlogsModule' },
       { path: 'approved-blogs', loadChildren: './approved-blogs/approved-blogs.module#ApprovedBlogsModule' },
       { path: 'pending-blogs', loadChildren: './pending-blogs/pending-blogs.module#PendingBlogsModule' },
       { path: 'post-video', loadChildren: './post-video/post-video.module#PostVideoModule' },
