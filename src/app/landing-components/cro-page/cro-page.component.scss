@@ -13,6 +13,45 @@
         width: 95%;
     }
 }
+
+.author-btn {
+  text-align: center;
+  margin: 30px 0 70px;
+  z-index: 10;
+  position: relative;
+
+  .reg-text {
+    padding: 75px 0;
+  }
+  background: #d5e7f2;
+  h3 {
+    text-align: center;
+    margin: 2rem auto;
+    color: #000c61;
+    font-weight: 600;
+  }
+  a {
+    text-align: center;
+    border-radius: 3px;
+    color: #000c61;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+  }
+  a:hover {
+    color: #fff;
+    background: #246df8;
+  }
+  img {
+    width: auto;
+    max-height: 220px;
+  }
+}
   
     .top-auth-img {
       text-align: center;

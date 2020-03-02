@@ -59,6 +59,10 @@ const routes: Routes = [
       {
         path: 'cro-page',
         loadChildren: './landing-components/cro-page/cro-page.module#CroPageModule'
+      },
+      {
+        path: 'mayor-page',
+        loadChildren: './landing-components/mayor-page/mayor-page.module#MayorPageModule'
       }
     ]
   },
@@ -102,6 +106,10 @@ const routes: Routes = [
       {
         path: 'mayor-login',
         loadChildren: './mayor/mayor-login/mayor-login.module#MayorLoginModule'
+      },
+      {
+        path: 'cro-login',
+        loadChildren: './cro/cro-login/cro-login.module#CroLoginModule'
       },
     ]
   },

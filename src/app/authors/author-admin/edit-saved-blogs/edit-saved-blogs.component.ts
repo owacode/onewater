@@ -19,18 +19,15 @@ export class EditSavedBlogsComponent implements OnInit {
   image: FormGroup;
   imagePreview;
   submited: boolean = false;
-  constructor( ) {
-  }
-
-  ngOnInit() {
-    Quill.register("modules/imageUpload", imageUpload);
-
-    this.form = new FormGroup({
-      title: new FormControl(null),
-      image: new FormControl(null),
-      data: new FormControl(null)
+  constructor(
+  ) {
+    this.image = new FormGroup({
+      image: new FormControl(null)
     });
   }
 
+  ngOnInit() {
+   
+  }
 
 }
