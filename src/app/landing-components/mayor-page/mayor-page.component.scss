@@ -1,0 +1,9 @@
+@import '../cro-page/cro-page.component.scss';
+
+.cover-photo {
+    background: linear-gradient(180deg, rgba(0, 71, 154, 0.82) 20%, rgba(1, 27, 186, 0.57) 100%), url(/assets/img/landing/mayor-top-bg.jpeg);
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

@@ -12,9 +12,9 @@
             placeholder="Title"
             formControlName="title"
           />
-          <p style="color: red;" *ngIf="submited && form.get('title').invalid">
+          <!-- <p style="color: red;" *ngIf="submited && form.get('title').invalid">
             Title is required!
-          </p>
+          </p> -->
         </div>
       </div>
 
@@ -29,14 +29,14 @@
                     style="display: none"
                     type="file"
                     #file
-                    (change)="onImagePick($event)"
+                    
                   />
-                  <button type="button" (click)="file.click()">
+                  <button type="button">
                     Update Image
                   </button>
-                  <p style="color: red;" *ngIf="submited && form.get('image').invalid">
+                  <!-- <p style="color: red;" *ngIf="submited && form.get('image').invalid">
                     Image is required!
-                  </p>
+                  </p> -->
                 </div>
               </div>
               <div class="active">
@@ -51,13 +51,13 @@
         </div>
       </div>
       <div class="form-group row">
-        <quill-editor [modules]="config" formControlName="data"></quill-editor>
+        <quill-editor formControlName="data"></quill-editor>
       </div>
     </div>
     <div class="dashboard-section basic-info-input">
       <div class="form-group row">
-        <button (click)="savedblog()" class="button" type="button">Save Changes</button>
-        <button (click)="submit()" class="button" type="button">Post Blog</button>
+        <button  class="button" type="button">Save Changes</button>
+        <button  class="button" type="button">Post Blog</button>
       </div>
     </div>
   </form>
@@ -67,34 +67,4 @@
   </div>
 </div>
 
-<div class="modal fade" id="blogModal" role="dialog" #blogModal>
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <div class="modal-head">
-        <button
-          type="button"
-          class="close"
-          (click)="modal.closeModal(blogModal)"
-        >
-          &times;
-        </button>
-      </div>
-      <div class="modal-body">
-        <img
-          src="assets/img/modals/success.svg
-         "
-          alt=""
-          style="width: 35%;"
-        />
-        <h2>Blog posted succesfully.</h2>
-      </div>
-      <button
-        type="button"
-        class="btn btn-default"
-        (click)="modal.closeModal(blogModal)"
-      >
-        OK
-      </button>
-    </div>
-  </div>
-</div>
+

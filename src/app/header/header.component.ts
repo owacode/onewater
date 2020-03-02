@@ -51,6 +51,7 @@ export class HeaderComponent implements OnInit {
         if (
           event['url'] == '/onewaterblog/author-login' ||
           event['url'] == '/onewaterblog/mayor-login' ||
+          event['url'] == '/onewaterblog/cro-login' ||
           event['url'] == '/onewaterjobs/emp-login' ||
           event['url'].includes('/onewaterblog/category') ||
           event['url'].includes('/o-wow/video-category') ||
