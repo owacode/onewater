@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CroPageComponent } from './cro-page.component';
 import { Route, RouterModule } from '@angular/router';
 import { OwlModule } from 'ngx-owl-carousel';
+import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
 
 const routes: Route[]=[
   {
@@ -16,6 +17,7 @@ const routes: Route[]=[
   imports: [
     CommonModule,
     OwlModule,
+    CommonPipesModule,
     RouterModule.forChild(routes)
   ]
 })

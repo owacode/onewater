@@ -108,6 +108,8 @@ left: 1.2rem;
     img{
       height: 165px;
       border-radius: 5px;
+      object-fit: cover;
+    object-position: center;
     }
     .blog-caption {
       width: 100%;

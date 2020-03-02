@@ -1,0 +1,475 @@
+<div class="overlay"></div>
+
+<section id="login">
+  <!-- <div class="wave-bg"></div> -->
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 left-content">
+        <h2>
+          OneWater Blog <br>
+          <strong>Mayor</strong>
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, exercitationem?
+        </p>
+        <img src="assets/img/author-login.png" alt="" class="login-img" />
+      </div>
+      <div class="col-lg-6">
+        <div class="form-box">
+          <!--------------LOGIN FORM------------------->
+          <form
+            class="vldform vldauth"
+          >
+            <h1>mayor Login</h1>
+
+            <input
+              formControlName="email"
+              class="vldform__textbox"
+              type="text"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <p
+
+              *ngIf="loginsubmitted && loginuser.get('email').invalid"
+            >
+              Please enter a valid email id!
+            </p>
+
+            <input
+              formControlName="password"
+              class="vldform__textbox"
+              type="password"
+              name="pass"
+              placeholder="Password"
+              required
+            />
+            <p
+
+              *ngIf="loginsubmitted && loginuser.get('password').invalid"
+            >
+            Please enter your password!
+            </p>
+
+            <a class="vldform__recoverypassword" (click)="showrecoveryform()"
+              >Forgot password?</a
+            >
+
+            <button
+              class="vldform__button"
+              type="submit"
+              (click)="modal.showBtnLoader()"
+            >
+              <span class="btn-loading-content">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+              </span>
+              <span class="btn-default-content">
+                Login
+              </span>
+            </button>
+          </form>
+          <p class="vldform__signup" id="login-text">
+            New here?
+            <a class="vldform__signuplink" (click)="showregform()">Sign up</a>
+          </p>
+
+          <!--------------SIGNUP FORM------------------->
+          <form class="vldform vldreg" (submit)="register()" [formGroup]="user">
+            <h1>Mayor registration</h1>
+            <input
+              formControlName="author_name"
+              class="vldform__textbox"
+              type="text"
+              name="name"
+              placeholder="Author Name"
+              required
+            />
+            <p
+              *ngIf="registersubmitted && user.get('author_name').invalid"
+            >
+              Name is required!
+            </p>
+
+            <input
+              formControlName="author_email"
+              class="vldform__textbox"
+              type="email"
+              name="email"
+              placeholder="Author Email"
+              required
+            />
+            <p
+
+              *ngIf="registersubmitted && user.get('author_email').invalid"
+            >
+              Please enter a valid email id!
+            </p>
+
+            <div class="row">
+              <div class="col-md-6">
+                <input
+                  formControlName="password"
+                  class="vldform__textbox halfwidth"
+                  type="password"
+                  name="pass"
+                  placeholder="Password"
+                  required
+                />
+                <p
+
+                  *ngIf="registersubmitted && user.get('password').invalid"
+                >
+                  Password must have minimum 6 characters!
+                </p>
+              </div>
+              <div class="col-md-6">
+                <input
+                  formControlName="cpassword"
+                  class="vldform__textbox halfwidth"
+                  type="password"
+                  name="pass2"
+                  placeholder="Confirm Password"
+                  required
+                />
+                <p
+
+                  *ngIf="registersubmitted && user.get('cpassword').invalid"
+                >
+                 Confirm your password!
+                </p>
+              </div>
+            </div>
+
+            <button
+              class="vldform__button"
+              type="submit"
+              (click)="modal.showBtnLoader()"
+            >
+              <span class="btn-loading-content">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+              </span>
+              <span class="btn-default-content">
+                Sign up
+              </span>
+            </button>
+          </form>
+          <p class="vldform__signup" id="signup-text">
+            Already a member ?
+            <a (click)="showauthform()">Log in</a>
+          </p>
+
+
+          <!--------------PASSWORD RECOVERY FORM------------------->
+          <form class="vldform vldrecpass" [formGroup]="resetpassform" (submit)="resetpassword()">
+            <h1>Password Recovery</h1>
+            <input
+              class="vldform__textbox"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              formControlName="email"
+            />
+            <p *ngIf="resetpasssubmitted && resetpassform.get('email').invalid">
+              Please enter your email!
+            </p>
+            <button
+              class="vldform__button"
+              type="submit"
+              (click)="modal.showBtnLoader()"
+            >
+              <span class="btn-loading-content">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+              </span>
+              <span class="btn-default-content">
+                Submit
+              </span>
+            </button>
+            <br /><br />
+            <a (click)="showauthform()">Back to login</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!---------MODALS------------>
+
+<!-- First Signup Modal -->
+<div class="modal modal-animate" id="signupModal" role="dialog" #signupModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(signupModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/mail.png
+       "
+          alt=""
+        />
+        <h2>
+          Please verify the email by clicking the link you will receive in your
+          inbox.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(signupModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Login before email verification Modal -->
+<div class="modal modal-animate" id="loginModal" role="dialog" #loginModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(loginModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/verify-mail.jpg
+         "
+          alt=""
+        />
+        <h2>Please verify your Email to login.</h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(loginModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!----mail already exist modal--->
+<div
+  class="modal modal-animate"
+  id="mailexistModal"
+  role="dialog"
+  #mailexistModal
+>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(mailexistModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/mail-sent.jpg
+         "
+          alt=""
+        />
+        <h2>
+          This Email ID is already in use on our platform. Please check your
+          inbox if you have not verified your Email ID
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(mailexistModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--profile pending for approval-->
+<div class="modal modal-animate" id="pendingModal" role="dialog" #pendingModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(pendingModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/img/modals/pending-profile.png" alt="" />
+        <h2>
+          Your profile has been sent to admin for approval. Please wait for the
+          confirmation.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(pendingModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--wrong credentials in login-->
+<div class="modal modal-animate" id="invalidModal" role="dialog" #invalidModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(invalidModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/img/modals/invalid-details.png" alt="" />
+        <h2>
+          You have entered wrong email or password. Please try again.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(invalidModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--wrong password modal-->
+<div class="modal modal-animate" id="passModal" role="dialog" #passModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(passModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/img/modals/wrong.svg" style="width: 25%;" alt="" />
+        <h2>
+          Password and Confirm Password must have same value. Please try again.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(passModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!--forgot password modal-->
+<div class="modal modal-animate" id="pendingModal" role="dialog" #forgotpassModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(forgotpassModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/img/modals/pending-profile.png" alt="" />
+        <h2>
+         Password Recovery link has been sent to your register email id. Please check it to set new password.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(forgotpassModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--logout from other platforms modal-->
+<div class="modal modal-animate" id="platformModal" role="dialog" #platformModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(platformModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/img/modals/platform.png" alt="" />
+        <h2>
+          Please logout from other platforms to use this service.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(platformModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+

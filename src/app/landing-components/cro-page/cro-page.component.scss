@@ -1,12 +1,18 @@
 @import '../about/about.component.scss';
+//@import '../../../commonstyles/blog-global-styles.scss';
 
+.cover-photo{
+  background: linear-gradient(180deg, rgba(0, 101, 199, 0.82) 20%, rgba(0, 59, 212, 0.57) 100%), url(/assets/img/landing/cro-head-bg.jpeg);
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .intro-content{
     img {
         width: 95%;
     }
 }
-
-
   
     .top-auth-img {
       text-align: center;
@@ -41,7 +47,9 @@
 
   blockquote{
     padding: 1.5rem 0;
+    margin: 0;
     position: relative;
+    
     p{
       font-size: 1.2rem;
     line-height: 2;
@@ -68,4 +76,72 @@
   .two-card{
     padding: 1rem 1.5rem;
     background: #000239eb;
+  }
+
+  .section-3 .item{
+    padding: 0 3rem;
+  }
+
+  .testi-content{
+    .top-auth-img{
+      display: flex;
+    margin-left: auto;
+    align-items: center;
+    flex-direction: row-reverse;
+      h6{
+        margin: 0;
+      }
+    img{
+      width: 75px;
+    height: 75px;
+    margin: 0 1rem;
+    }
+    }
+  }
+
+  .section-blue{
+    background:linear-gradient(180deg, rgba(1, 23, 45, 0.82) 20%, rgba(0, 73, 143, 0.86) 100%), url(/assets/img/landing/cro-blue-bg.jpeg);
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .cro-blogs{
+    .outer-card{
+      .two-card{
+        color: #fff;
+      }
+    }
+  }
+
+  .featured-post {
+    padding: 2rem 0;
+    .outer-card {
+      padding: 0.5rem;
+    }
+    .two-card {
+      padding: 0.4rem;
+      background-color: #000239d4;
+      border-radius: 7px;
+      img {
+        border-radius: 5px;
+      }
+      .blog-meta-data{
+        margin: 0;
+      }
+      .blog-caption {
+        background: url(/assets/img/blue-wave-small.png);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-position: top;
+        padding: 0.5rem;
+          min-height: 175px;
+        .read,
+        .likes {
+          font-weight: 500;
+        }
+      }
+    }
   }

@@ -98,7 +98,11 @@ const routes: Routes = [
       {
         path: 'author-login',
         loadChildren: './authors/author-login/author-login.module#AuthorLoginModule'
-      }
+      },
+      {
+        path: 'mayor-login',
+        loadChildren: './mayor/mayor-login/mayor-login.module#MayorLoginModule'
+      },
     ]
   },
   //-----------Author Registeration page -----------------//

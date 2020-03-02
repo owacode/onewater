@@ -12,6 +12,7 @@ import { ModalFunctions } from "src/app/shared-functions/modal-functions";
   templateUrl: "./post-blog.component.html",
   styleUrls: ["./post-blog.component.scss"]
 })
+
 export class PostBlogComponent implements OnInit {
   htmlStr;
   form: FormGroup;

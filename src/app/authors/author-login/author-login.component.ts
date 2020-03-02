@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './author-login.component.html',
   styleUrls: ['./author-login.component.scss']
 })
+
 export class AuthorLoginComponent implements OnInit {
 
   user: FormGroup;
