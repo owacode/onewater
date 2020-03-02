@@ -75,7 +75,7 @@
           </p>
 
           <!--------------SIGNUP FORM------------------->
-          <form class="vldform vldreg" (submit)="register()" [formGroup]="user">
+          <form class="vldform vldreg" [formGroup]="user">
             <h1>Mayor registration</h1>
             <input
               formControlName="author_name"
@@ -161,7 +161,7 @@
 
 
           <!--------------PASSWORD RECOVERY FORM------------------->
-          <form class="vldform vldrecpass" [formGroup]="resetpassform" (submit)="resetpassword()">
+          <form class="vldform vldrecpass" [formGroup]="resetpassform">
             <h1>Password Recovery</h1>
             <input
               class="vldform__textbox"
