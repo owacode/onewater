@@ -25,22 +25,22 @@ class="dashboard-content-wrapper dash-tab"
             </div>
           </div> -->
         </div><div class="row">
-  <div class="col-lg-4 col-xl-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="col-lg-4 col-xl-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let blog of savedblogs">
     <div class="activity-list">
       <div class="">
           <img
-            src="https://images.pexels.com/photos/3706707/pexels-photo-3706707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            src="{{blog.image}}"
             class="img-fluid"
             alt=""
           />
         </div>
     <div class="content">
-      <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, animi?</h5>
-      <span class="time">Date Added: 24, Febuary, 2020</span>
+      <h5>{{blog.title}}</h5>
+      <span class="time">Date Added: {{ blog.date_added | date:'MMM d, y' }} </span>
       <br>
     </div>
     <div class="close-activity buttons">
-      <a class="button" [routerLink]="['/author/edit-blog']">Edit</a>
+      <a class="button" [routerLink]="['/author/edit-blog/',blog._id]">Edit</a>
     </div>
   </div>
   </div>

@@ -51,22 +51,23 @@ export class CommonService {
   }
 
   updateToSavedBlog(value) {
-    const data = new FormData();
-    data.append("title", value.title);
-    data.append("authorid", this.blogauth.authorapprovedid);
-    data.append("desc", value.data);
+    const saveblog = {
+      id:value.id,
+      title: value.title,
+      desc: value.data
+    }
     return this.http
       .patch<{ status: string; msg: string; result: any }>(
         "https://onewater-blogapi.herokuapp.com/update-saved-blog",
-        data
+        saveblog
       );
 
   }
 
   updateToSavedBlogWithImage(value) {
     const data = new FormData();
+    data.append("id", value.id);
     data.append("title", value.title);
-    data.append("authorid", this.blogauth.authorapprovedid);
     data.append("desc", value.data);
     data.append("image", value.image);
     return this.http
@@ -106,9 +107,16 @@ export class CommonService {
   getSavedBlog(id) {
     return this.http
       .get<{ status: string; msg: string; result: any }>(
-        "https://onewateracademy-blogapi.herokuapp.com/save-blog"
+        "https://onewater-blogapi.herokuapp.com/savedblogs/"+id
       );
 
+  }
+
+  getSingleSavedBlog(id) {
+    return this.http
+    .get<{ status: string; msg: string; result: any }>(
+      "https://onewater-blogapi.herokuapp.com/singlesavedblog/"+id
+    );
   }
 
   getPendingBlogs() {
