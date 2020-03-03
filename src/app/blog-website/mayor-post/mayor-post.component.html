@@ -80,25 +80,25 @@ Here’s to better selfies, more emoji and a quick pause when you need it! Check
 </p>
         </div>
         <div class="blog-options">
-          <div class="like-btn" *ngIf="!liked">
+          <div class="like-btn">
             <h6>Like :</h6>
             <a (click)="likeblog()">
               <i class="fa fa-heart" aria-hidden="true"></i>
             </a>
             <span>liked!</span>
           </div>
-          <div class="like-btn" *ngIf="liked">
+          <!-- <div class="like-btn" >
             <h6>Liked</h6>
             <a class="press">
               <i class="fa fa-heart" aria-hidden="true"></i>
             </a>
             <span>liked!</span>
-          </div>
+          </div> -->
           <div class="share-btn">
             <h6>Share on :</h6>
-            <button><fb-like url="{{ url }}"></fb-like></button>
-            <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
-            <button><linkedin-share url="{{ url }}"></linkedin-share></button>
+            <button><fb-like ></fb-like></button>
+            <button><tweet ></tweet></button>
+            <button><linkedin-share></linkedin-share></button>
           </div>
         </div>
 

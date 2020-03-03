@@ -24,4 +24,4 @@ const routes: Route[]=[
   ]
 })
 
-export class EditSavedBlogsModule { }
+export class CmEditSavedBlogsModule { }

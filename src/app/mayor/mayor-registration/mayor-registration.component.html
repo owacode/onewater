@@ -1,5 +1,5 @@
 <div class="overlay"></div>
-<button class="button logout-button" type="button" data-feather="user-check" (click)="logout()"><i class="fa fa-power-off"></i> Logout</button>
+<button class="button logout-button" type="button" data-feather="user-check"  routerLink="onewaterblog/mayor-login"><i class="fa fa-power-off"></i> Logout</button>
 <a routerLink="/home" class="reg-logo">
   <img src="assets/img/ow-logo1.png" alt="">
   </a>
@@ -16,7 +16,7 @@
         </h1>
 
       <div class="dashboard-content-wrapper dash-tab">
-        <form class="dashboard-form" (submit)="submit()" [formGroup]="form">
+        <form class="dashboard-form" [formGroup]="form">
 
           <div class="dashboard-section basic-info-input">
             <h4><i data-feather="user-check"></i>Basic Info</h4>
@@ -71,8 +71,8 @@
                 <div class="input-group image-upload-input">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
-                        <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
-                      <button type="button" (click)="file.click()">Select Image</button>
+                        <input style="display: none"  type="file" #file   >
+                      <button type="button" >Select Image</button>
                     </div>
 
                   </div>

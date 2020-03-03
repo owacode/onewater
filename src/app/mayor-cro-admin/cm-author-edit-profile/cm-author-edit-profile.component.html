@@ -2,7 +2,7 @@
 <div
 class="dashboard-content-wrapper dash-tab"
 >
-<form class="dashboard-form"  >
+<form class="dashboard-form">
 
   <div class="dashboard-section basic-info-input">
     <h4><i data-feather="user-check"></i>Basic Info</h4>
@@ -16,26 +16,12 @@ class="dashboard-content-wrapper dash-tab"
           formControlName="author_name"
         />
       </div>
-      <div class="row form-group" *ngIf=" form.get('author_name').invalid &&profilesubmit" >
+      <!-- <div class="row form-group" *ngIf=" form.get('author_name').invalid &&profilesubmit" >
         <p>
             Enter Name </p>
-    </div>
-    </div>
-    <!-- <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Phone</label>
-      <div class="col-sm-9">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="+55 123 4563 4643"
-          formControlName="mobile"
-        />
-      </div>
-      <div class="row form-group" *ngIf=" form.get('mobile').invalid &&profilesubmit" >
-        <p>
-            Enter Your Mobile No. </p>
-    </div>
     </div> -->
+    </div>
+ 
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Address</label>
       <div class="col-sm-9">
@@ -46,10 +32,10 @@ class="dashboard-content-wrapper dash-tab"
           formControlName="location"
         />
       </div>
-      <div class="row form-group" *ngIf=" form.get('location').invalid &&profilesubmit" >
+      <!-- <div class="row form-group" *ngIf=" form.get('location').invalid &&profilesubmit" >
         <p>
             Enter Your Location </p>
-    </div>
+    </div> -->
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Interests</label>
@@ -61,20 +47,20 @@ class="dashboard-content-wrapper dash-tab"
           formControlName="interest"
         ></textarea>
       </div>
-      <div class="row form-group" *ngIf=" form.get('interest').invalid &&profilesubmit" >
+      <!-- <div class="row form-group" *ngIf=" form.get('interest').invalid &&profilesubmit" >
         <p>
             Enter Your Intrest </p>
-    </div>
+    </div> -->
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Bio</label>
       <div class="col-sm-9">
         <textarea formControlName="author_desc" class="form-control" placeholder="Write something about yourself..."></textarea>
       </div>
-      <div class="row form-group" *ngIf=" form.get('author_desc').invalid &&profilesubmit" >
+      <!-- <div class="row form-group" *ngIf=" form.get('author_desc').invalid &&profilesubmit" >
         <p>
             Enter the Author Description </p>
-    </div>
+    </div> -->
     </div>
   </div>
   <div class="dashboard-section social-inputs">
@@ -125,7 +111,7 @@ class="dashboard-content-wrapper dash-tab"
     </div>
    
   </div>
-  <div  class="dashboard-section basic-info-input">
+  <div class="dashboard-section basic-info-input">
     <div class="form-group row">
       <label class="col-sm-3 col-form-label"></label>
       <div class="col-sm-9">
