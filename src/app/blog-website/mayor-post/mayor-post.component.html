@@ -1,0 +1,156 @@
+<!-- BEGIN Blog Post -->
+<div
+  class="cover-photo"
+>
+  <div class="gradient-image"></div>
+  <div class="wave"></div>
+</div>
+<div class="blog-post-wrapper">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class=" post-top">
+        <h1>
+          New music controls, emoji and more features dropping for Pixel
+        </h1>
+
+        <img src="https://images.pexels.com/photos/3626734/pexels-photo-3626734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        <div class="article-meta">
+          <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Hnet-image.gif" alt="Author" />
+          <div class="meta-data">
+            <span class="meta-author"
+              >By 
+              <a [routerLink]="['/onewaterblog/mayorprofile/']">Mayor</a></span
+            ><br />
+            <span class="meta-date"
+              >  Lorem ipsum dolor sit amet...</span
+            >
+          </div>
+        </div>
+
+        <p class="teaser top-teaser">
+          <strong>Category</strong> :
+          <span> Water  </span>
+          <span> Water Management </span>
+        </p>
+        <div class="di">
+          <p>
+          A few months ago, Pixel owners got a few new, helpful features in our first feature drop. Beginning today, even more updates and new experiences will begin rolling out to Pixel users. 
+
+Help when you need it
+You can already use Motion Sense to skip forward or go back to a previous song. Now, if you have a Pixel 4, you can also pause and resume music with a tapping gesture above the phone. So you can easily pause music when you're having a conversation, without even picking up your phone.
+
+12_Control_Your_Music_EN_1.gif
+When you need help the most, your Pixel will be there too. Last October we launched the Personal Safety app on Pixel 4 for US users, which uses the phones’ sensors to quickly detect if you’ve been in a severe car crash1, and checks with you to see if you need emergency services. For those who need 911, you can request help via a voice command or with a single tap. Now, the feature is rolling out to Pixel users in Australia (000) and the UK (999). If you’re unresponsive, your Pixel will share relevant details, like location info, with emergency responders.
+
+
+
+14_Get_Help_Calling_913_After_Car_Crash_EN.gif
+We’re also rolling out some helpful features to more Pixel devices. Now Live Caption, the technology that automatically captions media playing on your phone, will begin rolling out to Pixel 2 owners. 
+
+More fun with photos and video 
+New AR effects you can use live on your Duo video call with friends make chatting more visually stimulating. These effects change based on your facial expressions, and move with you around the screen. Duo calls now come with a whole new layer of fun. 
+
+Duomoji-marketing-P4XL.gif
+Selfies on Pixel 4 are getting better, too. Your front-facing camera can now create images with depth, which improves Portrait Blur and color pop, and lets you create 3D photos for Facebook.
+
+Emoji on Pixel will now be a more customizable and inclusive thanks to the emoji 12.1 update, with 169 new emoji to represent a wider variation of gender and skin tones, as well as more couple combinations to better reflect the world around us. 
+
+New Inclusive Emoji 12.1 Update
+A more powerful power button
+Pixel is making it faster to pick the right card when using Google Pay. Just press and hold the power button to swipe through your debit and credit cards, event tickets, boarding passes or access anything else in Google Pay. This feature will be available to users in the US, UK, Canada, Australia, France, Germany, Spain, Italy, Ireland, Taiwan and Singapore. If you have Pixel 4, you can also quickly access emergency contacts and medical information. 
+
+10_Quickly_Access_Payments_Emergency_Info_EN (1).gif
+
+Getting on a flight is also getting easier. Simply take a screenshot of a boarding pass barcode and tap on the notification to add it to Google Pay. You will receive real-time flight updates, and on the day of your flight, you can just press the power button to pull up your boarding pass.  This feature will be rolling out gradually in all countries with Google Pay during March on Pixel 3, 3a and 4.
+
+Customize your Pixel’s look and feel
+A number of system-level advancements will give Pixel users more control over the look and feel of their devices.
+
+You may know that Dark theme looks great and helps save battery power. Starting today, Dark theme gets even more helpful and flexible in switching from light to dark background, with the ability to schedule Dark theme based on local sunrise and sunset times. 
+
+13_DarkMode_EN.gif
+Have you forgotten to silence your phone when you get to work? Pixel gives you the ability to automatically enable certain rules based on WiFi network or physical location. You can now set up a rule to automatically silence your ringtone when you connect to your office WiFi, or go on Do Not Disturb when you walk in the front door of your house to focus on the people and things that matter most. 
+
+Pixel 4 users are also getting some unique updates to the way they engage with the content on their phone. Improved long press options in Pixel’s launcher will get more and faster help from your apps. There’s also an update to Adaptive brightness, which now temporarily increases screen brightness to make reading content easier when in extremely bright ambient lighting, like direct sunlight. Check out more options for customizing your screen options.
+
+Here’s to better selfies, more emoji and a quick pause when you need it! Check out our support page for more information on the new features, and look out for more helpful features dropping for Pixel users soon. 
+
+ 1 Not available in all languages or countries. Car crash detection may not detect all accidents. High-impact activities may trigger calls to emergency services. This feature is dependent upon network connectivity and other factors and may not be reliable for emergency communications or available in all areas. For country and language availability and more information see g.co/pixel/carcrashdetection
+</p>
+        </div>
+        <div class="blog-options">
+          <div class="like-btn" *ngIf="!liked">
+            <h6>Like :</h6>
+            <a (click)="likeblog()">
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </a>
+            <span>liked!</span>
+          </div>
+          <div class="like-btn" *ngIf="liked">
+            <h6>Liked</h6>
+            <a class="press">
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </a>
+            <span>liked!</span>
+          </div>
+          <div class="share-btn">
+            <h6>Share on :</h6>
+            <button><fb-like url="{{ url }}"></fb-like></button>
+            <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
+            <button><linkedin-share url="{{ url }}"></linkedin-share></button>
+          </div>
+        </div>
+
+        <div class="meta-bio author-box">
+          <a [routerLink]="['/onewaterblog/mayorprofile/']">
+            <img src="https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+          </a>
+          <div class="bio-text">
+            <p class="bio-shl">Author</p>
+            <p class="bio-hl">
+              <a [routerLink]="['/onewaterblog/mayorprofile/']">Mayor</a>
+            </p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, in debitis minima ad officiis similique, accusamus ipsam nostrum quo saepe delectus eveniet! Dignissimos rem harum inventore cupiditate et similique quas....</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="related-blogs">
+        <h2>More From The Mayor</h2>
+        <owl-carousel
+          [options]="carouselOptions"
+          [carouselClasses]="['owl-theme', 'row', 'sliding']"
+        >
+          <div class="item">
+            <div class="outer-card">
+              <div class="outer-overlay"></div>
+              <div class="two-card">
+                <img src="https://images.pexels.com/photos/1547729/pexels-photo-1547729.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+                <div class="blog-caption">
+                  <a [routerLink]="['/onewaterblog/mayor-blogpost']">
+                    <h5>Lorem, ipsum dolor sit amet...</h5>
+                  </a>
+                  <div class="blog-meta-data">
+                    <div class="author">By Mayor</div>
+                    <div class="likes">
+                      <i class="fa fa-heart"></i>
+                      <span 
+                        >22 likes</span
+                      >
+                    </div>
+                    <div class="read">
+                      7 mins read
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </owl-carousel>
+      </div>
+    </div>
+  
+  </div>
+</div>
+</div>

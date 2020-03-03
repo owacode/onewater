@@ -211,6 +211,48 @@ export class BlogComponent implements OnInit {
     document.querySelector(".subcategories-card")['style'].display = "none";
   }
 
+
+  mayorBlogs = {
+    margin: 25,
+    nav: true,
+    dots: false,
+    stagePadding: 30,
+    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      768: {
+        items: 2,
+        stagePadding: 50
+      },
+     1000: {
+        items: 3,
+      }
+    }
+  }
+  croBlogs = {
+    margin: 25,
+    nav: true,
+    dots: false,
+    stagePadding: 30,
+    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      768: {
+        items: 2,
+        stagePadding: 50
+      },
+     1000: {
+        items: 3,
+      }
+    }
+  }
+
   //owl carousel settings for featured blog cards 
 
   carouselOptions = {

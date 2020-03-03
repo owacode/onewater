@@ -22,7 +22,7 @@
               }}</a></span
             ><br />
             <span class="meta-date"
-              >{{ author?.about_author | slice: 0:70 }}....</span
+              >{{ author?.about_author | shorten:35 }}....</span
             >
           </div>
         </div>
@@ -67,7 +67,7 @@
                 author?.name | titlecase
               }}</a>
             </p>
-            <p>{{ author?.about_author | slice: 0:80 }}...</p>
+            <p>{{ author?.about_author | shorten:35 }}...</p>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@
                 <img src="{{ blog?.image }}" alt="" />
                 <div class="blog-caption">
                   <a [routerLink]="['/onewaterblog/blogpost', blog?._id]">
-                    <h5>{{ blog.title | slice: 0:30 }}..</h5>
+                    <h5>{{ blog.title | shorten:35 }}..</h5>
                   </a>
                   <div class="blog-meta-data">
                     <div class="author">By {{ author?.name | titlecase }}</div>

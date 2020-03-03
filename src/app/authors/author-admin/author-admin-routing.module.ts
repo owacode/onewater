@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthorAdminComponent } from './author-admin.component';
 import { AuthorDashboardComponent } from './author-dashboard/author-dashboard.component';
+
 const routes: Routes = [
   {
     path: '',

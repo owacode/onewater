@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './edit-saved-blogs.component.html',
   styleUrls: ['./edit-saved-blogs.component.scss']
 })
+
 export class EditSavedBlogsComponent implements OnInit {
 
   htmlStr;

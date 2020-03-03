@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './blog-details.component.html',
   styleUrls: ['./blog-details.component.scss']
 })
+
 export class BlogDetailsComponent implements OnInit {
 
   blog;

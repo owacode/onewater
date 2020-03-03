@@ -88,17 +88,35 @@ const routes: Routes = [
         // canActivate: [Authguard]
       },
       {
+        path: 'mayor-blogpost',
+        loadChildren: './blog-website/mayor-post/mayor-post.module#MayorPostModule',
+        // canActivate: [Authguard]
+      },
+      {
+        path: 'cro-blogpost',
+        loadChildren: './blog-website/cro-post/cro-post.module#CroPostModule',
+        // canActivate: [Authguard]
+      },
+      {
         path: 'authorprofile/:id',
         loadChildren: './blog-website/author-page/author-page.module#AuthorPageModule'
+      },
+      {
+        path: 'mayorprofile',
+        loadChildren: './blog-website/mayor-profile/mayor-profile.module#MayorProfileModule'
+      },
+      {
+        path: 'croprofile',
+        loadChildren: './blog-website/cro-profile/cro-profile.module#CroProfileModule'
       },
       {
         path: 'category',
         loadChildren: './blog-website/category/category.module#CategoryModule'
       },
-      {
-        path: 'profile',
-        loadChildren: './blog-website/profile/profile.module#ProfileModule'
-      },
+      // {
+      //   path: 'profile',
+      //   loadChildren: './blog-website/profile/profile.module#ProfileModule'
+      // },
       {
         path: 'author-login',
         loadChildren: './authors/author-login/author-login.module#AuthorLoginModule'
@@ -119,11 +137,30 @@ const routes: Routes = [
     loadChildren: './authors/author-registration/author-registration.module#AuthorRegistrationModule'
   },
 
+  //-----------CRO Registeration page -----------------//
+  {
+    path: 'onewaterblog/cro-reg',
+    loadChildren: './cro/cro-registration/cro-registration.module#CroRegistrationModule'
+  },
+
+   //-----------Mayor Registeration page -----------------//
+   {
+    path: 'onewaterblog/mayor-reg',
+    loadChildren: './mayor/mayor-registration/mayor-registration.module#MayorRegistrationModule'
+  },
+
   //-----------AUTHOR ADMIN PANEL---------------//
 
   {
     path: 'author',
     loadChildren: './authors/author-admin/author-admin.module#AuthorAdminModule'
+  },
+
+  //-----------CRO/MAYOR AUTHOR ADMIN PANEL---------------//
+
+  {
+    path: 'cm-author',
+    loadChildren: './mayor-cro-admin/mayor-cro-admin.module#MayorCroAdminModule'
   },
 
   //-----------JOB PAGES ROUTING---------------//

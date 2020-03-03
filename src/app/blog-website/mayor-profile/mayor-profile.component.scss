@@ -1,0 +1,36 @@
+@import '../author-page/author-page.component.scss';
+
+.dark-card-container{
+
+    .outer-card {
+      padding: 0.35rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.49), 0 4px 6px -2px rgba(0, 0, 0, 0.76);
+    }
+    .two-card {
+      padding: 0.4rem;
+      background-color: #000239d4;
+      border-radius: 7px;
+      color: #fff;
+    
+      img {
+        border-radius: 5px;
+      }
+      .blog-meta-data{
+        margin: 0;
+      }
+      .blog-caption {
+
+        a h5{
+            color: #fff;
+          }
+
+        background: rgba(8, 2, 97, 0.836);
+        padding: 0.3rem;
+          min-height: 175px;
+        .read,
+        .likes {
+          font-weight: 500;
+        }
+      }
+    }
+}

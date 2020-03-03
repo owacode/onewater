@@ -1,0 +1,176 @@
+<div class="overlay"></div>
+<button class="button logout-button" type="button" data-feather="user-check" (click)="logout()"><i class="fa fa-power-off"></i> Logout</button>
+<a routerLink="/home" class="reg-logo">
+  <img src="assets/img/ow-logo1.png" alt="">
+  </a>
+<section class="emp-registration">
+    <div class="container">
+      <h1 *ngIf="!submited">
+        Hello! Welcome to <span>OneWater Blogs.</span> <br> 
+        Complete and submit the form below to get started.
+      </h1>
+
+      <h1 *ngIf="submited">
+          Hello! welcome to <span> OneWater Blog.</span> <br>
+          Your details have been registred. Please wait until your profile gets verified!
+        </h1>
+
+      <div class="dashboard-content-wrapper dash-tab">
+        <form class="dashboard-form" (submit)="submit()" [formGroup]="form">
+
+          <div class="dashboard-section basic-info-input">
+            <h4><i data-feather="user-check"></i>Basic Info</h4>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Phone</label>
+              <div class="col-sm-9">
+                <input
+                  type="tel"
+                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                  class="form-control"
+                  placeholder="Enter your mobile number"
+                  formControlName="mobile"
+                />
+                <div class="form-group" *ngIf=" form.get('mobile').invalid &&profilesubmit" >
+                  <p>Please enter your phone number!</p>
+              </div>
+              </div>
+
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Address</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your location"
+                  formControlName="location"
+                />
+                <div class="form-group" *ngIf=" form.get('location').invalid &&profilesubmit" >
+                  <p>Please enter your location!</p>
+              </div>
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Bio</label>
+              <div class="col-sm-9">
+                <textarea formControlName="author_bio" class="form-control" placeholder="Write something about yourself..."></textarea>
+                <div class="form-group" *ngIf="form.get('author_bio').invalid &&profilesubmit" >
+                  <p>Please enter your Bio!</p>
+              </div>
+              </div>
+            </div>
+
+          </div>
+            <div class="dashboard-section media-inputs">
+            <h4><i data-feather="image"></i>Profile Photo</h4>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Upload photo</label>
+              <div class="col-sm-9">
+                <div class="input-group image-upload-input">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
+                      <button type="button" (click)="file.click()">Select Image</button>
+                    </div>
+
+                  </div>
+                  <div class="active">
+                    <div class="upload-images">
+                      <div class="pic" *ngIf="imagePreview!='' && imagePreview">
+                          <img style="width: 120px;" [src]="imagePreview">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group" *ngIf=" form.get('author_image').invalid &&profilesubmit" >
+                  <p>Please select profile picture!</p>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-section social-inputs">
+            <h4><i data-feather="cast"></i>Social Networks</h4>
+
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Social Links</label>
+              <div class="offset-sm-3 col-sm-9">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-twitter"></i>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Twitter profile url"
+                    formControlName="twitter"
+                  />
+
+                </div>
+                <!-- <div class="form-group" *ngIf=" form.get('twitter').invalid &&profilesubmit" >
+                  <p>Enter your Twitter profile url!</p>
+              </div> -->
+              </div>
+            </div>
+            <div class="form-group row">
+             <div class="offset-sm-3 col-sm-9">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-linkedin"></i>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Linkedin profile url"
+                    formControlName="linkedin"
+                  />
+
+                </div>
+                <!-- <div class="row form-group" *ngIf=" form.get('linkedin').invalid &&profilesubmit" >
+                  <p>Enter your Linkedin profile url!</p>
+              </div> -->
+              </div>
+              </div>
+          </div>
+          <div class="dashboard-section basic-info-input">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                <button class="button" type="submit" (click)="modal.showBtnLoader()">
+                  <span class="btn-loading-content">
+                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+                   </span>
+                   <span class="btn-default-content">
+                    Submit
+                   </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+<app-footer></app-footer>
+
+  <div class="modal fade" id="registerModal" role="dialog" #registerModal>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+      <div class="modal-head">
+          <button type="button" class="close" data-dismiss="modal" (click)="modal.closeModal(registerModal)">&times;</button>
+      </div>
+        <div class="modal-body">
+         <img src="assets/img/modals/register.jpg
+         " alt="">
+         <h2>Your profile has been submitted for review. We will get back to you in 24 hrs.</h2>
+        </div>
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal.closeModal(registerModal)">OK</button>
+      </div>
+    </div>
+</div>

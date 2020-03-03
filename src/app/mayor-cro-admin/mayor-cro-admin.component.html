@@ -1,0 +1,83 @@
+<div class="filter-btn">
+  <a class="button"><i data-feather="list"></i> Options</a>
+</div>
+<div class=" no-gliters">
+  <div class="row no-gliters">
+    <div class="col">
+      <div class="dashboard-container">
+      <div class="dashboard-tabs-wrap">
+          <router-outlet></router-outlet>
+      </div>
+        <div class="dashboard-sidebar">
+          <div class="logo">
+            <img src="/assets/img/ow-logo-white.png" alt="" />
+          </div>
+          <div class="sidebar-header">
+            <h4>Author Dashboard <br> 
+                Mayor/CRO
+            </h4>
+          </div>
+          <div class="company-info">
+            <div class="thumb">
+              <img
+                src="https://images.unsplash.com/photo-1559933240-941267a02c9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+            <div class="company-body">
+              <h5>Hi, John</h5>
+            </div>
+          </div>
+
+          <div class="dashboard-menu">
+            <ul>
+              <li routerLinkActive="activetab" [routerLinkActiveOptions]="{ exact: true }">
+                <i class="fa fa-bar-chart"></i
+                ><a [routerLink]="['./']">Dashboard</a>
+              </li>
+              <li routerLinkActive="activetab">
+                <i class="fa fa-pencil-square"></i
+                ><a [routerLink]="['./cm-all-blogs']">All Blogs</a>
+              </li>
+              <li routerLinkActive="activetab">
+                <i class="fa fa-check"></i
+                ><a [routerLink]="['./cm-approved-blogs']">Approved Blogs</a>
+              </li>
+              <li routerLinkActive="activetab">
+                <i class="fa fa-clock-o"></i
+                ><a [routerLink]="['./cm-pending-blogs']">Pending Blogs</a>
+              </li>
+              <li routerLinkActive="activetab">
+                <i class="fa fa-clock-o"></i
+                ><a [routerLink]="['./cm-saved-blogs']">Saved Blogs</a>
+              </li>
+              <li routerLinkActive="activetab">
+                  <i class="fa fa-bars"></i
+                  ><a [routerLink]="['./cm-videos']">All Videos</a>
+                </li>
+              <li routerLinkActive="activetab">
+                <i class="fa fa-plus-square"></i
+                ><a [routerLink]="['./cm-post-blog']">Post New Blog</a>
+              </li>
+              <li routerLinkActive="activetab">
+                <i class="fa fa-video-camera"></i
+                ><a [routerLink]="['./cm-post-video']">Post New Video</a>
+              </li>
+              <li routerLinkActive="activetab">
+                <i class="fa fa-user"></i
+                ><a [routerLink]="['./cm-edit-profile']">Edit Profile</a>
+              </li>
+            </ul>
+            <ul class="delete">
+              <li>
+                <i class="fa fa-power-off"></i
+                ><a routerLink="/onewaterblog">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
