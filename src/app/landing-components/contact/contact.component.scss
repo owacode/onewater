@@ -1,19 +1,28 @@
 @import '../landingpage-common.scss';
 @import '../../form-styles.scss';
+@import '../../modal-styles.scss';
 
 .cover-photo{
-    background: linear-gradient(180deg, rgba(0, 30, 199, 0.82) 20%, rgba(13, 0, 212, 0.57) 100%), url(/assets/img/landing/contact-bg.jpeg);
+    background: linear-gradient(180deg, rgba(0, 70, 216, 0.78) 20%, rgba(0, 106, 255, 0.83) 100%), url(/assets/img/landing/contact-bg.jpeg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80vh;
+    height: 90vh;
   }
 
   .page-title{
-      margin-top: -90vh;
-      min-height: 80vh;
+      margin-top: -100vh;
+      min-height: 90vh;
   }
+
+  @media all and (min-width:991px){
+    .page-title{
+        h1{
+            font-size: 4.5rem;
+        }
+    }
+}
   
   @media all and (max-width:576px){
       .intro-content{

@@ -13,3 +13,19 @@
   background-repeat: no-repeat;
 }
 
+.signup-logo{
+  position: fixed;
+  z-index: 1000;
+  top: 30px;
+  left: 50px;
+  img{
+    filter: brightness(0) invert(1);
+    width: 120px;
+  }
+}
+.left-content{
+  text-align: center;
+}
+#login h2 {
+  text-align: center;
+}

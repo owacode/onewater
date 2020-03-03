@@ -270,8 +270,20 @@ margin: 1rem;}
 
 }
 
+/*shared styles*/
   
 .btn-loading-content{
   display: none;
+}
+
+.reg-logo{
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 500;
+  img{
+    width: 100px;
+  }
+
 }
 

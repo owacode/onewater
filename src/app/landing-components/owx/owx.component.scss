@@ -9,6 +9,7 @@
     .heading {
         h1{
             text-align: right;
+            font-size: 3.5rem;
         }
         p{
             float: right;
@@ -18,6 +19,15 @@
     }
 }
 
+.feature-card {
+    border: 2px solid #fff;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .owx-hero-img{
     transform: rotateY(180deg);
     width: 75%;
@@ -25,9 +35,6 @@
     z-index: 10;
 }
 
-.feature-middle{
-   transform: translateY(-65%);
-}
 
 .vision-section{
     background: linear-gradient(180deg, #092b86 2%, #17399741 71%, #2044a4 ), url(/assets/img/landing/owx-vision-bg.png);
@@ -79,9 +86,12 @@
     }
 }
 
+
 .features-section .col-md-3 {
     padding: 0 0.5em;
 }
+
+
 
     .hero-section{
         .heading {

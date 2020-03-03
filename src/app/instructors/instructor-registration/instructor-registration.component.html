@@ -1,4 +1,7 @@
 <div class="overlay"></div>
+<a routerLink="/home" class="reg-logo">
+<img src="assets/img/ow-logo1.png" alt="">
+</a>
 <button
   class="button logout-button"
   type="button"
@@ -10,14 +13,12 @@
 <section class="emp-registration">
   <div class="container">
     <h1 *ngIf="!submited">
-      Hello! Welcome to <span> OneWater Academy</span> <br />
-      Fill up the form below and get started!
+      Hello! Welcome to <span>OneWater Academy.</span> <br> 
+      Complete and submit the form below to get started.
     </h1>
 
     <h1 *ngIf="submited">
-      Hello! welcome to <span> OneWater</span> <br />
-      Your details have been registred. Please wait until your profile gets
-      verified!
+      Hello! welcome to <span>OneWater Academy.</span> <br> Your form has been received and is being processed. Please wait until your profile is ready.
     </h1>
 
     <div class="dashboard-content-wrapper dash-tab">

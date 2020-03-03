@@ -8,10 +8,12 @@
   <div class="container">
     <div class="landing-text">
       <h2 class="platform-heading">
-        O-Wow
+        O-WOW
+        
+        
       </h2>
       <p>
-        OneWater one world talks.
+        OneWater talks and presentations.
       </p>
     </div>
 
@@ -39,9 +41,9 @@
     <div class="col-md-7 align-self-center">
       <div class="reg-text">
         <h3>
-          Want to write blogs?
+          Spark important conversations and inspire others. 
           <br />
-          Register yourself as author here.
+          Be a OneWater Blog Author.
         </h3>
         <a routerLink="/onewaterblog/author-login">Register as author</a>
       </div>
@@ -150,6 +152,7 @@
           </div>
         </a>
       </div>
+
       <div class="col-md-3 col-6 col-sm-3">
         <a
           [routerLink]="['/o-wow/video-category']"
@@ -168,6 +171,7 @@
           </div>
         </a>
       </div>
+
       <div class="col-md-3 col-6 col-sm-3">
         <a
           [routerLink]="['/o-wow/video-category']"
@@ -186,6 +190,7 @@
           </div>
         </a>
       </div>
+
       <div class="col-md-3 col-6 col-sm-3">
         <a
           [routerLink]="['/o-wow/video-category']"
@@ -223,6 +228,7 @@
           </div>
         </a>
       </div>
+
       <div class="col-md-3 col-6 col-sm-3">
         <a
           [routerLink]="['/o-wow/video-category']"
@@ -236,7 +242,7 @@
               <img src="assets/img/icons/finance.svg" alt="" />
             </div>
             <h6 class="text-center my-2">
-              Management and Finance
+              Management & Finance
             </h6>
           </div>
         </a>
@@ -321,6 +327,7 @@
             </a>
           </div>
         </div>
+        
         <div class="my-container">
           <h2>Wastewater</h2>
           <owl-carousel *ngIf="wastewater.length >=1"
@@ -375,6 +382,7 @@
             </a>
           </div>
         </div>
+
         <div class="my-container">
           <h2>Storm Water</h2>
           <owl-carousel *ngIf="stormwater.length >=1"
@@ -431,7 +439,7 @@
         </div>
 
         <div class="my-container">
-          <h2>Innovation Research</h2>
+          <h2>Innovation & Research</h2>
           <owl-carousel *ngIf="innovationresearch.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"

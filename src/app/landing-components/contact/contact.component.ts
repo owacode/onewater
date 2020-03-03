@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient, public modal: ModalFunctions) { }
   user;
   submitted:boolean=false;
 
@@ -27,12 +28,15 @@ export class ContactComponent implements OnInit {
     console.log(this.user.value);
     if(this.user.invalid) {
       console.log("error in contact form filing");
+      this.modal.hideBtnLoader();
       return;
     }
     this.http.post<{status: any, msg: any, result:any}>('https://onewater-auth.herokuapp.com/contact',this.user.value)
     .subscribe(result=> {
       console.log(result);
-      alert(result.msg)
+      this.modal.hideBtnLoader();
+     // alert(result.msg)
+     this.modal.openModal("#successModal");
     })
   }
 

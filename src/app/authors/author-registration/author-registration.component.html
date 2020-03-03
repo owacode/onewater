@@ -1,10 +1,13 @@
 <div class="overlay"></div>
 <button class="button logout-button" type="button" data-feather="user-check" (click)="logout()"><i class="fa fa-power-off"></i> Logout</button>
+<a routerLink="/home" class="reg-logo">
+  <img src="assets/img/ow-logo1.png" alt="">
+  </a>
 <section class="emp-registration">
     <div class="container">
       <h1 *ngIf="!submited">
-        Hello! welcome to <span> OneWater Blog.</span> <br>
-        Fill up the form below and get started!
+        Hello! Welcome to <span>OneWater Blogs.</span> <br> 
+        Complete and submit the form below to get started.
       </h1>
 
       <h1 *ngIf="submited">

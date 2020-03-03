@@ -34,7 +34,7 @@ export class CategoryComponent implements OnInit {
           'subimg': 'assets/img/icons/drink.svg'
         },
         {
-          'subname': 'Water Treatment & Opreations',
+          'subname': 'Water Treatment & Operations',
           'sname': 'watertreatment',
           'subimg': 'assets/img/icons/treatment.svg'
         },
