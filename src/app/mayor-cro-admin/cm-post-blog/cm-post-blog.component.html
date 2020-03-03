@@ -29,7 +29,6 @@
                     style="display: none"
                     type="file"
                     #file
-                    (change)="onImagePick($event)"
                   />
                   <button type="button" (click)="file.click()">
                     Select Image
@@ -41,9 +40,9 @@
               </div>
               <div class="active">
                 <div class="upload-images">
-                  <div class="pic" *ngIf="imagePreview != '' && imagePreview">
+                  <!-- <div class="pic" *ngIf="imagePreview != '' && imagePreview">
                     <img style="width: 120px;" [src]="imagePreview" />
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
