@@ -293,19 +293,19 @@ export class BlogComponent implements OnInit {
         stagePadding: 10,
       },
       420: {
-        items: 2,
+        items: 1,
         nav: true
       },
       800: {
-        items: 3,
+        items: 1,
         nav: true
       },
       991: {
-        items: 3,
+        items: 1,
         nav: true
       },
       1200: {
-        items: 4,
+        items: 1,
         nav: true
       }
     }
