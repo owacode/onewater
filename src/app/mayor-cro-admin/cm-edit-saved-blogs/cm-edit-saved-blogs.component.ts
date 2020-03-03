@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-saved-blogs',
-  templateUrl: './edit-saved-blogs.component.html',
-  styleUrls: ['./edit-saved-blogs.component.scss']
+  templateUrl: './cm-edit-saved-blogs.component.html',
+  styleUrls: ['./cm-edit-saved-blogs.component.scss']
 })
 export class EditSavedBlogsComponent implements OnInit {
 

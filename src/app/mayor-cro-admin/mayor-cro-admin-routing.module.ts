@@ -18,7 +18,7 @@ const routes: Routes = [
       { path: 'cm-post-video', loadChildren: './cm-post-video/cm-post-video.module#CmPostVideoModule' },
       { path: 'cm-edit-profile', loadChildren: './cm-author-edit-profile/cm-author-edit-profile.module#CmAuthorEditProfileModule' },
       { path: 'cm-blog-details', loadChildren: './cm-blog-details/cm-blog-details.module#CmBlogDetailsModule' },
-      { path: 'cm-edit-blog', loadChildren: './edit-saved-blogs/edit-saved-blogs.module#EditSavedBlogsModule' },
+      { path: 'cm-edit-blog', loadChildren: './cm-edit-saved-blogs/cm-edit-saved-blogs.module#CmEditSavedBlogsModule' },
     ]
   }
 ];

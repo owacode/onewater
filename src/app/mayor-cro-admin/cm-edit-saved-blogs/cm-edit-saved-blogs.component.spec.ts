@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditSavedBlogsComponent } from './edit-saved-blogs.component';
+import { EditSavedBlogsComponent } from './cm-edit-saved-blogs.component';
 
 describe('EditSavedBlogsComponent', () => {
   let component: EditSavedBlogsComponent;
