@@ -46,11 +46,15 @@
 .btn{
   font-weight: 700;
   padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #0000003b;
   margin: auto;
   text-transform: capitalize;
 }
 .btn:hover{
 color: #fff;
+background-color: #101010;
+border: 1.5px solid #101010;
 }
 .blue-section-intro {
   padding: 70px 0;
