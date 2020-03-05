@@ -29,6 +29,13 @@ export class PostBlogComponent implements OnInit {
     });
   }
 
+  showAddMsg(){
+    document.querySelector(".saved-text")["style"].display = "block";
+    setTimeout(() => {
+      document.querySelector('.saved-text')["style"].display = "none";
+  },2000);
+  }
+
   config = {
     imageUpload: {
       upload: file => {
@@ -78,6 +85,8 @@ export class PostBlogComponent implements OnInit {
   savedblog() {
     console.log('save blog hit');
     this.submited = true;
+    
+
     if (this.form.invalid) {
       console.log("invalid form for saved post blog");
       return;
@@ -87,6 +96,8 @@ export class PostBlogComponent implements OnInit {
     this.htmlStr = this.form.value.data;
     this.common.addToSavedBlog(this.form.value).subscribe(result => {
       console.log(result);
+      this.showAddMsg();
+      //alert(result.msg);
       this.form.reset();
       this.submited = false;
     });
@@ -99,11 +110,12 @@ export class PostBlogComponent implements OnInit {
       return;
     }
     console.log("hit");
+    this.submited = false;
+    this.modal.openModal("#blogModal");
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addBlog(this.form.value);
     this.form.reset();
-    this.submited = false;
-    this.modal.openModal("#blogModal");
+   
   }
 }

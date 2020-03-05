@@ -37,7 +37,8 @@ export class AllBlogsComponent implements OnInit {
     console.log(mainid,approve_id);
     this.common.deleteApproveBlog(mainid,approve_id)
     .subscribe(result=> {
-      console.log('approve blog deleted successfully');
+      console.log('approve blog deleted successfully',result);
+      alert("Blog deleted")
     })
   }
 
@@ -45,7 +46,8 @@ export class AllBlogsComponent implements OnInit {
     console.log(mainid,unapprove_id);
     this.common.deleteUnApproveBlog(mainid,unapprove_id)
     .subscribe(result=> {
-      console.log('unapprove blog deleted successfully');
+      console.log('unapprove blog deleted successfully',result);
+      alert("Blog deleted")
     })
   }
 

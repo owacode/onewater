@@ -40,9 +40,9 @@
       <div class="author-contact">
         <h3>Also available at :</h3>
         <div class="social-media">
-          <a href={{author?.linkedIn_id}} target="
+          <a *ngIf="author.linkedIn_id!='null'" href={{author?.linkedIn_id}} target="
           _blank"><i class="fa fa-linkedin"></i></a>
-          <a href={{author?.twitter_id}} target="_blank">  <i class="fa fa-twitter"></i></a>
+          <a *ngIf="author.twitter_id!!='null'" href={{author?.twitter_id}} target="_blank">  <i class="fa fa-twitter"></i></a>
           <!-- <a href={{author?.instagram_id}} target="_blank">  <i class="fa fa-instagram"></i></a>
           <a href={{author?.facebook_id}} target="_blank">  <i class="fa fa-facebook"></i></a> -->
         </div>

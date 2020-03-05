@@ -55,13 +55,20 @@
       </div>
     </div>
     <div class="dashboard-section">
-      <div class="form-group row justify-content-between">
-        <button (click)="savedblog()" class="button" type="button">Save Changes</button>
-        <button (click)="submit()" class="button" type="button">Post Blog</button>
+      <div class="form-group row justify-content-between align-items-center">
+        <div class="col-md-3">
+          <button (click)="savedblog()" class="button" type="button">Save Changes</button>
+        </div>
+        <div class="col-md-4">
+        <div class="saved-text">
+          Your blog have been saved!
+        </div>
+        </div>
+        <div class="col-md-3">
+          <button (click)="submit()" class="button" type="button">Post Blog</button>
+        </div>
       </div>
-      <!-- <div class="saved-text">
-
-      </div> -->
+       
     </div>
   </form>
   <h2 class="text-center my-3">Blog Preview</h2>

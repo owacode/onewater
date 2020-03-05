@@ -331,3 +331,22 @@ margin: 1rem;}
   }
 }
 
+.saved-text{
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 700;
+  display: none;
+  animation: pop_up 3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes pop_up{
+  0%{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  20%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

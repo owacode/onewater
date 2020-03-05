@@ -28,7 +28,6 @@ export class AuthorEditProfileComponent implements OnInit {
       author_name:new FormControl(null,{validators:[Validators.required]}),
       location:new FormControl(null,{validators:[Validators.required]}),
       author_desc:new FormControl(null),
-      interest:new FormControl(null,{validators:[Validators.required]}),
       
       linkedin:new FormControl(null,{validators:[Validators.required]}),
       twitter:new FormControl(null,{validators:[Validators.required]}),
@@ -41,8 +40,7 @@ export class AuthorEditProfileComponent implements OnInit {
       console.log(this.editableprofile,'dwwd')
      this.form.patchValue({author_name:this.editableprofile.name,
       location:this.editableprofile.location,
-        author_desc:this.editableprofile.about_author,
-        interest:this.editableprofile.interest_category,
+      author_desc:this.editableprofile.bio,
         linkedin:this.editableprofile.linkedIn_id,
         twitter:this.editableprofile.twitter_id})
     })
