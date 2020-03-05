@@ -161,12 +161,10 @@ const routes: Routes = [
   },
 
   //-----------CRO/MAYOR AUTHOR ADMIN PANEL---------------//
-
-  // {
-  //   path: 'cm-author',
-  //   loadChildren: './mayor-cro-admin/mayor-cro-admin.module#MayorCroAdminModule'
-  // },
-
+  {
+    path: 'mayor',
+    loadChildren: './mayor/mayor-admin/mayor-admin.module#MayorAdminModule'
+  },
   //-----------JOB PAGES ROUTING---------------//
   {
     path: 'onewaterjobs',

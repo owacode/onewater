@@ -11,5 +11,5 @@ import { MayorAdminRoutingModule } from './mayor-admin-routing.module';
     MayorAdminRoutingModule
   ]
 })
-export class MayorCroAdminModule { }
+export class MayorAdminModule { }
 

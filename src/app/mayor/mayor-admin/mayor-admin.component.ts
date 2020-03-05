@@ -7,6 +7,7 @@ import * as $ from "jquery";
   templateUrl: './mayor-admin.component.html',
   styleUrls: ['./mayor-admin.component.scss']
 })
+
 export class MayorAdminComponent implements OnInit {
 
   constructor() { }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MayorCroAdminComponent } from './mayor-cro-admin.component';
+import { MayorAdminComponent } from './mayor-admin.component';
 
-describe('MayorCroAdminComponent', () => {
-  let component: MayorCroAdminComponent;
-  let fixture: ComponentFixture<MayorCroAdminComponent>;
+describe('MayorAdminComponent', () => {
+  let component: MayorAdminComponent;
+  let fixture: ComponentFixture<MayorAdminComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MayorCroAdminComponent ]
+      declarations: [ MayorAdminComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MayorCroAdminComponent);
+    fixture = TestBed.createComponent(MayorAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
