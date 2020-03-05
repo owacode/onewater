@@ -29,14 +29,14 @@
                     style="display: none"
                     type="file"
                     #file
-                    
+                    (change)="onImagePick($event)"
                   />
-                  <button type="button">
+                  <button type="button" (click)="file.click()">
                     Update Image
                   </button>
-                  <!-- <p style="color: red;" *ngIf="submited && form.get('image').invalid">
+                  <p style="color: red;" *ngIf="submited && form.get('image').invalid">
                     Image is required!
-                  </p> -->
+                  </p>
                 </div>
               </div>
               <div class="active">
@@ -56,8 +56,8 @@
     </div>
     <div class="dashboard-section basic-info-input">
       <div class="form-group row">
-        <button  class="button" type="button">Save Changes</button>
-        <button  class="button" type="button">Post Blog</button>
+        <button (click)="savedblog()" class="button" type="button">Save Changes</button>
+        <button (click)="submit()" class="button" type="button">Post Blog</button>
       </div>
     </div>
   </form>

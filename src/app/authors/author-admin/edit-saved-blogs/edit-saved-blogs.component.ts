@@ -59,18 +59,19 @@ export class EditSavedBlogsComponent implements OnInit {
   }
 
   onImagePick(event: Event) {
-    this.editimage = true;
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({ image: file });
     this.form.get("image").updateValueAndValidity();
     const filereader = new FileReader();
     filereader.onload = () => {
       this.imagePreview = filereader.result;
+      this.editimage = true;
     };
     filereader.readAsDataURL(file);
   }
 
   savedblog() {
+    console.log('saved hit')
     this.submited = true;
     if (this.form.invalid) {
       console.log("invalid form for saved post blog");
@@ -104,7 +105,8 @@ export class EditSavedBlogsComponent implements OnInit {
     console.log("hit");
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
-    this.common.addBlog(this.form.value);
+    if(this.editimage) this.common.addSavedBlogWithImage(this.form.value);
+    else this.common.addSavedBlog(this.form.value);
     this.form.reset();
     this.submited = false;
     this.modal.openModal("#blogModal");

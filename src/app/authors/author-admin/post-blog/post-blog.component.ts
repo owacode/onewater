@@ -87,6 +87,7 @@ export class PostBlogComponent implements OnInit {
     this.htmlStr = this.form.value.data;
     this.common.addToSavedBlog(this.form.value).subscribe(result => {
       console.log(result);
+      alert(result.msg);
       this.form.reset();
       this.submited = false;
     });

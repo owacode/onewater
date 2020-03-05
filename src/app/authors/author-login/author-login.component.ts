@@ -188,7 +188,7 @@ export class AuthorLoginComponent implements OnInit {
       this.modal.hideBtnLoader();
       return;
     }
-
+    console.log(this.resetpassform.value,'after reset');
     this.http.post<{status: string, msg: string, result: any}>('https://onewater-blogapi.herokuapp.com/reset-password',this.resetpassform.value)
     .subscribe(result=> {
       console.log(result);
