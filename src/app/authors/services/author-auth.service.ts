@@ -123,33 +123,37 @@ approvedauthorLitsener(){
   }
 
   authorUpdate(values){
-    const author= new FormData();
-    author.append('name',values.author_name)
-    author.append('location',values.location)
-    author.append('author_image',values.author_image)
-    author.append('about_author',values.author_desc)
-    author.append('interest_category',values.interest);
-    author.append('mobile',values.mobile);
-    author.append('linkedIn',values.linkedin)
-    author.append('twitter',values.twitter)
-    author.append('id',this.authorapprovedid)
-    author.append('mainid',this.authormainid)
-
     const data={
       name:values.author_name,
       location:values.location,
-      about_author:values.author_desc,
-      interest_category:values.interest,
-      facebook:values.facebook,
+      bio:values.author_desc,
+      imageurl: values.image,
       twitter:values.twitter,
       linkedIn:values.linkedin,
-      instagram:values.instagram,
       id:this.authorapprovedid,
       mainid:this.authormainid
     }
 
     console.log(this.authormainid, this.authorapprovedid,'dwdw');
     this.http.post('https://onewater-blogapi.herokuapp.com/update-approveprofile',data)
+    .subscribe(result=> {
+      console.log(result);
+      // alert("Profile Send For Verification You will be respond Back");
+    })
+  }
+
+  authorProfileUpdateWithImage(values) {
+    const author= new FormData();
+    author.append('name',values.author_name)
+    author.append('location',values.location)
+    author.append('bio',values.author_desc);
+    author.append('imageurl',values.image);
+    author.append('linkedIn',values.linkedin)
+    author.append('twitter',values.twitter)
+    author.append('id',this.authorapprovedid)
+    author.append('mainid',this.authormainid)
+    console.log(this.authormainid, this.authorapprovedid,'dwdw');
+    this.http.post('https://onewater-blogapi.herokuapp.com/update-approveprofile-with-image',author)
     .subscribe(result=> {
       console.log(result);
       // alert("Profile Send For Verification You will be respond Back");
