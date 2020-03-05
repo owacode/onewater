@@ -12,12 +12,37 @@
         width: 95%;
     }
 }
-.section-3{
-  padding-bottom: 55vh;
-  margin-bottom: -55vh;
 
+.leader-img{
+    width: 150px;
+    height: 150px;
+    margin: 3rem auto 1rem;
+    border: 2px solid #999;
+    padding: 0.3rem;
+    border-radius: 50%;
+    overflow: hidden;
 
+    img{
+        object-fit: cover;
+        object-position: center;
+    }
 }
+
+.mayor-section{
+    margin-top: 4rem;
+}
+.section-intro{
+    h1{
+        position: relative;
+        margin-bottom:2rem;
+    }
+}
+// .section-3{
+//   padding-bottom: 55vh;
+//   margin-bottom: -55vh;
+
+
+// }
 .author-btn {
   text-align: center;
   margin: 30px 0 70px;
@@ -105,13 +130,24 @@
     }
 
     i{
-      color: #fff;
+      color: #000;
       position: absolute;
       font-size: 5rem;
       opacity: 0.15;
       top: 0.5rem;
       left: 0;
     }
+  }
+
+  .cros-car{
+      .top-auth-img{
+          img{
+            padding: 0.15rem;
+            border: 2px #fff solid;
+            background: #393939;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.46), 0px 3px 14px 7px rgba(0, 0, 0, 0.13);
+          }
+      }
   }
 
   .outer-card{
@@ -153,6 +189,19 @@
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  .section-blue-cro{
+    position: relative;
+    color: #fff ;
+    background:linear-gradient(180deg, rgba(1, 23, 45, 0.82) 20%, rgba(0, 73, 143, 0.86) 100%), url(/assets/img/landing/cro-gradient-bg.jpeg);
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 7rem;
+    padding-bottom:25vh;
+    margin-bottom: -50vh;
   }
 
   .cro-blogs{

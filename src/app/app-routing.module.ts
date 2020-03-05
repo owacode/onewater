@@ -57,6 +57,10 @@ const routes: Routes = [
         loadChildren: './landing-components/contact/contact.module#ContactModule'
       },
       {
+           path: 'leaders',
+           loadChildren: './landing-components/leaders/leaders.module#LeadersModule'
+      },
+      {
         path: 'cro-page',
         loadChildren: './landing-components/cro-page/cro-page.module#CroPageModule'
       },
@@ -158,10 +162,10 @@ const routes: Routes = [
 
   //-----------CRO/MAYOR AUTHOR ADMIN PANEL---------------//
 
-  {
-    path: 'cm-author',
-    loadChildren: './mayor-cro-admin/mayor-cro-admin.module#MayorCroAdminModule'
-  },
+  // {
+  //   path: 'cm-author',
+  //   loadChildren: './mayor-cro-admin/mayor-cro-admin.module#MayorCroAdminModule'
+  // },
 
   //-----------JOB PAGES ROUTING---------------//
   {

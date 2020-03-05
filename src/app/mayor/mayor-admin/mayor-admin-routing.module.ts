@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MayorCroAdminComponent } from './mayor-cro-admin.component';
+import { MayorAdminComponent } from './mayor-admin.component';
 import { CmDashboardComponent } from './cm-dashboard/cm-dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MayorCroAdminComponent,
+    component: MayorAdminComponent,
     children: [
       { path: '', component:CmDashboardComponent },
       { path: 'cm-all-blogs', loadChildren:'./cm-all-blogs/cm-all-blogs.module#CmAllBlogsModule' },
@@ -27,4 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MayorCroAdminRoutingModule { }
+export class MayorAdminRoutingModule { }

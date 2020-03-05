@@ -7,9 +7,10 @@ import * as $ from "jquery";
   templateUrl: './mayor-cro-admin.component.html',
   styleUrls: ['./mayor-cro-admin.component.scss']
 })
-export class MayorCroAdminComponent implements OnInit {
+export class MayorAdminComponent implements OnInit {
 
   constructor() { }
+  
 
   ngOnInit() {
 
