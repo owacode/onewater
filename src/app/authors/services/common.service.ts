@@ -159,7 +159,7 @@ export class CommonService {
       approveid:approveid
     }
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "http://localhost:3000/deleteapproveblog",id
+      "https://onewater-blogapi.herokuapp.com/deleteapproveblog",id
     );
   }
 
@@ -169,7 +169,7 @@ export class CommonService {
       unapproveid:unapproveid
     }
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "http://localhost:3000/deleteunapproveblog",id
+      "https://onewater-blogapi.herokuapp.com/deleteunapproveblog",id
     );
   }
 }
