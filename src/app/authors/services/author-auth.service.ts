@@ -118,7 +118,7 @@ approvedauthorLitsener(){
     author.append('mainid',this.authormainid)
 
     console.log(this.authormainid, this.authorid,'dwdw');
-    return this.http.post('http://localhost:3000/update-authorprofile',author);
+    return this.http.post('https://onewater-blogapi.herokuapp.com/update-authorprofile',author);
 
   }
 
