@@ -62,6 +62,33 @@ class="dashboard-content-wrapper dash-tab"
             Enter the Author Description </p>
     </div>
     </div>
+    <div class="dashboard-section media-inputs">
+      <h4><i data-feather="image"></i>Profile Photo</h4>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Upload photo</label>
+        <div class="col-sm-9">
+          <div class="input-group image-upload-input">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                  <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
+                <button type="button" (click)="file.click()">Select Image</button>
+              </div>
+
+            </div>
+            <div class="active">
+              <div class="upload-images">
+                <div class="pic" *ngIf="imagePreview!='' && imagePreview">
+                    <img style="width: 120px;" [src]="imagePreview">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf=" form.get('author_image').invalid &&profilesubmit" >
+            <p>Please select profile picture!</p>
+        </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="dashboard-section social-inputs">
     <h4><i data-feather="cast"></i>Social Networks</h4>

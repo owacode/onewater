@@ -165,6 +165,10 @@ const routes: Routes = [
     path: 'mayor',
     loadChildren: './mayor/mayor-admin/mayor-admin.module#MayorAdminModule'
   },
+  {
+    path: 'cro',
+    loadChildren: './cro/cro-admin/cro-admin.module#CroAdminModule'
+  },
   //-----------JOB PAGES ROUTING---------------//
   {
     path: 'onewaterjobs',
