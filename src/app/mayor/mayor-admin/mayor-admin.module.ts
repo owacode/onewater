@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MayorCroAdminComponent } from './mayor-cro-admin.component';
+import { MayorAdminComponent } from './mayor-admin.component';
 import { CmDashboardComponent } from './cm-dashboard/cm-dashboard.component';
-import { MayorCroAdminRoutingModule } from './mayor-cro-admin-routing.module';
+import { MayorAdminRoutingModule } from './mayor-admin-routing.module';
 
 @NgModule({
-  declarations: [MayorCroAdminComponent, CmDashboardComponent],
+  declarations: [MayorAdminComponent, CmDashboardComponent],
   imports: [
     CommonModule,
-    MayorCroAdminRoutingModule
+    MayorAdminRoutingModule
   ]
 })
 export class MayorCroAdminModule { }
+

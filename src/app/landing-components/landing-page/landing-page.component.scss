@@ -30,6 +30,14 @@ section {
 .heading {
   position: relative;
 }
+.leaders-section{
+  background-image: linear-gradient(to bottom, #0000007a, #092b86);
+  h1{
+    text-align: left;
+  }
+}
+
+
 .platform-intro-img {
   width: 70%;
   position: relative;
@@ -41,7 +49,7 @@ section {
   background: #092b86;
   background: linear-gradient(
       0deg,
-      #092b86 6%,
+      #051747  6%,
       rgba(14, 73, 154, 0.850074) 53%,
       #092b86 94%
     ),

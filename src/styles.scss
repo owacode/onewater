@@ -143,23 +143,25 @@ img {
 button {
   margin: auto;
   border: 0;
-   border-radius: 10px;
-   font-family: "Montserrat", sans-serif;
-   padding: 10px 15px;
-   color: #777;
-   font-weight: 600;
-   font-size: 0.9rem;
-   width: auto;
+  border-radius: 6px;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 15px;
+  font-size: 2rem;
+  color: #555;
+  font-weight: 700;
+  border: 1.2px solid #c9c9c9;
+  font-size: 1.1rem;
+  width: auto;
   cursor: pointer;
-  box-shadow: 2px 2px 8px 2px #afc1e25c;
   background: #fff;
-  transition: all 0.5s ease-in;
+  transition: all 0.2s ease-in-out;
   outline: 0 !important;
 }
 
 button:hover {
-  background-color: dodgerblue;
-  box-shadow: 2px 2px 8px 2px #8991a05c;
+  background-color: #101010;
+  border: 1.2px solid #101010;
+  //box-shadow: 2px 2px 8px 2px #8991a05c;
   color: #fff;
 }
 .card-shadow{

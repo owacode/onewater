@@ -3,13 +3,14 @@ import * as Feather from 'feather-icons';
 import * as $ from "jquery";
 
 @Component({
-  selector: 'app-mayor-cro-admin',
-  templateUrl: './mayor-cro-admin.component.html',
-  styleUrls: ['./mayor-cro-admin.component.scss']
+  selector: 'app-mayor-admin',
+  templateUrl: './mayor-admin.component.html',
+  styleUrls: ['./mayor-admin.component.scss']
 })
-export class MayorCroAdminComponent implements OnInit {
+export class MayorAdminComponent implements OnInit {
 
   constructor() { }
+
 
   ngOnInit() {
 
