@@ -42,7 +42,7 @@ export class PostBlogComponent implements OnInit {
         return new Promise((resolve, reject) => {
           this.http
             .post<{ imagepath: any }>(
-              "https://onewateracademy-blogapi.herokuapp.com/addimage",
+              "https://onewater-blogapi.herokuapp.com/addimage",
               imageform
             )
             .subscribe(result => {

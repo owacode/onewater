@@ -30,7 +30,7 @@ export class AuthorAuthService {
       email:values.email,
       password:values.password
     }
-    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewateracademy-blogapi.herokuapp.com/login', user);
+    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blogapi.herokuapp.com/login', user);
   }
 
   getToken(){
@@ -42,7 +42,7 @@ export class AuthorAuthService {
       email:values.author_email,
       password:values.password
     }
-    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewateracademy-blogapi.herokuapp.com/unapproved-author', user);
+    return this.http.post<{status:string, msg:string, payload:string, result:any}>('https://onewater-blogapi.herokuapp.com/unapproved-author', user);
   }
   checkLocalStorage(){
     console.log('check local hit')
@@ -149,14 +149,14 @@ approvedauthorLitsener(){
     }
 
     console.log(this.authormainid, this.authorapprovedid,'dwdw');
-    this.http.post('https://onewateracademy-blogapi.herokuapp.com/update-approveprofile',data)
+    this.http.post('https://onewater-blogapi.herokuapp.com/update-approveprofile',data)
     .subscribe(result=> {
       console.log(result);
       // alert("Profile Send For Verification You will be respond Back");
     })
   }
   addNewJob(values){
-    this.http.post('https://onewateracademy-blogapi.herokuapp.com/createjob',values)
+    this.http.post('https://onewater-blogapi.herokuapp.com/createjob',values)
     .subscribe(result=> {
       console.log(result);
     })

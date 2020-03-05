@@ -28,7 +28,7 @@ export class CommonService {
     data.append("readtime", min.toString());
     this.http
       .post<{ status: string; msg: string; result: any }>(
-        "https://onewateracademy-blogapi.herokuapp.com/unapproved-blog",
+        "https://onewater-blogapi.herokuapp.com/unapproved-blog",
         data
       )
       .subscribe(result => {
@@ -80,7 +80,7 @@ export class CommonService {
 
   addVideo(values) {
     this.http
-      .post("https://onewateracademy-blogapi.herokuapp.com/post-video", values)
+      .post("https://onewater-blogapi.herokuapp.com/post-video", values)
       .subscribe(result => {
         console.log(result);
         //alert("Video Posted Successfully");
@@ -92,14 +92,14 @@ export class CommonService {
       email: localStorage.getItem("authoremail")
     };
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewateracademy-blogapi.herokuapp.com/singlevideo/" +
+      "https://onewater-blogapi.herokuapp.com/singlevideo/" +
         localStorage.getItem("authoremail")
     );
   }
 
   getAllBlogs() {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewateracademy-blogapi.herokuapp.com/authorallblogs/" +
+      "https://onewater-blogapi.herokuapp.com/authorallblogs/" +
         this.blogauth.authorapprovedid
     );
   }
@@ -121,27 +121,27 @@ export class CommonService {
 
   getPendingBlogs() {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewateracademy-blogapi.herokuapp.com/authorunapprovedblogs/" +
+      "https://onewater-blogapi.herokuapp.com/authorunapprovedblogs/" +
         this.blogauth.authorapprovedid
     );
   }
 
   getApprovedBlogs() {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewateracademy-blogapi.herokuapp.com/authorapprovedblogs/" +
+      "https://onewater-blogapi.herokuapp.com/authorapprovedblogs/" +
         this.blogauth.authorapprovedid
     );
   }
 
   getSingleApprovedBlogs(id) {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewateracademy-blogapi.herokuapp.com/singleappblog/" + id
+      "https://onewater-blogapi.herokuapp.com/singleappblog/" + id
     );
   }
 
   getUser() {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewateracademy-blogapi.herokuapp.com/single-author/" +
+      "https://onewater-blogapi.herokuapp.com/single-author/" +
         this.blogauth.authorapprovedid
     );
   }
@@ -149,7 +149,7 @@ export class CommonService {
   getSingleAllBlog(id) {
     console.log(id, "jjj");
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewateracademy-blogapi.herokuapp.com/allblogs/" + id
+      "https://onewater-blogapi.herokuapp.com/allblogs/" + id
     );
   }
 

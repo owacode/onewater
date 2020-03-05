@@ -253,7 +253,7 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  //owl carousel settings for featured blog cards 
+  //owl carousel settings for featured blog cards
 
   carouselOptions = {
     margin: 25,
@@ -316,8 +316,8 @@ export class BlogComponent implements OnInit {
 
   constructor(public http: HttpClient) { }
 
-  ngOnInit() {  
-    this.http.get<{ status: string, msg: string, result: any }>('https://onewateracademy-blogapi.herokuapp.com/approveblogs')
+  ngOnInit() {
+    this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/approveblogs')
       .subscribe(result => {
         console.log(result);
         this.blogcards = result.result;
@@ -325,20 +325,20 @@ export class BlogComponent implements OnInit {
         this.featuredblog = this.featuredblog.slice(0, 6);
       })
 
-    this.http.get<{ status: string, msg: string, result: any }>('https://onewateracademy-blogapi.herokuapp.com/approvedauthor')
+    this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/approvedauthor')
       .subscribe(result => {
         console.log(result);
         this.authors = result.result;
 
       })
 
-    this.http.get<{ status: string, msg: string, result: any }>('https://onewateracademy-blogapi.herokuapp.com/homeblog')
+    this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/homeblog')
       .subscribe(result => {
         console.log(result, 'bannerrrr');
         this.bannerblogs = result.result;
 
       })
-     
+
   }
 
 }
