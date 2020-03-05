@@ -20,6 +20,7 @@ import { ModalFunctions } from './shared-functions/modal-functions';
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
+
 export class AppComponent implements OnInit {
   title = "one-water-blog";
   showLogin: boolean = false;

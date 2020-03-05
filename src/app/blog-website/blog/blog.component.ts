@@ -252,9 +252,7 @@ export class BlogComponent implements OnInit {
       }
     }
   }
-
   //owl carousel settings for featured blog cards 
-
   carouselOptions = {
     margin: 25,
     nav: true,
@@ -275,7 +273,6 @@ export class BlogComponent implements OnInit {
       }
     }
   }
-
   //owl carousel setting for top authors
   carouselOptionsAuthors = {
     margin: 25,
