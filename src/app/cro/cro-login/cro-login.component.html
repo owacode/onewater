@@ -6,11 +6,12 @@
     <div class="row align-items-center">
       <div class="col-lg-6 left-content">
         <h2>
-          OneWater Blog <br>
+          OneWater Blog <br />
           <strong>Welcomes CRO</strong>
         </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, exercitationem?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+          exercitationem?
         </p>
         <img src="assets/img/cro-login.png" alt="" class="login-img" />
       </div>
@@ -19,8 +20,10 @@
           <!--------------LOGIN FORM------------------->
           <form
             class="vldform vldauth"
+            (submit)="login()"
+            [formGroup]="loginuser"
           >
-            <h1> <span style="text-transform: uppercase;">CRO</span>  Login</h1>
+            <h1><span style="text-transform: uppercase;">CRO</span> Login</h1>
 
             <input
               formControlName="email"
@@ -30,12 +33,9 @@
               placeholder="Email"
               required
             />
-            <!-- <p
-
-              *ngIf="loginsubmitted && loginuser.get('email').invalid"
-            >
+            <p *ngIf="loginsubmitted && loginuser.get('email').invalid">
               Please enter a valid email id!
-            </p> -->
+            </p>
 
             <input
               formControlName="password"
@@ -45,12 +45,9 @@
               placeholder="Password"
               required
             />
-            <!-- <p
-
-              *ngIf="loginsubmitted && loginuser.get('password').invalid"
-            >
-            Please enter your password!
-            </p> -->
+            <p *ngIf="loginsubmitted && loginuser.get('password').invalid">
+              Please enter your password!
+            </p>
 
             <a class="vldform__recoverypassword" (click)="showrecoveryform()"
               >Forgot password?</a
@@ -69,10 +66,11 @@
               </span>
             </button> -->
             <button
-            class="vldform__button"
-            type="submit"
-            routerLink="/cm-author"
-          >Login</button>
+              class="vldform__button"
+              type="submit"
+            >
+              Login
+            </button>
           </form>
           <p class="vldform__signup" id="login-text">
             New here?
@@ -80,36 +78,37 @@
           </p>
 
           <!--------------SIGNUP FORM------------------->
-          <form class="vldform vldreg" [formGroup]="user">
-            <h1> <span style="text-transform: uppercase;">CRO</span>  Registration</h1>
+          <form class="vldform vldreg" (submit)="register()" [formGroup]="user">
+            <h1>
+              <span style="text-transform: uppercase;">CRO</span> Registration
+            </h1>
             <input
-              formControlName="author_name"
+              formControlName="cro_name"
               class="vldform__textbox"
               type="text"
               name="name"
-              placeholder="Author Name"
+              placeholder="CRO Name"
               required
             />
-            <!-- <p
-              *ngIf="registersubmitted && user.get('author_name').invalid"
+            <p
+              *ngIf="registersubmitted && user.get('cro_name').invalid"
             >
               Name is required!
-            </p> -->
+            </p>
 
             <input
-              formControlName="author_email"
+              formControlName="cro_email"
               class="vldform__textbox"
               type="email"
               name="email"
-              placeholder="Author Email"
+              placeholder="cro Email"
               required
             />
-            <!-- <p
-
-              *ngIf="registersubmitted && user.get('author_email').invalid"
+            <p
+              *ngIf="registersubmitted && user.get('cro_email').invalid"
             >
               Please enter a valid email id!
-            </p> -->
+            </p>
 
             <div class="row">
               <div class="col-md-6">
@@ -121,12 +120,11 @@
                   placeholder="Password"
                   required
                 />
-                <!-- <p
-
+                <p
                   *ngIf="registersubmitted && user.get('password').invalid"
                 >
                   Password must have minimum 6 characters!
-                </p> -->
+                </p>
               </div>
               <div class="col-md-6">
                 <input
@@ -137,12 +135,11 @@
                   placeholder="Confirm Password"
                   required
                 />
-                <!-- <p
-
+                <p
                   *ngIf="registersubmitted && user.get('cpassword').invalid"
                 >
                  Confirm your password!
-                </p> -->
+                </p>
               </div>
             </div>
 
@@ -164,9 +161,8 @@
             <a (click)="showauthform()">Log in</a>
           </p>
 
-
           <!--------------PASSWORD RECOVERY FORM------------------->
-          <form class="vldform vldrecpass" [formGroup]="resetpassform">
+          <form class="vldform vldrecpass" [formGroup]="resetpassform" (submit)="resetpassword()">
             <h1>Password Recovery</h1>
             <input
               class="vldform__textbox"
@@ -176,9 +172,9 @@
               required
               formControlName="email"
             />
-            <!-- <p *ngIf="resetpasssubmitted && resetpassform.get('email').invalid">
+            <p *ngIf="resetpasssubmitted && resetpassform.get('email').invalid">
               Please enter your email!
-            </p> -->
+            </p>
             <button
               class="vldform__button"
               type="submit"
@@ -412,9 +408,13 @@
   </div>
 </div>
 
-
 <!--forgot password modal-->
-<div class="modal modal-animate" id="pendingModal" role="dialog" #forgotpassModal>
+<div
+  class="modal modal-animate"
+  id="pendingModal"
+  role="dialog"
+  #forgotpassModal
+>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
@@ -430,7 +430,8 @@
       <div class="modal-body">
         <img src="assets/img/modals/pending-profile.png" alt="" />
         <h2>
-         Password Recovery link has been sent to your register email id. Please check it to set new password.
+          Password Recovery link has been sent to your register email id. Please
+          check it to set new password.
         </h2>
       </div>
       <button
@@ -446,7 +447,12 @@
 </div>
 
 <!--logout from other platforms modal-->
-<div class="modal modal-animate" id="platformModal" role="dialog" #platformModal>
+<div
+  class="modal modal-animate"
+  id="platformModal"
+  role="dialog"
+  #platformModal
+>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
@@ -476,5 +482,3 @@
     </div>
   </div>
 </div>
-
-
