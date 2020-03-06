@@ -59,6 +59,18 @@ export class RecoverPasswordComponent implements OnInit {
         console.log(result);
         this.modal.hideBtnLoader();
       })
+    }else if(this.decoded_token.platform == 'blog_cro') {
+      this.http.post<{status: string, msg: string, result: any}>('https://onewater-cro.herokuapp.com/update-password',this.resetpassword.value)
+      .subscribe(result=> {
+        console.log(result);
+        this.modal.hideBtnLoader();
+      })
+    }else if(this.decoded_token.platform == 'blog_mayor') {
+      this.http.post<{status: string, msg: string, result: any}>('https://onewater-mayor.herokuapp.com/update-password',this.resetpassword.value)
+      .subscribe(result=> {
+        console.log(result);
+        this.modal.hideBtnLoader();
+      })
     }
 
   }
