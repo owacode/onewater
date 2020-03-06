@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Feather from 'feather-icons';
 import * as $ from "jquery";
+import { MayorAuthService } from '../services/mayor-auth.service';
 
 @Component({
   selector: 'app-mayor-admin',
@@ -10,11 +11,11 @@ import * as $ from "jquery";
 
 export class MayorAdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: MayorAuthService) { }
 
 
   ngOnInit() {
-
+    this.auth.checkLocalStorage();
     let filter = document.querySelector('.filter-btn a');
     let optionBox = document.querySelector('.dashboard-sidebar');
     let options = document.querySelectorAll('.dashboard-sidebar .dashboard-menu ul li a');
@@ -27,6 +28,10 @@ export class MayorAdminComponent implements OnInit {
 
     Feather.replace();
 
+  }
+
+  logout(){
+    this.auth.logout();
   }
 
 }

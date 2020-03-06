@@ -19,6 +19,8 @@
           <!--------------LOGIN FORM------------------->
           <form
             class="vldform vldauth"
+            [formGroup]="loginuser"
+            (submit)="login()"
           >
             <h1>mayor Login</h1>
 
@@ -30,12 +32,12 @@
               placeholder="Email"
               required
             />
-            <!-- <p
+            <p
 
               *ngIf="loginsubmitted && loginuser.get('email').invalid"
             >
               Please enter a valid email id!
-            </p> -->
+            </p>
 
             <input
               formControlName="password"
@@ -45,12 +47,12 @@
               placeholder="Password"
               required
             />
-            <!-- <p
+            <p
 
               *ngIf="loginsubmitted && loginuser.get('password').invalid"
             >
             Please enter your password!
-            </p> -->
+            </p>
 
             <a class="vldform__recoverypassword" (click)="showrecoveryform()"
               >Forgot password?</a
@@ -71,7 +73,6 @@
            <button
               class="vldform__button"
               type="submit"
-              routerLink="/mayor"
             >Login</button>
           </form>
           <p class="vldform__signup" id="login-text">
@@ -80,36 +81,36 @@
           </p>
 
           <!--------------SIGNUP FORM------------------->
-          <form class="vldform vldreg" [formGroup]="user">
+          <form class="vldform vldreg" [formGroup]="user" (submit)="register()">
             <h1>Mayor registration</h1>
             <input
-              formControlName="author_name"
+              formControlName="mayor_name"
               class="vldform__textbox"
               type="text"
               name="name"
-              placeholder="Author Name"
+              placeholder="Mayor Name"
               required
             />
-            <!-- <p
-              *ngIf="registersubmitted && user.get('author_name').invalid"
+            <p
+              *ngIf="registersubmitted && user.get('mayor_name').invalid"
             >
               Name is required!
-            </p> -->
+            </p>
 
             <input
-              formControlName="author_email"
+              formControlName="mayor_email"
               class="vldform__textbox"
               type="email"
               name="email"
-              placeholder="Author Email"
+              placeholder="Mayor Email"
               required
             />
-            <!-- <p
+            <p
 
-              *ngIf="registersubmitted && user.get('author_email').invalid"
+              *ngIf="registersubmitted && user.get('mayor_email').invalid"
             >
               Please enter a valid email id!
-            </p> -->
+            </p>
 
             <div class="row">
               <div class="col-md-6">
@@ -121,12 +122,12 @@
                   placeholder="Password"
                   required
                 />
-                <!-- <p
+                <p
 
                   *ngIf="registersubmitted && user.get('password').invalid"
                 >
                   Password must have minimum 6 characters!
-                </p> -->
+                </p>
               </div>
               <div class="col-md-6">
                 <input
@@ -137,12 +138,12 @@
                   placeholder="Confirm Password"
                   required
                 />
-                <!-- <p
+                <p
 
                   *ngIf="registersubmitted && user.get('cpassword').invalid"
                 >
                  Confirm your password!
-                </p> -->
+                </p>
               </div>
             </div>
 

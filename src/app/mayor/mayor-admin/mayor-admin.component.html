@@ -13,20 +13,20 @@
             <img src="/assets/img/ow-logo-white.png" alt="" />
           </div>
           <div class="sidebar-header">
-            <h4>Author Dashboard <br> 
+            <h4>Author Dashboard <br>
                 Mayor
             </h4>
           </div>
           <div class="company-info">
             <div class="thumb">
               <img
-                src="https://images.unsplash.com/photo-1559933240-941267a02c9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                src="{{auth?.mayorimage}}"
                 class="img-fluid"
                 alt=""
               />
             </div>
             <div class="company-body">
-              <h5>Hi, John</h5>
+              <h5>Hi, {{auth?.mayorname}}</h5>
             </div>
           </div>
 
@@ -72,7 +72,7 @@
             <ul class="delete">
               <li>
                 <i class="fa fa-power-off"></i
-                ><a routerLink="/onewaterblog/mayor-login">Logout</a>
+                ><a (click)="logout()">Logout</a>
               </li>
             </ul>
           </div>
