@@ -1,3 +1,79 @@
-<p>
-  cro-dashboard works!
-</p>
+<div
+class="dashboard-content-wrapper dash-tab"
+>
+<div class="dashboard-section user-statistic-block">
+  <div class="row justify-content-center w-100">
+    <div class="col-md-3">
+      <div class="user-statistic">
+        <a routerLink="/cro/cro-all-blogs">
+          <span>
+            <i data-feather="edit"></i>
+            <h3>22</h3>
+          </span>
+          
+          <span>Blogs Posted</span>
+        </a>
+        
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="user-statistic">
+        <a routerLink="/cro/cro-approved-blogs">
+       <span>
+        <i data-feather="check-square"></i>
+        <h3> 33</h3>
+       </span>
+       
+        <span>Blogs Aproved</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="user-statistic">
+        <a routerLink="/cro/cro-videos">
+       <span>
+        <i data-feather="video"></i>
+        <h3> 12</h3>
+       </span>
+     
+        <span>Video Posted</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="dashboard-section dashboard-recent-activity">
+  <div class="row">
+    <div class="col-md-12"><h4 class="title"><i data-feather="edit-2"></i> Recently posted blogs</h4>
+      <!-- <div class="no-content" *ngIf="!recentblogs.length">
+        <h3> You have not posted any blog yet. <br> Click <a routerLink="/author/post-blog">here</a> to post one.</h3>
+       
+      </div> -->
+      <div class="activity-list">
+          <div class="thumb">
+              <img
+               src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+        <div class="content">
+          <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic velit  obcaecati dicta.</h5>
+          <span class="time">12/02/2020</span>
+          <br>
+          <!-- <span class="time status-btn"  [ngStyle]="{
+            'background-color':blog.status === 'approved' ? '#8eff96' : '#ff988e' ,'color':blog.status === 'approved' ? '#015a01' : '#bd0303' }
+          ">
+         pending
+           </span> -->
+        </div>
+        <div class="close-activity buttons">
+          <a class="button" [routerLink]="['/cro/cro-blog-details/']">View</a>
+        </div>
+      </div></div>
+  </div>
+  
+</div>
+</div>

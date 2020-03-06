@@ -1,0 +1,139 @@
+<div class="overlay"></div>
+<div
+class="dashboard-content-wrapper dash-tab"
+>
+<form class="dashboard-form">
+
+  <div class="dashboard-section basic-info-input">
+    <h4><i data-feather="user-check"></i>Basic Info</h4>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label"> Name</label>
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Full Name"
+          formControlName="author_name"
+        />
+      </div>
+      <!-- <div class="row form-group" *ngIf=" form.get('author_name').invalid &&profilesubmit" >
+        <p>
+            Enter Name </p>
+    </div> -->
+    </div>
+ 
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Address</label>
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Washington D.C"
+          formControlName="location"
+        />
+      </div>
+      <!-- <div class="row form-group" *ngIf=" form.get('location').invalid &&profilesubmit" >
+        <p>
+            Enter Your Location </p>
+    </div> -->
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Interests</label>
+      <div class="col-sm-9">
+        <textarea
+          type="text"
+          class="form-control"
+          placeholder="Interests"
+          formControlName="interest"
+        ></textarea>
+      </div>
+      <!-- <div class="row form-group" *ngIf=" form.get('interest').invalid &&profilesubmit" >
+        <p>
+            Enter Your Intrest </p>
+    </div> -->
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Bio</label>
+      <div class="col-sm-9">
+        <textarea formControlName="author_desc" class="form-control" placeholder="Write something about yourself..."></textarea>
+      </div>
+      <!-- <div class="row form-group" *ngIf=" form.get('author_desc').invalid &&profilesubmit" >
+        <p>
+            Enter the Author Description </p>
+    </div> -->
+    </div>
+  </div>
+  <div class="dashboard-section social-inputs">
+    <h4><i data-feather="cast"></i>Social Networks</h4>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Social Links</label>
+      <div class="col-sm-9">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Linkedin profile url"
+            formControlName="linkedin"
+          />
+        </div>
+        <!-- <div class="row form-group" *ngIf=" form.get('linkedin').invalid &&profilesubmit" >
+          <p>
+              Enter Your LinkedIn Profile Link </p>
+      </div> -->
+      </div>
+    </div>
+   
+    <div class="form-group row">
+      <div class="offset-sm-3 col-sm-9">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Twitter profile url"
+            formControlName="twitter"
+          />
+        </div>
+        <!-- <div class="row form-group" *ngIf=" form.get('twitter').invalid &&profilesubmit" >
+          <p>
+            Enter Your Twitter Profile Link </p>
+      </div> -->
+      </div>
+    </div>
+   
+  </div>
+  <div class="dashboard-section basic-info-input">
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label"></label>
+      <div class="col-sm-9">
+        <button class="button" type="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+<!-- <button data-toggle="modal" data-target="#updateProfileModal"> open modal</button> -->
+<div class="modal fade" id="updateProfileModal" role="dialog" #updateProfileModal>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+      <div class="modal-head">
+          <button type="button" class="close" (click)="modal.closeModal(updateProfileModal)">&times;</button>
+      </div>
+        <div class="modal-body">
+         <img src="assets/img/modals/success.svg
+         " alt="" style="width: 35%;">
+         <h2>Profile updated succesfully.</h2>
+        </div>
+          <button type="button" class="btn btn-default" (click)="modal.closeModal(updateProfileModal)">OK</button>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="overlay"></div>
+<div class="dashboard-content-wrapper dash-tab">
+  <form class="dashboard-form" [formGroup]="form">
+    <div class="dashboard-section basic-info-input">
+      <h2 class="heading"><i data-feather="plus"></i>Post new blog</h2>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label"> Title</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Title"
+            formControlName="title"
+          />
+          <!-- <p  *ngIf="submited && form.get('title').invalid">
+            Title is required!
+          </p> -->
+        </div>
+      </div>
+
+      <div class="dashboard-section media-inputs">
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Blog Thumbnail</label>
+          <div class="col-sm-9">
+            <div class="input-group image-upload-input">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input
+                    style="display: none"
+                    type="file"
+                    #file
+                  />
+                  <button type="button" (click)="file.click()">
+                    Select Image
+                  </button>
+                   <!-- <p  *ngIf="submited && form.get('image').invalid">
+                    Image is required!
+                  </p>  -->
+                </div>
+              </div>
+              <div class="active">
+                <div class="upload-images">
+                  <!-- <div class="pic" *ngIf="imagePreview != '' && imagePreview">
+                    <img style="width: 120px;" [src]="imagePreview" />
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <quill-editor [modules]="config" formControlName="data"></quill-editor>
+      </div>
+    </div>
+    <div class="dashboard-section basic-info-input">
+      <div class="form-group row">
+        <button  class="button" type="button">Save Changes</button>
+        <button  class="button" type="button">Post Blog</button>
+      </div>
+    </div>
+  </form>
+
+  <h2 class="text-center my-3">Blog Preview</h2>
+  <div class="row" style="margin: 50px;">
+    <div [innerHTML]="htmlStr"></div>
+  </div>
+</div>
+
+<div class="modal fade" id="blogModal" role="dialog" #blogModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          (click)="modal.closeModal(blogModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/success.svg
+         "
+          alt=""
+          style="width: 35%;"
+        />
+        <h2>Blog posted succesfully.</h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        (click)="modal.closeModal(blogModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
