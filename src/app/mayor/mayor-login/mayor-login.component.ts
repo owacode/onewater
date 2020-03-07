@@ -174,4 +174,20 @@ export class MayorLoginComponent implements OnInit {
           })
   }
 
+  resetpassword() {
+    this.modal.showBtnLoader();
+    this.resetpasssubmitted = true;
+    console.log(this.resetpassform.value);
+    if(this.resetpassform.invalid){
+      console.log('invalid reset form');
+      this.modal.hideBtnLoader();
+      return;
+    }
+    console.log(this.resetpassform.value,'after reset');
+    this.auth.resetpassword(this.resetpassform.value)
+    .subscribe(result=> {
+      console.log(result);
+      this.modal.hideBtnLoader();
+    })
+  }
 }

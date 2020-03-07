@@ -117,7 +117,7 @@ export class MayorAuthService {
     console.log(this.mayormainid, this.mayorapprovedid, "dwdw");
     this.http
       .post(
-        "https://onewater-blogapi.herokuapp.com/update-approveprofile",
+        "https://onewater-mayor.herokuapp.com/update-approveprofile",
         data
       )
       .subscribe(result => {
@@ -139,7 +139,7 @@ export class MayorAuthService {
     console.log(this.mayormainid, this.mayorapprovedid, "dwdw");
     this.http
       .post(
-        "https://onewater-blogapi.herokuapp.com/update-approveprofile-with-image",
+        "https://onewater-mayor.herokuapp.com/update-approveprofile-with-image",
         mayor
       )
       .subscribe(result => {
@@ -162,6 +162,13 @@ export class MayorAuthService {
   localStorage.removeItem('mayorname');
   localStorage.removeItem('form_filled_mayor');
   this.route.navigate(['/onewaterblog/mayor-login'])
+  }
+
+  resetpassword(values) {
+    return this.http.post<{ status: string; msg: string; result: any }>(
+      "https://onewater-mayor.herokuapp.com/reset-password",
+      values
+    );
   }
 
   getUser() {

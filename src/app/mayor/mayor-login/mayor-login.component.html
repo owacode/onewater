@@ -173,17 +173,17 @@
               class="vldform__textbox"
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Emaill"
               required
               formControlName="email"
             />
-            <!-- <p *ngIf="resetpasssubmitted && resetpassform.get('email').invalid">
+            <p *ngIf="resetpasssubmitted && resetpassform.get('email').invalid">
               Please enter your email!
-            </p> -->
+            </p>
             <button
               class="vldform__button"
               type="submit"
-              (click)="modal.showBtnLoader()"
+              (click)="resetpassword()"
             >
               <span class="btn-loading-content">
                 <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
