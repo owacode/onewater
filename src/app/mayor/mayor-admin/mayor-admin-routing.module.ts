@@ -17,8 +17,8 @@ const routes: Routes = [
       { path: 'mayor-post-blog', loadChildren: './cm-post-blog/cm-post-blog.module#CmPostBlogModule' },
       { path: 'mayor-post-video', loadChildren: './cm-post-video/cm-post-video.module#CmPostVideoModule' },
       { path: 'mayor-edit-profile', loadChildren: './cm-author-edit-profile/cm-author-edit-profile.module#CmAuthorEditProfileModule' },
-      { path: 'mayor-blog-details', loadChildren: './cm-blog-details/cm-blog-details.module#CmBlogDetailsModule' },
-      { path: 'mayor-edit-blog', loadChildren: './cm-edit-saved-blogs/cm-edit-saved-blogs.module#CmEditSavedBlogsModule' },
+      { path: 'mayor-blog-details/:id', loadChildren: './cm-blog-details/cm-blog-details.module#CmBlogDetailsModule' },
+      { path: 'mayor-edit-blog/:id', loadChildren: './cm-edit-saved-blogs/cm-edit-saved-blogs.module#CmEditSavedBlogsModule' },
     ]
   }
 ];

@@ -14,18 +14,14 @@ export class MayorAuthService {
   public mayormainid = null;
   public mayorapprovedid = null;
   public loggedIn: boolean = false;
-  private token: string = null;
+  public token: string = null;
   public loggedinLitsener = new Subject<{ status: boolean }>();
   public approvedLitsener = new Subject<{ status: boolean }>();
 
-  constructor(public http: HttpClient, public route: Router) {
-    this.mayorid = localStorage.getItem("mayorid");
-    this.mayormainid = localStorage.getItem("mayormainid");
-    console.log("hit", this.mayorid, this.mayormainid);
-  }
+  constructor(public http: HttpClient, public route: Router) {}
 
   checkLocalStorage(){
-    console.log('check local hit')
+    console.log('mayor check local hit')
     const token=localStorage.getItem('onewatermayortoken');
     const approve=localStorage.getItem('mayorapprovedid');
     console.log(approve,'appppppp')
@@ -45,6 +41,7 @@ export class MayorAuthService {
             this.mayorimage=localStorage.getItem('mayorimage');
             if(!approve) return this.route.navigate(['/onewaterblog/mayor-reg']);;
             this.mayorapprovedid=localStorage.getItem('mayorapprovedid');
+            console.log("hit", this.mayorid, this.mayormainid,this.mayorapprovedid);
             this.route.navigate(['/mayor']);
           }else{
             console.log('check local hit elseeeeeeeeeeee')
@@ -105,6 +102,52 @@ export class MayorAuthService {
 
   }
 
+  mayorUpdate(values) {
+    const data = {
+      name: values.mayor_name,
+      location: values.location,
+      bio: values.mayor_desc,
+      imageurl: values.image,
+      twitter: values.twitter,
+      linkedIn: values.linkedin,
+      id: this.mayorapprovedid,
+      mainid: this.mayormainid
+    };
+
+    console.log(this.mayormainid, this.mayorapprovedid, "dwdw");
+    this.http
+      .post(
+        "https://onewater-blogapi.herokuapp.com/update-approveprofile",
+        data
+      )
+      .subscribe(result => {
+        console.log(result);
+        // alert("Profile Send For Verification You will be respond Back");
+      });
+  }
+
+  mayorProfileUpdateWithImage(values) {
+    const mayor = new FormData();
+    mayor.append("name", values.mayor_name);
+    mayor.append("location", values.location);
+    mayor.append("bio", values.mayor_desc);
+    mayor.append("imageurl", values.image);
+    mayor.append("linkedIn", values.linkedin);
+    mayor.append("twitter", values.twitter);
+    mayor.append("id", this.mayorapprovedid);
+    mayor.append("mainid", this.mayormainid);
+    console.log(this.mayormainid, this.mayorapprovedid, "dwdw");
+    this.http
+      .post(
+        "https://onewater-blogapi.herokuapp.com/update-approveprofile-with-image",
+        mayor
+      )
+      .subscribe(result => {
+        console.log(result);
+        // alert("Profile Send For Verification You will be respond Back");
+      });
+  }
+
   logout(){
     this.loggedIn=false;
     this.loggedinLitsener.next({
@@ -119,5 +162,12 @@ export class MayorAuthService {
   localStorage.removeItem('mayorname');
   localStorage.removeItem('form_filled_mayor');
   this.route.navigate(['/onewaterblog/mayor-login'])
+  }
+
+  getUser() {
+    return this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-mayor.herokuapp.com/single-mayor/" +
+        this.mayorapprovedid
+    );
   }
 }

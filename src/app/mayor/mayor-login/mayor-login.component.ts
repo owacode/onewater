@@ -46,6 +46,7 @@ export class MayorLoginComponent implements OnInit {
   constructor(public modal: ModalFunctions, public auth: MayorAuthService, public route:Router) { }
 
   ngOnInit() {
+    this.auth.checkLocalStorage();
     this.showregform();
 
     this.user = new FormGroup({
