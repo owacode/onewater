@@ -2,7 +2,7 @@
 <div
 class="dashboard-content-wrapper dash-tab"
 >
-<form class="dashboard-form">
+<form class="dashboard-form" (submit)="submit()" [formGroup]="form">
 
   <div class="dashboard-section basic-info-input">
     <h4><i data-feather="user-check"></i>Basic Info</h4>
@@ -13,15 +13,15 @@ class="dashboard-content-wrapper dash-tab"
           type="text"
           class="form-control"
           placeholder="Full Name"
-          formControlName="author_name"
+          formControlName="cro_name"
         />
       </div>
-      <!-- <div class="row form-group" *ngIf=" form.get('author_name').invalid &&profilesubmit" >
+      <div class="row form-group" *ngIf=" form.get('cro_name').invalid &&profilesubmit" >
         <p>
             Enter Name </p>
-    </div> -->
     </div>
- 
+    </div>
+
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Address</label>
       <div class="col-sm-9">
@@ -32,35 +32,47 @@ class="dashboard-content-wrapper dash-tab"
           formControlName="location"
         />
       </div>
-      <!-- <div class="row form-group" *ngIf=" form.get('location').invalid &&profilesubmit" >
+      <div class="row form-group" *ngIf=" form.get('location').invalid &&profilesubmit" >
         <p>
             Enter Your Location </p>
-    </div> -->
     </div>
-    <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Interests</label>
-      <div class="col-sm-9">
-        <textarea
-          type="text"
-          class="form-control"
-          placeholder="Interests"
-          formControlName="interest"
-        ></textarea>
-      </div>
-      <!-- <div class="row form-group" *ngIf=" form.get('interest').invalid &&profilesubmit" >
-        <p>
-            Enter Your Intrest </p>
-    </div> -->
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Bio</label>
       <div class="col-sm-9">
-        <textarea formControlName="author_desc" class="form-control" placeholder="Write something about yourself..."></textarea>
+        <textarea formControlName="cro_desc" class="form-control" placeholder="Write something about yourself..."></textarea>
       </div>
-      <!-- <div class="row form-group" *ngIf=" form.get('author_desc').invalid &&profilesubmit" >
+      <div class="row form-group" *ngIf=" form.get('cro_desc').invalid &&profilesubmit" >
         <p>
-            Enter the Author Description </p>
-    </div> -->
+            Enter the cro Description </p>
+    </div>
+    </div>
+    <div class="dashboard-section media-inputs">
+      <h4><i data-feather="image"></i>Profile Photo</h4>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Upload photo</label>
+        <div class="col-sm-9">
+          <div class="input-group image-upload-input">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                  <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
+                <button type="button" (click)="file.click()">Select Image</button>
+              </div>
+
+            </div>
+            <div class="active">
+              <div class="upload-images">
+                <div class="pic" *ngIf="imagePreview!='' && imagePreview">
+                    <img style="width: 120px;" [src]="imagePreview">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="form.get('image').invalid &&profilesubmit" >
+            <p>Please select profile picture!</p>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="dashboard-section social-inputs">
@@ -87,7 +99,7 @@ class="dashboard-content-wrapper dash-tab"
       </div> -->
       </div>
     </div>
-   
+
     <div class="form-group row">
       <div class="offset-sm-3 col-sm-9">
         <div class="input-group">
@@ -109,7 +121,7 @@ class="dashboard-content-wrapper dash-tab"
       </div> -->
       </div>
     </div>
-   
+
   </div>
   <div class="dashboard-section basic-info-input">
     <div class="form-group row">

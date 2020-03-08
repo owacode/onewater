@@ -13,20 +13,20 @@
             <img src="/assets/img/ow-logo-white.png" alt="" />
           </div>
           <div class="sidebar-header">
-            <h4>Author Dashboard <br> 
+            <h4>Author Dashboard <br>
                 CRO
             </h4>
           </div>
           <div class="company-info">
             <div class="thumb">
               <img
-                src="https://images.unsplash.com/photo-1559933240-941267a02c9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                src={{auth?.croimage}}
                 class="img-fluid"
                 alt=""
               />
             </div>
             <div class="company-body">
-              <h5>Hi, John</h5>
+              <h5>Hi, {{auth?.croname}}</h5>
             </div>
           </div>
 
@@ -52,18 +52,18 @@
                 <i class="fa fa-clock-o"></i
                 ><a [routerLink]="['./cro-saved-blogs']">Saved Blogs</a>
               </li>
-              <li routerLinkActive="activetab">
+              <!-- <li routerLinkActive="activetab">
                   <i class="fa fa-bars"></i
                   ><a [routerLink]="['./cro-videos']">All Videos</a>
-                </li>
+                </li> -->
               <li routerLinkActive="activetab">
                 <i class="fa fa-plus-square"></i
                 ><a [routerLink]="['./cro-post-blog']">Post New Blog</a>
               </li>
-              <li routerLinkActive="activetab">
+              <!-- <li routerLinkActive="activetab">
                 <i class="fa fa-video-camera"></i
                 ><a [routerLink]="['./cro-post-video']">Post New Video</a>
-              </li>
+              </li> -->
               <li routerLinkActive="activetab">
                 <i class="fa fa-user"></i
                 ><a [routerLink]="['./cro-edit-profile']">Edit Profile</a>
@@ -72,7 +72,7 @@
             <ul class="delete">
               <li>
                 <i class="fa fa-power-off"></i
-                ><a routerLink="/onewaterblog/cro-login">Logout</a>
+                ><a (click)="logout()">Logout</a>
               </li>
             </ul>
           </div>
