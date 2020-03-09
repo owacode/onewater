@@ -80,6 +80,7 @@ export class MayorLoginComponent implements OnInit {
     };
     console.log(this.user.value);
     this.auth.addMayor(this.user.value).subscribe(result=> {
+      console.log(result)
       if(result.status == 'error'){
         console.log("email already exist");
         this.modal.hideBtnLoader();

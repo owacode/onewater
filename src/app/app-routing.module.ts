@@ -92,12 +92,12 @@ const routes: Routes = [
         // canActivate: [Authguard]
       },
       {
-        path: 'mayor-blogpost',
+        path: 'mayor-blogpost/:id',
         loadChildren: './blog-website/mayor-post/mayor-post.module#MayorPostModule',
         // canActivate: [Authguard]
       },
       {
-        path: 'cro-blogpost',
+        path: 'cro-blogpost/:id',
         loadChildren: './blog-website/cro-post/cro-post.module#CroPostModule',
         // canActivate: [Authguard]
       },
@@ -106,11 +106,11 @@ const routes: Routes = [
         loadChildren: './blog-website/author-page/author-page.module#AuthorPageModule'
       },
       {
-        path: 'mayorprofile',
+        path: 'mayorprofile/:id',
         loadChildren: './blog-website/mayor-profile/mayor-profile.module#MayorProfileModule'
       },
       {
-        path: 'croprofile',
+        path: 'croprofile/:id',
         loadChildren: './blog-website/cro-profile/cro-profile.module#CroProfileModule'
       },
       {
