@@ -18,8 +18,8 @@ const routes: Routes = [
       { path: 'cro-post-blog', loadChildren: './cro-post-blog/cro-post-blog.module#CroPostBlogModule' },
       { path: 'cro-post-video', loadChildren: './cro-post-video/cro-post-video.module#CroPostVideoModule' },
       { path: 'cro-edit-profile', loadChildren: './cro-author-edit-profile/cro-author-edit-profile.module#CroAuthorEditProfileModule' },
-      { path: 'cro-blog-details', loadChildren: './cro-blog-details/cro-blog-details.module#CroBlogDetailsModule' },
-      { path: 'cro-edit-blog', loadChildren: './cro-edit-saved-blog/cro-edit-saved-blog.module#CroEditSavedBlogModule' },
+      { path: 'cro-blog-details/:id', loadChildren: './cro-blog-details/cro-blog-details.module#CroBlogDetailsModule' },
+      { path: 'cro-edit-blog/:id', loadChildren: './cro-edit-saved-blog/cro-edit-saved-blog.module#CroEditSavedBlogModule' },
     ]
   }
 ];

@@ -11,94 +11,62 @@
     <div class="col-lg-8">
       <div class=" post-top">
         <h1>
-          Building a blog with Gridsome: Creating the Blog
+          {{blog?.title}}
         </h1>
 
-        <img src="https://images.pexels.com/photos/3626734/pexels-photo-3626734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        <img src="{{blog?.image}}" alt="">
         <div class="article-meta">
-          <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Hnet-image.gif" alt="Author" />
+          <img src="{{cro?.image}}" alt="Author" />
           <div class="meta-data">
             <span class="meta-author"
-              >By 
-              <a [routerLink]="['/onewaterblog/croprofile/']">CRO</a></span
+              >By
+              <a [routerLink]="['/onewaterblog/croprofile/',cro?._id]">{{cro?.name}}</a></span
             ><br />
             <span class="meta-date"
-              >  Lorem ipsum dolor sit amet...</span
+              >{{cro?.bio}}</span
             >
           </div>
         </div>
 
         <p class="teaser top-teaser">
           <strong>Category</strong> :
-          <span> Water  </span>
-          <span> Water Management </span>
+          <span> {{blog?.category}}  </span>
+          <span> {{blog?.sub_category}} </span>
         </p>
-        <div class="di">
-         <p>
-          Gridsome is the Gatsby alternative for Vue.js that aims to provide the tech stack to build blazing fast statically generated websites. It’s data-driven, using a GraphQL layer to get data from different sources in order to dynamically generate pages from it.
-
-          A few days ago I announced Gridsome on Twitter as soon as I heard about it. It’s a project built by the brothers Tommy Vedvik and Hans-Jørgen Vedvik (could they be the next Nuxt brothers?).
-          
-          It has special focus on web performance, applying the PRPL pattern in order to achieve fast time to interactive (TTI) and therefore great scores in Lighthouse.
-          
-          I’m pretty sure you’re as excited as I am, so let’s see how we can build a simple blog with Gridsome!
-          
-          — Sorry to interrupt this program! 📺
-          If you're interested in learning Vue in a comprehensive and structured way, I highly recommend you try The Vue.js Master Class course by Vue School. Learning from a premium resource like that is a serious investment in yourself.
-          
-          Plus, this is an affiliate link, so if you purchase the course you help Alligator.io continue to exist at the same time! 🙏
-          
-          - Seb, ✌️+❤️
-          Getting Started
-          Gridsome comes with a nice CLI to bootstrap the project. Let’s start by installing it and creating a project:
-          
-          $ npm install --global @gridsome/cli
-          $ gridsome create my-awesome-blog
-          Now you can go to my-awesome-blog and run npm run develop to start building the blog.
-          
-          Folder Structure
-          If you go to the src folder created, you’ll see that it’s no much different than with a usual Vue app.
-          
-          Similar to the way Nuxt.js works, Gridsome has pages and layouts.
-          
-          Pages are the Vue components that define the pages of the website, and their folder structure determine the routes created. For instance, by default you have pages/Index.vue and pages/About.vue, that will end up creating the / and /about routes.
-          
-          If you take a look at any of the pages, you’ll see they are wrapped in a component, which is the default layout registered in main.js. Take a look at the layout docs to find more info.
-         </p>
-        </div>
+        <div class="di"[innerHtml]="blog?.desc"></div>
         <div class="blog-options">
-          <div class="like-btn">
+          <div class="like-btn" *ngIf="!liked">
             <h6>Like :</h6>
-            <a>
+            <a (click)="likeblog()">
               <i class="fa fa-heart" aria-hidden="true"></i>
             </a>
             <span>liked!</span>
           </div>
-          <!-- <div class="like-btn">
+          <div class="like-btn" *ngIf="liked">
             <h6>Liked</h6>
             <a class="press">
               <i class="fa fa-heart" aria-hidden="true"></i>
             </a>
             <span>liked!</span>
-          </div> -->
+          </div>
           <div class="share-btn">
             <h6>Share on :</h6>
-            <button><fb-like></fb-like></button>
-            <button><tweet></tweet></button>
-            <button><linkedin-share></linkedin-share></button>
+            <button><fb-like url="{{ url }}"></fb-like></button>
+            <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
+            <button><linkedin-share url="{{ url }}"></linkedin-share></button>
           </div>
         </div>
 
         <div class="meta-bio author-box">
-          <a [routerLink]="['/onewaterblog/croprofile/']">
-            <img src="https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+          <a [routerLink]="['/onewaterblog/croprofile/',cro?._id]">
+            <img src="{{cro?.image}}" alt="" />
           </a>
           <div class="bio-text">
             <p class="bio-shl">Author</p>
             <p class="bio-hl">
-              <a [routerLink]="['/onewaterblog/croprofile/']">CRO</a>
+              <a [routerLink]="['/onewaterblog/croprofile/',cro?._id]">{{cro?.name}}</a>
             </p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, in debitis minima ad officiis similique, accusamus ipsam nostrum quo saepe delectus eveniet! Dignissimos rem harum inventore cupiditate et similique quas....</p>
+            <p>{{cro?.bio}}</p>
           </div>
         </div>
       </div>
@@ -106,38 +74,39 @@
       <div class="related-blogs">
         <h2>More From The CRO</h2>
         <owl-carousel
+          [items]="croblogs"
           [options]="carouselOptions"
           [carouselClasses]="['owl-theme', 'row', 'sliding']"
         >
-          <div class="item">
-            <div class="outer-card">
-              <div class="outer-overlay"></div>
-              <div class="two-card">
-                <img src="https://images.pexels.com/photos/1547729/pexels-photo-1547729.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
-                <div class="blog-caption">
-                  <a [routerLink]="['/onewaterblog/cro-blogpost']">
-                    <h5>Lorem, ipsum dolor sit amet...</h5>
-                  </a>
-                  <div class="blog-meta-data">
-                    <div class="author">By CRO</div>
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>
-                      <span 
-                        >22 likes</span
-                      >
-                    </div>
-                    <div class="read">
-                      7 mins read
-                    </div>
+        <div class="item" *ngFor="let blog of croblogs">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+              <img src="{{ blog?.image }}" alt="" />
+              <div class="blog-caption">
+                <a [routerLink]="['/onewaterblog/cro-blogpost', blog?._id]">
+                  <h5>{{ blog.title }}..</h5>
+                </a>
+                <div class="blog-meta-data">
+                  <div class="author">By {{ blog?.mayor_name | titlecase }}</div>
+                  <div class="likes" *ngIf="blog?.likecount">
+                    <i class="fa fa-heart"></i>
+                    <span
+                      >{{ blog?.likecount }} likes</span
+                    >
+                  </div>
+                  <div class="read">
+                    {{ blog?.read_time }}  mins read
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
         </owl-carousel>
       </div>
     </div>
-  
+
   </div>
 </div>
 </div>

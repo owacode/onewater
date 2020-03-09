@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Feather from 'feather-icons';
 import * as $ from "jquery";
+import { CROAuthService } from '../services/cro-auth.service';
 
 @Component({
   selector: 'app-cro-admin',
@@ -9,10 +10,10 @@ import * as $ from "jquery";
 })
 export class CroAdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: CROAuthService) { }
 
   ngOnInit() {
-
+    this.auth.checkLocalStorage();
     let filter = document.querySelector('.filter-btn a');
     let optionBox = document.querySelector('.dashboard-sidebar');
     let options = document.querySelectorAll('.dashboard-sidebar .dashboard-menu ul li a');
@@ -27,4 +28,7 @@ export class CroAdminComponent implements OnInit {
 
   }
 
+  logout(){
+    this.auth.logout();
+  }
 }

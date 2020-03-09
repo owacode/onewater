@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-cm-saved-blogs',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cm-saved-blogs.component.scss']
 })
 export class CmSavedBlogsComponent implements OnInit {
-
-  constructor() { }
+  savedblogs;
+  constructor(public common: CommonService) { }
 
   ngOnInit() {
+    this.common.getSavedBlog()
+    .subscribe(result=>{
+      console.log(result)
+      this.savedblogs=result.result;
+      console.log(this.savedblogs);
+    })
   }
 
 }

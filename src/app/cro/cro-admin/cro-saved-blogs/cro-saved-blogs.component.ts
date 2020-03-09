@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CROAuthService } from '../../services/cro-auth.service';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-cro-saved-blogs',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CroSavedBlogsComponent implements OnInit {
 
-  constructor() { }
+
+  savedblogs;
+  constructor(public route:ActivatedRoute, public commonservice: CommonService, public authservice: CROAuthService) { }
 
   ngOnInit() {
+      this.commonservice.getSavedBlog()
+      .subscribe(result=>{
+        console.log(result)
+        this.savedblogs=result.result;
+        console.log(this.savedblogs);
+      })
   }
 
 }

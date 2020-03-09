@@ -46,6 +46,7 @@ export class MayorLoginComponent implements OnInit {
   constructor(public modal: ModalFunctions, public auth: MayorAuthService, public route:Router) { }
 
   ngOnInit() {
+    this.auth.checkLocalStorage();
     this.showregform();
 
     this.user = new FormGroup({
@@ -79,6 +80,7 @@ export class MayorLoginComponent implements OnInit {
     };
     console.log(this.user.value);
     this.auth.addMayor(this.user.value).subscribe(result=> {
+      console.log(result)
       if(result.status == 'error'){
         console.log("email already exist");
         this.modal.hideBtnLoader();
@@ -173,4 +175,20 @@ export class MayorLoginComponent implements OnInit {
           })
   }
 
+  resetpassword() {
+    this.modal.showBtnLoader();
+    this.resetpasssubmitted = true;
+    console.log(this.resetpassform.value);
+    if(this.resetpassform.invalid){
+      console.log('invalid reset form');
+      this.modal.hideBtnLoader();
+      return;
+    }
+    console.log(this.resetpassform.value,'after reset');
+    this.auth.resetpassword(this.resetpassform.value)
+    .subscribe(result=> {
+      console.log(result);
+      this.modal.hideBtnLoader();
+    })
+  }
 }

@@ -43,37 +43,8 @@ export class BlogComponent implements OnInit {
       min:7
     }
   ]
-  
-  mayorList = [
-    {
-      img:'https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
-      date:' March 20,2020',
-      likes:34,
-      min:7
-    },
-    {
-      img:'https://images.pexels.com/photos/1834404/pexels-photo-1834404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
-      date:' March 20,2020',
-      likes:34,
-      min:7
-    },
-    {
-      img:'https://images.pexels.com/photos/1101246/pexels-photo-1101246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
-      date:' March 20,2020',
-      likes:34,
-      min:7
-    },
-    {
-      img:'https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
-      date:' March 20,2020',
-      likes:34,
-      min:7
-    }
-  ]
+
+  mayorList;
 
 
   categories = [
@@ -273,26 +244,7 @@ export class BlogComponent implements OnInit {
   }
 
 
-  mayorBlogs = {
-    margin: 25,
-    nav: true,
-    dots: false,
-    stagePadding: 30,
-    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      768: {
-        items: 2,
-        stagePadding: 50
-      },
-     1000: {
-        items: 3,
-      }
-    }
-  }
+  mayorBlogs;
   croBlogs = {
     margin: 25,
     nav: true,
@@ -370,7 +322,7 @@ export class BlogComponent implements OnInit {
     }
   }
 
- 
+
 
   authors;
   bannerblogs;
@@ -379,6 +331,8 @@ export class BlogComponent implements OnInit {
   constructor(public http: HttpClient) { }
 
   ngOnInit() {
+    this.getApprovedBlogsByMayor();
+    this.getApprovedBlogsByCRO();
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/approveblogs')
       .subscribe(result => {
         console.log(result);
@@ -403,4 +357,19 @@ export class BlogComponent implements OnInit {
 
   }
 
+  getApprovedBlogsByMayor() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-mayor.herokuapp.com/approveblogs"
+    ).subscribe(result=>{
+      this.mayorList = result.result;
+    })
+  }
+
+  getApprovedBlogsByCRO() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/approveblogs"
+    ).subscribe(result=>{
+      this.croList = result.result;
+    })
+  }
 }
