@@ -192,6 +192,7 @@ export class AuthorLoginComponent implements OnInit {
     this.auth.resetpassword(this.resetpassform.value)
     .subscribe(result=> {
       console.log(result);
+      this.modal.openModal('#forgotpassModal');
       this.modal.hideBtnLoader();
     })
   }

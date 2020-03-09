@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CroAuthorVideosComponent } from './cro-author-videos.component';
+import { EventsComponent } from './events.component';
 
-describe('CroAuthorVideosComponent', () => {
-  let component: CroAuthorVideosComponent;
-  let fixture: ComponentFixture<CroAuthorVideosComponent>;
+describe('EventsComponent', () => {
+  let component: EventsComponent;
+  let fixture: ComponentFixture<EventsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CroAuthorVideosComponent ]
+      declarations: [ EventsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CroAuthorVideosComponent);
+    fixture = TestBed.createComponent(EventsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

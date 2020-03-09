@@ -43,6 +43,7 @@ export class RecoverPasswordComponent implements OnInit {
     }
     if(this.resetpassword.value.password != this.resetpassword.value.cpassword) {
       alert('password not match');
+      this.modal.openModal('#passModal');
       this.modal.hideBtnLoader();
       return;
     }
@@ -51,24 +52,28 @@ export class RecoverPasswordComponent implements OnInit {
       this.http.post<{status: string, msg: string, result: any}>('https://onewater-blogapi.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
         console.log(result);
+        this.modal.openModal('#passSuccessModal');
         this.modal.hideBtnLoader();
       })
     }else if(this.decoded_token.platform == 'instructor') {
       this.http.post<{status: string, msg: string, result: any}>('https://onewater-instructor-api.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
         console.log(result);
+        this.modal.openModal('#passSuccessModal');
         this.modal.hideBtnLoader();
       })
     }else if(this.decoded_token.platform == 'blog_cro') {
       this.http.post<{status: string, msg: string, result: any}>('https://onewater-cro.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
         console.log(result);
+        this.modal.openModal('#passSuccessModal');
         this.modal.hideBtnLoader();
       })
     }else if(this.decoded_token.platform == 'blog_mayor') {
       this.http.post<{status: string, msg: string, result: any}>('https://onewater-mayor.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
         console.log(result);
+        this.modal.openModal('#passSuccessModal');
         this.modal.hideBtnLoader();
       })
     }

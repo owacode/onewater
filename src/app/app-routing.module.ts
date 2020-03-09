@@ -57,6 +57,10 @@ const routes: Routes = [
         loadChildren: './landing-components/contact/contact.module#ContactModule'
       },
       {
+        path: 'events',
+        loadChildren: './landing-components/events/events.module#EventsModule'
+      },
+      {
            path: 'leaders',
            loadChildren: './landing-components/leaders/leaders.module#LeadersModule'
       },

@@ -193,12 +193,15 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          (click)="modal.closeModal(registerModal)"
+          routerLink="onewaterblog/author-login"
         >
           &times;
         </button>
       </div>
       <div class="modal-body">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
         <img
           src="assets/img/modals/register.jpg
          "
@@ -213,7 +216,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        (click)="modal.closeModal(registerModal)"
+        routerLink="onewaterblog/author-login"
       >
         OK
       </button>

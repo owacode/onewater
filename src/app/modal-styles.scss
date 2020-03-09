@@ -35,6 +35,15 @@
     position: relative;
   }
 
+  .modal-logo{
+    text-align: center;
+    margin-top: -2.5rem;
+    img{
+      max-width: 100px !important;
+      margin-bottom: 0.5rem;
+    }
+  }
+
   .modal button{
     color: #101010;
     background: transparent;
@@ -71,7 +80,7 @@
     }
     img{
       width: 65%;
-      margin: 2rem auto;
+      margin: 0rem auto 1rem;
     }
   }
 

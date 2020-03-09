@@ -163,6 +163,7 @@ export class InstructorLoginComponent implements OnInit {
     this.http.post<{status: string, msg: string, result: any}>('https://onewater-instructor-api.herokuapp.com/reset-password',this.resetpassform.value)
     .subscribe(result=> {
       console.log(result);
+      this.modal.openModal('#forgotpassModal');
       this.modal.hideBtnLoader();
     })
   }
