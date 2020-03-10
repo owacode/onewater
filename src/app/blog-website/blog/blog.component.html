@@ -179,14 +179,14 @@
       <div class="top-authors card-shadow">
         <div class="container">
           <!-- <div class="blog-block blog-block-right"></div> -->
-         
+
 
           <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-3 col-6" *ngFor="let author of authors">
-              <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
+            <div class="col-lg-6 col-md-3 col-6" *ngFor="let mayor of mayors">
+              <a [routerLink]="['/onewaterblog/mayorprofile/',mayor._id]">
                 <div class="top-auth-img">
-                  <img src="{{ author.image }}" alt="" />
-                  <h6 style="text-transform: capitalize;">{{ author.name }}</h6>
+                  <img src="{{ mayor?.image }}" alt="" />
+                  <h6 style="text-transform: capitalize;">{{ mayor.name }}</h6>
                 </div>
               </a>
             </div>
@@ -251,7 +251,7 @@
       <div class="top-authors card-shadow">
         <div class="container">
           <!-- <div class="blog-block blog-block-right"></div> -->
-         
+
           <div class="row justify-content-center">
             <div class="col-lg-6 col-md-3 col-6" *ngFor="let author of authors">
               <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
@@ -316,7 +316,7 @@
       <div class="top-authors card-shadow">
         <div class="container">
           <!-- <div class="blog-block blog-block-right"></div> -->
-         
+
           <div class="row justify-content-center">
             <div class="col-lg-6 col-md-3 col-6" *ngFor="let author of authors">
               <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
