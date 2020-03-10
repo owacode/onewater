@@ -77,7 +77,10 @@
     }
     .owx-hero-img,.owx-about-img{
         max-width: 500px;
-        margin: 10vh auto 0;
+        margin:auto;
+    }
+    .owx-hero-img{
+        margin-top: 10vh;
     }
     .about-section{
         .block-2{

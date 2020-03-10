@@ -7,6 +7,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .intro-content{
     img {
         width: 95%;
@@ -31,18 +32,14 @@
 .mayor-section{
     margin-top: 4rem;
 }
+
 .section-intro{
     h1{
         position: relative;
         margin-bottom:2rem;
     }
 }
-// .section-3{
-//   padding-bottom: 55vh;
-//   margin-bottom: -55vh;
 
-
-// }
 .author-btn {
   text-align: center;
   margin: 30px 0 70px;
@@ -242,3 +239,27 @@
       }
     }
   }
+  .img-wrap{
+    img{
+      max-width: 500px;
+    }
+  }
+@media screen and (max-width: 991px){
+    .page-title h3 {
+      margin: auto;
+      max-width: 500px;
+      text-align: center;
+  }
+  blockquote p {
+    text-align: center;
+}
+.btn-wrap{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+.img-wrap{
+  text-align: center;
+}
+}
