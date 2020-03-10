@@ -13,7 +13,7 @@
 <section class="emp-registration">
   <div class="container">
     <h1 *ngIf="!submited">
-      Hello! Welcome to <span>OneWater Academy.</span> <br> 
+      Hello! Welcome to <span>OneWater Academy.</span> <br>
       Complete and submit the form below to get started.
     </h1>
 
@@ -326,7 +326,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          routerLink="onewaterblog/author-login"
+          (click)="logout()"
         >
           &times;
         </button>
@@ -349,7 +349,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        routerLink="onewaterblog/author-login"
+        (click)="logout()"
       >
         OK
       </button>

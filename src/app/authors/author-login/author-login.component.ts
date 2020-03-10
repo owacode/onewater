@@ -104,12 +104,12 @@ export class AuthorLoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.userauth.access_token,localStorage.getItem('instructor_email'))
-    if(this.userauth.access_token != null || localStorage.getItem('instructor_email')) {
-      this.modal.hideBtnLoader();
-      this.modal.openModal('#platformModal');
-      return;
-    }
+    // console.log(this.userauth.access_token,localStorage.getItem('instructor_email'))
+    // if(this.userauth.access_token != null || localStorage.getItem('instructor_email')) {
+    //   this.modal.hideBtnLoader();
+    //   this.modal.openModal('#platformModal');
+    //   return;
+    // }
     this.loginsubmitted = true;
 
     if (this.loginuser.invalid) {
