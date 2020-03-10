@@ -55,7 +55,7 @@
   </div>
 </section>
 
-<section class="leaders-section">
+<!-- <section class="leaders-section">
   <div class="block-8"></div>
   <div class="container">
     <div class="heading">
@@ -89,7 +89,7 @@
       </div>
     
 </div>
-</section>
+</section> -->
 
 <!-- <section class="mayor-section">
   <div class="container">
@@ -245,7 +245,7 @@
   </ul>
               <div class="mybtn">
                 <a routerLink="/home/owx">
-                  Go to Mentor Mentee
+                  Go to OneWater Xchange
                 </a>
               </div>
             </div>
@@ -274,7 +274,7 @@
               </ul>
               <div class="mybtn">
                 <a [routerLink]="['/o-wow']">
-                  Go to O-Wow
+                  Go to O-WOW
                 </a>
               </div>
             </div>
@@ -313,7 +313,7 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <a routerLink="/onewaterblog" class="d-block">
-                      Go to OneWater Blog
+                      Go to OneWater Blogs
                     </a>
                   </div>
                   <div class="col-sm-6"> <a routerLink="/onewaterblog/author-login" class="d-block">
@@ -534,7 +534,7 @@ OneWater is the perfect platform to share your successes and grow your professio
     </div>
   </div>
 </section>
-<section class="donation-section">
+<!-- <section class="donation-section">
   <div class="donate-block"></div>
   <div class="donate-block-2"></div>
   <div class="donate-circle"></div>
@@ -557,7 +557,7 @@ OneWater is the perfect platform to share your successes and grow your professio
       </a>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- <section class="call-to-action-section">
   <div class="block-5"></div>
@@ -579,7 +579,7 @@ OneWater is the perfect platform to share your successes and grow your professio
     </div>
   </div>
 </section> -->
-
+<!-- 
 <div class="newsletter-section">
   <div class="container">
     <div class="row">
@@ -605,97 +605,10 @@ OneWater is the perfect platform to share your successes and grow your professio
   </div>
 
 
-</div>
+</div> -->
 
 
 
-<!-- Modal for newsletter -->
-<div class="modal fade modal-no-animate" id="subscribeModal" role="dialog" #subscribeModal>
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <div class="modal-head">
-        <button type="button" class="close" data-dismiss="modal" (click)="modal.closeModal(subscribeModal)">
-          &times;
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-logo">
-          <img src="assets/img/ow-logo1.png" alt="">
-        </div>
-      
-        <img
-          src="assets/img/landing/newsletter-modal.png
-           "
-          alt=""
-        />
-        <h2>Enter your email to get our newsletter every week!</h2>
-        <form [formGroup]="form">
-          <input
-          name="name"
-            formControlName="name"
-            class="vldform__textbox"
-            type="text"
-            placeholder="name"
-            required
-          />
-          <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p>
-          <input
-          name="email"
-            formControlName="email"
-            class="vldform__textbox"
-            type="email"
-            placeholder="email"
-            required
-          />
-
-          <p *ngIf="submited && form.get('email').invalid">Enter a Valid Email</p>
-
-          <button
-            type="submit"
-            (click)="modal.showBtnLoader()"
-            (click)="subscribe()"
-            class="btn btn-default"
-          >
-
-          <span class="btn-loading-content">
-            <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
-          </span>
-          <span class="btn-default-content">
-           Submit
-          </span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal after user subscribe to newsletter -->
-<div class="modal fade" id="thanksmodal" role="dialog" #thanksmodal>
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <div class="modal-head">
-        <button type="button" class="close" (click)="modal.closeModal(thanksmodal)">
-          &times;
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-logo">
-          <img src="assets/img/ow-logo1.png" alt="">
-        </div>
-       
-        <img
-          src="assets/img/icons/thankful.svg
-         "
-          alt=""
-          style="width:35%; margin:auto;"
-        />
-        <h2>Thankyou for subscribing.</h2>
-        <button class="btn btn-default" (click)="modal.closeModal(thanksmodal)">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!--modal to show if user is not logged in-->
 <div class="modal fade" id="blogModal" #blogModal>
@@ -739,31 +652,6 @@ OneWater is the perfect platform to share your successes and grow your professio
           Login now
         </a>
       </button>
-    </div>
-  </div>
-</div>
-
-<!-- Modal after user subscribe to newsletter -->
-<div class="modal fade" id="alreadysubscribedmodal" role="dialog" #alreadysubscribedmodal>
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <div class="modal-head">
-        <button type="button" class="close" (click)="modal.closeModal(alreadysubscribedmodal)">
-          &times;
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-logo">
-          <img src="assets/img/ow-logo1.png" alt="">
-        </div>
-        <img
-          src="assets/img/modals/verify-mail.jpg"
-          alt=""
-        />
-        <h2>Email you entered has already been subscribed. <br>
-          Thankyou</h2>
-        <button class="btn btn-default" (click)="modal.closeModal(alreadysubscribedmodal)">Close</button>
-      </div>
     </div>
   </div>
 </div>

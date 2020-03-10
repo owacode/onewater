@@ -1,4 +1,7 @@
 /*header styles*/
+@import '../modal-styles.scss';
+@import '../form-styles.scss';
+
 header{
     height: 90px;
     display: flex;
@@ -64,6 +67,10 @@ header{
         filter: none;
     }
 
+    .platform-dd{
+        color: #000461;
+    }
+
     .menu{
         .navlink{
             a{
@@ -103,6 +110,58 @@ header{
     }
 }
 
+
+.dropdown-btn{
+    position: relative;
+    img{
+       width: 30px;
+
+        cursor: pointer;
+    }
+    .dropdown-content{
+        position: absolute;
+        display: block;
+        right: 0;
+        background-color: #fff !important;
+        top: 120%;
+        padding: 1rem 1rem 0.5rem;
+        border-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+        transition:all 0.3s ease-in-out;
+
+        a{
+        color: #000;
+        display: block;
+        margin: 0 0 0.5rem;
+        }
+        a::after{
+            background-color: #000461;
+        }
+    }
+}
+
+.dropdown-btn:hover .dropdown-content{
+    visibility: visible;
+    opacity: 1;
+}
+
+.mobile-dropdown{
+   display: none;
+   margin-right: 50px;
+}
+
+.platform-dd{
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+
+    .navlink{
+        margin-bottom: 0.5rem;
+    }
+}
+
 @media all and (max-width:1091px){
     header{
         height: 70px;
@@ -113,6 +172,17 @@ header{
     
     .hamburger{
         display: flex;
+    }
+
+    .platform-dd{
+        color: #000461;
+    }
+    .mobile-dropdown{
+       display: block;
+       
+    }
+    .visible{
+        visibility: visible;
     }
     .menu{
     position: fixed;
@@ -190,6 +260,9 @@ header{
         img{
             filter: none;
         }
+    }
+    .platform-dd{
+        color: #000;
     }
     .menu .navlink {
         a{

@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http'
 import { AuthService } from '../auth.service';
 import * as $ from 'jquery';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
+import { ModalFunctions } from '../shared-functions/modal-functions';
+import {FormControl, FormGroup, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-header',
@@ -11,8 +13,9 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 })
 
 export class HeaderComponent implements OnInit {
-  
-  constructor(public http: HttpClient, public auth: AuthService, public router: Router) { }
+  form:FormGroup;
+  public submited: Boolean = false;
+  constructor(public http: HttpClient, public auth: AuthService, public router: Router, public modal:ModalFunctions) { }
 
   ngOnInit() {
 
@@ -22,8 +25,8 @@ export class HeaderComponent implements OnInit {
     const hamburger = document.querySelector('.hamburger');
     const menulink = document.querySelectorAll('.navlink a');
 
+    // document.querySelector('.mobile-dropdown').addEventListener("click",this.toggleUserPanel);
     this.toggleHeader();
-
     let fixHeader = function () {
       if ($(window).scrollTop() > 70) {
         $(header).addClass("fixed-header");
@@ -35,6 +38,8 @@ export class HeaderComponent implements OnInit {
       }
     }
 
+  
+
     let showMenu = function () {
       $(menu).toggleClass('show-menu');
       $(logo).toggleClass('mobile-logo');
@@ -44,7 +49,19 @@ export class HeaderComponent implements OnInit {
     $(window).on("scroll", fixHeader);
     $(hamburger).on("click", showMenu);
     $(menulink).on("click", showMenu);
+
+    this.form= new FormGroup({
+      name:new FormControl(null, {validators:[Validators.required]}),
+      email:new FormControl(null, {validators:[Validators.required,Validators.email]}),
+    })
+
   }
+
+  toggleUserPanel(){
+    document.querySelector('.user-panel').classList.toggle('visible');
+    console.log("toggle panel");
+  }
+
   toggleHeader() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -63,6 +80,31 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+  }
+
+  subscribe(){
+    this.submited = true;
+    console.log(this.form.value);
+    if(this.form.invalid){
+      console.log("Invalid newsletter details");
+      this.modal.hideBtnLoader();
+      return;
+    }
+    this.http.post<{ status: string}>('https://onewater-job-api.herokuapp.com/subscribe',this.form.value)
+    .subscribe(result=>{
+      if(result.status == "error"){
+        console.log(result,'already suscribed');
+        this.modal.hideBtnLoader();
+        this.modal.closeModal('#subscribeModal');
+        this.modal.openModal("#alreadysubscribedmodal");
+        return;
+      }
+
+      console.log(result,'suscribed successfully');
+      this.modal.hideBtnLoader();
+      this.modal.closeModal('#subscribeModal');
+      this.modal.openModal("#thanksmodal");
+    })
   }
 
   login() {

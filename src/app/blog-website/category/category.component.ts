@@ -79,7 +79,7 @@ export class CategoryComponent implements OnInit {
     },
     {
       'img': 'assets/img/icons/storm.svg',
-      'name': 'Storm Water',
+      'name': 'StormWater',
       'subcat': [
         {
           'subname': 'Watershed',
@@ -178,7 +178,7 @@ export class CategoryComponent implements OnInit {
     },
     {
       'img': 'assets/img/icons/regulatory.svg',
-      'name': 'Legistative/ Regulatory',
+      'name': 'Legislative & Regulatory',
       'subcat': [
         {
           'subname': 'Goverment Affairs',

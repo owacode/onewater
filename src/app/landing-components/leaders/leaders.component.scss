@@ -14,6 +14,10 @@
     }
 }
 
+.page-title h5{
+  color: #fff;
+  max-width: 600px;
+}
 .leader-img{
     width: 150px;
     height: 150px;
@@ -40,44 +44,7 @@
     }
 }
 
-.author-btn {
-  text-align: center;
-  margin: 30px 0 70px;
-  z-index: 10;
-  position: relative;
 
-  .reg-text {
-    padding: 75px 0;
-  }
-  background: #d5e7f2;
-  h3 {
-    text-align: center;
-    margin: 2rem auto;
-    color: #000c61;
-    font-weight: 600;
-  }
-  a {
-    text-align: center;
-    border-radius: 3px;
-    color: #000c61;
-    padding: 8px 16px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin: 0 1rem;
-    background: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: none;
-    transition: all 0.3s ease-in-out;
-  }
-  a:hover {
-    color: #fff;
-    background: #246df8;
-  }
-  img {
-    width: auto;
-    max-height: 220px;
-  }
-}
   
     .top-auth-img {
       text-align: center;
@@ -180,18 +147,12 @@
     }
   }
 
-  .section-blue{
-    background:linear-gradient(180deg, rgba(1, 23, 45, 0.82) 20%, rgba(0, 73, 143, 0.86) 100%), url(/assets/img/landing/cro-blue-bg.jpeg);
-    background-attachment: fixed;
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+
 
   .section-blue-cro{
     position: relative;
     color: #fff ;
-    background:linear-gradient(180deg, rgba(1, 23, 45, 0.82) 20%, rgba(0, 73, 143, 0.86) 100%), url(/assets/img/landing/cro-gradient-bg.jpeg);
+    background:linear-gradient(180deg, rgba(1, 23, 45, 0.82) 20%, rgba(0, 73, 143, 0.86) 100%), url(/assets/img/landing/cro-blue-bg.jpeg);
     background-attachment: fixed;
     background-position: center top;
     background-size: cover;
@@ -202,6 +163,7 @@
   }
 
   .cro-blogs{
+    margin-top: 5rem;
     .outer-card{
       .two-card{
         color: #fff;
@@ -260,6 +222,9 @@ h2{
   text-align: center;
 }
 .img-wrap{
+  text-align: center;
+}
+.page-title h5{
   text-align: center;
 }
 }
