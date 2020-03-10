@@ -6,7 +6,7 @@
 <section class="emp-registration">
     <div class="container">
       <h1 *ngIf="!submited">
-        Hello! Welcome to <span>OneWater Blogs.</span> <br> 
+        Hello! Welcome to <span>OneWater Blogs.</span> <br>
         Complete and submit the form below to get started.
       </h1>
 
@@ -25,7 +25,7 @@
               <div class="col-sm-9">
                 <input
                   type="number"
-                 
+
                   class="form-control"
                   placeholder="Enter your mobile number"
                   formControlName="mobile"
@@ -163,7 +163,7 @@
     <div class="modal-dialog modal-md">
       <div class="modal-content">
       <div class="modal-head">
-          <button type="button" class="close" data-dismiss="modal" routerLink="onewaterblog/author-login">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" (click)="logout()">&times;</button>
       </div>
         <div class="modal-body">
           <div class="modal-logo">
@@ -173,7 +173,7 @@
          " alt="">
          <h2>Your profile has been submitted for review. We will get back to you in 24 hrs.</h2>
         </div>
-          <button type="button" class="btn btn-default" data-dismiss="modal" routerLink="onewaterblog/author-login">OK</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="logout()">OK</button>
       </div>
     </div>
 </div>

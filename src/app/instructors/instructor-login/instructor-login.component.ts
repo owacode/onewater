@@ -100,11 +100,11 @@ export class InstructorLoginComponent implements OnInit {
 
   login(){
     console.log(localStorage.getItem('authoremail'), this.auth.access_token)
-    if(this.auth.access_token != null || localStorage.getItem('authoremail')){
-      this.modal.hideBtnLoader();
-      this.modal.openModal('#platformModal');
-      return;
-    }
+    // if(this.auth.access_token != null || localStorage.getItem('authoremail')){
+    //   this.modal.hideBtnLoader();
+    //   this.modal.openModal('#platformModal');
+    //   return;
+    // }
     this.loginsubmitted = true;
     console.log(this.loginuser.value);
     if(this.loginuser.invalid){

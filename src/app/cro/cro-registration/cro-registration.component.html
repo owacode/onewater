@@ -193,7 +193,7 @@
           type="button"
           class="close"
           data-dismiss="modal"
-          routerLink="onewaterblog/author-login"
+          (click)="logout()"
         >
           &times;
         </button>
@@ -216,7 +216,7 @@
         type="button"
         class="btn btn-default"
         data-dismiss="modal"
-        routerLink="onewaterblog/author-login"
+        (click)="logout()"
       >
         OK
       </button>
