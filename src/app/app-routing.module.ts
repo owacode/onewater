@@ -98,12 +98,12 @@ const routes: Routes = [
       {
         path: 'mayor-blogpost/:id',
         loadChildren: './blog-website/mayor-post/mayor-post.module#MayorPostModule',
-        // canActivate: [Authguard]
+        canActivate: [Authguard]
       },
       {
         path: 'cro-blogpost/:id',
         loadChildren: './blog-website/cro-post/cro-post.module#CroPostModule',
-        // canActivate: [Authguard]
+        canActivate: [Authguard]
       },
       {
         path: 'authorprofile/:id',
