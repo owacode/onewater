@@ -24,7 +24,7 @@
   color: #fff;
 }
 
-  
+
     .top-auth-img {
       text-align: center;
       z-index: 5;
@@ -43,7 +43,7 @@
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.54), 0px 3px 14px 7px rgba(0, 0, 0, 0.29);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       }
-  
+
       img:hover {
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
           0 10px 10px rgba(0, 0, 0, 0.22);
@@ -58,13 +58,13 @@
       font-weight: 700;
       font-size: 1.1rem;
     }
-  
+
 
   blockquote{
     padding: 1.5rem 0;
     margin: 0;
     position: relative;
-    
+
     p{
       font-size: 1.2rem;
     line-height: 2;
@@ -157,6 +157,9 @@
         .read,
         .likes {
           font-weight: 500;
+        }
+        a h5{
+          color: #fff;
         }
       }
     }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cro-page',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CroPageComponent implements OnInit {
 
+
+  croblogs;
+  cros;
     carouselBlogs = {
       margin: 25,
       nav: true,
@@ -33,11 +37,11 @@ export class CroPageComponent implements OnInit {
       nav: true,
       dots: false,
       stagePadding: 50,
-  
+
       navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
       responsiveClass: true,
       responsive: {
-  
+
         0: {
           items: 1,
           nav: true,
@@ -71,11 +75,26 @@ export class CroPageComponent implements OnInit {
       navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">']
     }
 
-  
-
-  constructor() { }
+  constructor(public http: HttpClient) { }
 
   ngOnInit() {
+    this.getApprovedBlogsByCRO();
+    this.getApprovedCRO();
   }
 
+  getApprovedBlogsByCRO() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/approveblogs"
+    ).subscribe(result=>{
+      this.croblogs = result.result;
+    })
+  }
+
+  getApprovedCRO() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/approvedcro"
+    ).subscribe(result=>{
+      this.cros = result.result;
+    })
+  }
 }

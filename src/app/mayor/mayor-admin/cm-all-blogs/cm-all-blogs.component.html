@@ -52,8 +52,8 @@ class="dashboard-content-wrapper dash-tab"
         </div>
         <div class="close-activity buttons">
           <a class="button" [routerLink]="['/mayor/mayor-blog-details/',blog?._id]">View</a>
-          <button *ngIf="blog.status == 'pending'" (click)="deleteUnApproveBlog(blog._id,blog.unapproved_id)" class="button">Deleteu</button>
-          <button *ngIf="blog.status == 'approved'" (click)="deleteApproveBlog(blog._id,blog.approved_id)" class="button">Deletea</button>
+          <button *ngIf="blog.status == 'pending'" (click)="deleteUnApproveBlog(blog._id,blog.unapproved_id)" class="button">Delete</button>
+          <button *ngIf="blog.status == 'approved'" (click)="deleteApproveBlog(blog._id,blog.approved_id)" class="button">Delete</button>
         </div>
       </div>
       </div>

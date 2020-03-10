@@ -64,97 +64,32 @@
 <section class="cro-blogs featured-post">
   <div class="container">
     <!--featured post carousel section starts-->
-  
+
       <h2>
         Blogs by CROs
       </h2>
-  
+
       <owl-carousel
+      [items]="croblogs"
         [options]="carouselBlogs"
         [carouselClasses]="['owl-theme', 'row', 'sliding']"
       >
-        <div class="item">
+        <div class="item" *ngFor="let blog of croblogs">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
-              <img src="https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+              <img src="{{blog?.image}}" alt="" />
               <div class="blog-caption">
-                <a title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
-                  <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!</h5>
+                <a [routerLink]="['/onewaterblog/cro-blogpost', blog._id]" title="{{ blog?.title }}">
+                  <h5>{{blog?.title}}</h5>
                 </a>
                 <div class="blog-meta-data">
                   <div class="author">
-                   March 20,2020
+                    {{blog?.cro_name}}
                   </div>
-                  <div class="likes"><i class="fa fa-heart"></i>34 likes</div>
+                  <div class="likes"><i class="fa fa-heart"></i>{{blog?.likecount}} likes</div>
                   <div class="read">
-                    7 mins read
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-              <img src="https://images.pexels.com/photos/1834404/pexels-photo-1834404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
-              <div class="blog-caption">
-                <a title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
-                  <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!</h5>
-                </a>
-                <div class="blog-meta-data">
-                  <div class="author">
-                   March 20,2020
-                  </div>
-                  <div class="likes"><i class="fa fa-heart"></i>34 likes</div>
-                  <div class="read">
-                    7 mins read
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-              <img src="https://images.pexels.com/photos/1101246/pexels-photo-1101246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
-              <div class="blog-caption">
-                <a title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
-                  <h5>Lorem ipsum dolor, sit amet consectetur ...</h5>
-                </a>
-                <div class="blog-meta-data">
-                  <div class="author">
-                   March 20,2020
-                  </div>
-                  <div class="likes"><i class="fa fa-heart"></i>34 likes</div>
-                  <div class="read">
-                    7 mins read
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-              <img src="https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
-              <div class="blog-caption">
-                <a title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
-                  <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!</h5>
-                </a>
-                <div class="blog-meta-data">
-                  <div class="author">
-                   March 20,2020
-                  </div>
-                  <div class="likes"><i class="fa fa-heart"></i>34 likes</div>
-                  <div class="read">
-                    7 mins read
+                    {{blog?.read_time}}  mins read
                   </div>
                 </div>
               </div>
@@ -163,7 +98,7 @@
         </div>
       </owl-carousel>
     </div>
-  
+
 </section>
 <!-- <div class="curve"></div> -->
 <div class="section-blue">
@@ -176,73 +111,19 @@
         Meet our CROs
       </h2>
       <owl-carousel
+      [items]="cros"
         [options]="carouselOptionsAuthors"
         [carouselClasses]="['owl-theme', 'row', 'sliding']"
       >
-        <div class="item">
-          <a routerLink="/onewaterblog/croprofile">
+        <div class="item" *ngFor="let cro of cros">
+          <a [routerLink]="['/onewaterblog/croprofile/',cro?._id]">
             <div class="top-auth-img">
               <img
-                src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                src="{{cro?.image}}"
                 alt=""
               />
-              <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
+              <h6 style="text-transform: capitalize;">{{cro?.name}}</h6>
             </div>
-          </a>
-        </div>
-        <div class="item">
-          <a routerLink="/onewaterblog/croprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/3799790/pexels-photo-3799790.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
-          </a>
-        </div>
-        <div class="item">
-          <a routerLink="/onewaterblog/croprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/3799790/pexels-photo-3799790.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
-          </a>
-        </div>
-        <div class="item">
-          <a routerLink="/onewaterblog/croprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
-          </a>
-        </div>
-        <div class="item">
-          <a routerLink="/onewaterblog/croprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
-          </a>
-        </div>
-        <div class="item">
-          <a routerLink="/onewaterblog/croprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
           </a>
         </div>
       </owl-carousel>
@@ -283,10 +164,10 @@
                  </div>
                 </div>
 
-               
+
               </div>
 
-              
+
             </div>
         </div>
         </div>
@@ -315,10 +196,10 @@
                  </div>
                 </div>
 
-               
+
               </div>
 
-              
+
             </div>
         </div>
         </div>
@@ -326,5 +207,5 @@
       </owl-carousel>
     </div>
   </section>
- 
+
 </div>
