@@ -1,5 +1,8 @@
 @import '../about/about.component.scss';
 
+button{
+  font-size: 0.9rem;
+}
 .cover-photo{
     background: linear-gradient(180deg, rgba(0, 30, 199, 0.82) 20%, rgba(13, 0, 212, 0.57) 100%), url(/assets/img/landing/events-bg.jpeg);
     background-attachment: fixed;
