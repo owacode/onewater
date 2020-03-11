@@ -46,7 +46,7 @@
             <p>
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis officiis delectus fuga exercitationem suscipit, quis harum modi illum, id sapiente voluptatum corporis, mollitia doloremque atque tenetur similique. Ratione hic animi temporibus facilis numquam. Reiciendis nostrum provident laudantium, sint perferendis unde delectus amet repellat esse quae soluta temporibus assumenda fuga ab aliquam, odit, dignissimos quasi repudiandae tempora ipsam pariatur nulla. Excepturi?
             </p>
-           
+
           </blockquote>
 
           <div class="btn-wrap">
@@ -58,9 +58,9 @@
         <div class="col-lg-6 img-wrap">
           <img src="assets/img/landing/mayor-img.png" alt="" class="img">
         </div>
-    
+
       </div>
-     
+
     </div>
   </div>
 </section> -->
@@ -68,97 +68,32 @@
 <section class="cro-blogs featured-post">
   <div class="container">
     <!--featured post carousel section starts-->
-  
+
       <h2>
         Blogs by OneWater Leaders
       </h2>
-  
+
       <owl-carousel
+      [items]="mayorblogs"
         [options]="carouselBlogs"
         [carouselClasses]="['owl-theme', 'row', 'sliding']"
       >
-        <div class="item">
+        <div class="item" *ngFor="let blog of mayorblogs">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
-              <img src="https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+              <img src="{{blog?.image}}" alt="" />
               <div class="blog-caption">
-                <a title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
-                  <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!</h5>
+                <a [routerLink]="['/onewaterblog/mayor-blogpost', blog._id]" title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
+                  <h5>{{blog?.title}}</h5>
                 </a>
                 <div class="blog-meta-data">
                   <div class="author">
-                   March 20,2020
+                    {{blog?.date_added | date:'MMMM y, d'}}
                   </div>
-                  <div class="likes"><i class="fa fa-heart"></i>34 likes</div>
+                  <div class="likes"><i class="fa fa-heart"></i>{{blog?.likecount}} likes</div>
                   <div class="read">
-                    7 mins read
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-              <img src="https://images.pexels.com/photos/1834404/pexels-photo-1834404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
-              <div class="blog-caption">
-                <a title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
-                  <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!</h5>
-                </a>
-                <div class="blog-meta-data">
-                  <div class="author">
-                   March 20,2020
-                  </div>
-                  <div class="likes"><i class="fa fa-heart"></i>34 likes</div>
-                  <div class="read">
-                    7 mins read
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-              <img src="https://images.pexels.com/photos/1101246/pexels-photo-1101246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
-              <div class="blog-caption">
-                <a title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
-                  <h5>Lorem ipsum dolor, sit amet consectetur ...</h5>
-                </a>
-                <div class="blog-meta-data">
-                  <div class="author">
-                   March 20,2020
-                  </div>
-                  <div class="likes"><i class="fa fa-heart"></i>34 likes</div>
-                  <div class="read">
-                    7 mins read
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-              <img src="https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
-              <div class="blog-caption">
-                <a title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
-                  <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!</h5>
-                </a>
-                <div class="blog-meta-data">
-                  <div class="author">
-                   March 20,2020
-                  </div>
-                  <div class="likes"><i class="fa fa-heart"></i>34 likes</div>
-                  <div class="read">
-                    7 mins read
+                    {{blog?.read_time}} mins read
                   </div>
                 </div>
               </div>
@@ -167,7 +102,7 @@
         </div>
       </owl-carousel>
     </div>
-  
+
 </section>
 
 <div class="section-blue section-blue-cro">
@@ -180,83 +115,29 @@
         Meet the OneWater Leaders
       </h2>
       <owl-carousel
+      [items]="mayors"
         [options]="carouselOptionsAuthors"
         [carouselClasses]="['owl-theme', 'row', 'sliding']"
       >
-        <div class="item">
-          <a routerLink="/onewaterblog/mayorprofile">
+        <div class="item" *ngFor="let mayor of mayors">
+          <a [routerLink]="['/onewaterblog/mayorprofile/',mayor._id]">
           <div class="top-auth-img">
             <img
-              src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="{{mayor?.image}}"
               alt=""
             />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
+            <h6 style="text-transform: capitalize;">{{mayor?.name}}</h6>
           </div>
           </a>
         </div>
-        <div class="item">
-          <a routerLink="/onewaterblog/mayorprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/3799790/pexels-photo-3799790.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
-          </a>
-        </div>
-        <div class="item">
-          <a routerLink="/onewaterblog/mayorprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/3799790/pexels-photo-3799790.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
-          </a>
-        </div>
-        <div class="item">
-          <a routerLink="/onewaterblog/mayorprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
-          </a>
-        </div>
-        <div class="item">
-          <a routerLink="/onewaterblog/mayorprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
-          </a>
-        </div>
-        
-        <div class="item">
-          <a routerLink="/onewaterblog/mayorprofile">
-          <div class="top-auth-img">
-            <img
-              src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-            />
-            <h6 style="text-transform: capitalize;">Lorem ipsum dolor.</h6>
-          </div>
-        </a>
-        </div>
+
       </owl-carousel>
     </div>
   </div>
 
   <section class="section-3">
     <div class="container">
-     
+
 
       <owl-carousel
         [options]="carouselOptionsTestimonials"
@@ -316,7 +197,7 @@
 
               </div>
 
-              
+
             </div>
         </div>
         </div>
@@ -328,7 +209,7 @@
   <div class="wave-bg">
     <img src="assets/img/wave-bg.png" alt="" />
   </div>
- 
+
 </div>
 
 <!-- <section class="cro-section">
@@ -354,7 +235,7 @@
           </div>
         </div>
       </div>
-  
+
     </div>
   </div>
 </section> -->
@@ -431,7 +312,7 @@
           </div>
           </a>
         </div>
-        
+
         <div class="item">
           <a routerLink="/onewaterblog/mayorprofile">
           <div class="top-auth-img">
@@ -510,7 +391,7 @@
 
               </div>
 
-              
+
             </div>
         </div>
         </div>
@@ -519,7 +400,7 @@
     </div>
 
   </section>
- 
+
   <div class="wave-bg">
     <img src="assets/img/wave-bg.png" alt="" />
   </div>

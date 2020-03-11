@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-leaders',
@@ -71,9 +72,30 @@ export class LeadersComponent implements OnInit {
     navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">']
   }
 
-  constructor() { }
+  mayorblogs;
+  mayors;
+  constructor(public http: HttpClient) { }
 
   ngOnInit() {
+    this.getApprovedBlogsByMayor();
+    this.getApprovedMayor();
+  }
+
+  getApprovedBlogsByMayor() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-mayor.herokuapp.com/approveblogs"
+    ).subscribe(result=>{
+      this.mayorblogs = result.result;
+    })
+  }
+
+  getApprovedMayor() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-mayor.herokuapp.com/approvedmayor"
+    ).subscribe(result=>{
+      console.log('mayor$$$$$$$$$$$$$$$$$$$$$$$$',result)
+      this.mayors = result.result;
+    })
   }
 
 }

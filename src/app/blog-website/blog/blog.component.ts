@@ -44,7 +44,10 @@ export class BlogComponent implements OnInit {
     }
   ]
 
+  cros;
+
   mayorList;
+  mayors;
 
 
   categories = [
@@ -244,7 +247,7 @@ export class BlogComponent implements OnInit {
   }
 
 
- 
+
 
   //owl carousel settings for featured blog cards
   carouselOptions = {
@@ -313,6 +316,8 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
     this.getApprovedBlogsByMayor();
     this.getApprovedBlogsByCRO();
+    this.getApprovedMayor();
+    this.getApprovedCRO();
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/approveblogs')
       .subscribe(result => {
         console.log(result);
@@ -350,6 +355,23 @@ export class BlogComponent implements OnInit {
       "https://onewater-cro.herokuapp.com/approveblogs"
     ).subscribe(result=>{
       this.croList = result.result;
+    })
+  }
+
+  getApprovedMayor() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-mayor.herokuapp.com/approvedmayor"
+    ).subscribe(result=>{
+      console.log('mayor$$$$$$$$$$$$$$$$$$$$$$$$',result)
+      this.mayors = result.result;
+    })
+  }
+
+  getApprovedCRO() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/approvedcro"
+    ).subscribe(result=>{
+      this.cros = result.result;
     })
   }
 }
