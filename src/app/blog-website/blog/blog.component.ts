@@ -44,6 +44,8 @@ export class BlogComponent implements OnInit {
     }
   ]
 
+  cros;
+
   mayorList;
   mayors;
 
@@ -315,6 +317,7 @@ export class BlogComponent implements OnInit {
     this.getApprovedBlogsByMayor();
     this.getApprovedBlogsByCRO();
     this.getApprovedMayor();
+    this.getApprovedCRO();
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/approveblogs')
       .subscribe(result => {
         console.log(result);
@@ -361,6 +364,14 @@ export class BlogComponent implements OnInit {
     ).subscribe(result=>{
       console.log('mayor$$$$$$$$$$$$$$$$$$$$$$$$',result)
       this.mayors = result.result;
+    })
+  }
+
+  getApprovedCRO() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/approvedcro"
+    ).subscribe(result=>{
+      this.cros = result.result;
     })
   }
 }
