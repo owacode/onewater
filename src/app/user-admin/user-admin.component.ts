@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import * as $ from "jquery";
-import Feather from "feather-icons";
 import { IPayPalConfig, ICreateOrderRequest } from "ngx-paypal";
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
@@ -10,25 +9,41 @@ import { Router } from "@angular/router";
   styleUrls: ["./user-admin.component.scss"]
 })
 export class UserAdminComponent implements OnInit {
+
+  toggleDropdown(element){
+    var panel = document.getElementById(element);
+    if (panel.style.display === "none") {
+      panel.style.display = "block";
+    } else {
+      panel.style.display = "none";
+    }
+}
+
   constructor(public auth: AuthService, public router: Router) {}
 
   name;
   ngOnInit() {
     this.name = this.auth.name.split("%20").join(" ");
     this.initConfig();
-    let filter = document.querySelector(".filter-btn a");
-    let optionBox = document.querySelector(".dashboard-sidebar");
-    let options = document.querySelectorAll(
-      ".dashboard-sidebar .dashboard-menu ul li a"
-    );
-    $(filter).on("click", function() {
-      $(optionBox).toggleClass("slide-in");
-    });
-    $(options).on("click", function() {
-      $(optionBox).toggleClass("slide-in");
-    });
+    let toggleButton = document.querySelector('.sidebar-toggle');
+    let optionBox = document.querySelector('.dashboard-sidebar');
+    let options = document.querySelectorAll('.dashboard-sidebar .dashboard-menu ul li a');
+    $(toggleButton).on("click",function(){
+      if($(optionBox).hasClass("slide-in"))
+      {
+        $(optionBox).removeClass("slide-in");
+        toggleButton.innerHTML = ` <i class="fa fa-bars" aria-hidden="true" style="font-size:1.5rem"></i>`;
+      }
+      else{
+        $(optionBox).addClass("slide-in");
+        toggleButton.innerHTML = ` <i class="fa fa-times" aria-hidden="true" style="font-size:1.5rem"></i>`;
+      }   
 
-    Feather.replace();
+    });
+    $(options).on("click",function(){
+         $(optionBox).toggleClass("slide-in");
+         toggleButton.innerHTML = ` <i class="fa fa-bars" aria-hidden="true" style="font-size:1.5rem"></i>`;
+    });
   }
 
   public payPalConfig?: IPayPalConfig;
