@@ -15,10 +15,39 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
 export class HeaderComponent implements OnInit {
   form:FormGroup;
   public submited: Boolean = false;
+
+  toggleDropdown(element){
+    var panel = document.getElementById(element);
+    if (panel.style.display === "none") {
+      panel.style.display = "block";
+    } else {
+      panel.style.display = "none";
+    }
+}
+
+toggleHeader() {
+  this.router.events.subscribe((event) => {
+    if (event instanceof NavigationEnd) {
+      if (
+        event['url'] == '/onewaterblog/author-login' ||
+        event['url'] == '/onewaterblog/mayor-login' ||
+        event['url'] == '/onewaterblog/cro-login' ||
+        event['url'] == '/onewaterjobs/emp-login' ||
+        event['url'].includes('/onewaterblog/category') ||
+        event['url'].includes('/o-wow/video-category') ||
+        event['url'] == '/instructor-login') {
+        $('header').addClass('black-header');
+      }
+      else {
+        $('header').removeClass('black-header');
+      }
+    }
+  });
+}
+
   constructor(public http: HttpClient, public auth: AuthService, public router: Router, public modal:ModalFunctions) { }
 
   ngOnInit() {
-
     const header = document.querySelector('header');
     const menu = document.querySelector('.menu');
     const logo = document.querySelector('.logo');
@@ -38,8 +67,6 @@ export class HeaderComponent implements OnInit {
       }
     }
 
-  
-
     let showMenu = function () {
       $(menu).toggleClass('show-menu');
       $(logo).toggleClass('mobile-logo');
@@ -54,33 +81,9 @@ export class HeaderComponent implements OnInit {
       name:new FormControl(null, {validators:[Validators.required]}),
       email:new FormControl(null, {validators:[Validators.required,Validators.email]}),
     })
-
   }
 
-  toggleUserPanel(){
-    document.querySelector('.user-panel').classList.toggle('visible');
-    console.log("toggle panel");
-  }
 
-  toggleHeader() {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        if (
-          event['url'] == '/onewaterblog/author-login' ||
-          event['url'] == '/onewaterblog/mayor-login' ||
-          event['url'] == '/onewaterblog/cro-login' ||
-          event['url'] == '/onewaterjobs/emp-login' ||
-          event['url'].includes('/onewaterblog/category') ||
-          event['url'].includes('/o-wow/video-category') ||
-          event['url'] == '/instructor-login') {
-          $('header').addClass('black-header');
-        }
-        else {
-          $('header').removeClass('black-header');
-        }
-      }
-    });
-  }
 
   subscribe(){
     this.submited = true;
