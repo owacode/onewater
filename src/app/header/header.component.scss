@@ -27,9 +27,7 @@ header{
 .menu {
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     margin: 0;
-    .navlink:last-of-type{
-        margin-right: 0;
-    }
+  
     .navlink{
         display: inline-block;
         margin:0 12px;
