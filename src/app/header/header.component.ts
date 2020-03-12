@@ -5,17 +5,14 @@ import * as $ from 'jquery';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { ModalFunctions } from '../shared-functions/modal-functions';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-
 export class HeaderComponent implements OnInit {
   form:FormGroup;
   public submited: Boolean = false;
-
   toggleDropdown(element){
     var panel = document.getElementById(element);
     if (panel.style.display === "none") {
@@ -24,9 +21,6 @@ export class HeaderComponent implements OnInit {
       panel.style.display = "none";
     }
 }
-
-
-
 toggleHeader() {
   this.router.events.subscribe((event) => {
     if (event instanceof NavigationEnd) {
@@ -46,16 +40,13 @@ toggleHeader() {
     }
   });
 }
-
   constructor(public http: HttpClient, public auth: AuthService, public router: Router, public modal:ModalFunctions) { }
-
   ngOnInit() {
     const header = document.querySelector('header');
     const menu = document.querySelector('.menu');
     const logo = document.querySelector('.logo');
     const hamburger = document.querySelector('.hamburger');
     const menulink = document.querySelectorAll('.navlink a');
-
     // document.querySelector('.mobile-dropdown').addEventListener("click",this.toggleUserPanel);
     this.toggleHeader();
     let fixHeader = function () {
@@ -68,30 +59,19 @@ toggleHeader() {
         //console.log("remove header");
       }
     }
-
-    document.querySelector('body').addEventListener("click",()=>{
-      var panel = document.querySelector('.dropdown-content');
-      panel['style'].display = "none";
-    });
-
     let showMenu = function () {
       $(menu).toggleClass('show-menu');
       $(logo).toggleClass('mobile-logo');
       $(hamburger).toggleClass('clicked');
     }
-
     $(window).on("scroll", fixHeader);
     $(hamburger).on("click", showMenu);
     $(menulink).on("click", showMenu);
-
     this.form= new FormGroup({
       name:new FormControl(null, {validators:[Validators.required]}),
       email:new FormControl(null, {validators:[Validators.required,Validators.email]}),
     })
   }
-
-
-
   subscribe(){
     this.submited = true;
     console.log(this.form.value);
@@ -109,21 +89,18 @@ toggleHeader() {
         this.modal.openModal("#alreadysubscribedmodal");
         return;
       }
-
       console.log(result,'suscribed successfully');
       this.modal.hideBtnLoader();
       this.modal.closeModal('#subscribeModal');
       this.modal.openModal("#thanksmodal");
     })
   }
-
   login() {
     this.http.get('https://onewater-instructor-api.herokuapp.com')
       .subscribe(result => {
         console.log(result);
       })
   }
-
   logout() {
     this.deleteCookie('name')
     this.deleteCookie('nickname')
@@ -131,16 +108,13 @@ toggleHeader() {
     this.deleteCookie('id_token')
     this.deleteCookie('userpicture')
   }
-
   deleteCookie(name) {
     this.createCookie(name, null);
   }
-
   createCookie(key, value) {
     let cookie = escape(key) + "=" + escape(value) + ";";
     document.cookie = cookie;
     console.log(cookie);
     console.log("Creating new cookie with key: " + key + " value: " + value);
   }
-
 }
