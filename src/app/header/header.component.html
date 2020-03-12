@@ -2,7 +2,7 @@
 <header>
   <div class="logo">
     <a routerLink="/home">
-      <img src="/assets/img/ow-logo1.png" alt="">
+      <img src="/assets/img/ow-logo1.png" alt="" />
     </a>
   </div>
   <nav>
@@ -10,52 +10,93 @@
       <li class="navlink"><a routerLink="/home">Home</a></li>
       <li class="navlink"><a routerLink="/home/about">About</a></li>
       <li class="navlink">
-       
-        <div class="dropdown-btn platform-dd" (click)="toggleDropdown('platforms')">
+        <div
+          class="dropdown-btn platform-dd"
+          (click)="toggleDropdown('platforms')"
+        >
           OneWater Ecosystem <i class="fa fa-caret-down" aria-hidden="true"></i>
           <div class="dropdown-content card-shadow" id="platforms">
-            <li class="navlink"><a routerLink="/home/leaders">OneWater Leaders</a></li>
-            <li class="navlink"><a routerLink="/home/learningacademy">OneWater Academy</a></li>
-            <li class="navlink"><a routerLink="/onewaterblog">OneWater Blogs</a></li>
+            <li class="navlink">
+              <a routerLink="/home/leaders">OneWater Leaders</a>
+            </li>
+            <li class="navlink">
+              <a routerLink="/home/learningacademy">OneWater Academy</a>
+            </li>
+            <li class="navlink">
+              <a routerLink="/onewaterblog">OneWater Blogs</a>
+            </li>
             <li class="navlink"><a routerLink="/home/owx">OWXchange</a></li>
             <li class="navlink"><a routerLink="/o-wow">O-WOW</a></li>
           </div>
         </div>
       </li>
       <li class="navlink"><a routerLink="/home/cro-page">The CROs</a></li>
-      <li class="navlink"><a routerLink="/home/events">Events </a></li> 
-      <li class="navlink"><a (click)="modal.openModal('#subscribeModal')" style="cursor: pointer;">Subscribe</a></li>
+      <li class="navlink"><a routerLink="/home/events">Events </a></li>
+      <li class="navlink">
+        <a (click)="modal.openModal('#subscribeModal')" style="cursor: pointer;"
+          >Subscribe</a
+        >
+      </li>
       <li class="navlink"><a routerLink="/home/contact">Contact</a></li>
       <li class="navlink"><a routerLink="/home/donate">Give</a></li>
+
       <li *ngIf="!auth.isLoggedIn" class="navlink">
-        <div class="dropdown-btn platform-dd" (click)="toggleDropdown('loginPanel')">
+        <div
+          class="dropdown-btn platform-dd"
+          (click)="toggleDropdown('loginPanel')"
+        >
           Login <i class="fa fa-caret-down" aria-hidden="true"></i>
           <div class="dropdown-content card-shadow" id="loginPanel">
-            <li *ngIf="!auth.isLoggedIn" class="navlink"> <a href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D"> <img src="assets/img/icons/login.svg" alt="">Login </a></li>
-            <li *ngIf="!auth.isLoggedIn" class="navlink"><a routerLink="/signup"> <img src="assets/img/icons/user.svg" alt="">Signup </a></li>
+            <li *ngIf="!auth.isLoggedIn" class="navlink">
+              <a
+                href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D"
+              >
+                <img src="assets/img/icons/login.svg" alt="" />Login
+              </a>
+            </li>
+            <li *ngIf="!auth.isLoggedIn" class="navlink">
+              <a routerLink="/signup">
+                <img src="assets/img/icons/user.svg" alt="" />Signup
+              </a>
+            </li>
           </div>
         </div>
       </li>
 
       <li *ngIf="auth.isLoggedIn" class="navlink">
         <div class="dropdown-btn">
-         <img src="assets/img/icons/avatar1.svg" alt="">
+          <img src="assets/img/icons/avatar1.svg" alt="" />
           <div class="dropdown-content card-shadow">
-            <a [routerLink]="['/user-admin']"> <img src="assets/img/icons/speedometer.svg" alt="">Dashboard</a>
-            <a (click)="logout()" href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home"> <img src="assets/img/icons/power.svg" alt="">Logout </a>
+            <a [routerLink]="['/user-admin']">
+              <img src="assets/img/icons/speedometer.svg" alt="" />Dashboard</a
+            >
+            <a
+              (click)="logout()"
+              href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home"
+            >
+              <img src="assets/img/icons/power.svg" alt="" />Logout
+            </a>
           </div>
         </div>
       </li>
-
     </ul>
   </nav>
-  <div *ngIf="auth.isLoggedIn" class="mobile-dropdown dropdown-btn" id="userButton" (click)="toggleDropdown('userPanel')">
-    <img src="assets/img/icons/avatar1.svg" alt="">
-     <div class="dropdown-content user-panel card-shadow" id="userPanel">
-       <a [routerLink]="['/user-admin']">Dashboard</a>
-       <a (click)="logout()" href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home">Logout </a>
-     </div>
-   </div>
+  <div
+    *ngIf="auth.isLoggedIn"
+    class="mobile-dropdown dropdown-btn"
+    id="userButton"
+    (click)="toggleDropdown('userPanel')"
+  >
+    <img src="assets/img/icons/avatar1.svg" alt="" />
+    <div class="dropdown-content user-panel card-shadow" id="userPanel">
+      <a [routerLink]="['/user-admin']">Dashboard</a>
+      <a
+        (click)="logout()"
+        href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home"
+        >Logout
+      </a>
+    </div>
+  </div>
   <div class="hamburger">
     <span></span>
     <span></span>
@@ -63,32 +104,39 @@
   </div>
 </header>
 
-
-
-
 <!-- Modal for newsletter -->
-<div class="modal fade modal-no-animate" id="subscribeModal" role="dialog" #subscribeModal>
+<div
+  class="modal fade modal-no-animate"
+  id="subscribeModal"
+  role="dialog"
+  #subscribeModal
+>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
-        <button type="button" class="close" data-dismiss="modal" (click)="modal.closeModal(subscribeModal)">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(subscribeModal)"
+        >
           &times;
         </button>
       </div>
       <div class="modal-body">
         <div class="modal-logo">
-          <img src="assets/img/ow-logo1.png" alt="">
+          <img src="assets/img/ow-logo1.png" alt="" />
         </div>
-      
+
         <img
           src="assets/img/landing/newsletter-modal.png
            "
           alt=""
         />
         <h2>Enter your email to get our newsletter every week!</h2>
-        <form >
+        <form>
           <input
-          name="name"
+            name="name"
             formControlName="name"
             class="vldform__textbox"
             type="text"
@@ -97,7 +145,7 @@
           />
           <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p>
           <input
-          name="email"
+            name="email"
             formControlName="email"
             class="vldform__textbox"
             type="email"
@@ -105,7 +153,9 @@
             required
           />
 
-          <p *ngIf="submited && form.get('email').invalid">Enter a Valid Email</p>
+          <p *ngIf="submited && form.get('email').invalid">
+            Enter a Valid Email
+          </p>
 
           <button
             type="submit"
@@ -113,13 +163,12 @@
             (click)="subscribe()"
             class="btn btn-default"
           >
-
-          <span class="btn-loading-content">
-            <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
-          </span>
-          <span class="btn-default-content">
-           Submit
-          </span>
+            <span class="btn-loading-content">
+              <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+            </span>
+            <span class="btn-default-content">
+              Submit
+            </span>
           </button>
         </form>
       </div>
@@ -132,15 +181,19 @@
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
-        <button type="button" class="close" (click)="modal.closeModal(thanksmodal)">
+        <button
+          type="button"
+          class="close"
+          (click)="modal.closeModal(thanksmodal)"
+        >
           &times;
         </button>
       </div>
       <div class="modal-body">
         <div class="modal-logo">
-          <img src="assets/img/ow-logo1.png" alt="">
+          <img src="assets/img/ow-logo1.png" alt="" />
         </div>
-       
+
         <img
           src="assets/img/icons/thankful.svg
          "
@@ -148,32 +201,47 @@
           style="width:35%; margin:auto;"
         />
         <h2>Thankyou for subscribing.</h2>
-        <button class="btn btn-default" (click)="modal.closeModal(thanksmodal)">Close</button>
+        <button class="btn btn-default" (click)="modal.closeModal(thanksmodal)">
+          Close
+        </button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Modal after user subscribe to newsletter -->
-<div class="modal fade" id="alreadysubscribedmodal" role="dialog" #alreadysubscribedmodal>
+<div
+  class="modal fade"
+  id="alreadysubscribedmodal"
+  role="dialog"
+  #alreadysubscribedmodal
+>
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-head">
-        <button type="button" class="close" (click)="modal.closeModal(alreadysubscribedmodal)">
+        <button
+          type="button"
+          class="close"
+          (click)="modal.closeModal(alreadysubscribedmodal)"
+        >
           &times;
         </button>
       </div>
       <div class="modal-body">
         <div class="modal-logo">
-          <img src="assets/img/ow-logo1.png" alt="">
+          <img src="assets/img/ow-logo1.png" alt="" />
         </div>
-        <img
-          src="assets/img/modals/verify-mail.jpg"
-          alt=""
-        />
-        <h2>Email you entered has already been subscribed. <br>
-          Thankyou</h2>
-        <button class="btn btn-default" (click)="modal.closeModal(alreadysubscribedmodal)">Close</button>
+        <img src="assets/img/modals/verify-mail.jpg" alt="" />
+        <h2>
+          Email you entered has already been subscribed. <br />
+          Thankyou
+        </h2>
+        <button
+          class="btn btn-default"
+          (click)="modal.closeModal(alreadysubscribedmodal)"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>

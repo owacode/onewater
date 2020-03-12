@@ -27,7 +27,7 @@ class="dashboard-content-wrapper dash-tab"
       </div>
     </div>
 <div class="row">
-  <div class="col-lg-4 col-xl-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let video of allvideos">
+  <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let video of allvideos">
     <div class="activity-list">
       <!-- <div class="">
           <img
@@ -37,7 +37,7 @@ class="dashboard-content-wrapper dash-tab"
           />
         </div> -->
     <div class="content">
-      <h5>{{video?.title}}</h5>
+      <h5>{{video?.title | shorten:25}}</h5>
       <span class="time">{{video?.date_added | date:'MMMM,d yyyy'}}</span>
       <br>
       <p style="line-height: 1.2;" class="mt-2"><span>Description : </span> <small>{{video?.desc |  slice:1:205}} ...</small></p>

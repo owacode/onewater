@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { AuthorVideosComponent } from './author-videos.component';
+import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
 
 const routes: Route[]=[
     {
@@ -17,7 +18,8 @@ const routes: Route[]=[
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    CommonPipesModule
   ]
 })
 export class AuthorVideosModule { }

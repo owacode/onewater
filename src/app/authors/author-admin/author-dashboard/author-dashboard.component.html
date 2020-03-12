@@ -2,8 +2,8 @@
 class="dashboard-content-wrapper dash-tab"
 >
 <div class="dashboard-section user-statistic-block">
-  <div class="row justify-content-center w-100">
-    <div class="col-md-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-3 col-md-4">
       <div class="user-statistic">
         <a routerLink="/author/all-blogs">
           <span>
@@ -16,7 +16,7 @@ class="dashboard-content-wrapper dash-tab"
         
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-lg-3 col-md-4">
       <div class="user-statistic">
         <a routerLink="/author/approved-blogs">
        <span>
@@ -28,7 +28,7 @@ class="dashboard-content-wrapper dash-tab"
         </a>
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-lg-3 col-md-4">
       <div class="user-statistic">
         <a routerLink="/author/videos">
        <span>
@@ -63,11 +63,18 @@ class="dashboard-content-wrapper dash-tab"
           <h5>{{blog.title}}</h5>
           <span class="time">{{blog.date_added | date:'MMMM d,yyyy'}}</span>
           <br>
-          <span class="time status-btn"  [ngStyle]="{
-            'background-color':blog.status === 'approved' ? '#8eff96' : '#ff988e' ,'color':blog.status === 'approved' ? '#015a01' : '#bd0303' }
-          ">
-          {{ blog.status}}
-           </span>
+         
+      <div *ngIf="blog.status == 'pending'" class="content-info">
+        Status : <span class="status pending">
+         {{blog.status}}
+        </span>
+      </div>
+
+      <div *ngIf="blog.status == 'approved'" class="content-info">
+        Status : <span class="status approved">
+         {{blog.status}}
+        </span>
+      </div>
         </div>
         <div class="close-activity buttons">
           <a class="button" [routerLink]="['/author/blog-details/',blog._id]">View</a>

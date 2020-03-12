@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SavedBlogsComponent } from './saved-blogs.component';
 import { Route, RouterModule } from '@angular/router';
+import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
 
 const routes: Route[]=[
     {
@@ -14,6 +15,7 @@ const routes: Route[]=[
   declarations: [SavedBlogsComponent],
   imports: [
     CommonModule,
+    CommonPipesModule,
     RouterModule.forChild(routes)
   ]
 })

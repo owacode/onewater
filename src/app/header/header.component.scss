@@ -128,7 +128,7 @@ header{
         border-radius: 5px;
         display: none;
         transition:all 0.3s ease-in-out;
-        animation: fade_up 0.2s ease-in-out forwards;
+        animation: pop_up 0.2s ease-in-out forwards;
 
        
         li{
@@ -151,16 +151,7 @@ header{
     }
 }
 
-@keyframes fade_up{
-    0%{
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
+
 
 .mobile-dropdown{
     display: none;

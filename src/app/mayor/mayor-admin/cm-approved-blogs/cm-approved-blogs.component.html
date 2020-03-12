@@ -24,7 +24,7 @@
       </div>
       <div class="row">
         <div
-          class="col-lg-4 col-xl-3 col-md-4 col-sm-6 col-xs-12"
+          class="col-lg-4 col-md-6 col-sm-12"
           *ngFor="let blog of approvedblogs"
         >
           <div class="activity-list">
@@ -32,7 +32,7 @@
               <img [src]="blog.image" class="img-fluid" alt="" />
             </div>
             <div class="content">
-              <h5>{{ blog.title }}</h5>
+              <h5>{{ blog.title | shorten:25}}</h5>
               <span class="time">{{ blog.date_added | date: "MMM d, y" }}</span>
               <br />
               <div class="flex-btn">
@@ -40,6 +40,7 @@
                   <i class="fa fa-heart" aria-hidden="true"></i>
                   {{ blog.likecount }} likes
                 </span>
+
               </div>
             </div>
             <div class="close-activity buttons">

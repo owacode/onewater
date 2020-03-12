@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CmSavedBlogsComponent } from './cm-saved-blogs.component';
 import { Route, RouterModule } from '@angular/router';
+import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
 
 const routes: Route[]=[
     {
@@ -13,7 +14,7 @@ const routes: Route[]=[
   declarations: [CmSavedBlogsComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),CommonPipesModule
   ]
 })
 export class CmSavedBlogsModule { }

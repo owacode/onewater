@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import {FormsModule} from "@angular/forms";
 import { ApprovedBlogsComponent } from './approved-blogs.component';
+import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
 
 const routes: Route[]=[
     {
@@ -19,7 +20,8 @@ const routes: Route[]=[
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
-    FormsModule
+    FormsModule,
+    CommonPipesModule
   ]
 })
 export class ApprovedBlogsModule { }

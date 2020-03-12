@@ -25,6 +25,8 @@ export class HeaderComponent implements OnInit {
     }
 }
 
+
+
 toggleHeader() {
   this.router.events.subscribe((event) => {
     if (event instanceof NavigationEnd) {
@@ -66,6 +68,11 @@ toggleHeader() {
         //console.log("remove header");
       }
     }
+
+    document.querySelector('body').addEventListener("click",()=>{
+      var panel = document.querySelector('.dropdown-content');
+      panel['style'].display = "none";
+    });
 
     let showMenu = function () {
       $(menu).toggleClass('show-menu');

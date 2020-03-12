@@ -1,5 +1,22 @@
-<div class="filter-btn">
-  <a class="button"><i data-feather="list"></i> Options</a>
+<div class="admin-header-mobile card-shadow">
+  <div class="logo-mobile">
+    <a routerLink="/home"><img src="/assets/img/ow-logo1.png" alt="" /></a>
+  </div>
+
+<div class="admin-buttons">
+  <div class="profile-img">
+    <a class="dropdown-btn" (click)="toggleDropdown('logout')">
+      <img src="{{auth?.mayorimage}}" alt="" >
+      <div class="dropdown-content card-shadow" id="logout">
+        <a (click)="logout()"><img src="assets/img/icons/power.svg" alt="">Logout</a>
+      </div>
+    </a>
+  </div>
+
+  <div class="sidebar-toggle">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+</div>
 </div>
 <div class=" no-gliters">
   <div class="row no-gliters">

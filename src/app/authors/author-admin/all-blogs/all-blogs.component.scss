@@ -1,5 +1,6 @@
-
+@import '../../../modal-styles.scss';
 @import '../../../dashboard-style.scss';
+
 
 .status-btn{
     padding: 4px 8px;
@@ -23,8 +24,11 @@
         margin-top: 0.2rem;
     }
     img{
-        border-radius: 8px;
-    }
+        border-radius: 4px;
+        height: 150px;
+        object-fit: cover;
+        object-position: center;
+      }
     .close-activity{
         margin: 8px auto;
     }
@@ -39,4 +43,11 @@
     display: flex;
     justify-content: space-between;
     margin: 8px 0;
+}
+
+
+@media all and (max-width:576px){
+    .flex-btn{
+        justify-content: center;
+      }
 }

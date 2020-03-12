@@ -25,8 +25,6 @@ export class ModalFunctions {
         $(thismodal).css("display", "none");
         $(thismodal).removeClass("show");
         $('.overlay').css("display", "none");
-
-        
       }
     
       showBtnLoader(){
