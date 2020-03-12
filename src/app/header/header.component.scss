@@ -27,9 +27,7 @@ header{
 .menu {
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     margin: 0;
-    .navlink:last-of-type{
-        margin-right: 0;
-    }
+  
     .navlink{
         display: inline-block;
         margin:0 12px;
@@ -118,37 +116,61 @@ header{
 
         cursor: pointer;
     }
+
     .dropdown-content{
         position: absolute;
         display: block;
         right: 0;
+        z-index:50;
         background-color: #fff !important;
-        top: 120%;
+        top: 100%;
         padding: 1rem 1rem 0.5rem;
         border-radius: 5px;
-        visibility: hidden;
-        opacity: 0;
+        display: none;
         transition:all 0.3s ease-in-out;
+        animation: fade_up 0.2s ease-in-out forwards;
 
+       
+        li{
+            display: block;
+        }
         a{
         color: #000;
         display: block;
         margin: 0 0 0.5rem;
+        display: flex;
+
+        img{
+            width: 20px;
+            margin-right: 10px;
+        }
         }
         a::after{
-            background-color: #000461;
+            background-color: #000;
         }
     }
 }
 
-.dropdown-btn:hover .dropdown-content{
-    visibility: visible;
-    opacity: 1;
+@keyframes fade_up{
+    0%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 
 .mobile-dropdown{
-   display: none;
-   margin-right: 50px;
+    display: none;
+    margin-right: 50px;
+ }
+
+@media all and (min-width:1091px){
+    .dropdown-btn:hover .dropdown-content{
+        display: block;
+     }
 }
 
 .platform-dd{
@@ -162,12 +184,18 @@ header{
     }
 }
 
+
+
 @media all and (max-width:1091px){
     header{
         height: 70px;
         .logo{
             z-index: 1000;
         }
+    }
+
+    .dropdown-content{
+        position: relative !important;
     }
     
     .hamburger{
@@ -179,7 +207,9 @@ header{
     }
     .mobile-dropdown{
        display: block;
-       
+       .dropdown-content{
+           position: absolute !important;
+       }
     }
     .visible{
         visibility: visible;
