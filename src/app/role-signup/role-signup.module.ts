@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RoleSignupComponent } from './role-signup.component';
 import { Route, RouterModule } from '@angular/router';
+import { HeaderModule } from '../header/header.module';
 
 const routes: Route[]=[
     {
@@ -14,7 +15,8 @@ const routes: Route[]=[
   declarations: [RoleSignupComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HeaderModule
   ]
 })
 

@@ -25,6 +25,7 @@ toggleHeader() {
   this.router.events.subscribe((event) => {
     if (event instanceof NavigationEnd) {
       if (
+        event['url'] == '/signup-role' ||
         event['url'] == '/onewaterblog/author-login' ||
         event['url'] == '/onewaterblog/mayor-login' ||
         event['url'] == '/onewaterblog/cro-login' ||
