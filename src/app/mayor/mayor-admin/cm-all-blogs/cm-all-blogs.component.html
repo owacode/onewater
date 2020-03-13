@@ -39,11 +39,23 @@ class="dashboard-content-wrapper dash-tab"
           <span class="time">{{blog.date_added | date:'MMM d, y'}}</span>
           <br>
           <div class="flex-btn">
-              <span class="time status-btn"  [ngStyle]="{
-                'background-color':blog.status === 'approved' ? '#8eff96' : '#ff988e' ,'color':blog.status === 'approved' ? '#015a01' : '#bd0303' }
-              ">
-              {{ blog.status}}
-               </span>
+            <div *ngIf="blog.status == 'deleted'" class="content-info">
+              Status : <span class="status deleted">
+               {{blog.status}}
+              </span>
+            </div>
+           
+        <div *ngIf="blog.status == 'pending'" class="content-info">
+          Status : <span class="status pending">
+           {{blog.status}}
+          </span>
+        </div>
+  
+        <div *ngIf="blog.status == 'approved'" class="content-info">
+          Status : <span class="status approved">
+           {{blog.status}}
+          </span>
+        </div>
                <span class="likes" *ngIf="blog.likes">
                   <i class="fa fa-heart" aria-hidden="true"></i>
                   {{blog.likes}} likes

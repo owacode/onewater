@@ -151,12 +151,15 @@
                   >
                     <h5>{{ blog?.title | shorten: 25 }}</h5>
                   </a>
+                  <!-- <div class="auth-img">
+                    <img src="{{blog.author_image}}" alt="">
+                  </div> -->
                   <div class="blog-meta-data">
                     <div class="author">
                       {{ blog?.date_approved | date: "MMMM d, y" }}
                     </div>
-                    <div class="likes">
-                      <i class="fa fa-heart"></i>{{ blog.likecount }} likes
+                    <div class="likes" *ngIf="blog.likecount">
+                      <i class="fa fa-heart"></i>{{ blog.likecount }} 
                     </div>
                     <div class="read">{{ blog.read_time }} mins read</div>
                   </div>
@@ -226,8 +229,8 @@
                       <div class="author">
                         {{ blog?.date_approved | date: "MMMM d, y" }}
                       </div>
-                      <div class="likes">
-                        <i class="fa fa-heart"></i>{{ blog?.likecount }} likes
+                      <div class="likes" *ngIf="blog.likecount">
+                        <i class="fa fa-heart"></i>{{ blog?.likecount }} 
                       </div>
                       <div class="read">{{ blog?.read_time }} mins read</div>
                     </div>
@@ -298,7 +301,7 @@
                       {{ blog?.date_approved | date: "MMMM d, y" }}
                     </div>
                     <div class="likes" *ngIf="blog?.likecount">
-                      <i class="fa fa-heart"></i>{{ blog?.likecount }} likes
+                      <i class="fa fa-heart"></i>{{ blog?.likecount }} 
                     </div>
                     <div class="read">{{ blog?.read_time }} mins read</div>
                   </div>

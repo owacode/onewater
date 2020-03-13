@@ -25,6 +25,7 @@
             "assets": ["src/favicon.png", "src/assets"],
             "styles": [
               "src/styles.scss",
+              "./node_modules/ngx-lightbox/lightbox.css",
               "./node_modules/owl.carousel/dist/assets/owl.carousel.css",
               "./node_modules/quill/dist/quill.core.css",
               "./node_modules/quill/dist/quill.snow.css"

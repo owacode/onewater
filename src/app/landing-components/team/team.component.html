@@ -28,7 +28,8 @@
       </h2>
       <div class="row justify-content-center">
         <div class="col-lg-3 col-md-6">
-          <div class="outer-card">
+
+          <div class="outer-card" (click)="this.modal.openModal('#hardeep')">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <div class="member-img">
@@ -43,7 +44,7 @@
         </div>
      
         <div class="col-lg-3 col-md-6">
-          <div class="outer-card">
+          <div class="outer-card" (click)="this.modal.openModal('#amit')">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <div class="member-img">
@@ -58,7 +59,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6">
-          <div class="outer-card">
+          <div class="outer-card" (click)="this.modal.openModal('#jose')">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <div class="member-img">
@@ -81,7 +82,7 @@
       <div class="row justify-content-center">
 
         <div class="col-lg-3 col-md-6">
-          <div class="outer-card">
+          <div class="outer-card" (click)="this.modal.openModal('#louise')">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <div class="member-img">
@@ -96,7 +97,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6">
-          <div class="outer-card">
+          <div class="outer-card" (click)="this.modal.openModal('#eric')">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <div class="member-img">
@@ -111,7 +112,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6">
-          <div class="outer-card">
+          <div class="outer-card" (click)="this.modal.openModal('#melissa')">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <div class="member-img">
@@ -124,19 +125,12 @@
             </div>
           </div>
         </div>
-
-       
-       
-
-
-     
-
       </div>
 
       <div class="row justify-content-center">
 
         <div class="col-lg-3 col-md-6">
-          <div class="outer-card">
+          <div class="outer-card" (click)="this.modal.openModal('#rebecca')">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <div class="member-img">
@@ -151,7 +145,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6">
-          <div class="outer-card">
+          <div class="outer-card" (click)="this.modal.openModal('#sudhir')">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <div class="member-img">
@@ -166,7 +160,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6">
-          <div class="outer-card">
+          <div class="outer-card" (click)="this.modal.openModal('#cindy')">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <div class="member-img">
@@ -184,3 +178,496 @@
     </div>
   </div>
 </section>
+
+<div class="modal fade " id="hardeep" role="dialog" #hardeep>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(hardeep)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/hardeep.JPG" alt="" />
+              </div>
+            </div>
+           <div class="col-md-7">
+             <div class="l-text">
+              <h1>Hardeep Anand</h1>
+              <h5>
+                Founder & Director, One Water Academy
+              </h5>
+              <h4>
+                About
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis debitis reprehenderit vitae voluptas? Ullam impedit omnis nobis hic aliquid asperiores ad veritatis harum consequatur, dolorem voluptate obcaecati eligendi dicta odit ab dolores fugiat quia neque maxime rem tempora reiciendis unde atque. Ipsa obcaecati magni adipisci deserunt sit tempora possimus voluptatibus.
+              </p>
+                <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(hardeep)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="amit" role="dialog" #amit>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(amit)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/amit.jpg" alt="" />
+              </div>
+            </div>
+           <div class="col-md-7">
+             <div class="l-text">
+              <h1>Amit Pramanik</h1>
+              <h5>
+                Executive Director, One Water Academy
+              </h5>
+              <h4>
+                About
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis debitis reprehenderit vitae voluptas? Ullam impedit omnis nobis hic aliquid asperiores ad veritatis harum consequatur, dolorem voluptate obcaecati eligendi dicta odit ab dolores fugiat quia neque maxime rem tempora reiciendis unde atque. Ipsa obcaecati magni adipisci deserunt sit tempora possimus voluptatibus.
+              </p>
+                <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(amit)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="jose" role="dialog" #jose>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(jose)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <div class="l-img card-shadow">
+                <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+              </div>
+            </div>
+           <div class="col-md-7">
+             <div class="l-text">
+              <h1>Josenrique Cueto</h1>
+              <h5>
+                Executive Director, One Water Academy
+              </h5>
+              <h4>
+                About
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis debitis reprehenderit vitae voluptas? Ullam impedit omnis nobis hic aliquid asperiores ad veritatis harum consequatur, dolorem voluptate obcaecati eligendi dicta odit ab dolores fugiat quia neque maxime rem tempora reiciendis unde atque. Ipsa obcaecati magni adipisci deserunt sit tempora possimus voluptatibus.
+              </p>
+                <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(jose)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="louise" role="dialog" #louise>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(louise)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/ellis.jpg" alt="" />
+              </div>
+            </div>
+           <div class="col-md-7">
+             <div class="l-text">
+              <h1>Louise Ellis</h1>
+              <h5>
+                Associate and Chartered Civil Engineer CEng (MICE)
+              </h5>
+              <h4>
+                About
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis debitis reprehenderit vitae voluptas? Ullam impedit omnis nobis hic aliquid asperiores ad veritatis harum consequatur, dolorem voluptate obcaecati eligendi dicta odit ab dolores fugiat quia neque maxime rem tempora reiciendis unde atque. Ipsa obcaecati magni adipisci deserunt sit tempora possimus voluptatibus.
+              </p>
+                <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(louise)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="eric" role="dialog" #eric>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(eric)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/eric.jpg" alt="" />
+              </div>
+            </div>
+           <div class="col-md-7">
+             <div class="l-text">
+              <h1>Eric Wilson
+                </h1>
+              <h5>
+                Board of Directors, One Water Academy
+              </h5>
+              <h4>
+                About
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis debitis reprehenderit vitae voluptas? Ullam impedit omnis nobis hic aliquid asperiores ad veritatis harum consequatur, dolorem voluptate obcaecati eligendi dicta odit ab dolores fugiat quia neque maxime rem tempora reiciendis unde atque. Ipsa obcaecati magni adipisci deserunt sit tempora possimus voluptatibus.
+              </p>
+                <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(eric)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="melissa" role="dialog" #melissa>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(melissa)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/melissa.jpg" alt="" />
+              </div>
+            </div>
+           <div class="col-md-7">
+             <div class="l-text">
+              <h1>Melissa Meeker
+              
+                </h1>
+              <h5>
+                Board of Directors, One Water Academy
+              </h5>
+              <h4>
+                About
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis debitis reprehenderit vitae voluptas? Ullam impedit omnis nobis hic aliquid asperiores ad veritatis harum consequatur, dolorem voluptate obcaecati eligendi dicta odit ab dolores fugiat quia neque maxime rem tempora reiciendis unde atque. Ipsa obcaecati magni adipisci deserunt sit tempora possimus voluptatibus.
+              </p>
+                <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(melissa)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="rebecca" role="dialog" #rebecca>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(rebecca)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/rebecca.jpg" alt="" />
+              </div>
+            </div>
+           <div class="col-md-7">
+             <div class="l-text">
+              <h1>Rebecca Eggers
+                </h1>
+              <h5>
+                Board of Directors, One Water Academy
+              </h5>
+              <h4>
+                About
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis debitis reprehenderit vitae voluptas? Ullam impedit omnis nobis hic aliquid asperiores ad veritatis harum consequatur, dolorem voluptate obcaecati eligendi dicta odit ab dolores fugiat quia neque maxime rem tempora reiciendis unde atque. Ipsa obcaecati magni adipisci deserunt sit tempora possimus voluptatibus.
+              </p>
+                <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(rebecca)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="sudhir" role="dialog" #sudhir>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(sudhir)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/sudhir.jpg" alt="" />
+              </div>
+            </div>
+           <div class="col-md-7">
+             <div class="l-text">
+              <h1>Sudhir Murthy
+               
+                </h1>
+              <h5>
+                Senior Vice President of the International Water Association
+              </h5>
+              <h4>
+                About
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis debitis reprehenderit vitae voluptas? Ullam impedit omnis nobis hic aliquid asperiores ad veritatis harum consequatur, dolorem voluptate obcaecati eligendi dicta odit ab dolores fugiat quia neque maxime rem tempora reiciendis unde atque. Ipsa obcaecati magni adipisci deserunt sit tempora possimus voluptatibus.
+              </p>
+                <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(sudhir)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="cindy" role="dialog" #cindy>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(cindy)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/cindy.jpg" alt="" />
+              </div>
+            </div>
+           <div class="col-md-7">
+             <div class="l-text">
+              <h1>Cindy L. Wallis-Lage
+                </h1>
+              <h5>
+                Board of Directors, One Water Academy
+              </h5>
+              <h4>
+                About
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis debitis reprehenderit vitae voluptas? Ullam impedit omnis nobis hic aliquid asperiores ad veritatis harum consequatur, dolorem voluptate obcaecati eligendi dicta odit ab dolores fugiat quia neque maxime rem tempora reiciendis unde atque. Ipsa obcaecati magni adipisci deserunt sit tempora possimus voluptatibus.
+              </p>
+                <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(cindy)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

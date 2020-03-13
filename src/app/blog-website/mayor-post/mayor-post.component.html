@@ -14,19 +14,20 @@
           {{blog?.title}}
         </h1>
 
-        <img src="blog?.image" alt="">
+        <img src="{{blog?.image}}" alt="">
         <div class="article-meta">
           <img src="{{mayor?.image}}" alt="Author" />
           <div class="meta-data">
             <span class="meta-author"
               >By
-              <a [routerLink]="['/onewaterblog/mayorprofile/',mayor._id]">{{mayor?.name}}</a></span
+              <a [routerLink]="['/onewaterblog/mayorprofile/',mayor?._id]">{{mayor?.name}}</a></span
             ><br />
             <span class="meta-date"
-              >  {{mayor?.bio}}</span
+              >{{mayor?.bio | shorten:90}}</span
             >
           </div>
         </div>
+    
 
         <p class="teaser top-teaser">
           <strong>Category</strong> :
@@ -62,11 +63,11 @@
             <img src="{{mayor?.image}}" alt="" />
           </a>
           <div class="bio-text">
-            <p class="bio-shl">{{mayor?.name}}</p>
+            <p class="bio-shl">Mayor</p>
             <p class="bio-hl">
-              <a [routerLink]="['/onewaterblog/mayorprofile/',mayor._id]">Mayor</a>
+              <a [routerLink]="['/onewaterblog/mayorprofile/',mayor._id]">{{mayor?.name}}</a>
             </p>
-            <p>{{mayor?.bio}}</p>
+            <p>{{mayor?.bio | shorten:90}}</p>
           </div>
         </div>
       </div>

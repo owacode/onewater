@@ -40,6 +40,7 @@
     "ng": "0.0.0",
     "ng2-page-scroll": "^4.0.0-beta.12",
     "ng2-sticky-kit": "^6.1.0",
+    "ngx-lightbox": "^2.1.2",
     "ngx-masonry": "^1.1.4",
     "ngx-owl-carousel": "^2.0.7",
     "ngx-pagination": "^4.1.0",

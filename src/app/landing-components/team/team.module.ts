@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { TeamComponent } from './team.component';
+import { LightboxModule } from 'ngx-lightbox';
+
 const routes: Route[]=[
     {
     path: '',
@@ -16,7 +18,8 @@ const routes: Route[]=[
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    LightboxModule 
     ]
 })
 export class TeamModule { }

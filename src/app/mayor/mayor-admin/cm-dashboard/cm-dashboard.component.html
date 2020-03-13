@@ -63,17 +63,23 @@ class="dashboard-content-wrapper dash-tab"
           <h5>{{blog.title}}</h5>
           <span class="time">{{blog.date_added | date:'MMMM d,yyyy'}}</span>
           <br>
-          <div *ngIf="blog.status == 'pending'" class="content-info">
-            Status : <span class="status pending">
+          <div *ngIf="blog.status == 'deleted'" class="content-info">
+            Status : <span class="status deleted">
              {{blog.status}}
             </span>
           </div>
-    
-          <div *ngIf="blog.status == 'approved'" class="content-info">
-            Status : <span class="status approved">
-             {{blog.status}}
-            </span>
-          </div>
+         
+      <div *ngIf="blog.status == 'pending'" class="content-info">
+        Status : <span class="status pending">
+         {{blog.status}}
+        </span>
+      </div>
+
+      <div *ngIf="blog.status == 'approved'" class="content-info">
+        Status : <span class="status approved">
+         {{blog.status}}
+        </span>
+      </div>
         </div>
         <div class="close-activity buttons">
           <a class="button" [routerLink]="['/mayor/mayor-blog-details/',blog._id]">View</a>

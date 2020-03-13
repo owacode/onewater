@@ -1,5 +1,6 @@
 @import '../landingpage-common.scss';
 @import '../landing-page/bg-blocks-styles.scss';
+@import '../../modal-styles.scss';
 
 .cover-photo{
     background-attachment: fixed;
@@ -8,7 +9,9 @@
     background-repeat: no-repeat;
     height: 85vh;
 }
-
+.outer-card{
+    cursor: pointer;
+}
 .page-title{
     min-height: 70vh;
     margin-top: -80vh;
@@ -68,6 +71,74 @@
     bottom: 0;
     top: auto;
 }
+
+.modal{
+    overflow-y: scroll;
+}
+
+/*lighbox styling*/
+.light-box{
+    .l-img{
+        padding: 0.5rem;
+
+        img{
+            width: 100%;
+            margin: 0;
+        }
+    }
+    .l-text{
+        text-align: left;
+
+        h1{
+            border-bottom: 1px solid #ccc;
+            
+        }
+        h5{
+            color: #a1a1a1;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        h4{
+            margin-bottom: 1rem;
+        }
+       
+    }
+     button{
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        margin: 1rem;
+    }
+    
+}
+
+
+    .social-media{
+      margin: 1rem 0;
+
+      i{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: 400;
+        height: 40px;
+        width: 40px;
+        margin-right:2rem;
+        border-radius: 50%;
+        border:2px solid #000;
+        color: #000;
+        transition: all 0.3s ease-in-out;
+      }
+      i:hover{
+        border-color: #0e77e1;
+        color: #0e77e1;
+      }
+    }
+  
+
+
+
 @media screen and (max-width: 991px){
 
     .cover-photo {
