@@ -279,7 +279,7 @@
       <section class="video-section">
         <div class="my-container">
           <h2>Water</h2>
-          <owl-carousel *ngIf="water.length >=1"
+          <owl-carousel *ngIf="water?.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -330,7 +330,7 @@
         
         <div class="my-container">
           <h2>Wastewater</h2>
-          <owl-carousel *ngIf="wastewater.length >=1"
+          <owl-carousel *ngIf="wastewater?.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -385,7 +385,7 @@
 
         <div class="my-container">
           <h2>Storm Water</h2>
-          <owl-carousel *ngIf="stormwater.length >=1"
+          <owl-carousel *ngIf="stormwater?.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -440,7 +440,7 @@
 
         <div class="my-container">
           <h2>Innovation & Research</h2>
-          <owl-carousel *ngIf="innovationresearch.length >=1"
+          <owl-carousel *ngIf="innovationresearch?.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -495,7 +495,7 @@
 
         <div class="my-container">
           <h2>Sustainable Development</h2>
-          <owl-carousel *ngIf="sustainabledevelopment.length >=1"
+          <owl-carousel *ngIf="sustainabledevelopment?.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -550,7 +550,7 @@
 
         <div class="my-container">
           <h2>Management & Finance</h2>
-          <owl-carousel *ngIf="managementsinance.length >=1"
+          <owl-carousel *ngIf="managementsinance?.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"
@@ -605,7 +605,7 @@
 
         <div class="my-container">
           <h2>Legistative & Regulatory</h2>
-          <owl-carousel *ngIf="legistativeregulatory.length >=1"
+          <owl-carousel *ngIf="legistativeregulatory?.length >=1"
             [items]="featuredvideos"
             [options]="carouselOptions"
             [carouselClasses]="['owl-theme', 'row', 'sliding']"

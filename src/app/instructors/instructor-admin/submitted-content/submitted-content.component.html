@@ -15,7 +15,7 @@ class="dashboard-content-wrapper dash-tab"
       </div>
     </div>
 <div class="row">
-  <div class="col-12 no-content" *ngIf="!courses.length">
+  <div class="col-12 no-content" *ngIf="!courses?.length">
     <h3>
       You have not posted any content yet click <a [routerLink]="['/instructor-admin']"> <u>here</u></a> to post one.
     </h3>

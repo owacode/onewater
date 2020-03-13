@@ -42,7 +42,7 @@ class="dashboard-content-wrapper dash-tab"
       <span class="time">{{blog.date_added | date:'MMM d, y'}}</span>
       <br>
       <div class="flex-btn">
-           <span class="likes" *ngIf="blog.likes.length">
+           <span class="likes" *ngIf="blog.likes?.length">
               <i class="fa fa-heart" aria-hidden="true"></i>
               {{blog.likecount}} likes
            </span>

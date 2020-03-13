@@ -12,6 +12,8 @@ export class AllBlogsComponent implements OnInit {
   allblogs;
   search="";
   blogs;
+  blogmainid;
+ id;
   constructor(public common:CommonService, public modal: ModalFunctions) { }
 
   ngOnInit() {
@@ -34,20 +36,32 @@ export class AllBlogsComponent implements OnInit {
    }
   }
 
-  deleteApproveBlog(mainid,approve_id) {
-    console.log(mainid,approve_id);
-    this.modal.closeModal('deleteApproved');
-    this.common.deleteApproveBlog(mainid,approve_id)
+  deleteApproveBlog() {
+    console.log(this.blogmainid,this.id);
+    this.modal.closeModal('#deleteApproved');
+    this.common.deleteApproveBlog(this.blogmainid,this.id)
     .subscribe(result=> {
       console.log('approve blog deleted successfully',result);
       this.modal.openModal("#blogDeleted");
     })
   }
 
-  deleteUnApproveBlog(mainid,unapprove_id) {
-    console.log(mainid,unapprove_id);
-    this.modal.closeModal('deleteUnapproved');
-    this.common.deleteUnApproveBlog(mainid,unapprove_id)
+  changeId(mainid, id, modalType) {
+    this.id = id;
+    this.blogmainid = mainid;
+    if(modalType == 'approved')
+    {
+      this.modal.openModal('#deleteUnapproved');
+    }
+    else{
+      this.modal.openModal('#deleteApproved');
+    }
+  }
+
+  deleteUnApproveBlog() {
+    console.log(this.blogmainid,this.id);
+    this.modal.closeModal('#deleteUnapproved');
+    this.common.deleteUnApproveBlog(this.blogmainid,this.id)
     .subscribe(result=> {
       console.log('unapprove blog deleted successfully',result);
       this.modal.openModal("#blogDeleted");

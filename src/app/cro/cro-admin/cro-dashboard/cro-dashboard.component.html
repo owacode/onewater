@@ -47,7 +47,7 @@ class="dashboard-content-wrapper dash-tab"
 <div class="dashboard-section dashboard-recent-activity">
   <div class="row">
     <div class="col-md-12"><h4 class="title"><i data-feather="edit-2"></i> Recently posted blogs</h4>
-      <div class="no-content" *ngIf="!recentblogs.length">
+      <div class="no-content" *ngIf="!recentblogs?.length">
         <h3> You have not posted any blog yet. <br> Click <a routerLink="/author/post-blog">here</a> to post one.</h3>
 
       </div>

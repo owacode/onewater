@@ -50,7 +50,7 @@ class="dashboard-content-wrapper dash-tab"
         </td>
         <td class="application">
           <a [routerLink]="['/employer/candidate-list']"
-            >{{ job.applicants.length }} Application(s)</a
+            >{{ job.applicants?.length }} Application(s)</a
           >
         </td>
         <td class="deadline">{{ job.deadline | date: "MMMM d, y" }}</td>
