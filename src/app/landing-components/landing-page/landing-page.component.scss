@@ -358,18 +358,31 @@ blockquote{
   }
 }
 
-@media all and (max-width: 520px) {
+@media all and (max-width: 576px) {
   .feature-name {
     font-size: 1.2rem;
   }
   .about-platform p {
     text-align: justify;
   }
+  .mybtn a{
+    margin: 1rem 0;
+  }
   .platform-intro-img {
     width: 100%;
   }
+  .outer-card{
+    padding: 0.4rem;
+  }
+  .partners-section {
+    padding-top: 40px;
+}
   .platform {
-    padding: 2rem 0;
+    padding: 1rem 0;
+
+    ul{
+      padding:0 1rem;
+    }
   }
   .platform-img {
     margin: auto;
@@ -392,6 +405,9 @@ blockquote{
     margin-bottom: -40vh;
   }
   .partners {
-    padding: 2rem 0;
+    padding:0;
+  }
+  .features-section-p{
+    padding-top: 40px;
   }
 }

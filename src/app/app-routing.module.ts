@@ -286,6 +286,10 @@ const routes: Routes = [
     loadChildren: './role-signup/role-signup.module#RoleSignupModule'
   },
   {
+    path: 'login-role',
+    loadChildren: './role-login/role-login.module#RoleLoginModule'
+  },
+  {
     path: 'signup',
     loadChildren: './login-signup/login-signup.module#LoginSignupModule'
   },

@@ -122,14 +122,13 @@ header{
         display: block;
         right: 0;
         z-index:50;
-        background-color: #fff !important;
+        background-color: #fff;
         top: 100%;
         padding: 1rem 1rem 0.5rem;
         border-radius: 5px;
         display: none;
         transition:all 0.3s ease-in-out;
         animation: pop_up 0.2s ease-in-out forwards;
-
        
         li{
             display: block;
@@ -138,7 +137,6 @@ header{
         color: #000;
         display: block;
         margin: 0 0 0.5rem;
-        display: flex;
 
         img{
             width: 20px;
@@ -157,10 +155,12 @@ header{
     display: none;
     margin-right: 50px;
  }
-
+ @media all and (min-width:1091px){
     .dropdown-btn:hover .dropdown-content{
         display: block;
      }
+ }
+   
 
 
 .platform-dd{
@@ -186,7 +186,15 @@ header{
 
     .dropdown-content{
         position: relative !important;
+        box-shadow: none;
+        background: #e2efff !important;
     }
+
+    
+    .platform-dd{
+        background: #e2efff;
+        padding:0.8rem;
+}
     
     .hamburger{
         display: flex;
@@ -218,7 +226,11 @@ header{
     background-color: rgb(255, 255, 255);
     transform: translateX(-100%);
     .navlink{
-        margin: 8px 0;
+        margin: 0.2rem 0;
+        display: block;
+        padding: 1rem 0;
+        text-align: center;
+        width: 100%;
         a{
             color: #000461;
         }
@@ -261,7 +273,7 @@ header{
 
 }
 
-@media all and (max-width:480px){
+@media all and (max-width:576px){
     header,.fixed-header{
         height: 60px;
     }
@@ -270,6 +282,7 @@ header{
             width: 80px;
         }
     }
+
 }
 
 /*class to add when the top of page is white*/
