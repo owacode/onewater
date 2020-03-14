@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoleLoginComponent implements OnInit {
 
+  toRender:'login';
   constructor() { }
 
   ngOnInit() {
