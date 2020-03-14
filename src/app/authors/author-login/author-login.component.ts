@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, Validators, FormControl, EmailValidator } from '@angular/forms';
 import { AuthorAuthService } from '../services/author-auth.service';
-import { Router } from '@angular/router';
+import { Router, Route, ActivatedRoute } from '@angular/router';
 import { ModalFunctions } from '../../shared-functions/modal-functions';
 import { AuthService } from 'src/app/auth.service';
 import { InstructorService } from 'src/app/instructors/instructor-admin/instructor.service';
@@ -15,7 +15,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class AuthorLoginComponent implements OnInit {
 
-  @Input() isSignup: true;
+  
 
   user: FormGroup;
   loginuser: FormGroup;
@@ -49,14 +49,13 @@ export class AuthorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
-  constructor(public http: HttpClient, public auth: AuthorAuthService, public userauth: AuthService, public route:Router, public modal:ModalFunctions, public instructorauth: InstructorService) {
-
+  constructor(public http: HttpClient, public auth: AuthorAuthService, public userauth: AuthService, public route:Router, public modal:ModalFunctions, public instructorauth: InstructorService, public state: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.auth.checkLocalStorage();
     this.showregform();
-
+    this.state.params.subscribe(result => {console.log(result)});
     this.user = new FormGroup({
       author_name: new FormControl(null, { validators: [Validators.required] }),
       author_email: new FormControl(null, { validators: [Validators.required, Validators.email] }),

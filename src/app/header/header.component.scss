@@ -138,15 +138,17 @@ header{
         display: block;
         margin: 0 0 0.5rem;
         font-weight: 700;
-        display: flex;
-
         img{
             width: 20px;
             margin-right: 10px;
         }
         }
+          
         a::after{
-            background-color: #000;
+            background: none;
+        }
+        a:hover{
+            color: #0041a3;
         }
     }
 }
@@ -173,6 +175,7 @@ header{
 
     .navlink{
         margin-bottom: 0.5rem;
+
     }
 }
 
@@ -189,25 +192,11 @@ header{
     .dropdown-content{
         position: relative !important;
         box-shadow: none;
-        background: #e2efff !important;
-
-        li {
-            a{
-                justify-content: center;
-            }
-        }
     }
 
     .desktop-dd{
         display: none;
     }
-
-    
-    .platform-dd{
-        background: #e2efff;
-        padding:0.8rem;
-
-}
     
     .hamburger{
         display: flex;
@@ -240,9 +229,8 @@ header{
     background-color: rgb(255, 255, 255);
     transform: translateX(-100%);
     .navlink{
-        margin: 0.2rem 0;
         display: block;
-        padding: 1rem 0;
+        padding: 0.8rem 0;
         text-align: center;
         width: 100%;
         a{

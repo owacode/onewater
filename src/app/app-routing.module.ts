@@ -126,7 +126,7 @@ const routes: Routes = [
       //   loadChildren: './blog-website/profile/profile.module#ProfileModule'
       // },
       {
-        path: 'author-login',
+        path: 'author-login/:state',
         loadChildren: './authors/author-login/author-login.module#AuthorLoginModule'
       },
       {

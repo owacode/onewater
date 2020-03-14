@@ -26,7 +26,7 @@ toggleHeader() {
     if (event instanceof NavigationEnd) {
       if (
         event['url'] == '/signup-role' ||
-        event['url'] == '/signup-login' ||
+        event['url'] == '/login-role' ||
         event['url'] == '/onewaterblog/author-login' ||
         event['url'] == '/onewaterblog/mayor-login' ||
         event['url'] == '/onewaterblog/cro-login' ||
