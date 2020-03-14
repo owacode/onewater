@@ -9,8 +9,8 @@
     <ul class="menu">
       <li class="navlink"><a routerLink="/home">Home</a></li>
       <li class="navlink"><a routerLink="/home/about">About</a></li>
-      <li class="navlink" (click)="toggleDropdown('platforms')">
-        <div class="dropdown-btn platform-dd"  >
+      <li class="navlink" >
+        <div class="dropdown-btn platform-dd"  (click)="toggleDropdown('platforms')">
           OneWater Ecosystem <i class="fa fa-caret-down" aria-hidden="true"></i>
           <div class="dropdown-content card-shadow" id="platforms">
             <li class="navlink"><a routerLink="/home/leaders">OneWater Leaders</a></li>
@@ -27,12 +27,12 @@
       <li class="navlink"><a routerLink="/home/contact">Contact</a></li>
       <li class="navlink"><a routerLink="/home/donate">Give</a></li>
 
-      <li *ngIf="!auth.isLoggedIn" class="navlink" (click)="toggleDropdown('loginPanel')">
+      <li *ngIf="!auth.isLoggedIn" class="navlink">
         <div
-          class="dropdown-btn platform-dd"
+          class="dropdown-btn platform-dd" (click)="toggleDropdown('loginPanel')"
          
         >
-          Login <i class="fa fa-caret-down" aria-hidden="true"></i>
+          Get Started <i class="fa fa-caret-down" aria-hidden="true"></i>
           <div class="dropdown-content card-shadow" id="loginPanel">
             <li *ngIf="!auth.isLoggedIn" class="navlink">
               <a
@@ -53,7 +53,7 @@
 
 
       <li *ngIf="auth.isLoggedIn" class="navlink">
-        <div class="dropdown-btn">
+        <div class="dropdown-btn desktop-dd">
           <img src="assets/img/icons/avatar1.svg" alt="" />
           <div class="dropdown-content card-shadow">
             <a [routerLink]="['/user-admin']">
@@ -78,11 +78,12 @@
   >
     <img src="assets/img/icons/avatar1.svg" alt="" />
     <div class="dropdown-content user-panel card-shadow" id="userPanel">
-      <a [routerLink]="['/user-admin']">Dashboard</a>
+      <a [routerLink]="['/user-admin']">
+        <img src="assets/img/icons/speedometer.svg" alt="" /> Dashboard</a>
       <a
         (click)="logout()"
         href="https://onewater-tenant-2.auth0.com/v2/logout?client_id=51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D&returnTo=https://onewater.herokuapp.com/home"
-        >Logout
+        >  <img src="assets/img/icons/power.svg" alt="" /> Logout
       </a>
     </div>
   </div>

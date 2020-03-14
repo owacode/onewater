@@ -3,11 +3,10 @@
 /*-------------------------------------------
 --------------     GLOBAL STYLES-------------
 ---------------------------------------------*/
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import './commonstyles/blog-global-styles.scss';
 @import './commonstyles/landing-section-styles.scss';
 @import '../node_modules/modularscale-sass/stylesheets/modularscale';
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
 
 *{
   margin: 0;
@@ -143,18 +142,20 @@ img {
 button {
   margin: auto;
   border: 0;
-  border-radius: 6px;
   font-family: "Montserrat", sans-serif;
-  padding: 10px 15px;
   font-size: 2rem;
-  color: #555;
-  font-weight: 700;
-  border: 1.2px solid #c9c9c9;
+  color: #101010;
   font-size: 1.1rem;
   width: auto;
   cursor: pointer;
   background: #fff;
   transition: all 0.2s ease-in-out;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #0000003b;
+  margin: auto;
+  text-transform: capitalize;
   outline: 0 !important;
 }
 

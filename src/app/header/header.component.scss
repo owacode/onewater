@@ -137,6 +137,8 @@ header{
         color: #000;
         display: block;
         margin: 0 0 0.5rem;
+        font-weight: 700;
+        display: flex;
 
         img{
             width: 20px;
@@ -188,12 +190,23 @@ header{
         position: relative !important;
         box-shadow: none;
         background: #e2efff !important;
+
+        li {
+            a{
+                justify-content: center;
+            }
+        }
+    }
+
+    .desktop-dd{
+        display: none;
     }
 
     
     .platform-dd{
         background: #e2efff;
         padding:0.8rem;
+
 }
     
     .hamburger{
@@ -218,6 +231,7 @@ header{
     margin: 0;
     top: 0;
     height: 100vh;
+    overflow-y: scroll;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -308,3 +322,4 @@ header{
         background-color: #000;
     }
 }
+

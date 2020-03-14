@@ -225,6 +225,11 @@ img{
     padding: 8px;
   }
 }
+
+.video-section-wrap{
+  margin-top: 60px;
+}
+
 .vod-big-wrap{
 padding: 0 5px;
 }
@@ -311,7 +316,9 @@ h2{
       }
     }
   }
-
+  .video-section-wrap{
+    margin-top: 45px;
+  }
   .vod-big-wrap{
     padding: 0 2vw;
   }
@@ -335,6 +342,9 @@ h2{
     margin:auto;
   }
 
+  .video-section-wrap{
+    margin-top: 30px;
+  }
   .cover-photo{height: 100vh;}
   .landing-section
   {

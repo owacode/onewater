@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, Validators, FormControl, EmailValidator } from '@angular/forms';
 import { AuthorAuthService } from '../services/author-auth.service';
 import { Router } from '@angular/router';
@@ -14,6 +14,8 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AuthorLoginComponent implements OnInit {
+
+  @Input() isSignup: true;
 
   user: FormGroup;
   loginuser: FormGroup;

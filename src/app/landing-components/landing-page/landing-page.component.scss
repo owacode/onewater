@@ -39,7 +39,7 @@ section {
 
 
 .platform-intro-img {
-  width: 70%;
+  width: 50%;
   position: relative;
   margin: 2rem auto;
 }
@@ -136,6 +136,7 @@ section {
     margin-top: 40px;
   }
 }
+
 .cta-img {
   width: 150px;
   position: absolute;
@@ -143,19 +144,22 @@ section {
   top: 3%;
   margin: auto;
 }
+
 .mybtn {
-  text-align: center;
+  
   margin: 2rem auto 1rem;
   position: relative;
   z-index: 10;
   a {
     background: transparent;
     cursor: pointer;
-    padding: 16px 32px;
-    border-radius: 30px;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
     transition: all 0.3s ease-in-out;
     border: 1.5px solid #fff;
     color: #fff;
+    font-weight: 600;
   }
   a:hover {
     background: #fff;
@@ -210,7 +214,13 @@ section {
   padding: 50px 0 50vh;
   margin-bottom: -45vh;
 }
-
+.platform-section{
+  h2{
+    font-size: 2.5rem;
+    text-align: center;
+    
+  }
+}
 .cro-section,.mayor-section{
   background-size: cover;
   background-repeat: no-repeat;
@@ -337,7 +347,9 @@ blockquote{
   .platform-img {
     width: 60%;
   }
-
+  .mybtn{
+    text-align: center;
+  }
   .newsletter-section {
     padding: 50px 0 50vh;
     margin-bottom: -50vh;
