@@ -347,6 +347,16 @@ blockquote{
   .platform-img {
     width: 60%;
   }
+  .platform-intro-img{
+    width: 70%;
+  }
+  .platform-section{
+    h2{
+      font-size: 2rem;
+      text-align: center;
+      
+    }
+  }
   .mybtn{
     text-align: center;
   }
@@ -373,6 +383,13 @@ blockquote{
 @media all and (max-width: 576px) {
   .feature-name {
     font-size: 1.2rem;
+  }
+  .platform-section{
+    h2{
+      font-size: 1.5rem;
+      letter-spacing: -0.05rem;
+      
+    }
   }
   .about-platform p {
     text-align: justify;
