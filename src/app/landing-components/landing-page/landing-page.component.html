@@ -110,7 +110,7 @@
               Know more
             </a>
 
-            <a routerLink="/onewaterblog/mayor-login">
+            <a routerLink="/onewaterblog/mayor">
               Register as Mayor
             </a>
           </div>
@@ -145,7 +145,7 @@
             <a routerLink="/home/cro-page">
               Know more
             </a>
-            <a routerLink="/onewaterblog/cro-login">
+            <a routerLink="/onewaterblog/cro">
               Register as CRO
             </a>
           </div>
@@ -197,7 +197,7 @@
                       Go to OneWater Academy
                     </a>
                   </div>
-                  <div class="col-sm-6"> <a routerLink="/instructor-login" class="d-block">
+                  <div class="col-sm-6"> <a [routerLink]="['/instructor',toRender]" class="d-block">
                     Become instructor on academy
                   </a></div>
                 </div>
@@ -316,7 +316,7 @@
                       Go to OneWater Blogs
                     </a>
                   </div>
-                  <div class="col-sm-6"> <a routerLink="/onewaterblog/author-login" class="d-block">
+                  <div class="col-sm-6"> <a [routerLink]="['/onewaterblog/author',toRender]" class="d-block">
                     Become an author
                   </a></div>
                 </div>

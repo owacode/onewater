@@ -126,15 +126,15 @@ const routes: Routes = [
       //   loadChildren: './blog-website/profile/profile.module#ProfileModule'
       // },
       {
-        path: 'author-login/',
+        path: 'author/:state',
         loadChildren: './authors/author-login/author-login.module#AuthorLoginModule'
       },
       {
-        path: 'mayor-login',
+        path: 'mayor/:state',
         loadChildren: './mayor/mayor-login/mayor-login.module#MayorLoginModule'
       },
       {
-        path: 'cro-login',
+        path: 'cro/:state',
         loadChildren: './cro/cro-login/cro-login.module#CroLoginModule'
       },
     ]
@@ -243,7 +243,7 @@ const routes: Routes = [
   },
   //-----------Instructor Login page -----------------//
     {
-       path:'instructor-login',
+       path:'instructor/:state',
       loadChildren: './instructors/instructor-login/instructor-login.module#InstructorLoginModule'
     },
 

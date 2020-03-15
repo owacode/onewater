@@ -92,7 +92,7 @@
             Like what you’ve read so far? Register now and become an OWA instructor.
             <br />
           </h3>
-          <a routerLink="/instructor-login">Become an instructor </a>
+          <a [routerLink]="['/instructor',toRender]">Become an instructor </a>
         </div>
       </div>
       <!-- 
@@ -263,7 +263,7 @@
           <h3 style="color: #000">
             Become an OWA instructor and share your knowledge with water workforce members all over the world.
           </h3>
-          <button routerLink="/instructor-login" class="btn">
+          <button [routerLink]="['/instructor',toRender]" class="btn">
             Become an instructor
           </button>
         </div>

@@ -7,7 +7,7 @@ import {
 } from "@angular/forms";
 import { ModalFunctions } from "src/app/shared-functions/modal-functions";
 import { CROAuthService } from "../services/cro-auth.service";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-cro-login",
@@ -50,12 +50,22 @@ export class CroLoginComponent implements OnInit {
   constructor(
     public modal: ModalFunctions,
     public auth: CROAuthService,
-    public route: Router
+    public route: Router,
+    public state: ActivatedRoute
   ) {}
+
+  toRender;
 
   ngOnInit() {
     this.auth.checkLocalStorage();
-    this.showregform();
+  
+    this.state.params.subscribe(result => {this.toRender = result.state});
+    if(this.toRender == 'login'){
+      this.showauthform();
+    }
+    else {
+      this.showregform();
+    }
 
     this.user = new FormGroup({
       cro_name: new FormControl(null, { validators: [Validators.required] }),

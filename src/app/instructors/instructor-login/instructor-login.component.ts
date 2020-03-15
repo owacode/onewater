@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Route, Router } from '@angular/router';
+import { Route, Router, ActivatedRoute } from '@angular/router';
 import { InstructorService } from '../instructor-admin/instructor.service';
 import { ModalFunctions } from '../../shared-functions/modal-functions';
 import { AuthorAuthService } from 'src/app/authors/services/author-auth.service';
@@ -39,7 +39,7 @@ export class InstructorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
-  constructor(public http:HttpClient, public route: Router, public instructorservice: InstructorService, public authorservice: AuthorAuthService,public auth:AuthService , public modal : ModalFunctions) { }
+  constructor(public http:HttpClient, public route: Router, public instructorservice: InstructorService, public authorservice: AuthorAuthService,public auth:AuthService , public modal : ModalFunctions, public state: ActivatedRoute) { }
   user: FormGroup;
   loginuser: FormGroup;
   resetpassform: FormGroup;
@@ -47,8 +47,17 @@ export class InstructorLoginComponent implements OnInit {
   registersubmitted:boolean=false;
   resetpasssubmitted: boolean = false;
 
+  toRender;
   ngOnInit() {
-    this.showregform();
+
+    this.state.params.subscribe(result => {this.toRender = result.state});
+    if(this.toRender == 'login'){
+      this.showauthform();
+    }
+    else {
+      this.showregform();
+    }
+   
     this.user = new FormGroup({
       name:new FormControl(null,{validators:[Validators.required]}),
       email:new FormControl(null,{validators:[Validators.required,Validators.email]}),

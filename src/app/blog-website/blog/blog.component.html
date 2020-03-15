@@ -116,7 +116,7 @@
           <br />
           Be a OneWater Blog Author
         </h3>
-        <a routerLink="/onewaterblog/author-login">Become an author</a>
+        <a [routerLink]="['/onewaterblog/author',toRender]">Become an author</a>
       </div>
     </div>
     <div class="col-md-5">
@@ -169,7 +169,7 @@
           </div>
         </owl-carousel>
         <div class="text-center btn-wrapper">
-          <a class="reg-btn" routerLink="/onewaterblog/mayor-login"
+          <a class="reg-btn" [routerLink]="['/onewaterblog/mayor',toRender]"
             >Register as Leader</a
           >
         </div>
@@ -240,7 +240,7 @@
             </div>
           </owl-carousel>
           <div class="text-center btn-wrapper">
-            <a class="reg-btn" routerLink="//onewaterblog/cro-login"
+            <a class="reg-btn" [routerLink]="['/onewaterblog/cro',toRender]"
               >Register as a CRO</a
             >
           </div>

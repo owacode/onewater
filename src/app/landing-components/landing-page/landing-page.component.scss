@@ -264,10 +264,21 @@ section {
     border-radius: 12px;
     margin: 1.5rem;
     border: 2px solid #fff;
+    transition: all 0.3s ease-in-out;
 
-    h3{
+    h3,a{
         color: #fff;
+        transition: all 0.3s ease-in-out;
     }
+}
+
+.feature-card:hover{
+    background-color: #fff;
+
+    h3,p{
+      color: #092b86;
+    }
+
 }
 
 .drop-img{

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ow-academy.component.scss']
 })
 export class OwAcademyComponent implements OnInit {
-
+  toRender = 'signup';
   constructor() { }
 
   ngOnInit() {

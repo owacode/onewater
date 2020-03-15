@@ -15,8 +15,6 @@ import { HttpClient } from '@angular/common/http';
 
 export class AuthorLoginComponent implements OnInit {
 
-  
-
   user: FormGroup;
   loginuser: FormGroup;
   resetpassform: FormGroup;
@@ -52,10 +50,19 @@ export class AuthorLoginComponent implements OnInit {
   constructor(public http: HttpClient, public auth: AuthorAuthService, public userauth: AuthService, public route:Router, public modal:ModalFunctions, public instructorauth: InstructorService, public state: ActivatedRoute) {
   }
 
+  toRender;
+
   ngOnInit() {
     this.auth.checkLocalStorage();
-    this.showregform();
-    this.state.params.subscribe(result => {console.log(result)});
+    
+    this.state.params.subscribe(result => {this.toRender = result.state});
+    if(this.toRender == 'login'){
+      this.showauthform();
+    }
+    else {
+      this.showregform();
+    }
+    
     this.user = new FormGroup({
       author_name: new FormControl(null, { validators: [Validators.required] }),
       author_email: new FormControl(null, { validators: [Validators.required, Validators.email] }),

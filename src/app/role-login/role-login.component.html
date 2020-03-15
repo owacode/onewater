@@ -6,7 +6,7 @@
  
     <div class="row justify-content-center" >
       <div class="col">
-        <a routerLink="/onewaterblog/mayor-login">
+        <a [routerLink]="['/onewaterblog/mayor',toRender]">
         <div class="role-card card-shadow">
             <img src="assets/img/mayor-login.png" alt="" class="role-img">
         <h5>
@@ -17,7 +17,7 @@
       </div>
 
       <div class="col">
-        <a routerLink="/onewaterblog/cro-login">
+        <a [routerLink]="['/onewaterblog/cro',toRender]">
         <div class="role-card card-shadow">
             <img src="assets/img/cro-login.png" alt="" class="role-img">
         <h5>
@@ -41,8 +41,8 @@
   <!-- </div>
   <div class="row justify-content-center" > -->
     <div class="col">
-      <!-- <a [routerLink]="['/onewaterblog/author-login/',toRender]"> -->
-        <a [routerLink]="['/onewaterblog/author-login']">
+      <!-- <a [routerLink]="['/onewaterblog/author/',toRender]"> -->
+        <a [routerLink]="['/onewaterblog/author',toRender]">
       <div class="role-card card-shadow">
           <img src="assets/img/author-login.png" alt="" class="role-img">
       <h5>
@@ -53,7 +53,7 @@
     </div>
 
     <div class="col">
-      <a routerLink="/instructor-login">
+      <a [routerLink]="['/instructor',toRender]">
       <div class="role-card card-shadow">
           <img src="assets/img/ins-login.png" alt="" class="role-img">
       <h5>
