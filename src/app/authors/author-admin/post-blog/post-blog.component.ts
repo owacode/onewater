@@ -85,7 +85,7 @@ export class PostBlogComponent implements OnInit {
   savedblog() {
     console.log('save blog hit');
     this.submited = true;
-    
+
 
     if (this.form.invalid) {
       console.log("invalid form for saved post blog");
@@ -99,6 +99,7 @@ export class PostBlogComponent implements OnInit {
       this.showAddMsg();
       //alert(result.msg);
       this.form.reset();
+      this.imagePreview = null;
       this.submited = false;
     });
   }
@@ -110,12 +111,13 @@ export class PostBlogComponent implements OnInit {
       return;
     }
     console.log("hit");
-    this.submited = false;
     this.modal.openModal("#blogModal");
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addBlog(this.form.value);
     this.form.reset();
-   
+    this.imagePreview = null;
+    this.submited = false;
+
   }
 }
