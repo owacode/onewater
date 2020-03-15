@@ -46,10 +46,10 @@ section {
 
 .platform-section {
   position: relative;
-  background: #092b86;
-  // background: linear-gradient(0deg, #05194d 6%, rgba(14, 73, 154, 0.850074) 53%, #092b86 94%),
-  //  url(/assets/img/landing/intro-bg.jpg);
+  background: linear-gradient(0deg, #092b86 6%, rgba(14, 73, 154, 0.850074) 53%, #092b86 94%),
+   url(/assets/img/landing/intro-bg.jpg);
   background-size: cover;
+  background-position: bottom center;
 }
 
 .platforms {
@@ -172,10 +172,6 @@ section {
   position: relative;
 }
 
-.partners-section {
-  padding-top: 80px;
- 
-}
 .partners {
   .partner-heading{
     text-transform: capitalize;
@@ -250,7 +246,6 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 0;
-  padding-top: 20px;
   padding-bottom: 61vh;
   margin-bottom: -56vh;
 
