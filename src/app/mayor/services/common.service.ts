@@ -131,25 +131,6 @@ export class CommonService {
 
   }
 
-  addVideo(values) {
-    this.http
-      .post("https://onewater-blogapi.herokuapp.com/post-video", values)
-      .subscribe(result => {
-        console.log(result);
-        //alert("Video Posted Successfully");
-      });
-  }
-
-  getAllVideos() {
-    const data = {
-      email: localStorage.getItem("mayoremail")
-    };
-    return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/singlevideo/" +
-        localStorage.getItem("mayoremail")
-    );
-  }
-
   getAllBlogs() {
     return this.http.get<{ status: string; msg: string; result: any }>(
       "https://onewater-mayor.herokuapp.com/allmayorblogs/" +

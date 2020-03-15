@@ -57,7 +57,7 @@ export class CommonService {
       )
       .subscribe(result => {
         console.log(result);
-        alert(result.msg);
+        // alert(result.msg);
       });
   }
   addSavedBlog(value) {
@@ -83,7 +83,7 @@ export class CommonService {
       )
       .subscribe(result => {
         console.log(result);
-        alert(result.msg);
+        // alert(result.msg);
       });
   }
 

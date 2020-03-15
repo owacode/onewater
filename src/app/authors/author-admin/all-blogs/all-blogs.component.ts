@@ -36,16 +36,6 @@ export class AllBlogsComponent implements OnInit {
    }
   }
 
-  deleteApproveBlog() {
-    console.log(this.blogmainid,this.id);
-    this.modal.closeModal('#deleteApproved');
-    this.common.deleteApproveBlog(this.blogmainid,this.id)
-    .subscribe(result=> {
-      console.log('approve blog deleted successfully',result);
-      this.modal.openModal("#blogDeleted");
-    })
-  }
-
   changeId(mainid, id, modalType) {
     this.id = id;
     this.blogmainid = mainid;
@@ -58,7 +48,19 @@ export class AllBlogsComponent implements OnInit {
     }
   }
 
+  deleteApproveBlog() {
+    console.log('app hit')
+    console.log(this.blogmainid,this.id);
+    this.modal.closeModal('#deleteApproved');
+    this.common.deleteApproveBlog(this.blogmainid,this.id)
+    .subscribe(result=> {
+      console.log('approve blog deleted successfully',result);
+      this.modal.openModal("#blogDeleted");
+    })
+  }
+
   deleteUnApproveBlog() {
+    console.log('unapp hit')
     console.log(this.blogmainid,this.id);
     this.modal.closeModal('#deleteUnapproved');
     this.common.deleteUnApproveBlog(this.blogmainid,this.id)
