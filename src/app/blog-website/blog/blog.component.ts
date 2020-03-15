@@ -10,7 +10,7 @@ declare var $: any;
 export class BlogComponent implements OnInit {
   showSubCat = false;
   currentCategory = '';
-
+  toRender = 'signup';
   blogcards;
   featuredblog;
   croList =  [

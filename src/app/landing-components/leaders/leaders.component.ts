@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LeadersComponent implements OnInit {
 
+  toRender='signup';
+  
   carouselBlogs = {
     margin: 25,
     nav: true,

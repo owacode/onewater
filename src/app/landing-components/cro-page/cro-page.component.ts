@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CroPageComponent implements OnInit {
 
-
+  toRender = 'signup';
+  
   croblogs;
   cros;
     carouselBlogs = {

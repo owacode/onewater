@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, EmailValidator } from '@angular/forms';
 import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 import { MayorAuthService } from '../services/mayor-auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mayor-login',
@@ -43,11 +43,21 @@ export class MayorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
-  constructor(public modal: ModalFunctions, public auth: MayorAuthService, public route:Router) { }
+  toRender;
+
+  constructor(public modal: ModalFunctions, public auth: MayorAuthService, public route:Router, public state: ActivatedRoute) { }
 
   ngOnInit() {
     this.auth.checkLocalStorage();
-    this.showregform();
+    
+
+    this.state.params.subscribe(result => {this.toRender = result.state});
+    if(this.toRender == 'login'){
+      this.showauthform();
+    }
+    else {
+      this.showregform();
+    }
 
     this.user = new FormGroup({
       mayor_name: new FormControl(null, { validators: [Validators.required] }),

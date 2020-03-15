@@ -15,7 +15,7 @@
         Become an Instructor.
       </h2>
       <div class="text-center">
-        <a routerLink="/instructor-login" class="join-btn">
+        <a [routerLink]="['/instructor',toRender]" class="join-btn">
           Join now
         </a>
       </div>
@@ -83,53 +83,6 @@
       Why become an OneWater Mentor?
     </h2>
   
-  <!-- <div class="row">
-    <div class="col-lg-4">
-      <div class="process-box">
-        <div class="d-flex align-items-center">
-          <img src="assets/img/icons/one.svg" alt="">
-          <h4>
-            Meet New People
-          </h4>
-        </div>
-        <p>
-          
-The people you mentor through OneWater can become your friends, colleagues or business partners. There’s no such thing as too many business contacts that appreciate you and your expertise.
-
-        </p>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="process-box">
-        <div class="d-flex align-items-center">
-          <img src="assets/img/icons/two.svg" alt="">
-          <h4>
-            Shape the Future
-          </h4>
-        </div>
-        <p>
-         
-The 21st century is unfolding an unparalleled, complex set of water challenges. Help prepare a workforce that can create the solutions we need.
-
-        </p>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="process-box">
-        <div class="d-flex align-items-center">
-          <img src="assets/img/icons/three.svg" alt="">
-          <h4>
-            Create Opportunities
-            
-          </h4>
-        </div>
-        <p>
-          Nearly everyone can name a person who inspired him or her, that pushed them, that maybe even changed their life for the better. Be that person, and maybe find your new employee.
-          
-        </p>
-      </div>
-    </div>
-  </div> -->
   <div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="feature-box">
@@ -184,7 +137,7 @@ The people you mentor through OneWater can become your friends, colleagues or bu
           Become an instructor.
         </h1>
        
-        <a routerLink="/instructor-login" class="join-btn">
+        <a [routerLink]="['/instructor',toRender]" class="join-btn">
           Join now
         </a>
       </div>

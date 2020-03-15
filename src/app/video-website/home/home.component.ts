@@ -8,7 +8,7 @@ import { CommonService } from '../services/common.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  toRender='signup';
   carouselOptions = {
     margin: 25,
     nav: true,

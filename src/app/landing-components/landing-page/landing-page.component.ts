@@ -12,6 +12,8 @@ import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 })
 export class LandingPageComponent implements OnInit {
 
+  toRender='signup';
+  
   form:FormGroup;
   public submited: Boolean = false;
   constructor(public http:HttpClient, public modal: ModalFunctions) { }

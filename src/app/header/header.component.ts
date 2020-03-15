@@ -27,13 +27,12 @@ toggleHeader() {
       if (
         event['url'] == '/signup-role' ||
         event['url'] == '/login-role' ||
-        event['url'] == '/onewaterblog/author-login' ||
-        event['url'] == '/onewaterblog/mayor-login' ||
-        event['url'] == '/onewaterblog/cro-login' ||
-        event['url'] == '/onewaterjobs/emp-login' ||
+        event['url'].includes('/onewaterblog/author') ||
+        event['url'].includes('/onewaterblog/mayor') ||
+        event['url'].includes('/onewaterblog/cro') ||
+        event['url'].includes('/instructor') ||
         event['url'].includes('/onewaterblog/category') ||
-        event['url'].includes('/o-wow/video-category') ||
-        event['url'] == '/instructor-login') {
+        event['url'].includes('/o-wow/video-category')) {
         $('header').addClass('black-header');
       }
       else {

@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./instructor-page.component.scss']
 })
 export class InstructorPageComponent implements OnInit {
-
+  toRender = 'signup';
+  
   constructor() { }
 
   ngOnInit() {

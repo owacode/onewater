@@ -15,38 +15,51 @@
 
 
 .login-img{
-  width: 75%;
+  width: 85%;
   max-width: 500px;
-  -webkit-filter: brightness(0) invert(1);
   filter: brightness(0) invert(1);
   margin: 1rem auto;
+  transition: all 0.2s ease-in-out;
 }
-
-.signup-logo{
-  position: fixed;
-  z-index: 1000;
-  top: 30px;
-  left: 50px;
-  img{
-    filter: brightness(0) invert(1);
-    width: 90px;
-  }
+.login-img:hover{
+  filter: none;
 }
+// .signup-logo{
+//   position: fixed;
+//   z-index: 1000;
+//   top: 20px;
+//   left: 30px;
+//   img{
+//     filter: brightness(0) invert(1);
+//     width: 8vw;
+//   }
+// }
 .left-content{
   text-align: center;
   display: flex;
   /* align-items: center; */
   flex-direction: column;
-  justify-content: center;
 }
 #login h2 {
   text-align: center;
+  margin: 1rem 0 0.5rem;
 }
 
 @media all and (max-width: 991px)
 {
   .login-img {
     display: block;
-    max-width: 25vw;
+    max-width: 35vw;
 }
+
 }
+
+@media all and (max-width: 576px)
+{
+  .login-img {
+    display: block;
+    max-width: 50vw;
+}
+
+}
+
