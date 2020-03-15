@@ -51,10 +51,10 @@ export class AllBlogsComponent implements OnInit {
     this.blogmainid = mainid;
     if(modalType == 'approved')
     {
-      this.modal.openModal('#deleteUnapproved');
+      this.modal.openModal('#deleteApproved');
     }
     else{
-      this.modal.openModal('#deleteApproved');
+      this.modal.openModal('#deleteUnapproved');
     }
   }
 
