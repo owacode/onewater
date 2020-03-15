@@ -28,6 +28,6 @@ export class InstructorService {
     this.userid= null;
     this.useremail =null;
     console.log("instructor logged out");
-    this.router.navigate(["/instructor-login"]);
+    this.router.navigate(["/instructor/signup"]);
   }
 }
