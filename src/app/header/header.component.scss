@@ -134,7 +134,7 @@ header{
             display: block;
         }
         a{
-        color: #000;
+        color: #000 !important;
         display: block;
         margin: 0 0 0.5rem;
         font-weight: 700;
@@ -145,10 +145,10 @@ header{
         }
           
         a::after{
-            background: none;
+            background: none !important;
         }
         a:hover{
-            color: #0041a3;
+            color: #0041a3 !important;
         }
     }
 }

@@ -30,7 +30,7 @@ toggleHeader() {
         event['url'].includes('/onewaterblog/author') ||
         event['url'].includes('/onewaterblog/mayor') ||
         event['url'].includes('/onewaterblog/cro') ||
-        event['url'].includes('/instructor') ||
+        event['url'].includes('/instructor/') ||
         event['url'].includes('/onewaterblog/category') ||
         event['url'].includes('/o-wow/video-category')) {
         $('header').addClass('black-header');
