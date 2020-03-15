@@ -52,7 +52,7 @@ export class MayorAuthService {
             this.mayoremail=localStorage.getItem('mayoremail');
             this.mayormainid=localStorage.getItem('mayormainid');
             this.mayorapprovedid=localStorage.getItem('mayorapprovedid');
-            this.route.navigate(['/onewaterblog/mayor-reg']);
+            this.route.navigate(['/onewaterblog/mayor/signup']);
           }
         }
   }

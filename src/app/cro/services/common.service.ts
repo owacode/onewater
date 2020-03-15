@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { CROAuthService } from './cro-auth.service';
+import { CROAuthService } from "./cro-auth.service";
 
 @Injectable({
   providedIn: "root"
@@ -13,7 +13,7 @@ export class CommonService {
     public croauth: CROAuthService
   ) {}
   addBlog(value) {
-    console.log('service hit')
+    console.log("service hit");
     const data = new FormData();
     let count = value.data.split(" ").length;
     let min = Math.ceil(count / 250);
@@ -75,8 +75,8 @@ export class CommonService {
       image: value.image,
       croid: this.croauth.croapprovedid,
       croname: this.croauth.croname,
-      croimage: localStorage.getItem("croimage"),
-    }
+      croimage: localStorage.getItem("croimage")
+    };
     this.http
       .post<{ status: string; msg: string; result: any }>(
         "https://onewater-cro.herokuapp.com/saved-unapproved-blog",
@@ -94,26 +94,22 @@ export class CommonService {
     data.append("croid", this.croauth.croapprovedid);
     data.append("image", value.image);
     data.append("desc", value.data);
-    return this.http
-      .post<{ status: string; msg: string; result: any }>(
-        "https://onewater-cro.herokuapp.com/save-blog",
-        data
-      );
-
+    return this.http.post<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/save-blog",
+      data
+    );
   }
 
   updateToSavedBlog(value) {
     const saveblog = {
-      id:value.id,
+      id: value.id,
       title: value.title,
       desc: value.data
-    }
-    return this.http
-      .patch<{ status: string; msg: string; result: any }>(
-        "https://onewater-cro.herokuapp.com/update-saved-blog",
-        saveblog
-      );
-
+    };
+    return this.http.patch<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/update-saved-blog",
+      saveblog
+    );
   }
 
   updateToSavedBlogWithImage(value) {
@@ -122,30 +118,9 @@ export class CommonService {
     data.append("title", value.title);
     data.append("desc", value.data);
     data.append("image", value.image);
-    return this.http
-      .patch<{ status: string; msg: string; result: any }>(
-        "https://onewater-cro.herokuapp.com/updateimage-saved-blog",
-        data
-      );
-
-  }
-
-  addVideo(values) {
-    this.http
-      .post("https://onewater-cro.herokuapp.com/post-video", values)
-      .subscribe(result => {
-        console.log(result);
-        //alert("Video Posted Successfully");
-      });
-  }
-
-  getAllVideos() {
-    const data = {
-      email: localStorage.getItem("croemail")
-    };
-    return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-cro.herokuapp.com/singlevideo/" +
-        localStorage.getItem("croemail")
+    return this.http.patch<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/updateimage-saved-blog",
+      data
     );
   }
 
@@ -157,17 +132,15 @@ export class CommonService {
   }
 
   getSavedBlog() {
-    return this.http
-      .get<{ status: string; msg: string; result: any }>(
-        "https://onewater-cro.herokuapp.com/crosavedblogs/"+this.croauth.croapprovedid
-      );
-
+    return this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/crosavedblogs/" +
+        this.croauth.croapprovedid
+    );
   }
 
   getSingleSavedBlog(id) {
-    return this.http
-    .get<{ status: string; msg: string; result: any }>(
-      "https://onewater-cro.herokuapp.com/singlecrosavedblog/"+id
+    return this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-cro.herokuapp.com/singlecrosavedblog/" + id
     );
   }
 
@@ -201,27 +174,29 @@ export class CommonService {
   getSingleAllBlog(id) {
     console.log(id, "jjj");
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-cro.herokuapp.com/allblogs/"+id
+      "https://onewater-cro.herokuapp.com/allblogs/" + id
     );
   }
 
-  deleteApproveBlog(mainid,approveid) {
+  deleteApproveBlog(mainid, approveid) {
     const id = {
-      mainid : mainid,
-      approveid:approveid
-    }
+      mainid: mainid,
+      approveid: approveid
+    };
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "https://onewater-cro.herokuapp.com/deleteapproveblog",id
+      "https://onewater-cro.herokuapp.com/deleteapproveblog",
+      id
     );
   }
 
-  deleteUnApproveBlog(mainid,unapproveid) {
+  deleteUnApproveBlog(mainid, unapproveid) {
     const id = {
-      mainid : mainid,
-      unapproveid:unapproveid
-    }
+      mainid: mainid,
+      unapproveid: unapproveid
+    };
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "https://onewater-cro.herokuapp.com/deleteunapproveblog",id
+      "https://onewater-cro.herokuapp.com/deleteunapproveblog",
+      id
     );
   }
 }
