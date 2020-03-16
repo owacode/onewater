@@ -91,6 +91,15 @@
   .two-card{
     padding: 1rem 1.5rem;
     background: #000239eb;
+
+    .blog-caption .auth-img{
+      p{
+        color: #fff;
+      }
+      img{
+        border: 1px solid #fff;
+      }
+    }
   }
 
   .section-3 .item{

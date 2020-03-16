@@ -58,7 +58,7 @@ export class CommonService {
       )
       .subscribe(result => {
         console.log(result);
-        alert(result.msg);
+        //alert(result.msg);
       });
   }
 
@@ -85,7 +85,7 @@ export class CommonService {
       )
       .subscribe(result => {
         console.log(result);
-        alert(result.msg);
+        //alert(result.msg);
       });
   }
 

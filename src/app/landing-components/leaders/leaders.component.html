@@ -54,8 +54,14 @@
             <div class="two-card">
               <img src="{{blog?.image}}" alt="" />
               <div class="blog-caption">
-                <a [routerLink]="['/onewaterblog/mayor-blogpost', blog._id]" title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!">
+                <a [routerLink]="['/onewaterblog/mayor-blogpost', blog._id]" title="{{blog?.title}}">
                   <h5>{{blog?.title}}</h5>
+                </a>
+                <a [routerLink]="['/onewaterblog/mayorprofile/',mayor._id]">
+                  <div class="auth-img">
+                    <img src="{{ mayor?.image }}" alt="" />
+                    <p>{{ mayor.name }}</p>
+                  </div>
                 </a>
                 <div class="blog-meta-data">
                   <div class="author">

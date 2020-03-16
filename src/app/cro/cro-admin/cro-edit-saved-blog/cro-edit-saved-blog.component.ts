@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { CommonService } from "../../services/common.service";
 import { ModalFunctions } from "src/app/shared-functions/modal-functions";
@@ -44,9 +44,9 @@ export class CroEditSavedBlogComponent implements OnInit {
 
     this.form = new FormGroup({
       id: new FormControl(null),
-      title: new FormControl(null),
-      image: new FormControl(null),
-      data: new FormControl(null)
+      title: new FormControl(null, {validators: [Validators.required]}),
+      image: new FormControl(null, {validators: [Validators.required]}),
+      data: new FormControl(null, {validators: [Validators.required]})
     });
 
     this.route.params.subscribe(result=> {
@@ -60,6 +60,7 @@ export class CroEditSavedBlogComponent implements OnInit {
           data: result.result.desc
         })
         this.imagePreview = result.result.image
+        this.htmlStr = result.result.desc
       })
     })
   }
@@ -84,22 +85,21 @@ export class CroEditSavedBlogComponent implements OnInit {
       return;
     }
     console.log("hit");
+    this.modal.showBtnLoader();
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     if(this.editimage){
       this.common.updateToSavedBlogWithImage(this.form.value).subscribe(result => {
         console.log(result);
-
-        this.form.reset();
-        this.submited = false;
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#saveModal');
       });
     }
     else {
       this.common.updateToSavedBlog(this.form.value).subscribe(result => {
         console.log(result);
-        this.form.reset();
-        this.showAddMsg();
-        this.submited = false;
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#saveModal');
       });
     }
   }
@@ -110,13 +110,20 @@ export class CroEditSavedBlogComponent implements OnInit {
       console.log("invalid form for post blog");
       return;
     }
+    this.modal.openModal("#blogModal");
+  
+    
+  }
+
+  postBlog(){
+    this.modal.closeModal("#blogModal");
     console.log("hit");
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     if(this.editimage) this.common.addSavedBlogWithImage(this.form.value);
     else this.common.addSavedBlog(this.form.value);
+    this.modal.openModal("#successModal");
     this.form.reset();
     this.submited = false;
-    this.modal.openModal("#blogModal");
   }
 }

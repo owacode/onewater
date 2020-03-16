@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { ModalFunctions } from "src/app/shared-functions/modal-functions";
 import Quill from "quill";
@@ -44,9 +44,9 @@ export class EditSavedBlogsComponent implements OnInit {
 
     this.form = new FormGroup({
       id: new FormControl(null),
-      title: new FormControl(null),
-      image: new FormControl(null),
-      data: new FormControl(null)
+      title: new FormControl(null, {validators: [Validators.required]}),
+      image: new FormControl(null, {validators: [Validators.required]}),
+      data: new FormControl(null, {validators: [Validators.required]})
     });
 
     this.route.params.subscribe(result=> {
@@ -58,8 +58,10 @@ export class EditSavedBlogsComponent implements OnInit {
           title: result.result.title,
           image: result.result.image,
           data: result.result.desc
+          
         })
         this.imagePreview = result.result.image
+        this.htmlStr = result.result.desc
       })
     })
   }
@@ -83,23 +85,26 @@ export class EditSavedBlogsComponent implements OnInit {
       console.log("invalid form for saved post blog");
       return;
     }
+    this.modal.showBtnLoader();
     console.log("hit");
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     if(this.editimage){
       this.common.updateToSavedBlogWithImage(this.form.value).subscribe(result => {
         console.log(result);
-
-        this.form.reset();
-        this.submited = false;
+        // this.form.reset();
+        // this.submited = false;
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#saveModal');
       });
     }
     else {
       this.common.updateToSavedBlog(this.form.value).subscribe(result => {
         console.log(result);
-        this.form.reset();
-        this.showAddMsg();
-        this.submited = false;
+        // this.form.reset();
+        // this.submited = false;
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#saveModal');
       });
     }
   }
@@ -110,14 +115,18 @@ export class EditSavedBlogsComponent implements OnInit {
       console.log("invalid form for post blog");
       return;
     }
-    console.log("hit");
-    console.log(this.form.value);
-    this.htmlStr = this.form.value.data;
-    if(this.editimage) this.common.addSavedBlogWithImage(this.form.value);
-    else this.common.addSavedBlog(this.form.value);
-    this.form.reset();
-    this.submited = false;
     this.modal.openModal("#blogModal");
+   
   }
-
+ postBlog(){
+  console.log("hit");
+  this.modal.closeModal("#blogModal");
+  console.log(this.form.value);
+  this.htmlStr = this.form.value.data;
+  if(this.editimage) this.common.addSavedBlogWithImage(this.form.value);
+  else this.common.addSavedBlog(this.form.value);
+  this.modal.openModal("#successModal");
+  this.form.reset();
+  this.submited = false;
+ }
 }

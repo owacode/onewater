@@ -18,14 +18,9 @@ export class CroPostBlogComponent implements OnInit {
   image: FormGroup;
   imagePreview;
   submited: boolean = false;
+  showBlog: boolean = false;
 
 
-  showAddMsg(){
-    document.querySelector(".saved-text")["style"].display = "block";
-    setTimeout(() => {
-      document.querySelector('.saved-text')["style"].display = "none";
-  },2000);
-  }
   constructor(
     public http: HttpClient,
     public modal: ModalFunctions,
@@ -66,9 +61,9 @@ export class CroPostBlogComponent implements OnInit {
     Quill.register("modules/imageUpload", imageUpload);
 
     this.form = new FormGroup({
-      title: new FormControl(null, { validators: [Validators.required] }),
-      image: new FormControl(null, { validators: [Validators.required] }),
-      data: new FormControl(null, { validators: [Validators.required] })
+      title: new FormControl(null, {validators: [Validators.required]}),
+      image: new FormControl(null, {validators: [Validators.required]}),
+      data: new FormControl(null, {validators: [Validators.required]})
     });
   }
 
@@ -93,15 +88,18 @@ export class CroPostBlogComponent implements OnInit {
       return;
     }
     console.log("hit");
+    this.modal.showBtnLoader();
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addToSavedBlog(this.form.value).subscribe(result => {
       console.log(result);
-      this.showAddMsg();
+      this.modal.hideBtnLoader();
+      this.modal.openModal('#saveModal');
       //alert(result.msg);
-      this.form.reset();
-      this.imagePreview = null;
-      this.submited = false;
+      //this.form.reset();
+      //this.imagePreview = null;
+      //this.submited = false;
+      this.showBlog = true;
     });
   }
 
@@ -111,15 +109,22 @@ export class CroPostBlogComponent implements OnInit {
       console.log("invalid form for post blog");
       return;
     }
-    console.log("hit");
     this.modal.openModal("#blogModal");
+   
+
+  }
+
+  postBlog(){
+    this.modal.closeModal("#blogModal");
+    console.log("hit");
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addBlog(this.form.value);
+    this.modal.openModal("#successModal");
     this.form.reset();
     this.imagePreview = null;
     this.submited = false;
-
+    this.showBlog = true;
   }
 }
 
