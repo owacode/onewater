@@ -57,10 +57,10 @@
                 <a [routerLink]="['/onewaterblog/mayor-blogpost', blog._id]" title="{{blog?.title}}">
                   <h5>{{blog?.title}}</h5>
                 </a>
-                <a [routerLink]="['/onewaterblog/mayorprofile/',mayor._id]">
+                <a [routerLink]="['/onewaterblog/mayorprofile/',blog._id]">
                   <div class="auth-img">
-                    <img src="{{ mayor?.image }}" alt="" />
-                    <p>{{ mayor.name }}</p>
+                    <img src="{{ blog?.image }}" alt="" />
+                    <p>{{ blog.name }}</p>
                   </div>
                 </a>
                 <div class="blog-meta-data">

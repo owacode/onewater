@@ -20,11 +20,10 @@ export class HomeComponent implements OnInit {
     responsive: {
       0: {
         items: 1,
-        stagePadding: 10,
+        stagePadding: 0
       },
     600: {
         items: 2,
-  
       },
       1100: {
         items: 3,

@@ -1,4 +1,4 @@
-@import '../about/about.component.scss';
+@import '../cro-page/cro-page.component.scss';
 
 .cover-photo{
   background: linear-gradient(180deg, rgba(0, 101, 199, 0.82) 20%, rgba(0, 59, 212, 0.57) 100%), url(/assets/img/landing/cro-head-bg.jpeg);
@@ -35,6 +35,7 @@
 }
 
 .section-intro{
+  margin-top: 2rem;
     h1{
         position: relative;
         margin-bottom:2rem;
@@ -122,8 +123,13 @@
     background: #000239eb;
   }
 
-  .section-3 .item{
-    padding: 0 3rem;
+  .section-3  {
+    padding-bottom: 22vh;
+    margin-bottom: 0;
+.item{
+  padding: 0 3rem;
+}
+
   }
 
 
@@ -226,4 +232,27 @@ h2{
 .page-title h5{
   text-align: center;
 }
+}
+
+@media all and (max-width:576px){
+  .testi-content{
+    p{
+      font-size: 0.85rem;
+      padding: 0;
+    }
+    .top-auth-img{
+     
+    flex-direction: column;
+
+    img{
+      margin: 0.5rem;
+    }
+    }
+}
+.section-3 {
+  .item{
+    padding: 0rem;
+  }
+} 
+
 }

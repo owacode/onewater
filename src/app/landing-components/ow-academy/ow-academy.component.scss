@@ -300,8 +300,15 @@ section{
 }
 
 
-@media all and (max-width:520px){
- 
+@media all and (max-width:576px){
+ .crayon-bg{
+   background-size: cover;
+ }
+ .author-btn {
+  .reg-text {
+    padding: 25px 0;
+  }
+}
   .hero-section {background: #092b86;margin-bottom: 50px;}
   .block-2 {
   top: -17vh ;

@@ -15,8 +15,6 @@
 .section-3{
   padding-bottom: 55vh;
   margin-bottom: -55vh;
-
-
 }
 
 .page-title h5 {
@@ -132,7 +130,9 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
-
+.blue-section-intro{
+  padding-bottom: 50px;
+}
   .cro-blogs{
     .outer-card{
       .two-card{
@@ -186,6 +186,10 @@
 
   @media all and (max-width:576px){
     .testi-content{
+      p{
+        font-size: 0.85rem;
+        padding: 0;
+      }
       .top-auth-img{
        
       flex-direction: column;
@@ -197,6 +201,9 @@
   }
   .section-3 .item{
     padding: 0rem;
+  }
+  .blue-section-intro{
+    padding-bottom: 30px;
   }
 }
 
