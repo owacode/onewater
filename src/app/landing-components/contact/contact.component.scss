@@ -5,16 +5,8 @@
 .cover-photo{
     background: linear-gradient(180deg, rgba(0, 70, 216, 0.78) 20%, rgba(0, 106, 255, 0.83) 100%), url(/assets/img/landing/contact-bg.jpeg);
     background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 90vh;
   }
 
-  .page-title{
-      margin-top: -100vh;
-      min-height: 90vh;
-  }
 
   @media all and (min-width:991px){
     .page-title{

@@ -1,13 +1,2 @@
-@import '../blog-post/blog-post.component.scss';
 
-// .blog-post-wrapper{
-//     background-image: linear-gradient(to bottom, white, #fafafa, #fff);
-// }
-.cover-photo{
-    background: linear-gradient(180deg, rgba(0, 66, 204, 0.83) 20%, rgba(255, 255, 255, 0.68) 100%), url(https://picsum.photos/1920/720);
-}
-p{
-    line-height: 2.1;
-    color: #6b6b6b;
-    font-weight: 500;
-}
+@import '../blog-post/blog-post.component.scss';

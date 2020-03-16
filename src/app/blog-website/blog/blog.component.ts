@@ -13,37 +13,37 @@ export class BlogComponent implements OnInit {
   toRender = 'signup';
   blogcards;
   featuredblog;
-  croList =  [
-    {
-      img:'https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
-      date:' March 20,2020',
-      likes:34,
-      min:7
-    },
-    {
-      img:'https://images.pexels.com/photos/1834404/pexels-photo-1834404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
-      date:' March 20,2020',
-      likes:34,
-      min:7
-    },
-    {
-      img:'https://images.pexels.com/photos/1101246/pexels-photo-1101246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
-      date:' March 20,2020',
-      likes:34,
-      min:7
-    },
-    {
-      img:'https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
-      date:' March 20,2020',
-      likes:34,
-      min:7
-    }
-  ]
-
+  // croList =  [
+  //   {
+  //     img:'https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  //     title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
+  //     date:' March 20,2020',
+  //     likes:34,
+  //     min:7
+  //   },
+  //   {
+  //     img:'https://images.pexels.com/photos/1834404/pexels-photo-1834404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  //     title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
+  //     date:' March 20,2020',
+  //     likes:34,
+  //     min:7
+  //   },
+  //   {
+  //     img:'https://images.pexels.com/photos/1101246/pexels-photo-1101246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  //     title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
+  //     date:' March 20,2020',
+  //     likes:34,
+  //     min:7
+  //   },
+  //   {
+  //     img:'https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  //     title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, saepe!',
+  //     date:' March 20,2020',
+  //     likes:34,
+  //     min:7
+  //   }
+  // ]
+croList;
   cros;
 
   mayorList;
@@ -250,6 +250,15 @@ export class BlogComponent implements OnInit {
 
 
   //owl carousel settings for featured blog cards
+  landingBlogsCarousel = {
+    margin: 25,
+    nav: true,
+    dots: false,
+    stagePadding: 5,
+    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+    items: 1
+  }
+
   carouselOptions = {
     margin: 25,
     nav: true,

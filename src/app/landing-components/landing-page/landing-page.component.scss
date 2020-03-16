@@ -57,7 +57,7 @@ section {
 }
 
 .platform {
-  padding: 2rem;
+  padding: 2rem 0;
   color: #fff;
   margin: 0 auto;
   position: relative;
@@ -352,6 +352,9 @@ blockquote{
 @media all and (max-width: 991px) {
   .platform-img {
     width: 60%;
+  }
+  .platform{
+    margin: 1rem 0;
   }
   .platform-intro-img{
     width: 70%;

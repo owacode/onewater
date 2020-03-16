@@ -18,88 +18,36 @@
         <img src="assets/img/landing-img.png" class="banner-img" />
       </div>
       <div class="col-lg-6 ">
-        <div class="landing-blogs">
-          <div id="demo" class="carousel slide" data-ride="carousel">
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="landing-card">
-                  <div class="landing-blog-img">
-                    <img src="{{ bannerblogs[0]?.image }}" alt="" />
-                  </div>
-                  <div class="blog-caption">
-                    <div class="tag">
-                      Technology
-                    </div>
-                    <a [routerLink]="['/onewaterblog/admin-blogpost/',bannerblogs[0]._id]"
-                      ><h3>
-                        {{ bannerblogs[0]?.title  }}
-                      </h3></a
-                    >
-                    <div class="authorname">
-                      <p>
-                        {{ bannerblogs[0]?.author }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+        <div class="landing-blogs ">
+          <owl-carousel
+          [items]="bannerblogs"
+          [options]="landingBlogsCarousel"
+          [carouselClasses]="['owl-theme', 'row', 'sliding']"
+        >
+        <div class="item" *ngFor="let blog of bannerblogs" >
+          <div class="landing-card card-shadow">
+            <div class="landing-blog-img">
+              <img src="{{ blog?.image }}" alt="" />
+            </div>
+            <div class="blog-caption">
+              <div class="tag">
+                {{ blog?.date_added | date:'d, MMMM y'}}
               </div>
-              <div class="carousel-item ">
-                <div class="landing-card">
-                  <div class="landing-blog-img">
-                    <img src="{{ bannerblogs[1].image }}" alt="" />
-                  </div>
-                  <div class="blog-caption">
-                    <div class="tag">
-                      Technology
-                    </div>
-                    <a [routerLink]="['/onewaterblog/admin-blogpost/',bannerblogs[1]._id]">
-                      <h3>
-                        {{ bannerblogs[1].title }}
-                      </h3></a
-                    >
-
-                    <div class="authorname">
-                      <p>
-                        {{ bannerblogs[1].author }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="landing-card">
-                  <div class="landing-blog-img">
-                    <img src="{{ bannerblogs[2].image }}" alt="" />
-                  </div>
-                  <div class="blog-caption">
-                    <div class="tag">
-                      Entertainment
-                    </div>
-                    <a [routerLink]="['/onewaterblog/admin-blogpost/',bannerblogs[2]._id]">
-                      <h3>
-                        {{ bannerblogs[2].title  }}
-                      </h3></a
-                    >
-
-                    <div class="authorname">
-                      <p>
-                        {{ bannerblogs[2].author }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <a [routerLink]="['/onewaterblog/admin-blogpost/',blog._id]"
+                ><h3>
+                  {{ blog?.title  }}
+                </h3></a
+              >
+              <div class="authorname">
+                <p>
+                  {{ blog?.author }}
+                </p>
               </div>
             </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
           </div>
+        </div>
+        </owl-carousel>
+        
         </div>
       </div>
     </div>
@@ -151,9 +99,12 @@
                   >
                     <h5>{{ blog?.title | shorten: 25 }}</h5>
                   </a>
-                  <!-- <div class="auth-img">
-                    <img src="{{blog.author_image}}" alt="">
-                  </div> -->
+                  <a class="auth-img" [routerLink]="['/onewaterblog/mayorprofile',blog.mayor_id]">
+                    <img [src]="blog.mayor_image" alt="">
+                    <p>
+                      {{blog?.mayor_name}}
+                    </p>
+                  </a>
                   <div class="blog-meta-data">
                     <div class="author">
                       {{ blog?.date_approved | date: "MMMM d, y" }}
@@ -225,6 +176,12 @@
                     >
                       <h5>{{ blog.title }}</h5>
                     </a>
+                    <a class="auth-img" [routerLink]="['/onewaterblog/croprofile',blog.cro_id]">
+                      <img [src]="blog.cro_image" alt="">
+                      <p>
+                        {{blog?.cro_name}}
+                      </p>
+                    </a>
                     <div class="blog-meta-data">
                       <div class="author">
                         {{ blog?.date_approved | date: "MMMM d, y" }}
@@ -295,6 +252,12 @@
                     title="{{ blog?.title }}"
                   >
                     <h5>{{ blog?.title | shorten: 25 }}</h5>
+                  </a>
+                  <a class="auth-img" [routerLink]="['/onewaterblog/authorprofile',blog.author_id]">
+                    <img [src]="blog.author_image" alt="">
+                    <p>
+                      {{blog?.author_name}}
+                    </p>
                   </a>
                   <div class="blog-meta-data">
                     <div class="author">
