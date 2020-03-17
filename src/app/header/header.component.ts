@@ -13,14 +13,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
 export class HeaderComponent implements OnInit {
   form:FormGroup;
   public submited: Boolean = false;
-  toggleDropdown(element){
-    var panel = document.getElementById(element);
-    if (panel.style.display === "none") {
-      panel.style.display = "block";
-    } else {
-      panel.style.display = "none";
-    }
-}
+
+
 toggleHeader() {
   this.router.events.subscribe((event) => {
     if (event instanceof NavigationEnd) {
@@ -41,6 +35,18 @@ toggleHeader() {
     }
   });
 }
+
+ toggleDropdown(element){
+  if($(window).width() < 1091){
+  var panel = document.getElementById(element);
+  if (panel.style.display === "none") {
+    panel.style.display = "block";
+  } else {
+    panel.style.display = "none";
+  }
+}
+}
+
   constructor(public http: HttpClient, public auth: AuthService, public router: Router, public modal:ModalFunctions) { }
   ngOnInit() {
     const header = document.querySelector('header');
@@ -49,6 +55,8 @@ toggleHeader() {
     const hamburger = document.querySelector('.hamburger');
     const menulink = document.querySelectorAll('.navlink a');
     // document.querySelector('.mobile-dropdown').addEventListener("click",this.toggleUserPanel);
+   
+
     this.toggleHeader();
     let fixHeader = function () {
       if ($(window).scrollTop() > 70) {

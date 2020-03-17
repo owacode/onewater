@@ -4,60 +4,66 @@
   <div class="gradient-image"></div>
   <div class="wave"></div>
 </div>
-<div class="container blog-post-wrapper">
-  <div class="row">
-    <div class="col-lg-9">
-      <div class="post-top">
-        <h1>{{blog?.title}}</h1>
-        <div class="article-meta">
-          <img src="assets/img/jobs/candidate/thumb-1.jpg" alt="Author" />
-          <div class="meta-data">
-            <span class="meta-author">By Admin </span><br />
-            <!-- <span class="meta-date">About admin</span> -->
+<div class=" blog-post-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="post-top">
+          <h1>{{blog?.title}}</h1>
+          <div class="article-meta">
+            <img src="assets/img/jobs/candidate/thumb-1.jpg" alt="Author" />
+            <div class="meta-data">
+              <span class="meta-author">By Admin </span><br />
+              <!-- <span class="meta-date">About admin</span> -->
+            </div>
           </div>
-        </div>
-
-        <p class="teaser top-teaser">
-          <strong>Category</strong> : <span *ngFor="let category of blog.category">{{category}} </span>
-        </p>
-        <div [innerHtml]="blog?.desc">
-        </div>
-        <div class="blog-options">
-          <div class="like-btn"  *ngIf="!liked">
-            <h6>Like :</h6>
-            <a (click)="likeblog()">
-              <i class="fa fa-heart" aria-hidden="true"></i>
+  
+          <p class="teaser top-teaser">
+            <strong>Category</strong> : <span *ngFor="let category of blog.category">{{category}} </span>
+          </p>
+         
+            <div class="blog-content" [innerHtml]="blog?.desc">
+         
+          
+          </div>
+          <div class="blog-options">
+            <div class="like-btn"  *ngIf="!liked">
+              <h6>Like :</h6>
+              <a (click)="likeblog()">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </a>
+              <span>liked!</span>
+            </div>
+            <div class="like-btn" *ngIf="liked">
+              <h6>Liked</h6>
+              <a class="press">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </a>
+              <span>liked!</span>
+            </div>
+            <div class="share-btn">
+              <h6>Share on :</h6>
+              <button><fb-like url="{{ url }}"></fb-like></button>
+              <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
+              <button><linkedin-share url="{{ url }}"></linkedin-share></button>
+            </div>
+          </div>
+  
+          <div class="meta-bio author-box">
+            <a>
+              <img src="assets/img/jobs/candidate/thumb-1.jpg" alt="" />
             </a>
-            <span>liked!</span>
-          </div>
-          <div class="like-btn" *ngIf="liked">
-            <h6>Liked</h6>
-            <a class="press">
-              <i class="fa fa-heart" aria-hidden="true"></i>
-            </a>
-            <span>liked!</span>
-          </div>
-          <div class="share-btn">
-            <h6>Share on :</h6>
-            <button><fb-like url="{{ url }}"></fb-like></button>
-            <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
-            <button><linkedin-share url="{{ url }}"></linkedin-share></button>
-          </div>
-        </div>
-
-        <div class="meta-bio author-box">
-          <a>
-            <img src="assets/img/jobs/candidate/thumb-1.jpg" alt="" />
-          </a>
-          <div class="bio-text">
-            <p class="bio-shl">Author</p>
-            <p class="bio-hl">
-              <a>Admin</a>
-            </p>
-            <!-- <p>about admin...</p> -->
+            <div class="bio-text">
+              <p class="bio-shl">Author</p>
+              <p class="bio-hl">
+                <a>Admin</a>
+              </p>
+              <!-- <p>about admin...</p> -->
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
 </div>

@@ -355,6 +355,11 @@ margin: 1rem;}
       padding: 30px 0;
     }
   }
+  .blog-content{
+    p{
+      text-align: justify;
+    }
+  }
 }
 
 @media all and (max-width:360px){
