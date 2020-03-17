@@ -30,8 +30,6 @@ export class PostBlogComponent implements OnInit {
     });
   }
 
-
-
   // config = {
   //   imageUpload: {
   //     upload: file => {
@@ -80,7 +78,7 @@ export class PostBlogComponent implements OnInit {
 
   savedblog() {
     console.log('save blog hit');
-    
+
     this.submited = true;
     if (this.form.invalid) {
       console.log("invalid form for saved post blog");
