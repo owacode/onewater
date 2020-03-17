@@ -193,6 +193,7 @@ form p {
         background-size: cover;;
         p{
           margin: 1rem auto;
+          font-size: 1.2rem;
         }
        
     
@@ -201,7 +202,7 @@ form p {
         }
       }
   }
-  @media (max-width: 520px) {
+  @media (max-width: 576px) {
   
       .vldform {
           width: 100%;

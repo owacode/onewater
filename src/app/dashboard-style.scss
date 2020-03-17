@@ -1583,7 +1583,11 @@
   }
 }
 
-@media all and (max-width: 479px) {
+@media all and (max-width:576x) {
+  .dashboard-form .button {
+    margin-top: 1rem;
+    width: 100%;
+  }
   .user-statistic-block {
     display: block;
   }
