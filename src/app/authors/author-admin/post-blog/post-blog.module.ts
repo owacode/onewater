@@ -5,6 +5,8 @@ import { PostBlogComponent } from './post-blog.component';
 import {QuillModule} from "ngx-quill";
 import {FormsModule} from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
+import { CKEditorModule } from 'ckeditor4-angular';
+
 const routes: Route[]=[
     {
     path: '',
@@ -23,6 +25,7 @@ const routes: Route[]=[
     QuillModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    CKEditorModule,
   ]
 })
 export class PostBlogModule { }

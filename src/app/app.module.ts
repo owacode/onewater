@@ -15,6 +15,7 @@ import { VideoWebsiteComponent } from './video-website/video-website.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FooterModule } from './footer/footer.module';
     NgxUiLoaderRouterModule,
     NgxPayPalModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    CKEditorModule
   ],
 
   providers: [],

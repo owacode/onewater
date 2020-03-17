@@ -36,30 +36,30 @@ export class PostBlogComponent implements OnInit {
   },2000);
   }
 
-  config = {
-    imageUpload: {
-      upload: file => {
-        console.log(file);
-        // return a Promise that resolves in a link to the uploaded image
-        this.image.patchValue({ image: file });
-        this.image.get("image").updateValueAndValidity();
-        console.log("form hit", this.image.value);
-        const imageform = new FormData();
-        imageform.append("image", this.image.value.image);
-        return new Promise((resolve, reject) => {
-          this.http
-            .post<{ imagepath: any }>(
-              "https://onewater-blogapi.herokuapp.com/addimage",
-              imageform
-            )
-            .subscribe(result => {
-              console.log("result hit", result);
-              resolve(result.imagepath);
-            });
-        });
-      }
-    }
-  };
+  // config = {
+  //   imageUpload: {
+  //     upload: file => {
+  //       console.log(file);
+  //       // return a Promise that resolves in a link to the uploaded image
+  //       this.image.patchValue({ image: file });
+  //       this.image.get("image").updateValueAndValidity();
+  //       console.log("form hit", this.image.value);
+  //       const imageform = new FormData();
+  //       imageform.append("image", this.image.value.image);
+  //       return new Promise((resolve, reject) => {
+  //         this.http
+  //           .post<{ imagepath: any }>(
+  //             "https://onewater-blogapi.herokuapp.com/addimage",
+  //             imageform
+  //           )
+  //           .subscribe(result => {
+  //             console.log("result hit", result);
+  //             resolve(result.imagepath);
+  //           });
+  //       });
+  //     }
+  //   }
+  // };
 
   ngOnInit() {
     Quill.register("modules/imageUpload", imageUpload);
