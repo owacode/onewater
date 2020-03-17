@@ -14,7 +14,7 @@
 }
 .page-title{
     min-height: 70vh;
-    margin-top: -80vh;
+    margin-top: -85vh;
     h1 {
         font-size: 3.5rem;
         letter-spacing: -0.2rem;
@@ -109,6 +109,11 @@
         padding: 0.5rem 1rem;
         margin: 1rem;
     }
+    button.close{
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
     
 }
 
@@ -148,11 +153,12 @@
         min-height: 100vh;
         margin-top: -100vh;
     }
-    
+    .light-box{
     h1 {
-        font-size: 3.2rem;
+        font-size: 3.5rem;
         letter-spacing: -0.2rem;
     }
+}
     
     h3{
         font-size:1.2rem;
@@ -164,7 +170,7 @@
         }
     }
 
-    @media (max-width: 991px){
+  
         .block-6a {
             top: 3%;
             left: 19%;
@@ -177,7 +183,7 @@
         }
           
         
-    }
+    
 
 }
 
@@ -187,6 +193,18 @@
             height:auto;
         }
     }
+    .light-box{
+        h1{
+            font-size: 2.5rem;
+            letter-spacing: -0.08rem;
+            
+        }
+    }
+    .author-btn {
+        .reg-text {
+          padding: 0 0 50px 0;
+        }
+      }
     .block-6{
         display: none;
     }
@@ -207,5 +225,10 @@
             font-size: 3rem;
         }
     }
+    .l-text{
+        p{
+          text-align: left;
+        }
+      }
   
 }

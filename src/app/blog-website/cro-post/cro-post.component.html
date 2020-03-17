@@ -87,8 +87,14 @@
                 <a [routerLink]="['/onewaterblog/cro-blogpost', blog?._id]">
                   <h5>{{ blog.title }}..</h5>
                 </a>
+                <a class="auth-img" [routerLink]="['/onewaterblog/croprofile',blog.cro_id]">
+                  <img [src]="blog.cro_image" alt="">
+                  <p>
+                    {{blog?.cro_name}}
+                  </p>
+                </a>
                 <div class="blog-meta-data">
-                  <div class="author">By {{ blog?.cro_name | titlecase }}</div>
+                  <div class="author">{{ blog?.date_approved | date: "MMMM d, y" }}</div>
                   <div class="likes" *ngIf="blog?.likecount">
                     <i class="fa fa-heart"></i>
                     <span

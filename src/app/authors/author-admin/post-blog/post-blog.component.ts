@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 import imageUpload from "quill-plugin-image-upload";
@@ -19,6 +19,7 @@ export class PostBlogComponent implements OnInit {
   image: FormGroup;
   imagePreview;
   submited: boolean = false;
+  showBlog: boolean = false;
   constructor(
     public http: HttpClient,
     public common: CommonService,
@@ -29,12 +30,7 @@ export class PostBlogComponent implements OnInit {
     });
   }
 
-  showAddMsg(){
-    document.querySelector(".saved-text")["style"].display = "block";
-    setTimeout(() => {
-      document.querySelector('.saved-text')["style"].display = "none";
-  },2000);
-  }
+
 
   // config = {
   //   imageUpload: {
@@ -65,9 +61,9 @@ export class PostBlogComponent implements OnInit {
     Quill.register("modules/imageUpload", imageUpload);
 
     this.form = new FormGroup({
-      title: new FormControl(null),
-      image: new FormControl(null),
-      data: new FormControl(null)
+      title: new FormControl(null, {validators: [Validators.required]}),
+      image: new FormControl(null, {validators: [Validators.required]}),
+      data: new FormControl(null, {validators: [Validators.required]})
     });
   }
 
@@ -84,23 +80,24 @@ export class PostBlogComponent implements OnInit {
 
   savedblog() {
     console.log('save blog hit');
+    
     this.submited = true;
-
-
     if (this.form.invalid) {
       console.log("invalid form for saved post blog");
       return;
     }
     console.log("hit");
+    this.modal.showBtnLoader();
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addToSavedBlog(this.form.value).subscribe(result => {
       console.log(result);
-      this.showAddMsg();
+      this.modal.hideBtnLoader();
+      this.modal.openModal('#saveModal');
       //alert(result.msg);
-      this.form.reset();
-      this.imagePreview = null;
-      this.submited = false;
+      //this.form.reset();
+      //this.imagePreview = null;
+      this.showBlog = true;
     });
   }
 
@@ -110,14 +107,19 @@ export class PostBlogComponent implements OnInit {
       console.log("invalid form for post blog");
       return;
     }
-    console.log("hit");
     this.modal.openModal("#blogModal");
+  }
+
+  postBlog(){
+    this.modal.closeModal("#blogModal");
+    console.log("hit");
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addBlog(this.form.value);
+    this.modal.openModal("#successModal");
     this.form.reset();
     this.imagePreview = null;
+    this.showBlog = true;
     this.submited = false;
-
   }
 }

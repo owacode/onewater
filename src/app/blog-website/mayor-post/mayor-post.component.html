@@ -1,4 +1,4 @@
-<!-- BEGIN Blog Post -->
+
 <div
   class="cover-photo"
 >
@@ -88,8 +88,14 @@
                 <a [routerLink]="['/onewaterblog/mayor-blogpost', blog?._id]">
                   <h5>{{ blog.title }}..</h5>
                 </a>
+                <a [routerLink]="['/onewaterblog/mayorprofile/',mayor._id]">
+                  <div class="auth-img">
+                    <img src="{{ mayor?.image }}" alt="" />
+                    <p>{{ mayor.name }}</p>
+                  </div>
+                </a>
                 <div class="blog-meta-data">
-                  <div class="author">By {{ blog?.mayor_name | titlecase }}</div>
+                  <div class="author">{{ blog?.date_approved | date: "MMMM d, y" }}</div>
                   <div class="likes" *ngIf="blog?.likecount">
                     <i class="fa fa-heart"></i>
                     <span

@@ -34,10 +34,9 @@
                   <button type="button" (click)="file.click()">
                     Update Image
                   </button>
-                  <p style="color: red;" *ngIf="submited && form.get('image').invalid">
-                    Image is required!
-                  </p>
+                
                 </div>
+               
               </div>
               <div class="active">
                 <div class="upload-images">
@@ -46,6 +45,9 @@
                   </div>
                 </div>
               </div>
+              <p style="color: red;" *ngIf="submited && form.get('image').invalid">
+                Image is required!
+              </p>
             </div>
           </div>
         </div>
@@ -54,26 +56,55 @@
         <quill-editor formControlName="data"></quill-editor>
       </div>
     </div>
-    <div class="dashboard-section basic-info-input">
-      <div class="form-group row justify-content-between align-items-center">
-        <div class="col-md-3">
-          <button (click)="savedblog()" class="button" type="button">Save Changes</button>
-        </div>
-        <div class="col-md-4">
-        <div class="saved-text">
-          Your blog have been saved!
-        </div>
-        </div>
-        <div class="col-md-3">
-          <button (click)="submit()" class="button" type="button">Post Blog</button>
-        </div>
-        
+    <div class="row justify-content-between">
+      <div class="col text-center">
+        <button (click)="savedblog()" class="button" type="button">
+          <span class="btn-loading-content">
+            <i class="fa fa-circle-o-notch fa-spin"></i> Saving blog...
+          </span>
+          <span class="btn-default-content">
+            Save Changes
+          </span>
+        </button>
+      </div>
+      <div class="col text-center">
+        <button (click)="submit()" class="button" type="button">Post Blog</button>
       </div>
     </div>
   </form>
-  <h2 class="text-center my-3">Blog Preview</h2>
-  <div class="row" style="margin: 50px;">
-    <div [innerHTML]="htmlStr"></div>
+
+  <div class="blog-content">
+    <button  type="button" (click)="this.modal.openModal('#blogView')">
+     See Blog
+    </button>
+  </div>
+</div>
+
+<div class="modal fade" id="blogView" role="dialog" #blogView>
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          (click)="modal.closeModal(blogView)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div [innerHTML]="htmlStr"></div>
+      </div>
+     
+      <button
+      type="button"
+      class="btn btn-default"
+      (click)="modal.closeModal(blogView)"
+      style="max-width: 200px;"
+    >
+      Close
+    </button>
+    </div>
   </div>
 </div>
 
@@ -91,6 +122,91 @@
       </div>
       <div class="modal-body">
         <img
+          src="assets/img/modals/question.svg
+         "
+          alt=""
+          style="width: 35%;"
+        />
+        <h2>Are you sure you want to post this blog?</h2>
+
+        <h5>The content will be cleared once you submit it.</h5>
+      </div>
+     
+        <div class="container">
+          <div class="row">
+          <div class="col-6 text-center">
+            <button
+            type="button"
+            class="btn btn-default"
+            (click)="postBlog()"
+          >
+            Post Blog
+          </button>
+          </div>
+          <div class="col-6 text-center">
+            <button
+            type="button"
+            class="btn btn-default"
+            (click)="modal.closeModal(blogModal)"
+          >
+            No
+          </button>
+          </div>
+        </div>
+       
+      </div>
+     
+     
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="saveModal" role="dialog" #saveModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          (click)="modal.closeModal(saveModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/img/modals/success.svg
+         "
+          alt=""
+          style="width: 35%;"
+        />
+        <h2>Blog saved succesfully.</h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        (click)="modal.closeModal(saveModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="successModal" role="dialog" #successModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          (click)="modal.closeModal(successModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
           src="assets/img/modals/success.svg
          "
           alt=""
@@ -99,12 +215,12 @@
         <h2>Blog posted succesfully.</h2>
       </div>
       <button
-        type="button"
-        class="btn btn-default"
-        (click)="modal.closeModal(blogModal)"
-      >
-        OK
-      </button>
+      type="button"
+      class="btn btn-default"
+      (click)="modal.closeModal(successModal)"
+    >
+      OK
+    </button>
     </div>
   </div>
 </div>

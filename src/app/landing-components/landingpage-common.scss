@@ -49,8 +49,8 @@ h5 {
 }
 
 .page-title {
-  min-height: 100vh;
-  margin-top: -100vh;
+  min-height: 90vh;
+  margin-top: -105vh;
   display: flex;
   align-items: center;
   padding: 0;
@@ -69,6 +69,13 @@ h5 {
   h3 {
     max-width: 550px;
   }
+
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  color: #fff;
+}
 }
 
 .half-width-text {
@@ -103,9 +110,9 @@ h5 {
     }
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 576px) {
   .cover-photo {
-    height: 60vh;
+    height: 70vh;
 
     .wave {
       bottom: -55%;
@@ -113,16 +120,21 @@ h5 {
     }
   }
   .page-title {
-    min-height: 60vh;
-    margin-top: -60vh;
+    min-height:70vh;
+    margin-top: -75vh;
+
+    h1{
+      font-size: 3.2rem;
+      letter-spacing: -0.2rem;
+    }
   }
 }
 
 @media screen and (max-width: 360px) {
   .page-title {
     h1 {
-      font-size: 3rem;
-      letter-spacing: -0.2rem;
+      font-size: 2.8rem;
+      letter-spacing: -0.15rem;
     }
   }
 }

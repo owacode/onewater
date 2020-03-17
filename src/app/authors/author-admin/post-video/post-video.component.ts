@@ -15,11 +15,11 @@ export class PostVideoComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      title: new FormControl(null),
-      link: new FormControl(null),
+      title: new FormControl(null, {validators: [Validators.required]}),
+      link: new FormControl(null, {validators: [Validators.required]}),
       name: new FormControl(null),
       email: new FormControl(null),
-      desc: new FormControl(null)
+      desc: new FormControl(null, {validators: [Validators.required]})
     });
   }
 

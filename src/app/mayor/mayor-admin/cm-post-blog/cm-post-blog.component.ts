@@ -18,7 +18,7 @@ export class CmPostBlogComponent implements OnInit {
   image: FormGroup;
   imagePreview;
   submited: boolean = false;
-
+  showBlog: boolean = false;
 
   constructor(
     public http: HttpClient,
@@ -86,22 +86,22 @@ export class CmPostBlogComponent implements OnInit {
   savedblog() {
     console.log('save blog hit');
     this.submited = true;
-
-
     if (this.form.invalid) {
       console.log("invalid form for saved post blog");
       return;
     }
+
     console.log("hit");
+    this.modal.showBtnLoader();
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addToSavedBlog(this.form.value).subscribe(result => {
       console.log(result);
-      this.showAddMsg();
-      //alert(result.msg);
-      this.form.reset();
-      this.imagePreview = null;
-      this.submited = false;
+      this.modal.hideBtnLoader();
+      this.modal.openModal('#saveModal');
+      //this.form.reset();
+      //this.imagePreview = null;
+      this.showBlog = true;
     });
   }
 
@@ -111,15 +111,19 @@ export class CmPostBlogComponent implements OnInit {
       console.log("invalid form for post blog");
       return;
     }
-    console.log("hit");
-    this.modal.openModal("#blogModal");
+    this.modal.openModal("#blogModal");  
+  }
+
+  postBlog(){
+    this.modal.closeModal("#blogModal");
     console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addBlog(this.form.value);
+    this.modal.openModal("#successModal");
     this.form.reset();
     this.imagePreview = null;
     this.submited = false;
-
+    this.showBlog = true;
   }
 }
 

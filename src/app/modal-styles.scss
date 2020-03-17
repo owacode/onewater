@@ -29,12 +29,13 @@
     width: 100%;
     min-height: 90vh;
     display: flex;
+    padding:0 0.5rem;
     justify-content: center;
     align-items: center;
     z-index: 2000;
     position: relative;
   }
-
+ 
   .modal-logo{
     text-align: center;
     margin-top: -2.5rem;
@@ -58,6 +59,7 @@
     background-color: #101010;
     color: #fff;
   }
+  
   .modal-head{
     button{
       margin: 0;
@@ -93,4 +95,10 @@
       transform: scale(1);
     }
  
+  }
+
+  @media all and (max-width:576px){
+    .modal-dialog{
+      margin: 0.5rem 0;
+    }
   }

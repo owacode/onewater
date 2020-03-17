@@ -9,14 +9,7 @@ class="dashboard-content-wrapper dash-tab"
               <h4 class="title">Approved Blogs</h4>
 
           </div>
-          <div class="col-md-6">
-                  <div class="breadcrumb-form">
-                    <!-- <form action="#"> -->
-                      <input type="text" placeholder="Search Blogs" [(ngModel)]="search" (keyup)="onKey($event)">
-                      <!-- <button><i data-feather="search"></i></button> -->
-                    <!-- </form> -->
-                </div>
-          </div>
+         
         </div>
         <div class="row w-100 justify-content-center align-items-center" style="height: 500px;" *ngIf="!approvedblogs?.length">
           <div class="col-lg-12">

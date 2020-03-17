@@ -15,7 +15,7 @@ class="dashboard-content-wrapper dash-tab"
           placeholder="Video Title"
           formControlName="title"
         />
-        <p style="color: red;" *ngIf="submited && form.get('title').invalid">
+        <p *ngIf="submited && form.get('title').invalid">
           Title is required!
         </p>
       </div>
@@ -29,7 +29,7 @@ class="dashboard-content-wrapper dash-tab"
           placeholder="Paste video url here"
           formControlName="link"
         />
-        <p style="color: red;" *ngIf="submited && form.get('link').invalid">
+        <p *ngIf="submited && form.get('link').invalid">
           Video Link is required!
         </p>
       </div>
@@ -43,7 +43,7 @@ class="dashboard-content-wrapper dash-tab"
           placeholder="Video Description"
           formControlName="desc"
         ></textarea>
-        <p style="color: red;" *ngIf="submited && form.get('desc').invalid">
+        <p *ngIf="submited && form.get('desc').invalid">
           Description is required!
         </p>
       </div>

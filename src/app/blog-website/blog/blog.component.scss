@@ -23,6 +23,8 @@ h2 {
   margin: 10px 0;
 }
 
+
+
 .cover-photo {
   height: 75vh;
   position: relative;
@@ -66,11 +68,8 @@ h2 {
 .landing-blogs {
   margin: 1rem auto;
   max-width: 500px;
-  .carousel-inner {
-    margin-top: 20vh;
-    box-shadow: 0 2px 6px 0 rgba(110, 110, 110, 0.2);
-    border-radius: 15px;
-  }
+  margin-top: 10vh;
+
 
   .carousel-control-next,
   .carousel-control-prev {
@@ -91,6 +90,9 @@ h2 {
 .landing-card {
   padding: 1rem;
   height: 70vh;
+  margin: 1rem 0;
+  border-radius: 10px;
+  
 
   .landing-blog-img {
     height: 60%;
@@ -279,7 +281,8 @@ h2 {
 }
 
 @media screen and (max-width: 991px) {
-  .landing-blogs .carousel-inner {
+ 
+  .landing-blogs {
     margin-top: 0;
   }
   .landing-card{
@@ -360,6 +363,16 @@ h2 {
         .read,
         .likes {
           font-weight: 500;
+        }
+
+        .auth-img{
+          img{
+            border: 1px solid #fff;
+          }
+    
+          p{
+            color: #fff;
+          }
         }
       }
     }
