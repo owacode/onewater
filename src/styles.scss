@@ -206,8 +206,8 @@ margin: 1rem;}
 
 .logout-button{
   position: fixed;
-  top: 50px;
-  right: 20px;
+  top: 2vh;
+  right: 1vw;
   z-index: 1000;
   background: #ff6060;
   color: #fff ;
@@ -216,6 +216,7 @@ margin: 1rem;}
 .logout-button:hover{
   color: #ff6060 ;
   background: #fff ;
+  border-color:#ff6060;
 }
 .button {
   border: 1px solid transparent;
@@ -239,8 +240,8 @@ margin: 1rem;}
 
 .reg-logo{
   position: fixed;
-  top: 50px;
-  left: 50px;
+  top: 2vh;
+  left: 1vw;
   z-index: 500;
   img{
     width: 100px;
@@ -338,7 +339,19 @@ margin: 1rem;}
   button::after {
     display: none;
   }
-
+  .reg-logo{
+    img{
+      width: 70px;
+    }
+  
+  }
+  .logout-button {
+    top:1vh;
+   right: 2vw;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+}
+  
   .section-head {
     margin-bottom: 3rem 0;
   }

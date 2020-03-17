@@ -60,7 +60,7 @@ class="dashboard-content-wrapper dash-tab"
 
     </div>
     <div class="close-activity buttons">
-      <a class="button" [routerLink]="['/author/blog-details/',blog._id]">View</a>
+      <a class="button" [routerLink]="['/cro/cro-blog-details/',blog._id]">View</a>
       <button
       *ngIf="blog.status == 'pending'"
       (click)="changeId(blog?._id, blog?.unapproved_id, 'unapproved')"
