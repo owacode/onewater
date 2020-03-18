@@ -16,7 +16,6 @@ import { NgxPayPalModule } from 'ngx-paypal';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { CKEditorModule } from 'ckeditor4-angular';
-// import { ImageResize } from 'quill-image-resize-module';
 
 @NgModule({
   declarations: [

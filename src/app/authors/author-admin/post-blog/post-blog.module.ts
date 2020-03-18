@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { PostBlogComponent } from './post-blog.component';
-import {QuillModule} from "ngx-quill";
+// import {QuillModule} from "ngx-quill";
 import {FormsModule} from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ckeditor4-angular';
@@ -22,7 +22,7 @@ const routes: Route[]=[
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
-    QuillModule.forRoot(),
+    // QuillModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     CKEditorModule
