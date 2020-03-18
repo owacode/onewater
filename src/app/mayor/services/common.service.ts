@@ -169,7 +169,7 @@ export class CommonService {
 
   getSingleApprovedBlogs(id) {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/singleappblog/" + id
+      "https://onewater-mayor.herokuapp.com/singleappblog/" + id
     );
   }
 
@@ -193,7 +193,7 @@ export class CommonService {
       approveid:approveid
     }
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/deleteapproveblog",id
+      "https://onewater-mayor.herokuapp.com/deleteapproveblog",id
     );
   }
 
@@ -203,7 +203,7 @@ export class CommonService {
       unapproveid:unapproveid
     }
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/deleteunapproveblog",id
+      "https://onewater-mayor.herokuapp.com/deleteunapproveblog",id
     );
   }
 }
