@@ -33,7 +33,7 @@
             <span>{{ blog?.category | titlecase }} </span>
             <span>{{ blog?.sub_category | titlecase }}</span>
           </p>
-          <div class="blog-content" [innerHtml]="blog?.desc"></div>
+          <div class="blog-content" [innerHtml]="blog?.desc | safeHtml"></div>
           <div class="blog-options">
             <div class="like-btn" *ngIf="!liked">
               <h6>Like :</h6>
