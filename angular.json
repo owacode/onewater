@@ -32,7 +32,9 @@
             "scripts": [
 
               "./node_modules/owl.carousel/dist/owl.carousel.js",
-              "./node_modules/masonry-layout/dist/masonry.pkgd.js"
+              "./node_modules/masonry-layout/dist/masonry.pkgd.js",
+              "./node_modules/quill/dist/quill.min.js",
+        "./node_modules/quill-image-resize-module/image-resize.min.js"
             ],
             "es5BrowserSupport": true
           },
