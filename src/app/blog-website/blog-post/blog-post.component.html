@@ -7,133 +7,135 @@
   <div class="gradient-image"></div>
   <div class="wave"></div>
 </div>
-<div class="container blog-post-wrapper">
-  <div class="row">
-    <div class="col-lg-9">
-      <div class=" post-top">
-        <h1>{{ blog?.title }}</h1>
-        <div class="article-meta">
-          <img src="{{ author?.image }}" alt="Author" />
-          <div class="meta-data">
-            <span class="meta-author"
-              >By
-              <a [routerLink]="['/onewaterblog/authorprofile/', author?._id]">{{
-                author?.name | titlecase
-              }}</a></span
-            ><br />
-            <span class="meta-date"
-              >{{ author?.about_author | shorten:35 }}....</span
-            >
+<div class="blog-post-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class=" post-top">
+          <h1>{{ blog?.title }}</h1>
+          <div class="article-meta">
+            <img src="{{ author?.image }}" alt="Author" />
+            <div class="meta-data">
+              <span class="meta-author"
+                >By
+                <a [routerLink]="['/onewaterblog/authorprofile/', author?._id]">{{
+                  author?.name | titlecase
+                }}</a></span
+              ><br />
+              <span class="meta-date"
+                >{{ author?.about_author | shorten:75 }}</span
+              >
+            </div>
           </div>
-        </div>
-
-        <p class="teaser top-teaser">
-          <strong>Category</strong> :
-          <span>{{ blog?.category | titlecase }} </span>
-          <span>{{ blog?.sub_category | titlecase }}</span>
-        </p>
-        <div class="di" [innerHtml]="blog?.desc"></div>
-        <div class="blog-options">
-          <div class="like-btn" *ngIf="!liked">
-            <h6>Like :</h6>
-            <a (click)="likeblog()">
-              <i class="fa fa-heart" aria-hidden="true"></i>
+  
+          <p class="teaser top-teaser">
+            <strong>Category</strong> :
+            <span>{{ blog?.category | titlecase }} </span>
+            <span>{{ blog?.sub_category | titlecase }}</span>
+          </p>
+          <div class="blog-content" [innerHtml]="blog?.desc"></div>
+          <div class="blog-options">
+            <div class="like-btn" *ngIf="!liked">
+              <h6>Like :</h6>
+              <a (click)="likeblog()">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </a>
+              <span>liked!</span>
+            </div>
+            <div class="like-btn" *ngIf="liked">
+              <h6>Liked</h6>
+              <a class="press">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </a>
+              <span>liked!</span>
+            </div>
+            <div class="share-btn">
+              <h6>Share on :</h6>
+              <button><fb-like url="{{ url }}"></fb-like></button>
+              <button style="margin-bottom: -12px;"><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
+              <button><linkedin-share url="{{ url }}"></linkedin-share></button>
+            </div>
+          </div>
+  
+          <div class="meta-bio author-box">
+            <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
+              <img src="{{ author?.image }}" alt="" />
             </a>
-            <span>liked!</span>
-          </div>
-          <div class="like-btn" *ngIf="liked">
-            <h6>Liked</h6>
-            <a class="press">
-              <i class="fa fa-heart" aria-hidden="true"></i>
-            </a>
-            <span>liked!</span>
-          </div>
-          <div class="share-btn">
-            <h6>Share on :</h6>
-            <button><fb-like url="{{ url }}"></fb-like></button>
-            <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
-            <button><linkedin-share url="{{ url }}"></linkedin-share></button>
+            <div class="bio-text">
+              <p class="bio-shl">Author</p>
+              <p class="bio-hl">
+                <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">{{
+                  author?.name | titlecase
+                }}</a>
+              </p>
+              <p>{{ author?.about_author | shorten:75 }}</p>
+            </div>
           </div>
         </div>
-
-        <div class="meta-bio author-box">
-          <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
-            <img src="{{ author?.image }}" alt="" />
-          </a>
-          <div class="bio-text">
-            <p class="bio-shl">Author</p>
-            <p class="bio-hl">
-              <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">{{
-                author?.name | titlecase
-              }}</a>
-            </p>
-            <p>{{ author?.about_author | shorten:35 }}...</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="related-blogs">
-        <h2>More From The Author</h2>
-        <owl-carousel
-          [items]="authorblogs"
-          [options]="carouselOptions"
-          [carouselClasses]="['owl-theme', 'row', 'sliding']"
-        >
-          <div class="item" *ngFor="let blog of authorblogs">
-            <div class="outer-card">
-              <div class="outer-overlay"></div>
-              <div class="two-card">
-                <img src="{{ blog?.image }}" alt="" />
-                <div class="blog-caption">
-                  <a [routerLink]="['/onewaterblog/blogpost', blog?._id]">
-                    <h5>{{ blog.title | shorten:35 }}..</h5>
-                  </a>
-                  <a class="auth-img" [routerLink]="['/onewaterblog/authorprofile',blog.author_id]">
-                    <img [src]="blog.author_image" alt="">
-                    <p>
-                      {{blog?.author_name}}
-                    </p>
-                  </a>
-                  <div class="blog-meta-data">
-                    <div class="author">{{ blog?.date_approved | date: "MMMM d, y" }}</div>
-                    <div class="likes" *ngIf="blog?.likecount">
-                      <i class="fa fa-heart"></i>
-                      <span 
-                        >{{ blog?.likecount }} likes</span
-                      >
-                    </div>
-                    <div class="read">
-                      7 mins read
+  
+        <div class="related-blogs">
+          <h2>More From The Author</h2>
+          <owl-carousel
+            [items]="authorblogs"
+            [options]="carouselOptions"
+            [carouselClasses]="['owl-theme', 'row', 'sliding']"
+          >
+            <div class="item" *ngFor="let blog of authorblogs">
+              <div class="outer-card">
+                <div class="outer-overlay"></div>
+                <div class="two-card">
+                  <img src="{{ blog?.image }}" alt="" />
+                  <div class="blog-caption">
+                    <a [routerLink]="['/onewaterblog/blogpost', blog?._id]">
+                      <h5>{{ blog.title | shorten:35 }}..</h5>
+                    </a>
+                    <a class="auth-img" [routerLink]="['/onewaterblog/authorprofile',blog.author_id]">
+                      <img [src]="blog.author_image" alt="">
+                      <p>
+                        {{blog?.author_name}}
+                      </p>
+                    </a>
+                    <div class="blog-meta-data">
+                      <div class="author">{{ blog?.date_approved | date: "MMMM d, y" }}</div>
+                      <div class="likes" *ngIf="blog?.likecount">
+                        <i class="fa fa-heart"></i>
+                        <span 
+                          >{{ blog?.likecount }} likes</span
+                        >
+                      </div>
+                      <div class="read">
+                        7 mins read
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </owl-carousel>
+          </owl-carousel>
+        </div>
       </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="side-card ">
-        <h2>
-          Popular Blogs
-        </h2>
-        <div class="row">
-          <div
-            class="col-lg-12 col-md-6 col-sm-12"
-            *ngFor="let blog of mostlikedblogs"
-          >
-            <div class="blog-card card-shadow">
-              <a [routerLink]="['/onewaterblog/blogpost', blog?._id]">
-                {{ blog?.title }}</a
-              >
-              <div class="d-flex justify-content-between">
-                <p>
-                  <span *ngIf="blog?.likecount">
-                    <i class="fa fa-heart"></i>{{ blog?.likecount }} likes
-                  </span>
-                </p>
-                <p>{{ blog?.read_time }} mins read</p>
+      <div class="col-lg-3">
+        <div class="side-card ">
+          <h2>
+            Popular Blogs
+          </h2>
+          <div class="row">
+            <div
+              class="col-lg-12 col-md-6 col-sm-12"
+              *ngFor="let blog of mostlikedblogs"
+            >
+              <div class="blog-card card-shadow">
+                <a [routerLink]="['/onewaterblog/blogpost', blog?._id]">
+                  {{ blog?.title }}</a
+                >
+                <div class="d-flex justify-content-between">
+                  <p>
+                    <span *ngIf="blog?.likecount">
+                      <i class="fa fa-heart"></i>{{ blog?.likecount }} likes
+                    </span>
+                  </p>
+                  <p>{{ blog?.read_time }} mins read</p>
+                </div>
               </div>
             </div>
           </div>
@@ -141,4 +143,5 @@
       </div>
     </div>
   </div>
+ 
 </div>

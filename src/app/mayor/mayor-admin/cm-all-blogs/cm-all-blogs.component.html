@@ -12,7 +12,7 @@ class="dashboard-content-wrapper dash-tab"
       </div>
       
     </div>
-    <div class="row w-100 justify-content-center align-items-center" style="height: 500px;" *ngIf="!allblogs?.length">
+    <div class="row w-100 justify-content-center align-items-center" style="height: 35vh;" *ngIf="!allblogs?.length">
       <div class="col-lg-12">
         <h2 class="text-center"  style="opacity: 0.5;">
           No data to display now.
@@ -59,7 +59,7 @@ class="dashboard-content-wrapper dash-tab"
 
         </div>
         <div class="close-activity buttons">
-          <a class="button" [routerLink]="['/author/blog-details/',blog._id]">View</a>
+          <a class="button" [routerLink]="['/mayor/mayor-blog-details/',blog._id]">View</a>
           <button
           *ngIf="blog.status == 'pending'"
           (click)="changeId(blog?._id, blog?.unapproved_id, 'unapproved')"

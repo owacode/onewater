@@ -37,6 +37,14 @@ img:hover{
   margin-top:100px;
   border-radius: 20px;
 
+  h3{
+    text-align: center;
+  }
+
+  p{
+    text-align: center;
+  }
+
 h2{
   text-align: left;
   margin: 0 0;
@@ -55,7 +63,6 @@ h2{
       font-weight: 600;
       margin: auto;
       color: #666;
-      text-align: center;
       strong{
         font-weight: 700;
         color: #000;
@@ -77,9 +84,7 @@ img{
 }
   .author-contact{
 
-    h3{
-      text-align: center;
-    }
+   
     .social-media{
       margin: 2rem 0;
       text-align: center;
@@ -87,7 +92,8 @@ img{
       img{
         justify-content: center;
         width: 30px;
-        margin-right: 2rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
       }
     }
   }

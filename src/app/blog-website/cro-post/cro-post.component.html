@@ -23,7 +23,7 @@
               <a [routerLink]="['/onewaterblog/croprofile/',cro?._id]">{{cro?.name}}</a></span
             ><br />
             <span class="meta-date"
-              >{{cro?.bio}}</span
+              >{{cro?.bio | shorten:75}}</span
             >
           </div>
         </div>
@@ -33,7 +33,7 @@
           <span> {{blog?.category}}  </span>
           <span> {{blog?.sub_category}} </span>
         </p>
-        <div class="di"[innerHtml]="blog?.desc"></div>
+        <div class="blog-content" [innerHtml]="blog?.desc"></div>
         <div class="blog-options">
           <div class="like-btn" *ngIf="!liked">
             <h6>Like :</h6>
@@ -66,7 +66,7 @@
             <p class="bio-hl">
               <a [routerLink]="['/onewaterblog/croprofile/',cro?._id]">{{cro?.name}}</a>
             </p>
-            <p>{{cro?.bio}}</p>
+            <p>{{cro?.bio | shorten:75}}</p>
           </div>
         </div>
       </div>

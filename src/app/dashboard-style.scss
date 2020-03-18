@@ -1549,7 +1549,6 @@
 
 @media all and (max-width: 767px) {
   .user-statistic-block .user-statistic {
-    width: 47%;
     margin-bottom: 30px;
   }
   .user-statistic-block .user-statistic svg {
@@ -1583,7 +1582,11 @@
   }
 }
 
-@media all and (max-width: 479px) {
+@media all and (max-width:576px) {
+  .dashboard-form .button {
+    margin-top: 1rem ;
+    width: 100%;
+  }
   .user-statistic-block {
     display: block;
   }
