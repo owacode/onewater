@@ -28,7 +28,7 @@ export class CommonService {
     data.append("readtime", min.toString());
     this.http
       .post<{ status: string; msg: string; result: any }>(
-        "http://localhost:3000/unapproved-blog",
+        "https://onewater-blogapi.herokuapp.com/unapproved-blog",
         data
       )
       .subscribe(result => {

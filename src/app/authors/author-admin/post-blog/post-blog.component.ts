@@ -2,13 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
-import imageUpload from "quill-plugin-image-upload";
+// import imageUpload from "quill-plugin-image-upload";
 import { HttpClient } from "@angular/common/http";
 import { CommonService } from "../../services/common.service";
 import { ModalFunctions } from "src/app/shared-functions/modal-functions";
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import { AngularEditorConfig } from '@kolkov/angular-editor';
-import ImageResize from 'quill-image-resize-module';
+// import ImageResize from 'quill-image-resize-module';
 
 @Component({
   selector: "app-post-blog",
@@ -17,7 +16,6 @@ import ImageResize from 'quill-image-resize-module';
 })
 
 export class PostBlogComponent implements OnInit {
-  public Editor = ClassicEditor;
   htmlStr;
   form: FormGroup;
   image: FormGroup;
@@ -80,7 +78,7 @@ export class PostBlogComponent implements OnInit {
 //     ]
 // };
 
-  config = {
+  // config = {
     // imageUpload: {
     //   upload: file => {
     //     console.log(file);
@@ -103,12 +101,12 @@ export class PostBlogComponent implements OnInit {
     //     });
     //   }
     // },
-    ImageResize: true
-  };
+  //   ImageResize: true
+  // };
 
   ngOnInit() {
     // Quill.register("modules/imageUpload", imageUpload);
-    Quill.register('modules/imageResize', ImageResize);
+    // Quill.register('modules/imageResize', ImageResize);
     this.form = new FormGroup({
       title: new FormControl(null, {validators: [Validators.required]}),
       image: new FormControl(null, {validators: [Validators.required]}),
