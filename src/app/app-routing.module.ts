@@ -306,6 +306,14 @@ const routes: Routes = [
     loadChildren: './email-verified-author/email-verified-author.module#EmailVerifiedAuthorModule'
   },
   {
+    path: 'thankyou-leader',
+    loadChildren: './email-verified-leader/email-verified-leader.module#EmailVerifiedLeaderModule'
+  },
+  {
+    path: 'thankyou-cro',
+    loadChildren: './email-verified-cro/email-verified-cro.module#EmailVerifiedCroModule'
+  },
+  {
     path: 'thankyou-instructor',
     loadChildren: './email-verfied-instructor/email-verfied-instructor.module#EmailVerfiedInstructorModule'
   },
