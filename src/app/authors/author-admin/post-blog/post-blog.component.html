@@ -56,14 +56,19 @@
         <!-- <quill-editor [modules]="config" formControlName="data"></quill-editor> -->
         <!-- <ckeditor formControlName="data" type="classic" data="<p>Hello, world!</p>"></ckeditor> -->
         <!-- <ckeditor [config]="ckconfig" [editor]="Editor" type="classic" data="<p>Hello, csharp corner!</p><br/><br/> <b>This is demo for ckeditor 5 with angular 8</br>"></ckeditor> -->
-          <ckeditor [config]="{ width : 750, height : 400 }" formControlName="data"></ckeditor>
+          <!-- <ckeditor [config]="{ width : 750, height : 400 }" formControlName="data"></ckeditor> -->
+          <editor
+          apiKey="dkzhyets1atz9i1896y8iuebdbhwkumoj2vfld8zpxhxerz7"
+          [init]="tinymceInit"
+          formControlName="data"
+           ></editor>
       </div>
 
-      <div class="form-group row">
+      <!-- <div class="form-group row">
        <h5> <strong>Note:</strong> </h5> <h6> To add a image upload it from the below service and use the URL for the image to display for blog. <br> Thank you. </h6>
         <input type="file" (change)="uploadImage($event)" />
         <h5 *ngIf="imageurl"> {{imageurl}} </h5>
-      </div>
+      </div> -->
     </div>
 
 
