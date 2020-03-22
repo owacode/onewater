@@ -6,6 +6,7 @@ import { PostBlogComponent } from './post-blog.component';
 import {FormsModule} from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 const routes: Route[]=[
     {
@@ -25,7 +26,8 @@ const routes: Route[]=[
     // QuillModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    CKEditorModule
+    CKEditorModule,
+    EditorModule
   ]
 })
 export class PostBlogModule { }

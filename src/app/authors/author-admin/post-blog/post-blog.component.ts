@@ -23,6 +23,7 @@ export class PostBlogComponent implements OnInit {
   imageurl=null;
   submited: boolean = false;
   showBlog: boolean = false;
+  tinymceInit;
   constructor(
     public http: HttpClient,
     public common: CommonService,
@@ -105,8 +106,42 @@ export class PostBlogComponent implements OnInit {
   // };
 
   ngOnInit() {
-    // Quill.register("modules/imageUpload", imageUpload);
-    // Quill.register('modules/imageResize', ImageResize);
+    this.tinymceInit = {
+      height: 500,
+      width: 1000,
+      plugins : [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount fullscreen",
+        "insertdatetime media nonbreaking save "
+      ],
+      toolbar : 'formatselect | bold italic | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat |image',
+      image_advtab : true,
+      images_upload_handler: function (blobInfo, success, failure) {
+        console.log(blobInfo.blob())
+        var xhr, formData;
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.open('POST', 'https://onewater-blogapi.herokuapp.com/addimage');
+    xhr.onload = function() {
+      var json;
+
+      if (xhr.status != 200) {
+        failure('HTTP Error: ' + xhr.status);
+        return;
+      }
+      json = JSON.parse(xhr.responseText);
+
+      if (!json || typeof json.imagepath != 'string') {
+        failure('Invalid JSON: ' + xhr.responseText);
+        return;
+      }
+      success(json.imagepath);
+    };
+    formData = new FormData();
+    formData.append('image', blobInfo.blob());
+    xhr.send(formData);
+      }
+    }
     this.form = new FormGroup({
       title: new FormControl(null, {validators: [Validators.required]}),
       image: new FormControl(null, {validators: [Validators.required]}),

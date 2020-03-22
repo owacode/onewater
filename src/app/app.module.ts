@@ -16,6 +16,8 @@ import { NgxPayPalModule } from 'ngx-paypal';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { CKEditorModule } from 'ckeditor4-angular';
     NgxPayPalModule,
     HeaderModule,
     FooterModule,
-    CKEditorModule
+    CKEditorModule,
+    EditorModule
   ],
 
   providers: [],
