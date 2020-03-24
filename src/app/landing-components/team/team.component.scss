@@ -7,14 +7,11 @@
     background: linear-gradient(180deg, rgba(0, 30, 199, 0.88) 20%, rgba(13, 0, 212, 0.94) 100%), url(/assets/img/landing/team-bg.jpeg);
     background-position: center;
     background-repeat: no-repeat;
-    height: 85vh;
 }
 .outer-card{
     cursor: pointer;
 }
 .page-title{
-    min-height: 70vh;
-    margin-top: -85vh;
     h1 {
         font-size: 3.5rem;
         letter-spacing: -0.2rem;
@@ -30,10 +27,10 @@
     background: linear-gradient(to bottom, white 10%, #d0deff57 60%, #fff);
 }
 .big-team{
+    
 
     h2{
         text-align: center;
-        margin-top: 4rem;
     }
     h5{
         text-align: center;
@@ -43,6 +40,10 @@
         font-size: 14px;
     }
 }
+.heading-2{
+    margin-top: 4rem;
+}
+
 .outer-card{
     z-index: 10;
 }
@@ -146,13 +147,8 @@
 
 @media screen and (max-width: 991px){
 
-    .cover-photo {
-        height: 100vh;
-    }
-    .page-title{
-        min-height: 100vh;
-        margin-top: -100vh;
-    }
+   
+   
     .light-box{
     h1 {
         font-size: 3.5rem;
