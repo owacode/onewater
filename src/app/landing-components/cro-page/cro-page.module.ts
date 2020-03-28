@@ -18,7 +18,8 @@ const routes: Route[]=[
     CommonModule,
     OwlModule,
     CommonPipesModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    CommonPipesModule
   ]
 })
 
