@@ -34,9 +34,9 @@
                   <button type="button" (click)="file.click()">
                     Update Image
                   </button>
-                
+
                 </div>
-               
+
               </div>
               <div class="active">
                 <div class="upload-images">
@@ -53,7 +53,11 @@
         </div>
       </div>
       <div class="form-group row">
-        <quill-editor formControlName="data"></quill-editor>
+        <editor
+        apiKey="dkzhyets1atz9i1896y8iuebdbhwkumoj2vfld8zpxhxerz7"
+        [init]="tinymceInit"
+        formControlName="data"
+         ></editor>
       </div>
     </div>
     <div class="row justify-content-between">
@@ -95,7 +99,7 @@
       <div class="modal-body">
         <div [innerHTML]="htmlStr"></div>
       </div>
-     
+
       <button
       type="button"
       class="btn btn-default"
@@ -131,7 +135,7 @@
 
         <h5>The content will be cleared once you submit it.</h5>
       </div>
-     
+
         <div class="container">
           <div class="row">
           <div class="col-6 text-center">
@@ -153,10 +157,10 @@
           </button>
           </div>
         </div>
-       
+
       </div>
-     
-     
+
+
     </div>
   </div>
 </div>

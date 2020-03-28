@@ -21,16 +21,13 @@ export class EditSavedBlogsComponent implements OnInit {
   imagePreview;
   submited: boolean = false;
   editimage: boolean = false;
+  tinymceInit;
   constructor(
     public http: HttpClient,
     public modal: ModalFunctions,
     public route: ActivatedRoute,
     public common: CommonService
-   ){
-      this.image = new FormGroup({
-        image: new FormControl(null)
-      });
-  }
+   ){}
 
   showAddMsg(){
     document.querySelector(".saved-text")["style"].display = "block";
@@ -40,7 +37,42 @@ export class EditSavedBlogsComponent implements OnInit {
   }
 
   ngOnInit() {
-    Quill.register("modules/imageUpload", imageUpload);
+    this.tinymceInit = {
+      height: 500,
+      width: 1000,
+      plugins : [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount fullscreen",
+        "insertdatetime media nonbreaking save "
+      ],
+      toolbar : 'formatselect | bold italic | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat |image',
+      image_advtab : true,
+      images_upload_handler: function (blobInfo, success, failure) {
+        console.log(blobInfo.blob())
+        var xhr, formData;
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.open('POST', 'https://onewater-blogapi.herokuapp.com/addimage');
+    xhr.onload = function() {
+      var json;
+
+      if (xhr.status != 200) {
+        failure('HTTP Error: ' + xhr.status);
+        return;
+      }
+      json = JSON.parse(xhr.responseText);
+
+      if (!json || typeof json.imagepath != 'string') {
+        failure('Invalid JSON: ' + xhr.responseText);
+        return;
+      }
+      success(json.imagepath);
+    };
+    formData = new FormData();
+    formData.append('image', blobInfo.blob());
+    xhr.send(formData);
+      }
+    }
 
     this.form = new FormGroup({
       id: new FormControl(null),
@@ -58,7 +90,7 @@ export class EditSavedBlogsComponent implements OnInit {
           title: result.result.title,
           image: result.result.image,
           data: result.result.desc
-          
+
         })
         this.imagePreview = result.result.image
         this.htmlStr = result.result.desc
@@ -116,7 +148,7 @@ export class EditSavedBlogsComponent implements OnInit {
       return;
     }
     this.modal.openModal("#blogModal");
-   
+
   }
  postBlog(){
   console.log("hit");
