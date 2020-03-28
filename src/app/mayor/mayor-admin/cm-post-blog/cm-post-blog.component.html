@@ -34,7 +34,7 @@
                   <button type="button" (click)="file.click()">
                     Select Image
                   </button>
-                  
+
                 </div>
               </div>
               <div class="active">
@@ -52,10 +52,14 @@
         </div>
       </div>
       <div class="form-group row">
-        <quill-editor [modules]="config" formControlName="data"></quill-editor>
+        <editor
+        apiKey="dkzhyets1atz9i1896y8iuebdbhwkumoj2vfld8zpxhxerz7"
+        [init]="tinymceInit"
+        formControlName="data"
+         ></editor>
       </div>
     </div>
-    
+
     <div class="row justify-content-between">
       <div class="col text-center">
         <button (click)="savedblog()" class="button" type="button">
@@ -72,7 +76,7 @@
       </div>
     </div>
   </form>
-  
+
   <div class="blog-content" *ngIf="showBlog">
     <button  type="button" (click)="this.modal.openModal('#blogView')">
      See Blog
@@ -97,7 +101,7 @@
       <div class="modal-body">
         <div [innerHTML]="htmlStr"></div>
       </div>
-     
+
       <button
       type="button"
       class="btn btn-default"
@@ -133,7 +137,7 @@
 
         <h5>The content will be cleared once you submit it.</h5>
       </div>
-     
+
         <div class="container">
           <div class="row">
           <div class="col-6 text-center">
@@ -155,10 +159,10 @@
           </button>
           </div>
         </div>
-       
+
       </div>
-     
-     
+
+
     </div>
   </div>
 </div>
@@ -226,4 +230,4 @@
     </div>
   </div>
 </div>
-  
+

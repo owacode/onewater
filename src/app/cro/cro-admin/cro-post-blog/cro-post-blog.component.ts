@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalFunctions } from 'src/app/shared-functions/modal-functions';import Quill from "quill";
-import "quill/dist/quill.snow.css";
-import imageUpload from "quill-plugin-image-upload";
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 import { HttpClient } from "@angular/common/http";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { CommonService } from '../../services/common.service';
@@ -19,46 +17,52 @@ export class CroPostBlogComponent implements OnInit {
   imagePreview;
   submited: boolean = false;
   showBlog: boolean = false;
+  tinymceInit;
 
 
   constructor(
     public http: HttpClient,
     public modal: ModalFunctions,
     public common: CommonService
-  ) {
-    this.image = new FormGroup({
-      image: new FormControl(null)
-    });
-  }
-
-  config = {
-    imageUpload: {
-      upload: file => {
-        console.log(file);
-        // return a Promise that resolves in a link to the uploaded image
-        this.image.patchValue({ image: file });
-        this.image.get("image").updateValueAndValidity();
-        console.log("form hit", this.image.value);
-        const imageform = new FormData();
-        imageform.append("image", this.image.value.image);
-        return new Promise((resolve, reject) => {
-          this.http
-            .post<{ imagepath: any }>(
-              "https://onewater-blogapi.herokuapp.com/addimage",
-              imageform
-            )
-            .subscribe(result => {
-              console.log("result hit", result);
-              resolve(result.imagepath);
-            });
-        });
-      }
-    }
-  }
+  ) {}
 
   ngOnInit() {
+    this.tinymceInit = {
+      height: 500,
+      width: 1000,
+      plugins : [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount fullscreen",
+        "insertdatetime media nonbreaking save "
+      ],
+      toolbar : 'formatselect | bold italic | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat |image',
+      image_advtab : true,
+      images_upload_handler: function (blobInfo, success, failure) {
+        console.log(blobInfo.blob())
+        var xhr, formData;
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.open('POST', 'https://onewater-blogapi.herokuapp.com/addimage');
+    xhr.onload = function() {
+      var json;
 
-    Quill.register("modules/imageUpload", imageUpload);
+      if (xhr.status != 200) {
+        failure('HTTP Error: ' + xhr.status);
+        return;
+      }
+      json = JSON.parse(xhr.responseText);
+
+      if (!json || typeof json.imagepath != 'string') {
+        failure('Invalid JSON: ' + xhr.responseText);
+        return;
+      }
+      success(json.imagepath);
+    };
+    formData = new FormData();
+    formData.append('image', blobInfo.blob());
+    xhr.send(formData);
+      }
+    }
 
     this.form = new FormGroup({
       title: new FormControl(null, {validators: [Validators.required]}),
@@ -110,7 +114,7 @@ export class CroPostBlogComponent implements OnInit {
       return;
     }
     this.modal.openModal("#blogModal");
-   
+
 
   }
 
