@@ -15,14 +15,6 @@
   background-repeat: no-repeat;
 }
 
-.page-title{
-  min-height: 90vh;
-}
-
-.donate-img {
-  margin-top: -10vh;
-}
-
 .mybtn {
   margin: 4rem 0 1rem;
   font-size: 1.1rem;
@@ -64,15 +56,18 @@
     text-align: center;
     margin: 3rem auto;
   }
-  .cover-photo {
-    height: 55vh;
-  }
-  .page-title {
-    min-height: 55vh;
-    margin-top: -55vh;
-  }
+  // .cover-photo {
+  //   height: 55vh;
+  // }
+  // .page-title {
+  //   min-height: 55vh;
+  //   margin-top: -55vh;
+  // }
   .section-1 {
-    margin-top: -60px;
+    margin-top: -50px;
+  }
+  .form-img{
+    display: none;
   }
   .donate-img {
     margin-top: 50px;
@@ -83,19 +78,21 @@
   .donation-form {
     margin-top: 60px;
   }
+  .section-1{
+    h2{text-align: left !important;}
+  }
 }
 
 @media all and (max-width: 576px) {
   .donation-form {
     margin-top: 0px;
   }
-  .cover-photo {
-    height: 80vh;
+
+  .section-1 {
+    margin-top: 0px;
+    h2{text-align: center !important;}
   }
-  .page-title {
-    min-height: 80vh;
-    margin-top: -80vh;
-  }
+  
   .donate-section{
     img{
       display: none;

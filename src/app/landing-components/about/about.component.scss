@@ -1,8 +1,10 @@
 @import '../landingpage-common.scss';
 
+
 .cover-photo{
   background: linear-gradient(180deg, rgba(0, 30, 199, 0.82) 20%, rgba(13, 0, 212, 0.57) 100%), url(/assets/img/landing/about-wave-bg.jpg);
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .section-1 {
@@ -112,6 +114,10 @@ border: 1.5px solid #101010;
     }
     .section-blue{
       padding-top: 5vh;
+    }
+    .section-1{
+      background-size: cover;
+      background-position: center;
     }
     .section-3{
       padding-bottom: 7vh;

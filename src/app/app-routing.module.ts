@@ -57,6 +57,10 @@ const routes: Routes = [
         loadChildren: './landing-components/contact/contact.module#ContactModule'
       },
       {
+        path: 'privacy-policy',
+        loadChildren: './landing-components/privacy-policy/privacy-policy.module#PrivacyPolicyModule'
+      },
+      {
         path: 'events',
         loadChildren: './landing-components/events/events.module#EventsModule'
       },

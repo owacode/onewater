@@ -1,0 +1,80 @@
+@import '../about/about.component.scss';
+
+.bold-text{
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.cover-photo{
+    background: linear-gradient(180deg, rgba(0, 30, 199, 0.82) 20%, rgba(13, 0, 212, 0.57) 100%), url(/assets/img/landing/events-bg.jpeg);
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .intro-content{
+      margin-top: 2rem;
+  }
+
+  .section-intro{
+      h3{
+          margin: 2rem 0 1.5rem;
+      }
+  }
+
+  .list{
+      font-weight: 700;
+      padding-left: 1.5rem;
+  }
+
+  .privacy-points{
+      margin: 2rem 0 0;
+
+
+      h4{
+          margin: 2.5rem 0 1.5rem;
+      }
+      a{
+        color: rgb(7, 101, 241);
+    }
+  }
+  .contact-info{
+      p{
+          span{
+              font-weight: 600;
+          }
+         
+      }
+  }
+
+  .p-small{
+      transform: scale(0.85);
+      opacity: 0.95;
+      margin-top: -1rem;
+  }
+
+
+  @media all and (max-width:991px){
+      .intro-content{
+          margin-top: -1rem;
+      }
+  }
+
+
+  @media all and (max-width:576px){
+    .intro-content{
+        margin-top: 1rem;
+    }
+    .bold-text{
+        font-weight: 500;
+        font-size: 1.02rem;
+    }
+    .bold-text,p{
+       text-align: justify;
+       
+    }
+    h3,h4{
+        text-align: center;
+    }
+}
