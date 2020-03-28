@@ -81,7 +81,7 @@
               <img src="{{blog?.image}}" alt="" />
               <div class="blog-caption">
                 <a [routerLink]="['/onewaterblog/cro-blogpost', blog._id]" title="{{ blog?.title }}">
-                  <h5>{{blog?.title}}</h5>
+                  <h5>{{blog?.title | shorten:40}}</h5>
                 </a>
                 <a class="auth-img" [routerLink]="['/onewaterblog/croprofile',blog.cro_id]">
                   <img [src]="blog.cro_image" alt="">

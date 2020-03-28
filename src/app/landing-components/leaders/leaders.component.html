@@ -55,7 +55,7 @@
               <img src="{{blog?.image}}" alt="" />
               <div class="blog-caption">
                 <a [routerLink]="['/onewaterblog/mayor-blogpost', blog._id]" title="{{blog?.title}}">
-                  <h5>{{blog?.title}}</h5>
+                  <h5>{{blog?.title | shorten:40}}</h5>
                 </a>
                 <a [routerLink]="['/onewaterblog/mayorprofile/',blog._id]">
                   <div class="auth-img">

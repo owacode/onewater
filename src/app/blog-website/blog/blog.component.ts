@@ -339,7 +339,7 @@ croList;
       .subscribe(result => {
         console.log(result);
         this.authors = result.result;
-
+        this.authors = this.authors.slice(0,4);
       })
 
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/homeblog')
@@ -356,6 +356,7 @@ croList;
       "https://onewater-mayor.herokuapp.com/approveblogs"
     ).subscribe(result=>{
       this.mayorList = result.result;
+
     })
   }
 
@@ -373,6 +374,7 @@ croList;
     ).subscribe(result=>{
       console.log('mayor$$$$$$$$$$$$$$$$$$$$$$$$',result)
       this.mayors = result.result;
+      this.mayors = this.mayors.slice(0,4);
     })
   }
 
@@ -381,6 +383,7 @@ croList;
       "https://onewater-cro.herokuapp.com/approvedcro"
     ).subscribe(result=>{
       this.cros = result.result;
+      this.cros = this.cros.slice(0,4);
     })
   }
 }

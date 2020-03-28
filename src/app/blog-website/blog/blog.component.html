@@ -97,7 +97,7 @@
                     [routerLink]="['/onewaterblog/mayor-blogpost', blog._id]"
                     title="{{ blog.title }}"
                   >
-                    <h5>{{ blog?.title | shorten: 25 }}</h5>
+                    <h5>{{ blog?.title | shorten: 30 }}</h5>
                   </a>
                   <a class="auth-img" [routerLink]="['/onewaterblog/mayorprofile',blog.mayor_id]">
                     <img [src]="blog.mayor_image" alt="">
@@ -174,7 +174,7 @@
                       [routerLink]="['/onewaterblog/cro-blogpost', blog._id]"
                       title="{{ blog.title }}"
                     >
-                      <h5>{{ blog.title }}</h5>
+                      <h5>{{ blog.title | shorten:30}}</h5>
                     </a>
                     <a class="auth-img" [routerLink]="['/onewaterblog/croprofile',blog.cro_id]">
                       <img [src]="blog.cro_image" alt="">
@@ -251,7 +251,7 @@
                     [routerLink]="['/onewaterblog/blogpost/', blog._id]"
                     title="{{ blog?.title }}"
                   >
-                    <h5>{{ blog?.title | shorten: 25 }}</h5>
+                    <h5>{{ blog?.title | shorten: 30 }}</h5>
                   </a>
                   <a class="auth-img" [routerLink]="['/onewaterblog/authorprofile',blog.author_id]">
                     <img [src]="blog.author_image" alt="">
