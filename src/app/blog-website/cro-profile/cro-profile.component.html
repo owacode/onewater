@@ -34,12 +34,12 @@
       <div class="author-contact">
         <h3>Also available at :</h3>
         <div class="social-media">
-          <a href="{{cro?.linkedIn_id}}" target="
+          <a *ngIf="cro?.linkedIn_id != 'null'" href="{{cro?.linkedIn_id}}" target="
           _blank"><img src="assets/img/icons/linkedin.svg" alt=""
           /></a>
-          <a href="{{cro?.twitter_id}}" target="_blank">  <img src="assets/img/icons/twitter.svg" alt=""
+          <a *ngIf="cro?.twitter_id != 'null'" href="{{cro?.twitter_id}}" target="_blank">  <img src="assets/img/icons/twitter.svg" alt=""
             /></a>
-         
+
         </div>
       </div>
     </div></div>

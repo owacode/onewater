@@ -39,13 +39,13 @@
           <h3>Also available at :</h3>
           <div class="social-media">
             <a
-              *ngIf="author.linkedIn_id != 'null'"
+              *ngIf="author?.linkedIn_id != 'null'"
               href="{{ author?.linkedIn_id }}"
               target="_blank"
               ><img src="assets/img/icons/linkedin.svg" alt=""
             /></a>
             <a
-              *ngIf="author.twitter_id! != 'null'"
+              *ngIf="author?.twitter_id! != 'null'"
               href="{{ author?.twitter_id }}"
               target="_blank"
             >
