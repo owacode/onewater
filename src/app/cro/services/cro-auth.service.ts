@@ -107,7 +107,7 @@ export class CROAuthService {
     localStorage.removeItem("croimage");
     localStorage.removeItem("croname");
     localStorage.removeItem("form_filled_cro");
-    this.route.navigate(["/onewaterblog/cro/signup"]);
+    this.route.navigate(["/onewaterblog/cro/login"]);
   }
 
   authLitsener() {

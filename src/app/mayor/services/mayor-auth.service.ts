@@ -161,7 +161,7 @@ export class MayorAuthService {
   localStorage.removeItem('mayorimage');
   localStorage.removeItem('mayorname');
   localStorage.removeItem('form_filled_mayor');
-  this.route.navigate(['/onewaterblog/mayor/signup'])
+  this.route.navigate(['/onewaterblog/mayor/login'])
   }
 
   resetpassword(values) {
