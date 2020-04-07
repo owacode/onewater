@@ -34,10 +34,10 @@
       <div class="author-contact">
         <h3>Also available at :</h3>
         <div class="social-media">
-          <a href="{{mayor?.linkedIn_id}}" target="
+          <a *ngIf="mayor?.linkedIn_id != 'null'" href="{{mayor?.linkedIn_id}}" target="
           _blank"><img src="assets/img/icons/linkedin.svg" alt=""
           /></a>
-          <a href="{{mayor?.twitter_id}}" target="_blank"> <img src="assets/img/icons/twitter.svg" alt=""
+          <a *ngIf="mayor?.twitter_id != 'null'"  href="{{mayor?.twitter_id}}" target="_blank"> <img src="assets/img/icons/twitter.svg" alt=""
             /></a>
         </div>
       </div>

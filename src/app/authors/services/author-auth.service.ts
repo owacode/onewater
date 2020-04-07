@@ -105,7 +105,7 @@ export class AuthorAuthService {
     localStorage.removeItem("authorapprovedid");
     localStorage.removeItem("image");
     localStorage.removeItem("name");
-    this.route.navigate(["/onewaterblog/author/signup"]);
+    this.route.navigate(["/onewaterblog/author/login"]);
   }
 
   authLitsener() {
