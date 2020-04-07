@@ -247,7 +247,7 @@ const routes: Routes = [
   },
   //-----------Instructor Login page -----------------//
     {
-       path:'instructor/:state',
+      path:'instructor/:state',
       loadChildren: './instructors/instructor-login/instructor-login.module#InstructorLoginModule'
     },
 
