@@ -33,10 +33,10 @@ export class CroPostBlogComponent implements OnInit {
       plugins : [
         "advlist autolink lists link image charmap print preview hr anchor pagebreak",
         "searchreplace wordcount fullscreen",
-        "insertdatetime media nonbreaking save ",
-        "code tinymcespellchecker link"
+        "insertdatetime media nonbreaking save "
       ],
-      toolbar : 'formatselect | bold italic | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat |image | spellchecker language spellcheckdialog',
+      toolbar : 'formatselect | bold italic | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat |image',
+      browser_spellcheck : true,
       image_advtab : true,
       images_upload_handler: function (blobInfo, success, failure) {
         console.log(blobInfo.blob())
