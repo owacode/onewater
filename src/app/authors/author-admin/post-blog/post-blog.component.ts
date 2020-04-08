@@ -36,9 +36,11 @@ export class PostBlogComponent implements OnInit {
       plugins : [
         "advlist autolink lists link image charmap print preview hr anchor pagebreak",
         "searchreplace wordcount fullscreen",
-        "insertdatetime media nonbreaking save "
+        "insertdatetime media nonbreaking save ",
+        "code tinymcespellchecker link"
       ],
-      toolbar : 'formatselect | bold italic | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat |image',
+      toolbar : 'formatselect | bold italic | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | image | spellchecker language spellcheckdialog',
+      spellchecker_language: 'en',
       image_advtab : true,
       images_upload_handler: function (blobInfo, success, failure) {
         console.log(blobInfo.blob())
