@@ -122,7 +122,7 @@ export class InstructorLoginComponent implements OnInit {
     }
     //console.log('pass',this.loginuser.value);
 
-    this.http.post<{msg:string, result:any}>('http://localhost:3000/login',this.loginuser.value)
+    this.http.post<{msg:string, result:any}>('https://onewater-instructor-api.herokuapp.com/login',this.loginuser.value)
     .subscribe(result=>{
       this.instructorservice.userid=result.result.user.id;
       this.instructorservice.useremail=result.result.user.email;
