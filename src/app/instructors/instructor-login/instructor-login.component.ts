@@ -57,7 +57,7 @@ export class InstructorLoginComponent implements OnInit {
     else {
       this.showregform();
     }
-   
+
     this.user = new FormGroup({
       name:new FormControl(null,{validators:[Validators.required]}),
       email:new FormControl(null,{validators:[Validators.required,Validators.email]}),
@@ -108,7 +108,6 @@ export class InstructorLoginComponent implements OnInit {
   }
 
   login(){
-    console.log(localStorage.getItem('authoremail'), this.auth.access_token)
     // if(this.auth.access_token != null || localStorage.getItem('authoremail')){
     //   this.modal.hideBtnLoader();
     //   this.modal.openModal('#platformModal');
@@ -123,11 +122,14 @@ export class InstructorLoginComponent implements OnInit {
     }
     //console.log('pass',this.loginuser.value);
 
-    this.http.post<{msg:string, result:any}>('https://onewater-instructor-api.herokuapp.com/login',this.loginuser.value)
+    this.http.post<{msg:string, result:any}>('http://localhost:3000/login',this.loginuser.value)
     .subscribe(result=>{
-      this.instructorservice.userid=result.result.id;
-      this.instructorservice.useremail=result.result.email;
+      this.instructorservice.userid=result.result.user.id;
+      this.instructorservice.useremail=result.result.user.email;
+      this.instructorservice.username=result.result.user.name;
+      this.instructorservice.user=result.result.user;
       localStorage.setItem('instructor_id',this.instructorservice.userid);
+      localStorage.setItem('instructor_name',this.instructorservice.username);
       localStorage.setItem('instructor_email',this.instructorservice.useremail);
       console.log("User Login Successfully", result);
 
