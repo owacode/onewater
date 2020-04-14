@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 export class InstructorService {
   constructor (private router: Router) {}
 
+  user=null;
   userid=null;
+  username=null;
   useremail=null;
 
   checklocalstorage(){
@@ -17,6 +19,7 @@ export class InstructorService {
     if(instructorid){
       this.userid = instructorid;
       this.useremail = localStorage.getItem('instructor_email');
+      this.username = localStorage.getItem('instructor_name');
       console.log("Initliaze Instructor detail", this.useremail, this.userid);
     }
     else return;

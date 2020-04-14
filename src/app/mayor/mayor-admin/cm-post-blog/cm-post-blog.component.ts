@@ -41,6 +41,7 @@ export class CmPostBlogComponent implements OnInit {
         "insertdatetime media nonbreaking save "
       ],
       toolbar : 'formatselect | bold italic | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat |image',
+      browser_spellcheck : true,
       image_advtab : true,
       images_upload_handler: function (blobInfo, success, failure) {
         console.log(blobInfo.blob())
