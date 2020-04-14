@@ -10,6 +10,7 @@ export class LandingComponentsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

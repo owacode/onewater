@@ -159,6 +159,7 @@ export class EditSavedBlogsComponent implements OnInit {
   else this.common.addSavedBlog(this.form.value);
   this.modal.openModal("#successModal");
   this.form.reset();
+  this.imagePreview = null;
   this.submited = false;
  }
 }
