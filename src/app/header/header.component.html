@@ -11,22 +11,41 @@
       <li class="navlink"><a routerLink="/home/about">About</a></li>
       <li class="navlink" >
         <div class="dropdown-btn platform-dd"  (click)="toggleDropdown('platforms')">
-          OneWater Ecosystem <i class="fa fa-caret-down" aria-hidden="true"></i>
+          OneWater Academy <i class="fa fa-caret-down" aria-hidden="true"></i>
           <div class="dropdown-content card-shadow" id="platforms">
-            <li class="navlink"><a routerLink="/home/leaders">OneWater Leaders</a></li>
-            <li class="navlink"><a routerLink="/home/learningacademy">OneWater Academy</a></li>
+            <!-- <li class="navlink"><a routerLink="/home/leaders">OneWater Leaders</a></li> -->
+            <!-- <li class="navlink"><a routerLink="/home/learningacademy">OneWater Academy</a></li> -->
+            <li class="navlink"><a routerLink="/home/owx">OneWater Xchange</a></li>
             <li class="navlink"><a routerLink="/onewaterblog">OneWater Blogs</a></li>
-            <li class="navlink"><a routerLink="/home/owx">OWXchange</a></li>
             <li class="navlink"><a routerLink="/o-wow">O-WOW</a></li>
           </div>
         </div>
       </li>
       <li class="navlink"><a routerLink="/home/cro-page">The CROs</a></li>
-      <li class="navlink"><a routerLink="/home/events">Events </a></li>
-      <li class="navlink"><a (click)="modal.openModal('#subscribeModal')" style="cursor: pointer;">Subscribe</a></li>
-      <li class="navlink"><a routerLink="/home/contact">Contact</a></li>
-      <li class="navlink"><a routerLink="/home/donate">Give</a></li>
-
+      <!-- <li class="navlink"><a routerLink="/home/events">Events </a></li> -->
+      <li class="navlink" >
+        <div class="dropdown-btn platform-dd"  (click)="toggleDropdown('connect')">
+          Connect with Us <i class="fa fa-caret-down" aria-hidden="true"></i>
+          <div class="dropdown-content card-shadow" id="connect">
+            <li class="navlink"><a (click)="modal.openModal('#subscribeModal')" style="cursor: pointer;">Subscribe</a></li>
+            <li class="navlink"><a routerLink="/home/contact">Message Us</a></li>
+          </div>
+        </div>
+      </li>
+      
+      <li class="navlink"><a routerLink="/home/donate">Support Us</a></li>
+      <!-- <li *ngIf="!auth.isLoggedIn" class="navlink">
+        <a
+        routerLink="/login-role"
+        >
+         Login
+        </a>
+      </li>
+      <li *ngIf="!auth.isLoggedIn" class="navlink">
+        <a routerLink="/signup-role">
+          Signup
+        </a>
+      </li> -->
       <li *ngIf="!auth.isLoggedIn" class="navlink">
         <div
           class="dropdown-btn platform-dd" (click)="toggleDropdown('loginPanel')"

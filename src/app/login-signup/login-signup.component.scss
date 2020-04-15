@@ -7,17 +7,16 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: url(/assets/img/blue-wave.webp);
-  background-size: cover;
-  background-position-y:10px;
-  background-repeat: no-repeat;
+  // background: url(/assets/img/blue-wave.webp);
+  // background-size: cover;
+  // background-position-y:10px;
+  // background-repeat: no-repeat;
 }
 
 
 .login-img{
-  width: 85%;
+  width: 65%;
   max-width: 500px;
-  filter: brightness(0) invert(1);
   margin: 1rem auto;
 }
 

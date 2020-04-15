@@ -19,7 +19,7 @@
 
 .role-card{
     border-radius: 8px;
-    padding: 0.2rem;
+    padding: 0.2rem 1rem;
     margin: 1rem 0;
     display: flex;
     background-color: #fff;
@@ -31,7 +31,7 @@
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     .role-img{
-        width: 100%;
+        width: 60%;
         margin: auto;
     }
 
