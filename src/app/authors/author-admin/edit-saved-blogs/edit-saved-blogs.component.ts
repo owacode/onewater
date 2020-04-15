@@ -31,14 +31,15 @@ export class EditSavedBlogsComponent implements OnInit {
 
   ngOnInit() {
     this.tinymceInit = {
+      selector: "textarea",
       height: 500,
       width: 1000,
       plugins : [
-        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "advlist autolink lists image charmap print preview hr anchor pagebreak tinymcespellchecker link",
         "searchreplace wordcount fullscreen",
         "insertdatetime media nonbreaking save "
       ],
-      toolbar : 'formatselect | bold italic | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat |image',
+      toolbar : 'formatselect | bold italic | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | image media pageembed template link anchor codesample |spellchecker language spellcheckdialog',
       browser_spellcheck : true,
       image_advtab : true,
       images_upload_handler: function (blobInfo, success, failure) {
