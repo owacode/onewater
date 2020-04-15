@@ -120,7 +120,8 @@ header{
     .dropdown-content{
         position: absolute;
         display: block;
-        right: 0;
+        left: 0;
+        width: 220px;
         z-index:50;
         background-color: #fff;
         top: 100%;
@@ -153,8 +154,15 @@ header{
     }
 }
 
-
-
+#connect{
+    width: 180px;
+}
+#loginPanel{
+    width: 135px;
+}
+#about{
+    width: 200px;
+}
 .mobile-dropdown{
     display: none;
     margin-right: 50px;
