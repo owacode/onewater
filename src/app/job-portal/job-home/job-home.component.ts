@@ -40,7 +40,7 @@ export class JobHomeComponent implements OnInit {
   constructor(public http:HttpClient,public getservice:GetOperationService) { }
 
   ngOnInit() {
-    Feather.replace()
+    Feather.replace();
     this.getservice.getJobs(5,1)
     .subscribe(result=> {
       console.log(result);

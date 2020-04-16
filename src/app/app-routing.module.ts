@@ -298,6 +298,10 @@ const routes: Routes = [
     loadChildren: './login-signup/login-signup.module#LoginSignupModule'
   },
   {
+    path: 'login',
+    loadChildren: './user-login/user-login.module#UserLoginModule'
+  },
+  {
     path: 'recover-password/:token',
     loadChildren: './recover-password/recover-password.module#RecoverPasswordModule'
   },

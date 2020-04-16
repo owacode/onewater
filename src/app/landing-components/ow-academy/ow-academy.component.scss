@@ -26,7 +26,9 @@ section{
     background-size: contain;
     opacity: 0.4;
   }
-
+.owx-about-img{
+  width: 80%;
+}
   .btn{
     font-size: 2rem;
     color: #101010;
@@ -107,14 +109,22 @@ section{
         }
     }
   .features-section {
-    background: linear-gradient(180deg, #2145a7 2%, #173997c4 80%, #092b86), url(/assets/img/landing/academy-feature-bg.jpg);
-    background-position: top center;
+    background: linear-gradient(0deg, #1f419fed 6%, rgba(14, 73, 154, 0.92) 53%, #1f43a2 94%), url(/assets/img/landing/intro-bg.jpg);
+    background-position: bottom center;
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 0;
     padding-bottom: 5rem;
     .col-md-3{
       padding: 0;
+    }
+  }
+
+  .platform-img{
+    text-align: center;
+    img{
+      width: 95%;
+      max-width: 500px;
     }
   }
 

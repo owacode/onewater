@@ -1,8 +1,8 @@
 @import '../job-portal.component.scss';
 
 .cover-photo {
-    height: 42vh;
-    background:linear-gradient(180deg, rgba(0, 31, 204, 0.82) 20%, rgba(255, 255, 255, 0.68) 100%), url(/assets/img/job-header-bg.jpeg);
+    height: 100vh;
+    background: linear-gradient(to  right bottom, #2f1ce0 0%, #539ffdd3 30%, #51eca6b9 100%), url(https://images.pexels.com/photos/840996/pexels-photo-840996.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -10,7 +10,7 @@
   }
 .blue-wave{
   height: 100vh;
-  margin-top: -35vh;
+  margin-top: -100vh;
   transform: rotateY(180deg);
   background: url(/assets/img/footer-wave.webp);
   background-size: cover;
@@ -29,33 +29,99 @@
       background-color: #000c62;
       transform: rotate(180deg);
 }
+.blog-section{
+  h2{
+    margin-bottom: 4rem;
+  }
+}
+.blog-card{
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  margin-bottom: 1.5rem;
 
+  .blog-image{
+    width: 50%;
+    img{
+      height: 100%;
+      border-radius: 0.5rem;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .blog-caption{
+    padding-left: 1rem;;
 
+    h4{
+      margin: 0 0 1rem;
+    }
+
+    p{
+      font-size: 1rem;
+      color: rgb(107, 107, 107);
+      font-weight:600;
+      margin-bottom: 0.5rem;
+    }
+
+    .likes{
+      color: #000;
+    }
+  }
+}
 /*---------------------------------------------
 	02.0 Banner Style
 ---------------------------------------------*/
 
 .banner-2-bg {
   background: url(/assets/img/jobs/bg/banner-2-bg.jpg) no-repeat;
+  background: transparent;
+  margin-top: -75vh;
       position: relative;
       background-position-x: -387px;
       background-position-y: -160px;
       z-index: 5;
 }
+.author-btn{
+  margin-top: 0rem;
+  background-color: #e7f8ff;
 
+  h4{
+    color: #246df8;
+    margin-bottom: 2rem;
+  }
+}
+
+.company-wrap .thumb {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 30px;
+   max-width: 100% !important; 
+  margin: 0 0 50px !important;
+  height: 120px;
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.color-blue{
+  color: #246df8;
+}
 .banner-2 .banner-content {
   padding: 50px 0 70px;
-  color: #232630;
+  color: #fff;
   position: relative;
     z-index: 5;
 }
 
 .banner-2 .banner-content h1 {
 
-  font-size: 4.5rem;
+  font-size: 6rem;
   font-weight: 400;
   margin-bottom: 25px;
-  letter-spacing: -3.8px;
+  letter-spacing: -0.3rem;
 
   strong{
     font-weight: 700;
@@ -63,10 +129,10 @@
 }
 
 .banner-2 .banner-content p {
-  color: #6f7484;
-    font-size: 1.2rem;
+  color: #fff;
+    font-size: 2.5rem;
     max-width: 500px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.1rem;
 }
 
 .banner-2 .banner-content .short-infos {
@@ -82,21 +148,20 @@
   -ms-flex-positive: 1;
   flex-grow: 1;
     margin-right: 2rem;
-    background: white;
     padding: 0.5rem;
     border-radius: 5px;
 }
 
 .banner-2 .banner-content .short-infos .info h4 {
-  font-size: 1.7rem;
-      color: #0C7BE2;
-      font-weight: 600;
+  font-size: 2.5rem;
+      color: #5bff9d;
+      font-weight: 800;
 }
 
 .banner-2 .banner-content .short-infos .info span {
   font-size: 1.1rem;
-    font-weight: 400;
-    color: #6f7484;
+    font-weight: 600;
+    color: #fff;
 }
 
 @media all and (max-width:991px){
@@ -286,10 +351,12 @@ margin-left: 35px;
   display: flex;
     flex-wrap: wrap;
     position: relative;
+    border: 1.2px solid #fafafa;
+    position: relative;
     background: #fff;
     border-radius: 30px;
-    margin: 6rem auto;
-    box-shadow: 10px 10px 24px 11px rgba(0, 0, 0, 0.05);
+    margin: 2rem auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .categories:before {
@@ -374,6 +441,10 @@ margin-left: 35px;
 
 .categories .vr-4 {
   left: 80%;
+}
+
+.job-list .thumb img {
+  max-width: 100%;
 }
 
 @media all and (max-width: 991px) {

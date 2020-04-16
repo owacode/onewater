@@ -22,6 +22,7 @@ toggleHeader() {
         event['url'] == '/signup-role' ||
         event['url'] == '/login-role' ||
         event['url'] == '/signup' ||
+        event['url'] == '/login' ||
         event['url'].includes('/onewaterblog/author/') ||
         event['url'].includes('/onewaterblog/mayor/') ||
         event['url'].includes('/onewaterblog/cro/') ||

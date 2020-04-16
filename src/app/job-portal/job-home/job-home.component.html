@@ -1,6 +1,6 @@
 
 <div class="cover-photo">
-    <div class="wave"></div>
+    <!-- <div class="wave"></div> -->
 </div>
 
     <!-- Banner -->
@@ -9,8 +9,8 @@
         <div class="row">
           <div class="col-12">
             <div class="banner-content">
-              <h1>OneWater <strong>Jobs</strong></h1>
-              <p>Find the right job Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h1><strong>YouTerns</strong></h1>
+              <p>Powered by Interns</p>
               <div class="short-infos">
                 <div class="info">
                   <h4>5,862</h4>
@@ -50,6 +50,7 @@
   </div>
     <!-- Search and Filter -->
       <div class="container">
+        <h2 class="color-blue text-center">Search for internships now!</h2>
               <div class="searchAndFilter">
                 <form action="#">
                   <div class="row">
@@ -177,34 +178,82 @@
         <div class="row">
           <div class="col">
             <div class="section-header section-header-2 section-header-with-right-content">
-              <h2>Recent Jobs</h2>
+              <h2>Internships Available Now</h2>
               <a [routerLink]="['/onewaterjobs/joblist']" class="header-right">+ Browse All Jobs</a>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <div class="job-list" *ngFor="let job of jobs">
+            <div class="job-list">
               <div class="thumb">
 
-                  <img src={{job.image}} class="img-fluid" alt="">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSeWTX85gHOXayurmOoCseHFZoViCISp9siAYLzLXNi_9CG4cEZ&usqp=CAU" class="img-fluid" alt="">
 
               </div>
               <div class="body">
                 <div class="content">
-                  <h4>  <a [routerLink]="['/onewaterjobs/jobdesc/',job._id]">{{job.title}}</a></h4>
+                  <h4>  <a >Job title</a></h4>
                   <div class="info">
-                    <span class="company"><a href="#"><i data-feather="briefcase"></i>Theoreo</a></span>
-                    <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{job.location}}</a></span>
-                    <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>{{job.category}}</a></span>
+                    
+                    <span class="office-location"><a href="#"><i data-feather="map-pin"></i>Location</a></span>
+                    <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>Internship Type</a></span>
                   </div>
                 </div>
                 <div class="more">
                   <div class="buttons">
-                    <a [routerLink]="['/onewaterjobs/jobdesc/',job._id]" class="button">Apply Now</a>
+                    <a  class="button">Apply Now</a>
                     <a href="#" class="favourite"><i data-feather="heart"></i></a>
                   </div>
-                  <p class="deadline">Deadline: {{job.deadline | date: 'MMMM d, y'}}</p>
+                  <p class="deadline">Deadline: 12 May, 2020</p>
+                </div>
+              </div>
+            </div>
+            <div class="job-list">
+              <div class="thumb">
+
+                  <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/19cf1425470841.581f136aad309.png" class="img-fluid" alt="">
+
+              </div>
+              <div class="body">
+                <div class="content">
+                  <h4>  <a >Job title</a></h4>
+                  <div class="info">
+                    
+                    <span class="office-location"><a href="#"><i data-feather="map-pin"></i>Location</a></span>
+                    <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>Internship Type</a></span>
+                  </div>
+                </div>
+                <div class="more">
+                  <div class="buttons">
+                    <a  class="button">Apply Now</a>
+                    <a href="#" class="favourite"><i data-feather="heart"></i></a>
+                  </div>
+                  <p class="deadline">Deadline: 12 May, 2020</p>
+                </div>
+              </div>
+            </div>
+            <div class="job-list">
+              <div class="thumb">
+
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSoWyAhCVo9HmFdM-PsfMNUOrcjoO9hs7FlUlnP2uiLo1li8vtk&usqp=CAU" class="img-fluid" alt="">
+
+              </div>
+              <div class="body">
+                <div class="content">
+                  <h4>  <a >Job title</a></h4>
+                  <div class="info">
+                    
+                    <span class="office-location"><a href="#"><i data-feather="map-pin"></i>Location</a></span>
+                    <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>Internship Type</a></span>
+                  </div>
+                </div>
+                <div class="more">
+                  <div class="buttons">
+                    <a  class="button">Apply Now</a>
+                    <a href="#" class="favourite"><i data-feather="heart"></i></a>
+                  </div>
+                  <p class="deadline">Deadline: 12 May, 2020</p>
                 </div>
               </div>
             </div>
@@ -226,21 +275,78 @@
         </div>
         <div class="row">
           <div class="col">
-            <owl-carousel [items]="companies" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-              <div class="item" *ngFor="let company of companies">
+            <owl-carousel [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+              <div class="item">
                 <div class="outer-card">
                   <div class="outer-overlay"></div>
                   <div class="two-card">
                 <div class="company-wrap">
                   <div class="thumb">
-                    <a [routerLink]="['/onewaterjobs/emp-details/',company._id]">
-                      <img src={{company?.company_logo}} class="img-fluid" alt="">
+                    <a [routerLink]="">
+                      <img src="data:image/png;base64,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" class="img-fluid" alt="">
                     </a>
                   </div>
                   <div class="body">
-                    <h4><a [routerLink]="['/onewaterjobs/emp-details/',company._id]">{{company?.company_name}}</a></h4>
-                    <span>{{company?.location}}</span>
-                    <a [routerLink]="['/onewaterjobs/emp-details/',company._id]" class="button">View</a>
+                    <h4><a [routerLink]="">Company Name</a></h4>
+                    <span>Company Location</span>
+                    <a [routerLink]="" class="button">View</a>
+                  </div>
+                </div>
+                </div>
+              </div>
+              </div>
+              <div class="item">
+                <div class="outer-card">
+                  <div class="outer-overlay"></div>
+                  <div class="two-card">
+                <div class="company-wrap">
+                  <div class="thumb">
+                    <a [routerLink]="">
+                      <img src="https://lh3.googleusercontent.com/proxy/gb1zr9NGe_SrTsRxMOSjYXk3sFDcM5lyXaqM3gj7whUUIJlNn5E3aYpFvLvdDZ61cYnuEm9BWKL5TzJfkPyn1sPnQFrAVo50RrwkMPbxCMeJMcpFs9noM3-O9wKYUP4IMbYEhzR6610_mPuy8GFvODNeTQ" class="img-fluid" alt="">
+                    </a>
+                  </div>
+                  <div class="body">
+                    <h4><a [routerLink]="">Company Name</a></h4>
+                    <span>Company Location</span>
+                    <a [routerLink]="" class="button">View</a>
+                  </div>
+                </div>
+                </div>
+              </div>
+              </div>
+              <div class="item">
+                <div class="outer-card">
+                  <div class="outer-overlay"></div>
+                  <div class="two-card">
+                <div class="company-wrap">
+                  <div class="thumb">
+                    <a [routerLink]="">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTNomUB9qW8AHWVScITd06BCGcOlv4SkVsbc4JVQmVx0q4Mo8_F&usqp=CAU" class="img-fluid" alt="">
+                    </a>
+                  </div>
+                  <div class="body">
+                    <h4><a [routerLink]="">Company Name</a></h4>
+                    <span>Company Location</span>
+                    <a [routerLink]="" class="button">View</a>
+                  </div>
+                </div>
+                </div>
+              </div>
+              </div>
+              <div class="item">
+                <div class="outer-card">
+                  <div class="outer-overlay"></div>
+                  <div class="two-card">
+                <div class="company-wrap">
+                  <div class="thumb">
+                    <a [routerLink]="">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSaHqkAar15suDBl2l61HlYnWfiiFWj0TN_rduTvhr3HBrxN1rL&usqp=CAU" class="img-fluid" alt="">
+                    </a>
+                  </div>
+                  <div class="body">
+                    <h4><a [routerLink]="">Company Name</a></h4>
+                    <span>Company Location</span>
+                    <a [routerLink]="" class="button">View</a>
                   </div>
                 </div>
                 </div>
@@ -252,3 +358,104 @@
       </div>
     </div>
     <!-- Top Companies End -->
+
+
+    <div class="section-padding-top padding-bottom-90 blog-section">
+      <div class="container">
+
+    
+      <h2>Top Blogs</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="blog-card">
+            <div class="blog-image">
+              <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="">
+            </div>
+            <div class="blog-caption">
+              <h4>
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </h4>
+              <p class="likes">
+                1.2K Likes
+              </p>
+              <p class="date">
+                12, March 2016
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="blog-card">
+            <div class="blog-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmPZFhzUH7Yw68W6sEGFKTlNiXduCxhBoOd04N1tjNiCks160f&usqp=CAU" alt="">
+            </div>
+            <div class="blog-caption">
+              <h4>
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </h4>
+              <p class="likes">
+                1.2K Likes
+              </p>
+              <p class="date">
+                12, March 2016
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="blog-card">
+            <div class="blog-image">
+              <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="">
+            </div>
+            <div class="blog-caption">
+              <h4>
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </h4>
+              <p class="likes">
+                1.2K Likes
+              </p>
+              <p class="date">
+                12, March 2016
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="blog-card">
+            <div class="blog-image">
+              <img src="https://media.sproutsocial.com/uploads/2016/06/Mining-Social-Data.png" alt="">
+            </div>
+            <div class="blog-caption">
+              <h4>
+                Lorem ipsum dolor sit amet consectetur .....
+              </h4>
+              <p class="likes">
+                1.2K Likes
+              </p>
+              <p class="date">
+                12, March 2016
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="blog-card">
+            <div class="blog-image">
+              <img src="https://media.sproutsocial.com/uploads/2018/05/Social-Media-Advertising.png" alt="">
+            </div>
+            <div class="blog-caption">
+              <h4>
+                Lorem ipsum dolor sit amet consectetur adipisicing.....
+              </h4>
+              <p class="likes">
+                1.2K Likes
+              </p>
+              <p class="date">
+                12, March 2016
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
