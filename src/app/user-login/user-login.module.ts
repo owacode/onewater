@@ -15,7 +15,7 @@ const routes: Route[]=[
   declarations: [UserLoginComponent],
   imports: [
     CommonModule,
-    HeaderModule,
+    HeaderModule,FormsModule, ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })

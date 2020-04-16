@@ -36,43 +36,44 @@ export class AppComponent implements OnInit {
     public modal: ModalFunctions
   ) {
     this.instructorservice.checklocalstorage();
-    var hash = 'null'
-    hash = window.location.hash;
-    var localcookie = this.readCookie("id_token");
-    let decodedtoken;
-    console.log(hash,localcookie,'ieifei')
-    if (hash || (localcookie != 'null' && localcookie !=null)) {
-      console.log('if true')
-      if (hash) {
-      console.log('if true 1')
-        this.auth.isLoggedIn = true;
-        let fetch_token = hash.split("#");
+    this.auth.checkLocalStorage();
+    // var hash = 'null'
+    // hash = window.location.hash;
+    // var localcookie = this.readCookie("id_token");
+    // let decodedtoken;
+    // console.log(hash,localcookie,'ieifei')
+    // if (hash || (localcookie != 'null' && localcookie !=null)) {
+    //   console.log('if true')
+    //   if (hash) {
+    //   console.log('if true 1')
+    //     this.auth.isLoggedIn = true;
+    //     let fetch_token = hash.split("#");
 
-        let tokens = fetch_token[1].split("&");
-        this.auth.access_token = tokens[0].split("=")[1];
-        this.auth.id_token = tokens[4].split("=")[1];
-        this.createCookie("access_token", this.auth.access_token);
-        this.createCookie("id_token", this.auth.id_token);
-        decodedtoken = this.getDecodedAccessToken(this.auth.id_token);
-        decodedtoken = this.getDecodedAccessToken(this.auth.id_token);
-        this.createCookie("name", decodedtoken.name);
-        this.createCookie("nickname", decodedtoken.nickname);
-        this.createCookie("userpicture", decodedtoken.picture);
-        this.createCookie("user_id", decodedtoken.sub.split("|")[3]);
-        this.auth.user_id = decodedtoken.sub.split("|")[3];
-        this.auth.picture = this.readCookie("userpicture");
-        this.auth.nickname = this.readCookie("nickname");
-        this.auth.name = this.readCookie("name");
-      } else {
-        this.auth.isLoggedIn = true;
-        this.auth.access_token = this.readCookie("access_token");
-        this.auth.id_token = this.readCookie("id_token");
-        this.auth.picture = this.readCookie("userpicture");
-        this.auth.nickname = this.readCookie("nickname");
-        this.auth.name = this.readCookie("name");
-        this.auth.user_id=this.readCookie("user_id")
-      }
-    }
+    //     let tokens = fetch_token[1].split("&");
+    //     this.auth.access_token = tokens[0].split("=")[1];
+    //     this.auth.id_token = tokens[4].split("=")[1];
+    //     this.createCookie("access_token", this.auth.access_token);
+    //     this.createCookie("id_token", this.auth.id_token);
+    //     decodedtoken = this.getDecodedAccessToken(this.auth.id_token);
+    //     decodedtoken = this.getDecodedAccessToken(this.auth.id_token);
+    //     this.createCookie("name", decodedtoken.name);
+    //     this.createCookie("nickname", decodedtoken.nickname);
+    //     this.createCookie("userpicture", decodedtoken.picture);
+    //     this.createCookie("user_id", decodedtoken.sub.split("|")[3]);
+    //     this.auth.user_id = decodedtoken.sub.split("|")[3];
+    //     this.auth.picture = this.readCookie("userpicture");
+    //     this.auth.nickname = this.readCookie("nickname");
+    //     this.auth.name = this.readCookie("name");
+    //   } else {
+    //     this.auth.isLoggedIn = true;
+    //     this.auth.access_token = this.readCookie("access_token");
+    //     this.auth.id_token = this.readCookie("id_token");
+    //     this.auth.picture = this.readCookie("userpicture");
+    //     this.auth.nickname = this.readCookie("nickname");
+    //     this.auth.name = this.readCookie("name");
+    //     this.auth.user_id=this.readCookie("user_id")
+    //   }
+    // }
 
     this.location.subscribe((ev: PopStateEvent) => {
       this.lastPoppedUrl = ev.url;

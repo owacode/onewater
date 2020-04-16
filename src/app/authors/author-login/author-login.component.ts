@@ -54,7 +54,7 @@ export class AuthorLoginComponent implements OnInit {
 
   ngOnInit() {
     this.auth.checkLocalStorage();
-    
+
     this.state.params.subscribe(result => {this.toRender = result.state});
     if(this.toRender == 'login'){
       this.showauthform();
@@ -62,7 +62,7 @@ export class AuthorLoginComponent implements OnInit {
     else {
       this.showregform();
     }
-    
+
     this.user = new FormGroup({
       author_name: new FormControl(null, { validators: [Validators.required] }),
       author_email: new FormControl(null, { validators: [Validators.required, Validators.email] }),
@@ -112,12 +112,6 @@ export class AuthorLoginComponent implements OnInit {
   }
 
   login() {
-    // console.log(this.userauth.access_token,localStorage.getItem('instructor_email'))
-    // if(this.userauth.access_token != null || localStorage.getItem('instructor_email')) {
-    //   this.modal.hideBtnLoader();
-    //   this.modal.openModal('#platformModal');
-    //   return;
-    // }
     this.loginsubmitted = true;
 
     if (this.loginuser.invalid) {

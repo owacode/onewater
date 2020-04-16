@@ -12,67 +12,65 @@
         </h2>
         <!-- <p>
           Spark important conversations and inspire others. <br>
-          Be a OneWater Blog Author.          
+          Be a OneWater Blog Author.
         </p> -->
         <img src="assets/img/login-img.png" alt="" class="login-img" />
       </div>
       <div class="col-lg-6">
         <div class="form-box">
-          <form class="vldform vldreg">
-            <h1>Login</h1>
-           
+          <form
+            class="vldform vldauth"
+            (submit)="login()"
+            [formGroup]="loginuser"
+          >
+            <h1>author Login</h1>
 
             <input
+              formControlName="email"
               class="vldform__textbox"
-              
-              type="email"
+              type="text"
               name="email"
               placeholder="Email"
               required
             />
-            <!-- <p *ngIf="registersubmitted && user.get('email').invalid">
-              Enter a valid email id!
-            </p> -->
-            
-                <input
-                  class="vldform__textbox halfwidth"
-                  
-                  type="password"
-                  name="pass"
-                  placeholder="Password"
-                  required
-                />
-                <!-- <p *ngIf="registersubmitted && user.get('password').invalid">
-                  Password must have minimum 6 characters!
-                </p> -->
-              
-             
-              <button
-                class="vldform__button"
-                type="submit"
-                (click)="modal.showBtnLoader()"
-                
-              >
-                <span class="btn-loading-content">
-                  <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
-                </span>
-                <span class="btn-default-content">
-                  <a class="button-link" href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D">
-                    Login
-                  </a>
-                </span>
-              </button>
-            
             <p
-              class="vldform__signup"
-              style="color: #777;font-size: 1rem;font-weight: 600;"
+
+              *ngIf="loginsubmitted && loginuser.get('email').invalid"
             >
-              New Here? 
-              <a
-                routerLink="/signup"
-                >Signup</a
-              >
+              Please enter a valid email id!
             </p>
+
+            <input
+              formControlName="password"
+              class="vldform__textbox"
+              type="password"
+              name="pass"
+              placeholder="Password"
+              required
+            />
+            <p
+
+              *ngIf="loginsubmitted && loginuser.get('password').invalid"
+            >
+            Please enter your password!
+            </p>
+
+            <a class="vldform__recoverypassword" (click)="showrecoveryform()"
+              >Forgot password?</a
+            >
+
+            <button
+              class="vldform__button"
+              type="submit"
+              (click)="modal.showBtnLoader()"
+            >
+              <span class="btn-loading-content">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+              </span>
+              <span class="btn-default-content">
+                Login
+              </span>
+            </button>
           </form>
         </div>
       </div>
