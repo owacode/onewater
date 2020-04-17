@@ -248,17 +248,9 @@
               </ul>
              
               <div class="mybtn">
-                <div class="row">
-                  <div class="col-sm-6">
                     <a routerLink="/home/learningacademy" class="d-block">
                       Go to OneWater Xchange
-                    </a>
-                  </div>
-                  <div class="col-sm-6"> <a (click)="modal.openModal('#instructorModal')" class="d-block">
-                    Become an Instructor
-                  </a></div>
-                </div>
-               
+                    </a> 
               </div>
             </div>
           </div>
@@ -364,17 +356,9 @@
               </p>
             </li></ul>
               <div class="mybtn">
-                <div class="row">
-                  <div class="col-sm-6">
                     <a routerLink="/onewaterblog" class="d-block">
                       Go to OneWater Blogs
-                    </a>
-                  </div>
-                  <div class="col-sm-6"> <a [routerLink]="['/onewaterblog/author',toRender]" class="d-block">
-                    Become an Author
-                  </a></div>
-                </div>
-               
+                    </a> 
               </div>
             </div>
           </div>
@@ -412,11 +396,37 @@
 </div>
 </section>
 
+<section class="become-member">
+  <div class="block-fb2"></div>
+  <h1>
+    Become a member
+  </h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <img src="assets/img/ins-login.png" alt="" class="img">
+        <div class="mybtn">
+          <a (click)="modal.openModal('#instructorModal')" class="d-block">
+            Become an Instructor
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="assets/img/author-login.png" alt="" class="img">
+        <div class="mybtn">
+          <a [routerLink]="['/onewaterblog/author',toRender]" class="d-block">
+            Become an Author
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="features-section">
   <!-- <div class="block-fa1"></div>  -->
   <div class="block-fa2"></div>
   <!-- <div class="block-fb1"></div>  -->
-  <div class="block-fb2"></div>
+ 
   <h1>
     Features of OneWater Academy
   </h1>

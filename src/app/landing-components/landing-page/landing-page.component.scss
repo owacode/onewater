@@ -259,6 +259,19 @@ section {
   }
 }
 
+.become-member{
+  .img{
+    max-width: 350px;
+    width: 90%;
+  }
+  h1{
+    margin-bottom: 3rem;
+  }
+  .mybtn{
+    width: 300px;
+  }
+}
+
 .features-section-p {
   // background: linear-gradient(180deg, #092b86  2%, #173997c4 80%, #092b86), url(/assets/img/landing/landing-features-bg.jpg);
   // background-position: top center;
