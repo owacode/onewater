@@ -330,37 +330,68 @@
         />
         <h2>Please fill the form to register as an instructor.</h2>
         <form>
-          <input
-            name="name"
-           
-            class="vldform__textbox"
-            type="text"
-            placeholder="Enter your name"
-            required
-          />
+
+
+
+<div class="row">
+  <div class="col-md-6">
+    <input
+    name="name"
+   
+    class="vldform__textbox"
+    type="text"
+    placeholder="Firstname"
+    required
+  />
+  </div>
+  <div class="col-md-6">
+    <input
+    name="lastname"
+   
+    class="vldform__textbox"
+    type="text"
+    placeholder="Lastname"
+    required
+  />
+  </div>
+</div>
+         
+<input
+name="course"
+class="vldform__textbox"
+type="text"
+placeholder="Organization Name"
+/>
+
+<input
+name="email"
+
+class="vldform__textbox"
+type="email"
+placeholder="Enter your email"
+required
+/>
   
           <input
           name="phone"
         
           class="vldform__textbox"
           type="number"
-          placeholder="Enter your phone number"
+          placeholder="Phone Number: (Optional)"
           required
         />
-          <!-- <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p> -->
-          <input
-            name="email"
-          
-            class="vldform__textbox"
-            type="email"
-            placeholder="Enter your email"
-            required
-          />
-  
-          <!-- <p *ngIf="submited && form.get('email').invalid">
-            Enter a Valid Email
-          </p> -->
-  
+
+        <input type="text" class="vldform__textbox" placeholder="Proposed Course Topic">
+
+        <h6>Type of Course</h6>
+        <input type="radio" id="f-option" name="selector">
+    <label for="f-option">Webinar</label>
+
+    <input type="radio" id="s-option" name="selector">
+    <label for="s-option">   Online Course</label>
+ 
+        <input type="text" class="vldform__textbox" placeholder="Proposed Course Title">
+        <textarea name="" id="" cols="30" rows="5" class="vldform__textbox" placeholder="Proposed Course Description (100 Words)"></textarea>
           <button
             type="submit"
             (click)="modal.closeModal(instructorModal)"
