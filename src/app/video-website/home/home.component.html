@@ -9,8 +9,6 @@
     <div class="landing-text">
       <h2 class="platform-heading">
         O-WOW
-        
-        
       </h2>
       <p>
         OneWater one world.
@@ -45,7 +43,7 @@
           <br />
           Be a OneWater Blog Author.
         </h3>
-        <a [routerLink]="['/onewaterblog/author',toRender]">Register as Author</a>
+        <a (click)="modal.openModal(postvideoModal)">Register as Author</a>
       </div>
     </div>
     <div class="col-md-5">
@@ -714,5 +712,79 @@
     <a [routerLink]="['/o-wow/videos']">
       More Videos
     </a>
+  </div>
+</div>
+
+<!--modal for instructor form -->
+<div class="modal fade" id="postvideoModal" #postvideoModal>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(postvideoModal)"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body p-4">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img src="assets/img/icons/video-player.svg" style="width: 50%;max-width: 200px;" alt="">
+        <h2>Fill the below form to post video on O-WOW</h2>
+        <form>
+          <input
+            name="name"
+           
+            class="vldform__textbox"
+            type="text"
+            placeholder="Enter video title"
+            required
+          />
+  
+          <input
+          name="phone"
+          class="vldform__textbox"
+          type="text"
+          placeholder="Paste video link"
+          required
+        />
+        <span style="font-weight: 500; font-size: 0.8rem;text-align: left;"><i>To post a video, upload the video to any server, such as YouTube, and paste its link in the form above.</i></span>
+          <!-- <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p> -->
+          <textarea
+            name="description"
+            class="vldform__textbox"
+            type="text"
+            placeholder="Enter description of the video"
+            required
+          ></textarea>
+        
+  
+          <!-- <p *ngIf="submited && form.get('email').invalid">
+            Enter a Valid Email
+          </p> -->
+  
+          <button
+            type="submit"
+            (click)="modal.closeModal(postvideoModal)"
+            class="btn btn-default"
+          >
+            <span class="btn-loading-content">
+              <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+            </span>
+            <span class="btn-default-content">
+              Submit
+            </span>
+          </button>
+        </form>
+      </div>
+   
+      
+    </div>
   </div>
 </div>

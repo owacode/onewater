@@ -35,7 +35,16 @@
     z-index: 2000;
     position: relative;
   }
- 
+ .modal{
+   overflow-y: scroll;
+ }
+
+
+ /* width */
+.modal::-webkit-scrollbar {
+  width: 0px;
+}
+
   .modal-logo{
     text-align: center;
     margin-top: -2.5rem;

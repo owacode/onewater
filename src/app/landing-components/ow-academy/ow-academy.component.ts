@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 
 @Component({
   selector: 'app-ow-academy',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OwAcademyComponent implements OnInit {
   toRender = 'signup';
-  constructor() { }
+  constructor(public modal: ModalFunctions) { }
 
   ngOnInit() {
   }

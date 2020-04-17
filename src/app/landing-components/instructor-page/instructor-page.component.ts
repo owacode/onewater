@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 
 @Component({
   selector: 'app-instructor-page',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class InstructorPageComponent implements OnInit {
   toRender = 'signup';
   
-  constructor() { }
+  constructor(public modal: ModalFunctions) { }
 
   ngOnInit() {
   }

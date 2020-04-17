@@ -106,7 +106,7 @@
             Like what you’ve read so far? Register now and become an OneWater Xchange instructor.
             <br />
           </h3>
-          <a [routerLink]="['/instructor',toRender]">Become an Instructor </a>
+          <a (click)="modal.openModal(instructorModal)">Become an Instructor </a>
         </div>
       </div>
       <!-- 
@@ -290,7 +290,7 @@
           <h3 style="color: #000">
             Become an instructor and share your knowledge with water workforce members all over the world.
           </h3>
-          <button [routerLink]="['/instructor',toRender]" class="btn">
+          <button (click)="modal.openModal(instructorModal)" class="btn">
             Become an instructor
           </button>
         </div>
@@ -299,6 +299,84 @@
       <div class="col-md-5">
         <img src="assets/img/ins-reg-bg.png" alt="" />
       </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--modal for instructor form -->
+<div class="modal fade" id="instructorModal" #instructorModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(instructorModal)"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body p-4">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img
+          src="assets/img/ins-login.png" alt=""
+        />
+        <h2>Please fill the form to register as an instructor.</h2>
+        <form>
+          <input
+            name="name"
+           
+            class="vldform__textbox"
+            type="text"
+            placeholder="Enter your name"
+            required
+          />
+  
+          <input
+          name="phone"
+        
+          class="vldform__textbox"
+          type="number"
+          placeholder="Enter your phone number"
+          required
+        />
+          <!-- <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p> -->
+          <input
+            name="email"
+          
+            class="vldform__textbox"
+            type="email"
+            placeholder="Enter your email"
+            required
+          />
+  
+          <!-- <p *ngIf="submited && form.get('email').invalid">
+            Enter a Valid Email
+          </p> -->
+  
+          <button
+            type="submit"
+            (click)="modal.closeModal(instructorModal)"
+            class="btn btn-default"
+          >
+            <span class="btn-loading-content">
+              <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+            </span>
+            <span class="btn-default-content">
+              Register
+            </span>
+          </button>
+        </form>
+      </div>
+   
+      
     </div>
   </div>
 </div>

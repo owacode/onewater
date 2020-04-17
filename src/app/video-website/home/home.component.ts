@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../services/common.service';
+import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 
 
 @Component({
@@ -47,7 +48,7 @@ export class HomeComponent implements OnInit {
   public managementsinance;
   public legistativeregulatory;
   singleliked;
-  constructor(public commonservice:CommonService) { }
+  constructor(public commonservice:CommonService, public modal: ModalFunctions) { }
 
 ngOnInit() {
 
