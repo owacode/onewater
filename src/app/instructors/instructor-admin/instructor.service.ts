@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn:'root'
 })
 
 export class InstructorService {
-  constructor (private router: Router) {}
+  constructor (private router: Router, public http: HttpClient) {}
 
   user=null;
   userid=null;
@@ -32,5 +33,9 @@ export class InstructorService {
     this.useremail =null;
     console.log("instructor logged out");
     this.router.navigate(["/instructor/login"]);
+  }
+
+  registerInstructor(values) {
+    return this.http.post('http://localhost:3000/register-instructor',values);
   }
 }

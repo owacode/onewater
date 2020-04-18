@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { OwAcademyComponent } from './ow-academy.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Route[]=[
     {
@@ -17,6 +18,8 @@ const routes: Route[]=[
   ],
   imports: [
     RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule
     ]
 })
