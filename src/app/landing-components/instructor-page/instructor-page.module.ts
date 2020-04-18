@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InstructorPageComponent } from './instructor-page.component';
 import { Route, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 const routes: Route[]=[
     {
     path: '',
@@ -16,7 +18,9 @@ const routes: Route[]=[
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
     ]
 })
 export class InstructorPageModule { }
