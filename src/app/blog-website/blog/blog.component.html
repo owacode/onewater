@@ -235,12 +235,18 @@
         <h2>
           Featured Posts
         </h2>
-
+        <div class="no-data" *ngIf="!featuredblog?.length">
+          <img src="assets/img/icons/no-blog.svg" alt="">
+          <h4>
+            No blogs to display for now.
+          </h4>
+        </div>
         <owl-carousel
           [items]="featuredblog"
           [options]="carouselOptions"
           [carouselClasses]="['owl-theme', 'row', 'sliding']"
         >
+       
           <div class="item" *ngFor="let blog of featuredblog">
             <div class="outer-card">
               <div class="outer-overlay"></div>
@@ -284,6 +290,12 @@
           <!-- <div class="blog-block blog-block-right"></div> -->
 
           <div class="row justify-content-center">
+            <div class="no-data" *ngIf="!authors?.length">
+              <img src="assets/img/icons/no-author.svg" alt="">
+              <h4>
+                No authors on the platform.
+              </h4>
+            </div>
             <div class="col-lg-6 col-md-3 col-6" *ngFor="let author of authors">
               <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
                 <div class="top-auth-img">
@@ -305,9 +317,16 @@
 
 <div class="wrapper container-fluid">
   <div class="row no-gutter">
-    <div class="col-lg-9 no-gutter order-lg-first ">
+    <div class="col-lg-9 no-gutter order-lg-first">
+
       <div class="left-section">
         <h2>Latest Posts</h2>
+        <div class="no-data" *ngIf="!blogcards?.length">
+          <img src="assets/img/icons/no-post.svg" alt="">
+          <h4>
+            No posts to display for now.
+          </h4>
+        </div>
         <ngx-masonry
           [options]="{ transitionDuration: 0 }"
           [useImagesLoaded]="true"

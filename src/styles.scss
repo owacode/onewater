@@ -292,6 +292,28 @@ margin: 1rem;}
   }
 }
 
+.no-data{
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  width: 90%;
+  margin:1rem auto;
+  padding: 1rem;
+  border:1px solid #ccc;
+
+  img{
+    max-width: 70px;
+    height: auto !important;
+    filter: grayscale(1);
+  }
+  h4{
+    text-align: center;
+  }
+}
+
 .saved-text{
   text-align: center;
   font-size: 1rem;

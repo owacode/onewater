@@ -903,9 +903,9 @@ required
           Please enter your Proposed Course Topic!
         </p>
         <h6>Type of Course</h6>
-        <input formControlName="course_type" value="Webinar" type="radio" id="f-option" name="selector">
+        <input formControlName="course_type" value="Webinar" type="radio" id="f-option">
     <label for="f-option">Webinar</label>
-    <input formControlName="course_type" value="Online Course" type="radio" id="s-option" name="selector">
+    <input formControlName="course_type" value="Online Course" type="radio" id="s-option">
     <label for="s-option">   Online Course</label>
       <p *ngIf="submitted && form.get('course_type').invalid">
         Please select your Course Type!
