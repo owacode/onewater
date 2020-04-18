@@ -303,8 +303,6 @@
   </div>
 </div>
 
-
-
 <!--modal for instructor form -->
 <div class="modal fade" id="instructorModal" #instructorModal>
   <div class="modal-dialog modal-md">
@@ -380,9 +378,15 @@ type="email"
 placeholder="Enter your email"
 required
 />
-<p *ngIf="submitted && form.get('email').invalid">
-  Please enter your Email!
-</p>
+<div *ngIf="submitted && form.get('email').invalid">
+  <p *ngIf="form.get('email').errors.required">
+    Please enter your email!
+  </p>
+  <p *ngIf="form.get('email').errors.email">
+    Please enter a valid email!
+  </p>
+  
+</div>
 
           <input
           name="phone"
@@ -390,7 +394,6 @@ required
           class="vldform__textbox"
           type="number"
           placeholder="Phone Number: (Optional)"
-          required
         />
 
         <input formControlName="proposed_course_topic" type="text" class="vldform__textbox" placeholder="Proposed Course Topic">
@@ -398,9 +401,9 @@ required
           Please enter your Proposed Course Topic!
         </p>
         <h6>Type of Course</h6>
-        <input formControlName="course_type" value="Webinar" type="radio" id="f-option" name="selector">
+        <input formControlName="course_type" value="Webinar" type="radio" id="f-option">
     <label for="f-option">Webinar</label>
-    <input formControlName="course_type" value="Online Course" type="radio" id="s-option" name="selector">
+    <input formControlName="course_type" value="Online Course" type="radio" id="s-option">
     <label for="s-option">   Online Course</label>
       <p *ngIf="submitted && form.get('course_type').invalid">
         Please select your Course Type!
@@ -416,8 +419,8 @@ required
         </p>
           <button
             type="submit"
-            (click)="modal.closeModal(instructorModal)"
             class="btn btn-default"
+            (click)="modal.showBtnLoader()"
           >
             <span class="btn-loading-content">
               <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
@@ -427,6 +430,46 @@ required
             </span>
           </button>
         </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<!--instructor form submitted-->
+<div class="modal fade" id="detailsSubmitted" #detailsSubmitted>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(detailsSubmitted)"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body p-4">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img
+          src="assets/img/modals/recover-pass.jpg" alt=""
+        />
+        <h2>Thank you for reaching out to us. <br>
+          We will communicate with you the further steps on E-Mail
+        </h2>
+
+        <button
+            type="button"
+            class="btn btn-default"
+            (click)="modal.closeModal(detailsSubmitted)"
+          >OK
+          </button>
       </div>
 
 

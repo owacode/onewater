@@ -323,6 +323,20 @@ margin: 1rem;}
   animation: pop_up 3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
+.go-to-top-btn{
+  position: fixed;
+  z-index: 1000;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  box-shadow: 0 2px 6px 0 rgba(110, 110, 110, 0.2);
+  padding: 10px;
+  background-color: #fff;
+}
+
 @keyframes pop_up{
   0%{
     opacity: 0;
