@@ -170,7 +170,7 @@ The people you mentor through OneWater can become your friends, colleagues or bu
           src="assets/img/ins-login.png" alt=""
         />
         <h2>Please fill the form to register as an instructor.</h2>
-        <form>
+        <form [formGroup]="form" (submit)="register()">
 
 
 
@@ -178,61 +178,83 @@ The people you mentor through OneWater can become your friends, colleagues or bu
   <div class="col-md-6">
     <input
     name="name"
-   
+    formControlName="firstname"
     class="vldform__textbox"
     type="text"
-    placeholder="Firstname"
+    placeholder="First Name"
     required
   />
+  <p *ngIf="submitted && form.get('firstname').invalid">
+    Please enter your First Name!
+  </p>
   </div>
   <div class="col-md-6">
     <input
     name="lastname"
-   
+    formControlName="lastname"
     class="vldform__textbox"
     type="text"
-    placeholder="Lastname"
+    placeholder="Last Name"
     required
   />
+  <p *ngIf="submitted && form.get('lastname').invalid">
+    Please enter your Last Name!
+  </p>
   </div>
 </div>
-         
+
 <input
 name="course"
+formControlName="organization"
 class="vldform__textbox"
 type="text"
 placeholder="Organization Name"
 />
-
+<p *ngIf="submitted && form.get('organization').invalid">
+  Please enter your Organization!
+</p>
 <input
 name="email"
-
+formControlName="email"
 class="vldform__textbox"
 type="email"
 placeholder="Enter your email"
 required
 />
-  
+<p *ngIf="submitted && form.get('email').invalid">
+  Please enter your Email!
+</p>
+
           <input
           name="phone"
-        
+          formControlName="mobile_no"
           class="vldform__textbox"
           type="number"
           placeholder="Phone Number: (Optional)"
           required
         />
 
-        <input type="text" class="vldform__textbox" placeholder="Proposed Course Topic">
-
+        <input formControlName="proposed_course_topic" type="text" class="vldform__textbox" placeholder="Proposed Course Topic">
+        <p *ngIf="submitted && form.get('proposed_course_topic').invalid">
+          Please enter your Proposed Course Topic!
+        </p>
         <h6>Type of Course</h6>
-        <input type="radio" id="f-option" name="selector">
+        <input formControlName="course_type" value="Webinar" type="radio" id="f-option" name="selector">
     <label for="f-option">Webinar</label>
-
-    <input type="radio" id="s-option" name="selector">
+    <input formControlName="course_type" value="Online Course" type="radio" id="s-option" name="selector">
     <label for="s-option">   Online Course</label>
- 
-        <input type="text" class="vldform__textbox" placeholder="Proposed Course Title">
-        <textarea name="" id="" cols="30" rows="5" class="vldform__textbox" placeholder="Proposed Course Description (100 Words)"></textarea>
+      <p *ngIf="submitted && form.get('course_type').invalid">
+        Please select your Course Type!
+      </p>
+
+        <input formControlName="proposed_course_title" type="text" class="vldform__textbox" placeholder="Proposed Course Title">
+        <p *ngIf="submitted && form.get('proposed_course_title').invalid">
+          Please enter your Proposed Course Title!
+        </p>
+        <textarea formControlName="proposed_desc" name="" id="" cols="30" rows="5" class="vldform__textbox" placeholder="Proposed Course Description (100 Words)"></textarea>
+        <p *ngIf="submitted && form.get('proposed_desc').invalid">
+          Please enter your Proposed Desc!
+        </p>
           <button
             type="submit"
             (click)="modal.closeModal(instructorModal)"
@@ -247,8 +269,8 @@ required
           </button>
         </form>
       </div>
-   
-      
+
+
     </div>
   </div>
 </div>
