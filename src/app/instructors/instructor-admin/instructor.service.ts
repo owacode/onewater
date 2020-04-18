@@ -36,6 +36,6 @@ export class InstructorService {
   }
 
   registerInstructor(values) {
-    return this.http.post('http://localhost:3000/register-instructor',values);
+    return this.http.post('https://onewater-instructor-api.herokuapp.com/register-instructor',values);
   }
 }
