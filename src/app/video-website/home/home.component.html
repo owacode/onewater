@@ -39,7 +39,7 @@
     <div class="col-md-7 align-self-center">
       <div class="reg-text">
         <h3>
-          Spark important conversations and inspire others. 
+          Spark important conversations and inspire others.
           <br />
           Be a OneWater Blog Author.
         </h3>
@@ -305,11 +305,11 @@
                     </div> -->
                     <div class="video-metadata">
                           <div class="views">{{ video?.views }} views</div>
-                      
+
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                       
+
                     </div>
                   </div>
                 </div>
@@ -327,7 +327,7 @@
             </a>
           </div>
         </div>
-        
+
         <div class="my-container">
           <h2>Wastewater</h2>
           <owl-carousel *ngIf="wastewater?.length >=1"
@@ -355,13 +355,13 @@
                       John Wick
                     </div> -->
                     <div class="video-metadata">
-                     
+
                           <div class="views">{{ video?.views }} views</div>
-                       
+
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        
+
                     </div>
                   </div>
                 </div>
@@ -410,13 +410,13 @@
                       John Wick
                     </div> -->
                     <div class="video-metadata">
-                      
+
                           <div class="views">{{ video?.views }} views</div>
-                        
+
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        
+
                     </div>
                   </div>
                 </div>
@@ -465,13 +465,13 @@
                       John Wick
                     </div> -->
                     <div class="video-metadata">
-                    
+
                           <div class="views">{{ video?.views }} views</div>
-                       
+
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                       
+
                     </div>
                   </div>
                 </div>
@@ -520,13 +520,13 @@
                       John Wick
                     </div> -->
                     <div class="video-metadata">
-                    
+
                           <div class="views">{{ video?.views }} views</div>
-                       
+
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                       
+
                     </div>
                   </div>
                 </div>
@@ -575,13 +575,13 @@
                       John Wick
                     </div> -->
                     <div class="video-metadata">
-                     
+
                           <div class="views">{{ video?.views }} views</div>
-                       
+
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                        
+
                     </div>
                   </div>
                 </div>
@@ -630,13 +630,13 @@
                       John Wick
                     </div> -->
                     <div class="video-metadata">
-                      
+
                           <div class="views">{{ video?.views }} views</div>
-                       
+
                           <div class="date">
                             {{ video?.date_added | date: "MMMM d, y" }}
                           </div>
-                       
+
                     </div>
                   </div>
                 </div>
@@ -737,38 +737,50 @@
         </div>
         <img src="assets/img/icons/video-player.svg" style="width: 50%;max-width: 200px;" alt="">
         <h2>Fill the below form to post video on O-WOW</h2>
-        <form>
+        <form [formGroup]="form" (submit)="addVideo()">
           <input
             name="name"
-           
+            formControlName="title"
             class="vldform__textbox"
             type="text"
             placeholder="Enter video title"
             required
           />
-  
+
+          <p *ngIf="submitted && form.get('title').invalid">
+            Please enter the title!
+          </p>
+
           <input
           name="phone"
+          formControlName="video_link"
           class="vldform__textbox"
           type="text"
           placeholder="Paste video link"
           required
         />
+
+        <p *ngIf="submitted && form.get('video_link').invalid">
+          Please add video link!
+        </p>
         <span style="font-weight: 500; font-size: 0.8rem;text-align: left;"><i>To post a video, upload the video to any server, such as YouTube, and paste its link in the form above.</i></span>
           <!-- <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p> -->
           <textarea
             name="description"
+            formControlName="desc"
             class="vldform__textbox"
             type="text"
             placeholder="Enter description of the video"
             required
           ></textarea>
-        
-  
+          <p *ngIf="submitted && form.get('desc').invalid">
+            Please enter description!
+          </p>
+
           <!-- <p *ngIf="submited && form.get('email').invalid">
             Enter a Valid Email
           </p> -->
-  
+
           <button
             type="submit"
             (click)="modal.closeModal(postvideoModal)"
@@ -783,8 +795,8 @@
           </button>
         </form>
       </div>
-   
-      
+
+
     </div>
   </div>
 </div>

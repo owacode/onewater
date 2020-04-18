@@ -20,7 +20,7 @@ export class OwAcademyComponent implements OnInit {
       lastname: new FormControl(null, {validators:[Validators.required]}),
       email: new FormControl(null, {validators:[Validators.required]}),
       organization: new FormControl(null, {validators:[Validators.required]}),
-      mobile_no: new FormControl(null, {validators:[Validators.required]}),
+      mobile_no: new FormControl(null),
       proposed_course_topic: new FormControl(null, {validators:[Validators.required]}),
       course_type: new FormControl(null, {validators:[Validators.required]}),
       proposed_course_title: new FormControl(null, {validators:[Validators.required]}),
