@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../services/common.service';
 import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
     margin: 25,
     nav: true,
     dots:false,
-  
+
     stagePadding: 50,
     navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
     responsiveClass: true,
@@ -28,15 +29,15 @@ export class HomeComponent implements OnInit {
       },
       1100: {
         items: 3,
-  
+
       },
       1500: {
         items: 3,
-  
+
       }
     }
   }
- 
+
   public featuredvideos;
   public latestvideos;
   public likesvideos;
@@ -48,10 +49,16 @@ export class HomeComponent implements OnInit {
   public managementsinance;
   public legistativeregulatory;
   singleliked;
+  public form: FormGroup;
+  public submitted: Boolean=false;
   constructor(public commonservice:CommonService, public modal: ModalFunctions) { }
 
 ngOnInit() {
-
+this.form=new FormGroup({
+  title: new FormControl(null,{validators:[Validators.required]}),
+  video_link: new FormControl(null,{validators:[Validators.required]}),
+  desc: new FormControl(null,{validators:[Validators.required]})
+})
  //owl carousel settings
   // this.commonservice.getVideoByViews()
   //       .subscribe(result=>{
@@ -127,6 +134,20 @@ getId(url) {
   } else {
       return 'error';
   }
+}
+
+addVideo() {
+  this.submitted=true;
+  console.log(this.form.value);
+  if(this.form.invalid) {
+    return;
+  }
+  console.log(this.form.value);
+  this.commonservice.postVideo(this.form.value)
+  .subscribe(result=> {
+    console.log(result);
+    alert("Video Posted");
+  })
 }
 
 }

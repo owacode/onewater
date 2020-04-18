@@ -10,6 +10,10 @@ import { Subject } from 'rxjs';
 export class CommonService {
   constructor(public http:HttpClient, public route: Router){}
 
+  postVideo(data){
+    return this.http.post<{status:any,msg:any,result:any}>("https://onewater-video-api.herokuapp.com/post-authorvideo",data);
+  }
+
   getLatestvideos(){
     return this.http.get<{status:any,msg:any,result:any}>("https://onewater-video-api.herokuapp.com/videos");
   }
