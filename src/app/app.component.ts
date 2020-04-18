@@ -91,7 +91,7 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit() {
-
+  
     $(".go-to-top-btn").click(function() {
       $("html, body").animate({ 
           scrollTop: 0 
