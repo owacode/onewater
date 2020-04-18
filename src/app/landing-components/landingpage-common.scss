@@ -85,7 +85,15 @@ h5 {
 .section-intro {
   padding: 0 ;
 }
-
+@media screen and (max-width:1024px){
+  .cover-photo{
+    height: 55vh;
+  }
+  .page-title{
+    min-height: 55vh;
+    margin-top: -62vh;
+  }
+}
 @media screen and (max-width: 991px) {
   .cover-photo {
     height: 70vh;

@@ -63,11 +63,11 @@ toggleHeader() {
     let fixHeader = function () {
       if ($(window).scrollTop() > 70) {
         $(header).addClass("fixed-header");
-        //console.log("fix header");
+        console.log("fix header");
       }
       else {
         $(header).removeClass("fixed-header");
-        //console.log("remove header");
+        console.log("remove header");
       }
     }
     let showMenu = function () {
@@ -75,7 +75,21 @@ toggleHeader() {
       $(logo).toggleClass('mobile-logo');
       $(hamburger).toggleClass('clicked');
     }
-    $(window).on("scroll", fixHeader);
+    // let throttle = (fn,delay) => {
+    //   let last = 0;
+    //   return () =>{
+    //     const now = new Date().getTime();
+    //     if(now-last < delay){
+    //       //console.log("dont call");
+    //       return;
+          
+    //     }
+    //     last = now;
+    //     //console.log("call");
+    //     return fn();
+    //   }
+    // }
+    $(window).on("scroll", fixHeader );
     $(hamburger).on("click", showMenu);
     $(menulink).on("click", showMenu);
     this.form= new FormGroup({

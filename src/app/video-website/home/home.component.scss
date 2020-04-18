@@ -264,6 +264,15 @@ h2{
     }
   }
 }
+@media screen and (max-width: 1091px){
+  .cover-photo{
+    height: 60vh;
+  }
+.landing-section{
+  min-height: 60vh;
+  margin-top: -55vh;
+}
+}
 
 @media screen and (max-width: 991px){
   .cover-photo{height: 70vh;}

@@ -381,8 +381,8 @@ blockquote{
   border: none;
 }
 .partners-section{
-  padding-bottom: 55vh;
-  margin-bottom: -56vh;
+  padding-bottom: 25rem;
+  margin-bottom: -28rem;
 }
 
 @media all and (max-width: 991px) {
@@ -396,6 +396,7 @@ blockquote{
     width: 70%;
   }
   .platform-section{
+   
     h2{
       font-size: 2rem;
       text-align: center;
@@ -430,7 +431,11 @@ blockquote{
   .feature-name {
     font-size: 1.2rem;
   }
+  .partners-section{
+    margin-bottom: -22rem;
+  }
   .platform-section{
+   
     h2{
       font-size: 1.5rem;
       letter-spacing: -0.05rem;
