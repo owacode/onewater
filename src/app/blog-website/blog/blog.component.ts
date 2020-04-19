@@ -116,7 +116,7 @@ croList;
     },
     {
       'img': 'assets/img/icons/storm.svg',
-      'name': 'StormWater',
+      'name': 'Storm Water',
       'subcat': [
         {
           'subname': 'Watershed',
