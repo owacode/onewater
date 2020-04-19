@@ -90,7 +90,16 @@ export class AppComponent implements OnInit {
       }
     });
   }
-  ngOnInit() {}
+  ngOnInit() {
+  
+    $(".go-to-top-btn").click(function() {
+      $("html, body").animate({ 
+          scrollTop: 0 
+      }, "slow");
+      return false;
+  });
+
+  }
 
   getDecodedAccessToken(token: string): any {
     try {

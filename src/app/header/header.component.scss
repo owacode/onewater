@@ -183,6 +183,14 @@ header{
 
 }
 
+.desktop-dd{
+    .dropdown-content{
+        right: 0;
+        width: 130px;
+        left: auto;
+    }
+}
+
 
 @media all and (max-width:1091px){
     header{

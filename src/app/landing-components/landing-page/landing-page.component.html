@@ -11,10 +11,10 @@
             OneWater Academy
           </h1>
           <h3>
-            A dynamic platform for current and future water professionals!
+            A dynamic platform for current and aspiring water professionals!
           </h3>
           <p>
-            The stewards of world’s water supply are forging transformative solutions to address growing needs across the globe. Join our community
+            The stewards of world’s water supply are forging transformative solutions to address growing needs across the globe. Join our community.
           </p>
         </div>
       </div>
@@ -235,11 +235,7 @@
                     Reduce skills gaps, build succession plans, provide artificial intelligence-based social learning.
                   </p>
                 </li>
-                <li>
-                  <p>
-                    Encourage learning in the flow of work and allow peers to learn from each other.
-                  </p>
-                </li>
+                
                 <li>
                   <p>
                     Participate in communities of practice that are timely, relevant, and led by subject matter experts around the globe.
@@ -473,7 +469,7 @@
             </div>
             <div class="feature-desc">
               <p>
-OneWater Academy is the perfect platform to share your successes and grow your professional online presence in the water and wastewater industries
+OneWater Academy is the perfect platform to share your successes and grow your professional online presence in the water and wastewater industries.
               </p>
             </div>
           </div>
@@ -557,6 +553,15 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           </div>
         </div>
 
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+          <div class="outer-overlay"></div>
+            <div class="two-card">
+          <img src="assets/img/partners/osi.png" alt="" />
+          </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -617,7 +622,7 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
-          <img src="assets/img/partners/gwin.jpg" alt="" class="short-logo"/>
+          <img src="assets/img/partners/gwin.png" alt=""/>
           </div>
           </div>
         </div>
@@ -651,18 +656,19 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
-          <img src="assets/img/partners/gww.png" alt=""/>
+          <img src="assets/img/partners/icex.png" alt=""  style="width: 100%; height: auto;"/>
           </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
           <div class="outer-card">
-          <div class="outer-overlay"></div>
+            <div class="outer-overlay"></div>
             <div class="two-card">
-          <img src="assets/img/partners/osi.png" alt="" />
+          <img src="assets/img/partners/gww.png" alt=""/>
           </div>
           </div>
         </div>
+      
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
           <div class="outer-card">
             <div class="outer-overlay"></div>
@@ -885,9 +891,15 @@ type="email"
 placeholder="Enter your email"
 required
 />
-<p *ngIf="submitted && form.get('email').invalid">
-  Please enter your Email!
-</p>
+<div *ngIf="submitted && form.get('email').invalid">
+  <p *ngIf="form.get('email').errors.required">
+    Please enter your email!
+  </p>
+  <p *ngIf="form.get('email').errors.email">
+    Please enter a valid email!
+  </p>
+  
+</div>
 
           <input
           name="phone"
@@ -895,7 +907,6 @@ required
           class="vldform__textbox"
           type="number"
           placeholder="Phone Number: (Optional)"
-          required
         />
 
         <input formControlName="proposed_course_topic" type="text" class="vldform__textbox" placeholder="Proposed Course Topic">
@@ -921,8 +932,8 @@ required
         </p>
           <button
             type="submit"
-            (click)="modal.closeModal(instructorModal)"
             class="btn btn-default"
+            (click)="modal.showBtnLoader()"
           >
             <span class="btn-loading-content">
               <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
@@ -932,6 +943,46 @@ required
             </span>
           </button>
         </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<!--instructor form submitted-->
+<div class="modal fade" id="detailsSubmitted" #detailsSubmitted>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(detailsSubmitted)"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body p-4">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img
+          src="assets/img/modals/recover-pass.jpg" alt=""
+        />
+        <h2>Thank you for reaching out to us. <br>
+          We will communicate with you the further steps on E-Mail
+        </h2>
+
+        <button
+            type="button"
+            class="btn btn-default"
+            (click)="modal.closeModal(detailsSubmitted)"
+          >OK
+          </button>
       </div>
 
 

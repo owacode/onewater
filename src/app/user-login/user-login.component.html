@@ -18,6 +18,7 @@
       </div>
       <div class="col-lg-6">
         <div class="form-box">
+          <!--Login form-->
           <form
             class="vldform vldauth"
             (submit)="login()"
@@ -55,9 +56,9 @@
             Please enter your password!
             </p>
 
-            <!-- <a class="vldform__recoverypassword"
+            <a class="vldform__recoverypassword" (click)="showrecoveryform()"
               >Forgot password?</a
-            > -->
+            >
 
             <button
               class="vldform__button"
@@ -78,10 +79,40 @@
               New here ?
               <a
               routerLink="/signup"
-                >Signup</a
+                >Sign Up!</a
               >
             </p>
           </form>
+          <!--forgot password form-->
+            <!--------------PASSWORD RECOVERY FORM------------------->
+            <form class="vldform vldrecpass" [formGroup]="resetpassform" (submit)="resetpassword()">
+              <h1>Password Recovery</h1>
+              <input
+                class="vldform__textbox"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                formControlName="email"
+              />
+              <p *ngIf="resetpasssubmitted && resetpassform.get('email').invalid">
+                Please enter your email!
+              </p>
+              <button
+                class="vldform__button"
+                type="submit"
+                (click)="modal.showBtnLoader()"
+              >
+                <span class="btn-loading-content">
+                  <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+                </span>
+                <span class="btn-default-content">
+                  Submit
+                </span>
+              </button>
+              <br /><br />
+              <a (click)="showauthform()">Back to login</a>
+            </form>
         </div>
       </div>
     </div>
@@ -89,3 +120,113 @@
 </section>
 
 
+<!--MODALS-->
+
+<!-- Login before email verification Modal -->
+<div class="modal modal-animate" id="loginModal" role="dialog" #loginModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(loginModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img
+          src="assets/img/modals/verify-mail.jpg
+         "
+          alt=""
+        />
+        <h2>
+          Please verify your email address to login.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(loginModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--wrong credentials in login-->
+<div class="modal modal-animate" id="invalidModal" role="dialog" #invalidModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(invalidModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img src="assets/img/modals/invalid-details.png" alt="" />
+        <h2>
+          You have entered wrong email or password. Please try again.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(invalidModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--forgot password modal-->
+<div class="modal modal-animate" id="forgotpassModal" role="dialog" #forgotpassModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(forgotpassModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img src="assets/img/modals/pending-profile.png" alt="" />
+        <h2>
+         Password Recovery link has been sent to your register email id. Please check it to set new password.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(forgotpassModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>

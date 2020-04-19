@@ -16,19 +16,39 @@ import { Router } from "@angular/router";
 })
 export class UserLoginComponent implements OnInit {
   loginuser: FormGroup;
+  resetpassform: FormGroup;
   loginsubmitted: boolean = false;
+  resetpasssubmitted: boolean;
   constructor(
     public modal: ModalFunctions,
     public auth: AuthService,
     public route: Router
   ) {}
 
+
+  showrecoveryform() {
+    this.modal.hideBtnLoader();
+    document.querySelector(".vldauth")['style'].display = "none";
+    document.querySelector(".vldrecpass")['style'].display = "flex";
+  }
+
+  showauthform() {
+    this.modal.hideBtnLoader();
+    document.querySelector(".vldauth")['style'].display = "flex";
+    document.querySelector(".vldrecpass")['style'].display = "none";
+  }
+
   ngOnInit() {
+    this.showauthform();
     this.loginuser = new FormGroup({
       email: new FormControl(null, {
         validators: [Validators.required, Validators.email],
       }),
       password: new FormControl(null, { validators: [Validators.required] }),
+    });
+
+    this.resetpassform = new FormGroup({
+      email: new FormControl(null, { validators: [Validators.required, Validators.email] })
     });
   }
 
@@ -41,7 +61,20 @@ export class UserLoginComponent implements OnInit {
       return;
     }
     console.log(this.loginuser.value);
+    
     this.auth.login(this.loginuser.value).subscribe((result) => {
+      if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
+        console.log("invalid credentials");
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#invalidModal');
+        return;
+      }
+      else if(result.msg == 'User Email not Verified'){
+        console.log("user email not verified");
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#loginModal');
+        return;
+      }
       this.modal.hideBtnLoader();
       console.log(result);
       this.auth.token = result.result.token;
@@ -50,7 +83,25 @@ export class UserLoginComponent implements OnInit {
       localStorage.setItem("onewaterusertoken", result.result.token);
       localStorage.setItem("onewateruserid", this.auth.user_id);
       localStorage.setItem("onewaterusername", this.auth.name);
-      this.route.navigate(["/onewater"]);
+      this.route.navigate(["/user-admin"]);
     });
   }
+
+  resetpassword() {
+    this.resetpasssubmitted = true;
+    console.log(this.resetpassform.value);
+    if(this.resetpassform.invalid){
+      console.log('invalid reset form');
+      this.modal.hideBtnLoader();
+      return;
+    }
+    console.log(this.resetpassform.value,'after reset');
+    // this.auth.resetpassword(this.resetpassform.value)
+    // .subscribe(result=> {
+    //   console.log(result);
+    //   this.modal.openModal('#forgotpassModal');
+    //   this.modal.hideBtnLoader();
+    // })
+  }
+
 }

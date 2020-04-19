@@ -116,7 +116,8 @@ section{
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 0;
-    padding-bottom: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
     .col-md-3{
       padding: 0;
     }
@@ -163,6 +164,11 @@ section{
       color: #092b86;
     }
 
+}
+
+.hero-img{
+  position: relative;
+  z-index: 10;
 }
 
   .get-started{
@@ -238,12 +244,8 @@ section{
   }
 }
 @media all and (max-width: 991px){
-  .vision-section{
-    padding-top: 5vh;
-  }
-  .features-section{
-    padding-bottom: 80px;
-  }
+ 
+ 
   .mobile-wave{
     display: block;
   }
@@ -270,6 +272,7 @@ section{
   .hero-img,.getstarted-img{
     max-width: 500px;
     margin: auto;
+   
   }
 .block-2 {
     top: -3vh;
@@ -294,7 +297,7 @@ section{
 .vision-section {
   background-size: cover;
   background-position: center;
- 
+  padding-top: 10rem;
   .content{
     max-width: 500px;
     margin: auto;

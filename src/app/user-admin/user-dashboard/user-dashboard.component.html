@@ -13,7 +13,7 @@ class="dashboard-content-wrapper dash-tab"
         Platforms
       </h2>
       <div class="row justify-content-center" >
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
           <a href="https://onewater-tenant-2.auth0.com/samlp/i09kw2Zf1AT6Wvj3rdVTGp69LQ1JEUo6" target="_blank">
           <div class="platform-card">
                 <img src="assets/img/icons/laptop.svg" alt="">
@@ -22,9 +22,9 @@ class="dashboard-content-wrapper dash-tab"
                 </p>
               </div>
           </a>
-      </div>
+      </div> -->
           <div class="col-md-3">
-          <a href="https://onewater-tenant-2.auth0.com/samlp/Jqztax9x4GI4nU25D3z7HyMnqDx7me3t" target="_blank">
+          <a [routerLink]="['/home/learningacademy']">
           <div class="platform-card">
                 <img src="assets/img/icons/mentor.svg" alt="">
                 <p>
@@ -33,21 +33,22 @@ class="dashboard-content-wrapper dash-tab"
               </div>
             </a>
         </div>
+        <div class="col-md-3">
+          <a [routerLink]="['/onewaterblog']">
+         <div class="platform-card">
+
+               <img src="assets/img/icons/blog.svg" alt="">
+
+               <p>
+                 OneWater Blogs
+               </p>
+             </div>
+           </a>
+       </div>
+
       </div>
         <div class="row justify-content-center" >
-        <div class="col-md-3">
-           <a [routerLink]="['/onewaterblog']">
-          <div class="platform-card">
-
-                <img src="assets/img/icons/blog.svg" alt="">
-
-                <p>
-                  OneWater Blogs
-                </p>
-              </div>
-            </a>
-        </div>
-
+      
     <div class="col-md-3">
       <a [routerLink]="['/o-wow']">
       <div class="platform-card">

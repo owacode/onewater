@@ -18,7 +18,7 @@ export class OwAcademyComponent implements OnInit {
     this.form = new FormGroup({
       firstname: new FormControl(null, {validators:[Validators.required]}),
       lastname: new FormControl(null, {validators:[Validators.required]}),
-      email: new FormControl(null, {validators:[Validators.required]}),
+      email: new FormControl(null, {validators:[Validators.required,Validators.email]}),
       organization: new FormControl(null, {validators:[Validators.required]}),
       mobile_no: new FormControl(null),
       proposed_course_topic: new FormControl(null, {validators:[Validators.required]}),
@@ -32,8 +32,8 @@ export class OwAcademyComponent implements OnInit {
     this.submitted = true;
     console.log(this.form.value);
     if(this.form.invalid){
-      console.log('invalid reset form');
       this.modal.hideBtnLoader();
+      console.log('invalid reset form');
       return;
     }
     console.log(this.form.value,'after reset');
@@ -41,6 +41,8 @@ export class OwAcademyComponent implements OnInit {
     .subscribe(result=> {
       console.log(result);
       this.modal.hideBtnLoader();
+      this.modal.closeModal('#instructorModal');
+      this.modal.openModal('#detailsSubmitted');
     })
   }
 
