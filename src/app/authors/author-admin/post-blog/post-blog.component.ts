@@ -35,12 +35,13 @@ export class PostBlogComponent implements OnInit {
       height: 500,
       width: 1000,
       plugins : [
-        "advlist autolink lists image charmap print preview hr anchor pagebreak tinymcespellchecker link",
+        "advlist autolink lists paste image charmap print preview hr anchor pagebreak tinymcespellchecker link",
         "searchreplace wordcount fullscreen",
         "insertdatetime media nonbreaking save "
       ],
-      toolbar : 'formatselect | bold italic | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | image media pageembed template link anchor codesample |spellchecker language spellcheckdialog',
+      toolbar : 'paste | formatselect | bold italic | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | image media pageembed template link anchor codesample |spellchecker language spellcheckdialog',
       browser_spellcheck : true,
+      paste_data_images: true,
       image_advtab : true,
       images_upload_handler: function (blobInfo, success, failure) {
         console.log(blobInfo.blob())
