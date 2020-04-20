@@ -76,6 +76,13 @@ export class RecoverPasswordComponent implements OnInit {
         this.modal.openModal('#passSuccessModal');
         this.modal.hideBtnLoader();
       })
+    }else if(this.decoded_token.platform == 'onewateruser') {
+      this.http.post<{status: string, msg: string, result: any}>('https://onewater-auth.herokuapp.com/update-password',this.resetpassword.value)
+      .subscribe(result=> {
+        console.log(result);
+        this.modal.openModal('#passSuccessModal');
+        this.modal.hideBtnLoader();
+      })
     }
 
   }

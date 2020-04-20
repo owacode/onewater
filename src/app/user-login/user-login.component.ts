@@ -61,7 +61,7 @@ export class UserLoginComponent implements OnInit {
       return;
     }
     console.log(this.loginuser.value);
-    
+
     this.auth.login(this.loginuser.value).subscribe((result) => {
       if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
         console.log("invalid credentials");
@@ -96,12 +96,12 @@ export class UserLoginComponent implements OnInit {
       return;
     }
     console.log(this.resetpassform.value,'after reset');
-    // this.auth.resetpassword(this.resetpassform.value)
-    // .subscribe(result=> {
-    //   console.log(result);
-    //   this.modal.openModal('#forgotpassModal');
-    //   this.modal.hideBtnLoader();
-    // })
+    this.auth.resetpassword(this.resetpassform.value)
+    .subscribe(result=> {
+      console.log(result);
+      this.modal.openModal('#forgotpassModal');
+      this.modal.hideBtnLoader();
+    })
   }
 
 }

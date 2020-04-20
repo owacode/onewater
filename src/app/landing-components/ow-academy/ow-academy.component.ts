@@ -65,9 +65,14 @@ export class OwAcademyComponent implements OnInit {
     }
 
     console.log(this.drawingForm.value,'after reset');
-    this.modal.hideBtnLoader();
-    this.modal.closeModal('#drawingModal');
-    this.modal.openModal('#detailsSubmitted');
+    this.auth.registerInstructorForDrawing(this.drawingForm.value)
+    .subscribe(result=> {
+      console.log(result);
+      this.modal.hideBtnLoader();
+      this.modal.closeModal('#drawingModal');
+      this.modal.openModal('#detailsSubmitted');
+    })
+
   }
 
 }
