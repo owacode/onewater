@@ -8,11 +8,11 @@
   <div class="container">
     <div class="landing-text">
       <h2 class="platform-heading">
-        O-WOW
+        OneWater Talks
       </h2>
-      <p>
+      <!-- <p>
         OneWater One world.
-      </p>
+      </p> -->
     </div>
 
     <div class="landing-video">
@@ -39,10 +39,10 @@
     <div class="col-md-7 align-self-center">
       <div class="reg-text">
         <h3>
-          Spark important conversations <br />and inspire others.
+          Want to see your video posted?
           
         </h3>
-        <a (click)="modal.openModal(postvideoModal)">Post a video</a>
+        <a (click)="modal.openModal(postvideoModal)">Submit a video</a>
       </div>
     </div>
     <div class="col-md-5">
@@ -668,7 +668,7 @@
             class="col-lg-12 col-md-6 col-sm-12"
             *ngFor="let video of latestvideos"
           >
-            <div class="thumbnail-card card-border">
+            <div class="thumbnail-card card-shadow">
               <a
                 [routerLink]="['/o-wow/singlevideo/', video._id]"
                 title="{{ video?.title }}"
@@ -714,7 +714,7 @@
   </div>
 </div>
 
-<!--modal for instructor form -->
+<!--post video form modal-->
 <div class="modal fade" id="postvideoModal" #postvideoModal>
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -782,8 +782,8 @@
 
           <button
             type="submit"
-            (click)="modal.closeModal(postvideoModal)"
             class="btn btn-default"
+            (click)="modal.showBtnLoader()"
           >
             <span class="btn-loading-content">
               <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
@@ -796,6 +796,46 @@
       </div>
 
 
+    </div>
+  </div>
+</div>
+
+
+<!-- form submitted-->
+<div class="modal fade" id="videoPosted" #videoPosted>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(detailsSubmitted)"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body p-4">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="" />
+        </div>
+        <img src="assets/img/modals/recover-pass.jpg" alt="" />
+        <h2>
+          Video Submitted.
+          <br>
+          We will communicate with you the further steps on E-Mail
+        </h2>
+
+        <button
+          type="button"
+          class="btn btn-default"
+          (click)="modal.closeModal(videoPosted)"
+        >
+          OK
+        </button>
+      </div>
     </div>
   </div>
 </div>

@@ -21,9 +21,10 @@ export class AuthorLoginComponent implements OnInit {
   loginsubmitted: boolean = false;
   registersubmitted: boolean = false;
   resetpasssubmitted: boolean = false;
-
+  showText: boolean;
   showregform() {
     this.modal.hideBtnLoader();
+    this.showText = true;
     document.querySelector(".vldauth")['style'].display = "none";
     document.querySelector(".vldreg")['style'].display = "flex";
     document.getElementById("login-text")['style'].display = "none"
@@ -32,6 +33,7 @@ export class AuthorLoginComponent implements OnInit {
 
   showauthform() {
     this.modal.hideBtnLoader();
+    this.showText = false;
     document.querySelector(".vldauth")['style'].display = "flex";
     document.querySelector(".vldreg")['style'].display = "none";
     document.querySelector(".vldrecpass")['style'].display = "none";
@@ -60,6 +62,7 @@ export class AuthorLoginComponent implements OnInit {
       this.showauthform();
     }
     else {
+      this.showText = true;
       this.showregform();
     }
 

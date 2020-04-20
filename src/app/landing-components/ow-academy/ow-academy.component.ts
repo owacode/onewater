@@ -11,7 +11,9 @@ import { InstructorService } from 'src/app/instructors/instructor-admin/instruct
 export class OwAcademyComponent implements OnInit {
   toRender = 'signup';
   form:FormGroup;
+  drawingForm:FormGroup;
   public submitted: Boolean = false;
+  public drawingSubmitted: Boolean = false;
   constructor( public modal: ModalFunctions, public auth: InstructorService) { }
 
   ngOnInit() {
@@ -25,6 +27,13 @@ export class OwAcademyComponent implements OnInit {
       course_type: new FormControl(null, {validators:[Validators.required]}),
       proposed_course_title: new FormControl(null, {validators:[Validators.required]}),
       proposed_desc: new FormControl(null, {validators:[Validators.required]})
+    })
+
+    this.drawingForm = new FormGroup({
+      firstname: new FormControl(null, {validators:[Validators.required]}),
+      lastname: new FormControl(null, {validators:[Validators.required]}),
+      organization: new FormControl(null, {validators:[Validators.required]}),
+      email: new FormControl(null, {validators:[Validators.required,Validators.email]})
     })
   }
 
@@ -44,6 +53,21 @@ export class OwAcademyComponent implements OnInit {
       this.modal.closeModal('#instructorModal');
       this.modal.openModal('#detailsSubmitted');
     })
+  }
+
+  submitDrawingForm(){
+    this.drawingSubmitted = true;
+    console.log(this.form.value);
+    if(this.drawingForm.invalid){
+      this.modal.hideBtnLoader();
+      console.log('invalid reset form');
+      return;
+    }
+
+    console.log(this.drawingForm.value,'after reset');
+    this.modal.hideBtnLoader();
+    this.modal.closeModal('#drawingModal');
+    this.modal.openModal('#detailsSubmitted');
   }
 
 }

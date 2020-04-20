@@ -26,7 +26,7 @@
             <li class="navlink"><a routerLink="/home/learningacademy">OneWater Xchange</a></li>
             <!-- <li class="navlink"><a routerLink="/home/owx">OneWater Xchange</a></li> -->
             <li class="navlink"><a routerLink="/onewaterblog">OneWater Blogs</a></li>
-            <li class="navlink"><a routerLink="/o-wow">O-WOW</a></li>
+            <li class="navlink"><a routerLink="/o-wow">OneWater Talks</a></li>
           </div>
         </div>
       </li>
@@ -151,17 +151,26 @@
            "
           alt=""
         />
-        <h2>•	Enter your email address to get our weekly newsletter! </h2>
+        <h2>Share your email to stay tuned with OneWater Academy’s updates. </h2>
         <form [formGroup]="form">
           <input
-            name="name"
-            formControlName="name"
+            name="firstname"
+            formControlName="firstname"
             class="vldform__textbox"
             type="text"
-            placeholder="Name"
+            placeholder="First Name"
             required
           />
-          <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p>
+          <p *ngIf="submited && form.get('name').invalid">Enter Your First Name</p>
+          <input
+          name="lastname"
+          formControlName="lastname"
+          class="vldform__textbox"
+          type="text"
+          placeholder="Last Name"
+          required
+        />
+        <p *ngIf="submited && form.get('name').invalid">Enter Your Last Name</p>
           <input
             name="email"
             formControlName="email"

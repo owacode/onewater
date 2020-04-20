@@ -140,13 +140,17 @@ addVideo() {
   this.submitted=true;
   console.log(this.form.value);
   if(this.form.invalid) {
+    this.modal.hideBtnLoader();
     return;
+    
   }
   console.log(this.form.value);
   this.commonservice.postVideo(this.form.value)
   .subscribe(result=> {
     console.log(result);
-    alert("Video Posted");
+    this.modal.hideBtnLoader();
+    this.modal.closeModal('#postvideoModal');
+    this.modal.openModal('#videoPosted');
   })
 }
 

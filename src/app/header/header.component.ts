@@ -93,7 +93,8 @@ toggleHeader() {
     $(hamburger).on("click", showMenu);
     $(menulink).on("click", showMenu);
     this.form= new FormGroup({
-      name:new FormControl(null, {validators:[Validators.required]}),
+      firstname:new FormControl(null, {validators:[Validators.required]}),
+      lastname:new FormControl(null, {validators:[Validators.required]}),
       email:new FormControl(null, {validators:[Validators.required,Validators.email]}),
     })
   }

@@ -9,10 +9,9 @@
           OneWater
           <strong>Blogs</strong>
         </h2>
-        <!-- <p>
-          Spark important conversations and inspire others. <br>
-          Be a OneWater Blog Author.          
-        </p> -->
+         <p *ngIf="showText">
+          Become a OneWater Blog Author.         
+        </p> 
         <img src="assets/img/author-login.png" alt="" class="login-img" />
       </div>
       <div class="col-lg-6">
@@ -158,8 +157,8 @@
             </button>
           </form>
           <p class="vldform__signup" id="signup-text">
-            Already a member ?
-            <a (click)="showauthform()">Log in</a>
+            Already a member?
+            <a (click)="showauthform()">Login</a>
           </p>
 
 

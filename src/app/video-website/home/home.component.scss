@@ -55,7 +55,7 @@ h2{
 
 .landing-section{
   min-height: 110vh;
-  margin-top: -95vh;
+  margin-top: -85vh;
   padding-bottom: 0;
 .landing-text{
   margin-top: 5rem;
@@ -64,7 +64,7 @@ h2{
     text-align: left;
     font-size: 4rem;
     font-weight: 600;
-    letter-spacing: -3.5px;
+    letter-spacing: -0.2rem;
     margin: 2rem auto;
   }
   p{
@@ -182,6 +182,10 @@ img{
   }
 }
 .top-videos{
+
+  h2{
+    margin-top: 0;
+  }
 
   background: linear-gradient(0deg, rgba(255,255,255,0.26934523809523814) 70%, rgba(231,241,247,0.8323704481792717) 85%, rgba(213,231,242,1) 100%);
 
@@ -343,6 +347,14 @@ h2{
     }
   .landing-video:after{
     top: -20%;
+  }
+
+  .top-videos{
+
+    h2{
+      margin-top: 1rem;
+    }
+
   }
 
 .vod {
