@@ -57,7 +57,7 @@ toggleHeader() {
     const hamburger = document.querySelector('.hamburger');
     const menulink = document.querySelectorAll('.navlink a');
     // document.querySelector('.mobile-dropdown').addEventListener("click",this.toggleUserPanel);
-   
+
 
     this.toggleHeader();
     let fixHeader = function () {
@@ -82,7 +82,7 @@ toggleHeader() {
     //     if(now-last < delay){
     //       //console.log("dont call");
     //       return;
-          
+
     //     }
     //     last = now;
     //     //console.log("call");
@@ -106,7 +106,7 @@ toggleHeader() {
       this.modal.hideBtnLoader();
       return;
     }
-    this.http.post<{ status: string}>('https://onewater-job-api.herokuapp.com/subscribe',this.form.value)
+    this.http.post<{ status: string}>('https://onewater-auth.herokuapp.com/subscribe',this.form.value)
     .subscribe(result=>{
       if(result.status == "error"){
         console.log(result,'already suscribed');
