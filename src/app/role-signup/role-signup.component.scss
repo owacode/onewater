@@ -1,5 +1,10 @@
 .role-panel{
     min-height: 100vh;
+    background-image: url(/assets/img/role-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,7 +12,7 @@
 
     h2{
         text-align: center;
-        margin-bottom: 20vh;
+        margin-bottom: 10vh;
         margin-top: 0;
         color: #101010;
 
@@ -26,7 +31,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 200px;
+    height: 250px;
     width: 100%;
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
@@ -54,18 +59,18 @@
     .role-panel{
         h2{
             margin-bottom: 50px;
-            margin-top: 20vh;
+            margin-top: 15vh;
         }
        
     }
     .role-card{
         margin: 1rem auto;
-        height: 245px;
+        height: 250px;
     }
 }
 
 @media all and (max-width:380px){
     .role-card{
-        height: 180px;
+        height: 220px;
     }
 }
