@@ -14,6 +14,7 @@ import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
   styleUrls: ['./donation.component.scss']
 })
 export class DonationComponent implements OnInit {
+  showAmountField: Boolean = false;
   public payPalConfig ? : IPayPalConfig;
   public showSuccess;
   formSubmitted:Boolean = false;
@@ -108,5 +109,11 @@ export class DonationComponent implements OnInit {
       console.log('onClick', data, actions);
     },
   };
+  }
+  enterAmount(amount){
+    if(amount.value === 'other')
+    this.showAmountField = true;
+    else
+    this.userpayment.value.amount = amount;
   }
 }

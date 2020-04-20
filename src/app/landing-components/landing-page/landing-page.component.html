@@ -11,11 +11,15 @@
             OneWater Academy
           </h1>
           <h3>
-            A dynamic platform for current and aspiring water professionals!
+            A dynamic platform for current and aspiring OneWater professionals!
           </h3>
           <p>
-            The stewards of world’s water supply are forging transformative solutions to address growing needs across the globe. Join our community.
+            The stewards of world’s water supply are forging transformative solutions to address growing needs across the globe. 
+            
           </p>
+          <div class="mybtn">
+            <a routerLink="/signup"> Join our community</a>
+          </div>
         </div>
       </div>
       <div class="col-lg-6 order-first">
@@ -45,7 +49,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h2>
-            OneWater Academy provides access to three channels to share, learn and network with others in the water and wastewater industries.
+            OneWater Academy provides access to three channels to share, learn and network with others in the OneWater sector.
           </h2>
         </div>
         <div class="col-lg-12 features-section-p">
@@ -88,7 +92,7 @@
               <a routerLink="/o-wow">
               <div class="feature-card">
                 <h3>
-                  O-WOW
+                  OneWater Talks
                 </h3>
                 <p>
                   Listen & Share
@@ -227,12 +231,12 @@
               <ul>
                 <li>
                   <p>
-                    Access a state-of-the art next generation learning platform that accelerates and advances knowledge sharing and capacity building in the water sector.
+                    Access a state-of-the art next generation learning platform that accelerates and advances knowledge sharing and capacity building in the OneWater sector.
                   </p>
                 </li>
                 <li>
                   <p>
-                    Reduce skills gaps, build succession plans, provide artificial intelligence-based social learning.
+                    Reduce skills gaps, build succession plans, and provide artificial intelligence-based social learning.
                   </p>
                 </li>
                 
@@ -303,19 +307,19 @@
         <div class="row align-items-center">
           <div class="col-lg-6 order-lg-first">
             <h2>
-              O-WOW   <span class="small-text">One Water One World</span>
+               OneWater Talks  <!-- <span class="small-text">One Water One World</span> -->
             </h2>
 
             <div class="about-platform">
               <ul>
                 <li>
                   <p>
-                    Enter a showcase of speakers presenting on important and innovative ideas in the water sector.
+                    Enter a showcase of speakers presenting on important and innovative ideas in the OneWater sector.
                   </p>
                 </li>
                 <li>
                   <p>
-                    Access water conversations that are engaging, challenging and inspiring learning opportunities.
+                    Watch a curated library of videos from stakeholders related to the OneWater sector.
                   </p>
                 </li>
               </ul>
@@ -323,7 +327,7 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <a [routerLink]="['/o-wow']">
-                      Go to O-WOW
+                      Go to OneWater Talks
                     </a>
                   </div>
                 </div>
@@ -353,12 +357,12 @@
             <div class="about-platform">
              <ul><li>
                <p>
-                Dive into posts on topics related to water from thought leaders from around the globe.
+                Dive into an open platform for everyone to read and contribute on cutting-edge conversations, innovation, and ideas in the OneWater sector.
                </p>
              </li>
             <li>
               <p>
-                Interested in going deeper? Trending blog posts will be expanded into courses, webinars and discussions to support greater knowledge development.
+                Trending blogs will be expanded into courses, webinars, and discussions to support greater knowledge development.
               </p>
             </li></ul>
               <div class="mybtn">
@@ -410,23 +414,31 @@
 <section class="become-member">
   <div class="block-fb2"></div>
   <h1>
-    Become a member
+    Contribute to the OneWater Community.
   </h1>
   <div class="container">
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col-md-6 text-center">
         <img src="assets/img/ins-login.png" alt="" class="img">
+        <h5>
+          Help shape the future by sharing your knowledge and experience.
+        </h5>
         <div class="mybtn">
-          <a (click)="modal.openModal('#instructorModal')" class="d-block">
-            Become an Instructor
+          <a routerLink="/home/instructor" class="d-block">
+            Become a OneWater Instructor
           </a>
         </div>
       </div>
       <div class="col-md-6 text-center">
         <img src="assets/img/author-login.png" alt="" class="img">
+        <h5>
+           <h5 class="text-white mb-2">
+            Freely share your ideas, successful projects, and innovation in the OneWater sector.
+        </h5>
+        </h5>
         <div class="mybtn">
           <a [routerLink]="['/onewaterblog/author',toRender]" class="d-block">
-            Become an Author
+            Become a OneWater Blog Author
           </a>
         </div>
       </div>
@@ -439,7 +451,7 @@
   <!-- <div class="block-fb1"></div>  -->
 
   <h1>
-    Features of OneWater Academy
+    OneWater Academy’s Value Proposition
   </h1>
   <div class="container">
     <div class="features">
@@ -454,7 +466,7 @@
             </div>
             <div class="feature-desc">
               <p>
-                OneWater Academy online learning provides members with the opportunity to plan study time around the rest of their day, instead of the other way around.
+                OneWater Academy has taken learning beyond the classroom by allowing you to learn at your own pace through our dynamic, social, and collaborative learning platform.
               </p>
             </div>
           </div>
@@ -469,7 +481,7 @@
             </div>
             <div class="feature-desc">
               <p>
-OneWater Academy is the perfect platform to share your successes and grow your professional online presence in the water and wastewater industries.
+                OneWater Academy is the perfect platform for you to establish yourself as the subject matter expert while engaging and growing with the OneWater community.
               </p>
             </div>
           </div>
@@ -518,6 +530,16 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           </div>
           </div>
         </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+          <img src="assets/img/partners/arup.jpg" alt="" />
+          </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -531,7 +553,9 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
-          <img src="assets/img/partners/arup.jpg" alt="" />
+         <h4 class="text-center">
+           Xylem
+         </h4>
           </div>
           </div>
         </div>
@@ -546,15 +570,6 @@ OneWater Academy is the perfect platform to share your successes and grow your p
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
           <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-          <img src="assets/img/partners/pci.png" alt="" class="short-logo" />
-          </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
-          <div class="outer-card">
           <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/osi.png" alt="" />
@@ -562,6 +577,43 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           </div>
         </div>
 
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+         <h4 class="text-center">
+           Nova
+         </h4>
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+          <img src="assets/img/partners/pci.png" alt="" class="short-logo" />
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="partners">
+    <div class="container">
+      <h3 class="partner-heading">Subscribers</h3>
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+          <img src="assets/img/partners/gwin.png" alt=""/>
+          </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -576,7 +628,45 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
+          <img src="assets/img/partners/gcn.png" alt="" class="short-logo"/>
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+          <img src="assets/img/partners/trs.png" alt="" />
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
           <img src="assets/img/partners/coe.jpg" alt="" />
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+         <h4>
+           FIU
+         </h4>
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+          <img src="assets/img/partners/wrc.jpg" alt="" class="short-logo"/>
           </div>
           </div>
         </div>
@@ -603,47 +693,31 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
+          <img src="assets/img/partners/icex.png" alt=""  style="width: 100%; height: auto;"/>
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <div class="outer-card">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
           <img src="assets/img/partners/NL.png" alt="" />
           </div>
           </div>
         </div>
 
-      </div>
-      <div class="row justify-content-center">
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
-          <img src="assets/img/partners/wrc.jpg" alt="" class="short-logo"/>
+          <h4>
+            Canadian
+          </h4>
           </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-          <img src="assets/img/partners/gwin.png" alt=""/>
-          </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-          <img src="assets/img/partners/acrelogo.png" alt="" class="short-logo"/>
-          </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-          <img src="assets/img/partners/gcn.png" alt="" class="short-logo"/>
-          </div>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
+
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
           <div class="outer-card">
             <div class="outer-overlay"></div>
@@ -652,14 +726,16 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           </div>
           </div>
         </div>
+
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
-          <img src="assets/img/partners/icex.png" alt=""  style="width: 100%; height: auto;"/>
+          <img src="assets/img/partners/acrelogo.png" alt="" class="short-logo"/>
           </div>
           </div>
         </div>
+
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
           <div class="outer-card">
             <div class="outer-overlay"></div>
@@ -668,15 +744,7 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           </div>
           </div>
         </div>
-      
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
-          <div class="outer-card">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-          <img src="assets/img/partners/trs.png" alt="" />
-          </div>
-          </div>
-        </div>
+
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
           <div class="outer-card">
             <div class="outer-overlay"></div>
@@ -685,7 +753,12 @@ OneWater Academy is the perfect platform to share your successes and grow your p
           </div>
           </div>
         </div>
+
+       
+
       </div>
+    
+       
     </div>
   </div>
 </section>

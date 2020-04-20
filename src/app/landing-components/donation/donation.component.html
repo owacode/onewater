@@ -6,12 +6,9 @@
 <section class="page-title">
   <div class="container">
     <h1>
-      Give to OneWater Academy
+      Give
     </h1>
 
-    <h3>
-       Help us do more.
-    </h3>
     <!-- <div class="mybtn">
       <a pageScroll href="#sec-1">
         How can I help
@@ -25,13 +22,14 @@
     <div class="row">
       <div class="col-lg-6">
         <h2>
-          Your generous gift will help support the educational mission of OneWater Academy. 
+          Support our OneWater Drop Campaign.
         </h2>
         <p>
-Through our various programs and initiatives, OneWater Academy promotes a sustainable, resilient and knowledgeable workforce for the water and wastewater industries.
+          Little drops of water make a mighty ocean. No contribution is small and every bit of your support will help OneWater Academy further its mission and vision to build a resilient OneWater workforce. 
         </p>
         <p>
           OneWater Academy is a 501(c)(3) nonprofit organization. All or part of your gift may be tax deductible as a charitable contribution.
+          
         </p>
       </div>
       <div class="col-lg-6 img-wrap">
@@ -63,7 +61,7 @@ Through our various programs and initiatives, OneWater Academy promotes a sustai
         <div class="donation-form form-box">
           <form [formGroup]="userpayment" class="vldform">
             <div class="form-head">
-              <h1>Give Today</h1>
+              <h1>Support the OneWater Drop Campaign</h1>
             </div>
             <input
               class="vldform__textbox"
@@ -92,15 +90,25 @@ Through our various programs and initiatives, OneWater Academy promotes a sustai
             *ngIf="formSubmitted && userpayment.get('email').invalid"
           >
           Please enter your email!</p>
-            <input
+
+          <select class="vldform__textbox" (change)="enterAmount(amountDonated)" #amountDonated>
+            <option value="">Select amout</option>
+            <option value="1">$1</option>
+            <option value="5">$5</option>
+            <option value="10">$10</option>
+            <option value="25">$25</option>
+            <option value="50">$50</option>
+            <option value="100">$100</option>
+            <option value="other">Other</option>
+          </select>
+            <input *ngIf="showAmountField"
               class="vldform__textbox halfwidth"
               type="number"
               name="pass2"
-              placeholder="Amount Paying (dollars)"
+              placeholder="Enter the amount Paying (dollars)"
               required
               formControlName="amount"
             />
-
             <p
             style="color: red"
             *ngIf="formSubmitted && userpayment.get('amount').invalid"

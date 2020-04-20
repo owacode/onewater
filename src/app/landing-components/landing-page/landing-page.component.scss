@@ -216,8 +216,14 @@ section {
 }
 .two-card{
   min-height: 120px;
-    display: flex;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h4{
+    margin: 0;
+  }
 }
 .news-img {
   width: 70%;
@@ -267,8 +273,13 @@ section {
   h1{
     margin-bottom: 3rem;
   }
+  h5{
+    max-width: 350px;
+    color: #fff;
+    margin:1rem auto;
+  }
   .mybtn{
-    width: 300px;
+    width: 350px;
   }
 }
 
