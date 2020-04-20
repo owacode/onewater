@@ -421,7 +421,7 @@
       <div class="col-md-6 text-center">
         <img src="assets/img/ins-login.png" alt="" class="img">
         <h5>
-          Help shape the future by sharing your knowledge and experience.
+          Help shape the future by sharing your knowledge and <br> experience.
         </h5>
         <div class="mybtn">
           <a routerLink="/home/instructor" class="d-block">
@@ -865,21 +865,13 @@
         />
         <h2>Please login to read the blog.</h2>
       </div>
-      <button
-        type="button"
-        class="btn btn-default"
-        style="padding: 0;"
-        data-dismiss="modal"
-        (click)="modal.closeModal(blogModal)"
-      >
+     
         <a
-          href="https://onewater-tenant-2.auth0.com/samlp/51lZrlOtuPf5uwe4WP0P3EbY3VwuTz7D"
-          style="display: block;
-         margin: 1rem 0;"
+          routerLink="/login"
+          class="login-btn"
         >
           Login now
         </a>
-      </button>
       <button  (click)="modal.closeModal(blogModal)"  class="text-center" style="margin: 0rem auto 1rem;padding:0.5rem;border: none;background-color: transparent;">
         <a routerLink="/signup"> New Here? Signup Now.</a>
       </button>
