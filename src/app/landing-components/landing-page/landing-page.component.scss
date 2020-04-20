@@ -71,6 +71,25 @@ section {
   background-position:top center;
 }
 
+
+.login-btn{
+  color: #101010;
+    background: transparent;
+    font-weight: bold;
+    padding: 1rem;
+    width: 80%;
+    border-radius: 4px;
+    text-align: center;
+    margin: 2rem auto;
+    border: 2px solid #101010;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+      background: #101010;
+      color: #fff;
+    }
+}
+
 .platforms {
   position: relative;
 }

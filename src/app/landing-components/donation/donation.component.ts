@@ -114,6 +114,10 @@ export class DonationComponent implements OnInit {
     if(amount.value === 'other')
     this.showAmountField = true;
     else
-    this.userpayment.value.amount = amount;
+    {
+      this.showAmountField = false;
+      this.userpayment.value.amount = amount;
+    }
+   
   }
 }

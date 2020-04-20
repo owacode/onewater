@@ -63,11 +63,11 @@ toggleHeader() {
     let fixHeader = function () {
       if ($(window).scrollTop() > 70) {
         $(header).addClass("fixed-header");
-        console.log("fix header");
+       // console.log("fix header");
       }
       else {
         $(header).removeClass("fixed-header");
-        console.log("remove header");
+        //console.log("remove header");
       }
     }
     let showMenu = function () {
