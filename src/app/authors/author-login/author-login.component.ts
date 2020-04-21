@@ -49,6 +49,11 @@ export class AuthorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "none"
   }
 
+  passwordResetSuccess(){
+    this.modal.closeModal('#forgotpassModal');
+    this.showauthform();
+  }
+
   constructor(public http: HttpClient, public auth: AuthorAuthService, public userauth: AuthService, public route:Router, public modal:ModalFunctions, public instructorauth: InstructorService, public state: ActivatedRoute) {
   }
 
@@ -196,9 +201,14 @@ export class AuthorLoginComponent implements OnInit {
     console.log(this.resetpassform.value,'after reset');
     this.auth.resetpassword(this.resetpassform.value)
     .subscribe(result=> {
+      this.modal.hideBtnLoader();
+      if(result.msg == 'Email not Exist'){
+        console.log("email doesn't not exist");
+        this.modal.openModal('#resetMailExist');
+        return;
+      }
       console.log(result);
       this.modal.openModal('#forgotpassModal');
-      this.modal.hideBtnLoader();
     })
   }
 

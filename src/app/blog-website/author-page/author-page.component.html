@@ -35,7 +35,7 @@
             {{ author?.bio }}
           </p>
         </div>
-        <div class="author-contact">
+        <div class="author-contact" *ngIf="author?.linkedIn_id != 'null' || author?.twitter_id != 'null'">
           <h3>Also available at :</h3>
           <div class="social-media">
             <a

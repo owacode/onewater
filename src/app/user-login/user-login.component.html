@@ -205,6 +205,45 @@
   </div>
 </div>
 
+
+<!--reset password doesn't exist modal-->
+<div class="modal modal-animate" id="resetMailExist" role="dialog" #resetMailExist>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(resetMailExist)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="" >
+        </div>
+        <img src="assets/img/modals/mail-not-exist.svg" style="width: 35%;" alt="" />
+        <h2>
+          Entered email doesn't exist on OneWater Platform. 
+          <br>
+          Please try again.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(resetMailExist)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+
 <!--forgot password modal-->
 <div class="modal modal-animate" id="forgotpassModal" role="dialog" #forgotpassModal>
   <div class="modal-dialog modal-md">
@@ -231,8 +270,7 @@
       <button
         type="button"
         class="btn btn-default"
-        data-dismiss="modal"
-        (click)="modal.closeModal(forgotpassModal)"
+        (click)="passwordResetSuccess()"
       >
         OK
       </button>

@@ -38,6 +38,10 @@ export class UserLoginComponent implements OnInit {
     document.querySelector(".vldrecpass")['style'].display = "none";
   }
 
+  passwordResetSuccess(){
+    this.modal.closeModal('#forgotpassModal');
+    this.showauthform();
+  }
   ngOnInit() {
     this.showauthform();
     this.loginuser = new FormGroup({
@@ -80,6 +84,7 @@ export class UserLoginComponent implements OnInit {
       this.auth.token = result.result.token;
       this.auth.user_id = result.result.user._id;
       this.auth.name = result.result.user.name;
+      this.auth.isLoggedIn = true;
       localStorage.setItem("onewaterusertoken", result.result.token);
       localStorage.setItem("onewateruserid", this.auth.user_id);
       localStorage.setItem("onewaterusername", this.auth.name);
@@ -98,9 +103,14 @@ export class UserLoginComponent implements OnInit {
     console.log(this.resetpassform.value,'after reset');
     this.auth.resetpassword(this.resetpassform.value)
     .subscribe(result=> {
+      this.modal.hideBtnLoader();
+      if(result.msg == 'Email not Exist'){
+        console.log("email doesn't not exist");
+        this.modal.openModal('#resetMailExist');
+        return;
+      }
       console.log(result);
       this.modal.openModal('#forgotpassModal');
-      this.modal.hideBtnLoader();
     })
   }
 

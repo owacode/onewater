@@ -166,21 +166,25 @@ header{
 .mobile-dropdown{
     display: none;
     margin-right: 50px;
+
+    .dropdown-content{
+        width: 150px;
+    }
+
+
  }
+
  @media all and (min-width:1091px){
     .dropdown-btn:hover .dropdown-content{
         display: block;
      }
  }
    
-
-
 .platform-dd{
     color: #fff;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease-in-out;
-
 }
 
 .desktop-dd{
@@ -190,7 +194,6 @@ header{
         left: auto;
     }
 }
-
 
 @media all and (max-width:1091px){
     header{
@@ -222,6 +225,8 @@ header{
        display: block;
        .dropdown-content{
            position: absolute !important;
+           right: 0;
+           left: auto;
        }
     }
     .visible{

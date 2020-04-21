@@ -55,9 +55,10 @@ export class AuthService {
   logout() {
      this.isLoggedIn = false;
      this.token=null;
+     this.user_id=null;
      localStorage.removeItem("onewaterusertoken");
      localStorage.removeItem("onewateruserid");
      localStorage.removeItem("onewaterusername");
-     this.route.navigate(['/']);
+     this.route.navigate(['/login']);
   }
 }
