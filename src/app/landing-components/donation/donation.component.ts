@@ -40,9 +40,10 @@ export class DonationComponent implements OnInit {
     };
   }
   private initConfig(): void {
+    // console.log(this.userpayment.value.amount,'$$$$$$')
     this.payPalConfig = {
     currency: 'USD',
-    clientId: 'AZXdzxfW1FQC8ntB29YV2q33s5lbekfwSIACIL9fE3XMXP8R4s4EGvLaV02n4Xrk65OcthkhfQ-uxBhA',
+    clientId: 'AQ71En39h4f3YYyjU9vdy1O2Ar64jS7-RoaR6j6YpfdoJLSKpWzGrpcDEWkBll9VaakgHW1LKAWoxe4w',
     createOrderOnClient: (data) => <ICreateOrderRequest>{
       intent: 'CAPTURE',
       purchase_units: [
@@ -71,13 +72,13 @@ export class DonationComponent implements OnInit {
         }
       ]
     },
-    advanced: {
-      commit: 'true'
-    },
-    style: {
-      label: 'paypal',
-      layout: 'vertical'
-    },
+    // advanced: {
+    //   commit: 'true'
+    // },
+    // style: {
+    //   label: 'paypal',
+    //   layout: 'vertical'
+    // },
     onApprove: (data, actions) => {
       console.log('onApprove - transaction was approved, but not authorized', data, actions);
       actions.order.get().then(details => {
@@ -106,18 +107,21 @@ export class DonationComponent implements OnInit {
       this.modal.openModal("#paymentFailed");
     },
     onClick: (data, actions) => {
+      console.log(this.userpayment.value.amount,'$$$$$$')
       console.log('onClick', data, actions);
     },
   };
   }
   enterAmount(amount){
+    console.log(amount)
+    console.log(amount.value)
     if(amount.value === 'other')
     this.showAmountField = true;
     else
     {
       this.showAmountField = false;
-      this.userpayment.value.amount = amount;
+      this.userpayment.value.amount = amount.value;
     }
-   
+
   }
 }
