@@ -54,7 +54,6 @@ h2{
 }
 
 .landing-section{
-  min-height: 110vh;
   margin-top: -85vh;
   padding-bottom: 0;
   margin-bottom: 0;
@@ -66,6 +65,8 @@ h2{
     font-size: 4rem;
     letter-spacing: -0.2rem;
     margin: 2rem auto;
+    position: relative;
+    z-index: 10;
   }
   p{
     font-size: 20px;
