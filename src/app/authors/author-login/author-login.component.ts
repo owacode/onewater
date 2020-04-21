@@ -152,6 +152,8 @@ export class AuthorLoginComponent implements OnInit {
             }
 
             if(result.status =='error') return;
+            this.auth.token = result.result.token;
+            this.auth.loggedIn = true;
             this.auth.authoremail=result.result.email;
             this.auth.authorid=result.result.id;
             this.auth.authorname=result.result.name

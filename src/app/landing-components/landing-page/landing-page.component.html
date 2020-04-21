@@ -49,7 +49,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h2>
-            OneWater Academy provides access to three channels to share, learn, and network with others in the OneWater sector.
+            OneWater Academy provides access to three channels to share, learn, and network with others in the OneWater sector
           </h2>
         </div>
         <div class="col-lg-12 features-section-p">
@@ -218,11 +218,7 @@
     <div class="container">
       <div class="platform">
         <div class="row align-items-center">
-          <div class="col-lg-6 order-first">
-            <div class="platform-img">
-              <img src="assets/img/landing/academy.png" alt="" />
-            </div>
-          </div>
+         
           <div class="col-lg-6 order-lg-first">
             <h2>
               OneWater Xchange
@@ -259,7 +255,11 @@
               </div>
             </div>
           </div>
-
+          <div class="col-lg-6 order-first">
+            <div class="platform-img">
+              <img src="assets/img/landing/academy.png" alt="" />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -302,6 +302,42 @@
           </div>
         </div>
       </div> -->
+      <div class="platform">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-first">
+            <div class="platform-img">
+              <img src="assets/img/landing/plat-blog.png" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-first">
+            <h2>
+              OneWater Blogs
+            </h2>
+            <div class="about-platform">
+             <ul><li>
+               <p>
+                Dive into an open platform for everyone to read and contribute on cutting-edge conversations, innovation, and ideas in the OneWater sector.
+               </p>
+             </li>
+            <li>
+              <p>
+                Trending blogs will be expanded into courses, webinars, and discussions to support greater knowledge development.
+              </p>
+            </li></ul>
+              <div class="mybtn">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <a routerLink="/onewaterblog" class="d-block">
+                      Go to OneWater Blogs
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="platform">
         <div class="row align-items-center">
@@ -343,42 +379,7 @@
         </div>
       </div>
 
-      <div class="platform">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-first">
-            <div class="platform-img">
-              <img src="assets/img/landing/plat-blog.png" alt="" />
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-first">
-            <h2>
-              OneWater Blogs
-            </h2>
-            <div class="about-platform">
-             <ul><li>
-               <p>
-                Dive into an open platform for everyone to read and contribute on cutting-edge conversations, innovation, and ideas in the OneWater sector.
-               </p>
-             </li>
-            <li>
-              <p>
-                Trending blogs will be expanded into courses, webinars, and discussions to support greater knowledge development.
-              </p>
-            </li></ul>
-              <div class="mybtn">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <a routerLink="/onewaterblog" class="d-block">
-                      Go to OneWater Blogs
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  
 
       <!-- <div class="platform">
           <div class="row">
@@ -424,7 +425,7 @@
           Help shape the future by sharing your knowledge and <br> experience
         </h5>
         <div class="mybtn">
-          <a routerLink="/home/instructor" class="d-block">
+          <a (click)="modal.openModal(instructorModal)" class="d-block">
             Become a OneWater Instructor
           </a>
         </div>
@@ -438,7 +439,7 @@
         </h5>
         <div class="mybtn">
           <a [routerLink]="['/onewaterblog/author',toRender]" class="d-block">
-            Become a OneWater Blog Author
+            Become a OneWater Blogs Author
           </a>
         </div>
       </div>
@@ -462,7 +463,7 @@
               <i data-feather="clock"></i>
             </div>
             <div class="feature-name">
-              Convenience & Flexibility
+              Convenience and <br> Flexibility
             </div>
             <div class="feature-desc">
               <p>
@@ -477,7 +478,7 @@
               <i data-feather="eye"></i>
             </div>
             <div class="feature-name">
-              Visibility & Presence
+              Visibility and <br> Presence
             </div>
             <div class="feature-desc">
               <p>
@@ -492,7 +493,7 @@
               <i data-feather="thumbs-up"></i>
             </div>
             <div class="feature-name">
-              Competitive Advantage
+              Competitive <br> Advantage
             </div>
             <div class="feature-desc">
               <p>
@@ -903,7 +904,7 @@
         <img
           src="assets/img/ins-login.png" alt=""
         />
-        <h2>Please fill the form to register as an instructor.</h2>
+        <h2>Become a OneWater Instructor</h2>
         <form [formGroup]="form" (submit)="register()">
 
 
@@ -1002,7 +1003,7 @@ required
               <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
             </span>
             <span class="btn-default-content">
-              Register
+              Submit
             </span>
           </button>
         </form>

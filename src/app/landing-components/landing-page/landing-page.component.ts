@@ -51,6 +51,7 @@ export class LandingPageComponent implements OnInit {
       this.modal.closeModal('#instructorModal');
       this.modal.openModal('#detailsSubmitted');
       this.form.reset();
+      this.submitted = false;
     })
   }
 

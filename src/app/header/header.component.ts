@@ -5,6 +5,7 @@ import * as $ from 'jquery';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { ModalFunctions } from '../shared-functions/modal-functions';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
+import { AuthorAuthService } from '../authors/services/author-auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -48,7 +49,7 @@ toggleHeader() {
 }
 }
 
-  constructor(public http: HttpClient, public auth: AuthService, public router: Router, public modal:ModalFunctions) {
+  constructor(public http: HttpClient, public auth: AuthService, public author: AuthorAuthService, public router: Router, public modal:ModalFunctions) {
     this.toggleHeader();
    }
   ngOnInit() {
@@ -76,20 +77,7 @@ toggleHeader() {
       $(logo).toggleClass('mobile-logo');
       $(hamburger).toggleClass('clicked');
     }
-    // let throttle = (fn,delay) => {
-    //   let last = 0;
-    //   return () =>{
-    //     const now = new Date().getTime();
-    //     if(now-last < delay){
-    //       //console.log("dont call");
-    //       return;
 
-    //     }
-    //     last = now;
-    //     //console.log("call");
-    //     return fn();
-    //   }
-    // }
     $(window).on("scroll", fixHeader );
     $(hamburger).on("click", showMenu);
     $(menulink).on("click", showMenu);
@@ -120,16 +108,21 @@ toggleHeader() {
       this.modal.hideBtnLoader();
       this.modal.closeModal('#subscribeModal');
       this.modal.openModal("#thanksmodal");
+      this.form.reset();
+      this.submited = false;
     })
   }
-  login() {
-    this.http.get('https://onewater-instructor-api.herokuapp.com')
-      .subscribe(result => {
-        console.log(result);
-      })
-  }
+  // login() {
+  //   this.http.get('https://onewater-instructor-api.herokuapp.com')
+  //     .subscribe(result => {
+  //       console.log(result);
+  //     })
+  // }
   logout() {
     this.auth.logout();
+  }
+  logoutAuthor(){
+    this.author.logout();
   }
   deleteCookie(name) {
     this.createCookie(name, null);

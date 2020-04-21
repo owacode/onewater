@@ -5,7 +5,7 @@
       <div class="col-lg-6 order-lg-first">
         <div class="heading">
           <h1>
-            OneWater Xchange
+            OneWater <strong>Xchange</strong> 
           </h1>
           <!-- <p>
             Building the future of the water sector through knowledge sharing.
@@ -362,14 +362,11 @@
       </div>
       <div class="col-md-6">
         <p>
-          Through the support of our partners, OneWater Academy is pleased to
-          offer 25 free learner subscriptions, where you will have unlimited
-          access to the entire OneWater Xchange platform. The scheduled launch
-          of the platform is on July 1, 2020.
+          Through the support of our partners, OneWater Academy is pleased to offer 25 free one-year learner subscriptions, where you will have unlimited access to the entire OneWater Xchange platform. The scheduled launch of the platform is on July 1, 2020. Enter the drawing for your chance to receive a free learner subscription.
         </p>
         <div>
           <div class="center-mobile">
-            <button (click)="modal.openModal(drawingModal)" class="btn">
+            <button (click)="modal.openModal(drawingModal)" class="btn" style="text-transform: none;">
               Enter the Drawing
             </button>
           </div>
@@ -423,7 +420,7 @@
           <img src="assets/img/ow-logo1.png" alt="" />
         </div>
         <img src="assets/img/ins-login.png" alt="" />
-        <h2>Please fill the form to register as an instructor.</h2>
+        <h2>Become a OneWater Instructor</h2>
         <form [formGroup]="form" (submit)="register()">
           <div class="row">
             <div class="col-md-6">
@@ -547,7 +544,7 @@
               <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
             </span>
             <span class="btn-default-content">
-              Register
+              Submit
             </span>
           </button>
         </form>
@@ -577,7 +574,7 @@
           <img src="assets/img/ow-logo1.png" alt="" />
         </div>
         <img src="assets/img/modals/drawing.jpg" alt="" />
-        <h2>Please fill the form to register for drawing.</h2>
+        <h2>Enter the Drawing</h2>
         <form [formGroup]="drawingForm" (submit)="submitDrawingForm()">
           <div class="row">
             <div class="col-md-6">

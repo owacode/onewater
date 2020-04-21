@@ -8,7 +8,7 @@
   <div class="container">
     <div class="landing-text">
       <h2 class="platform-heading">
-        OneWater Talks
+        OneWater <strong>Talks</strong> 
       </h2>
       <!-- <p>
         OneWater One world.
@@ -42,7 +42,7 @@
           Want to see your video posted?
           
         </h3>
-        <a (click)="modal.openModal(postvideoModal)">Submit a video</a>
+        <a (click)="modal.openModal(postvideoModal)">Submit a Video</a>
       </div>
     </div>
     <div class="col-md-5">
@@ -741,7 +741,7 @@
           <img src="assets/img/ow-logo1.png" alt="">
         </div>
         <img src="assets/img/modals/video-img.jpg" style="width: 50%;max-width: 200px;" alt="">
-        <h2>Fill the below form to post video on OneWater Talks</h2>
+        <h2>Submit a Video</h2>
         <form [formGroup]="form" (submit)="addVideo()">
           <input
             name="name"

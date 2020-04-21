@@ -53,6 +53,7 @@ export class OwAcademyComponent implements OnInit {
       this.modal.closeModal('#instructorModal');
       this.modal.openModal('#detailsSubmitted');
       this.form.reset();
+      this.submitted = false;
     })
   }
 
@@ -73,6 +74,7 @@ export class OwAcademyComponent implements OnInit {
       this.modal.closeModal('#drawingModal');
       this.modal.openModal('#detailsSubmitted');
       this.drawingForm.reset();
+      this.drawingSubmitted = false;
     })
 
   }

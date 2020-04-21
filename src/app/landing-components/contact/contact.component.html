@@ -47,9 +47,14 @@
                   required
                   formControlName="email"
                 />
-                <p *ngIf="submitted && user.get('email').invalid">
-                  Email is required!
-                </p>
+                <div *ngIf="submitted && user.get('email').invalid">
+                  <p *ngIf="user.get('email').errors.required">
+                    Please enter your email!
+                  </p>
+                  <p *ngIf="user.get('email').errors.email">
+                    Please enter a valid email!
+                  </p>
+                </div>
                 <input
                   class="vldform__textbox"
                   type="text"

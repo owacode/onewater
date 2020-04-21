@@ -15,7 +15,7 @@ export class AuthorAuthService {
   public authormainid = null;
   public authorapprovedid = null;
   public loggedIn: boolean = false;
-  private token: string = null;
+  public token: string = null;
   public loggedinLitsener = new Subject<{ status: boolean }>();
   public approvedLitsener = new Subject<{ status: boolean }>();
 

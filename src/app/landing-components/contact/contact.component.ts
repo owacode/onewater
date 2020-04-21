@@ -37,6 +37,8 @@ export class ContactComponent implements OnInit {
       this.modal.hideBtnLoader();
      // alert(result.msg)
      this.modal.openModal("#successModal");
+     this.user.reset();
+     this.submitted = false;
     })
   }
 

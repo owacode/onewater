@@ -173,7 +173,14 @@ header{
 
 
  }
-
+.dd-head{
+    background-color: #0003611c;
+    color: #000461;
+    padding: 4px 8px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 6px;
+}
  @media all and (min-width:1091px){
     .dropdown-btn:hover .dropdown-content{
         display: block;
@@ -191,7 +198,12 @@ header{
     .dropdown-content{
         right: 0;
         width: 130px;
+        padding: 0;
         left: auto;
+
+        a{
+            padding:0 1rem 0.5rem;
+        }
     }
 }
 

@@ -6,11 +6,12 @@
     <div class="row align-items-center">
       <div class="col-lg-6 left-content">
         <h2 *ngIf="!showText">
-          OneWater Blogs 
-          <strong>Authors</strong>
+          OneWater Blogs <br>
+          <strong>Author</strong>
         </h2>
          <h2 *ngIf="showText">
-          Become a OneWater Blog <strong>Author</strong>         
+          Become a OneWater Blogs
+           <strong>Author</strong>         
          </h2> 
         <img src="assets/img/author-login.png" alt="" class="login-img" />
       </div>
@@ -74,9 +75,12 @@
               </span>
             </button>
           </form>
-          <p class="vldform__signup" id="login-text">
+          <p class="vldform__signup" id="login-text" style="
+          color: #777;
+          font-size: 1rem;
+          font-weight: 600;">
             New here?
-            <a class="vldform__signuplink" (click)="showregform()">Sign Up!</a>
+            <a class="vldform__signuplink" (click)="showregform()" style="color: #000;">Sign Up!</a>
           </p>
 
           <!--------------SIGNUP FORM------------------->
@@ -162,9 +166,12 @@
               </span>
             </button>
           </form>
-          <p class="vldform__signup" id="signup-text">
-            Already a OneWater Blog Author? 
-            <a (click)="showauthform()">Login</a>
+          <p class="vldform__signup" id="signup-text" style="
+           color: #777;
+          font-size: 1rem;
+          font-weight: 600;">
+            Already a OneWater Blogs Author? 
+            <a (click)="showauthform()" style="color: #000;">Login</a>
           </p>
 
 
