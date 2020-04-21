@@ -4,10 +4,11 @@ import { Injectable } from '@angular/core';
 import * as $ from 'jquery';
 import { AuthService } from '../auth.service';
 import { ModalFunctions } from '../shared-functions/modal-functions';
+import { AuthorAuthService } from '../authors/services/author-auth.service';
 @Injectable()
 export class Authguard implements CanActivate {
     loginstatus:boolean=false;
-    constructor(private authuser:AuthService ,public router:Router, public modal: ModalFunctions){}
+    constructor(private authuser:AuthService ,public router:Router, public modal: ModalFunctions, public author:AuthorAuthService){}
 
     canActivate(
         route: ActivatedRouteSnapshot,
@@ -17,7 +18,7 @@ export class Authguard implements CanActivate {
 
             //console.log(userlog);
 
-            if(!this.loginstatus){
+            if(this.author.getToken() || this.authuser.token){
                 console.log('not logged in');
                 this.modal.openModal("#blogModal");
                 return false;
