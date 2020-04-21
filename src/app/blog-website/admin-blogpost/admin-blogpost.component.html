@@ -17,27 +17,27 @@
               <!-- <span class="meta-date">About admin</span> -->
             </div>
           </div>
-  
+
           <div class="row">
             <div class="col-md-12">
               <p class="teaser top-teaser">
                 <!-- <strong >Category</strong> : <span *ngFor="let category of blog.category">{{category}} </span>
-              
+
               <br><br> -->
-             
-                <strong style="color: #101010;">Contributor </strong> : <span>Contributor </span>
+
+                <strong style="color: #101010;">Contributor </strong> : <span>{{blog?.contributor_name}} </span>
                 <br><br>
-                <strong style="color: #101010;">Contributor  Company</strong> : <span>OneWater Academy</span>
+                <strong style="color: #101010;">Contributor  Company</strong> : <span>{{blog?.contributor_company}}</span>
               </p>
             </div>
           </div>
-         
 
-         
-         
+
+
+
             <div class="blog-content" [innerHtml]="blog?.desc">
-         
-          
+
+
           </div>
           <div class="blog-options">
             <div class="like-btn"  *ngIf="!liked">
@@ -61,7 +61,7 @@
               <button><linkedin-share url="{{ url }}"></linkedin-share></button>
             </div>
           </div>
-  
+
           <div class="meta-bio author-box">
             <a>
               <img src="assets/img/owlogo-blue.png" alt="" />
@@ -78,5 +78,5 @@
       </div>
     </div>
   </div>
-  
+
 </div>

@@ -55,7 +55,7 @@ export class AuthorAuthService {
     }>("https://onewater-blogapi.herokuapp.com/unapproved-author", user);
   }
   checkLocalStorage() {
-    console.log("check local hit");
+    console.log("check local hit author",this.loggedIn);
     const token = localStorage.getItem("onewaterauthortoken");
     const approve = localStorage.getItem("authorapprovedid");
     console.log(approve, "appppppp");
@@ -78,7 +78,7 @@ export class AuthorAuthService {
         this.authorimage = localStorage.getItem("image");
         if (!approve) return this.route.navigate(["/onewaterblog/author-reg"]);
         this.authorapprovedid = localStorage.getItem("authorapprovedid");
-        this.route.navigate(["/author"]);
+        // this.route.navigate(["/author"]);
       } else {
         console.log("check local hit elseeeeeeeeeeee");
         this.token = token;
@@ -88,7 +88,7 @@ export class AuthorAuthService {
         this.authoremail = localStorage.getItem("authoremail");
         this.authormainid = localStorage.getItem("authormainid");
         this.authorapprovedid = localStorage.getItem("authorapprovedid");
-        this.route.navigate(["/onewaterblog/author-reg"]);
+        // this.route.navigate(["/onewaterblog/author-reg"]);
       }
     }
   }

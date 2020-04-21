@@ -61,7 +61,7 @@ toggleHeader() {
     //document.querySelector('.mobile-dropdown').addEventListener("click",this.toggleUserPanel);
 
 
-   
+
     let fixHeader = function () {
       if ($(window).scrollTop() > 70) {
         $(header).addClass("fixed-header");
@@ -118,6 +118,14 @@ toggleHeader() {
   //       console.log(result);
   //     })
   // }
+
+  authorRoute() {
+    if (localStorage.getItem("form_filled_job") == "true") {
+      this.author.route.navigate(["/author"]);
+    }else {
+      this.author.route.navigate(["/onewaterblog/author-reg"]);
+    }
+  }
   logout() {
     this.auth.logout();
   }
