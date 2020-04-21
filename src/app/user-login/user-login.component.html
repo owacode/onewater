@@ -277,3 +277,49 @@
     </div>
   </div>
 </div>
+
+<!--reset password doesn't exist modal-->
+<div class="modal modal-animate" id="notUser" role="dialog" #notUser>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(notUser)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="" >
+        </div>
+        <img src="assets/img/modals/author-img.jpg" alt="" />
+        <h2>
+          The Email ID you entered is registered as an Author on OneWater Platform.
+          <br><br>
+          You are trying to login as a user.
+          Please login as an author
+        </h2>
+
+        <div class="row no-gutters">
+          <div class="col-12">
+            <button
+            type="button"
+            class="btn btn-default"
+            data-dismiss="modal"
+            routerLink="/onewaterblog/author/login"
+          >
+            Login as Author
+          </button>
+          </div>
+         
+        </div>
+      </div>
+    
+     
+    </div>
+  </div>
+</div>

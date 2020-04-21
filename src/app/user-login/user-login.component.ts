@@ -67,7 +67,11 @@ export class UserLoginComponent implements OnInit {
     console.log(this.loginuser.value);
 
     this.auth.login(this.loginuser.value).subscribe((result) => {
-      if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
+      if(result.msg == 'Author Account'){
+        console.log("author tried to login");
+        this.modal.openModal('#notUser');
+      }
+      else if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
         console.log("invalid credentials");
         this.modal.hideBtnLoader();
         this.modal.openModal('#invalidModal');
