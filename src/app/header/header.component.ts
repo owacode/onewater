@@ -128,11 +128,7 @@ toggleHeader() {
       })
   }
   logout() {
-    this.deleteCookie('name')
-    this.deleteCookie('nickname')
-    this.deleteCookie('access_token')
-    this.deleteCookie('id_token')
-    this.deleteCookie('userpicture')
+    this.auth.logout();
   }
   deleteCookie(name) {
     this.createCookie(name, null);
