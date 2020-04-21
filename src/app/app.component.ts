@@ -14,6 +14,7 @@ import { InstructorService } from './instructors/instructor-admin/instructor.ser
 
 import * as $ from "jquery";
 import { ModalFunctions } from './shared-functions/modal-functions';
+import { AuthorAuthService } from './authors/services/author-auth.service';
 
 @Component({
   selector: "app-root",
@@ -33,10 +34,12 @@ export class AppComponent implements OnInit {
     public auth: AuthService,
     public instructorservice: InstructorService,
     public route: ActivatedRoute,
+    public authorauth: AuthorAuthService,
     public modal: ModalFunctions
   ) {
     this.instructorservice.checklocalstorage();
     this.auth.checkLocalStorage();
+    this.authorauth.checkLocalStorage();
     // var hash = 'null'
     // hash = window.location.hash;
     // var localcookie = this.readCookie("id_token");
@@ -91,10 +94,10 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit() {
-  
+
     $(".go-to-top-btn").click(function() {
-      $("html, body").animate({ 
-          scrollTop: 0 
+      $("html, body").animate({
+          scrollTop: 0
       }, "slow");
       return false;
   });

@@ -7,7 +7,7 @@
   </div>
   <nav>
     <ul class="menu">
-      
+
       <li class="navlink"><a routerLink="/home">Home</a></li>
 
       <li class="navlink" >
@@ -60,7 +60,7 @@
           Sign Up
         </a>
       </li>
-      
+
 
       <li *ngIf="auth.isLoggedIn && !(author.loggedIn && auth.isLoggedIn)" class="navlink">
         <div class="dropdown-btn desktop-dd">
@@ -87,7 +87,7 @@
             <div class="dd-head">
               Author
             </div>
-            <a [routerLink]="['/author']">
+            <a (click)="authorRoute()">
              Dashboard</a
             >
             <a (click)="logoutAuthor()">
@@ -113,7 +113,7 @@
           </div>
         </div>
       </li>
- 
+
     </ul>
   </nav>
 
@@ -243,7 +243,7 @@ id="userButton"
             required
           />
 
-        
+
           <div *ngIf="submited && form.get('email').invalid">
             <p *ngIf="form.get('email').errors.required">
               Please enter your email!
@@ -368,4 +368,3 @@ id="userButton"
           </div>
         </div>
       </li> -->
-     
