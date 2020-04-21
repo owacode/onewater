@@ -149,8 +149,10 @@ addVideo() {
   .subscribe(result=> {
     console.log(result);
     this.modal.hideBtnLoader();
+    this.form.reset();
     this.modal.closeModal('#postvideoModal');
     this.modal.openModal('#videoPosted');
+    
   })
 }
 

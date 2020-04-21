@@ -82,6 +82,36 @@
       <div class="row justify-content-center">
 
         <div class="col-lg-3 col-md-6">
+          <div class="outer-card" (click)="this.modal.openModal('#irela')">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+              <div class="member-img">
+                <img src="assets/img/team/irela.jpg" alt="" />
+              </div>
+              <h5>Irela Bagué</h5>
+              <!-- <p>
+                Board of Directors, OneWater Academy
+              </p> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="outer-card" (click)="this.modal.openModal('#zerry')">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+              <div class="member-img">
+                <img src="assets/img/team/zerry.jpg" alt="" />
+              </div>
+              <h5>Dr. Zerry Ihekwaba</h5>
+              <!-- <p>
+                Board of Directors, OneWater Academy
+              </p> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
           <div class="outer-card" (click)="this.modal.openModal('#louise')">
             <div class="outer-overlay"></div>
             <div class="two-card">
@@ -95,6 +125,10 @@
             </div>
           </div>
         </div>
+      </div>
+
+       
+      <div class="row justify-content-center">
 
         <div class="col-lg-3 col-md-6">
           <div class="outer-card" (click)="this.modal.openModal('#eric')">
@@ -125,9 +159,8 @@
             </div>
           </div>
         </div>
-      </div>
+      
 
-      <div class="row justify-content-center">
 
         <div class="col-lg-3 col-md-6">
           <div class="outer-card" (click)="this.modal.openModal('#rebecca')">
@@ -137,6 +170,27 @@
                 <img src="assets/img/team/rebecca.jpg" alt="" />
               </div>
               <h5>Rebecca Eggers</h5>
+              <!-- <p>
+                Board of Directors, OneWater Academy
+              </p> -->
+            </div>
+          </div>
+        </div>
+
+       
+      </div>
+       
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="outer-card" (click)="this.modal.openModal('#cindy')">
+            <div class="outer-overlay"></div>
+            <div class="two-card">
+              <div class="member-img">
+                <img src="assets/img/team/cindy.jpg" alt="" />
+              </div>
+              <h5>Cindy L. Wallis-Lage</h5>
               <!-- <p>
                 Board of Directors, OneWater Academy
               </p> -->
@@ -154,21 +208,6 @@
               <h5>Sudhir Murthy</h5>
               <!-- <p>
                 Senior Vice President of the International Water Association
-              </p> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="outer-card" (click)="this.modal.openModal('#cindy')">
-            <div class="outer-overlay"></div>
-            <div class="two-card">
-              <div class="member-img">
-                <img src="assets/img/team/cindy.jpg" alt="" />
-              </div>
-              <h5>Cindy L. Wallis-Lage</h5>
-              <!-- <p>
-                Board of Directors, OneWater Academy
               </p> -->
             </div>
           </div>
@@ -753,6 +792,131 @@ Mr. Cueto is a registered professional engineer in the State of Florida and hold
             type="button"
             class="btn btn-default"
             (click)="this.modal.closeModal(cindy)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade " id="irela" role="dialog" #irela>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(irela)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/irela.jpg" alt="" />
+              </div>
+            </div>
+           <div class="col-lg-10">
+             <div class="l-text">
+              <h1>Irela M. Bagué
+                </h1>
+              <!-- <h5>
+                P.E. 
+              </h5> -->
+              <h4>
+                About
+              </h4>
+              <p>
+                Irela Bagué is principal for Bagué Group a full-service consulting firm with over 20 years of experience in Florida with expertise in strategic communications in the water policy and resilience sectors.
+                <br><br>
+                Ms. Bagué was appointed to the South Florida Water Management District Board by Governor Jeb Bush, where she held the position of Board Vice-Chair. Ms. Bagué was responsible for establishing policy in the areas of water resources development and regulation, flood control, water quality protection, and natural systems restoration.
+                <br><br>
+                As a former state appointed official, Ms. Bagué has earned the respect of clients and policy makers alike. She is known for her in-depth understanding of the political process and for her critical insight and clear and straightforward communications style making her a credible and engaging spokesperson. She is a longtime advocate for Everglades and Biscayne Bay restoration, alternative water supply funding, climate change, sea level rise and ethnic diversity in the environmental movement.
+                <br><br>
+                Ms. Bagué is current Chair of the Resilience Committee of the Greater Miami Chamber of Commerce and the Coral Gables Sustainability Advisory Board. She also serves on the boards of The CLEO Institute, Resilient Utility Coalition and Florida Water Advocates.
+                <br><br>
+                ​Ms. Bagué is host of <a href="https://www.baguegroup.com/resilientforward.html" target="_blank">Resilient Forward</a>  a podcast promoting solutions to Florida’s most challenging environmental issues and she frequently contributes to the Sun-Sentinel’s South Florida 100 editorial section.
+              </p>
+           
+                <!-- <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div> -->
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(irela)"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="zerry" role="dialog" #zerry>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content light-box">
+      <div class="modal-head">
+        <button type="button" class="close" (click)="this.modal.closeModal(zerry)">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6">
+              <div class="l-img card-shadow">
+                <img src="assets/img/team/zerry.jpg" alt="" />
+              </div>
+            </div>
+           <div class="col-lg-10">
+             <div class="l-text">
+              <h1>Dr. Zerry Ihekwaba
+                </h1>
+              <!-- <h5>
+                P.E. 
+              </h5> -->
+              <h4>
+                About
+              </h4>
+              <p>
+                Dr. Zerry Ihekwaba is currently the Assistant City Manager for the City of Miami, Florida. He assists the City Manager in the management and operation of the City in the areas of policy implementation and funding opportunities as well as staffing, establishing service levels, and interacting with elected officials, businesses, and the community. A valued member of the City’s leadership team since 2010, Dr. Ihekwaba is designated as the Chief of Infrastructure for the City of Miami. He oversees the departments of Building, Zoning, Planning, Resilience and Public Works, Parks and Recreation, and Resilience and Sustainability. He previously served as the City of Miami Chief of Operations overseeing the departments of Solid Waste, General Services Administration, Code Compliance, Parks and Recreation, Neighborhood Enhancement Team (NET), and the Office of Film and Entertainment.
+                <br><br>
+                In the early stages of his career with the City, Dr. Ihekwaba served as the Director of the Public Works Department for more than four years. There, he oversaw stormwater utilities and the National Pollutant Discharge Elimination System (NPDES) for the City’s MS4 permit. Dr. Ihekwaba also directed engineering regulatory functions, maintenance of city streets, right of way infrastructure, and specific county and state roads maintained by the City under agreements. For about eight years prior, Dr. Ihekwaba worked with the Miami-Dade Water and Sewer Department as the Manager for the Utilities Design overseeing the transmission and distribution pipelines section. He has professional engineering experience in both the United States and abroad, with practical work history spanning over three decades, in both the private and public sectors. He has a diverse professional background and a broad range of experience in several areas of planning, engineering, construction, and management. 
+                <br><br>
+                He earned his Civil Engineering Degree at the University of Nigeria in 1985 and his doctorate (Ph.D.) in Materials and Structural Engineering at Queens University in Kingston, Ontario, Canada, in 1996. In 2008, he attended the Pilot Tube Microtunneling & Conventional Microtunnelling Short Course at the Microtunneling Research Institute of the Colorado School of Mines in Golden, Colorado. Dr. Ihekwaba has published several peer-reviewed articles in journals of the American Society of Civil Engineers (ASCE) and American Concrete Institute (ACI). He is licensed as a Professional Engineer in Florida and Georgia in the United States, and previously in Ontario, Canada and Nigeria. He is also a foundation member of the ASCE Structural Engineering Institute, member of the Florida Stormwater Association, Board Member of the American Society of Public Administration (ASPA) South Florida, and part of the steering committee of the 100 Resilient Cities for the Greater Miami and the Beaches Resilient 305 report.
+              </p>
+           
+                <!-- <div class="social-media">
+                  <a href="#" target="_blank">  <i class="fa fa-linkedin"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-twitter"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-instagram"></i></a>
+                  <a href="#" target="_blank">  <i class="fa fa-facebook"></i></a>
+                </div> -->
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-default"
+            (click)="this.modal.closeModal(zerry)"
           >
             Close
           </button>

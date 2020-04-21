@@ -76,6 +76,20 @@
         </div>
       </li>
 
+      <li *ngIf="auth.isLoggedIn " class="navlink">
+        <div class="dropdown-btn desktop-dd">
+          <img src="assets/img/icons/avatar1.svg" alt="" />
+          <div class="dropdown-content card-shadow">
+            <a [routerLink]="['/author-admin']">
+             Dashboard</a
+            >
+            <a (click)="logout()">
+             Logout
+            </a>
+          </div>
+        </div>
+      </li>
+
       <!-- <li *ngIf="!auth.isLoggedIn" class="navlink">
         <div
           class="dropdown-btn platform-dd" (click)="toggleDropdown('loginPanel')"

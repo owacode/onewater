@@ -52,6 +52,7 @@ export class OwAcademyComponent implements OnInit {
       this.modal.hideBtnLoader();
       this.modal.closeModal('#instructorModal');
       this.modal.openModal('#detailsSubmitted');
+      this.form.reset();
     })
   }
 
@@ -71,6 +72,7 @@ export class OwAcademyComponent implements OnInit {
       this.modal.hideBtnLoader();
       this.modal.closeModal('#drawingModal');
       this.modal.openModal('#detailsSubmitted');
+      this.drawingForm.reset();
     })
 
   }

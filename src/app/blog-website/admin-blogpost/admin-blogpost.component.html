@@ -18,9 +18,22 @@
             </div>
           </div>
   
-          <p class="teaser top-teaser">
-            <strong>Category</strong> : <span *ngFor="let category of blog.category">{{category}} </span>
-          </p>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="teaser top-teaser">
+                <strong >Category</strong> : <span *ngFor="let category of blog.category">{{category}} </span>
+              
+              <br><br>
+             
+                <strong style="color: #101010;">Contributer</strong> : <span>Contributer</span>
+                <br><br>
+                <strong style="color: #101010;">Contributer Company</strong> : <span>OneWater Academy</span>
+              </p>
+            </div>
+          </div>
+         
+
+         
          
             <div class="blog-content" [innerHtml]="blog?.desc">
          
@@ -51,7 +64,7 @@
   
           <div class="meta-bio author-box">
             <a>
-              <img src="assets/img/jobs/candidate/thumb-1.jpg" alt="" />
+              <img src="assets/img/owlogo-blue.png" alt="" />
             </a>
             <div class="bio-text">
               <p class="bio-shl">Author</p>

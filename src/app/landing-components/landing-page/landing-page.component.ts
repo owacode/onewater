@@ -50,6 +50,7 @@ export class LandingPageComponent implements OnInit {
       this.modal.hideBtnLoader();
       this.modal.closeModal('#instructorModal');
       this.modal.openModal('#detailsSubmitted');
+      this.form.reset();
     })
   }
 

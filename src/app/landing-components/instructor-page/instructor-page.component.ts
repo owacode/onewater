@@ -42,6 +42,7 @@ export class InstructorPageComponent implements OnInit {
       this.modal.hideBtnLoader();
       this.modal.closeModal('#instructorModal');
       this.modal.openModal('#detailsSubmitted');
+      this.form.reset();
     })
   }
 
