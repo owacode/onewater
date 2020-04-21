@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: "root",
@@ -14,7 +15,7 @@ export class AuthService {
   name = null;
   user_id = null;
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient, public route: Router) {}
 
   isUserAuthenticated() {
     return this.isLoggedIn;
@@ -49,5 +50,14 @@ export class AuthService {
       "https://onewater-auth.herokuapp.com/reset-password",
       values
     );
+  }
+
+  logout() {
+     this.isLoggedIn = false;
+     this.token=null;
+     localStorage.removeItem("onewaterusertoken");
+     localStorage.removeItem("onewateruserid");
+     localStorage.removeItem("onewaterusername");
+     this.route.navigate(['/']);
   }
 }

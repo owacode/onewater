@@ -37,7 +37,7 @@ export class UserAdminComponent implements OnInit {
       else{
         $(optionBox).addClass("slide-in");
         toggleButton.innerHTML = ` <i class="fa fa-times" aria-hidden="true" style="font-size:1.5rem"></i>`;
-      }   
+      }
 
     });
     $(options).on("click",function(){
@@ -127,11 +127,7 @@ export class UserAdminComponent implements OnInit {
   }
 
   logout() {
-    this.deleteCookie("name");
-    this.deleteCookie("nickname");
-    this.deleteCookie("access_token");
-    this.deleteCookie("id_token");
-    this.deleteCookie("userpicture");
+    this.auth.logout();
   }
 
   deleteCookie(name) {
