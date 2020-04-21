@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as Feather from 'feather-icons';
-import * as $ from 'jquery';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
 import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
@@ -31,10 +30,7 @@ export class LandingPageComponent implements OnInit {
       proposed_course_title: new FormControl(null, {validators:[Validators.required]}),
       proposed_desc: new FormControl(null, {validators:[Validators.required]})
     })
-    if(localStorage.getItem("triggerBlogModal") == "false"){
-      this.modal.openModal("#blogModal");
-      localStorage.removeItem("triggerBlogModal");
-    }
+
     Feather.replace();
 
   }

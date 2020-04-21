@@ -1,4 +1,46 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
+<div class="overlay"></div>
+<!--modal to show if user is not logged in-->
+<div class="modal fade" id="blogModal" #blogModal>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-head">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            (click)="modal.closeModal(blogModal)"
+          >
+            &times;
+          </button>
+        </div>
+  
+        <div class="modal-body">
+          <div class="modal-logo">
+            <img src="assets/img/ow-logo1.png" alt="">
+          </div>
+          <img
+            src="assets/img/modals/blog-modal.png
+          "
+            alt=""
+          />
+          <h2>Please login to read the blog.</h2>
+        </div>
+       
+          <a
+            routerLink="/login-role"
+            class="login-btn"
+          >
+            Login now
+          </a>
+        <button  (click)="modal.closeModal(blogModal)"  class="text-center" style="margin: 0rem auto 1rem;padding:0.5rem;border: none;background-color: transparent;">
+          <a routerLink="/signup-role"> New Here? Signup Now.</a>
+        </button>
+  
+      </div>
+    </div>
+  </div>
 

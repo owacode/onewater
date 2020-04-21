@@ -3,10 +3,11 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import * as $ from 'jquery';
 import { AuthService } from '../auth.service';
+import { ModalFunctions } from '../shared-functions/modal-functions';
 @Injectable()
 export class Authguard implements CanActivate {
     loginstatus:boolean=false;
-    constructor(private authuser:AuthService ,public router:Router){}
+    constructor(private authuser:AuthService ,public router:Router, public modal: ModalFunctions){}
 
     canActivate(
         route: ActivatedRouteSnapshot,
@@ -18,8 +19,8 @@ export class Authguard implements CanActivate {
 
             if(!this.loginstatus){
                 console.log('not logged in');
-                localStorage.setItem("triggerBlogModal","false");
-                this.router.navigate(['/home']);
+                this.modal.openModal("#blogModal");
+                return false;
             }
 
             return true;

@@ -7,6 +7,7 @@
   </div>
   <nav>
     <ul class="menu">
+      
       <li class="navlink"><a routerLink="/home">Home</a></li>
     
       <li class="navlink" >
@@ -18,6 +19,7 @@
           </div>
         </div>
       </li>
+
       <li class="navlink" >
         <div class="dropdown-btn platform-dd"  (click)="toggleDropdown('platforms')">
           OneWater Academy <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -30,8 +32,10 @@
           </div>
         </div>
       </li>
+
       <!-- <li class="navlink"><a routerLink="/home/cro-page">The CROs</a></li> -->
       <!-- <li class="navlink"><a routerLink="/home/events">Events </a></li> -->
+
       <li class="navlink" >
         <div class="dropdown-btn platform-dd"  (click)="toggleDropdown('connect')">
           Connect with Us <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -43,7 +47,7 @@
       </li>
       
       <li class="navlink"><a routerLink="/home/donate">Give</a></li>
-      <!-- <li *ngIf="!auth.isLoggedIn" class="navlink">
+      <li *ngIf="!auth.isLoggedIn" class="navlink">
         <a
         routerLink="/login-role"
         >
@@ -52,10 +56,11 @@
       </li>
       <li *ngIf="!auth.isLoggedIn" class="navlink">
         <a routerLink="/signup-role">
-          Signup
+          Sign Up
         </a>
-      </li> -->
-      <li *ngIf="!auth.isLoggedIn" class="navlink">
+      </li>
+      
+      <!-- <li *ngIf="!auth.isLoggedIn" class="navlink">
         <div
           class="dropdown-btn platform-dd" (click)="toggleDropdown('loginPanel')"
          
@@ -76,9 +81,7 @@
             </li>
           </div>
         </div>
-      </li>
-
-
+      </li> -->
 
       <li *ngIf="auth.isLoggedIn" class="navlink">
         <div class="dropdown-btn desktop-dd">
@@ -98,6 +101,7 @@
       </li>
     </ul>
   </nav>
+
   <div
     *ngIf="auth.isLoggedIn"
     class="mobile-dropdown dropdown-btn"
@@ -115,6 +119,7 @@
       </a>
     </div>
   </div>
+
   <div class="hamburger">
     <span></span>
     <span></span>
@@ -122,6 +127,7 @@
   </div>
 </header>
 
+<!--------------------Modals------------------>
 <!-- Modal for newsletter -->
 <div
   class="modal fade modal-no-animate"

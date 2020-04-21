@@ -32,12 +32,15 @@
               placeholder="Email"
               required
             />
-            <p
-
-              *ngIf="loginsubmitted && loginuser.get('email').invalid"
-            >
-              Please enter a valid email id!
-            </p>
+           
+            <div *ngIf="loginsubmitted && loginuser.get('email').invalid">
+              <p *ngIf="loginuser.get('email').errors.required">
+                Please enter your email!
+              </p>
+              <p *ngIf="loginuser.get('email').errors.email">
+                Please enter a valid email!
+              </p>
+            </div>
 
             <input
               formControlName="password"
@@ -101,12 +104,15 @@
               placeholder="Author Email"
               required
             />
-            <p
-
-              *ngIf="registersubmitted && user.get('author_email').invalid"
-            >
-              Please enter a valid email id!
-            </p>
+            
+            <div *ngIf="registersubmitted && user.get('author_email').invalid">
+              <p *ngIf="user.get('author_email').errors.required">
+                Please enter your email!
+              </p>
+              <p *ngIf="user.get('author_email').errors.email">
+                Please enter a valid email!
+              </p>
+            </div>
 
             <div class="row">
               <div class="col-md-6">
@@ -173,9 +179,15 @@
               required
               formControlName="email"
             />
-            <p *ngIf="resetpasssubmitted && resetpassform.get('email').invalid">
-              Please enter your email!
-            </p>
+           
+            <div *ngIf="resetpasssubmitted && resetpassform.get('email').invalid">
+              <p *ngIf="resetpassform.get('email').errors.required">
+                Please enter your email!
+              </p>
+              <p *ngIf="resetpassform.get('email').errors.email">
+                Please enter a valid email!
+              </p>
+            </div>
             <button
               class="vldform__button"
               type="submit"

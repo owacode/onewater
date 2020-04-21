@@ -40,9 +40,16 @@
               placeholder="Email"
               required
             />
-            <p *ngIf="registersubmitted && user.get('email').invalid">
-              Enter a valid email id!
-            </p>
+            <div *ngIf="registersubmitted && user.get('author_email').invalid">
+              <p *ngIf="user.get('author_email').errors.required">
+                Please enter your email!
+              </p>
+              <p *ngIf="user.get('author_email').errors.email">
+                Please enter a valid email!
+              </p>
+            </div>
+           
+
             <div class="row">
               <div class="col-md-6">
                 <input
