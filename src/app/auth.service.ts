@@ -60,5 +60,7 @@ export class AuthService {
      localStorage.removeItem("onewateruserid");
      localStorage.removeItem("onewaterusername");
      this.route.navigate(['/login']);
+
+     
   }
 }
