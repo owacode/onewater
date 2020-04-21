@@ -18,7 +18,7 @@ export class DonationComponent implements OnInit {
   public payPalConfig ? : IPayPalConfig;
   public showSuccess;
   formSubmitted:Boolean = false;
-  userpayment;
+  userpayment:FormGroup;
   constructor(public http:HttpClient, public modal: ModalFunctions) { }
 
   ngOnInit() {
@@ -100,15 +100,18 @@ export class DonationComponent implements OnInit {
       console.log('OnCancel', data, actions);
       this.modal.hideBtnLoader();
       this.modal.openModal("#paymentFailed");
+      this.userpayment.reset();
     },
     onError: err => {
       console.log('OnError', err);
       this.modal.hideBtnLoader();
       this.modal.openModal("#paymentFailed");
+      this.userpayment.reset();
     },
     onClick: (data, actions) => {
       console.log(this.userpayment.value.amount,'$$$$$$')
       console.log('onClick', data, actions);
+      this.userpayment.reset();
     },
   };
   }

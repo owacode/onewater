@@ -276,7 +276,7 @@
   <div class="row">
     <div class="col-lg-9">
       <section class="video-section">
-        <div class="my-container">
+        <div class="my-container" *ngIf="water?.length">
           <h2>Water</h2>
           <owl-carousel *ngIf="water?.length >=1"
             [items]="featuredvideos"
@@ -327,7 +327,7 @@
           </div>
         </div>
 
-        <div class="my-container">
+        <div class="my-container" *ngIf="wastewater?.length">
           <h2>Wastewater</h2>
           <owl-carousel *ngIf="wastewater?.length >=1"
             [items]="featuredvideos"
@@ -382,7 +382,7 @@
           </div>
         </div>
 
-        <div class="my-container">
+        <div class="my-container" *ngIf="stormwater?.length">
           <h2>Storm Water</h2>
           <owl-carousel *ngIf="stormwater?.length >=1"
             [items]="featuredvideos"
@@ -437,7 +437,7 @@
           </div>
         </div>
 
-        <div class="my-container">
+        <div class="my-container" *ngIf="innovationresearch?.length">
           <h2>Innovation & Research</h2>
           <owl-carousel *ngIf="innovationresearch?.length >=1"
             [items]="featuredvideos"
@@ -492,7 +492,7 @@
           </div>
         </div>
 
-        <div class="my-container">
+        <div class="my-container" *ngIf="sustainabledevelopment?.length">
           <h2>Sustainable Development</h2>
           <owl-carousel *ngIf="sustainabledevelopment?.length >=1"
             [items]="featuredvideos"
@@ -547,7 +547,7 @@
           </div>
         </div>
 
-        <div class="my-container">
+        <div class="my-container" *ngIf="managementsinance?.length">
           <h2>Management & Finance</h2>
           <owl-carousel *ngIf="managementsinance?.length >=1"
             [items]="featuredvideos"
@@ -602,7 +602,7 @@
           </div>
         </div>
 
-        <div class="my-container">
+        <div class="my-container" *ngIf="legistativeregulatory?.length">
           <h2>Legistative & Regulatory</h2>
           <owl-carousel *ngIf="legistativeregulatory?.length >=1"
             [items]="featuredvideos"
@@ -663,7 +663,13 @@
         <h2>
           Latest
         </h2>
-        <div class="row justify-content-center">
+        <div class="no-data" *ngIf="!latestvideos?.length">
+          <img src="assets/img/icons/video.svg" alt="">
+          <h4>
+            There are no Videos at the time.
+          </h4>
+        </div>
+        <div class="row justify-content-center" *ngIf="latestvideos?.length">
           <div
             class="col-lg-12 col-md-6 col-sm-12"
             *ngFor="let video of latestvideos"
