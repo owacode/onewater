@@ -46,7 +46,7 @@
 @media all and (max-width: 991px)
 {
   .login-img {
-    display: block;
+    display: none;
     max-width: 35vw;
 }
 
@@ -55,8 +55,7 @@
 @media all and (max-width: 576px)
 {
   .login-img {
-    display: block;
-    max-width: 50vw;
+    display: none;
 }
 
 }
