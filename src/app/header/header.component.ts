@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   form:FormGroup;
   public submited: Boolean = false;
 
-
 toggleHeader() {
   this.router.events.subscribe((event) => {
     if (event instanceof NavigationEnd) {
@@ -49,17 +48,19 @@ toggleHeader() {
 }
 }
 
-  constructor(public http: HttpClient, public auth: AuthService, public router: Router, public modal:ModalFunctions) { }
+  constructor(public http: HttpClient, public auth: AuthService, public router: Router, public modal:ModalFunctions) {
+    this.toggleHeader();
+   }
   ngOnInit() {
     const header = document.querySelector('header');
     const menu = document.querySelector('.menu');
     const logo = document.querySelector('.logo');
     const hamburger = document.querySelector('.hamburger');
     const menulink = document.querySelectorAll('.navlink a');
-    // document.querySelector('.mobile-dropdown').addEventListener("click",this.toggleUserPanel);
+    //document.querySelector('.mobile-dropdown').addEventListener("click",this.toggleUserPanel);
 
 
-    this.toggleHeader();
+   
     let fixHeader = function () {
       if ($(window).scrollTop() > 70) {
         $(header).addClass("fixed-header");

@@ -56,12 +56,18 @@
       margin: 1rem auto;
 
       a{
-        font-weight: 600;
+        font-weight: 700;
         cursor: pointer;
       }
       a:hover{
         text-decoration: underline;
       }
+    }
+  }
+
+  @media all and (max-width:1091px){
+    #login{
+      background-size: cover;
     }
   }
 

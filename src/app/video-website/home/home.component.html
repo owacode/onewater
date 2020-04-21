@@ -716,7 +716,7 @@
 
 <!--post video form modal-->
 <div class="modal fade" id="postvideoModal" #postvideoModal>
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog">
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="modal-head">
@@ -734,8 +734,8 @@
         <div class="modal-logo">
           <img src="assets/img/ow-logo1.png" alt="">
         </div>
-        <img src="assets/img/icons/video-player.svg" style="width: 50%;max-width: 200px;" alt="">
-        <h2>Fill the below form to post video on O-WOW</h2>
+        <img src="assets/img/modals/video-img.jpg" style="width: 50%;max-width: 200px;" alt="">
+        <h2>Fill the below form to post video on OneWater Talks</h2>
         <form [formGroup]="form" (submit)="addVideo()">
           <input
             name="name"
@@ -762,8 +762,7 @@
         <p *ngIf="submitted && form.get('video_link').invalid">
           Please add video link!
         </p>
-        <span style="font-weight: 500; font-size: 0.8rem;text-align: left;"><i>To post a video, upload the video to any server, such as YouTube, and paste its link in the form above.</i></span>
-          <!-- <p *ngIf="submited && form.get('name').invalid">Enter Your Name</p> -->
+      
           <textarea
             name="description"
             formControlName="desc"

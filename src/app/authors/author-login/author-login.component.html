@@ -5,13 +5,13 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 left-content">
-        <h2>
-          OneWater
-          <strong>Blogs</strong>
+        <h2 *ngIf="!showText">
+          OneWater Blogs 
+          <strong>Authors</strong>
         </h2>
-         <p *ngIf="showText">
-          Become a OneWater Blog Author.         
-        </p> 
+         <h2 *ngIf="showText">
+          Become a OneWater Blog <strong>Author</strong>         
+         </h2> 
         <img src="assets/img/author-login.png" alt="" class="login-img" />
       </div>
       <div class="col-lg-6">
@@ -22,7 +22,7 @@
             (submit)="login()"
             [formGroup]="loginuser"
           >
-            <h1>OneWater Blog Author Login</h1>
+            <h1>Login</h1>
 
             <input
               formControlName="email"
@@ -78,7 +78,7 @@
 
           <!--------------SIGNUP FORM------------------->
           <form class="vldform vldreg" (submit)="register()" [formGroup]="user">
-            <h1>OneWater Blog Author Registeration</h1>
+            <h1>Sign Up</h1>
             <input
               formControlName="author_name"
               class="vldform__textbox"
@@ -157,7 +157,7 @@
             </button>
           </form>
           <p class="vldform__signup" id="signup-text">
-            Already a member?
+            Already a OneWater Blog Author? 
             <a (click)="showauthform()">Login</a>
           </p>
 

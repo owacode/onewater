@@ -273,7 +273,7 @@ const routes: Routes = [
   {
     path: 'user-admin',
     loadChildren: './user-admin/user-admin.module#UserAdminModule',
-    canActivate: [Authguard]
+    //canActivate: [Authguard]
   },
 
   //-----------CANDIDATE ADMIN PANEL---------------//

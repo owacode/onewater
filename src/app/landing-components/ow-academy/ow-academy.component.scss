@@ -189,14 +189,6 @@ section{
     }
 }
 
-.feature-card:hover{
-    background-color: #fff;
-
-    h5{
-      color: #092b86;
-    }
-
-}
 
 .free-sub{
   h2,p{
@@ -231,11 +223,10 @@ section{
 
   .platform-section {
     position: relative;
-    background: linear-gradient(0deg, #3234a4    6%, rgba(14, 73, 154, 0.850074) 53%, #092b86 94%),
-     url(/assets/img/landing/landing-features-bg.jpg);
+    background: linear-gradient(0deg, #3234a4 6%, rgba(14, 73, 154, 0.84) 53%, #092b86d6 94%), url(/assets/img/landing/owx-bg.jpeg);
     background-size: cover;
     padding: 10rem 0 0;
-    background-position:top center;
+    background-position:bottom right;
   }
 
   .login-text
