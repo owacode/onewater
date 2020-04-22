@@ -28,7 +28,7 @@ export class DonationComponent implements OnInit {
     this.userpayment= new FormGroup({
       name:new FormControl(null,{validators:[Validators.required]}),
       email:new FormControl(null,{validators:[Validators.required,Validators.email]}),
-      amount:new FormControl(null,{validators:[Validators.required]})
+      amount:new FormControl(null,{validators:[Validators.required]}),
     });
     PageScrollConfig.defaultScrollOffset = 100;
     PageScrollConfig.defaultEasingLogic = {
@@ -86,38 +86,45 @@ export class DonationComponent implements OnInit {
     //   layout: 'vertical'
     // },
     onApprove: (data, actions) => {
-      console.log('onApprove - transaction was approved, but not authorized', data, actions);
+     // console.log('onApprove - transaction was approved, but not authorized', data, actions);
       actions.order.get().then(details => {
-        console.log('onApprove - you can get full order details inside onApprove: ', details);
+        //console.log('onApprove - you can get full order details inside onApprove: ', details);
       });
     },
 
     onClientAuthorization: (data) => {
-      console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+     // console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
       this.showSuccess = true;
       this.http.post<{status:string,msg:string}>('https://onewater-auth.herokuapp.com/pay',this.userpayment.value)
       .subscribe(result=>{
-        console.log(result);
+        //console.log(result);
         this.modal.hideBtnLoader();
         this.modal.openModal("#paymentSuccessful");
+        this.userpayment.reset();
+        this.showPaymentButton = false;
       })
     },
     onCancel: (data, actions) => {
-      console.log('OnCancel', data, actions);
+      //console.log('OnCancel', data, actions);
       this.modal.hideBtnLoader();
       this.modal.openModal("#paymentFailed");
+      this.userpayment.reset();
+      this.showPaymentButton = false;
     },
     onError: err => {
-      console.log('OnError', err);
+      //console.log('OnError', err);
       this.modal.hideBtnLoader();
       this.modal.openModal("#paymentFailed");
+      this.userpayment.reset();
+      this.showPaymentButton = false;
     },
     onClick: (data, actions) => {
-      console.log(this.userpayment.value.amount,'$$$$$$')
-      console.log('onClick', data, actions);
+      //console.log(this.userpayment.value.amount,'$$$$$$')
+     // console.log('onClick', data, actions);
     },
   };
   }
+
   validateForm(){
     this.formSubmitted = true;
     if(!(this.userpayment.get('name').invalid || this.userpayment.get('email').invalid || this.userpayment.get('amount').invalid)){
@@ -127,6 +134,7 @@ export class DonationComponent implements OnInit {
     else
     this.showPaymentButton = false;
   }
+
   enterAmount(amount){
     //console.log(amount)
     //console.log(amount.value)
@@ -139,6 +147,5 @@ export class DonationComponent implements OnInit {
         amount:amount.value
       })
     }
-
   }
 }
