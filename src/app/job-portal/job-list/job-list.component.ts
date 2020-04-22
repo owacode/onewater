@@ -22,7 +22,7 @@ export class JobListComponent implements OnInit {
 
     this.getservice.getJobs(this.itemPerPage,this.currentpage)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.jobs=result.result.fetchjobs;
       this.totaljobs=result.result.totaljobs;
       this.joblist=this.jobs;
@@ -111,10 +111,10 @@ export class JobListComponent implements OnInit {
        $('.sidebar-controller .sidebar-switch').on('click', function() {
          if($(this).hasClass('on')) {
            $('.slim-footer').css('width', 760);
-           console.log(windowWidth);
+           //console.log(windowWidth);
          } else {
            $('.slim-footer').css('width', 1040);
-           console.log(windowWidth);
+           //console.log(windowWidth);
          }
        })
 
@@ -127,7 +127,7 @@ export class JobListComponent implements OnInit {
      $(document).on('click','.sidebar-switch', function() {
        $(this).toggleClass('on');
        if($(this).hasClass('on')){
-         console.log('on');
+         //console.log('on');
 
          $('.sidebar-controller label span').text('Hide');
 
@@ -151,7 +151,7 @@ export class JobListComponent implements OnInit {
          $('.listing-side-map').width(mapWidth);
 
        } else {
-         console.log('not on');
+         //console.log('not on');
          $('.sidebar-controller label span').text('Show');
 
          $('.job-filter-wrapper').css({
@@ -190,11 +190,11 @@ export class JobListComponent implements OnInit {
   }
 
   pageChanged(event){
-      console.log('event hittttttt', event);
+      //console.log('event hittttttt', event);
       this.currentpage=event;
       this.getservice.getJobs(this.itemPerPage,this.currentpage)
       .subscribe(result=>{
-        console.log(result);
+        //console.log(result);
         this.jobs=result.result.fetchjobs;
         this.totaljobs=result.result.totaljobs;
         this.joblist=this.jobs;

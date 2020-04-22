@@ -30,9 +30,9 @@ export class CroAuthorEditProfileComponent implements OnInit {
       image: new FormControl(null, { validators: [Validators.required] })
     });
     this.common.getUser().subscribe(result => {
-      console.log(result);
+      //console.log(result);
       this.editableprofile = result.result[0];
-      console.log(this.editableprofile, "dwwd");
+      //console.log(this.editableprofile, "dwwd");
       this.form.patchValue({
         cro_name: this.editableprofile.name,
         location: this.editableprofile.location,
@@ -57,14 +57,14 @@ export class CroAuthorEditProfileComponent implements OnInit {
     filereader.readAsDataURL(file);
   }
   submit() {
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.profilesubmit = true;
-    console.log(this.form);
+    //console.log(this.form);
     if (this.form.invalid) {
       this.modal.hideBtnLoader();
       return;
     }
-    console.log(this.form.value);
+    //console.log(this.form.value);
     if (this.editimage) this.auth.croProfileUpdateWithImage(this.form.value);
     else this.auth.croUpdate(this.form.value);
     this.modal.hideBtnLoader();

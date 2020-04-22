@@ -54,12 +54,12 @@ export class EmployerLoginComponent implements OnInit {
     });
   }
   register(){
-    console.log(this.user.value);
+    //console.log(this.user.value);
     this.auth.employee(this.user.value);
   }
 
   login(){
-    console.log(this.loginuser.value);
+    //console.log(this.loginuser.value);
     this.auth.login(this.loginuser.value);
   }
 

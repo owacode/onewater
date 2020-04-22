@@ -49,7 +49,7 @@ export class CroPostComponent implements OnInit {
       this.http.get<{ status: string; msg: string; result: any }>(
         "https://onewater-cro.herokuapp.com/singleappblog/"+result.id
       ).subscribe(result=>{
-        console.log(result)
+        //console.log(result)
         this.blog = result.result;
         this.getcro(result.result.cro_id);
         this.getcroblogs(result.result.cro_id);
@@ -64,7 +64,7 @@ export class CroPostComponent implements OnInit {
         "https://onewater-cro.herokuapp.com/approvedcro/" + id
       )
       .subscribe(result => {
-        console.log(result, "cro");
+        //console.log(result, "cro");
         this.cro = result.result[0];
       });
   }
@@ -75,7 +75,7 @@ export class CroPostComponent implements OnInit {
         "https://onewater-cro.herokuapp.com/approvedcroblogs/" + id
       )
       .subscribe(result => {
-        console.log(result, "author blogs ");
+        //console.log(result, "author blogs ");
         this.croblogs = result.result.reverse();
         this.croblogs = this.croblogs.slice(0, 5);
       });
@@ -90,16 +90,16 @@ export class CroPostComponent implements OnInit {
     }
     this.http.post('https://onewater-cro.herokuapp.com/like',data)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
     })
   }
 
   isLiked(data){
-    console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
-    console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    //console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
+    //console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     this.http.get<{status:string,result:string}>(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       if(result.result=='1') {
         this.liked=true;
       }else{

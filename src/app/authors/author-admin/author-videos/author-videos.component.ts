@@ -14,7 +14,7 @@ allvideos;
   ngOnInit() {
     this.common.getAllVideos()
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.allvideos=result.result
     })
   }

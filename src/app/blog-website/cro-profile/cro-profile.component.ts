@@ -20,10 +20,10 @@ export class CroProfileComponent implements OnInit {
         "https://onewater-cro.herokuapp.com/approvedcro/" + result.id
       )
       .subscribe(result => {
-        console.log(result, "cro");
+        //console.log(result, "cro");
         this.cro = result.result[0];
         this.totalcroblogs = result.result[0].approved_blogs_added.length;
-        console.log(result.result[0].approved_blogs_added,this.totalcroblogs)
+        //console.log(result.result[0].approved_blogs_added,this.totalcroblogs)
       });
     })
   }
@@ -34,7 +34,7 @@ export class CroProfileComponent implements OnInit {
         "https://onewater-cro.herokuapp.com/approvedcroblogs/" + id
       )
       .subscribe(result => {
-        console.log(result, "author blogs ");
+        //console.log(result, "author blogs ");
         this.croblogs = result.result.reverse();
         this.croblogs = this.croblogs.slice(0, 5);
       });

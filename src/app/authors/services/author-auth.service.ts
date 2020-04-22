@@ -22,7 +22,7 @@ export class AuthorAuthService {
   constructor(public http: HttpClient, public route: Router) {
     this.authorid = localStorage.getItem("authorid");
     this.authormainid = localStorage.getItem("authormainid");
-    console.log("hit", this.authorid, this.authormainid);
+    //console.log("hit", this.authorid, this.authormainid);
   }
 
   login(values) {
@@ -55,21 +55,21 @@ export class AuthorAuthService {
     }>("https://onewater-blogapi.herokuapp.com/unapproved-author", user);
   }
   checkLocalStorage() {
-    console.log("check local hit author",this.loggedIn);
+    //console.log("check local hit author",this.loggedIn);
     const token = localStorage.getItem("onewaterauthortoken");
     const approve = localStorage.getItem("authorapprovedid");
-    console.log(approve, "appppppp");
+    //console.log(approve, "appppppp");
     if (token) {
-      console.log("hit 1223");
+      //console.log("hit 1223");
       this.loggedIn = true;
       this.loggedinLitsener.next({
         status: this.loggedIn
       });
       if (localStorage.getItem("form_filled_job") == "true") {
-        console.log(
-          "check local hit ifffffffff",
-          localStorage.getItem("form_filled_job")
-        );
+        //console.log(
+        //   "check local hit ifffffffff",
+        //   localStorage.getItem("form_filled_job")
+        // );
         this.token = token;
         this.authorid = localStorage.getItem("authorid");
         this.authorname = localStorage.getItem("name");
@@ -80,7 +80,7 @@ export class AuthorAuthService {
         this.authorapprovedid = localStorage.getItem("authorapprovedid");
         // this.route.navigate(["/author"]);
       } else {
-        console.log("check local hit elseeeeeeeeeeee");
+        //console.log("check local hit elseeeeeeeeeeee");
         this.token = token;
         this.authorid = localStorage.getItem("authorid");
         this.authorname = localStorage.getItem("name");
@@ -128,7 +128,7 @@ export class AuthorAuthService {
     author.append("id", this.authorid);
     author.append("mainid", this.authormainid);
 
-    console.log(this.authormainid, this.authorid, "dwdw");
+    //console.log(this.authormainid, this.authorid, "dwdw");
     return this.http.post(
       "https://onewater-blogapi.herokuapp.com/update-authorprofile",
       author
@@ -147,14 +147,14 @@ export class AuthorAuthService {
       mainid: this.authormainid
     };
 
-    console.log(this.authormainid, this.authorapprovedid, "dwdw");
+    //console.log(this.authormainid, this.authorapprovedid, "dwdw");
     this.http
       .post(
         "https://onewater-blogapi.herokuapp.com/update-approveprofile",
         data
       )
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         // alert("Profile Send For Verification You will be respond Back");
       });
   }
@@ -169,14 +169,14 @@ export class AuthorAuthService {
     author.append("twitter", values.twitter);
     author.append("id", this.authorapprovedid);
     author.append("mainid", this.authormainid);
-    console.log(this.authormainid, this.authorapprovedid, "dwdw");
+    //console.log(this.authormainid, this.authorapprovedid, "dwdw");
     this.http
       .post(
         "https://onewater-blogapi.herokuapp.com/update-approveprofile-with-image",
         author
       )
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         // alert("Profile Send For Verification You will be respond Back");
       });
   }
@@ -192,7 +192,7 @@ export class AuthorAuthService {
     this.http
       .post("https://onewater-blogapi.herokuapp.com/createjob", values)
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
       });
   }
 }

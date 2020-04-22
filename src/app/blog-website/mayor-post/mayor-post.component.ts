@@ -61,7 +61,7 @@ mayorblogs;
         "https://onewater-mayor.herokuapp.com/approvedmayor/" + id
       )
       .subscribe(result => {
-        console.log(result, "author");
+        //console.log(result, "author");
         this.mayor = result.result[0];
       });
   }
@@ -72,7 +72,7 @@ mayorblogs;
         "https://onewater-mayor.herokuapp.com/approvedblogsbymayor/" + id
       )
       .subscribe(result => {
-        console.log(result, "author blogs ");
+        //console.log(result, "author blogs ");
         this.mayorblogs = result.result.reverse();
         this.mayorblogs = this.mayorblogs.slice(0, 5);
       });
@@ -87,16 +87,16 @@ mayorblogs;
     }
     this.http.post('https://onewater-mayor.herokuapp.com/like',data)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
     })
   }
 
   isLiked(data){
-    console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
-    console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    //console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
+    //console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     this.http.get<{status:string,result:string}>(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       if(result.result=='1') {
         this.liked=true;
       }else{

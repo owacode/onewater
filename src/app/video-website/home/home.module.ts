@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import { CommonPipesModule } from 'src/app/pipes/common-pipes.module';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms'
+
 const routes: Route[]=[
     {
     path: '',

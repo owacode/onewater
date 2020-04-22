@@ -43,7 +43,7 @@ export class EditSavedBlogsComponent implements OnInit {
       browser_spellcheck : true,
       image_advtab : true,
       images_upload_handler: function (blobInfo, success, failure) {
-        console.log(blobInfo.blob())
+        //console.log(blobInfo.blob())
         var xhr, formData;
     xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
@@ -78,7 +78,7 @@ export class EditSavedBlogsComponent implements OnInit {
     this.route.params.subscribe(result=> {
       this.common.getSingleSavedBlog(result.id)
       .subscribe(result=>{
-        console.log(result,'f')
+        //console.log(result,'f')
         this.form.patchValue({
           id: result.result._id,
           title: result.result.title,
@@ -104,21 +104,21 @@ export class EditSavedBlogsComponent implements OnInit {
   }
 
   savedblog() {
-    console.log('saved hit')
+    //console.log('saved hit')
     this.submited = true;
 
     if (this.form.invalid) {
-      console.log("invalid form for saved post blog");
+      //console.log("invalid form for saved post blog");
       return;
     }
 
-    console.log("hit");
+    //console.log("hit");
     this.modal.showBtnLoader();
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     if(this.editimage){
       this.common.updateToSavedBlogWithImage(this.form.value).subscribe(result => {
-        console.log(result);
+        //console.log(result);
         //this.form.reset();
         this.modal.hideBtnLoader();
       this.modal.openModal('#saveModal');
@@ -127,7 +127,7 @@ export class EditSavedBlogsComponent implements OnInit {
     }
     else {
       this.common.updateToSavedBlog(this.form.value).subscribe(result => {
-        console.log(result);
+        //console.log(result);
         this.modal.hideBtnLoader();
       this.modal.openModal('#saveModal');
       //this.form.reset();
@@ -139,7 +139,7 @@ export class EditSavedBlogsComponent implements OnInit {
   submit() {
     this.submited = true;
     if (this.form.invalid) {
-      console.log("invalid form for post blog");
+      //console.log("invalid form for post blog");
       return;
     }
     this.modal.openModal("#blogModal");
@@ -147,8 +147,8 @@ export class EditSavedBlogsComponent implements OnInit {
 
   postBlog(){
     this.modal.closeModal("#blogModal");
-    console.log("hit");
-    console.log(this.form.value);
+    //console.log("hit");
+    //console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     if(this.editimage) this.common.addSavedBlogWithImage(this.form.value);
     else this.common.addSavedBlog(this.form.value);

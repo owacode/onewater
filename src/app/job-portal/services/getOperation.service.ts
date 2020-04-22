@@ -10,7 +10,7 @@ export class GetOperationService {
   constructor(public http:HttpClient, public route: Router, public auth:AuthJobService){}
 
   jobsByCompany(id){
-    console.log('hittttttttttttttttttt')
+    //console.log('hittttttttttttttttttt')
     return this.http.get<{status:string, msg:string, result:any}>('https://onewater-job-api.herokuapp.com/company_posted_jobs/'+id);
   }
 
@@ -19,7 +19,7 @@ export class GetOperationService {
   }
 
   getJobs(itemperpage: number,currentpage: number){
-    console.log('hittttt',itemperpage,currentpage);
+    //console.log('hittttt',itemperpage,currentpage);
     const queryparam = `?pagesize=${itemperpage}&currentpage=${currentpage}`;
     return this.http.get<{status:string, msg:string, result:any}>('https://onewater-job-api.herokuapp.com/jobs'+queryparam);
   }
@@ -29,7 +29,7 @@ export class GetOperationService {
   }
 
   getSingleCompany(){
-    console.log(this.auth.companyid);
+    //console.log(this.auth.companyid);
     return this.http.get<{status:string, msg:string, result:any}>('https://onewater-job-api.herokuapp.com/singlecompany/'+this.auth.companyid);
   }
 }

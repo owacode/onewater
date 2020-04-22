@@ -51,18 +51,18 @@ export class SingleVideoComponent implements OnInit {
    
 
     this.route.params.subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.videoid=result.id;
       this.url=`https://onewater.herokuapp.com/blog/${result.id}`;
       this.common.getsinglevideos(result.id)
 
       .subscribe(result=> {
-        console.log(result);
+        //console.log(result);
         this.video=result.result;
         const link=this.getId(this.video.video_link);
         this.video.video_link=`https://www.youtube.com/embed/${link}`;
         this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(this.video.video_link);
-        console.log(this.video)
+        //console.log(this.video)
         this.getlikes(link);
       })
     })
@@ -75,14 +75,14 @@ export class SingleVideoComponent implements OnInit {
         let image=this.getId(this.likesvideos[i].video_link);
         this.likesvideos[i].image=`https://img.youtube.com/vi/${image}/0.jpg`;
       }
-      console.log(this.likesvideos,'hittt')
+      //console.log(this.likesvideos,'hittt')
     })
   }
 
   getlikes(id){
     this.common.getLikes(id)
     .subscribe(result=>{
-      console.log(result.items[0].statistics,'result displayed');
+      //console.log(result.items[0].statistics,'result displayed');
       const data={
         id:this.videoid,
         likeCount:result.items[0].statistics.likeCount,

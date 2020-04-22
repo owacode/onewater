@@ -20,7 +20,7 @@ export class VideosComponent implements OnInit {
         let image=this.getId(this.videos[i].video_link);
         this.videos[i].image=`https://img.youtube.com/vi/${image}/0.jpg`;
       }
-      console.log(this.videos,'hittt')
+      //console.log(this.videos,'hittt')
     })
   }
   getId(url) {

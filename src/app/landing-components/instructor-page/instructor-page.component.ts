@@ -29,16 +29,16 @@ export class InstructorPageComponent implements OnInit {
 
   register() {
     this.submitted = true;
-    console.log(this.form.value);
+    //console.log(this.form.value);
     if(this.form.invalid){
       this.modal.hideBtnLoader();
-      console.log('invalid reset form');
+      //console.log('invalid reset form');
       return;
     }
-    console.log(this.form.value,'after reset');
+    //console.log(this.form.value,'after reset');
     this.auth.registerInstructor(this.form.value)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.modal.hideBtnLoader();
       this.modal.closeModal('#instructorModal');
       this.modal.openModal('#detailsSubmitted');

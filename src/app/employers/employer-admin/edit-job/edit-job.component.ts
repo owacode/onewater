@@ -16,12 +16,12 @@ export class EditJobComponent implements OnInit {
   ngOnInit() {
 
     this.router.params.subscribe(result=>{
-      console.log(result)
+      //console.log(result)
       let id=result.id
       this.getservice.getSingleJob(result.id)
       .subscribe(result=>{
         const data=result.result
-        console.log(result)
+        //console.log(result)
 
         this.form= new FormGroup({
           title:new FormControl(data.title,{validators:[Validators.required,Validators.email]}),
@@ -44,7 +44,7 @@ export class EditJobComponent implements OnInit {
 
 
   editjob(){
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.service.updateJob(this.form.value);
   }
 

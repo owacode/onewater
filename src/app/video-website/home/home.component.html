@@ -20,7 +20,7 @@
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/0tIUbGVEKIk"
+          [src]="safeSrc"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
@@ -60,7 +60,7 @@
       <div class="col-lg-6 col-md-12 h-100 vod-big-wrap">
         <div class="vod">
           <a
-            [routerLink]="['/o-wow/singlevideo/', singleliked._id]"
+            [routerLink]="['/o-wow/singlevideo/', singleliked?._id]"
             title="{{ singleliked?.title }}"
           >
             <div class="thumbnail-card">
@@ -93,7 +93,7 @@
           <div class="col-sm-6" *ngFor="let video of likesvideos">
             <div class="vod vod-small">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video._id]"
+                [routerLink]="['/o-wow/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card">
@@ -285,7 +285,7 @@
           >
             <div class="item" *ngFor="let video of water">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video._id]"
+                [routerLink]="['/o-wow/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -336,7 +336,7 @@
           >
             <div class="item" *ngFor="let video of wastewater">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video._id]"
+                [routerLink]="['/o-wow/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -391,7 +391,7 @@
           >
             <div class="item" *ngFor="let video of stormwater">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video._id]"
+                [routerLink]="['/o-wow/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -446,7 +446,7 @@
           >
             <div class="item" *ngFor="let video of innovationresearch">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video._id]"
+                [routerLink]="['/o-wow/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -501,7 +501,7 @@
           >
             <div class="item" *ngFor="let video of sustainabledevelopment">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video._id]"
+                [routerLink]="['/o-wow/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -556,7 +556,7 @@
           >
             <div class="item" *ngFor="let video of managementsinance">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video._id]"
+                [routerLink]="['/o-wow/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -611,7 +611,7 @@
           >
             <div class="item" *ngFor="let video of legistativeregulatory">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video._id]"
+                [routerLink]="['/o-wow/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -676,7 +676,7 @@
           >
             <div class="thumbnail-card card-shadow">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video._id]"
+                [routerLink]="['/o-wow/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
               <div class="row">
@@ -828,9 +828,8 @@
         </div>
         <img src="assets/img/modals/recover-pass.jpg" alt="" />
         <h2>
-          Video Submitted.
-          <br>
-          We will communicate with you the further steps on E-Mail
+         
+          Thank you for sharing your video! <br> The OneWater Academy Team will review it and, if appropriate, will publish it shortly.
         </h2>
 
         <button

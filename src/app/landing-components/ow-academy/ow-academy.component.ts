@@ -39,16 +39,16 @@ export class OwAcademyComponent implements OnInit {
 
   register() {
     this.submitted = true;
-    console.log(this.form.value);
+    //console.log(this.form.value);
     if(this.form.invalid){
       this.modal.hideBtnLoader();
-      console.log('invalid reset form');
+      //console.log('invalid reset form');
       return;
     }
-    console.log(this.form.value,'after reset');
+    //console.log(this.form.value,'after reset');
     this.auth.registerInstructor(this.form.value)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.modal.hideBtnLoader();
       this.modal.closeModal('#instructorModal');
       this.modal.openModal('#detailsSubmitted');
@@ -59,20 +59,20 @@ export class OwAcademyComponent implements OnInit {
 
   submitDrawingForm(){
     this.drawingSubmitted = true;
-    console.log(this.form.value);
+    //console.log(this.form.value);
     if(this.drawingForm.invalid){
       this.modal.hideBtnLoader();
-      console.log('invalid reset form');
+      //console.log('invalid reset form');
       return;
     }
 
-    console.log(this.drawingForm.value,'after reset');
+    //console.log(this.drawingForm.value,'after reset');
     this.auth.registerInstructorForDrawing(this.drawingForm.value)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.modal.hideBtnLoader();
       this.modal.closeModal('#drawingModal');
-      this.modal.openModal('#detailsSubmitted');
+      this.modal.openModal('#drawingSuccess');
       this.drawingForm.reset();
       this.drawingSubmitted = false;
     })

@@ -32,8 +32,8 @@ export class MayorRegistrationComponent implements OnInit {
 
   onImagePick(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
-    console.log(file);
-    console.log(file.type.includes("image"));
+    //console.log(file);
+    //console.log(file.type.includes("image"));
     if (!file.type.includes("image")) {
       return alert("Only image is supported");
     }
@@ -47,17 +47,17 @@ export class MayorRegistrationComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.profilesubmit = true;
     if (this.form.invalid) {
-      console.log('invalid',this.form)
+      //console.log('invalid',this.form)
       this.modal.hideBtnLoader();
       return;
     }
 
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.auth.mayorRegistration(this.form.value).subscribe(result => {
-      console.log(result, "mayor details registered successfully");
+      //console.log(result, "mayor details registered successfully");
       this.modal.hideBtnLoader();
       this.form.reset();
       this.profilesubmit = false;

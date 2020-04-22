@@ -22,10 +22,10 @@ export class MayorProfileComponent implements OnInit {
         "https://onewater-mayor.herokuapp.com/approvedmayor/" + result.id
       )
       .subscribe(result => {
-        console.log(result, "author");
+        //console.log(result, "author");
         this.mayor = result.result[0];
         this.totalmayorblogs = result.result[0].approved_blogs_added.length;
-        console.log(result.result[0].approved_blogs_added,this.totalmayorblogs)
+        //console.log(result.result[0].approved_blogs_added,this.totalmayorblogs)
       });
     })
   }
@@ -36,7 +36,7 @@ export class MayorProfileComponent implements OnInit {
         "https://onewater-mayor.herokuapp.com/approvedblogsbymayor/" + id
       )
       .subscribe(result => {
-        console.log(result, "author blogs ");
+        //console.log(result, "author blogs ");
         this.mayorblogs = result.result.reverse();
         this.mayorblogs = this.mayorblogs.slice(0, 5);
       });

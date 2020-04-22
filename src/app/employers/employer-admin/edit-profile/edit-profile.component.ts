@@ -41,9 +41,9 @@ export class EditProfileComponent implements OnInit {
 
     this.getservice.getSingleCompany()
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.editableprofile=result.result;
-      console.log(this.editableprofile,'dwwd')
+      //console.log(this.editableprofile,'dwwd')
      this.form.patchValue({company_name:this.editableprofile.company_name,
       company_address:this.editableprofile.company_address,
       company_logo:this.editableprofile.company_logo,
@@ -74,16 +74,16 @@ export class EditProfileComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.submited=true;
     // if(this.form.invalid)
     //   {
     //     return;
     //   }
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.area=this.form.value.working_area.split('\n');
     this.form.value.working_area=this.area;
-    console.log(this.form.value,'sss');
+    //console.log(this.form.value,'sss');
     this.auth.employeeCompanyRegistration(this.form.value);
   }
 }

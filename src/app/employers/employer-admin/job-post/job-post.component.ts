@@ -17,7 +17,7 @@ export class JobPostComponent implements OnInit {
   ngOnInit() {
     this.getservice.getSingleCompany()
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.job=result.result
     })
     Feather.replace();
@@ -43,7 +43,7 @@ export class JobPostComponent implements OnInit {
   postjob(){
     this.form.value.companyid=localStorage.getItem('companyid');
     this.form.value.image=this.job.company_logo
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.service.addNewJob(this.form.value);
   }
 

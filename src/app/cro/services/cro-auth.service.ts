@@ -21,7 +21,7 @@ export class CROAuthService {
   constructor(public http: HttpClient, public route: Router) {
     this.croid = localStorage.getItem("croid");
     this.cromainid = localStorage.getItem("cromainid");
-    console.log("hit", this.croid, this.cromainid);
+    //console.log("hit", this.croid, this.cromainid);
   }
 
   login(values) {
@@ -56,21 +56,21 @@ export class CROAuthService {
   }
 
   checkLocalStorage() {
-    console.log("check local hit");
+    //console.log("check local hit");
     const token = localStorage.getItem("onewatercrotoken");
     const approve = localStorage.getItem("croapprovedid");
-    console.log(approve, "appppppp");
+    //console.log(approve, "appppppp");
     if (token) {
-      console.log("hit 1223");
+      //console.log("hit 1223");
       this.loggedIn = true;
       this.loggedinLitsener.next({
         status: this.loggedIn
       });
       if (localStorage.getItem("form_filled_cro") == "true") {
-        console.log(
-          "check local hit ifffffffff",
-          localStorage.getItem("form_filled_cro")
-        );
+        //console.log(
+        //   "check local hit ifffffffff",
+        //   localStorage.getItem("form_filled_cro")
+        // );
         this.token = token;
         this.croid = localStorage.getItem("croid");
         this.croname = localStorage.getItem("croname");
@@ -81,7 +81,7 @@ export class CROAuthService {
         this.croapprovedid = localStorage.getItem("croapprovedid");
         this.route.navigate(["/cro"]);
       } else {
-        console.log("check local hit elseeeeeeeeeeee");
+        //console.log("check local hit elseeeeeeeeeeee");
         this.token = token;
         this.croid = localStorage.getItem("croid");
         this.croname = localStorage.getItem("croname");
@@ -131,7 +131,7 @@ export class CROAuthService {
     cro.append("id", this.croid);
     cro.append("mainid", this.cromainid);
 
-    console.log(this.cromainid, this.croid, "dwdw");
+    //console.log(this.cromainid, this.croid, "dwdw");
     return this.http.post("https://onewater-cro.herokuapp.com/update-croprofile", cro);
   }
 
@@ -147,11 +147,11 @@ export class CROAuthService {
       mainid: this.cromainid
     };
 
-    console.log(this.cromainid, this.croapprovedid, "dwdw");
+    //console.log(this.cromainid, this.croapprovedid, "dwdw");
     this.http
       .post("https://onewater-cro.herokuapp.com/update-approveprofile", data)
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         // alert("Profile Send For Verification You will be respond Back");
       });
   }
@@ -166,11 +166,11 @@ export class CROAuthService {
     cro.append("twitter", values.twitter);
     cro.append("id", this.croapprovedid);
     cro.append("mainid", this.cromainid);
-    console.log(this.cromainid, this.croapprovedid, "dwdw");
+    //console.log(this.cromainid, this.croapprovedid, "dwdw");
     this.http
       .post("https://onewater-cro.herokuapp.com/update-approveprofile-with-image", cro)
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         // alert("Profile Send For Verification You will be respond Back");
       });
   }

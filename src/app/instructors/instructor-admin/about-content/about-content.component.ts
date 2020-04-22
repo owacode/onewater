@@ -15,13 +15,13 @@ export class AboutContentComponent implements OnInit {
   ngOnInit() {
 
     this.router.params.subscribe(result => {
-      console.log(result);
+      //console.log(result);
       this.courseid = result.id;
     })
-    console.log(this.courseid,'course id');
+    //console.log(this.courseid,'course id');
     this.http.get<{status:any, msg:any, result:any}>('https://onewater-instructor-api.herokuapp.com/singlecourse/'+this.courseid)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.course = result.result[0];
     })
   }

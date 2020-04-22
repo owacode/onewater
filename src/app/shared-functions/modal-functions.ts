@@ -21,7 +21,7 @@ export class ModalFunctions {
       }
     
       closeModal(thismodal) {
-        console.log('close Modal')
+        //console.log('close Modal')
         $(thismodal).css("display", "none");
         $(thismodal).removeClass("show");
         $('.overlay').css("display", "none");

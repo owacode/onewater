@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../services/common.service';
 import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -37,7 +38,8 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-
+  public landingVideo;
+  public landingVideoLink;
   public featuredvideos;
   public latestvideos;
   public likesvideos;
@@ -51,7 +53,8 @@ export class HomeComponent implements OnInit {
   singleliked;
   public form: FormGroup;
   public submitted: Boolean=false;
-  constructor(public commonservice:CommonService, public modal: ModalFunctions) { }
+  safeSrc: SafeResourceUrl;
+  constructor(public commonservice:CommonService, public modal: ModalFunctions,  private sanitizer: DomSanitizer) { }
 
 ngOnInit() {
 this.form=new FormGroup({
@@ -63,63 +66,75 @@ this.form=new FormGroup({
   // this.commonservice.getVideoByViews()
   //       .subscribe(result=>{
   //         this.featuredvideos=result.result.slice(0,10)
-  //         console.log(this.featuredvideos,'hittt')
+  //         //console.log(this.featuredvideos,'hittt')
   //       })
+
+  this.commonservice.getLandingVideo()
+  .subscribe(result=> {
+    this.landingVideo = result.result;
+    
+    const link=this.getId(result.result.video_link);
+    this.landingVideoLink=`https://www.youtube.com/embed/${link}`;
+    this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(this.landingVideoLink);
+    ////console.log(this.landingVideo);
+    this.landingVideoLink = this.landingVideo['video_link'];
+    //console.log("video-link", this.landingVideoLink);
+  })
 
   this.commonservice.getHomeVideoByCategory('water')
     .subscribe(result=>{
       this.water=result.result.slice(0,10)
-      console.log(this.water,'hittt water')
+      //console.log(this.water,'hittt water')
     })
 
     this.commonservice.getHomeVideoByCategory('wastewater')
     .subscribe(result=>{
       this.wastewater=result.result.slice(0,10)
-      console.log(this.wastewater,'hittt wastewater')
+      //console.log(this.wastewater,'hittt wastewater')
     })
 
     this.commonservice.getHomeVideoByCategory('stormwater')
     .subscribe(result=>{
       this.stormwater=result.result.slice(0,10)
-      console.log(this.featuredvideos,'hittt stormwater')
+      //console.log(this.featuredvideos,'hittt stormwater')
     })
 
     this.commonservice.getHomeVideoByCategory('research')
     .subscribe(result=>{
       this.innovationresearch=result.result.slice(0,10)
-      console.log(this.featuredvideos,'hittt research')
+      //console.log(this.featuredvideos,'hittt research')
     })
 
     this.commonservice.getHomeVideoByCategory('sustainable')
     .subscribe(result=>{
       this.sustainabledevelopment=result.result.slice(0,10)
-      console.log(this.featuredvideos,'hittt sustainable')
+      //console.log(this.featuredvideos,'hittt sustainable')
     })
 
 
     this.commonservice.getHomeVideoByCategory('mgmt')
     .subscribe(result=>{
       this.managementsinance=result.result.slice(0,10)
-      console.log(this.featuredvideos,'hittt mgmt')
+      //console.log(this.featuredvideos,'hittt mgmt')
     })
 
     this.commonservice.getHomeVideoByCategory('leg')
     .subscribe(result=>{
       this.legistativeregulatory=result.result.slice(0,10)
-      console.log(this.featuredvideos,'hittt leg')
+      //console.log(this.featuredvideos,'hittt leg')
     })
 
   this.commonservice.getLatestvideos()
         .subscribe(result=>{
           this.latestvideos=result.result.slice(0,12)
-          console.log(this.latestvideos,'hittt')
+          //console.log(this.latestvideos,'hittt')
         })
 
         this.commonservice.getVideoByLikes()
         .subscribe(result=>{
           this.singleliked=result.result[0]
           this.likesvideos=result.result.slice(1,5);
-          console.log(this.likesvideos,'hittt likedd')
+          //console.log(this.likesvideos,'hittt likedd')
         })
 
 
@@ -138,22 +153,23 @@ getId(url) {
 
 addVideo() {
   this.submitted=true;
-  console.log(this.form.value);
+  //console.log(this.form.value);
   if(this.form.invalid) {
     this.modal.hideBtnLoader();
     return;
     
   }
-  console.log(this.form.value);
+  //console.log(this.form.value);
   this.commonservice.postVideo(this.form.value)
   .subscribe(result=> {
-    console.log(result);
+    //console.log(result);
     this.modal.hideBtnLoader();
     this.form.reset();
     this.modal.closeModal('#postvideoModal');
     this.modal.openModal('#videoPosted');
-    
+    this.submitted=false;
   })
 }
+
 
 }

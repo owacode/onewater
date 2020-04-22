@@ -15,12 +15,12 @@ export class JobDescComponent implements OnInit {
   ngOnInit() {
       Feather.replace();
       this.router.params.subscribe(result=>{
-        console.log(result.id);
+        //console.log(result.id);
         this.service.getSingleJob(result.id)
         .subscribe(result=>{
-          console.log(result);
+          //console.log(result);
           this.job=result.result
-          console.log(this.job.education);
+          //console.log(this.job.education);
         })
       })
   }

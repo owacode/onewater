@@ -14,12 +14,12 @@ export class CommonService {
   ) {}
 
   addBlog(value) {
-    console.log('service hit')
+    //console.log('service hit')
     const data = new FormData();
     let count = value.data.split(" ").length;
     let min = Math.ceil(count / 250);
-    console.log(min.toString(), "fef");
-    console.log(count, "iihiji");
+    //console.log(min.toString(), "fef");
+    //console.log(count, "iihiji");
     data.append("title", value.title);
     data.append("mayorid", this.mayorauth.mayorapprovedid);
     data.append("mayorname", this.mayorauth.mayorname);
@@ -33,7 +33,7 @@ export class CommonService {
         data
       )
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
       });
   }
 
@@ -41,8 +41,8 @@ export class CommonService {
     const data = new FormData();
     let count = value.data.split(" ").length;
     let min = Math.ceil(count / 250);
-    console.log(min.toString(), "fef");
-    console.log(count, "iihiji");
+    //console.log(min.toString(), "fef");
+    //console.log(count, "iihiji");
     data.append("savedid", value.id);
     data.append("title", value.title);
     data.append("mayorid", this.mayorauth.mayorapprovedid);
@@ -57,7 +57,7 @@ export class CommonService {
         data
       )
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         //alert(result.msg);
       });
   }
@@ -65,8 +65,8 @@ export class CommonService {
   addSavedBlog(value) {
     let count = value.data.split(" ").length;
     let min = Math.ceil(count / 250);
-    console.log(min.toString(), "fef");
-    console.log(count, "iihiji");
+    //console.log(min.toString(), "fef");
+    //console.log(count, "iihiji");
 
     const saveblog = {
       savedid: value.id,
@@ -84,7 +84,7 @@ export class CommonService {
         saveblog
       )
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         //alert(result.msg);
       });
   }
@@ -181,7 +181,7 @@ export class CommonService {
   }
 
   getSingleAllBlog(id) {
-    console.log(id, "jjj");
+    //console.log(id, "jjj");
     return this.http.get<{ status: string; msg: string; result: any }>(
       "https://onewater-mayor.herokuapp.com/allblogs/"+id
     );

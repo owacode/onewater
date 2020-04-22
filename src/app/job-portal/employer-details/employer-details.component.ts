@@ -46,7 +46,7 @@ export class EmployerDetailsComponent implements OnInit {
     this.route.params.subscribe(result=>{
       this.http.get<{status:string, msg:string, result:any}>('https://onewater-job-api.herokuapp.com/singlecompany/'+result.id)
       .subscribe(result=>{
-        console.log(result);
+        //console.log(result);
         this.company=result.result;
     })
   })
@@ -54,7 +54,7 @@ export class EmployerDetailsComponent implements OnInit {
   this.route.params.subscribe(result=>{
     this.http.get<{status:string, msg:string, result:any}>('https://onewater-job-api.herokuapp.com/company_posted_jobs/'+result.id)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.companyjobs=result.result;
   })
 })

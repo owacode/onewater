@@ -21,18 +21,18 @@ export class MayorAuthService {
   constructor(public http: HttpClient, public route: Router) {}
 
   checkLocalStorage(){
-    console.log('mayor check local hit')
+    //console.log('mayor check local hit')
     const token=localStorage.getItem('onewatermayortoken');
     const approve=localStorage.getItem('mayorapprovedid');
-    console.log(approve,'appppppp')
+    //console.log(approve,'appppppp')
         if(token){
-          console.log('hit 1223')
+          //console.log('hit 1223')
           this.loggedIn=true
           this.loggedinLitsener.next({
               status:this.loggedIn
           })
           if(localStorage.getItem('form_filled_mayor') == 'true'){
-            console.log('check local hit ifffffffff',localStorage.getItem('form_filled_mayor'))
+            //console.log('check local hit ifffffffff',localStorage.getItem('form_filled_mayor'))
             this.token=token;
             this.mayorid=localStorage.getItem('mayorid');
             this.mayorname=localStorage.getItem('mayorname');
@@ -41,10 +41,10 @@ export class MayorAuthService {
             this.mayorimage=localStorage.getItem('mayorimage');
             if(!approve) return this.route.navigate(['/onewaterblog/mayor-reg']);;
             this.mayorapprovedid=localStorage.getItem('mayorapprovedid');
-            console.log("hit", this.mayorid, this.mayormainid,this.mayorapprovedid);
+            //console.log("hit", this.mayorid, this.mayormainid,this.mayorapprovedid);
             this.route.navigate(['/mayor']);
           }else{
-            console.log('check local hit elseeeeeeeeeeee')
+            //console.log('check local hit elseeeeeeeeeeee')
             this.token=token;
             this.mayorid=localStorage.getItem('mayorid');
             this.mayorname=localStorage.getItem('mayorname');
@@ -97,7 +97,7 @@ export class MayorAuthService {
     mayor.append('id',this.mayorid)
     mayor.append('mainid',this.mayormainid)
 
-    console.log(this.mayormainid, this.mayorid,'dwdw');
+    //console.log(this.mayormainid, this.mayorid,'dwdw');
     return this.http.post('https://onewater-mayor.herokuapp.com/update-mayorprofile',mayor);
 
   }
@@ -114,14 +114,14 @@ export class MayorAuthService {
       mainid: this.mayormainid
     };
 
-    console.log(this.mayormainid, this.mayorapprovedid, "dwdw");
+    //console.log(this.mayormainid, this.mayorapprovedid, "dwdw");
     this.http
       .post(
         "https://onewater-mayor.herokuapp.com/update-approveprofile",
         data
       )
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         // alert("Profile Send For Verification You will be respond Back");
       });
   }
@@ -136,14 +136,14 @@ export class MayorAuthService {
     mayor.append("twitter", values.twitter);
     mayor.append("id", this.mayorapprovedid);
     mayor.append("mainid", this.mayormainid);
-    console.log(this.mayormainid, this.mayorapprovedid, "dwdw");
+    //console.log(this.mayormainid, this.mayorapprovedid, "dwdw");
     this.http
       .post(
         "https://onewater-mayor.herokuapp.com/update-approveprofile-with-image",
         mayor
       )
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         // alert("Profile Send For Verification You will be respond Back");
       });
   }

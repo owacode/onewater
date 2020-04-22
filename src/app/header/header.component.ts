@@ -65,11 +65,11 @@ toggleHeader() {
     let fixHeader = function () {
       if ($(window).scrollTop() > 70) {
         $(header).addClass("fixed-header");
-       // console.log("fix header");
+       // //console.log("fix header");
       }
       else {
         $(header).removeClass("fixed-header");
-        //console.log("remove header");
+        ////console.log("remove header");
       }
     }
     let showMenu = function () {
@@ -89,22 +89,22 @@ toggleHeader() {
   }
   subscribe(){
     this.submited = true;
-    console.log(this.form.value);
+    //console.log(this.form.value);
     if(this.form.invalid){
-      console.log("Invalid newsletter details");
+      //console.log("Invalid newsletter details");
       this.modal.hideBtnLoader();
       return;
     }
     this.http.post<{ status: string}>('https://onewater-auth.herokuapp.com/subscribe',this.form.value)
     .subscribe(result=>{
       if(result.status == "error"){
-        console.log(result,'already suscribed');
+        //console.log(result,'already suscribed');
         this.modal.hideBtnLoader();
         this.modal.closeModal('#subscribeModal');
         this.modal.openModal("#alreadysubscribedmodal");
         return;
       }
-      console.log(result,'suscribed successfully');
+      //console.log(result,'suscribed successfully');
       this.modal.hideBtnLoader();
       this.modal.closeModal('#subscribeModal');
       this.modal.openModal("#thanksmodal");
@@ -115,7 +115,7 @@ toggleHeader() {
   // login() {
   //   this.http.get('https://onewater-instructor-api.herokuapp.com')
   //     .subscribe(result => {
-  //       console.log(result);
+  //       //console.log(result);
   //     })
   // }
 
@@ -138,7 +138,7 @@ toggleHeader() {
   createCookie(key, value) {
     let cookie = escape(key) + "=" + escape(value) + ";";
     document.cookie = cookie;
-    console.log(cookie);
-    console.log("Creating new cookie with key: " + key + " value: " + value);
+    //console.log(cookie);
+    //console.log("Creating new cookie with key: " + key + " value: " + value);
   }
 }

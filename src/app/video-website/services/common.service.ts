@@ -10,6 +10,9 @@ import { Subject } from 'rxjs';
 export class CommonService {
   constructor(public http:HttpClient, public route: Router){}
 
+  getLandingVideo(){
+    return this.http.get<{status:any,result:any}>("https://onewater-video-api.herokuapp.com/primevideo");
+  }
   postVideo(data){
     return this.http.post<{status:any,msg:any,result:any}>("https://onewater-video-api.herokuapp.com/post-authorvideo",data);
   }
@@ -54,7 +57,7 @@ export class CommonService {
   updatelikes(values){
     this.http.patch('https://onewater-video-api.herokuapp.com/likesandviews',values)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
     })
 }
 

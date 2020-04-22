@@ -31,16 +31,16 @@ export class UploadContentComponent implements OnInit {
     this.submited=true;
     this.course.value.email=this.instructorservice.useremail;
     this.course.value.id= this.instructorservice.userid;
-    console.log(this.course.value);
+    //console.log(this.course.value);
     if(this.course.invalid){
-      console.log("Content posting unsucessful, fill the form correctly");
+      //console.log("Content posting unsucessful, fill the form correctly");
       this.modal.hideBtnLoader();
       return;
     }
-    console.log('pass',this.course.value);
+    //console.log('pass',this.course.value);
     this.http.post('https://onewater-instructor-api.herokuapp.com/addcourse',this.course.value)
     .subscribe(result=>{
-      console.log("Content Posted Successfully", result);
+      //console.log("Content Posted Successfully", result);
       this.modal.hideBtnLoader();
       this.course.reset();
       this.submited = false;
@@ -49,7 +49,7 @@ export class UploadContentComponent implements OnInit {
   }
 
   closeModal(thismodal) {
-    console.log('hit close')
+    //console.log('hit close')
     $(thismodal).css("display", "none");
     $(thismodal).removeClass("show");
     $('.overlay').css("display", "none");

@@ -27,7 +27,7 @@ export class LoginSignupComponent implements OnInit {
 
   register(){
     this.registersubmitted=true;
-    console.log(this.user.value);
+    //console.log(this.user.value);
     if(this.user.invalid){
       this.modal.hideBtnLoader();
       return;
@@ -37,17 +37,17 @@ export class LoginSignupComponent implements OnInit {
       this.modal.openModal("#passModal");
       return;
     };
-    console.log('pass',this.user.value);
+    //console.log('pass',this.user.value);
 
     this.http.post<{status:any,payload:any}>('https://onewater-auth.herokuapp.com/newuser',this.user.value)
     .subscribe(result=>{
       if(result.status == "error"){
-        console.log("user already exist")
+        //console.log("user already exist")
         this.modal.hideBtnLoader();
         this.modal.openModal("#mailexistModal");
       }
       else if(result.status == "success"){
-        console.log("user added successfully")
+        //console.log("user added successfully")
         this.modal.hideBtnLoader();
         this.modal.openModal("#signupModal");
       }

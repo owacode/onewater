@@ -43,18 +43,18 @@ export class JobHomeComponent implements OnInit {
     Feather.replace();
     this.getservice.getJobs(5,1)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.jobs=result.result.fetchjobs;
       // this.jobs=this.jobs.slice(0, 5)
-      console.log(this.jobs)
+      //console.log(this.jobs)
     })
 
     this.http.get<{status:string, msg:string, result:any}>('https://onewater-job-api.herokuapp.com/getcompanies')
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.companies=result.result.reverse();
       // this.companies=this.companies.slice(0, 5)
-      console.log(this.companies)
+      //console.log(this.companies)
     })
   }
 

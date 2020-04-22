@@ -39,7 +39,7 @@ export class CroPostBlogComponent implements OnInit {
       browser_spellcheck : true,
       image_advtab : true,
       images_upload_handler: function (blobInfo, success, failure) {
-        console.log(blobInfo.blob())
+        //console.log(blobInfo.blob())
         var xhr, formData;
     xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
@@ -84,20 +84,20 @@ export class CroPostBlogComponent implements OnInit {
   }
 
   savedblog() {
-    console.log('save blog hit');
+    //console.log('save blog hit');
     this.submited = true;
 
 
     if (this.form.invalid) {
-      console.log("invalid form for saved post blog");
+      //console.log("invalid form for saved post blog");
       return;
     }
-    console.log("hit");
+    //console.log("hit");
     this.modal.showBtnLoader();
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addToSavedBlog(this.form.value).subscribe(result => {
-      console.log(result);
+      //console.log(result);
       this.modal.hideBtnLoader();
       this.modal.openModal('#saveModal');
       //alert(result.msg);
@@ -111,7 +111,7 @@ export class CroPostBlogComponent implements OnInit {
   submit() {
     this.submited = true;
     if (this.form.invalid) {
-      console.log("invalid form for post blog");
+      //console.log("invalid form for post blog");
       return;
     }
     this.modal.openModal("#blogModal");
@@ -121,8 +121,8 @@ export class CroPostBlogComponent implements OnInit {
 
   postBlog(){
     this.modal.closeModal("#blogModal");
-    console.log("hit");
-    console.log(this.form.value);
+    //console.log("hit");
+    //console.log(this.form.value);
     this.htmlStr = this.form.value.data;
     this.common.addBlog(this.form.value);
     this.modal.openModal("#successModal");

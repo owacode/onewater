@@ -17,7 +17,7 @@ blogs;
     Feather.replace();
     this.common.getPendingBlogs()
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.pendingblogs=result.result;
       this.blogs=result.result;
     })

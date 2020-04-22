@@ -50,16 +50,16 @@ export class EmployerRegisterationComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.submited=true;
     // if(this.form.invalid)
     //   {
     //     return;
     //   }
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.area=this.form.value.working_area.split('\n');
     this.form.value.working_area=this.area;
-    console.log(this.form.value,'sss');
+    //console.log(this.form.value,'sss');
     this.auth.employeeCompanyRegistration(this.form.value);
   }
 

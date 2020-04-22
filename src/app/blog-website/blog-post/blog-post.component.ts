@@ -55,14 +55,14 @@ export class BlogPostComponent implements OnInit {
 
     this.router.params.subscribe(result => {
       this.blogid=result.id;
-      console.log(result);
+      //console.log(result);
       this.url = `https://onewater.herokuapp.com/blog/${result.id}`;
       this.http
         .get<{ status: string; msg: string; result: any }>(
           "https://onewater-blogapi.herokuapp.com/singleappblog/" + result.id
         )
         .subscribe(result => {
-          console.log(result,'########## blog single');
+          //console.log(result,'########## blog single');
           this.blog = result.result[0];
           this.getauthor(this.blog.author_id);
           this.getauthorblogs(this.blog.author_id);
@@ -77,7 +77,7 @@ export class BlogPostComponent implements OnInit {
         "https://onewater-blogapi.herokuapp.com/approvedauthor/" + id
       )
       .subscribe(result => {
-        console.log(result, "author");
+        //console.log(result, "author");
         this.author = result.result[0];
       });
   }
@@ -88,7 +88,7 @@ export class BlogPostComponent implements OnInit {
         "https://onewater-blogapi.herokuapp.com/authorapprovedblogs/" + id
       )
       .subscribe(result => {
-        console.log(result, "author blogs ");
+        //console.log(result, "author blogs ");
         this.authorblogs = result.result.reverse();
         this.authorblogs = this.authorblogs.slice(0, 5);
       });
@@ -100,7 +100,7 @@ export class BlogPostComponent implements OnInit {
         "https://onewater-blogapi.herokuapp.com/mostlikedblogs"
       )
       .subscribe(result => {
-        console.log(result, "most liked blogs ");
+        //console.log(result, "most liked blogs ");
         this.mostlikedblogs = result.result;
       });
   }
@@ -113,16 +113,16 @@ export class BlogPostComponent implements OnInit {
     }
     this.http.post('https://onewater-blogapi.herokuapp.com/like',data)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
     })
   }
 
   isLiked(data){
-    console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
-    console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    //console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
+    //console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     this.http.get<{status:string,result:string}>(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       if(result.result=='1') {
         this.liked=true;
       }else{

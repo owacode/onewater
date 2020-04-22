@@ -16,10 +16,10 @@ export class JobDetailsComponent implements OnInit {
   ngOnInit() {
     Feather.replace();
     this.routes.params.subscribe(result=>{
-      console.log(result)
+      //console.log(result)
       this.getservice.getSingleJob(result.id)
       .subscribe(result=>{
-        console.log(result);
+        //console.log(result);
         this.job=result.result;
       });
     })

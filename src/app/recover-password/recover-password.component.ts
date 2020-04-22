@@ -13,6 +13,7 @@ export class RecoverPasswordComponent implements OnInit {
 
   decoded_token;
   resetpassword;
+  redirectRoute;
   submitted: Boolean = false;
   constructor(public modal: ModalFunctions, public http: HttpClient, public route: ActivatedRoute) { }
 
@@ -24,25 +25,25 @@ export class RecoverPasswordComponent implements OnInit {
     });
 
     this.route.params.subscribe(result=> {
-      console.log(result)
+      //console.log(result)
       this.decoded_token = this.getDecodedAccessToken(result.token);
-      console.log(this.decoded_token);
+      //console.log(this.decoded_token);
       this.resetpassword.value.email = this.decoded_token.email;
-      console.log(this.resetpassword.value.email)
+      //console.log(this.resetpassword.value.email)
     })
   }
 
   reset() {
     this.submitted = true;
     this.resetpassword.value.email = this.decoded_token.email;
-    console.log(this.resetpassword);
+    //console.log(this.resetpassword);
     if(this.resetpassword.invalid) {
-      console.log("invalid reset password form");
+      //console.log("invalid reset password form");
       this.modal.hideBtnLoader();
       return;
     }
     if(this.resetpassword.value.password != this.resetpassword.value.cpassword) {
-      alert('password not match');
+      //alert('password not match');
       this.modal.openModal('#passModal');
       this.modal.hideBtnLoader();
       return;
@@ -51,39 +52,46 @@ export class RecoverPasswordComponent implements OnInit {
     if(this.decoded_token.platform == 'blog_author') {
       this.http.post<{status: string, msg: string, result: any}>('https://onewater-blogapi.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
-        console.log(result);
+        //console.log(result);
+        this.modal.hideBtnLoader()
         this.modal.openModal('#passSuccessModal');
-        this.modal.hideBtnLoader();
+        this.redirectRoute = "/onewaterblog/author/login";
       })
     }else if(this.decoded_token.platform == 'instructor') {
       this.http.post<{status: string, msg: string, result: any}>('https://onewater-instructor-api.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
-        console.log(result);
-        this.modal.openModal('#passSuccessModal');
+        //console.log(result);
         this.modal.hideBtnLoader();
+        this.modal.openModal('#passSuccessModal');
+       
       })
     }else if(this.decoded_token.platform == 'blog_cro') {
       this.http.post<{status: string, msg: string, result: any}>('https://onewater-cro.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
-        console.log(result);
-        this.modal.openModal('#passSuccessModal');
+        //console.log(result);
         this.modal.hideBtnLoader();
+        this.modal.openModal('#passSuccessModal');
+        
       })
     }else if(this.decoded_token.platform == 'blog_mayor') {
       this.http.post<{status: string, msg: string, result: any}>('https://onewater-mayor.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
-        console.log(result);
-        this.modal.openModal('#passSuccessModal');
+        //console.log(result);
         this.modal.hideBtnLoader();
+        this.modal.openModal('#passSuccessModal');
+        
       })
     }else if(this.decoded_token.platform == 'onewateruser') {
       this.http.post<{status: string, msg: string, result: any}>('https://onewater-auth.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
-        console.log(result);
-        this.modal.openModal('#passSuccessModal');
+        //console.log(result);
         this.modal.hideBtnLoader();
+        this.modal.openModal('#passSuccessModal');
+        this.redirectRoute = "/login";
       })
     }
+    this.resetpassword.reset();
+    this.submitted = false;
 
   }
 

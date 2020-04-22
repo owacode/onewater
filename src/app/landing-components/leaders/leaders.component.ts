@@ -95,7 +95,7 @@ export class LeadersComponent implements OnInit {
     this.http.get<{ status: string; msg: string; result: any }>(
       "https://onewater-mayor.herokuapp.com/approvedmayor"
     ).subscribe(result=>{
-      console.log('mayor$$$$$$$$$$$$$$$$$$$$$$$$',result)
+      //console.log('mayor$$$$$$$$$$$$$$$$$$$$$$$$',result)
       this.mayors = result.result;
     })
   }

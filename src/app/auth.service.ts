@@ -23,7 +23,7 @@ export class AuthService {
 
   checkLocalStorage() {
     this.token = localStorage.getItem('onewaterusertoken');
-    console.log(this.token,'auth ######')
+    //console.log(this.token,'auth ######')
     if (!this.token) {
       return;
     }

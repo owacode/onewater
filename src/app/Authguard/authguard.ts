@@ -16,10 +16,10 @@ export class Authguard implements CanActivate {
         boolean | Observable <boolean>  | Promise <boolean> {
             this.loginstatus=this.authuser.isUserAuthenticated()
 
-            //console.log(userlog);
+            ////console.log(userlog);
 
             if(!(this.author.loggedIn||this.authuser.isLoggedIn)){
-                console.log('not logged in');
+                //console.log('not logged in');
                 this.modal.openModal("#blogModal");
                 return false;
             }

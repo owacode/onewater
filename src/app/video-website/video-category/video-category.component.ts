@@ -18,7 +18,7 @@ export class VideoCategoryComponent implements OnInit {
 
 ngOnInit() {
   this.route.queryParams.subscribe(result=>{
-    console.log(result);
+    //console.log(result);
     this.category=result.category
 
     this.commonservice.getCategoryVideoByViews(result.fetchcategory)
@@ -29,7 +29,7 @@ ngOnInit() {
         let image=this.getId(this.featuredvideos[i].video_link);
         this.featuredvideos[i].image=`https://img.youtube.com/vi/${image}/0.jpg`;
       }
-      console.log(this.featuredvideos,'hittt')
+      //console.log(this.featuredvideos,'hittt')
     })
 
 this.commonservice.getVideoByCategory(result.fetchcategory)
@@ -40,7 +40,7 @@ this.commonservice.getVideoByCategory(result.fetchcategory)
         let image=this.getId(this.latestvideos[i].video_link);
         this.latestvideos[i].image=`https://img.youtube.com/vi/${image}/0.jpg`;
       }
-      console.log(this.latestvideos,'hittt')
+      //console.log(this.latestvideos,'hittt')
     })
 
     this.commonservice.getCategoryVideoByLikes(result.fetchcategory)
@@ -49,7 +49,7 @@ this.commonservice.getVideoByCategory(result.fetchcategory)
         let image=this.getId(this.likesvideos.video_link);
         this.likesvideos.image=`https://img.youtube.com/vi/${image}/0.jpg`;
 
-      console.log(this.likesvideos,'hittt')
+      //console.log(this.likesvideos,'hittt')
     })
   })
 

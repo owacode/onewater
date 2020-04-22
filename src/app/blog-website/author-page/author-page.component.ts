@@ -15,10 +15,10 @@ export class AuthorPageComponent implements OnInit {
 
   ngOnInit() {
     this.router.params.subscribe(result=> {
-      console.log(result)
+      //console.log(result)
       this.http.get<{status:string, msg:string, result:any}>('https://onewater-blogapi.herokuapp.com/approvedauthor/'+result.id)
       .subscribe(result=>{
-        console.log(result);
+        //console.log(result);
          this.author=result.result[0];
       })
       this.getblogs(result.id);
@@ -28,7 +28,7 @@ export class AuthorPageComponent implements OnInit {
   getblogs(id){
     this.http.get<{status:string, msg:string, result:any}>('https://onewater-blogapi.herokuapp.com/authorapprovedblogs/'+id)
     .subscribe(result=>{
-      console.log(result,'mohit ');
+      //console.log(result,'mohit ');
        this.authorblogs=result.result.reverse();
        this.authorblogs=this.authorblogs.slice(0, 3)
     })

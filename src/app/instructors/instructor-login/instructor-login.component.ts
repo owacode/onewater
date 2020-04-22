@@ -77,10 +77,10 @@ export class InstructorLoginComponent implements OnInit {
 
   register(){
     this.registersubmitted=true;
-    console.log(this.user.value);
+    //console.log(this.user.value);
     if(this.user.invalid){
       this.modal.hideBtnLoader();
-      console.log("details invalid")
+      //console.log("details invalid")
       return;
     }
 
@@ -90,17 +90,17 @@ export class InstructorLoginComponent implements OnInit {
       this.modal.openModal("#passModal");
       return;
     }
-    console.log('pass',this.user.value);
+    //console.log('pass',this.user.value);
 
     this.http.post('https://onewater-instructor-api.herokuapp.com/addinstructor',this.user.value)
     .subscribe(result=>{
       if(result['status'] == "error"){
-        console.log("User already exist", result)
+        //console.log("User already exist", result)
         this.modal.hideBtnLoader();
         this.modal.openModal("#signupFail");
       }
       else if (result['status'] == "success"){
-        console.log("User Added succssfully", result);
+        //console.log("User Added succssfully", result);
         this.modal.hideBtnLoader();
         this.modal.openModal("#signupSuccess");
       }
@@ -114,13 +114,13 @@ export class InstructorLoginComponent implements OnInit {
     //   return;
     // }
     this.loginsubmitted = true;
-    console.log(this.loginuser.value);
+    //console.log(this.loginuser.value);
     if(this.loginuser.invalid){
       this.modal.hideBtnLoader();
-      console.log("invalid details");
+      //console.log("invalid details");
       return;
     }
-    //console.log('pass',this.loginuser.value);
+    ////console.log('pass',this.loginuser.value);
 
     this.http.post<{msg:string, result:any}>('https://onewater-instructor-api.herokuapp.com/login',this.loginuser.value)
     .subscribe(result=>{
@@ -131,7 +131,7 @@ export class InstructorLoginComponent implements OnInit {
       localStorage.setItem('instructor_id',this.instructorservice.userid);
       localStorage.setItem('instructor_name',this.instructorservice.username);
       localStorage.setItem('instructor_email',this.instructorservice.useremail);
-      console.log("User Login Successfully", result);
+      //console.log("User Login Successfully", result);
 
       if(result.result == 'Incorrect Password' || result.result == 'No User Found') {
         this.modal.hideBtnLoader();
@@ -140,7 +140,7 @@ export class InstructorLoginComponent implements OnInit {
       }
 
       if(result.result == 'User Email not Verified') {
-        console.log("email not verified")
+        //console.log("email not verified")
         this.modal.hideBtnLoader();
         this.modal.openModal("#loginModal");
         return;
@@ -151,7 +151,7 @@ export class InstructorLoginComponent implements OnInit {
 
       else if(result.result.status == 'pending')
       {
-        console.log("waiting to be approved by admin");
+        //console.log("waiting to be approved by admin");
         this.modal.hideBtnLoader();
         this.modal.openModal("#pendingModal");
         return;
@@ -164,16 +164,16 @@ export class InstructorLoginComponent implements OnInit {
 
   resetpassword() {
     this.resetpasssubmitted = true;
-    console.log(this.resetpassform.value,'instructor');
+    //console.log(this.resetpassform.value,'instructor');
     if(this.resetpassform.invalid){
-      console.log('invalid reset form');
+      //console.log('invalid reset form');
       this.modal.hideBtnLoader();
       return;
     }
 
     this.http.post<{status: string, msg: string, result: any}>('https://onewater-instructor-api.herokuapp.com/reset-password',this.resetpassform.value)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.modal.openModal('#forgotpassModal');
       this.modal.hideBtnLoader();
     })

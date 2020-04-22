@@ -208,28 +208,28 @@ export class CategoryComponent implements OnInit {
 
     this.getmostlikedblogs();
     this.route.queryParams.subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.category=result.category;
       this.tempcate=result.category;
       this.subcategory=result.subcategory;
       this.sname=result.sname;
-      console.log('dwhdvwdw',this.category,this.subcategory,this.sname);
+      //console.log('dwhdvwdw',this.category,this.subcategory,this.sname);
 
       for(let i=0;i<this.categories.length;i++){
         if(this.categories[i].name == this.category){
           this.currentCategory = this.categories[i].subcat;
-         //console.log(this.currentCategory);
+         ////console.log(this.currentCategory);
         }
       }
 
 
-console.log(this.fetchcategory,'effe');
+//console.log(this.fetchcategory,'effe');
       this.http.get<{status: any, msg: any, result:any}>('https://onewater-blogapi.herokuapp.com/category/'+this.sname)
       .subscribe(result=>{
-        console.log(result);
+        //console.log(result);
         this.blogs=result.result;
         this.singleblog=this.blogs[0];
-        console.log(this.singleblog.author_id);
+        //console.log(this.singleblog.author_id);
         this.getauthor(this.singleblog.author_id);
       })
     })
@@ -238,7 +238,7 @@ console.log(this.fetchcategory,'effe');
   getauthor(id){
     this.http.get<{status:string, msg:string, result:any}>('https://onewater-blogapi.herokuapp.com/approvedauthor/'+id)
     .subscribe(result=>{
-      console.log(result, 'author');
+      //console.log(result, 'author');
       this.author=result.result[0]
     })
   }
@@ -249,7 +249,7 @@ console.log(this.fetchcategory,'effe');
         "https://onewater-blogapi.herokuapp.com/mostlikedblogs"
       )
       .subscribe(result => {
-        console.log(result, "most liked blogs ");
+        //console.log(result, "most liked blogs ");
         this.mostlikedblogs = result.result.slice(0,3);
       });
   }

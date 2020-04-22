@@ -19,7 +19,7 @@ export class JobListComponent implements OnInit {
     let id=localStorage.getItem('companyid')
     this.service.jobsByCompany(id)
     .subscribe(result=> {
-      console.log(result)
+      //console.log(result)
       this.jobs=result.result
       for(let i=0;i<result.result.length;i++){
         var d1 = new Date();
@@ -30,7 +30,7 @@ export class JobListComponent implements OnInit {
           this.jobs[i].status='closed'}
       }
       this.joblist= this.jobs;
-      console.log(this.jobs)
+      //console.log(this.jobs)
     })
   }
 

@@ -13,9 +13,9 @@ export class CmSavedBlogsComponent implements OnInit {
   ngOnInit() {
     this.common.getSavedBlog()
     .subscribe(result=>{
-      console.log(result)
+      //console.log(result)
       this.savedblogs=result.result;
-      console.log(this.savedblogs);
+      //console.log(this.savedblogs);
     })
   }
 

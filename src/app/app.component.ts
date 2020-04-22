@@ -44,11 +44,11 @@ export class AppComponent implements OnInit {
     // hash = window.location.hash;
     // var localcookie = this.readCookie("id_token");
     // let decodedtoken;
-    // console.log(hash,localcookie,'ieifei')
+    // //console.log(hash,localcookie,'ieifei')
     // if (hash || (localcookie != 'null' && localcookie !=null)) {
-    //   console.log('if true')
+    //   //console.log('if true')
     //   if (hash) {
-    //   console.log('if true 1')
+    //   //console.log('if true 1')
     //     this.auth.isLoggedIn = true;
     //     let fetch_token = hash.split("#");
 
@@ -115,8 +115,8 @@ export class AppComponent implements OnInit {
   createCookie(key, value) {
     let cookie = escape(key) + "=" + escape(value) + ";";
     document.cookie = cookie;
-    // console.log(cookie);
-    // console.log("Creating new cookie with key: " + key + " value: " + value);
+    // //console.log(cookie);
+    // //console.log("Creating new cookie with key: " + key + " value: " + value);
   }
 
   readCookie(name) {

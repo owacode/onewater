@@ -26,7 +26,7 @@ export class AuthorAdminComponent implements OnInit {
     this.auth.checkLocalStorage();
     this.common.getUser()
     .subscribe(result=>{
-      console.log(result)
+      //console.log(result)
       this.author=result.result[0];
     })
     let toggleButton = document.querySelector('.sidebar-toggle');

@@ -18,7 +18,7 @@ export class EmployerAdminComponent implements OnInit {
     this.auth.checkLocalStorage();
     this.getservice.getSingleCompany()
     .subscribe(result=>{
-      console.log(result)
+      //console.log(result)
       this.company=result.result;
     })
     let filter = document.querySelector('.filter-btn a');
@@ -30,7 +30,7 @@ export class EmployerAdminComponent implements OnInit {
     $(options).on("click",function(){
          $(optionBox).removeClass("slide-in");
          $(filter).innerHTML = '<i data-feather="arrow-left"></i> Back';
-         console.log(filter.innerHTML);
+         //console.log(filter.innerHTML);
     });
 
     Feather.replace();

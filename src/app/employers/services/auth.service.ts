@@ -25,14 +25,14 @@ export class AuthJobService {
     }
     this.http.post('https://onewater-job-api.herokuapp.com/addcompany', user)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
     })
   }
   checkLocalStorage(){
-    console.log('checklocal')
+    //console.log('checklocal')
     const token=localStorage.getItem('onewaterjobtoken');
         if(token){
-          console.log('hit 1223')
+          //console.log('hit 1223')
           this.loggedIn=true
           this.loggedinLitsener.next({
               status:this.loggedIn
@@ -68,7 +68,7 @@ authLitsener(){
     }
     this.http.post<{status:string, msg:string, result:any}>('https://onewater-job-api.herokuapp.com/login', user)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.token=result.result.token;
       this.companyemail=result.result.email;
       this.companyid=result.result.id;
@@ -106,7 +106,7 @@ authLitsener(){
 
     this.http.post('https://onewater-job-api.herokuapp.com/addcompanydetails',company)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       alert("company registered now you can login as an employer");
     })
   }
@@ -114,7 +114,7 @@ authLitsener(){
   addNewJob(values){
     this.http.post('https://onewater-job-api.herokuapp.com/createjob',values)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
     })
   }
 }

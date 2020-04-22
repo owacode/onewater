@@ -29,18 +29,18 @@ export class InstructorRegistrationComponent implements OnInit {
   register(){
     this.submited=true;
     this.user_registration.value.instructorid = this.instructorservice.userid;
-    console.log(this.user_registration.value);
+    //console.log(this.user_registration.value);
     if(this.user_registration.invalid){
-      console.log(this.user_registration);
-      console.log("error")
+      //console.log(this.user_registration);
+      //console.log("error")
       this.modal.hideBtnLoader();
       return;
     }
 
-    console.log('pass',this.user_registration.value);
+    //console.log('pass',this.user_registration.value);
     this.http.post('https://onewater-instructor-api.herokuapp.com/updateinstructor',this.user_registration.value)
     .subscribe(result=>{
-      console.log("User Details Updated", result);
+      //console.log("User Details Updated", result);
       this.modal.hideBtnLoader();
       this.user_registration.reset();
       this.submited = false;

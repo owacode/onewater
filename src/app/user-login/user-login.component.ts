@@ -60,31 +60,31 @@ export class UserLoginComponent implements OnInit {
     this.loginsubmitted = true;
 
     if (this.loginuser.invalid) {
-      console.log("invalid detail format");
+      //console.log("invalid detail format");
       this.modal.hideBtnLoader();
       return;
     }
-    console.log(this.loginuser.value);
+    //console.log(this.loginuser.value);
 
     this.auth.login(this.loginuser.value).subscribe((result) => {
       if(result.msg == 'Author Account'){
-        console.log("author tried to login");
+        //console.log("author tried to login");
         this.modal.openModal('#notUser');
       }
       else if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
-        console.log("invalid credentials");
+        //console.log("invalid credentials");
         this.modal.hideBtnLoader();
         this.modal.openModal('#invalidModal');
         return;
       }
       else if(result.msg == 'User Email not Verified'){
-        console.log("user email not verified");
+        //console.log("user email not verified");
         this.modal.hideBtnLoader();
         this.modal.openModal('#loginModal');
         return;
       }
       this.modal.hideBtnLoader();
-      console.log(result);
+      //console.log(result);
       this.auth.token = result.result.token;
       this.auth.user_id = result.result.user._id;
       this.auth.name = result.result.user.name;
@@ -98,22 +98,22 @@ export class UserLoginComponent implements OnInit {
 
   resetpassword() {
     this.resetpasssubmitted = true;
-    console.log(this.resetpassform.value);
+    //console.log(this.resetpassform.value);
     if(this.resetpassform.invalid){
-      console.log('invalid reset form');
+      //console.log('invalid reset form');
       this.modal.hideBtnLoader();
       return;
     }
-    console.log(this.resetpassform.value,'after reset');
+    //console.log(this.resetpassform.value,'after reset');
     this.auth.resetpassword(this.resetpassform.value)
     .subscribe(result=> {
       this.modal.hideBtnLoader();
       if(result.msg == 'Email not Exist'){
-        console.log("email doesn't not exist");
+        //console.log("email doesn't not exist");
         this.modal.openModal('#resetMailExist');
         return;
       }
-      console.log(result);
+      //console.log(result);
       this.modal.openModal('#forgotpassModal');
     })
   }

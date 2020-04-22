@@ -26,12 +26,12 @@ export class PostVideoComponent implements OnInit {
   postvideo() {
     this.submited = true;
     if (this.form.invalid) {
-      console.log("Invalid Form for video posting by author");
+      //console.log("Invalid Form for video posting by author");
       return;
     }
     this.form.value.email = localStorage.getItem("authoremail");
     this.form.value.name = localStorage.getItem("name");
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.common.addVideo(this.form.value);
     this.modal.hideBtnLoader();
     this.modal.openModal("#videoModal");

@@ -671,8 +671,7 @@
         </div>
         <img src="assets/img/modals/recover-pass.jpg" alt="" />
         <h2>
-          Thank you for reaching out to us. <br />
-          We will communicate with you the further steps on E-Mail
+          Thank you for your interest.  <br> We will be in touch with you soon!
         </h2>
 
         <button
@@ -686,3 +685,46 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="drawingSuccess" #drawingSuccess>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(drawingSuccess)"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body p-4">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="" />
+        </div>
+        <img src="assets/img/modals/recover-pass.jpg" alt="" />
+        <h2>
+          Thank you for entering the drawing. The winners will be announced on June 30, 2020.
+        </h2>
+
+        <button
+          type="button"
+          class="btn btn-default"
+          (click)="modal.closeModal(drawingSuccess)"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

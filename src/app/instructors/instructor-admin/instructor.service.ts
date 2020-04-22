@@ -14,13 +14,13 @@ export class InstructorService {
   useremail = null;
 
   checklocalstorage() {
-    console.log("checking Localstorage Instructor");
+    //console.log("checking Localstorage Instructor");
     let instructorid = localStorage.getItem("instructor_id");
     if (instructorid) {
       this.userid = instructorid;
       this.useremail = localStorage.getItem("instructor_email");
       this.username = localStorage.getItem("instructor_name");
-      console.log("Initliaze Instructor detail", this.useremail, this.userid);
+      //console.log("Initliaze Instructor detail", this.useremail, this.userid);
     } else return;
   }
 
@@ -29,7 +29,7 @@ export class InstructorService {
     localStorage.removeItem("instructor_email");
     this.userid = null;
     this.useremail = null;
-    console.log("instructor logged out");
+    //console.log("instructor logged out");
     this.router.navigate(["/instructor/login"]);
   }
 

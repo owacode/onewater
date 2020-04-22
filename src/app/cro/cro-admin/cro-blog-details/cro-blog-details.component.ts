@@ -13,8 +13,8 @@ export class CroBlogDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(result=>{
-      console.log(result);
-      console.log(result.id);
+      //console.log(result);
+      //console.log(result.id);
         this.getblog(result.id);
     })
   }
@@ -22,9 +22,9 @@ export class CroBlogDetailsComponent implements OnInit {
   getblog(id){
     this.common.getSingleAllBlog(id)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.blog=result.result[0 ];
-      console.log(this.blog)
+      //console.log(this.blog)
     })
   }
 

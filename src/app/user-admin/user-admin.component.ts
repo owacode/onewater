@@ -89,23 +89,23 @@ export class UserAdminComponent implements OnInit {
         layout: "vertical"
       },
       onApprove: (data, actions) => {
-        console.log(
-          "onApprove - transaction was approved, but not authorized",
-          data,
-          actions
-        );
+        // //console.log(
+        //   "onApprove - transaction was approved, but not authorized",
+        //   data,
+        //   actions
+        // );
         actions.order.get().then(details => {
-          console.log(
-            "onApprove - you can get full order details inside onApprove: ",
-            details
-          );
+          //console.log(
+          //   "onApprove - you can get full order details inside onApprove: ",
+          //   details
+          // );
         });
       },
       onClientAuthorization: data => {
-        console.log(
-          "onClientAuthorization - you should probably inform your server about completed transaction at this point",
-          data
-        );
+        //console.log(
+        //   "onClientAuthorization - you should probably inform your server about completed transaction at this point",
+        //   data
+        // );
         let payment_info = {
           name: `${data.payer.name.given_name} ${data.payer.name.surname}`,
           email: data.payer.email_address,
@@ -115,13 +115,13 @@ export class UserAdminComponent implements OnInit {
         this.showSuccess = true;
       },
       onCancel: (data, actions) => {
-        console.log("OnCancel", data, actions);
+        //console.log("OnCancel", data, actions);
       },
       onError: err => {
-        console.log("OnError", err);
+        //console.log("OnError", err);
       },
       onClick: (data, actions) => {
-        console.log("onClick", data, actions);
+        //console.log("onClick", data, actions);
       }
     };
   }
@@ -137,7 +137,7 @@ export class UserAdminComponent implements OnInit {
   createCookie(key, value) {
     let cookie = escape(key) + "=" + escape(value) + ";";
     document.cookie = cookie;
-    console.log(cookie);
-    console.log("Creating new cookie with key: " + key + " value: " + value);
+    //console.log(cookie);
+    //console.log("Creating new cookie with key: " + key + " value: " + value);
   }
 }

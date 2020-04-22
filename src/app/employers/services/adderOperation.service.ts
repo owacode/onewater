@@ -12,14 +12,14 @@ export class AdderOperationService {
   addNewJob(values){
     this.http.post('https://onewater-job-api.herokuapp.com/createjob',values)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
     })
   }
 
   updateJob(values){
     this.http.post('https://onewater-job-api.herokuapp.com/updatejob',values)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
     })
   }
 }

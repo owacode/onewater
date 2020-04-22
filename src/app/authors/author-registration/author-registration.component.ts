@@ -35,9 +35,9 @@ export class AuthorRegistrationComponent implements OnInit {
         )
         .subscribe(result => {
           this.showsubmit = true;
-          console.log(result);
+          //console.log(result);
           this.editableprofile = result.result[0];
-          console.log(this.editableprofile, "dwwd");
+          //console.log(this.editableprofile, "dwwd");
           this.form.patchValue({
             author_name: this.editableprofile.name,
             location: this.editableprofile.location,
@@ -61,8 +61,8 @@ export class AuthorRegistrationComponent implements OnInit {
 
   onImagePick(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
-    console.log(file);
-    console.log(file.type.includes('image'));
+    //console.log(file);
+    //console.log(file.type.includes('image'));
     if(!file.type.includes('image')) {
       return alert("Only image is supported");
     }
@@ -76,16 +76,16 @@ export class AuthorRegistrationComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.profilesubmit = true;
     if (this.form.invalid) {
       this.modal.hideBtnLoader();
       return;
     }
 
-    console.log(this.form.value);
+    //console.log(this.form.value);
     this.auth.authorRegistration(this.form.value).subscribe(result => {
-      console.log(result, "author details registered successfully");
+      //console.log(result, "author details registered successfully");
       this.modal.hideBtnLoader();
       this.form.reset();
       this.profilesubmit = false;

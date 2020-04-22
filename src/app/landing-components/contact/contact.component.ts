@@ -25,15 +25,15 @@ export class ContactComponent implements OnInit {
 
   contact() {
     this.submitted = true;
-    console.log(this.user.value);
+    //console.log(this.user.value);
     if(this.user.invalid) {
-      console.log("error in contact form filing");
+      //console.log("error in contact form filing");
       this.modal.hideBtnLoader();
       return;
     }
     this.http.post<{status: any, msg: any, result:any}>('https://onewater-auth.herokuapp.com/contact',this.user.value)
     .subscribe(result=> {
-      console.log(result);
+      //console.log(result);
       this.modal.hideBtnLoader();
      // alert(result.msg)
      this.modal.openModal("#successModal");

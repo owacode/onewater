@@ -20,7 +20,7 @@ export class AllBlogsComponent implements OnInit {
     Feather.replace();
     this.common.getAllBlogs()
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.allblogs=result.result;
       this.blogs=result.result;
     })
@@ -49,23 +49,23 @@ export class AllBlogsComponent implements OnInit {
   }
 
   deleteApproveBlog() {
-    console.log('app hit')
-    console.log(this.blogmainid,this.id);
+    //console.log('app hit')
+    //console.log(this.blogmainid,this.id);
     this.modal.closeModal('#deleteApproved');
     this.common.deleteApproveBlog(this.blogmainid,this.id)
     .subscribe(result=> {
-      console.log('approve blog deleted successfully',result);
+      //console.log('approve blog deleted successfully',result);
       this.modal.openModal("#blogDeleted");
     })
   }
 
   deleteUnApproveBlog() {
-    console.log('unapp hit')
-    console.log(this.blogmainid,this.id);
+    //console.log('unapp hit')
+    //console.log(this.blogmainid,this.id);
     this.modal.closeModal('#deleteUnapproved');
     this.common.deleteUnApproveBlog(this.blogmainid,this.id)
     .subscribe(result=> {
-      console.log('unapprove blog deleted successfully',result);
+      //console.log('unapprove blog deleted successfully',result);
       this.modal.openModal("#blogDeleted");
     })
   }

@@ -14,7 +14,7 @@ export class CmBlogDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(result=>{
-      console.log(result);
+      //console.log(result);
         this.getblog(result.id);
     })
   }
@@ -22,7 +22,7 @@ export class CmBlogDetailsComponent implements OnInit {
   getblog(id){
     this.common.getSingleAllBlog(id)
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.blog=result.result;
     })
   }

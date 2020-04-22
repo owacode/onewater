@@ -237,7 +237,7 @@ croList;
     this.currentCategory = this.categories[index].name;
     this.SubCategories = [];
     this.SubCategories = this.categories[index].subcat;
-    console.log(this.SubCategories);
+    //console.log(this.SubCategories);
     document.querySelector(".categories-card")['style'].display = "none";
     document.querySelector(".subcategories-card")['style'].display = "block";
   }
@@ -329,7 +329,7 @@ croList;
     this.getApprovedCRO();
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/approveblogs')
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         this.blogcards = result.result;
         this.featuredblog = result.result.reverse();
         this.featuredblog = this.featuredblog.slice(0, 6);
@@ -337,14 +337,14 @@ croList;
 
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/approvedauthor')
       .subscribe(result => {
-        console.log(result);
+        //console.log(result);
         this.authors = result.result;
         this.authors = this.authors.slice(0,4);
       })
 
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/homeblog')
       .subscribe(result => {
-        console.log(result, 'bannerrrr');
+        //console.log(result, 'bannerrrr');
         this.bannerblogs = result.result;
 
       })
@@ -372,7 +372,7 @@ croList;
     this.http.get<{ status: string; msg: string; result: any }>(
       "https://onewater-mayor.herokuapp.com/approvedmayor"
     ).subscribe(result=>{
-      console.log('mayor$$$$$$$$$$$$$$$$$$$$$$$$',result)
+      //console.log('mayor$$$$$$$$$$$$$$$$$$$$$$$$',result)
       this.mayors = result.result;
       this.mayors = this.mayors.slice(0,4);
     })

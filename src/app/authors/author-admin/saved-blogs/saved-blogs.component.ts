@@ -16,9 +16,9 @@ export class SavedBlogsComponent implements OnInit {
   ngOnInit() {
       this.commonservice.getSavedBlog(this.authservice.authorapprovedid)
       .subscribe(result=>{
-        console.log(result)
+        //console.log(result)
         this.savedblogs=result.result;
-        console.log(this.savedblogs);
+        //console.log(this.savedblogs);
       })
   }
 

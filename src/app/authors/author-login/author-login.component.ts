@@ -101,16 +101,16 @@ export class AuthorLoginComponent implements OnInit {
       this.modal.openModal("#passModal");
       return;
     };
-    console.log(this.user.value);
+    //console.log(this.user.value);
     this.auth.author(this.user.value).subscribe(result=> {
       if(result.status == 'error'){
-        console.log("email already exist");
+        //console.log("email already exist");
         this.modal.hideBtnLoader();
         this.modal.openModal('#mailexistModal');
         return;
       }
       else{
-        console.log("author added successfully");
+        //console.log("author added successfully");
               this.modal.hideBtnLoader();
               this.modal.openModal('#signupModal');
               return;
@@ -123,29 +123,29 @@ export class AuthorLoginComponent implements OnInit {
     this.loginsubmitted = true;
 
     if (this.loginuser.invalid) {
-        console.log("invalid detail format");
+        //console.log("invalid detail format");
         this.modal.hideBtnLoader();
         return;
     }
 
-    console.log(this.loginuser.value);
+    //console.log(this.loginuser.value);
     this.auth.login(this.loginuser.value).subscribe(result=> {
 
-      console.log(result,'test reult');
+      //console.log(result,'test reult');
             if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
-              console.log("invalid credentials");
+              //console.log("invalid credentials");
               this.modal.hideBtnLoader();
               this.modal.openModal('#invalidModal');
               return;
             }
             else if(result.msg == 'User Email not Verified'){
-              console.log("user email not verified");
+              //console.log("user email not verified");
               this.modal.hideBtnLoader();
               this.modal.openModal('#loginModal');
               return;
             }
             else if(result.result.form_filled == true && result.result.approvedid == "null"){
-              console.log("waiting for approval")
+              //console.log("waiting for approval")
               this.modal.hideBtnLoader();
               this.modal.openModal('#pendingModal');
               return;
@@ -194,22 +194,22 @@ export class AuthorLoginComponent implements OnInit {
 
   resetpassword() {
     this.resetpasssubmitted = true;
-    console.log(this.resetpassform.value);
+    //console.log(this.resetpassform.value);
     if(this.resetpassform.invalid){
-      console.log('invalid reset form');
+      //console.log('invalid reset form');
       this.modal.hideBtnLoader();
       return;
     }
-    console.log(this.resetpassform.value,'after reset');
+    //console.log(this.resetpassform.value,'after reset');
     this.auth.resetpassword(this.resetpassform.value)
     .subscribe(result=> {
       this.modal.hideBtnLoader();
       if(result.msg == 'Email not Exist'){
-        console.log("email doesn't not exist");
+        //console.log("email doesn't not exist");
         this.modal.openModal('#resetMailExist');
         return;
       }
-      console.log(result);
+      //console.log(result);
       this.modal.openModal('#forgotpassModal');
     })
   }

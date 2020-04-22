@@ -17,7 +17,7 @@ export class ApprovedBlogsComponent implements OnInit {
     Feather.replace();
     this.common.getApprovedBlogs()
     .subscribe(result=>{
-      console.log(result);
+      //console.log(result);
       this.approvedblogs=result.result;
       this.blogs=result.result
     })
