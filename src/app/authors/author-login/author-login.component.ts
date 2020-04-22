@@ -207,10 +207,14 @@ export class AuthorLoginComponent implements OnInit {
       if(result.msg == 'Email not Exist'){
         //console.log("email doesn't not exist");
         this.modal.openModal('#resetMailExist');
+        this.resetpassform.reset();
+        this.resetpasssubmitted = false;
         return;
       }
       //console.log(result);
       this.modal.openModal('#forgotpassModal');
+      this.resetpassform.reset();
+      this.resetpasssubmitted = false;
     })
   }
 

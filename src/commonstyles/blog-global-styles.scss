@@ -215,10 +215,10 @@ left: 1.2rem;
     .cover-photo{
       height:50vh;
         position: relative;
-      background: linear-gradient(180deg, rgba(0, 31, 204, 0.82) 20%, rgba(255, 255, 255, 0.68) 100%), url(https://picsum.photos/1920/720);
+      background: linear-gradient(180deg, rgba(0, 31, 204, 0.82) 20%, rgba(255, 255, 255, 0.68) 100%), url(assets/img/landing/mission-wave-bg.jpeg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: bottom ;
         background-attachment: fixed;
       .wave{
         position: absolute;

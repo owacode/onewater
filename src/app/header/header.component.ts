@@ -102,6 +102,8 @@ toggleHeader() {
         this.modal.hideBtnLoader();
         this.modal.closeModal('#subscribeModal');
         this.modal.openModal("#alreadysubscribedmodal");
+        this.form.reset();
+      this.submited = false;
         return;
       }
       //console.log(result,'suscribed successfully');
