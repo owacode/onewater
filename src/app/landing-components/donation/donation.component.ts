@@ -95,13 +95,13 @@ export class DonationComponent implements OnInit {
     onClientAuthorization: (data) => {
      // console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
       this.showSuccess = true;
+      this.modal.hideBtnLoader();
+      this.modal.openModal("#paymentSuccessful");
+      this.userpayment.reset();
+      this.showPaymentButton = false;
       this.http.post<{status:string,msg:string}>('https://onewater-auth.herokuapp.com/pay',this.userpayment.value)
       .subscribe(result=>{
         //console.log(result);
-        this.modal.hideBtnLoader();
-        this.modal.openModal("#paymentSuccessful");
-        this.userpayment.reset();
-        this.showPaymentButton = false;
       })
     },
     onCancel: (data, actions) => {
