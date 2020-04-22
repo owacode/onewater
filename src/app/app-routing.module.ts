@@ -97,7 +97,7 @@ const routes: Routes = [
       {
         path: 'admin-blogpost/:id',
         loadChildren: './blog-website/admin-blogpost/admin-blogpost.module#AdminBlogpostModule',
-        // canActivate: [Authguard]
+        canActivate: [Authguard]
       },
       {
         path: 'mayor-blogpost/:id',
