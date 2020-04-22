@@ -20,7 +20,7 @@
         <div class="col-md-6">
            <div class="views">
             <p>
-              {{video?.views}} views
+              {{video?.views | number}} views
             </p>
           </div></div>
           <div class="col-md-6">
@@ -70,7 +70,7 @@
           </div>
           
           <div class="video-metadata">
-         <div class="views">{{videoo?.views}} views</div>
+         <div class="views">{{videoo?.views | number}} views</div>
          <div class="date">{{videoo?.date_added | date:'MMMM d,M'}}</div>
           </div>
         </div>

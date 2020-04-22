@@ -91,6 +91,12 @@ export class BlogPostComponent implements OnInit {
         //console.log(result, "author blogs ");
         this.authorblogs = result.result.reverse();
         this.authorblogs = this.authorblogs.slice(0, 5);
+        this.authorblogs.forEach((element,i) => {
+          if(element._id === this.blogid){
+            this.authorblogs.splice(i,1);
+          }
+        });
+        //console.log(this.authorblogs);
       });
   }
 
