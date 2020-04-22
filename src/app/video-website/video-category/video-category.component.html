@@ -29,7 +29,7 @@
                             </h6>
                             <div class="video-metadata">
                               <div class="row">
-                                <div class="col-6"><div class="views">{{likesvideos?.views}} views</div></div>
+                                <div class="col-6"><div class="views">{{likesvideos?.views | number}} views</div></div>
                               <div class="col-6 text-right"><div class="date">{{likesvideos?.date_added | date:'MMMM d, y'}}</div></div>
                               </div>
                             </div>
@@ -72,7 +72,7 @@
                                   John Wick
                                 </div> -->
                                 <div class="video-metadata">
-                                      <div class="views">{{ video?.views }} views</div>
+                                      <div class="views">{{ video?.views | number}} views</div>
                                       <div class="date">
                                         {{ video?.date_added | date: "MMMM d, y" }}
                                       </div>
@@ -111,7 +111,7 @@
                                   <h5>{{video?.title | shorten:35}}</h5>
                                 </div>
                                 <div class="video-metadata">
-                                <div class="views">{{video?.views}} views</div>
+                                <div class="views">{{video?.views | number}} views</div>
                                  <div class="date">{{video?.date_added | date:'MMMM d, y'}}</div>
                                 </div>
                               </div>

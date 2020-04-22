@@ -73,6 +73,8 @@ a span {
 .article-meta img {
   width: 64px;
   height: 64px;
+  object-position: top;
+  object-fit: cover;
   border-radius: 100%;
   border: 1px solid #0e77e1;
   padding: 2px;
@@ -118,7 +120,7 @@ a span {
   border-radius: 100%;
   padding: 2px;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   border: 1px solid #666;
   transition: all ease-out 0.2s;
 }
