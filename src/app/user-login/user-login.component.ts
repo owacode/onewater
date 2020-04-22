@@ -83,16 +83,25 @@ export class UserLoginComponent implements OnInit {
         this.modal.openModal('#loginModal');
         return;
       }
-      this.modal.hideBtnLoader();
+      else if(result.msg == "Login Successfull"){
+        this.auth.token = result.result.token;
+        this.auth.user_id = result.result.user._id;
+        this.auth.name = result.result.user.name;
+        this.auth.isLoggedIn = true;
+        this.modal.hideBtnLoader();
+        localStorage.setItem("onewaterusertoken", result.result.token);
+        localStorage.setItem("onewateruserid", this.auth.user_id);
+        localStorage.setItem("onewaterusername", this.auth.name);
+        this.route.navigate(["/user-admin"]);
+        return;
+      }
+      else{
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#invalidModal');
+      }
+     
       //console.log(result);
-      this.auth.token = result.result.token;
-      this.auth.user_id = result.result.user._id;
-      this.auth.name = result.result.user.name;
-      this.auth.isLoggedIn = true;
-      localStorage.setItem("onewaterusertoken", result.result.token);
-      localStorage.setItem("onewateruserid", this.auth.user_id);
-      localStorage.setItem("onewaterusername", this.auth.name);
-      this.route.navigate(["/user-admin"]);
+      
     });
   }
 
