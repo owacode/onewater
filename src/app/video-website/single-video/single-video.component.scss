@@ -66,6 +66,26 @@ button{
     margin-right: 12px;
     color:#666;
   }
+  button{
+    border:none;
+    margin-left: 1rem;
+  }
+}
+
+.teaser {
+  margin: 10px 0 35px;
+  font-size: 1.05rem;
+  color: #555;
+
+  span {
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: #f0f0f0;
+    color: #222;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0.5rem;
+  }
 }
 .share-btn {
   height: 35px;

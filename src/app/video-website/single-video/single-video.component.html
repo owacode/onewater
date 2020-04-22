@@ -12,6 +12,10 @@
           {{video?.title}}
         </h3>
       </div>
+      <!-- <p class="teaser top-teaser">
+        <strong>Category</strong> :
+        <span>{{ video?.category | titlecase }} </span>
+      </p> -->
       <div class="row">
         <div class="col-md-6">
            <div class="views">
@@ -27,7 +31,7 @@
              
               
                <button><fb-like url="{{ url }}"></fb-like></button>
-              <button><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
+              <button style="transform: translateY(7px);"><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
               <button><linkedin-share url="{{ url }}"></linkedin-share></button>
               
             
@@ -35,7 +39,7 @@
           </div>
       </div>
 
-<div class="v-desc">
+<div class="v-desc" *ngIf="video?.desc">
   <h6>
     About Video:
   </h6>
