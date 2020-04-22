@@ -18,7 +18,7 @@ export class Authguard implements CanActivate {
 
             //console.log(userlog);
 
-            if(this.author.getToken() || this.authuser.token){
+            if(!(this.author.loggedIn||this.authuser.isLoggedIn)){
                 console.log('not logged in');
                 this.modal.openModal("#blogModal");
                 return false;
