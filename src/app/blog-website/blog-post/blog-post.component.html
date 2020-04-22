@@ -27,7 +27,7 @@
               >
             </div>
           </div>
-  
+
           <p class="teaser top-teaser">
             <strong>Category</strong> :
             <span>{{ blog?.category | titlecase }} </span>
@@ -35,7 +35,7 @@
           </p>
           <div class="blog-content" [innerHtml]="blog?.desc | safeHtml"></div>
           <div class="blog-options">
-            <div class="like-btn" *ngIf="!liked">
+            <div class="like-btn" *ngIf="!liked && auth.user_id>
               <h6>Like :</h6>
               <a (click)="likeblog()">
                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -56,7 +56,7 @@
               <button><linkedin-share url="{{ url }}"></linkedin-share></button>
             </div>
           </div>
-  
+
           <div class="meta-bio author-box">
             <a [routerLink]="['/onewaterblog/authorprofile/', author?._id]">
               <img src="{{ author?.image }}" alt="" />
@@ -72,7 +72,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="related-blogs" *ngIf="authorblogs?.length">
           <h2>More From The Author</h2>
           <owl-carousel
@@ -99,7 +99,7 @@
                       <div class="author">{{ blog?.date_approved | date: "MMMM d, y" }}</div>
                       <div class="likes" *ngIf="blog?.likecount">
                         <i class="fa fa-heart"></i>
-                        <span 
+                        <span
                           >{{ blog?.likecount }} likes</span
                         >
                       </div>
@@ -143,5 +143,5 @@
       </div>
     </div>
   </div>
- 
+
 </div>

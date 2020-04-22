@@ -20,11 +20,13 @@ export class AdminBlogpostComponent implements OnInit {
     this.route.params.subscribe(result=> {
       //console.log(result);
       this.blogid=result.id;
-      this.url = `https://onewater.herokuapp.com/blog/${result.id}`;
+      this.url = `http://www.onewateracademy.org/onewater/onewaterblog/blogpost/${result.id}`;
       this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/homeblog/'+result.id)
       .subscribe(result => {
         //console.log(result, 'bannerrrr');
+        // console.log({userid:this.auth.user_id, blogid:this.blogid})
         this.blog = result.result[0];
+        this.isLiked({userid:this.auth.user_id, blogid:this.blogid});
         //console.log(this.blog);
       })
     })
@@ -36,18 +38,19 @@ export class AdminBlogpostComponent implements OnInit {
       blogid:this.blogid,
       userid:this.auth.user_id
     }
-    this.http.post('https://onewater-blogapi.herokuapp.com/like',data)
+    console.log(data)
+    this.http.post('https://onewater-blogapi.herokuapp.com/like-homeblog',data)
     .subscribe(result=>{
-      //console.log(result);
+      // console.log(result);
     })
   }
 
   isLiked(data){
-    //console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
-    //console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    // console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
+    console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     this.http.get<{status:string,result:string}>(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     .subscribe(result=>{
-      //console.log(result);
+      console.log(result);
       if(result.result=='1') {
         this.liked=true;
       }else{

@@ -56,7 +56,7 @@ export class BlogPostComponent implements OnInit {
     this.router.params.subscribe(result => {
       this.blogid=result.id;
       //console.log(result);
-      this.url = `https://onewater.herokuapp.com/blog/${result.id}`;
+      this.url = `http://www.onewateracademy.org/onewater/onewaterblog/blogpost/${result.id}`;
       this.http
         .get<{ status: string; msg: string; result: any }>(
           "https://onewater-blogapi.herokuapp.com/singleappblog/" + result.id
