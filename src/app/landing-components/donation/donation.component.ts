@@ -13,12 +13,14 @@ import { ModalFunctions } from 'src/app/shared-functions/modal-functions';
   templateUrl: './donation.component.html',
   styleUrls: ['./donation.component.scss']
 })
+
 export class DonationComponent implements OnInit {
   showAmountField: Boolean = false;
   public payPalConfig ? : IPayPalConfig;
   public showSuccess;
   formSubmitted:Boolean = false;
-  userpayment;
+  userpayment:FormGroup;
+  showPaymentButton: Boolean = false;
   constructor(public http:HttpClient, public modal: ModalFunctions) { }
 
   ngOnInit() {
@@ -41,6 +43,10 @@ export class DonationComponent implements OnInit {
   }
   private initConfig(): void {
     // console.log(this.userpayment.value.amount,'$$$$$$')
+    // this.formSubmitted = true;
+    // if(this.userpayment.invalid){
+    //   return;
+    // }
     this.payPalConfig = {
     currency: 'USD',
     clientId: 'AQ71En39h4f3YYyjU9vdy1O2Ar64jS7-RoaR6j6YpfdoJLSKpWzGrpcDEWkBll9VaakgHW1LKAWoxe4w',
@@ -112,15 +118,26 @@ export class DonationComponent implements OnInit {
     },
   };
   }
+  validateForm(){
+    this.formSubmitted = true;
+    if(!(this.userpayment.get('name').invalid || this.userpayment.get('email').invalid || this.userpayment.get('amount').invalid)){
+      this.showPaymentButton = true;
+      this.formSubmitted = false;
+    }
+    else
+    this.showPaymentButton = false;
+  }
   enterAmount(amount){
-    console.log(amount)
-    console.log(amount.value)
+    //console.log(amount)
+    //console.log(amount.value)
     if(amount.value === 'other')
     this.showAmountField = true;
     else
     {
       this.showAmountField = false;
-      this.userpayment.value.amount = amount.value;
+      this.userpayment.patchValue({
+        amount:amount.value
+      })
     }
 
   }

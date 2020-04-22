@@ -85,12 +85,15 @@
               required
               formControlName="email"
             />
-            <p
-          
-            *ngIf="formSubmitted && userpayment.get('email').invalid"
-          >
-          Please enter your email!</p>
-
+           
+          <div *ngIf="formSubmitted && userpayment.get('email').invalid">
+            <p *ngIf="userpayment.get('email').errors.required">
+              Please enter your email!
+            </p>
+            <p *ngIf="userpayment.get('email').errors.email">
+              Please enter a valid email!
+            </p>
+          </div>
           <select class="vldform__textbox" style="color: #777;" (change)="enterAmount(amountDonated)" #amountDonated>
             <option value="">Select amount</option>
             <option value="1">$1</option>
@@ -116,7 +119,10 @@
             Please Enter an Amount
           </p>
 
-            <div class="mybtn" style="text-align: center;">
+          <button (click)="validateForm()" class="vldform__button" id="submitButton" type="submit" *ngIf="!showPaymentButton">
+            Give
+          </button>
+            <div *ngIf="showPaymentButton" class="mybtn" style="text-align: center;">
               <ngx-paypal [config]="payPalConfig"></ngx-paypal>
             </div>
           </form>
@@ -181,7 +187,7 @@
         </div>
         <img src="assets/img/modals/wrong.svg" style="width: 25%;" alt="" />
         <h2>
-          Payment failed. Please try again.
+          Payment not completed. Some error occurred.
         </h2>
       </div>
       <button
