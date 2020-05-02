@@ -56,7 +56,7 @@
           <!-- <h1 class="text-center">OneWater Learning Ecosystem</h1> -->
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-3">
-              <a routerLink="/home/learningacademy">
+              <a routerLink="/learningacademy">
               <div class="feature-card">
                 <h3>
                   OneWater Xchange
@@ -89,7 +89,7 @@
               />
             </div>
             <div class="col-lg-3">
-              <a routerLink="/o-wow">
+              <a routerLink="/onewatertalks">
               <div class="feature-card">
                 <h3>
                   OneWater Talks
@@ -220,6 +220,7 @@
         <div class="row align-items-center">
          
           <div class="col-lg-6 order-lg-first">
+            
             <h2>
               OneWater Xchange
             </h2>
@@ -246,7 +247,7 @@
               <div class="mybtn">
                 <div class="row">
                   <div class="col-lg-6">
-                    <a routerLink="/home/learningacademy" class="d-block">
+                    <a routerLink="/learningacademy" class="d-block">
                       Go to OneWater Xchange
                     </a>
                   </div>
@@ -362,7 +363,7 @@
               <div class="mybtn">
                 <div class="row">
                   <div class="col-lg-6">
-                    <a [routerLink]="['/o-wow']">
+                    <a [routerLink]="['/onewatertalks']">
                       Go to OneWater Talks
                     </a>
                   </div>
@@ -425,7 +426,7 @@
           Help shape the future by sharing your knowledge and <br> experience
         </h5>
         <div class="mybtn">
-          <a (click)="modal.openModal(instructorModal)" class="d-block">
+          <a routerLink="/instructor-form" class="d-block">
             Become a OneWater Instructor
           </a>
         </div>
@@ -515,21 +516,25 @@
       <h3 class="partner-heading">Founding Partners</h3>
       <div class="row justify-content-center">
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="http://ruc-ow.herokuapp.com/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/RUC.jpg" alt="" class="short-logo"/>
           </div>
           </div>
+          </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.carollo.com/home" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/Carollo.png" alt="" />
           </div>
           </div>
+        </a>
         </div>
 
        
@@ -544,20 +549,24 @@
 
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.xylem.com/en-in/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
               <img src="assets/img/partners/xylem.png" alt="" />
           </div>
           </div>
+        </a>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.arup.com/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/arup.jpg" alt="" />
           </div>
           </div>
+        </a>
         </div>
       </div>
     </div>
@@ -569,15 +578,18 @@
       <div class="row justify-content-center">
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.osisoft.com/" target="_blank">
           <div class="outer-card">
           <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/osi.png" alt="" />
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="http://nova-consulting.com/" target="_blank"> 
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
@@ -586,15 +598,18 @@
          </h4>
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://programcontrolsinc.com/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/pci.png" alt="" class="short-logo" />
           </div>
           </div>
+        </a>
         </div>
 
       </div>
@@ -625,33 +640,40 @@
       <div class="row justify-content-center">
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://gca.org/home" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/gcn.png" alt="" class="short-logo"/>
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.resilienceshift.org/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/trs.png" alt="" />
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="http://bulletin.miami.edu/graduate-academic-programs/engineering/civil-architectural-environmental-engineering/construction-management-ms/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/coe.jpg" alt="" />
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://engagement.fiu.edu/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
@@ -660,51 +682,62 @@
          </h4>
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="http://www.wrc.org.za/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/wrc.jpg" alt="" class="short-logo"/>
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://evergladesfoundation.org/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/everglades.jpg" alt="" class="short-logo"/>
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.cleoinstitute.org/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/cleo.jpg" alt="" />
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.icex.es/icex/es/index.html#" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/icex.png" alt=""  style="width: 100%; height: auto;"/>
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.netherlandsandyou.nl/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/NL.png" alt="" />
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
@@ -719,39 +752,47 @@
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.resilienth2opartners.com/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/rh2o.png" alt="" />
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://www.stimson.org/project/acre/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/acrelogo.png" alt="" class="short-logo"/>
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="https://globalwaterworks.org/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/gww.png" alt=""/>
           </div>
           </div>
+        </a>
         </div>
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6  text-center">
+          <a href="http://waterrisinginstitute.org/" target="_blank">
           <div class="outer-card">
             <div class="outer-overlay"></div>
             <div class="two-card">
           <img src="assets/img/partners/wr.png" alt="" class="short-logo"/>
           </div>
           </div>
+        </a>
         </div>
 
        
@@ -837,7 +878,6 @@
 
 </div> -->
 
-
 <!--modal to show if user is not logged in-->
 <div class="modal fade" id="blogModal" #blogModal>
   <div class="modal-dialog modal-md">
@@ -879,7 +919,6 @@
     </div>
   </div>
 </div>
-
 
 <!--modal for instructor form -->
 <div class="modal fade" id="instructorModal" #instructorModal>
@@ -1007,46 +1046,6 @@ required
             </span>
           </button>
         </form>
-      </div>
-
-
-    </div>
-  </div>
-</div>
-
-<!--instructor form submitted-->
-<div class="modal fade" id="detailsSubmitted" #detailsSubmitted>
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="modal-head">
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          (click)="modal.closeModal(detailsSubmitted)"
-        >
-          &times;
-        </button>
-      </div>
-
-      <div class="modal-body p-4">
-        <div class="modal-logo">
-          <img src="assets/img/ow-logo1.png" alt="">
-        </div>
-        <img
-          src="assets/img/modals/recover-pass.jpg" alt=""
-        />
-        <h2>Thank you for your interest.  <br> We will be in touch with you soon!
-
-        </h2>
-
-        <button
-            type="button"
-            class="btn btn-default"
-            (click)="modal.closeModal(detailsSubmitted)"
-          >OK
-          </button>
       </div>
 
 

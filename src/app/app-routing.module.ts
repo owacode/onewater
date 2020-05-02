@@ -13,7 +13,7 @@ const routes: Routes = [
   //-----------LANDING PAGES ROUTING---------------//
 
   {
-    path: 'home',
+    path: '',
     component: LandingComponentsComponent,
     children: [
       {
@@ -21,11 +21,11 @@ const routes: Routes = [
         component: LandingPageComponent
       },
       {
-        path: 'about',
+        path: 'purpose',
         loadChildren: './landing-components/about/about.module#AboutModule'
       },
       {
-        path: 'donate',
+        path: 'give',
         loadChildren: './landing-components/donation/donation.module#DonationModule'
       },
       {
@@ -92,12 +92,12 @@ const routes: Routes = [
       {
         path: 'blogpost/:id',
         loadChildren: './blog-website/blog-post/blog-post.module#BlogPostModule',
-        canActivate: [Authguard]
+        //canActivate: [Authguard]
       },
       {
         path: 'admin-blogpost/:id',
         loadChildren: './blog-website/admin-blogpost/admin-blogpost.module#AdminBlogpostModule',
-        canActivate: [Authguard]
+        //canActivate: [Authguard]
       },
       {
         path: 'mayor-blogpost/:id',
@@ -224,7 +224,7 @@ const routes: Routes = [
   //-----------VIDEO PAGES ROUTING---------------//
 
   {
-    path: 'o-wow',
+    path: 'onewatertalks',
     component: VideoWebsiteComponent,
     children: [
       {
@@ -244,6 +244,11 @@ const routes: Routes = [
         loadChildren: './video-website/video-category/video-category.module#VideoCategoryModule'
       }
     ]
+  },
+  //-----------Instructor Form page -----------------//
+  {
+    path:'instructor-form',
+    loadChildren: './instructors/instructor-form/instructor-form.module#InstructorFormModule'
   },
   //-----------Instructor Login page -----------------//
     {
@@ -327,7 +332,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/home',
+    redirectTo: '/',
     pathMatch: 'full'
   }
 ];

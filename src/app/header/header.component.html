@@ -1,37 +1,41 @@
 <div class="overlay"></div>
 <header>
   <div class="logo">
-    <a routerLink="/home">
+    <a routerLink="/">
       <img src="/assets/img/ow-logo1.png" alt="" />
     </a>
   </div>
   <nav>
     <ul class="menu">
 
-      <li class="navlink"><a routerLink="/home">Home</a></li>
+      <li class="navlink"><a routerLink="/">Home</a></li>
 
       <li class="navlink" >
         <div class="dropdown-btn platform-dd"  (click)="toggleDropdown('about')">
           About <i class="fa fa-caret-down" aria-hidden="true"></i>
           <div class="dropdown-content card-shadow" id="about">
-            <li class="navlink"><a routerLink="/home/about">Our Purpose</a></li>
-            <li class="navlink"><a routerLink="/home/team">Meet the Team</a></li>
+            <li class="navlink"><a routerLink="/purpose">Our Purpose</a></li>
+            <li class="navlink"><a routerLink="/team">Meet the Team</a></li>
           </div>
         </div>
       </li>
 
-      <li class="navlink" >
+      <!-- <li class="navlink" >
         <div class="dropdown-btn platform-dd"  (click)="toggleDropdown('platforms')">
           OneWater Academy <i class="fa fa-caret-down" aria-hidden="true"></i>
           <div class="dropdown-content card-shadow" id="platforms">
-            <!-- <li class="navlink"><a routerLink="/home/leaders">OneWater Leaders</a></li> -->
+            <li class="navlink"><a routerLink="/home/leaders">OneWater Leaders</a></li> 
             <li class="navlink"><a routerLink="/home/learningacademy">OneWater Xchange</a></li>
-            <!-- <li class="navlink"><a routerLink="/home/owx">OneWater Xchange</a></li> -->
+            <li class="navlink"><a routerLink="/home/owx">OneWater Xchange</a></li> 
             <li class="navlink"><a routerLink="/onewaterblog">OneWater Blogs</a></li>
-            <li class="navlink"><a routerLink="/o-wow">OneWater Talks</a></li>
+            <li class="navlink"><a routerLink="/onewatertalks">OneWater Talks</a></li>
           </div>
         </div>
-      </li>
+      </li> -->
+
+      <li class="navlink"><a routerLink="/learningacademy">OneWater Xchange</a></li>
+            <li class="navlink"><a routerLink="/onewaterblog">OneWater Blogs</a></li>
+            <li class="navlink"><a routerLink="/onewatertalks">OneWater Talks</a></li>
 
       <!-- <li class="navlink"><a routerLink="/home/cro-page">The CROs</a></li> -->
       <!-- <li class="navlink"><a routerLink="/home/events">Events </a></li> -->
@@ -41,12 +45,12 @@
           Connect with Us <i class="fa fa-caret-down" aria-hidden="true"></i>
           <div class="dropdown-content card-shadow" id="connect">
             <li class="navlink"><a (click)="modal.openModal('#subscribeModal')" style="cursor: pointer;">Subscribe</a></li>
-            <li class="navlink"><a routerLink="/home/contact">Contact Us</a></li>
+            <li class="navlink"><a routerLink="/contact">Contact Us</a></li>
           </div>
         </div>
       </li>
 
-      <li class="navlink"><a routerLink="/home/donate">Give</a></li>
+      <li class="navlink"><a routerLink="/give">Give</a></li>
 
       <!--new author signup login button-->
       <li *ngIf="!author.loggedIn" class="navlink">

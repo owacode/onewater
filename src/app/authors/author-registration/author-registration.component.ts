@@ -5,6 +5,7 @@ import { Subscription } from "rxjs";
 import { CommonService } from "../services/common.service";
 import { HttpClient } from "@angular/common/http";
 import { ModalFunctions } from "../../shared-functions/modal-functions";
+import * as Feather from 'feather-icons';
 
 @Component({
   selector: "app-author-registration",
@@ -27,6 +28,8 @@ export class AuthorRegistrationComponent implements OnInit {
   public showsubmit: boolean = false;
 
   ngOnInit() {
+    Feather.replace();
+    
     if (localStorage.getItem("form_filled_job") == "true") {
       this.http
         .get<{ status: string; msg: string; result: any }>(

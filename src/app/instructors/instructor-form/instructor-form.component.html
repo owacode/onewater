@@ -1,0 +1,226 @@
+<div class="overlay"></div>
+<!-- <button class="button logout-button" type="button" data-feather="user-check" (click)="logout()"><i class="fa fa-power-off"></i></button>
+<a routerLink="/home" class="reg-logo">
+  <img src="assets/img/ow-logo1.png" alt="">
+  </a> -->
+  <app-header></app-header>
+<section class="emp-registration">
+    <div class="container">
+      <h1 *ngIf="!submited">
+        Welcome to <span>OneWater Academy.</span> <br>
+        Fill up the form below to register your course.
+      </h1>
+
+      <div class="dashboard-content-wrapper dash-tab">
+        <form class="dashboard-form" [formGroup]="form" (submit)="register()">
+
+          <div class="dashboard-section basic-info-input">
+            <h4><i data-feather="user-check"></i>Basic Info</h4>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">First name</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your first name"
+                  formControlName="firstname"
+                />
+                <div class="form-group" *ngIf=" form.get('firstname').invalid &&submitted" >
+                  <p>Please enter your first name!</p>
+              </div>
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Last name</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your last name"
+                  formControlName="lastname"
+                />
+                <p *ngIf="submitted && form.get('lastname').invalid">
+                  Please enter your last name!
+                </p>
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Organization</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your organization name"
+                  formControlName="organization"
+                />
+                <p *ngIf="submitted && form.get('organization').invalid">
+                  Please enter your Organization!
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Email</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your email"
+                  formControlName="email"
+                />
+                <div *ngIf="submitted && form.get('email').invalid">
+                  <p *ngIf="form.get('email').errors.required">
+                    Please enter your email!
+                  </p>
+                  <p *ngIf="form.get('email').errors.email">
+                    Please enter a valid email!
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Phone (Optional)</label>
+              <div class="col-sm-9">
+                <input
+                  type="number"
+
+                  class="form-control"
+                  placeholder="Enter your mobile number"
+                  formControlName="mobile_no"
+                />
+               
+              </div>
+
+            </div>
+          
+
+          </div>
+            <div class="dashboard-section media-inputs">
+            <h4><i data-feather="pen-tool"></i>Course Details</h4>
+              <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Type of Course</label>
+              <div class="col-sm-9">
+                <input name="course_type" formControlName="course_type" value="Webinar" type="radio" id="f-option">
+                <label for="f-option">Webinar</label>
+                <input name="course_type" formControlName="course_type" value="Online Course" type="radio" id="s-option">
+                <label for="s-option">   Online Course</label>
+                <p *ngIf="submitted && form.get('course_type').invalid">
+                  Please select your Course Type!
+                </p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Course Topic</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter title of proposed course topic"
+                  formControlName="proposed_course_topic"
+                />
+                <p *ngIf="submitted && form.get('proposed_course_topic').invalid">
+                  Please enter your Proposed Course Topic!
+                </p>
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Course Title</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter title of proposed course title"
+                  formControlName="proposed_course_title"
+                />
+                <p *ngIf="submitted && form.get('proposed_course_title').invalid">
+                  Please enter your Proposed Course Title!
+                </p>
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Course Description</label>
+              <div class="col-sm-9">
+                <textarea formControlName="proposed_desc" class="form-control" placeholder="Enter few words about your course"></textarea>
+                <p *ngIf="submitted && form.get('proposed_desc').invalid">
+                  Please enter your Proposed Description!
+                </p>
+              </div>
+            </div>
+
+          
+          </div>
+       
+      
+          <div class="dashboard-section basic-info-input">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label"></label>
+              <div class="col-sm-9">
+                <button class="button" type="submit" (click)="modal.showBtnLoader()">
+                  <span class="btn-loading-content">
+                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+                   </span>
+                   <span class="btn-default-content">
+                    Submit
+                   </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+<app-footer></app-footer>
+
+
+<!--instructor form submitted-->
+<div class="modal fade" id="detailsSubmitted" #detailsSubmitted>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(detailsSubmitted)"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body p-4">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img
+          src="assets/img/modals/recover-pass.jpg" alt=""
+        />
+        <h2>Thank you for your interest.  <br> We will be in touch with you soon!
+
+        </h2>
+
+        <button
+            type="button"
+            class="btn btn-default"
+            (click)="modal.closeModal(detailsSubmitted)"
+          >OK
+          </button>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+

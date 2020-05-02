@@ -25,32 +25,28 @@ toggleHeader() {
         event['url'] == '/login-role' ||
         event['url'] == '/signup' ||
         event['url'] == '/login' ||
+        event['url'] == '/instructor-form' ||
         event['url'].includes('/onewaterblog/author/') ||
-        event['url'].includes('/onewaterblog/mayor/') ||
-        event['url'].includes('/onewaterblog/cro/') ||
+        //event['url'].includes('/onewaterblog/mayor/') ||
+        //event['url'].includes('/onewaterblog/cro/') ||
         event['url'].includes('/instructor/') ||
         event['url'].includes('/onewaterblog/category') ||
-        event['url'].includes('/o-wow/video-category')) {
+        event['url'].includes('/onewatertalks/video-category')) {
         $('header').addClass('black-header');
       }
       else {
         $('header').removeClass('black-header');
       }
+
+      // if (event['url'].includes('/onewaterblog/')) 
+      // this.isBlog = true;
+      // else
+      // this.isBlog = false;
     }
   });
 }
 
-showAuhtorLogin() {
-  this.router.events.subscribe((event) => {
-    if (event instanceof NavigationEnd) {
-      if (event['url'].includes('/onewaterblog/')) 
-        this.isBlog = true;
-      else
-        this.isBlog = false;
-    }
-    //console.log("is blog " , this.isBlog);
-  });
-}
+
 
  toggleDropdown(element){
   if($(window).width() < 1091){

@@ -60,7 +60,7 @@
       <div class="col-lg-6 col-md-12 h-100 vod-big-wrap">
         <div class="vod">
           <a
-            [routerLink]="['/o-wow/singlevideo/', singleliked?._id]"
+            [routerLink]="['/onewatertalks/singlevideo/', singleliked?._id]"
             title="{{ singleliked?.title }}"
           >
             <div class="thumbnail-card">
@@ -93,7 +93,7 @@
           <div class="col-sm-6" *ngFor="let video of likesvideos">
             <div class="vod vod-small">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video?._id]"
+                [routerLink]="['/onewatertalks/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card">
@@ -136,7 +136,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-2 col-md-3 col-6">
         <a
-          [routerLink]="['/o-wow/video-category']"
+          [routerLink]="['/onewatertalks/video-category']"
           [queryParams]="{ category: 'Water', fetchcategory: 'water' }"
         >
           <div class="single-category">
@@ -152,7 +152,7 @@
 
       <div class="col-lg-2 col-md-3 col-6">
         <a
-          [routerLink]="['/o-wow/video-category']"
+          [routerLink]="['/onewatertalks/video-category']"
           [queryParams]="{
             category: 'Wastewater',
             fetchcategory: 'wastewater'
@@ -171,7 +171,7 @@
 
       <div class="col-lg-2 col-md-3 col-6">
         <a
-          [routerLink]="['/o-wow/video-category']"
+          [routerLink]="['/onewatertalks/video-category']"
           [queryParams]="{
             category: 'Storm Water',
             fetchcategory: 'stormwater'
@@ -190,7 +190,7 @@
 
       <div class="col-lg-2 col-md-3 col-6">
         <a
-          [routerLink]="['/o-wow/video-category']"
+          [routerLink]="['/onewatertalks/video-category']"
           [queryParams]="{
             category: 'Innovation Research',
             fetchcategory: 'research'
@@ -211,7 +211,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-2 col-md-3 col-6">
         <a
-          [routerLink]="['/o-wow/video-category']"
+          [routerLink]="['/onewatertalks/video-category']"
           [queryParams]="{
             category: 'Sustainable Development',
             fetchcategory: 'sustainable'
@@ -230,7 +230,7 @@
 
       <div class="col-lg-2 col-md-3 col-6">
         <a
-          [routerLink]="['/o-wow/video-category']"
+          [routerLink]="['/onewatertalks/video-category']"
           [queryParams]="{
             category: 'Management & Finance',
             fetchcategory: 'mgmt'
@@ -249,7 +249,7 @@
 
       <div class="col-lg-2 col-md-3 col-6">
         <a
-          [routerLink]="['/o-wow/video-category']"
+          [routerLink]="['/onewatertalks/video-category']"
           [queryParams]="{
             category: 'Legistative & Regulatory',
             fetchcategory: 'leg'
@@ -285,7 +285,7 @@
           >
             <div class="item" *ngFor="let video of water">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video?._id]"
+                [routerLink]="['/onewatertalks/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -317,7 +317,7 @@
           </owl-carousel>
           <div class="d-flex justify-content-end mt-2">
             <a
-              [routerLink]="['/o-wow/video-category']"
+              [routerLink]="['/onewatertalks/video-category']"
               [queryParams]="{ category: 'Water', fetchcategory: 'water' }"
             >
               <p>
@@ -336,7 +336,7 @@
           >
             <div class="item" *ngFor="let video of wastewater">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video?._id]"
+                [routerLink]="['/onewatertalks/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -369,7 +369,7 @@
           </owl-carousel>
           <div class="d-flex justify-content-end mt-2">
             <a
-              [routerLink]="['/o-wow/video-category']"
+              [routerLink]="['/onewatertalks/video-category']"
               [queryParams]="{
                 category: 'Wastewater',
                 fetchcategory: 'wastewater'
@@ -391,7 +391,7 @@
           >
             <div class="item" *ngFor="let video of stormwater">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video?._id]"
+                [routerLink]="['/onewatertalks/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -424,7 +424,7 @@
           </owl-carousel>
           <div class="d-flex justify-content-end mt-2">
             <a
-              [routerLink]="['/o-wow/video-category']"
+              [routerLink]="['/onewatertalks/video-category']"
               [queryParams]="{
                 category: 'Storm Water',
                 fetchcategory: 'stormwater'
@@ -446,7 +446,7 @@
           >
             <div class="item" *ngFor="let video of innovationresearch">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video?._id]"
+                [routerLink]="['/onewatertalks/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -479,7 +479,7 @@
           </owl-carousel>
           <div class="d-flex justify-content-end mt-2">
             <a
-              [routerLink]="['/o-wow/video-category']"
+              [routerLink]="['/onewatertalks/video-category']"
               [queryParams]="{
                 category: 'Innovation Research',
                 fetchcategory: 'research'
@@ -501,7 +501,7 @@
           >
             <div class="item" *ngFor="let video of sustainabledevelopment">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video?._id]"
+                [routerLink]="['/onewatertalks/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -534,7 +534,7 @@
           </owl-carousel>
           <div class="d-flex justify-content-end mt-2">
             <a
-              [routerLink]="['/o-wow/video-category']"
+              [routerLink]="['/onewatertalks/video-category']"
               [queryParams]="{
                 category: 'Sustainable Development',
                 fetchcategory: 'sustainable'
@@ -556,7 +556,7 @@
           >
             <div class="item" *ngFor="let video of managementsinance">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video?._id]"
+                [routerLink]="['/onewatertalks/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -589,7 +589,7 @@
           </owl-carousel>
           <div class="d-flex justify-content-end mt-2">
             <a
-              [routerLink]="['/o-wow/video-category']"
+              [routerLink]="['/onewatertalks/video-category']"
               [queryParams]="{
                 category: 'Management & Finance',
                 fetchcategory: 'mgmt'
@@ -611,7 +611,7 @@
           >
             <div class="item" *ngFor="let video of legistativeregulatory">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video?._id]"
+                [routerLink]="['/onewatertalks/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
                 <div class="thumbnail-card card-border">
@@ -644,7 +644,7 @@
           </owl-carousel>
           <div class="d-flex justify-content-end mt-2">
             <a
-              [routerLink]="['/o-wow/video-category']"
+              [routerLink]="['/onewatertalks/video-category']"
               [queryParams]="{
                 category: 'Legistative & Regulatory',
                 fetchcategory: 'leg'
@@ -676,7 +676,7 @@
           >
             <div class="thumbnail-card card-shadow">
               <a
-                [routerLink]="['/o-wow/singlevideo/', video?._id]"
+                [routerLink]="['/onewatertalks/singlevideo/', video?._id]"
                 title="{{ video?.title }}"
               >
               <div class="row">
@@ -714,7 +714,7 @@
   </div>
 
   <div class="text-center see-more">
-    <a [routerLink]="['/o-wow/videos']">
+    <a [routerLink]="['/onewatertalks/videos']">
       More Videos
     </a>
   </div>
