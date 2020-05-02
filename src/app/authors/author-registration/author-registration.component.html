@@ -1,25 +1,57 @@
 <div class="overlay"></div>
-<button class="button logout-button" type="button" data-feather="user-check" (click)="logout()"><i class="fa fa-power-off"></i></button>
+<!-- <button class="button logout-button" type="button" data-feather="user-check" (click)="logout()"><i class="fa fa-power-off"></i></button>
 <a routerLink="/home" class="reg-logo">
   <img src="assets/img/ow-logo1.png" alt="">
-  </a>
+  </a> -->
+  <app-header></app-header>
 <section class="emp-registration">
     <div class="container">
       <h1 *ngIf="!submited">
-        Hello! Welcome to <span>OneWater Blogs.</span> <br>
-        Complete and submit the form below to get started.
+        Welcome to <span>OneWater Blogs.</span> <br>
+        Fill up the form below to become a member of the platform.
       </h1>
-
-      <h1 *ngIf="submited">
-          Hello! welcome to <span> OneWater Blog.</span> <br>
-          Your details have been registred. Please wait until your profile gets verified!
-        </h1>
 
       <div class="dashboard-content-wrapper dash-tab">
         <form class="dashboard-form" (submit)="submit()" [formGroup]="form">
 
           <div class="dashboard-section basic-info-input">
             <h4><i data-feather="user-check"></i>Basic Info</h4>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Name</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your full name"
+                  formControlName="name"
+                />
+                <div class="form-group" *ngIf=" form.get('name').invalid &&profilesubmit" >
+                  <p>Please enter your full name!</p>
+              </div>
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Email</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your email"
+                  formControlName="email"
+                />
+                <div *ngIf="profilesubmit && form.get('email').invalid">
+                  <p *ngIf="form.get('email').errors.required">
+                    Please enter your email!
+                  </p>
+                  <p *ngIf="form.get('email').errors.email">
+                    Please enter a valid email!
+                  </p>
+                </div>
+              </div>
+
+            </div>
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Phone</label>
               <div class="col-sm-9">
@@ -138,11 +170,44 @@
               </div>
               </div>
           </div>
+          <div class="dashboard-section media-inputs">
+            <h4><i data-feather="password"></i>Set Password</h4>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Enter Password</label>
+              <div class="col-sm-9">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Enter your password"
+                  formControlName="password"
+                />
+                <div class="form-group" *ngIf=" form.get('password').invalid &&profilesubmit" >
+                  <p>Please enter your password!</p>
+              </div>
+              </div>
+
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Confirm Password</label>
+              <div class="col-sm-9">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Enter your password again"
+                  formControlName="confirmpassword"
+                />
+                <div class="form-group" *ngIf=" form.get('confirmpassword').invalid &&profilesubmit" >
+                  <p>Please confirm your password!</p>
+              </div>
+              </div>
+
+            </div>
+          </div>
           <div class="dashboard-section basic-info-input">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label"></label>
               <div class="col-sm-9">
-                <button class="button" type="submit" *ngIf="!submited" (click)="modal.showBtnLoader()">
+                <button class="button" type="submit" (click)="modal.showBtnLoader()">
                   <span class="btn-loading-content">
                     <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
                    </span>

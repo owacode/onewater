@@ -50,7 +50,11 @@ export class AuthorRegistrationComponent implements OnInit {
     }
 
     this.form = new FormGroup({
+      name: new FormControl(null, {validators: [Validators.required]}),
+      email: new FormControl(null, {validators: [Validators.required, Validators.email]}),
       location: new FormControl(null, { validators: [Validators.required] }),
+      password: new FormControl(null, { validators: [Validators.required] }),
+      confirmpassword: new FormControl(null, { validators: [Validators.required] }),
       author_image: new FormControl(null, {validators: [Validators.required]}),
       author_bio: new FormControl(null, {validators: [Validators.required]}),
       mobile: new FormControl(null, { validators: [Validators.required] }),

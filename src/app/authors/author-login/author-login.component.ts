@@ -62,14 +62,15 @@ export class AuthorLoginComponent implements OnInit {
   ngOnInit() {
     this.auth.checkLocalStorage();
 
-    this.state.params.subscribe(result => {this.toRender = result.state});
-    if(this.toRender == 'login'){
-      this.showauthform();
-    }
-    else {
-      this.showText = true;
-      this.showregform();
-    }
+    // this.state.params.subscribe(result => {this.toRender = result.state});
+    // if(this.toRender == 'login'){
+    //   this.showauthform();
+    // }
+    // else {
+    //   this.showText = true;
+    //   this.showregform();
+    // }
+    this.showauthform();
 
     this.user = new FormGroup({
       author_name: new FormControl(null, { validators: [Validators.required] }),

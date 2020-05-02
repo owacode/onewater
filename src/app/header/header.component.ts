@@ -13,7 +13,9 @@ import { AuthorAuthService } from '../authors/services/author-auth.service';
 })
 export class HeaderComponent implements OnInit {
   form:FormGroup;
+  isBlog:Boolean;
   public submited: Boolean = false;
+  
 
 toggleHeader() {
   this.router.events.subscribe((event) => {
@@ -38,6 +40,18 @@ toggleHeader() {
   });
 }
 
+showAuhtorLogin() {
+  this.router.events.subscribe((event) => {
+    if (event instanceof NavigationEnd) {
+      if (event['url'].includes('/onewaterblog/')) 
+        this.isBlog = true;
+      else
+        this.isBlog = false;
+    }
+    //console.log("is blog " , this.isBlog);
+  });
+}
+
  toggleDropdown(element){
   if($(window).width() < 1091){
   var panel = document.getElementById(element);
@@ -50,6 +64,7 @@ toggleHeader() {
 }
 
   constructor(public http: HttpClient, public auth: AuthService, public author: AuthorAuthService, public router: Router, public modal:ModalFunctions) {
+    //this.showAuhtorLogin();
     this.toggleHeader();
    }
   ngOnInit() {

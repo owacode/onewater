@@ -130,7 +130,7 @@ const routes: Routes = [
       //   loadChildren: './blog-website/profile/profile.module#ProfileModule'
       // },
       {
-        path: 'author/:state',
+        path: 'author/login',
         loadChildren: './authors/author-login/author-login.module#AuthorLoginModule'
       },
       {
@@ -145,7 +145,7 @@ const routes: Routes = [
   },
   //-----------Author Registeration page -----------------//
   {
-    path: 'onewaterblog/author-reg',
+    path: 'onewaterblog/author/signup',
     loadChildren: './authors/author-registration/author-registration.module#AuthorRegistrationModule'
   },
 

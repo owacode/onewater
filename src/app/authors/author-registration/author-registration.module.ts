@@ -4,6 +4,7 @@ import { Route, RouterModule } from '@angular/router';
 import { AuthorRegistrationComponent } from './author-registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterModule } from 'src/app/footer/footer.module';
+import { HeaderModule } from 'src/app/header/header.module';
 
 const routes: Route[]=[
     {
@@ -22,6 +23,7 @@ const routes: Route[]=[
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    HeaderModule,
     FooterModule
   ]
 })

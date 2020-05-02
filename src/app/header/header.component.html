@@ -48,7 +48,22 @@
 
       <li class="navlink"><a routerLink="/home/donate">Give</a></li>
 
-      <li *ngIf="!(auth.isLoggedIn || author.loggedIn)" class="navlink">
+      <!--new author signup login button-->
+      <li *ngIf="!author.loggedIn" class="navlink">
+        <a
+        [routerLink]="['/onewaterblog/author/login']"
+        >
+         Login
+        </a>
+      </li>
+      <li *ngIf="!author.loggedIn" class="navlink">
+        <a  [routerLink]="['/onewaterblog/author/signup']">
+          Sign Up
+        </a>
+      </li>
+
+      <!--old signup btn when both user and auhtor were available on platform-->
+      <!-- <li *ngIf="!(auth.isLoggedIn || author.loggedIn)" class="navlink">
         <a
         routerLink="/login-role"
         >
@@ -59,10 +74,10 @@
         <a routerLink="/signup-role">
           Sign Up
         </a>
-      </li>
+      </li> -->
 
-
-      <li *ngIf="auth.isLoggedIn && !(author.loggedIn && auth.isLoggedIn)" class="navlink">
+      <!--show user dashboard button-->
+      <!-- <li *ngIf="auth.isLoggedIn && !(author.loggedIn && auth.isLoggedIn)" class="navlink">
         <div class="dropdown-btn desktop-dd">
           <img src="assets/img/icons/avatar1.svg" alt="" />
           <div class="dropdown-content card-shadow">
@@ -77,9 +92,9 @@
             </a>
           </div>
         </div>
-      </li>
+      </li> -->
 
-
+      <!--show author dashboard button-->
       <li *ngIf="author.loggedIn && !(author.loggedIn && auth.isLoggedIn)" class="navlink">
         <div class="dropdown-btn desktop-dd">
           <img src="assets/img/icons/avatar1.svg" alt="" />
@@ -97,7 +112,8 @@
         </div>
       </li>
 
-      <li *ngIf="author.loggedIn && auth.isLoggedIn" class="navlink">
+      <!--show both user and author dashboard button-->
+      <!-- <li *ngIf="author.loggedIn && auth.isLoggedIn" class="navlink">
         <div class="dropdown-btn desktop-dd">
           <img src="assets/img/icons/avatar1.svg" alt="" />
           <div class="dropdown-content card-shadow">
@@ -112,7 +128,7 @@
              >
           </div>
         </div>
-      </li>
+      </li> -->
 
     </ul>
   </nav>
