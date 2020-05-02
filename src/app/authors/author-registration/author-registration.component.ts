@@ -27,27 +27,27 @@ export class AuthorRegistrationComponent implements OnInit {
   public showsubmit: boolean = false;
 
   ngOnInit() {
-    if (localStorage.getItem("form_filled_job") == "true") {
-      this.http
-        .get<{ status: string; msg: string; result: any }>(
-          "https://onewater-blogapi.herokuapp.com/notauthor/" +
-            localStorage.getItem("authorid")
-        )
-        .subscribe(result => {
-          this.showsubmit = true;
-          //console.log(result);
-          this.editableprofile = result.result[0];
-          //console.log(this.editableprofile, "dwwd");
-          this.form.patchValue({
-            author_name: this.editableprofile.name,
-            location: this.editableprofile.location,
-            author_image: this.editableprofile.image,
-            linkedin: this.editableprofile.linkedIn_id,
-            twitter: this.editableprofile.twitter_id,
-          });
-          this.imagePreview = this.editableprofile.image;
-        });
-    }
+    // if (localStorage.getItem("form_filled_job") == "true") {
+    //   this.http
+    //     .get<{ status: string; msg: string; result: any }>(
+    //       "https://onewater-blogapi.herokuapp.com/notauthor/" +
+    //         localStorage.getItem("authorid")
+    //     )
+    //     .subscribe(result => {
+    //       this.showsubmit = true;
+    //       //console.log(result);
+    //       this.editableprofile = result.result[0];
+    //       //console.log(this.editableprofile, "dwwd");
+    //       this.form.patchValue({
+    //         author_name: this.editableprofile.name,
+    //         location: this.editableprofile.location,
+    //         author_image: this.editableprofile.image,
+    //         linkedin: this.editableprofile.linkedIn_id,
+    //         twitter: this.editableprofile.twitter_id,
+    //       });
+    //       this.imagePreview = this.editableprofile.image;
+    //     });
+    // }
 
     this.form = new FormGroup({
       name: new FormControl(null, {validators: [Validators.required]}),
