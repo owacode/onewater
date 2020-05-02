@@ -91,6 +91,12 @@ export class AuthorRegistrationComponent implements OnInit {
 
     //console.log(this.form.value);
     this.auth.authorRegistration(this.form.value).subscribe(result => {
+      if(result.status == 'error'){
+        //console.log("email already exist");
+        this.modal.hideBtnLoader();
+        this.modal.openModal('#mailexistModal');
+        return;
+      }
       console.log(result, "author details registered successfully");
       this.modal.hideBtnLoader();
       this.form.reset();

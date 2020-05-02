@@ -128,7 +128,12 @@ export class AuthorAuthService {
     author.append("twitter", values.twitter);
 
     console.log(this.authormainid, this.authorid, "dwdw");
-    return this.http.post(
+    return this.http.post<{
+      status: string;
+      msg: string;
+      payload: string;
+      result: any;
+    }>(
       "https://onewater-blogapi.herokuapp.com/unapproved-author",
       author
     );
