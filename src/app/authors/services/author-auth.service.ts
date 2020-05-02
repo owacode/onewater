@@ -127,7 +127,7 @@ export class AuthorAuthService {
     author.append("linkedIn", values.linkedin);
     author.append("twitter", values.twitter);
 
-    //console.log(this.authormainid, this.authorid, "dwdw");
+    console.log(this.authormainid, this.authorid, "dwdw");
     return this.http.post(
       "https://onewater-blogapi.herokuapp.com/unapproved-author",
       author

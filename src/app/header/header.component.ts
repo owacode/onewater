@@ -38,11 +38,12 @@ toggleHeader() {
         $('header').removeClass('black-header');
       }
 
-      // if (event['url'].includes('/onewaterblog/')) 
-      // this.isBlog = true;
-      // else
-      // this.isBlog = false;
+      if (event['url'].includes('/onewaterblog')) 
+      this.isBlog = true;
+      else
+      this.isBlog = false;
     }
+   // console.log("is blog",this.isBlog)
   });
 }
 

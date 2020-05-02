@@ -8,7 +8,7 @@
     <div class="container">
       <h1 *ngIf="!submited">
         Welcome to <span>OneWater Blogs.</span> <br>
-        Fill up the form below to become a member of the platform.
+        Fill up the form below to become an author on the platform.
       </h1>
 
       <div class="dashboard-content-wrapper dash-tab">
@@ -224,7 +224,52 @@
   </section>
 <app-footer></app-footer>
 
-  <div class="modal fade" id="registerModal" role="dialog" #registerModal>
+
+<!----mail already exist modal--->
+<div
+  class="modal modal-animate"
+  id="mailexistModal"
+  role="dialog"
+  #mailexistModal
+>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(mailexistModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img
+          src="assets/img/modals/mail-sent.jpg
+         "
+          alt=""
+        />
+        <h2>
+          The email ID you have entered is already in use on OneWater.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(mailexistModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="registerModal" role="dialog" #registerModal>
     <div class="modal-dialog modal-md">
       <div class="modal-content">
       <div class="modal-head">
@@ -241,4 +286,40 @@
           <button type="button" class="btn btn-default" data-dismiss="modal" (click)="logout()">OK</button>
       </div>
     </div>
+</div>
+
+
+<!--wrong password modal-->
+<div class="modal modal-animate" id="passModal" role="dialog" #passModal>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-head">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          (click)="modal.closeModal(passModal)"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-logo">
+          <img src="assets/img/ow-logo1.png" alt="">
+        </div>
+        <img src="assets/img/modals/wrong.svg" style="width: 25%;" alt="" />
+        <h2>
+          The Password and Confirm Password fields do not match. Please try again.
+        </h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-default"
+        data-dismiss="modal"
+        (click)="modal.closeModal(passModal)"
+      >
+        OK
+      </button>
+    </div>
+  </div>
 </div>

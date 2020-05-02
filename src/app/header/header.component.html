@@ -53,14 +53,14 @@
       <li class="navlink"><a routerLink="/give">Give</a></li>
 
       <!--new author signup login button-->
-      <li *ngIf="!author.loggedIn" class="navlink">
+      <li *ngIf="!author.loggedIn && isBlog" class="navlink">
         <a
         [routerLink]="['/onewaterblog/author/login']"
         >
          Login
         </a>
       </li>
-      <li *ngIf="!author.loggedIn" class="navlink">
+      <li *ngIf="!author.loggedIn && isBlog" class="navlink">
         <a  [routerLink]="['/onewaterblog/author/signup']">
           Sign Up
         </a>
