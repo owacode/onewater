@@ -117,20 +117,19 @@ export class AuthorAuthService {
 
   authorRegistration(values) {
     const author = new FormData();
-    author.append("name", localStorage.getItem("name"));
-    author.append("email", localStorage.getItem("authoremail"));
+    author.append("name", values.name);
+    author.append("email", values.email);
+    author.append("password", values.password);
     author.append("location", values.location);
     author.append("image", values.author_image);
     author.append("bio", values.author_bio);
     author.append("mobile", values.mobile);
     author.append("linkedIn", values.linkedin);
     author.append("twitter", values.twitter);
-    author.append("id", this.authorid);
-    author.append("mainid", this.authormainid);
 
     //console.log(this.authormainid, this.authorid, "dwdw");
     return this.http.post(
-      "https://onewater-blogapi.herokuapp.com/update-authorprofile",
+      "https://onewater-blogapi.herokuapp.com/unapproved-author",
       author
     );
   }
