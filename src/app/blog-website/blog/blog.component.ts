@@ -317,6 +317,7 @@ croList;
 
 
   authors;
+  topauthors;
   bannerblogs;
 
 
@@ -327,6 +328,7 @@ croList;
     this.getApprovedBlogsByCRO();
     this.getApprovedMayor();
     this.getApprovedCRO();
+    this.getTopAuthor();
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/approveblogs')
       .subscribe(result => {
         //console.log(result);
@@ -384,6 +386,15 @@ croList;
     ).subscribe(result=>{
       this.cros = result.result;
       this.cros = this.cros.slice(0,4);
+    })
+  }
+
+  getTopAuthor() {
+    this.http.get<{ status: string; msg: string; result: any }>(
+      "https://onewater-blogapi.herokuapp.com/topauthor"
+    ).subscribe(result=>{
+      // console.log(result)
+      this.topauthors = result.result;
     })
   }
 }
