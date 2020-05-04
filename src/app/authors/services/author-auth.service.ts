@@ -57,7 +57,6 @@ export class AuthorAuthService {
   checkLocalStorage() {
     //console.log("check local hit author",this.loggedIn);
     const token = localStorage.getItem("onewaterauthortoken");
-    const approve = localStorage.getItem("authorapprovedid");
     //console.log(approve, "appppppp");
     if (token) {
       //console.log("hit 1223");
@@ -65,31 +64,12 @@ export class AuthorAuthService {
       this.loggedinLitsener.next({
         status: this.loggedIn
       });
-      if (localStorage.getItem("form_filled_job") == "true") {
-        //console.log(
-        //   "check local hit ifffffffff",
-        //   localStorage.getItem("form_filled_job")
-        // );
         this.token = token;
-        this.authorid = localStorage.getItem("authorid");
-        this.authorname = localStorage.getItem("name");
-        this.authoremail = localStorage.getItem("authoremail");
-        this.authormainid = localStorage.getItem("authormainid");
-        this.authorimage = localStorage.getItem("image");
-        if (!approve) return this.route.navigate(["/onewaterblog/author-reg"]);
-        this.authorapprovedid = localStorage.getItem("authorapprovedid");
-        // this.route.navigate(["/author"]);
-      } else {
-        //console.log("check local hit elseeeeeeeeeeee");
-        this.token = token;
-        this.authorid = localStorage.getItem("authorid");
-        this.authorname = localStorage.getItem("name");
-        this.authorimage = localStorage.getItem("image");
+        this.authorname = localStorage.getItem("authorname");
+        this.authorimage = localStorage.getItem("authorimage");
         this.authoremail = localStorage.getItem("authoremail");
         this.authormainid = localStorage.getItem("authormainid");
         this.authorapprovedid = localStorage.getItem("authorapprovedid");
-        // this.route.navigate(["/onewaterblog/author-reg"]);
-      }
     }
   }
 
@@ -99,12 +79,11 @@ export class AuthorAuthService {
       status: this.loggedIn
     });
     localStorage.removeItem("onewaterauthortoken");
-    localStorage.removeItem("authorid");
+    localStorage.removeItem("authorname");
+    localStorage.removeItem("authorimage");
     localStorage.removeItem("authoremail");
     localStorage.removeItem("authormainid");
     localStorage.removeItem("authorapprovedid");
-    localStorage.removeItem("image");
-    localStorage.removeItem("name");
     this.route.navigate(["/onewaterblog/author/login"]);
   }
 

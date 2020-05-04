@@ -132,64 +132,34 @@ export class AuthorLoginComponent implements OnInit {
     //console.log(this.loginuser.value);
     this.auth.login(this.loginuser.value).subscribe(result=> {
 
-      //console.log(result,'test reult');
+      console.log(result,'test reult');
             if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
               //console.log("invalid credentials");
               this.modal.hideBtnLoader();
               this.modal.openModal('#invalidModal');
               return;
             }
-            else if(result.msg == 'User Email not Verified'){
-              //console.log("user email not verified");
-              this.modal.hideBtnLoader();
-              this.modal.openModal('#loginModal');
-              return;
-            }
-            else if(result.result.form_filled == true && result.result.approvedid == "null"){
-              //console.log("waiting for approval")
+            else if(result.msg == 'User Profile Not Approved'){
               this.modal.hideBtnLoader();
               this.modal.openModal('#pendingModal');
               return;
             }
 
-            if(result.status =='error') return;
+            if(result.status =='error') return this.modal.hideBtnLoader();;
             this.auth.token = result.result.token;
             this.auth.loggedIn = true;
-            this.auth.authoremail=result.result.email;
-            this.auth.authorid=result.result.id;
-            this.auth.authorname=result.result.name
-            this.auth.authormainid=result.result.mainid;
-            this.auth.authorapprovedid=result.result.approvedid;
-            if(result.result.form_filled){
-              localStorage.setItem('onewaterauthortoken',result.result.token)
-              localStorage.setItem('authoremail',this.auth.authoremail)
-              localStorage.setItem('authorid',this.auth.authorid)
-              localStorage.setItem('authormainid',this.auth.authormainid)
-              localStorage.setItem('name',result.result.name)
-              localStorage.setItem('image',result.result.image)
-              localStorage.setItem('form_filled_job',result.result.form_filled)
-              if(result.result.approvedid=='null') {
-                // return(alert("Profile Not Approved Yet"));
-                this.auth.approvedLitsener.next({
-                  status:false
-                })
-               return this.route.navigate(['/onewaterblog/author-reg']);
-              }
-              this.auth.approvedLitsener.next({
-                status:true
-              })
-              localStorage.setItem('authorapprovedid',this.auth.authorapprovedid)
-              this.route.navigate(['/author']);
-            }else{
-              localStorage.setItem('onewaterauthortoken',result.result.token)
-              localStorage.setItem('name',result.result.name)
-              localStorage.setItem('image',result.result.image)
-              localStorage.setItem('authoremail',this.auth.authoremail)
-              localStorage.setItem('authorid',this.auth.authorid)
-              localStorage.setItem('authormainid',this.auth.authormainid)
-              localStorage.setItem('form_filled_job',result.result.form_filled)
-              this.route.navigate(['/onewaterblog/author-reg']);
-            }
+            this.auth.authoremail=result.result.user.email;
+            this.auth.authorname=result.result.user.name;
+            this.auth.authorimage=result.result.user.image;
+            this.auth.authormainid=result.result.user._id;
+            this.auth.authorapprovedid=result.result.user.approved_id;
+            localStorage.setItem('onewaterauthortoken',result.result.token)
+            localStorage.setItem('authorname',this.auth.authorname)
+            localStorage.setItem('authorimage',this.auth.authorimage)
+            localStorage.setItem('authoremail',this.auth.authoremail)
+            localStorage.setItem('authormainid',this.auth.authormainid)
+            localStorage.setItem('authorapprovedid',this.auth.authorapprovedid)
+            this.auth.route.navigate(['/author'])
           })
   }
 
