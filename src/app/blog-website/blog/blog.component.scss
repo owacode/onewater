@@ -70,20 +70,6 @@ h2 {
   max-width: 500px;
   margin-top: 10vh;
 
-
-  .carousel-control-next,
-  .carousel-control-prev {
-    top: 90%;
-  }
-  .carousel-control-prev {
-    /* right: 10px; */
-    left: 70%;
-    transform: rotate(180deg);
-  }
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-image: url(/assets/img/icons/next1.svg);
-  }
 }
 
 /*-------------------TOP BLOGS CARD--------------------*/
@@ -142,11 +128,11 @@ h2 {
 /*-----gray cards styles-----------*/
 .blog-card {
   overflow: hidden;
-  background-color: #000c61;
-  border-radius: 15px;
+  background-color: #ebebeb;
+  border-radius: 8px;
   position: relative;
   box-shadow: 0px 25px 35px -25px #97a3b8;
-  margin: 0 1rem 1rem;
+  //margin: 0 1rem 1rem;
   .blog-caption {
     padding: 1rem;
     z-index: 10;
@@ -154,7 +140,7 @@ h2 {
 
     h5 {
       font-weight: 700;
-      color: #fff;
+      color: rgb(29, 29, 29);
       margin-top:0;
       transition: 0.2s all ease-in-out;
     }
@@ -165,7 +151,8 @@ h2 {
   p {
     font-size: 0.8rem;
     font-weight: 600;
-    color: white;
+    margin-bottom: 0.5rem;
+    color: rgb(29, 29, 29);
   }
   .author {
     margin: 1rem 0;
@@ -190,7 +177,7 @@ h2 {
 
   .like-btn,
   .read-mins {
-    color: white;
+    color: rgb(29, 29, 29);
     font-size: 0.8rem;
     font-weight: 500;
   }

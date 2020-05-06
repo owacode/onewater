@@ -92,6 +92,7 @@ left: 1.2rem;
   height: 100%;
   width: 100%;
   background-image: url("/assets/img/blue-wave-small.png");
+  filter: grayscale(1) brightness(10);
   background-size: cover;
   background-position-x: right;
   background-repeat: no-repeat;
@@ -205,6 +206,25 @@ left: 1.2rem;
         max-width: 120px;
         margin: auto;
 
+      }
+    }
+
+    .outer-card-blue{
+      margin: 1rem 0.6rem;
+      max-width: 100%;
+      .two-card {
+        .blog-img{
+          img{
+            height: auto !important;
+          }
+        }
+        
+      }
+      .blog-card{
+        margin: 0;
+        .blog-caption{
+          height: auto;
+        }
       }
     }
     .two-card{
