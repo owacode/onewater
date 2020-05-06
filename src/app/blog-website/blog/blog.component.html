@@ -47,7 +47,7 @@
           </div>
         </div>
         </owl-carousel>
-        
+
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@
       </h2>
       <div class="top-authors card-shadow">
         <div class="container">
-           <div class="blog-block blog-block-right"></div> 
+           <div class="blog-block blog-block-right"></div>
 
 
           <div class="row justify-content-center">
@@ -209,7 +209,7 @@
       </h2>
       <div class="top-authors card-shadow">
         <div class="container">
-           <div class="blog-block blog-block-right"></div> 
+           <div class="blog-block blog-block-right"></div>
 
           <div class="row justify-content-center">
             <div class="col-lg-6 col-md-3 col-6" *ngFor="let cro of cros">
@@ -245,7 +245,7 @@
           [options]="carouselOptions"
           [carouselClasses]="['owl-theme', 'row', 'sliding']"
         >
-       
+
           <div class="item" *ngFor="let blog of featuredblog">
             <div class="outer-card">
               <div class="outer-overlay"></div>
@@ -295,7 +295,7 @@
                 No authors on the platform.
               </h4>
             </div>
-            <div class="col-lg-6 col-md-3 col-6" *ngFor="let author of authors">
+            <div class="col-lg-6 col-md-3 col-6" *ngFor="let author of topauthors">
               <a [routerLink]="['/onewaterblog/authorprofile/', author._id]">
                 <div class="top-auth-img">
                   <img src="{{ author.image }}" alt="" />

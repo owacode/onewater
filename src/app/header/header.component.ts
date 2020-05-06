@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   form:FormGroup;
   isBlog:Boolean;
   public submited: Boolean = false;
-  
+
 
 toggleHeader() {
   this.router.events.subscribe((event) => {
@@ -38,7 +38,7 @@ toggleHeader() {
         $('header').removeClass('black-header');
       }
 
-      if (event['url'].includes('/onewaterblog')) 
+      if (event['url'].includes('/onewaterblog'))
       this.isBlog = true;
       else
       this.isBlog = false;
@@ -132,14 +132,6 @@ toggleHeader() {
   //       //console.log(result);
   //     })
   // }
-
-  authorRoute() {
-    if (localStorage.getItem("form_filled_job") == "true") {
-      this.author.route.navigate(["/author"]);
-    }else {
-      this.author.route.navigate(["/onewaterblog/author-reg"]);
-    }
-  }
   logout() {
     this.auth.logout();
   }

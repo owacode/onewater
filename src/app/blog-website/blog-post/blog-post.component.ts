@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { AuthService } from '../../auth.service';
+import { AuthorAuthService } from 'src/app/authors/services/author-auth.service';
 declare var $: any;
 
 @Component({
@@ -42,7 +43,7 @@ export class BlogPostComponent implements OnInit {
     }
   };
 
-  constructor(public router: ActivatedRoute, public http: HttpClient, public auth:AuthService) {}
+  constructor(public router: ActivatedRoute, public http: HttpClient, public auth:AuthService, public authorauth: AuthorAuthService) {}
 
   ngOnInit() {
     this.getmostlikedblogs();
@@ -66,7 +67,7 @@ export class BlogPostComponent implements OnInit {
           this.blog = result.result[0];
           this.getauthor(this.blog.author_id);
           this.getauthorblogs(this.blog.author_id);
-          this.isLiked({userid:this.auth.user_id, blogid:this.blogid});
+          this.isLiked({userid:this.authorauth.authorapprovedid, blogid:this.blogid});
         });
     });
   }
@@ -115,7 +116,7 @@ export class BlogPostComponent implements OnInit {
     this.liked = true;
     const data={
       blogid:this.blogid,
-      userid:this.auth.user_id
+      userid:this.authorauth.authorapprovedid
     }
     this.http.post('https://onewater-blogapi.herokuapp.com/like',data)
     .subscribe(result=>{
@@ -126,7 +127,7 @@ export class BlogPostComponent implements OnInit {
   isLiked(data){
     //console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
     //console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
-    this.http.get<{status:string,result:string}>(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    this.http.get<{status:string,result:string}>(`https://onewater-blogapi.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     .subscribe(result=>{
       //console.log(result);
       if(result.result=='1') {

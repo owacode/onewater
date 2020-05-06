@@ -24,9 +24,9 @@
         <div class="dropdown-btn platform-dd"  (click)="toggleDropdown('platforms')">
           OneWater Academy <i class="fa fa-caret-down" aria-hidden="true"></i>
           <div class="dropdown-content card-shadow" id="platforms">
-            <li class="navlink"><a routerLink="/home/leaders">OneWater Leaders</a></li> 
+            <li class="navlink"><a routerLink="/home/leaders">OneWater Leaders</a></li>
             <li class="navlink"><a routerLink="/home/learningacademy">OneWater Xchange</a></li>
-            <li class="navlink"><a routerLink="/home/owx">OneWater Xchange</a></li> 
+            <li class="navlink"><a routerLink="/home/owx">OneWater Xchange</a></li>
             <li class="navlink"><a routerLink="/onewaterblog">OneWater Blogs</a></li>
             <li class="navlink"><a routerLink="/onewatertalks">OneWater Talks</a></li>
           </div>
@@ -106,7 +106,7 @@
             <div class="dd-head">
               Author
             </div>
-            <a (click)="authorRoute()">
+            <a [routerLink]="['/author']">
              Dashboard</a
             >
             <a (click)="logoutAuthor()">

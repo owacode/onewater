@@ -131,7 +131,12 @@ export class AuthorLoginComponent implements OnInit {
 
     //console.log(this.loginuser.value);
     this.auth.login(this.loginuser.value).subscribe(result=> {
+<<<<<<< HEAD
       console.log(result,'test reult');
+=======
+
+      // console.log(result,'test reult');
+>>>>>>> 333ea18406a28c590281806d11684ab5b9b66beb
             if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
               //console.log("invalid credentials");
               this.modal.hideBtnLoader();
@@ -143,6 +148,10 @@ export class AuthorLoginComponent implements OnInit {
               this.modal.openModal('#pendingModal');
               return;
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 333ea18406a28c590281806d11684ab5b9b66beb
             if(result.status =='error') return this.modal.hideBtnLoader();;
             this.auth.token = result.result.token;
             this.auth.loggedIn = true;

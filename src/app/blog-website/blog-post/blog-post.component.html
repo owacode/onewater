@@ -35,14 +35,14 @@
           </p>
           <div class="blog-content" [innerHtml]="blog?.desc | safeHtml"></div>
           <div class="blog-options">
-            <div class="like-btn" *ngIf="!liked && auth.user_id">
+            <div class="like-btn" *ngIf="!liked && authorauth.authorapprovedid">
               <h6>Like :</h6>
               <a (click)="likeblog()">
                 <i class="fa fa-heart" aria-hidden="true"></i>
               </a>
               <span>liked!</span>
             </div>
-            <div class="like-btn" *ngIf="liked">
+            <div class="like-btn" *ngIf="liked && authorauth.authorapprovedid">
               <h6>Liked</h6>
               <a class="press">
                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -52,7 +52,7 @@
             <div class="share-btn">
               <h6>Share on :</h6>
               <button><fb-like url="{{ url }}"></fb-like></button>
-              <button style="transform: translateY(7px);"><tweet url="{{ url }}" text="{{ url }}"></tweet></button>
+              <button style="transform: translateY(7px);"><tweet url="{{ url }}"></tweet></button>
               <button><linkedin-share url="{{ url }}"></linkedin-share></button>
             </div>
           </div>
