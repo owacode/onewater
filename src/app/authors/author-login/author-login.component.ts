@@ -132,7 +132,7 @@ export class AuthorLoginComponent implements OnInit {
     //console.log(this.loginuser.value);
     this.auth.login(this.loginuser.value).subscribe(result=> {
 
-      console.log(result,'test reult');
+      // console.log(result,'test reult');
             if(result.msg == 'No User Found' || result.msg == 'Incorrect Password'){
               //console.log("invalid credentials");
               this.modal.hideBtnLoader();
