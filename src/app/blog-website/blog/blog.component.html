@@ -38,9 +38,9 @@
                   {{ blog?.title  }}
                 </h3></a
               >
-              <div class="author">
+              <div class="author" *ngIf="blog?.author_name">
                 <a
-
+                [routerLink]="['/onewaterblog/authorprofile/', blog.author_id]"
                 >
                   <img [src]="blog?.author_image" alt="" />
                   <p>{{blog?.author_name}}</p>
@@ -356,7 +356,7 @@
                   </div>
                   <div class="author">
                     <a
-                      [routerLink]="['/onewaterblog/authorprofile/', item._id]"
+                      [routerLink]="['/onewaterblog/authorprofile/', item.author_id]"
                     >
                       <img [src]="item.author_image" alt="" />
                       <p>{{ item.author_name }}</p>

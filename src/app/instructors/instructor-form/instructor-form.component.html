@@ -111,6 +111,7 @@
                 <label for="f-option">Webinar</label>
                 <input name="course_type" formControlName="course_type" value="Online Course" type="checkbox" id="s-option">
                 <label for="s-option">Online Course</label>
+                <br>
                 <p *ngIf="submitted && form.get('course_type').invalid">
                   Please select your Course Type!
                 </p>
