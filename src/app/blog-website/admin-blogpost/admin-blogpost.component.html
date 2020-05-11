@@ -11,26 +11,26 @@
         <div class="post-top">
           <h1>{{blog?.title}}</h1>
           <div class="article-meta">
-            <img src="assets/img/owlogo-blue.png" alt="Author" />
+            <img [src]="blog?.author_image" alt="Author" />
             <div class="meta-data">
-              <span class="meta-author">By Admin </span><br />
+              <span class="meta-author">By {{blog?.author_name}} </span><br />
               <!-- <span class="meta-date">About admin</span> -->
             </div>
           </div>
-
+<!--
           <div class="row">
             <div class="col-md-12">
               <p class="teaser top-teaser">
-                <!-- <strong >Category</strong> : <span *ngFor="let category of blog.category">{{category}} </span>
+                <strong >Category</strong> : <span *ngFor="let category of blog.category">{{category}} </span>
 
-              <br><br> -->
+              <br><br>
 
                 <strong style="color: #101010;">Category </strong> : <span>Category</span> <span>Sub category</span>
                 <br><br>
-               
+
               </p>
             </div>
-          </div>
+          </div> -->
 
 
 
