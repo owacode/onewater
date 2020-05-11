@@ -24,7 +24,7 @@ export class InstructorFormComponent implements OnInit {
       email: new FormControl(null, {validators:[Validators.required,Validators.email]}),
       organization: new FormControl(null, {validators:[Validators.required]}),
       mobile_no: new FormControl(null),
-      proposed_course_topic: new FormControl(null),
+      //proposed_course_topic: new FormControl(null),
       category: new FormControl('',{validators:[Validators.required]}),
       course_type: new FormControl(null, {validators:[Validators.required]}),
       proposed_course_title: new FormControl(null, {validators:[Validators.required]}),
