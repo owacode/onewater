@@ -184,7 +184,7 @@ left: 1.2rem;
       border-radius: 10px;
       background: #0051c9;
       padding: 0.35rem;
-      margin: 2rem auto;
+      margin: 1rem auto;
       position: relative;
       overflow: hidden;
       max-width: 300px;
@@ -210,12 +210,12 @@ left: 1.2rem;
     }
 
     .outer-card-blue{
-      margin: 1rem 0.6rem;
+     // margin: 1rem 0.6rem;
       max-width: 100%;
       .two-card {
         .blog-img{
           img{
-            height: auto !important;
+            height: 100% !important;
           }
         }
         

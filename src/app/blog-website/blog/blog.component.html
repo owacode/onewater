@@ -38,10 +38,13 @@
                   {{ blog?.title  }}
                 </h3></a
               >
-              <div class="authorname">
-                <p>
-                  {{ blog?.author }}
-                </p>
+              <div class="author">
+                <a
+                  
+                >
+                  <img src="assets/img/user.svg" alt="" />
+                  <p>Author name</p>
+                </a>
               </div>
             </div>
           </div>
@@ -326,13 +329,9 @@
             No posts to display for now.
           </h4>
         </div>
-        <ngx-masonry
-          [options]="{ transitionDuration: 0 }"
-          [useImagesLoaded]="true"
-        >
+       <div class="row align-items-center">
           <div
-            ngxMasonryItem
-            class="masonry-item"
+            class="col-lg-4 col-md-6"
             *ngFor="let item of blogcards; let i = index"
           >
             <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
@@ -347,7 +346,7 @@
                 <div class="blog-caption">
                   <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
                     <h5>
-                      {{ item?.title | shorten: 50 }}
+                      {{ item?.title | shorten: 40 }}
                     </h5>
                   </a>
                   <div class="blog-category">
@@ -381,7 +380,7 @@
             </div>
             </a>
           </div>
-        </ngx-masonry>
+        </div>
       </div>
     </div>
     <div class="col-lg-3 no-gutter order-first">

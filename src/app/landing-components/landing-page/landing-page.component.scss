@@ -211,8 +211,9 @@ section {
   }
 }
 .short-logo{
-  height: 70px !important;
+  height: 70px !important;max-height: 100px !important;
 }
+
 .outer-card{
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.49), 0 4px 6px -2px rgba(0, 0, 0, 0.76);
   padding: 0.8rem;

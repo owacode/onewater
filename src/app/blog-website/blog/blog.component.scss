@@ -74,11 +74,10 @@ h2 {
 
 /*-------------------TOP BLOGS CARD--------------------*/
 .landing-card {
-  padding: 1rem;
+  padding: 1rem 1rem 0;
   // height: 70vh;
   margin: 1rem 0;
   border-radius: 10px;
-  
 
   .landing-blog-img {
     max-height: 250px;
@@ -109,6 +108,23 @@ h2 {
       margin-top:0;
     }
   }
+
+  .author {
+    margin: 1rem 0;
+    text-align: center;
+    img {
+      width: 100%;
+      margin: auto;
+      border: 1px solid #101010;
+      padding: 2px;;
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+    }
+   
+  }
 }
 
 /*-----------------------main container blog cards-------------------------------*/
@@ -116,7 +132,7 @@ h2 {
 .blog-img {
   position: relative;
   overflow: hidden;
-
+  height: 200px;
   img {
     object-position: center;
     object-fit: cover;
@@ -137,6 +153,7 @@ h2 {
     padding: 1rem;
     z-index: 10;
     position: relative;
+    min-height: 230px;
 
     h5 {
       font-weight: 700;

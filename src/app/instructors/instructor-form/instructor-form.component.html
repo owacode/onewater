@@ -7,8 +7,7 @@
 <section class="emp-registration">
     <div class="container">
       <h1>
-        Welcome to <span>OneWater Academy.</span> <br>
-        Fill up the form below to register your course.
+        Please complete the form below. <br> We will be in touch with you to discuss the specifics of your proposed course.
       </h1>
 
       <div class="dashboard-content-wrapper dash-tab">
@@ -107,16 +106,17 @@
               <div class="form-group row">
               <label class="col-sm-3 col-form-label">Type of Course</label>
               <div class="col-sm-9">
-                <input name="course_type" formControlName="course_type" value="Webinar" type="radio" id="f-option">
+                
+                <input name="course_type" formControlName="course_type" value="Webinar" type="checkbox" id="f-option">
                 <label for="f-option">Webinar</label>
-                <input name="course_type" formControlName="course_type" value="Online Course" type="radio" id="s-option">
-                <label for="s-option">   Online Course</label>
+                <input name="course_type" formControlName="course_type" value="Online Course" type="checkbox" id="s-option">
+                <label for="s-option">Online Course</label>
                 <p *ngIf="submitted && form.get('course_type').invalid">
                   Please select your Course Type!
                 </p>
               </div>
             </div>
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label class="col-sm-3 col-form-label">Course Topic</label>
               <div class="col-sm-9">
                 <input
@@ -130,7 +130,7 @@
                 </p>
               </div>
 
-            </div>
+            </div> -->
 
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Course Title</label>
@@ -143,6 +143,42 @@
                 />
                 <p *ngIf="submitted && form.get('proposed_course_title').invalid">
                   Please enter your Proposed Course Title!
+                </p>
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Course Category</label>
+              <div class="col-sm-9">
+                <select
+                  class="form-control"
+                  formControlName="category"
+                >
+                <option value="">Select Course Category</option>
+                <option value="Water">Water</option>
+                <option value="Wastewater">Wastewater</option>
+                <option value="Stormwater">Stormwater</option>
+                <option value="AI and Big Data">AI and Big Data</option>
+                <option value="Non-Revenue Water">Non-Revenue Water</option>
+                <option value="Energy">Energy</option>
+                <option value="Resilience">Resilience</option>
+                <option value="Climate Change">Climate Change</option>
+                <option value="Asset Management">Asset Management</option>
+                <option value="Research and Development">Research and Development</option>
+                <option value="Smart OneWater">Smart OneWater</option>
+                <option value="Water Quality">Water Quality</option>
+                <option value="Software Applications">Software Applications</option>
+                <option value="Innovation">Innovation</option>
+                <option value="SCADA">SCADA</option>
+                <option value="Sensor Technologies">Sensor Technologies</option>
+                <option value="Modeling">Modeling</option>
+                <option value="Emerging Contaminants">Emerging Contaminants</option>
+                <option value="Other">Other</option>
+
+              </select>
+                <p *ngIf="submitted && form.get('category').invalid">
+                  Please select a category for your course!
                 </p>
               </div>
 

@@ -177,7 +177,7 @@
 
           <!--------------PASSWORD RECOVERY FORM------------------->
           <form class="vldform vldrecpass" [formGroup]="resetpassform" (submit)="resetpassword()">
-            <h1>Password Recovery</h1>
+            <h1>Reset Password</h1>
             <input
               class="vldform__textbox"
               type="email"
@@ -296,7 +296,6 @@
   </div>
 </div>
 
-
 <!--profile pending for approval-->
 <div class="modal modal-animate" id="pendingModal" role="dialog" #pendingModal>
   <div class="modal-dialog modal-md">
@@ -353,7 +352,9 @@
         </div>
         <img src="assets/img/modals/invalid-details.png" alt="" />
         <h2>
-          You have entered wrong email or password. Please try again.
+         
+You have entered an incorrect username or password. Please try again.
+
         </h2>
       </div>
       <button
@@ -367,7 +368,6 @@
     </div>
   </div>
 </div>
-
 
 <!--reset password doesn't exist modal-->
 <div class="modal modal-animate" id="resetMailExist" role="dialog" #resetMailExist>
@@ -389,9 +389,9 @@
         </div>
         <img src="assets/img/modals/mail-not-exist.svg" style="width: 35%;" alt="" />
         <h2>
-          Entered email doesn't exist on OneWater Platform. 
+          The entered email does not exist on OneWater Academy.
           <br>
-          Please try again.
+          Please try again with a different email or sign up to become a OneWater Blogs Author!
         </h2>
       </div>
       <button
@@ -405,7 +405,6 @@
     </div>
   </div>
 </div>
-
 
 <!--forgot password modal-->
 <div class="modal modal-animate" id="forgotpassModal" role="dialog" #forgotpassModal>
@@ -427,7 +426,7 @@
         </div>
         <img src="assets/img/modals/pending-profile.png" alt="" />
         <h2>
-         Password Recovery link has been sent to your register email id. Please check it to set new password.
+          Please check your email to reset your password!
         </h2>
       </div>
       <button

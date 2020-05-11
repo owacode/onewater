@@ -3,14 +3,14 @@
 @import '../../modal-styles.scss';
 
 
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
     position: absolute;
     left: -9999px;
 }
 
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label
+[type="checkbox"]:checked + label,
+[type="checkbox"]:not(:checked) + label
 {
 
   margin-right: 1rem;
@@ -23,8 +23,8 @@
     color: #444;
 }
 
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before {
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -32,31 +32,33 @@
     width: 20px;
     height: 20px;
     border: 1px solid #ddd;
-    border-radius: 100%;
+    border-radius: 2px;
     background: #fff;
 }
 
-[type="radio"]:checked + label:after,
-[type="radio"]:not(:checked) + label:after {
-    content: '';
-    width: 12px;
-    height: 12px;
+[type="checkbox"]:checked + label:after,
+[type="checkbox"]:not(:checked) + label:after {
+    content: '\2713';
+    width: 20px;
+    height: 20px;
     background: rgb(24, 54, 224);
     position: absolute;
-    top: 4px;
-    left: 4px;
-    border-radius: 100%;
+    top: 0px;
+    color:#fff;
+    left: 0px;
+    padding: 0 2px;
+    border-radius:2px;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
-[type="radio"]:not(:checked) + label:after {
+[type="checkbox"]:not(:checked) + label:after {
     opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
 }
 
-[type="radio"]:checked + label:after {
+[type="checkbox"]:checked + label:after {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
