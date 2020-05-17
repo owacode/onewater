@@ -92,7 +92,7 @@ export class InstructorLoginComponent implements OnInit {
     }
     //console.log('pass',this.user.value);
 
-    this.http.post('https://onewater-instructor-api.herokuapp.com/addinstructor',this.user.value)
+    this.http.post('http://18.223.24.178:7050/addinstructor',this.user.value)
     .subscribe(result=>{
       if(result['status'] == "error"){
         //console.log("User already exist", result)
@@ -122,7 +122,7 @@ export class InstructorLoginComponent implements OnInit {
     }
     ////console.log('pass',this.loginuser.value);
 
-    this.http.post<{msg:string, result:any}>('https://onewater-instructor-api.herokuapp.com/login',this.loginuser.value)
+    this.http.post<{msg:string, result:any}>('http://18.223.24.178:7050/login',this.loginuser.value)
     .subscribe(result=>{
       this.instructorservice.userid=result.result.user.id;
       this.instructorservice.useremail=result.result.user.email;
@@ -171,7 +171,7 @@ export class InstructorLoginComponent implements OnInit {
       return;
     }
 
-    this.http.post<{status: string, msg: string, result: any}>('https://onewater-instructor-api.herokuapp.com/reset-password',this.resetpassform.value)
+    this.http.post<{status: string, msg: string, result: any}>('http://18.223.24.178:7050/reset-password',this.resetpassform.value)
     .subscribe(result=> {
       //console.log(result);
       this.modal.openModal('#forgotpassModal');

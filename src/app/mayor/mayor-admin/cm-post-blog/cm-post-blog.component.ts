@@ -48,7 +48,7 @@ export class CmPostBlogComponent implements OnInit {
         var xhr, formData;
     xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
-    xhr.open('POST', 'https://onewater-blogapi.herokuapp.com/addimage');
+    xhr.open('POST', 'http://18.223.24.178:8000/addimage');
     xhr.onload = function() {
       var json;
 

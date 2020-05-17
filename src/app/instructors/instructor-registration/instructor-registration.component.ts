@@ -38,7 +38,7 @@ export class InstructorRegistrationComponent implements OnInit {
     }
 
     //console.log('pass',this.user_registration.value);
-    this.http.post('https://onewater-instructor-api.herokuapp.com/updateinstructor',this.user_registration.value)
+    this.http.post('http://18.223.24.178:7050/updateinstructor',this.user_registration.value)
     .subscribe(result=>{
       //console.log("User Details Updated", result);
       this.modal.hideBtnLoader();

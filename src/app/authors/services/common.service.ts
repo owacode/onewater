@@ -28,7 +28,7 @@ export class CommonService {
     data.append("readtime", min.toString());
     this.http
       .post<{ status: string; msg: string; result: any }>(
-        "https://onewater-blogapi.herokuapp.com/unapproved-blog",
+        "http://18.223.24.178:8000/unapproved-blog",
         data
       )
       .subscribe(result => {
@@ -41,7 +41,7 @@ export class CommonService {
     imageform.append("image", image);
 
     return this.http.post<{ imagepath: any }>(
-      "https://onewater-blogapi.herokuapp.com/addimage",
+      "http://18.223.24.178:8000/addimage",
       imageform
     );
   }
@@ -62,7 +62,7 @@ export class CommonService {
     data.append("readtime", min.toString());
     this.http
       .post<{ status: string; msg: string; result: any }>(
-        "https://onewater-blogapi.herokuapp.com/saved-unapproved-blog-with-image",
+        "http://18.223.24.178:8000/saved-unapproved-blog-with-image",
         data
       )
       .subscribe(result => {
@@ -88,7 +88,7 @@ export class CommonService {
     };
     this.http
       .post<{ status: string; msg: string; result: any }>(
-        "https://onewater-blogapi.herokuapp.com/saved-unapproved-blog",
+        "http://18.223.24.178:8000/saved-unapproved-blog",
         saveblog
       )
       .subscribe(result => {
@@ -104,7 +104,7 @@ export class CommonService {
     data.append("image", value.image);
     data.append("desc", value.data);
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/save-blog",
+      "http://18.223.24.178:8000/save-blog",
       data
     );
   }
@@ -116,7 +116,7 @@ export class CommonService {
       desc: value.data
     };
     return this.http.patch<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/update-saved-blog",
+      "http://18.223.24.178:8000/update-saved-blog",
       saveblog
     );
   }
@@ -128,14 +128,14 @@ export class CommonService {
     data.append("desc", value.data);
     data.append("image", value.image);
     return this.http.patch<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/updateimage-saved-blog",
+      "http://18.223.24.178:8000/updateimage-saved-blog",
       data
     );
   }
 
   addVideo(values) {
     this.http
-      .post("https://onewater-blogapi.herokuapp.com/post-video", values)
+      .post("http://18.223.24.178:8000/post-video", values)
       .subscribe(result => {
         //console.log(result);
         //alert("Video Posted Successfully");
@@ -147,53 +147,53 @@ export class CommonService {
       email: localStorage.getItem("authoremail")
     };
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/singlevideo/" +
+      "http://18.223.24.178:8000/singlevideo/" +
         localStorage.getItem("authoremail")
     );
   }
 
   getAllBlogs() {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/authorallblogs/" +
+      "http://18.223.24.178:8000/authorallblogs/" +
         this.blogauth.authorapprovedid
     );
   }
 
   getSavedBlog(id) {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/savedblogs/" + id
+      "http://18.223.24.178:8000/savedblogs/" + id
     );
   }
 
   getSingleSavedBlog(id) {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/singlesavedblog/" + id
+      "http://18.223.24.178:8000/singlesavedblog/" + id
     );
   }
 
   getPendingBlogs() {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/authorunapprovedblogs/" +
+      "http://18.223.24.178:8000/authorunapprovedblogs/" +
         this.blogauth.authorapprovedid
     );
   }
 
   getApprovedBlogs() {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/authorapprovedblogs/" +
+      "http://18.223.24.178:8000/authorapprovedblogs/" +
         this.blogauth.authorapprovedid
     );
   }
 
   getSingleApprovedBlogs(id) {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/singleappblog/" + id
+      "http://18.223.24.178:8000/singleappblog/" + id
     );
   }
 
   getUser() {
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/single-author/" +
+      "http://18.223.24.178:8000/single-author/" +
         this.blogauth.authorapprovedid
     );
   }
@@ -201,7 +201,7 @@ export class CommonService {
   getSingleAllBlog(id) {
     //console.log(id, "jjj");
     return this.http.get<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/allblogs/" + id
+      "http://18.223.24.178:8000/allblogs/" + id
     );
   }
 
@@ -211,7 +211,7 @@ export class CommonService {
       approveid: approveid
     };
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/deleteapproveblog",
+      "http://18.223.24.178:8000/deleteapproveblog",
       id
     );
   }
@@ -222,7 +222,7 @@ export class CommonService {
       unapproveid: unapproveid
     };
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "https://onewater-blogapi.herokuapp.com/deleteunapproveblog",
+      "http://18.223.24.178:8000/deleteunapproveblog",
       id
     );
   }

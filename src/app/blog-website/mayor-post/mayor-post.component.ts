@@ -93,8 +93,8 @@ mayorblogs;
 
   isLiked(data){
     //console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
-    //console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
-    this.http.get<{status:string,result:string}>(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    //console.log(`http://18.223.24.178:7000/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    this.http.get<{status:string,result:string}>(`http://18.223.24.178:7000/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     .subscribe(result=>{
       //console.log(result);
       if(result.result=='1') {
