@@ -107,7 +107,7 @@ toggleHeader() {
       this.modal.hideBtnLoader();
       return;
     }
-    this.http.post<{ status: string}>('https://onewater-auth.herokuapp.com/subscribe',this.form.value)
+    this.http.post<{ status: string}>('http://18.223.24.178:7000/subscribe',this.form.value)
     .subscribe(result=>{
       if(result.status == "error"){
         //console.log(result,'already suscribed');
@@ -127,7 +127,7 @@ toggleHeader() {
     })
   }
   // login() {
-  //   this.http.get('https://onewater-instructor-api.herokuapp.com')
+  //   this.http.get('http://18.223.24.178:7050')
   //     .subscribe(result => {
   //       //console.log(result);
   //     })

@@ -39,7 +39,7 @@ export class AdminBlogpostComponent implements OnInit {
       userid:this.auth.user_id
     }
     console.log(data)
-    this.http.post('https://onewater-blogapi.herokuapp.com/like-homeblog',data)
+    this.http.post('http://18.223.24.178:8000/like-homeblog',data)
     .subscribe(result=>{
       // console.log(result);
     })
@@ -47,8 +47,8 @@ export class AdminBlogpostComponent implements OnInit {
 
   isLiked(data){
     // console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
-    console.log(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
-    this.http.get<{status:string,result:string}>(`https://onewater-auth.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    console.log(`http://18.223.24.178:7000/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    this.http.get<{status:string,result:string}>(`http://18.223.24.178:7000/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     .subscribe(result=>{
       console.log(result);
       if(result.result=='1') {
