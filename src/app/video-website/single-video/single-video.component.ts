@@ -53,7 +53,7 @@ export class SingleVideoComponent implements OnInit {
     this.route.params.subscribe(result=> {
       //console.log(result);
       this.videoid=result.id;
-      this.url=`http://onewateracademy.org/onewater/onewatertalks/singlevideo/${result.id}`;
+      this.url=`http://onewateracademy.org/onewatertalks/singlevideo/${result.id}`;
       this.common.getsinglevideos(result.id)
 
       .subscribe(result=> {

@@ -20,7 +20,7 @@ export class AdminBlogpostComponent implements OnInit {
     this.route.params.subscribe(result=> {
       //console.log(result);
       this.blogid=result.id;
-      this.url = `http://www.onewateracademy.org/onewater/onewaterblog/blogpost/${result.id}`;
+      this.url = `http://www.onewateracademy.org/onewaterblog/blogpost/${result.id}`;
       this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com/homeblog/'+result.id)
       .subscribe(result => {
         //console.log(result, 'bannerrrr');

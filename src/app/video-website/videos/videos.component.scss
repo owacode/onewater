@@ -94,10 +94,14 @@
 
 .thumbnail-card{
   box-shadow: rgba(0, 0, 0, 0.11) 0 15px 30px 0px, rgba(0, 0, 0, 0.08) 0 5px 15px 0;
-  background: #000c61;
+  background: #ebebeb;
   padding: 0;
   color: #fff;
   margin: 1rem;
+
+  h5,.views,.date{
+    color: #1d1d1d;
+  }
   }
 
 .thumb-caption{
@@ -114,9 +118,6 @@
   display: block !important;
   position: relative !important;
 
-    .views, .date {
-    color: #fff !important;
-    }
 }
 
 @media screen and (max-width:768px)
