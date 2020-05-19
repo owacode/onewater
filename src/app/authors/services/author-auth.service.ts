@@ -35,7 +35,7 @@ export class AuthorAuthService {
       msg: string;
       payload: string;
       result: any;
-    }>("http://18.223.24.178:8000/login", user);
+    }>("https://onewater-blogapi.herokuapp.com /login", user);
   }
 
   getToken() {
@@ -52,7 +52,7 @@ export class AuthorAuthService {
       msg: string;
       payload: string;
       result: any;
-    }>("http://18.223.24.178:8000/unapproved-author", user);
+    }>("https://onewater-blogapi.herokuapp.com /unapproved-author", user);
   }
   checkLocalStorage() {
     //console.log("check local hit author",this.loggedIn);
@@ -113,7 +113,7 @@ export class AuthorAuthService {
       payload: string;
       result: any;
     }>(
-      "http://18.223.24.178:8000/unapproved-author",
+      "https://onewater-blogapi.herokuapp.com /unapproved-author",
       author
     );
   }
@@ -133,7 +133,7 @@ export class AuthorAuthService {
     //console.log(this.authormainid, this.authorapprovedid, "dwdw");
     this.http
       .post(
-        "http://18.223.24.178:8000/update-approveprofile",
+        "https://onewater-blogapi.herokuapp.com /update-approveprofile",
         data
       )
       .subscribe(result => {
@@ -155,7 +155,7 @@ export class AuthorAuthService {
     //console.log(this.authormainid, this.authorapprovedid, "dwdw");
     this.http
       .post(
-        "http://18.223.24.178:8000/update-approveprofile-with-image",
+        "https://onewater-blogapi.herokuapp.com /update-approveprofile-with-image",
         author
       )
       .subscribe(result => {
@@ -166,14 +166,14 @@ export class AuthorAuthService {
 
   resetpassword(values) {
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "http://18.223.24.178:8000/reset-password",
+      "https://onewater-blogapi.herokuapp.com /reset-password",
       values
     );
   }
 
   addNewJob(values) {
     this.http
-      .post("http://18.223.24.178:8000/createjob", values)
+      .post("https://onewater-blogapi.herokuapp.com /createjob", values)
       .subscribe(result => {
         //console.log(result);
       });

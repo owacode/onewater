@@ -39,7 +39,7 @@ export class LoginSignupComponent implements OnInit {
     };
     //console.log('pass',this.user.value);
 
-    this.http.post<{status:any,payload:any}>('http://18.223.24.178:7000/newuser',this.user.value)
+    this.http.post<{status:any,payload:any}>('https://onewater-auth.herokuapp.com /newuser',this.user.value)
     .subscribe(result=>{
       if(result.status == "error"){
         //console.log("user already exist")

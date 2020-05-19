@@ -38,7 +38,7 @@ export class UploadContentComponent implements OnInit {
       return;
     }
     //console.log('pass',this.course.value);
-    this.http.post('http://18.223.24.178:7050/addcourse',this.course.value)
+    this.http.post('https://onewater-instructor-api.herokuapp.com/addcourse',this.course.value)
     .subscribe(result=>{
       //console.log("Content Posted Successfully", result);
       this.modal.hideBtnLoader();

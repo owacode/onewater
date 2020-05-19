@@ -50,7 +50,7 @@ export class RecoverPasswordComponent implements OnInit {
     }
 
     if(this.decoded_token.platform == 'blog_author') {
-      this.http.post<{status: string, msg: string, result: any}>('http://18.223.24.178:8000/update-password',this.resetpassword.value)
+      this.http.post<{status: string, msg: string, result: any}>('https://onewater-blogapi.herokuapp.com /update-password',this.resetpassword.value)
       .subscribe(result=> {
         //console.log(result);
         this.modal.hideBtnLoader()
@@ -58,7 +58,7 @@ export class RecoverPasswordComponent implements OnInit {
         this.redirectRoute = "/onewaterblog/author/login";
       })
     }else if(this.decoded_token.platform == 'instructor') {
-      this.http.post<{status: string, msg: string, result: any}>('http://18.223.24.178:7050/update-password',this.resetpassword.value)
+      this.http.post<{status: string, msg: string, result: any}>('https://onewater-instructor-api.herokuapp.com/update-password',this.resetpassword.value)
       .subscribe(result=> {
         //console.log(result);
         this.modal.hideBtnLoader();
@@ -82,7 +82,7 @@ export class RecoverPasswordComponent implements OnInit {
 
       })
     }else if(this.decoded_token.platform == 'onewateruser') {
-      this.http.post<{status: string, msg: string, result: any}>('http://18.223.24.178:7000/update-password',this.resetpassword.value)
+      this.http.post<{status: string, msg: string, result: any}>('https://onewater-auth.herokuapp.com /update-password',this.resetpassword.value)
       .subscribe(result=> {
         //console.log(result);
         this.modal.hideBtnLoader();

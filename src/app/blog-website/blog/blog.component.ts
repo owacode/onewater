@@ -299,7 +299,7 @@ croList;
     this.getApprovedMayor();
     this.getApprovedCRO();
     this.getTopAuthor();
-    this.http.get<{ status: string, msg: string, result: any }>('http://18.223.24.178:8000/approveblogs')
+    this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com /approveblogs')
       .subscribe(result => {
         //console.log(result);
         this.blogcards = result.result;
@@ -307,14 +307,14 @@ croList;
         this.featuredblog = this.featuredblog.slice(0, 6);
       })
 
-    this.http.get<{ status: string, msg: string, result: any }>('http://18.223.24.178:8000/approvedauthor')
+    this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com /approvedauthor')
       .subscribe(result => {
         //console.log(result);
         this.authors = result.result;
         this.authors = this.authors.slice(0,4);
       })
 
-    this.http.get<{ status: string, msg: string, result: any }>('http://18.223.24.178:8000/homeblog')
+    this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blogapi.herokuapp.com /homeblog')
       .subscribe(result => {
         //console.log(result, 'bannerrrr');
         this.bannerblogs = result.result;
@@ -361,7 +361,7 @@ croList;
 
   getTopAuthor() {
     this.http.get<{ status: string; msg: string; result: any }>(
-      "http://18.223.24.178:8000/topauthor"
+      "https://onewater-blogapi.herokuapp.com /topauthor"
     ).subscribe(result=>{
       // console.log(result)
       this.topauthors = result.result;
