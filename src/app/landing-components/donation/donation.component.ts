@@ -99,7 +99,7 @@ export class DonationComponent implements OnInit {
       this.modal.openModal("#paymentSuccessful");
       this.userpayment.reset();
       this.showPaymentButton = false;
-      this.http.post<{status:string,msg:string}>('https://onewater-auth.herokuapp.com /pay',this.userpayment.value)
+      this.http.post<{status:string,msg:string}>('https://onewater-blogapi.herokuapp.com/pay',this.userpayment.value)
       .subscribe(result=>{
         //console.log(result);
       })

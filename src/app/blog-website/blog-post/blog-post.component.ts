@@ -60,7 +60,7 @@ export class BlogPostComponent implements OnInit {
       this.url = `http://www.onewateracademy.org/onewaterblog/blogpost/${result.id}`;
       this.http
         .get<{ status: string; msg: string; result: any }>(
-          "https://onewater-blogapi.herokuapp.com /singleappblog/" + result.id
+          "https://onewater-blogapi.herokuapp.com/singleappblog/" + result.id
         )
         .subscribe(result => {
           //console.log(result,'########## blog single');
@@ -75,7 +75,7 @@ export class BlogPostComponent implements OnInit {
   getauthor(id) {
     this.http
       .get<{ status: string; msg: string; result: any }>(
-        "https://onewater-blogapi.herokuapp.com /approvedauthor/" + id
+        "https://onewater-blogapi.herokuapp.com/approvedauthor/" + id
       )
       .subscribe(result => {
         //console.log(result, "author");
@@ -86,7 +86,7 @@ export class BlogPostComponent implements OnInit {
   getauthorblogs(id) {
     this.http
       .get<{ status: string; msg: string; result: any }>(
-        "https://onewater-blogapi.herokuapp.com /authorapprovedblogs/" + id
+        "https://onewater-blogapi.herokuapp.com/authorapprovedblogs/" + id
       )
       .subscribe(result => {
         //console.log(result, "author blogs ");
@@ -104,7 +104,7 @@ export class BlogPostComponent implements OnInit {
   getmostlikedblogs() {
     this.http
       .get<{ status: string; msg: string; result: any }>(
-        "https://onewater-blogapi.herokuapp.com /mostlikedblogs"
+        "https://onewater-blogapi.herokuapp.com/mostlikedblogs"
       )
       .subscribe(result => {
         //console.log(result, "most liked blogs ");
@@ -118,7 +118,7 @@ export class BlogPostComponent implements OnInit {
       blogid:this.blogid,
       userid:this.authorauth.authorapprovedid
     }
-    this.http.post('https://onewater-blogapi.herokuapp.com /like',data)
+    this.http.post('https://onewater-blogapi.herokuapp.com/like',data)
     .subscribe(result=>{
       //console.log(result);
     })
@@ -126,8 +126,8 @@ export class BlogPostComponent implements OnInit {
 
   isLiked(data){
     //console.log(data,"LIKED BLOG #!!!!!!!!!!!!!!!!")
-    //console.log(`https://onewater-auth.herokuapp.com /likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
-    this.http.get<{status:string,result:string}>(`https://onewater-blogapi.herokuapp.com /likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    //console.log(`https://onewater-blogapi.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
+    this.http.get<{status:string,result:string}>(`https://onewater-blogapi.herokuapp.com/likedbyuser?userid=${data.userid}&blogid=${data.blogid}`)
     .subscribe(result=>{
       //console.log(result);
       if(result.result=='1') {

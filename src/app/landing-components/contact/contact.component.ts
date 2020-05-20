@@ -31,7 +31,7 @@ export class ContactComponent implements OnInit {
       this.modal.hideBtnLoader();
       return;
     }
-    this.http.post<{status: any, msg: any, result:any}>('https://onewater-auth.herokuapp.com /contact',this.user.value)
+    this.http.post<{status: any, msg: any, result:any}>('https://onewater-blogapi.herokuapp.com/contact',this.user.value)
     .subscribe(result=> {
       //console.log(result);
       this.modal.hideBtnLoader();

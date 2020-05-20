@@ -14,12 +14,12 @@ export class EventsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.http.get<{status: any, msg: any, result: any}>('https://onewater-auth.herokuapp.com /past-event')
+    this.http.get<{status: any, msg: any, result: any}>('https://onewater-blogapi.herokuapp.com/past-event')
     .subscribe(result=> {
       this.past_events = result.result;
     })
 
-    this.http.get<{status: any, msg: any, result: any}>('https://onewater-auth.herokuapp.com /upcoming-event')
+    this.http.get<{status: any, msg: any, result: any}>('https://onewater-blogapi.herokuapp.com/upcoming-event')
     .subscribe(result=> {
       this.upcoming_events = result.result;
     })

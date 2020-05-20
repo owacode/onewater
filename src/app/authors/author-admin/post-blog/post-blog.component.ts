@@ -48,7 +48,7 @@ export class PostBlogComponent implements OnInit {
         var xhr, formData;
     xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
-    xhr.open('POST', 'https://onewater-blogapi.herokuapp.com /addimage');
+    xhr.open('POST', 'https://onewater-blogapi.herokuapp.com/addimage');
     xhr.onload = function() {
       var json;
 

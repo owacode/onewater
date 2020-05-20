@@ -107,7 +107,7 @@ toggleHeader() {
       this.modal.hideBtnLoader();
       return;
     }
-    this.http.post<{ status: string}>('https://onewater-auth.herokuapp.com /subscribe',this.form.value)
+    this.http.post<{ status: string}>('https://onewater-blogapi.herokuapp.com/subscribe',this.form.value)
     .subscribe(result=>{
       if(result.status == "error"){
         //console.log(result,'already suscribed');

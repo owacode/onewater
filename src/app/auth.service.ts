@@ -42,12 +42,12 @@ export class AuthService {
       msg: string;
       payload: string;
       result: any;
-    }>("https://onewater-auth.herokuapp.com /login", user);
+    }>("https://onewater-blogapi.herokuapp.com/login", user);
   }
 
   resetpassword(values) {
     return this.http.post<{ status: string; msg: string; result: any }>(
-      "https://onewater-auth.herokuapp.com /reset-password",
+      "https://onewater-blogapi.herokuapp.com/reset-password",
       values
     );
   }
